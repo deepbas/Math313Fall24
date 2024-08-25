@@ -2,8 +2,23 @@
 title: "About"
 ---
 
-About this site
+# Course overview
 
-```{r}
-1 + 1
-```
+Welcome to Survey Design and Sampling, where we apply statistical principles to real-world survey challenges in fields like business, social sciences, health sciences, and environmental studies. This course emphasizes practical applications over theoretical foundations, preparing students to design, implement, and analyze surveys effectively. Through case studies and hands-on projects, students will tackle the peculiarities and inferential challenges of survey design across various domains.
+
+We will explore data collection methods, address potential biases, and discuss ethical considerations in survey execution. The course aims to cultivate both technical skills and critical thinking about how survey methodologies influence research outcomes and professional decisions. By understanding these dynamics, students will be equipped to conduct impactful research with consideration for cultural and ethical contexts.
+
+
+## Learning Objectives
+
+<blockquote>
+
+- Acquire and apply fundamental survey design principles to create effective and cost-efficient surveys.
+- Implement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.
+- Plan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.
+- Critically assess survey methodologies and results, identifying potential biases and errors in survey research.
+- Communicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.
+- Develop ethical research practices, ensuring data integrity and participant confidentiality in survey projects.
+
+
+</blockquote>

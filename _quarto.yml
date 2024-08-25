@@ -1,19 +1,101 @@
 project:
   type: website
+output-dir: docs
 
 website:
-  title: "Math313Fall24"
+  title: "Math 313: Survey Design and Sampling"
   navbar:
+    title: "Math 313"
+    pinned: true
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "Home"
+        href: index.html
+      - text: "About"
+        href: about.html
+      - text: "Lecture Slides"
+        menu:
+          - text: "Lecture 1"
+            href: Day1.html 
+            target: "_blank"
+          # - text: "Lecture 2"
+          #   href: Day2.html
+          #   target: "_blank"
+          # - text: "Lecture 3"
+          #   href: Day3.html
+          #   target: "_blank"
+          # - text: "Lecture 4"
+          #   href: Day4.html
+          #   target: "_blank"
+          # - text: "Lecture 5"
+          #   href: Day5.html
+          #   target: "_blank"
+
+          # Add additional lectures here
+      # - text: "Class Activities"
+      #   menu:
+      #     - text: "Activity 1"
+      #       href: class_activity_1.html
+          # - text: "Activity 2"
+          #   href: class_activity_2.html
+          # - text: "Activity 3"
+          #   href: class_activity_3.html
+          # - text: "Activity 4"
+          #   href: class_activity_4.html
+          #        
+            
+                  
+          # Add additional problems here
+      # - text: "Reports"
+      #   href: reports.html
+      # - text: "Midterms"
+      #   href: midterms.html
+      # Add additional navbar items as needed
+      - text: "Tutorials"
+        menu:
+          - text: "R and RStudio"
+            href: RandRStudio.html
+          # - text: "Posit Tutorial"
+          #   href: posit.html
+          # - text: "Softwares"
+          #   href: software.html
+          # - text: "Github Tutorial"
+          #   href: github_tutorial.html
+
 
 format:
   html:
-    theme: cosmo
+    highlight-style: arrow
+    fontsize: 1.1em
+    code-overflow: wrap
+    theme:
+      light: [theme-light.scss]
+      dark: [darkly]
     css: styles.css
     toc: true
+    page-layout: full
+    code-link: true
+    anchor-sections: true
+    fig-cap-location: margin
+    reference-location: margin
+    footnotes-hover: true 
+filters:
+  - shinylive
+  - webr
 
-editor: visual
+page-footer: 
+  left: |
+    <span class="faux-block">&#169; 2024 Deepak Bastola</span>
+  right: |
+    <span class="faux-block"><a href="https://github.com/deepbas/">View source on GitHub</a></span>
 
+execute:
+  new_session: true
+  before_chapter_script: common.R
+  freeze: true
+  eval: true
+  echo: true
+  warning: false
+
+language:
+  label:
+    chapter: "Chapter "

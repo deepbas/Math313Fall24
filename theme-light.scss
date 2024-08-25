@@ -1,0 +1,123 @@
+/*-- scss:defaults --*/
+
+$theme: "flatly" !default;
+
+// Main font import
+$web-font-path: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" !default;
+@if $web-font-path {
+  @import url($web-font-path);
+}
+
+// Fonts
+$font-family-sans-serif: "Open Sans", sans-serif !default; 
+$h1-font-size: 2.5rem !default;
+$h2-font-size: 2rem !default;
+$h3-font-size: 1.75rem !default;
+
+// Base colors
+$white:    #fff !default;
+$black:    #000 !default;
+
+// Neutral greys
+$gray-100: #f5f5f5 !default; // very light grey for backgrounds
+$gray-200: #e0e0e0 !default;
+$gray-300: #ccc !default;    // light grey for borders
+$gray-400: #a6a6a6 !default;
+$gray-500: #8c8c8c !default; // medium grey for text
+$gray-600: #666 !default;
+$gray-700: #4d4d4d !default; // dark grey for headings
+$gray-800: #333 !default;
+$gray-900: #1a1a1a !default; // very dark grey for contrast
+
+// Accent colors
+$blue:    #3498db !default;   // a pleasant blue
+$green:   #2ecc71 !default;   // a calming green
+$orange:  #e67e22 !default;   // a friendly orange
+$red:     #e74c3c !default;   // a strong red for warnings
+
+// Semantic colors
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $blue !default;
+$warning:       $orange !default;
+$danger:        $red !default;
+
+// Links
+$link-color:                $primary !default;
+
+// Navbar
+$navbar-padding-y:           0.5rem !default;
+$navbar-light-active-color:  darken($primary, 15%) !default; // slightly darker for active link
+
+// Navbar Dark Scheme
+$navbar-dark-color:            $gray-200 !default; // light grey on dark bg for text
+$navbar-dark-hover-color:      $white !default; // white on hover for contrast
+$navbar-dark-active-color:     $navbar-light-active-color !default;
+$navbar-dark-brand-color:      $navbar-dark-hover-color !default;
+
+// Pagination
+$pagination-color:             $white !default; // white for readability
+$pagination-bg:                $primary !default; // primary color background
+$pagination-hover-color:       $white !default;
+$pagination-hover-bg:          darken($primary, 10%) !default; // darken on hover for effect
+$pagination-active-bg:         $pagination-hover-bg !default;
+
+// Custom styles
+$custom-color: #5bc0de; // Custom color for buttons or other elements
+$custom-border-radius: 0.25rem; // Border-radius for buttons, inputs, etc.
+
+/*-- scss:rules --*/
+
+// Global body rules
+body {
+  font-family: 'Ubuntu Mono', Sans-Serif;
+  font-weight: 200;
+  color: #28435D;
+}
+
+// Headings for better readability
+h1, h2, h3, h4, h5, h6 {
+  color: $gray-900;
+}
+
+// Navbar styles
+.navbar {
+  padding: $navbar-padding-y 0;
+
+  &.navbar-light {
+    background-color: $white;
+
+    .navbar-nav .nav-link {
+      &.active, &:hover {
+        color: $navbar-light-active-color;
+      }
+    }
+  }
+
+  &.navbar-dark {
+    background-color: $gray-800;
+
+    .navbar-nav .nav-link {
+      &.active, &:hover {
+        color: $navbar-dark-hover-color;
+      }
+    }
+  }
+}
+
+// Pagination styles for better visibility
+.pagination {
+  .page-link {
+    color: $pagination-color;
+    background-color: $pagination-bg;
+    &:hover {
+      background-color: $pagination-hover-bg;
+    }
+    &.active {
+      background-color: $pagination-active-bg;
+    }
+  }
+}
+
+

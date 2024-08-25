@@ -1,0 +1,237 @@
+---
+title: "Day 1"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: "Bastola"
+format:
+  revealjs: 
+    theme: [default, scss/main.scss]
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+    transition: slide
+    background-transition: fade    
+    touch: false 
+    controls: true
+filters:
+  - shinylive
+  - webr
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(xaringanExtra)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+
+# read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/agstrat.csv")
+```
+
+::: centered-content
+## Something about me
+
+::: row
+::: left
+::: bq
+::: incremental
+-   First year at Salisbury
+-   Originally from Nepal
+-   Research in Statistical Computation and Applied Statistics
+-   Avid learner and traveler
+:::
+:::
+:::
+
+::: right
+<br>
+
+[![My website](images/website.png)](http://deepbas.io)
+
+:::
+:::
+:::
+
+
+
+
+::: centered-content
+## Active Participation 
+
+::: bq
+::: incremental
+
+- **Engage Actively** 
+  - Take lecture notes
+  - Follow class handouts
+
+- **Ask Questions**
+  - Every question is valuable; we're learning together
+
+- **Gain Conceptual Understanding**
+  - To be able to apply the knowledge; understanding the concepts is key
+
+
+:::
+:::
+:::
+
+::: centered-content
+## Tell me something about yourself!
+
+::: row
+::: left
+
+<br>
+
+::: bqt
+-   Your name?
+-   Gender Pronouns?
+-   Favorite Summer Memory?
+:::
+:::
+
+::: right
+<iframe src="https://giphy.com/embed/Tq8B3WOqXToBlrqClZ" width="3000" height="280" frameBorder="0" class="giphy-embed" allowFullScreen>
+
+</iframe>
+
+<p><a href="https://giphy.com/gifs/new-post-creative-Tq8B3WOqXToBlrqClZ">via GIPHY</a></p>
+:::
+:::
+:::
+
+::: centered-content
+## Class Pipelines
+
+<br>
+
+::: bql
+-   Most of the course information and schedule will be posted in [MyClasses](https://salisbury.instructure.com/courses/67043)
+-   Homework will be posted but not collected
+-   Labs most Tuesdays; lab reports due in a week from the lab date 
+-   Quizzes every Friday; includes HW, lectures, labs 
+:::
+:::
+
+::: centered-content
+## What will a typical day/week look like?
+
+::: eqt
+::: incremental
+- Before class: 
+  - Read assigned topics from textbook 
+  - Work on homework/lab reports, come with questions 
+- During class: 
+  - Mini lectures 
+  - Class activities
+:::  
+:::
+:::
+
+
+
+
+
+## Welcome to Survey Sampling
+
+<br>
+
+::: eqt
+::: incremental
+
+- **What is Survey Sampling?**
+    - Essential statistical method for collecting representative data.
+    - Key tool in business, health sciences, environmental studies, and more.
+
+:::
+:::
+
+## Why Study Survey Sampling?
+
+<br>
+
+::: lqt
+::: incremental
+
+- **Data-Driven Decision Making**
+    - Informed decisions require accurate data.
+    - Sampling helps gather this data efficiently and effectively.
+
+:::
+:::
+
+## Basic Principles of Survey Sampling
+
+<br>
+
+::: eqt
+::: incremental
+
+- **Random Sampling**
+    - Each member of a population has an equal chance of selection.
+    - Ensures unbiased data representation.
+- **Systematic Approach**
+    - Methodical selection process to avoid sampling bias.
+
+:::
+:::
+
+## Importance in Professional Fields
+
+::: fsp
+::: incremental
+
+- **Health Sciences**
+    - Estimating disease prevalence, patient outcomes.
+- **Environmental Studies**
+    - Monitoring pollution levels, wildlife populations.
+- **Business**
+    - Understanding market trends, consumer preferences.
+
+:::
+:::
+
+
+## 
+
+```{=html}
+<iframe width="1280" height="800" src="https://shinylive.io/r/editor/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4ARACrCIIgMQACSXABmfOEtLctAVQCSStUUbbdStKjoEopWiREBXWkoA8AWmPUXAEwAKUADmcOwiShFKygCC6DZ2DhDatKTUcOGR9qlwgRBw1GFgkrSc1lCsSgDCAMoAaip2UErRTqREMAm21NSsQmACuBkRQ1EqJWUVOlq+jdpQ9GkjMgDyraithTOkUNLzi-0icooq6prmWpxwjABuV0rUREG0BNpESoxwUL6WEN++49RyucqnUlFsoCJLjc7p5jE4IAR7CR2Hx1qRcEoiGtWgIlCARjFWu1OlBuhUPl9geDjIx2sCavUNIskpFqbCKb4MARONdCtV8nBEXBfAB9ABysDgnBFknKAEYuTy+hjdF87gBeJTSLB6ACickiSgJSiwFF8dymYNm2wW6RZESxpDRABJwbtbe4vB9flcZOx8fbDVbtja0uxwRiiKgkRBOEpNXROKR2KhgnAADIUII6eNKOUABgEBsiAF85CWRMcsPDgVZ4jHIbx+LFUOwXLmXBiobczJru1c5GAS7hwNB4FR+WkhaKJfBpbLWArudc8IQSORKMgsEQAO5KMVOGD0K64Wd2uW4WVJaIsRwQABMuGiEAgtC0ACE3xBuCIAMy4ZZOFsMx3yIOhrhYEQABZL3aPhaAARycD8SGgJxfBEABWXBAicagqlgVBj26EQADZcAAKXUNQPgqSoWGgbgoHkCAAHZKKIfIqiYu0AA5LycJM+G4igRAATlwapyFuJJKjAuAOhYgtcCwZ4mMYb5ZWuEoRDlC8KKIbgXwqABxKBNE4XTH3oxgHjjMzGAIWgIQgOV-wovCHCUEySAAL1JOBfN0mCKKgAgkPyM4fI0u85Ww0K5285hbks1zyO3aBqG+AAJFhGBKWL2OfXwPj3bKnGYoJdP458dBICpyrIK5dIkgzoB0ZilFCggAGtODve981wd9GCcAgtAMoz+pY+99NMEIlAMeg8pc+9HwAWSgJx8vGrqSClER73clhhSUABpK5Y0OmCLu0pIzr4KqH2wgAxZgIB6pR01oVAetW8ibPw9NWl0RhDvY9MoB7PIlHWlICF0EiH34gAtML1IqABFZDOC+VaJMkVD8nw7cOk0P8hocipqmY81GFS38L11XwdxYb5qibII0jaFjfw2tSoC46pUEFZzmV-f9itKpQpLgAU-xgsU4FofDqlZvg-2wjmrjYLVuGJBnyO1pC31xvX2lQaa-3Y98WGW5gtRVkwNL-fiqMYMmYekNg71-CTvt849SCUWpSXNIKICgoazrsfJWCSABNJwRCHABdIA" title="Webpage example"></iframe>
+```
+
+::: centered-content
+## <i class="fa fa-pencil-square-o" style="font-size:48px;color:purple"> Group Activity `r (yt <- yt + 1)`</i> {background="#ffdf9e"}
+
+::: row
+::: left
+![](https://media.giphy.com/media/RKApDdwsQ6jkwd6RNn/giphy.gif)
+:::
+
+::: right
+::: lqt
+-   
+-   
+:::
+:::
+:::
+
+`r countdown(minutes = 10, seconds = 00, top = 0 , left = 0, color_background = "inherit", padding = "3px 4px", font_size = "1em")`
+:::
