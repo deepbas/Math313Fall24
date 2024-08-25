@@ -195,27 +195,62 @@ yt <- 0
 :::
 :::
 
-## Importance in Professional Fields
+
+## Introduction to Survey Biases
+
+<br>
+
+::: lqt
+::: incremental
+
+Discover how the phrasing of survey questions can influence the responses, potentially leading to biased outcomes.
+
+- **Objective**: Understand the impact of wording in survey questions.
+- **Focus**: Compare biased vs. neutral phrasing.
+
+:::
+:::
+
+
+## Case Study on Welfare Spending
+
+::: mre
+::: incremental
+
+- Biased Question: "Do you think the government spends too much money on welfare without adequate proof of its necessity?"
+  - This question suggests unnecessary spending, leading to potentially biased negative responses.
+- Neutral Question: "How should the government allocate funds for welfare?"
+  - Rephrased to remove bias, showing a significant drop in negative responses (only 29% suggest reducing spending).
+:::
+:::
+
+
+## Health Care for the Elderly
 
 ::: fsp
 ::: incremental
 
-- **Health Sciences**
-    - Estimating disease prevalence, patient outcomes.
-- **Environmental Studies**
-    - Monitoring pollution levels, wildlife populations.
-- **Business**
-    - Understanding market trends, consumer preferences.
-
+- Original Biased Question: "Do you agree that it is disgraceful for the government to ignore the health care needs of the elderly?"
+  - Emotive language ("disgraceful") can manipulate responses.
+- Neutral Reformulation: "How do you rate the government's handling of health care needs for the elderly?"
+  - More objective, allowing respondents to express true opinions without emotional influence.
 :::
 :::
 
 
-## 
+## The Importance of Neutral Question Phrasing
 
-```{=html}
-<iframe width="1280" height="800" src="https://shinylive.io/r/editor/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4ARACrCIIgMQACSXABmfOEtLctAVQCSStUUbbdStKjoEopWiREBXWkoA8AWmPUXAEwAKUADmcOwiShFKygCC6DZ2DhDatKTUcOGR9qlwgRBw1GFgkrSc1lCsSgDCAMoAaip2UErRTqREMAm21NSsQmACuBkRQ1EqJWUVOlq+jdpQ9GkjMgDyraithTOkUNLzi-0icooq6prmWpxwjABuV0rUREG0BNpESoxwUL6WEN++49RyucqnUlFsoCJLjc7p5jE4IAR7CR2Hx1qRcEoiGtWgIlCARjFWu1OlBuhUPl9geDjIx2sCavUNIskpFqbCKb4MARONdCtV8nBEXBfAB9ABysDgnBFknKAEYuTy+hjdF87gBeJTSLB6ACickiSgJSiwFF8dymYNm2wW6RZESxpDRABJwbtbe4vB9flcZOx8fbDVbtja0uxwRiiKgkRBOEpNXROKR2KhgnAADIUII6eNKOUABgEBsiAF85CWRMcsPDgVZ4jHIbx+LFUOwXLmXBiobczJru1c5GAS7hwNB4FR+WkhaKJfBpbLWArudc8IQSORKMgsEQAO5KMVOGD0K64Wd2uW4WVJaIsRwQABMuGiEAgtC0ACE3xBuCIAMy4ZZOFsMx3yIOhrhYEQABZL3aPhaAARycD8SGgJxfBEABWXBAicagqlgVBj26EQADZcAAKXUNQPgqSoWGgbgoHkCAAHZKKIfIqiYu0AA5LycJM+G4igRAATlwapyFuJJKjAuAOhYgtcCwZ4mMYb5ZWuEoRDlC8KKIbgXwqABxKBNE4XTH3oxgHjjMzGAIWgIQgOV-wovCHCUEySAAL1JOBfN0mCKKgAgkPyM4fI0u85Ww0K5285hbks1zyO3aBqG+AAJFhGBKWL2OfXwPj3bKnGYoJdP458dBICpyrIK5dIkgzoB0ZilFCggAGtODve981wd9GCcAgtAMoz+pY+99NMEIlAMeg8pc+9HwAWSgJx8vGrqSClER73clhhSUABpK5Y0OmCLu0pIzr4KqH2wgAxZgIB6pR01oVAetW8ibPw9NWl0RhDvY9MoB7PIlHWlICF0EiH34gAtML1IqABFZDOC+VaJMkVD8nw7cOk0P8hocipqmY81GFS38L11XwdxYb5qibII0jaFjfw2tSoC46pUEFZzmV-f9itKpQpLgAU-xgsU4FofDqlZvg-2wjmrjYLVuGJBnyO1pC31xvX2lQaa-3Y98WGW5gtRVkwNL-fiqMYMmYekNg71-CTvt849SCUWpSXNIKICgoazrsfJWCSABNJwRCHABdIA" title="Webpage example"></iframe>
-```
+::: cle
+::: incremental
+
+Highlighting the critical need for neutrality in survey questions to obtain accurate and reliable data.
+
+- **Key Takeaway**: Survey questions should be carefully crafted to avoid leading respondents.
+- **Goal**: Achieve unbiased data that truly reflects public opinion.
+
+:::
+:::
+
 
 ::: centered-content
 ## <i class="fa fa-pencil-square-o" style="font-size:48px;color:purple"> Group Activity `r (yt <- yt + 1)`</i> {background="#ffdf9e"}
@@ -226,12 +261,23 @@ yt <- 0
 :::
 
 ::: right
+
+<br>
+
 ::: lqt
--   
--   
+- Let's do a small activity today about simple random sampling
+- And answer a few survey questions about the class in general
 :::
 :::
 :::
 
 `r countdown(minutes = 10, seconds = 00, top = 0 , left = 0, color_background = "inherit", padding = "3px 4px", font_size = "1em")`
 :::
+
+
+
+## 
+
+```{=html}
+<iframe width="1280" height="800" src="https://shinylive.io/r/editor/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4ARACrCIIgMQACSXABmfOEtLctAVQCSStUUbbdStKjoEopWiREBXWkoA8AWmPUXAEwAKUADmcOwiShFKygCC6DZ2DhDatKTUcOGR9qlwgRBw1GFgkrSc1lCsSgDCAMoAaip2UErRTqREMAm21NSsQmACuBkRQ1EqJWUVOlq+jdpQ9GkjMgDyraithTOkUNLzi-0icooq6prmWpxwjABuV0rUREG0BNpESoxwUL6WEN++49RyucqnUlFsoCJLjc7p5jE4IAR7CR2Hx1qRcEoiGtWgIlCARjFWu1OlBuhUPl9geDjIx2sCavUNIskpFqbCKb4MARONdCtV8nBEXBfAB9ABysDgnBFknKAEYuTy+hjdF87gBeJTSLB6ACickiSgJSiwFF8dymYNm2wW6RZESxpDRABJwbtbe4vB9flcZOx8fbDVbtja0uxwRiiKgkRBOEpNXROKR2KhgnAADIUII6eNKOUABgEBsiAF85CWRMcsPDgVZ4jHIbx+LFUOwXLmXBiobczJru1c5GAS7hwNB4FR+WkhaKJfBpbLWArudc8IQSORKMgsEQAO5KMVOGD0K64Wd2uW4WVJaIsRwQABMuGiEAgtC0ACE3xBuCIAMy4ZZOFsMx3yIOhrhYEQABZL3aPhaAARycD8SGgJxfBEABWXBAicagqlgVBj26EQADZcAAKXUNQPgqSoWGgbgoHkCAAHZKKIfIqiYu0AA5LycJM+G4igRAATlwapyFuJJKjAuAOhYgtcCwZ4mMYb5ZWuEoRDlC8KKIbgXwqABxKBNE4XTH3oxgHjjMzGAIWgIQgOV-wovCHCUEySAAL1JOBfN0mCKKgAgkPyM4fI0u85Ww0K5285hbks1zyO3aBqG+AAJFhGBKWL2OfXwPj3bKnGYoJdP458dBICpyrIK5dIkgzoB0ZilFCggAGtODve981wd9GCcAgtAMoz+pY+99NMEIlAMeg8pc+9HwAWSgJx8vGrqSClER73clhhSUABpK5Y0OmCLu0pIzr4KqH2wgAxZgIB6pR01oVAetW8ibPw9NWl0RhDvY9MoB7PIlHWlICF0EiH34gAtML1IqABFZDOC+VaJMkVD8nw7cOk0P8hocipqmY81GFS38L11XwdxYb5qibII0jaFjfw2tSoC46pUEFZzmV-f9itKpQpLgAU-xgsU4FofDqlZvg-2wjmrjYLVuGJBnyO1pC31xvX2lQaa-3Y98WGW5gtRVkwNL-fiqMYMmYekNg71-CTvt849SCUWpSXNIKICgoazrsfJWCSABNJwRCHABdIA" title="Webpage example"></iframe>
+```

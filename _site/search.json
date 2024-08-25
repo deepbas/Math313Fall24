@@ -56,18 +56,39 @@
     "text": "Basic Principles of Survey Sampling\n\n\n\n\nRandom Sampling\n\nEach member of a population has an equal chance of selection.\nEnsures unbiased data representation.\n\nSystematic Approach\n\nMethodical selection process to avoid sampling bias."
   },
   {
-    "objectID": "Day1.html#importance-in-professional-fields",
-    "href": "Day1.html#importance-in-professional-fields",
+    "objectID": "Day1.html#introduction-to-survey-biases",
+    "href": "Day1.html#introduction-to-survey-biases",
     "title": "Day 1",
-    "section": "Importance in Professional Fields",
-    "text": "Importance in Professional Fields\n\n\n\nHealth Sciences\n\nEstimating disease prevalence, patient outcomes.\n\nEnvironmental Studies\n\nMonitoring pollution levels, wildlife populations.\n\nBusiness\n\nUnderstanding market trends, consumer preferences."
+    "section": "Introduction to Survey Biases",
+    "text": "Introduction to Survey Biases\n\n\n\nDiscover how the phrasing of survey questions can influence the responses, potentially leading to biased outcomes.\n\nObjective: Understand the impact of wording in survey questions.\nFocus: Compare biased vs. neutral phrasing."
+  },
+  {
+    "objectID": "Day1.html#case-study-on-welfare-spending",
+    "href": "Day1.html#case-study-on-welfare-spending",
+    "title": "Day 1",
+    "section": "Case Study on Welfare Spending",
+    "text": "Case Study on Welfare Spending\n\n\n\nBiased Question: “Do you think the government spends too much money on welfare without adequate proof of its necessity?”\n\nThis question suggests unnecessary spending, leading to potentially biased negative responses.\n\nNeutral Question: “How should the government allocate funds for welfare?”\n\nRephrased to remove bias, showing a significant drop in negative responses (only 29% suggest reducing spending)."
+  },
+  {
+    "objectID": "Day1.html#health-care-for-the-elderly",
+    "href": "Day1.html#health-care-for-the-elderly",
+    "title": "Day 1",
+    "section": "Health Care for the Elderly",
+    "text": "Health Care for the Elderly\n\n\n\nOriginal Biased Question: “Do you agree that it is disgraceful for the government to ignore the health care needs of the elderly?”\n\nEmotive language (“disgraceful”) can manipulate responses.\n\nNeutral Reformulation: “How do you rate the government’s handling of health care needs for the elderly?”\n\nMore objective, allowing respondents to express true opinions without emotional influence."
+  },
+  {
+    "objectID": "Day1.html#the-importance-of-neutral-question-phrasing",
+    "href": "Day1.html#the-importance-of-neutral-question-phrasing",
+    "title": "Day 1",
+    "section": "The Importance of Neutral Question Phrasing",
+    "text": "The Importance of Neutral Question Phrasing\n\n\nHighlighting the critical need for neutrality in survey questions to obtain accurate and reliable data.\n\nKey Takeaway: Survey questions should be carefully crafted to avoid leading respondents.\nGoal: Achieve unbiased data that truly reflects public opinion."
   },
   {
     "objectID": "Day1.html#group-activity-1",
     "href": "Day1.html#group-activity-1",
     "title": "Day 1",
     "section": " Group Activity 1",
-    "text": "Group Activity 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n −+ 10:00"
+    "text": "Group Activity 1\n\n\n\n\n\n\n\n\nLet’s do a small activity today about simple random sampling\nAnd answer a few survey questions about the class in general\n\n\n\n\n −+ 10:00"
   },
   {
     "objectID": "about.html",

@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: d7c9964e-c957-47b3-abdd-c1c2f5d20568
+      url: 'https://thunderous-elf-5786c4.netlify.app'
