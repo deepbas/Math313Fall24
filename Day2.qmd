@@ -45,6 +45,14 @@ yt <- 0
 ```
 
 
+## Statistical Practice 
+
+::: cle
+- **Accessing Population Data**: Often, it's impractical or impossible to examine every individual in a population.
+- **Why Sample?**: We select a sample of size $n$ because it allows us to estimate population characteristics like mean $\mu$ and standard deviation $\sigma$.
+- **Purpose of Sampling**: Sampling helps infer the broader population's characteristics from a representative set of data.
+:::
+
 ## Population and Sample
 
 ::: cle
@@ -79,13 +87,7 @@ yt <- 0
   - This **53%** is a parameter—it describes the entire voting population's preference.
 :::
 
-## Statistical Practice 
 
-::: cle
-- **Accessing Population Data**: Often, it's impractical or impossible to examine every individual in a population.
-- **Why Sample?**: We select a sample of size $n$ because it allows us to estimate population characteristics like mean $\mu$ and standard deviation $\sigma$.
-- **Purpose of Sampling**: Sampling helps infer the broader population's characteristics from a representative set of data.
-:::
 
 ## Key Sample Statistics
 

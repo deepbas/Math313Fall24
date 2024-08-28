@@ -91,6 +91,13 @@
     "text": "Group Activity 1\n\n\n\n\n\n\n\n\nLet’s do a small activity today about simple random sampling\nAnd answer a few survey questions about the class in general\n\n\n\n\n −+ 10:00"
   },
   {
+    "objectID": "Day2.html#statistical-practice",
+    "href": "Day2.html#statistical-practice",
+    "title": "Day 2",
+    "section": "Statistical Practice",
+    "text": "Statistical Practice\n\n\nAccessing Population Data: Often, it’s impractical or impossible to examine every individual in a population.\nWhy Sample?: We select a sample of size \\(n\\) because it allows us to estimate population characteristics like mean \\(\\mu\\) and standard deviation \\(\\sigma\\).\nPurpose of Sampling: Sampling helps infer the broader population’s characteristics from a representative set of data."
+  },
+  {
     "objectID": "Day2.html#population-and-sample",
     "href": "Day2.html#population-and-sample",
     "title": "Day 2",
@@ -110,13 +117,6 @@
     "title": "Day 2",
     "section": "Definition: Parameter",
     "text": "Definition: Parameter\n\n\n\nA parameter is a number that describes a population.\nConsider this scenario: After an election, 53% of voters supported a new park funding proposition.\n\nThis 53% is a parameter—it describes the entire voting population’s preference."
-  },
-  {
-    "objectID": "Day2.html#statistical-practice",
-    "href": "Day2.html#statistical-practice",
-    "title": "Day 2",
-    "section": "Statistical Practice",
-    "text": "Statistical Practice\n\n\nAccessing Population Data: Often, it’s impractical or impossible to examine every individual in a population.\nWhy Sample?: We select a sample of size \\(n\\) because it allows us to estimate population characteristics like mean \\(\\mu\\) and standard deviation \\(\\sigma\\).\nPurpose of Sampling: Sampling helps infer the broader population’s characteristics from a representative set of data."
   },
   {
     "objectID": "Day2.html#key-sample-statistics",
