@@ -91,6 +91,132 @@
     "text": "Group Activity 1\n\n\n\n\n\n\n\n\nLet’s do a small activity today about simple random sampling\nAnd answer a few survey questions about the class in general\n\n\n\n\n −+ 10:00"
   },
   {
+    "objectID": "Day2.html#population-and-sample",
+    "href": "Day2.html#population-and-sample",
+    "title": "Day 2",
+    "section": "Population and Sample",
+    "text": "Population and Sample\n\n\n\nAn element is an object on which a measurement is taken.\nA population is a collection of elements about which we wish to make an inference.\nA sample unit are non overlapping collections of elements from the population that cover the entire population.\nA frame is a list of sampling units.\nA sample is a collection of sampling units drawn from a single frame or from multiple frames."
+  },
+  {
+    "objectID": "Day2.html#key-concept-statistic",
+    "href": "Day2.html#key-concept-statistic",
+    "title": "Day 2",
+    "section": "Key Concept: Statistic",
+    "text": "Key Concept: Statistic\n\n\n\nStatistic help us summarize information about groups.\nExample: In a poll of 500 likely voters:\n\n68% indicated that the economy is their top concern.\n\nThis 68% is a statistic—it describes the sample of voters."
+  },
+  {
+    "objectID": "Day2.html#definition-parameter",
+    "href": "Day2.html#definition-parameter",
+    "title": "Day 2",
+    "section": "Definition: Parameter",
+    "text": "Definition: Parameter\n\n\n\nA parameter is a number that describes a population.\nConsider this scenario: After an election, 53% of voters supported a new park funding proposition.\n\nThis 53% is a parameter—it describes the entire voting population’s preference."
+  },
+  {
+    "objectID": "Day2.html#statistical-practice",
+    "href": "Day2.html#statistical-practice",
+    "title": "Day 2",
+    "section": "Statistical Practice",
+    "text": "Statistical Practice\n\n\nAccessing Population Data: Often, it’s impractical or impossible to examine every individual in a population.\nWhy Sample?: We select a sample of size \\(n\\) because it allows us to estimate population characteristics like mean \\(\\mu\\) and standard deviation \\(\\sigma\\).\nPurpose of Sampling: Sampling helps infer the broader population’s characteristics from a representative set of data."
+  },
+  {
+    "objectID": "Day2.html#key-sample-statistics",
+    "href": "Day2.html#key-sample-statistics",
+    "title": "Day 2",
+    "section": "Key Sample Statistics",
+    "text": "Key Sample Statistics\n\n\nSample Mean (\\(\\bar{y}\\)):\n\nCalculation: \\(\\bar{y} = \\frac{1}{n} \\sum_{i=1}^n y_i\\)\n\nSample Variance (\\(S^2\\)):\n\nCalculation: \\(S^2 = \\frac{1}{n-1} \\sum_{i=1}^n (y_i - \\bar{y})^2\\)\n\nSample Standard Deviation (\\(S\\)):\n\nCalculation: \\(S = \\sqrt{S^2}\\)"
+  },
+  {
+    "objectID": "Day2.html#understanding-random-variables-r.v.",
+    "href": "Day2.html#understanding-random-variables-r.v.",
+    "title": "Day 2",
+    "section": "Understanding Random Variables (R.V.)",
+    "text": "Understanding Random Variables (R.V.)\n\n\nRandom Sampling: The process of randomly selecting an element from a population to survey its characteristics.\nDefinition (Random Variables): A random variable is a numerical outcome of a probability experiment.\n\n\n\n\nRandom variables help us quantify the results of random sampling in numeric terms."
+  },
+  {
+    "objectID": "Day2.html#probability-distribution-of-a-r.v.",
+    "href": "Day2.html#probability-distribution-of-a-r.v.",
+    "title": "Day 2",
+    "section": "Probability Distribution of a R.V.",
+    "text": "Probability Distribution of a R.V.\n\n\nAccess to Population Data: If every element of the population is accessible, we can describe the chances of obtaining specific values of a random variable.\nDefinition (Probability Distribution): For a discrete random variable, the probability distribution specifies the probability for each possible value of the random variable.\n\n\n\n\nThe probability distribution is fundamental in understanding how values of a random variable are distributed across possible outcomes."
+  },
+  {
+    "objectID": "Day2.html#probability-distribution-number-of-children",
+    "href": "Day2.html#probability-distribution-number-of-children",
+    "title": "Day 2",
+    "section": "Probability Distribution: Number of Children",
+    "text": "Probability Distribution: Number of Children\n\\(Y=\\{\\text{Number of children per woman}\\}\\)"
+  },
+  {
+    "objectID": "Day2.html#probability-distribution-table",
+    "href": "Day2.html#probability-distribution-table",
+    "title": "Day 2",
+    "section": "Probability Distribution Table",
+    "text": "Probability Distribution Table\n\n\n\n\n\n\nNumber_of_Children\nProbability\n\n\n\n\n0\n0.273\n\n\n1\n0.160\n\n\n2\n0.244\n\n\n3\n0.154\n\n\n4\n0.082\n\n\n5\n0.039\n\n\n6\n0.020\n\n\n7\n0.011\n\n\n8\n0.017"
+  },
+  {
+    "objectID": "Day2.html#probability-rules-for-py",
+    "href": "Day2.html#probability-rules-for-py",
+    "title": "Day 2",
+    "section": "Probability Rules for \\(P(y)\\)",
+    "text": "Probability Rules for \\(P(y)\\)\n\n\n\nRule 1: Probability values are restricted between 0 and 1.\n\nNotation: \\(0 \\leqslant P(y) \\leqslant 1\\)\n\nRule 2: The sum of the probabilities for all possible outcomes equals 1.\n\nNotation: \\(\\sum_y P(y) = 1\\)"
+  },
+  {
+    "objectID": "Day2.html#quiz",
+    "href": "Day2.html#quiz",
+    "title": "Day 2",
+    "section": "Quiz",
+    "text": "Quiz\n\nWhat is the probability that a randomly selected woman has exactly two children?\n\n \n\nWhat is the probability that a randomly selected woman has fewer two children?"
+  },
+  {
+    "objectID": "Day2.html#population-expected-value",
+    "href": "Day2.html#population-expected-value",
+    "title": "Day 2",
+    "section": "Population Expected Value",
+    "text": "Population Expected Value\n\nThe expected value summarizes the center of a distribution.\n\nExpected Value:\n\nNotation: \\(E(y)=\\sum_y y \\cdot p(y)\\)\n\\(E(y)\\) represents the average or mean value of all measurements in the population.\n\nPopulation Mean (\\(\\mu\\)): Denoted by \\(\\mu\\), it is equivalent to \\(E(y)\\) and is a parameter describing the population."
+  },
+  {
+    "objectID": "Day2.html#variability-measures-variance-and-standard-deviation",
+    "href": "Day2.html#variability-measures-variance-and-standard-deviation",
+    "title": "Day 2",
+    "section": "Variability Measures: Variance and Standard Deviation",
+    "text": "Variability Measures: Variance and Standard Deviation\n\n\n\nVariance: Measures the spread of measurements around the mean (\\(\\mu\\)).\n\nFormula: \\(\\sigma^2=V(y)=E\\left[(y-\\mu)^2\\right]=\\sum_y(y-\\mu)^2 \\cdot p(y)\\)\n\nStandard Deviation (SD): The square root of the variance, reflecting the average deviation from the mean.\n\nFormula: \\(\\sigma =SD=\\sqrt{\\sigma^2}\\)"
+  },
+  {
+    "objectID": "Day2.html#calculate-sample-statistics",
+    "href": "Day2.html#calculate-sample-statistics",
+    "title": "Day 2",
+    "section": "Calculate Sample Statistics",
+    "text": "Calculate Sample Statistics\n\nQuestion: A simple random sample of size 10 from a population includes the following measurements:\n\n\\(2, 0, 1, 0, 3, 2, 2, 6, 0, 1\\)\n\nTask: Calculate the sample mean, variance, and standard deviation."
+  },
+  {
+    "objectID": "Day2.html#chebyshevs-inequality-explained",
+    "href": "Day2.html#chebyshevs-inequality-explained",
+    "title": "Day 2",
+    "section": "Chebyshev’s Inequality Explained",
+    "text": "Chebyshev’s Inequality Explained\n\n\nKey Concept: Chebyshev’s Inequality states that for any dataset, the proportion of data within \\(k\\) standard deviations from the mean is at least \\(1 - \\frac{1}{k^2}\\) for any \\(k &gt; 1\\).\nImplication: As \\(k\\) increases, a larger proportion of the data is expected to fall closer to the mean, providing insight into data spread and central tendency."
+  },
+  {
+    "objectID": "Day2.html#exercise",
+    "href": "Day2.html#exercise",
+    "title": "Day 2",
+    "section": "Exercise",
+    "text": "Exercise\n\n\n\nTask: Calculate the minimum proportion of data within \\(k\\) standard deviations of the mean for \\(k=2\\) and \\(k=3\\).\n\nFor \\(k=2\\): \\[\n\\text{Proportion} = 1 - \\frac{1}{k^2} = \\ldots\n\\]\nFor \\(k=3\\): \\[\n\\text{Proportion} = 1 - \\frac{1}{k^2} = \\ldots\n\\]"
+  },
+  {
+    "objectID": "Day2.html#understanding-chebyshevs-inequality",
+    "href": "Day2.html#understanding-chebyshevs-inequality",
+    "title": "Day 2",
+    "section": "Understanding Chebyshev’s Inequality",
+    "text": "Understanding Chebyshev’s Inequality\n\n\nChebyshev’s Inequality Formula: \\[\nP(|y-\\mu| \\leq k \\cdot \\sigma) \\geqslant 1-\\frac{1}{k^2}\n\\]\n\nInterpretation: This formula states that the probability of the random variable \\(y\\) falling within \\(k\\) standard deviations (\\(\\sigma\\)) of the mean (\\(\\mu\\)) is at least \\(1 - \\frac{1}{k^2}\\)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Math 313: Fall 2024",
+    "section": "",
+    "text": "Welcome to the world of survey statistics!"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -103,13 +229,6 @@
     "title": "About",
     "section": "",
     "text": "Acquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Math 313: Fall 2024",
-    "section": "",
-    "text": "Welcome to the world of survey statistics!"
   },
   {
     "objectID": "RandRStudio.html",

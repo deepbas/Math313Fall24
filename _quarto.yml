@@ -17,9 +17,9 @@ website:
           - text: "Lecture 1"
             href: Day1.html 
             target: "_blank"
-          # - text: "Lecture 2"
-          #   href: Day2.html
-          #   target: "_blank"
+          - text: "Lecture 2"
+            href: Day2.html
+            target: "_blank"
           # - text: "Lecture 3"
           #   href: Day3.html
           #   target: "_blank"
@@ -96,6 +96,3 @@ execute:
   echo: true
   warning: false
 
-language:
-  label:
-    chapter: "Chapter "

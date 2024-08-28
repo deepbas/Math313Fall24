@@ -1,0 +1,263 @@
+---
+title: "Day 2"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: "Bastola"
+format:
+  revealjs: 
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(xaringanExtra)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+
+# read.csv("https://raw.githubusercontent.com/deepbas/statdatasets/main/agstrat.csv")
+```
+
+
+## Population and Sample
+
+::: cle
+::: incremental
+- An **element** is an object on which a measurement is taken.
+- A **population** is a collection of elements about which we wish to make an inference.
+- A **sample unit** are non overlapping collections of elements from the population that cover the entire population. 
+- A **frame** is a list of sampling units.
+- A **sample** is a collection of sampling units drawn from a single frame or from multiple frames.
+:::
+:::
+
+
+## Key Concept: Statistic
+
+<br>
+
+::: fsp
+- **Statistic** help us summarize information about groups.
+- Example: In a poll of 500 likely voters:
+  - **68%** indicated that the economy is their top concern.
+- This **68%** is a statistic—it describes the sample of voters.
+:::
+
+## Definition: Parameter
+
+<br>
+
+::: fsp
+- A **parameter** is a number that describes a population.
+- Consider this scenario: After an election, 53% of voters supported a new park funding proposition.
+  - This **53%** is a parameter—it describes the entire voting population's preference.
+:::
+
+## Statistical Practice 
+
+::: cle
+- **Accessing Population Data**: Often, it's impractical or impossible to examine every individual in a population.
+- **Why Sample?**: We select a sample of size $n$ because it allows us to estimate population characteristics like mean $\mu$ and standard deviation $\sigma$.
+- **Purpose of Sampling**: Sampling helps infer the broader population's characteristics from a representative set of data.
+:::
+
+## Key Sample Statistics
+
+::: cle1
+- **Sample Mean ($\bar{y}$)**: 
+  - Calculation: $\bar{y} = \frac{1}{n} \sum_{i=1}^n y_i$
+- **Sample Variance ($S^2$)**:
+  - Calculation: $S^2 = \frac{1}{n-1} \sum_{i=1}^n (y_i - \bar{y})^2$
+- **Sample Standard Deviation ($S$)**:
+  - Calculation: $S = \sqrt{S^2}$
+:::
+
+## Understanding Random Variables (R.V.)
+
+::: cle2
+- **Random Sampling**: The process of randomly selecting an element from a population to survey its characteristics.
+- **Definition (Random Variables)**: A random variable is a numerical outcome of a probability experiment.
+:::
+
+::: green-h
+::: font80
+Random variables help us quantify the results of random sampling in numeric terms.
+:::
+:::
+
+## Probability Distribution of a R.V.
+
+::: cle3
+- **Access to Population Data**: If every element of the population is accessible, we can describe the chances of obtaining specific values of a random variable.
+- **Definition (Probability Distribution)**: For a discrete random variable, the probability distribution specifies the probability for each possible value of the random variable.
+:::
+
+::: green-h
+::: font80
+The probability distribution is fundamental in understanding how values of a random variable are distributed across possible outcomes.
+:::
+:::
+
+## Probability Distribution: Number of Children
+
+ $Y=\{\text{Number of children per woman}\}$
+
+
+```{r, echo=FALSE}
+library(ggplot2)
+
+# Example data frame
+data <- data.frame(
+  Number_of_Children = 0:8,
+  Probability = c(0.273, 0.160, 0.244, 0.154, 0.082, 0.039, 0.020, 0.011, 0.017)
+)
+
+# Create the plot
+plot <- ggplot(data, aes(x = factor(Number_of_Children), y = Probability)) +
+  geom_col(fill = "skyblue") +
+  geom_text(aes(label = sprintf("%.3f", Probability)), vjust = -0.5, size = 3.5) +
+  labs(x = "Number of Children", y = "Probability") +
+  ylim(0, 0.4) +  # Set y-axis limits
+  theme_minimal()
+
+# Print the plot
+print(plot)
+
+```
+
+
+## Probability Distribution Table
+
+::: font80
+
+```{r, echo=FALSE}
+knitr::kable(data)
+```
+
+:::
+
+## Probability Rules for $P(y)$
+
+<br>
+
+::: bq
+- **Rule 1**: Probability values are restricted between 0 and 1.
+  - Notation: $0 \leqslant P(y) \leqslant 1$
+- **Rule 2**: The sum of the probabilities for all possible outcomes equals 1.
+  - Notation: $\sum_y P(y) = 1$
+:::
+
+
+## Quiz
+
+1. What is the probability that a randomly selected woman has exactly two children?
+
+<br>
+<br>
+
+2. What is the probability that a randomly selected woman has fewer two children?
+
+<br>
+<br>
+
+
+## Population Expected Value
+
+::: owh
+The expected value summarizes the center of a distribution.
+
+- **Expected Value**: 
+  - Notation: $E(y)=\sum_y y \cdot p(y)$
+  - $E(y)$ represents the average or mean value of all measurements in the population.
+- **Population Mean ($\mu$)**: Denoted by $\mu$, it is equivalent to $E(y)$ and is a parameter describing the population.
+:::
+
+## Variability Measures: Variance and Standard Deviation
+
+::: ws
+::: font90
+- **Variance**: Measures the spread of measurements around the mean ($\mu$).
+  - Formula: $\sigma^2=V(y)=E\left[(y-\mu)^2\right]=\sum_y(y-\mu)^2 \cdot p(y)$
+- **Standard Deviation (SD)**: The square root of the variance, reflecting the average deviation from the mean.
+    - Formula: $\sigma =SD=\sqrt{\sigma^2}$
+:::
+:::
+
+## Calculate Sample Statistics
+
+- **Question**: A simple random sample of size 10 from a population includes the following measurements:
+  - $2, 0, 1, 0, 3, 2, 2, 6, 0, 1$
+- **Task**: Calculate the sample mean, variance, and standard deviation.
+
+
+
+## Chebyshev's Inequality Explained
+
+::: cle4
+- **Key Concept**: Chebyshev's Inequality states that for any dataset, the proportion of data within $k$ standard deviations from the mean is at least $1 - \frac{1}{k^2}$ for any $k > 1$.
+- **Implication**: As $k$ increases, a larger proportion of the data is expected to fall closer to the mean, providing insight into data spread and central tendency.
+:::
+
+
+## Exercise
+
+::: cle5
+::: font80
+- **Task**: Calculate the minimum proportion of data within $k$ standard deviations of the mean for $k=2$ and $k=3$.
+  - For $k=2$:
+    $$
+    \text{Proportion} = 1 - \frac{1}{k^2} = \ldots
+    $$
+  - For $k=3$:
+    $$
+    \text{Proportion} = 1 - \frac{1}{k^2} = \ldots
+    $$
+:::
+:::
+
+## Understanding Chebyshev's Inequality
+
+::: dse
+- **Chebyshev's Inequality Formula**:
+  $$
+  P(|y-\mu| \leq k \cdot \sigma) \geqslant 1-\frac{1}{k^2}
+  $$
+  - **Interpretation**: This formula states that the probability of the random variable $y$ falling within $k$ standard deviations ($\sigma$) of the mean ($\mu$) is at least $1 - \frac{1}{k^2}$.
+:::
+
+
+
+## 
+
+```{=html}
+<iframe width="1280" height="800" src="https://shinylive.io/r/editor/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4BzSampFSAJmEQRAYgAEAETgAzPnHUBVAJIiArrXUAeALTqd1CwBMAClElx2I9etK1S1HBuEHDUXmCatJykjAxmfiTqRDrqAHJmMPRwjEkpAMK81E6MFEJgArje6py0TnD0LAAyUKxE8V4QPj41dQ2MwaEdXV3cACzhAEJQBADWkoxtEE5lFVXDqOEAKryc6mio6k5Rsi27pNwGR9Gx9PG0icm+F+oQGVk5jwSFxRTqfHvqbisVDyC5+AhQajqEGoMzUKAJCAYdTbAyoBYNei0OikVh7TicIgEWgIuBOdQAd383HUcGmNOIZjIuXUX2xP06UXUZk4ZN8RFZkIIcNJTwMcAAHqg4ARyOT4FBOoryQA3FgkiAEAyPc6XKIxOKIjArSqdYbQ8IAUSlMrl6gAapCzAZ2ABZOkQASIdRlXC0mBW9gADQE6gAvOpAIhEwAl6gAVOoXOwJQIALorVZm9bhR2xRVa72+-05ljB0MR6PJ9R2ACtAgAegp44nk2mM2t1JnhjAoHwBmEOz5SFB6IEAPLxWGkcJOBFQTYjwImwfQuSkCekKcz-UuNcrDvKHzKZRqLS6fTVbIq7LqOSSWgEES8xjXnK2exM2X3CDsPhTv1tJu8ShiAVQaJoc6XqQZioFUs7DtYdjwVAGA6Mw8BDF06SZNkAD6yS4QU7IlJ0EYAAyIAAHKawwuBiI7Yv4eIRgQ7BkRgCgAOwAMx+uxACMABsZF8RxoyjKJ-EAKwSeo7FkZRCiiWR3EAJzKQoIlyRgZH8fxyn8Zxh6dlUYHqHkQoiuQ1TDn40QPpwVQwGYiHVBk7DIQAJNh7z4TohHfCRzZeXRRCYoxuLGWqeaagY76cO5Hlzt5bx4QRRFFEFdjOQ2TYJiF9FYjigimWa4HHPCeLIb4i5wFUgFTp5yELqOcV2CRdSMC1gTsKBWaHHOVQAL5+kc96kLsEbcaG6gaAAynApAvKlHwpDUkgQLQegQsyY3+LsOhEDkuoDQhw6taVPjlZwJxVfqNx3IksjyPVk7xE1O5rq5HXZLu8i9R20jPdOyF+lAcCcFWEY6NMpBHewPlpf5GUchU6jMYmhURYIoYANQrh4RAwLhxBhHo1BQhGZScDMrCjs6KzqPj-U+ITxPkBK07g5D8JZJT1TonwpA6OEACkGDcToRaheFxUCGjKoAFY8ktEY2OxSnVLQABeBhTRgUkCMz5p7BAEDyKS4Qc6QRaxhGzl+hj7HqbeI6hOGAuxGQItlO6ioe+Lkt+rmGpagHEtS3g6gO+o0Wh3AaPcMr0Qe-xBt+qTR0e2UJTLOUTMrrzkN2z6YCI6t5mBaUUcY2UMsMcVjPG+arB0AGWnsaMeMrrq8C4TAfC0D2YTGUNyhDSIp5YEyYp7OgdAQoiPoQDwfCsAAgug7AWB7Fh+s+r4ewf2TKGAQ2pkAA"></iframe>
+```
+
+
+
