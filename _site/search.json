@@ -1,94 +1,10 @@
 [
   {
-    "objectID": "Day1.html#something-about-me",
-    "href": "Day1.html#something-about-me",
-    "title": "Day 1",
-    "section": "Something about me",
-    "text": "Something about me\n\n\n\n\n\nFirst year at Salisbury\nOriginally from Nepal\nResearch in Statistical Computation and Applied Statistics\nAvid learner and traveler\n\n\n\n\n\n\n\n\n\nMy website"
-  },
-  {
-    "objectID": "Day1.html#active-participation",
-    "href": "Day1.html#active-participation",
-    "title": "Day 1",
-    "section": "Active Participation",
-    "text": "Active Participation\n\n\n\nEngage Actively\n\nTake lecture notes\nFollow class handouts\n\nAsk Questions\n\nEvery question is valuable; we’re learning together\n\nGain Conceptual Understanding\n\nTo be able to apply the knowledge; understanding the concepts is key"
-  },
-  {
-    "objectID": "Day1.html#tell-me-something-about-yourself",
-    "href": "Day1.html#tell-me-something-about-yourself",
-    "title": "Day 1",
-    "section": "Tell me something about yourself!",
-    "text": "Tell me something about yourself!\n\n\n\n\n\nYour name?\nGender Pronouns?\nFavorite Summer Memory?\n\n\n\n\n\n\n\nvia GIPHY"
-  },
-  {
-    "objectID": "Day1.html#class-pipelines",
-    "href": "Day1.html#class-pipelines",
-    "title": "Day 1",
-    "section": "Class Pipelines",
-    "text": "Class Pipelines\n\n\n\nMost of the course information and schedule will be posted in MyClasses\nHomework will be posted but not collected\nLabs most Tuesdays; lab reports due in a week from the lab date\nQuizzes every Friday; includes HW, lectures, labs"
-  },
-  {
-    "objectID": "Day1.html#what-will-a-typical-dayweek-look-like",
-    "href": "Day1.html#what-will-a-typical-dayweek-look-like",
-    "title": "Day 1",
-    "section": "What will a typical day/week look like?",
-    "text": "What will a typical day/week look like?\n\n\n\nBefore class:\n\nRead assigned topics from textbook\nWork on homework/lab reports, come with questions\n\nDuring class:\n\nMini lectures\nClass activities"
-  },
-  {
-    "objectID": "Day1.html#welcome-to-survey-sampling",
-    "href": "Day1.html#welcome-to-survey-sampling",
-    "title": "Day 1",
-    "section": "Welcome to Survey Sampling",
-    "text": "Welcome to Survey Sampling\n\n\n\n\nWhat is Survey Sampling?\n\nEssential statistical method for collecting representative data.\nKey tool in business, health sciences, environmental studies, and more."
-  },
-  {
-    "objectID": "Day1.html#why-study-survey-sampling",
-    "href": "Day1.html#why-study-survey-sampling",
-    "title": "Day 1",
-    "section": "Why Study Survey Sampling?",
-    "text": "Why Study Survey Sampling?\n\n\n\n\nData-Driven Decision Making\n\nInformed decisions require accurate data.\nSampling helps gather this data efficiently and effectively."
-  },
-  {
-    "objectID": "Day1.html#basic-principles-of-survey-sampling",
-    "href": "Day1.html#basic-principles-of-survey-sampling",
-    "title": "Day 1",
-    "section": "Basic Principles of Survey Sampling",
-    "text": "Basic Principles of Survey Sampling\n\n\n\n\nRandom Sampling\n\nEach member of a population has an equal chance of selection.\nEnsures unbiased data representation.\n\nSystematic Approach\n\nMethodical selection process to avoid sampling bias."
-  },
-  {
-    "objectID": "Day1.html#introduction-to-survey-biases",
-    "href": "Day1.html#introduction-to-survey-biases",
-    "title": "Day 1",
-    "section": "Introduction to Survey Biases",
-    "text": "Introduction to Survey Biases\n\n\n\nDiscover how the phrasing of survey questions can influence the responses, potentially leading to biased outcomes.\n\nObjective: Understand the impact of wording in survey questions.\nFocus: Compare biased vs. neutral phrasing."
-  },
-  {
-    "objectID": "Day1.html#case-study-on-welfare-spending",
-    "href": "Day1.html#case-study-on-welfare-spending",
-    "title": "Day 1",
-    "section": "Case Study on Welfare Spending",
-    "text": "Case Study on Welfare Spending\n\n\n\nBiased Question: “Do you think the government spends too much money on welfare without adequate proof of its necessity?”\n\nThis question suggests unnecessary spending, leading to potentially biased negative responses.\n\nNeutral Question: “How should the government allocate funds for welfare?”\n\nRephrased to remove bias, showing a significant drop in negative responses (only 29% suggest reducing spending)."
-  },
-  {
-    "objectID": "Day1.html#health-care-for-the-elderly",
-    "href": "Day1.html#health-care-for-the-elderly",
-    "title": "Day 1",
-    "section": "Health Care for the Elderly",
-    "text": "Health Care for the Elderly\n\n\n\nOriginal Biased Question: “Do you agree that it is disgraceful for the government to ignore the health care needs of the elderly?”\n\nEmotive language (“disgraceful”) can manipulate responses.\n\nNeutral Reformulation: “How do you rate the government’s handling of health care needs for the elderly?”\n\nMore objective, allowing respondents to express true opinions without emotional influence."
-  },
-  {
-    "objectID": "Day1.html#the-importance-of-neutral-question-phrasing",
-    "href": "Day1.html#the-importance-of-neutral-question-phrasing",
-    "title": "Day 1",
-    "section": "The Importance of Neutral Question Phrasing",
-    "text": "The Importance of Neutral Question Phrasing\n\n\nHighlighting the critical need for neutrality in survey questions to obtain accurate and reliable data.\n\nKey Takeaway: Survey questions should be carefully crafted to avoid leading respondents.\nGoal: Achieve unbiased data that truly reflects public opinion."
-  },
-  {
-    "objectID": "Day1.html#group-activity-1",
-    "href": "Day1.html#group-activity-1",
-    "title": "Day 1",
-    "section": " Group Activity 1",
-    "text": "Group Activity 1\n\n\n\n\n\n\n\n\nLet’s do a small activity today about simple random sampling\nAnd answer a few survey questions about the class in general\n\n\n\n\n −+ 10:00"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Math 313: Fall 2024",
+    "section": "",
+    "text": "Welcome to the world of survey statistics!"
   },
   {
     "objectID": "Day2.html#statistical-practice",
@@ -210,25 +126,60 @@
     "text": "Understanding Chebyshev’s Inequality\n\n\nChebyshev’s Inequality Formula: \\[\nP(|y-\\mu| \\leq k \\cdot \\sigma) \\geqslant 1-\\frac{1}{k^2}\n\\]\n\nInterpretation: This formula states that the probability of the random variable \\(y\\) falling within \\(k\\) standard deviations (\\(\\sigma\\)) of the mean (\\(\\mu\\)) is at least \\(1 - \\frac{1}{k^2}\\)."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Math 313: Fall 2024",
-    "section": "",
-    "text": "Welcome to the world of survey statistics!"
+    "objectID": "Day3.html#review-of-key-statistical-concepts",
+    "href": "Day3.html#review-of-key-statistical-concepts",
+    "title": "Day 3",
+    "section": "Review of Key Statistical Concepts",
+    "text": "Review of Key Statistical Concepts\n\n\nCore Parameters and Statistics\n\nExpected Value\nVariance\nStandard Deviation\n\nConcept of Sampling\n\nUsing sample statistics to approximate population parameters."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Welcome to Survey Design and Sampling, where we apply statistical principles to real-world survey challenges in fields like business, social sciences, health sciences, and environmental studies. This course emphasizes practical applications over theoretical foundations, preparing students to design, implement, and analyze surveys effectively. Through case studies and hands-on projects, students will tackle the peculiarities and inferential challenges of survey design across various domains.\nWe will explore data collection methods, address potential biases, and discuss ethical considerations in survey execution. The course aims to cultivate both technical skills and critical thinking about how survey methodologies influence research outcomes and professional decisions. By understanding these dynamics, students will be equipped to conduct impactful research with consideration for cultural and ethical contexts.\n\n\n\n\nAcquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
+    "objectID": "Day3.html#understanding-sampling-distribution",
+    "href": "Day3.html#understanding-sampling-distribution",
+    "title": "Day 3",
+    "section": "Understanding Sampling Distribution",
+    "text": "Understanding Sampling Distribution\n\n\nAccuracy of Approximation\n\nHow accurately do sample statistics estimate population parameters?\n\nNeed for Further Exploration\n\nIntroduction to the concept of sampling distribution to assess the reliability of statistical approximations."
   },
   {
-    "objectID": "about.html#learning-objectives",
-    "href": "about.html#learning-objectives",
-    "title": "About",
-    "section": "",
-    "text": "Acquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
+    "objectID": "Day3.html#sampling-distribution",
+    "href": "Day3.html#sampling-distribution",
+    "title": "Day 3",
+    "section": "Sampling Distribution",
+    "text": "Sampling Distribution\n\n\n\n\n\n\n\nDefinition\n\n\nSampling Distribution: The sampling distribution of a sample statistic \\(\\hat{\\theta}\\) calculated from a sample of \\(n\\) measurements is probabiity distribution of that statistic \\(\\hat{\\theta}\\)"
+  },
+  {
+    "objectID": "Day3.html#estimator",
+    "href": "Day3.html#estimator",
+    "title": "Day 3",
+    "section": "Estimator",
+    "text": "Estimator\n\n\n\n\n\n\n\nDefinition\n\n\nAn estimator is a function that uses sample data to approximate a population parameter. Commonly, the sample mean (\\(\\bar{x}\\)) serves as an estimator for the population mean (\\(\\mu\\))."
+  },
+  {
+    "objectID": "Day3.html#example-estimating-average-height",
+    "href": "Day3.html#example-estimating-average-height",
+    "title": "Day 3",
+    "section": "Example: Estimating Average Height",
+    "text": "Example: Estimating Average Height\n\nConsider estimating the average height (\\(\\mu\\)) of students. A sample of 5 students yielded these heights in inches: 60, 62, 65, 58, 66.\nCalculation\nThe sample mean (\\(\\bar{y}\\)) is calculated as:\n\\[\n\\bar{y} = \\frac{\\sum_{i=1}^{n} y_i}{n} = \\frac{60 + 62 + 65 + 58 + 66}{5} = 62.2 \\text{ inches}\n\\]\nThis computed \\(\\bar{y} = 62.2\\) inches serves as our estimate for the average student height (\\(\\mu\\))."
+  },
+  {
+    "objectID": "Day3.html#properties-of-the-sampling-distribution-of-barx",
+    "href": "Day3.html#properties-of-the-sampling-distribution-of-barx",
+    "title": "Day 3",
+    "section": "Properties of the Sampling Distribution of \\(\\bar{x}\\)",
+    "text": "Properties of the Sampling Distribution of \\(\\bar{x}\\)\n\n\n\nThe mean of the sampling distribution of \\(\\bar{y}\\) equals to the mean of the sampled population. That is \\(E(\\bar{y})=\\mu\\)\nThe variance of the sampling distribution of \\(\\bar{y}\\) is given by\n\n\\[V(\\bar{y})=\\frac{\\sigma^2}{n}\\]\n\\(S D(\\bar{y})=\\sqrt{\\frac{\\sigma^2}{h}}=\\frac{\\sigma}{\\sqrt{n}}\\) The standard deviation \\(\\sigma_{\\bar{y}}\\) is often referred to as the Standard Error."
+  },
+  {
+    "objectID": "Day3.html#central-limit-theorem",
+    "href": "Day3.html#central-limit-theorem",
+    "title": "Day 3",
+    "section": "Central Limit Theorem",
+    "text": "Central Limit Theorem\n\nTheorem: Consider a random sample of \\(n\\) observations selected from a population (any population/probability distribution) with mean \\(\\mu\\) and variance \\(\\sigma^2\\). Then when \\(n\\) is sufficiently large, the sampling distribution of \\(\\bar{y}\\) is approximately a normal distribution with mean \\(E(\\bar{y})=\\mu\\), and \\(SD(\\bar{y})=\\frac{\\sigma}{\\sqrt{n}}\\).\n\n\nThe larger \\(n\\) is, the more closely the sampling distribution will approximate a normal shape."
+  },
+  {
+    "objectID": "Day3.html#recall-the-simulation-slide-4",
+    "href": "Day3.html#recall-the-simulation-slide-4",
+    "title": "Day 3",
+    "section": "Recall the simulation (Slide 4)",
+    "text": "Recall the simulation (Slide 4)\n\n\nSuppose we have selected a random sample of \\(n=50\\) observations from a population with mean \\(\\mu=4\\) and variance \\(\\sigma^2=8\\).\n\nWhat is the value of the mean \\(E(\\bar{y})\\) and standard deviation (standard error) \\(\\sigma_{\\bar{y}}=\\sqrt{V(\\bar{y})}\\) of the sampling distribution of the sample mean \\(\\bar{y}\\).\n\n\n\nUse the sample data of size 50, compute the mean and standard deviation of \\(\\bar{y}\\). Compare the results with a.\n\n\n\nWhat is the probability that the sample mean is greater than 4?"
   },
   {
     "objectID": "RandRStudio.html",
@@ -278,5 +229,110 @@
     "title": "Setting Up R and RStudio",
     "section": "R Code Chunk Options",
     "text": "R Code Chunk Options\nBefore diving into data loading, let’s understand important R chunk options:\n\n\neval: Use eval=FALSE to prevent code from running but still display it.\n\necho: With echo=FALSE, the code is run but not displayed in the document.\n\ninclude: include=FALSE runs the code and hides both the code and output from the final output.\n\nExample to demonstrate:\n\n# This code will run, and both code and output will appear in the document.\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Welcome to Survey Design and Sampling, where we apply statistical principles to real-world survey challenges in fields like business, social sciences, health sciences, and environmental studies. This course emphasizes practical applications over theoretical foundations, preparing students to design, implement, and analyze surveys effectively. Through case studies and hands-on projects, students will tackle the peculiarities and inferential challenges of survey design across various domains.\nWe will explore data collection methods, address potential biases, and discuss ethical considerations in survey execution. The course aims to cultivate both technical skills and critical thinking about how survey methodologies influence research outcomes and professional decisions. By understanding these dynamics, students will be equipped to conduct impactful research with consideration for cultural and ethical contexts.\n\n\n\n\nAcquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
+  },
+  {
+    "objectID": "about.html#learning-objectives",
+    "href": "about.html#learning-objectives",
+    "title": "About",
+    "section": "",
+    "text": "Acquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
+  },
+  {
+    "objectID": "Day1.html#something-about-me",
+    "href": "Day1.html#something-about-me",
+    "title": "Day 1",
+    "section": "Something about me",
+    "text": "Something about me\n\n\n\n\n\nFirst year at Salisbury\nOriginally from Nepal\nResearch in Statistical Computation and Applied Statistics\nAvid learner and traveler\n\n\n\n\n\n\n\n\n\nMy website"
+  },
+  {
+    "objectID": "Day1.html#active-participation",
+    "href": "Day1.html#active-participation",
+    "title": "Day 1",
+    "section": "Active Participation",
+    "text": "Active Participation\n\n\n\nEngage Actively\n\nTake lecture notes\nFollow class handouts\n\nAsk Questions\n\nEvery question is valuable; we’re learning together\n\nGain Conceptual Understanding\n\nTo be able to apply the knowledge; understanding the concepts is key"
+  },
+  {
+    "objectID": "Day1.html#tell-me-something-about-yourself",
+    "href": "Day1.html#tell-me-something-about-yourself",
+    "title": "Day 1",
+    "section": "Tell me something about yourself!",
+    "text": "Tell me something about yourself!\n\n\n\n\n\nYour name?\nGender Pronouns?\nFavorite Summer Memory?\n\n\n\n\n\n\n\nvia GIPHY"
+  },
+  {
+    "objectID": "Day1.html#class-pipelines",
+    "href": "Day1.html#class-pipelines",
+    "title": "Day 1",
+    "section": "Class Pipelines",
+    "text": "Class Pipelines\n\n\n\nMost of the course information and schedule will be posted in MyClasses\nHomework will be posted but not collected\nLabs most Tuesdays; lab reports due in a week from the lab date\nQuizzes every Friday; includes HW, lectures, labs"
+  },
+  {
+    "objectID": "Day1.html#what-will-a-typical-dayweek-look-like",
+    "href": "Day1.html#what-will-a-typical-dayweek-look-like",
+    "title": "Day 1",
+    "section": "What will a typical day/week look like?",
+    "text": "What will a typical day/week look like?\n\n\n\nBefore class:\n\nRead assigned topics from textbook\nWork on homework/lab reports, come with questions\n\nDuring class:\n\nMini lectures\nClass activities"
+  },
+  {
+    "objectID": "Day1.html#welcome-to-survey-sampling",
+    "href": "Day1.html#welcome-to-survey-sampling",
+    "title": "Day 1",
+    "section": "Welcome to Survey Sampling",
+    "text": "Welcome to Survey Sampling\n\n\n\n\nWhat is Survey Sampling?\n\nEssential statistical method for collecting representative data.\nKey tool in business, health sciences, environmental studies, and more."
+  },
+  {
+    "objectID": "Day1.html#why-study-survey-sampling",
+    "href": "Day1.html#why-study-survey-sampling",
+    "title": "Day 1",
+    "section": "Why Study Survey Sampling?",
+    "text": "Why Study Survey Sampling?\n\n\n\n\nData-Driven Decision Making\n\nInformed decisions require accurate data.\nSampling helps gather this data efficiently and effectively."
+  },
+  {
+    "objectID": "Day1.html#basic-principles-of-survey-sampling",
+    "href": "Day1.html#basic-principles-of-survey-sampling",
+    "title": "Day 1",
+    "section": "Basic Principles of Survey Sampling",
+    "text": "Basic Principles of Survey Sampling\n\n\n\n\nRandom Sampling\n\nEach member of a population has an equal chance of selection.\nEnsures unbiased data representation.\n\nSystematic Approach\n\nMethodical selection process to avoid sampling bias."
+  },
+  {
+    "objectID": "Day1.html#introduction-to-survey-biases",
+    "href": "Day1.html#introduction-to-survey-biases",
+    "title": "Day 1",
+    "section": "Introduction to Survey Biases",
+    "text": "Introduction to Survey Biases\n\n\n\nDiscover how the phrasing of survey questions can influence the responses, potentially leading to biased outcomes.\n\nObjective: Understand the impact of wording in survey questions.\nFocus: Compare biased vs. neutral phrasing."
+  },
+  {
+    "objectID": "Day1.html#case-study-on-welfare-spending",
+    "href": "Day1.html#case-study-on-welfare-spending",
+    "title": "Day 1",
+    "section": "Case Study on Welfare Spending",
+    "text": "Case Study on Welfare Spending\n\n\n\nBiased Question: “Do you think the government spends too much money on welfare without adequate proof of its necessity?”\n\nThis question suggests unnecessary spending, leading to potentially biased negative responses.\n\nNeutral Question: “How should the government allocate funds for welfare?”\n\nRephrased to remove bias, showing a significant drop in negative responses (only 29% suggest reducing spending)."
+  },
+  {
+    "objectID": "Day1.html#health-care-for-the-elderly",
+    "href": "Day1.html#health-care-for-the-elderly",
+    "title": "Day 1",
+    "section": "Health Care for the Elderly",
+    "text": "Health Care for the Elderly\n\n\n\nOriginal Biased Question: “Do you agree that it is disgraceful for the government to ignore the health care needs of the elderly?”\n\nEmotive language (“disgraceful”) can manipulate responses.\n\nNeutral Reformulation: “How do you rate the government’s handling of health care needs for the elderly?”\n\nMore objective, allowing respondents to express true opinions without emotional influence."
+  },
+  {
+    "objectID": "Day1.html#the-importance-of-neutral-question-phrasing",
+    "href": "Day1.html#the-importance-of-neutral-question-phrasing",
+    "title": "Day 1",
+    "section": "The Importance of Neutral Question Phrasing",
+    "text": "The Importance of Neutral Question Phrasing\n\n\nHighlighting the critical need for neutrality in survey questions to obtain accurate and reliable data.\n\nKey Takeaway: Survey questions should be carefully crafted to avoid leading respondents.\nGoal: Achieve unbiased data that truly reflects public opinion."
+  },
+  {
+    "objectID": "Day1.html#group-activity-1",
+    "href": "Day1.html#group-activity-1",
+    "title": "Day 1",
+    "section": " Group Activity 1",
+    "text": "Group Activity 1\n\n\n\n\n\n\n\n\nLet’s do a small activity today about simple random sampling\nAnd answer a few survey questions about the class in general\n\n\n\n\n −+ 10:00"
   }
 ]
