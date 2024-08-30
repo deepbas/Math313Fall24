@@ -144,7 +144,7 @@
     "href": "Day3.html#recall-the-simulation-slide-4",
     "title": "Day 3",
     "section": "Recall the simulation (Slide 4)",
-    "text": "Recall the simulation (Slide 4)\n\n\nSuppose we have selected a random sample of \\(n=50\\) observations from a population with mean \\(\\mu=4\\) and variance \\(\\sigma^2=8\\).\n\nWhat is the value of the mean \\(E(\\bar{y})\\) and standard deviation (standard error) \\(\\sigma_{\\bar{y}}=\\sqrt{V(\\bar{y})}\\) of the sampling distribution of the sample mean \\(\\bar{y}\\).\n\n\n\nUse the sample data of size 50, compute the mean and standard deviation of \\(\\bar{y}\\). Compare the results with a.\n\n\n\nWhat is the probability that the sample mean is greater than 4?"
+    "text": "Recall the simulation (Slide 4)\n\n\nSuppose we have selected a random sample of \\(n=50\\) observations from a population with mean \\(\\mu=4\\) and variance \\(\\sigma^2=8\\).\n\nWhat is the value of the mean \\(E(\\bar{y})\\) and standard deviation (standard error) \\(\\sigma_{\\bar{y}}=\\sqrt{V(\\bar{y})}\\) of the sampling distribution of the sample mean \\(\\bar{y}\\).\n\n\n\nUse the sample data of size 50, compute the mean and standard deviation of \\(\\bar{y}\\). Compare the results with a.\n\n\n\nWhat is the probability that the sample mean is greater than 5?"
   },
   {
     "objectID": "about.html",

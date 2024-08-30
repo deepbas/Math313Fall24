@@ -151,7 +151,7 @@ b. Use the sample data of size 50, compute the mean and standard deviation of $\
 
 <br>
 
-c. What is the probability that the sample mean is greater than 4?
+c. What is the probability that the sample mean is greater than 5?
 
 <br>
 
