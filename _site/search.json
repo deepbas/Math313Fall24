@@ -130,7 +130,7 @@
     "href": "Day3.html#properties-of-the-sampling-distribution-of-barx",
     "title": "Day 3",
     "section": "Properties of the Sampling Distribution of \\(\\bar{x}\\)",
-    "text": "Properties of the Sampling Distribution of \\(\\bar{x}\\)\n\n\n\nThe mean of the sampling distribution of \\(\\bar{y}\\) equals to the mean of the sampled population. That is \\(E(\\bar{y})=\\mu\\)\nThe variance of the sampling distribution of \\(\\bar{y}\\) is given by\n\n\\[V(\\bar{y})=\\frac{\\sigma^2}{n}\\]\n\\(S D(\\bar{y})=\\sqrt{\\frac{\\sigma^2}{h}}=\\frac{\\sigma}{\\sqrt{n}}\\) The standard deviation \\(\\sigma_{\\bar{y}}\\) is often referred to as the Standard Error."
+    "text": "Properties of the Sampling Distribution of \\(\\bar{x}\\)\n\n\n\nThe mean of the sampling distribution of \\(\\bar{y}\\) equals to the mean of the sampled population. That is \\(E(\\bar{y})=\\mu\\)\nThe variance of the sampling distribution of \\(\\bar{y}\\) is given by\n\n\\[V(\\bar{y})=\\frac{\\sigma^2}{n}\\]\n\\(S D(\\bar{y})=\\sqrt{\\frac{\\sigma^2}{n}}=\\frac{\\sigma}{\\sqrt{n}}\\) The standard deviation \\(\\sigma_{\\bar{y}}\\) is often referred to as the Standard Error."
   },
   {
     "objectID": "Day3.html#central-limit-theorem",

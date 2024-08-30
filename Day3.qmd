@@ -121,7 +121,7 @@ This computed $\bar{y} = 62.2$ inches serves as our estimate for the average stu
 
 $$V(\bar{y})=\frac{\sigma^2}{n}$$
 
-$S D(\bar{y})=\sqrt{\frac{\sigma^2}{h}}=\frac{\sigma}{\sqrt{n}}$
+$S D(\bar{y})=\sqrt{\frac{\sigma^2}{n}}=\frac{\sigma}{\sqrt{n}}$
 The standard deviation $\sigma_{\bar{y}}$ is often referred to as the Standard Error.
 
 :::
