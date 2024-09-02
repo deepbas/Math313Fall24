@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.25">
 
   <meta name="author" content="Bastola">
-  <title>Math 313: Survey Design and Sampling – Day 1</title>
+  <title>Math 313: Survey Design and Sampling – Day 4</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -322,16 +387,14 @@
       margin-right: 0; 
     }
   </style>
-  <link href="site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" data-background-image="images/lake.jpg" data-background-opacity="0.5" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Day 1</h1>
-  <p class="subtitle">MATH 313: Survey Design and Sampling</p>
+  <h1 class="title">Day 4</h1>
+  <p class="subtitle">MATH 313: Survey Design and Samping</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -342,236 +405,313 @@ Bastola
 </div>
 
 </section>
-<section id="something-about-me" class="slide level2 centered-content">
-<h2>Something about me</h2>
-<div class="row">
-<div class="left">
-<div class="bq">
-<div>
+<section id="introduction-to-probability-sampling" class="slide level2">
+<h2>Introduction to Probability Sampling</h2>
+<div class="cle1">
+<div class="font70">
 <ul>
-<li class="fragment">First year at Salisbury</li>
-<li class="fragment">Originally from Nepal</li>
-<li class="fragment">Research in Statistical Computation and Applied Statistics</li>
-<li class="fragment">Avid learner and traveler</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="right">
-<p><br></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><a href="http://deepbas.io"><img data-src="images/website.png" alt="My website"></a></p>
-<figcaption>My website</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="active-participation" class="slide level2 centered-content">
-<h2>Active Participation</h2>
-<div class="bq">
-<div>
+<li><strong>Objective</strong>: Understand the basics of probability sampling and its importance in statistical inference.</li>
+<li><strong>Key Concepts</strong>:
 <ul>
-<li class="fragment"><strong>Engage Actively</strong>
-<ul>
-<li class="fragment">Take lecture notes</li>
-<li class="fragment">Follow class handouts</li>
-</ul></li>
-<li class="fragment"><strong>Ask Questions</strong>
-<ul>
-<li class="fragment">Every question is valuable; we’re learning together</li>
-</ul></li>
-<li class="fragment"><strong>Gain Conceptual Understanding</strong>
-<ul>
-<li class="fragment">To be able to apply the knowledge; understanding the concepts is key</li>
+<li><strong>Finite vs.&nbsp;Infinite Populations</strong>: Differentiates sampling dynamics where populations are either bounded (finite) or theoretically limitless (infinite).</li>
+<li><strong>Independent Selections</strong>: Each sample is selected without influence from the selections of other samples.</li>
+<li><strong>Sampling with Replacement</strong>: After a sample is selected, it is “replaced,” allowing it to be selected again in subsequent draws.</li>
+<li><strong>Effects on Variance and Estimation Accuracy</strong>: Discusses how different sampling methods affect the variability and accuracy of statistical estimates.</li>
 </ul></li>
 </ul>
 </div>
 </div>
 </section>
-<section id="tell-me-something-about-yourself" class="slide level2 centered-content">
-<h2>Tell me something about yourself!</h2>
-<div class="row">
-<div class="left">
-<p><br></p>
+<section id="detailed-example-of-probability-sampling" class="slide level2">
+<h2>Detailed Example of Probability Sampling</h2>
+<div class="cle3">
+<div class="font70">
+<ul>
+<li><strong>Probability Equation</strong>:
+<ul>
+<li>For each element in the population, the probability of its selection in a sample is denoted as:</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+P(\text{selection of element } i) = \delta_i
+\]</span></p>
+<ul>
+<li><strong>Example</strong>: Consider sampling from the set {1, 2, 3, 4} with defined probabilities.
+<ul>
+<li><strong>Context</strong>: This could represent a scenario where each number corresponds to a category or group within a larger population.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="implementation-of-sampling-techniques" class="slide level2">
+<h2>Implementation of Sampling Techniques</h2>
+<div class="cle2">
+<div class="font70">
+<p>Sampling typically involves randomly selecting elements based on their defined probabilities.</p>
+<ul>
+<li><p><strong>Sampling with Replacement</strong>: Each element has an equal or specified chance to be chosen again after it is selected.</p></li>
+<li><p><strong>Sampling without Replacement</strong>: Once an element is chosen, it is not returned to the pool for the remainder of the sampling process.</p></li>
+<li><p><strong>Impact on Variability</strong>:</p>
+<ul>
+<li>The choice between sampling with or without replacement can significantly affect the variability and bias in the estimation process.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="sampling-with-replacement" class="slide level2">
+<h2>Sampling with Replacement</h2>
+<div class="cle">
+<div class="font80">
+<ul>
+<li><strong>Definition</strong>: Each element has the same probability of being selected, independent of previous selections.</li>
+<li><strong>Probability Notation</strong>:
+<ul>
+<li><span class="math inline">\(\delta_i = \frac{1}{N}\)</span> for all <span class="math inline">\(i\)</span></li>
+</ul></li>
+</ul>
+<p><span class="math display">\[\begin{align*}
+\hat{\tau} = \frac{1}{n} \sum_{i=1}^n \frac{y_i}{\delta_i}
+\end{align*}\]</span></p>
+<ul>
+<li><strong>Unbiased Estimator</strong>: Shows how sampling with equal probabilities is unbiased regardless of selection order.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="advantages-of-varying-probabilities" class="slide level2">
+<h2>Advantages of Varying Probabilities</h2>
+<div class="cle">
+<div class="font80">
+<ul>
+<li><strong>Objective</strong>: Improve estimation by varying selection probabilities.</li>
+<li><strong>Typical Scenario</strong>: Sampling industrial firms with varying sizes.</li>
+</ul>
+<p><span class="math display">\[\begin{align*}
+\delta_i = \frac{y_i}{\tau}
+\end{align*}\]</span></p>
+<ul>
+<li><strong>Improved Estimates</strong>: Giving higher probabilities to units with greater relevance (e.g., larger firms).</li>
+</ul>
+<p><strong>Impact</strong>: This approach reduces variance and increases the accuracy of the estimates.</p>
+</div>
+</div>
+</section>
+<section id="practical-sampling-without-replacement" class="slide level2">
+<h2>Practical Sampling without Replacement</h2>
+<div class="cle">
+<div class="font70">
+<ul>
+<li><strong>Difference from With Replacement</strong>:
+<ul>
+<li>Changes in probabilities after each draw.</li>
+<li>More aligned with real-world sampling conditions.</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[\begin{align*}
+\hat{\tau} = \sum_{i=1}^n \frac{y_i}{\pi_i}
+\end{align*}\]</span></p>
+<ul>
+<li><strong>Calculation</strong>: Weights each sampled unit by the reciprocal of its probability of selection.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="example-from-section-3.3" class="slide level2">
+<h2>Example from Section 3.3</h2>
+<div class="mre">
+<ul>
+<li><strong>Set of Elements</strong>:
+<ul>
+<li>Let <span class="math inline">\(U = \{u_1, u_2, u_3, u_4\}\)</span> represent the population elements, where <span class="math inline">\(u_i\)</span> corresponds to an element.</li>
+</ul></li>
+<li><strong>Probabilities</strong>:
+<ul>
+<li>Associated probabilities of selection are denoted by <span class="math inline">\(\delta_i\)</span>, where:
+<ul>
+<li><span class="math inline">\(\delta_1 = \delta_2 = 0.1\)</span> and <span class="math inline">\(\delta_3 = \delta_4 = 0.4\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Define the elements and their respective probabilities</span></span>
+<span id="cb1-2"><a></a>elements <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb1-3"><a></a>deltas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.4</span>, <span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="possible-samples-and-their-estimated-counts" class="slide level2">
+<h2>Possible samples and their estimated counts</h2>
+<div class="mre">
+<div class="font80">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Possible samples and their probabilities</span></span>
+<span id="cb2-2"><a></a>samples <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>),</span>
+<span id="cb2-3"><a></a>                <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>))</span>
+<span id="cb2-4"><a></a><span class="co"># Compute tau_hat for each sample, ensuring to divide by the sample size</span></span>
+<span id="cb2-5"><a></a>tau_hats <span class="ot">&lt;-</span> <span class="fu">sapply</span>(samples, <span class="cf">function</span>(s) <span class="fu">sum</span>(elements[s] <span class="sc">/</span> deltas[s]) <span class="sc">/</span> <span class="fu">length</span>(s))</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a><span class="co"># Check tau_hats values</span></span>
+<span id="cb2-8"><a></a>tau_hats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 15.00  8.75 10.00 13.75 15.00  8.75 10.00 20.00  7.50 10.00</code></pre>
+</div>
+</div>
+<p>The estimator <span class="math inline">\(\hat{\tau}\)</span> for each sample is calculated using the formula:</p>
+<p><span class="math display">\[
+\hat{\tau} = \frac{1}{n} \sum_{i=1}^n \frac{y_i}{\delta_i}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="probabilities-calculations" class="slide level2">
+<h2>Probabilities calculations</h2>
+<div class="scroll-box-24">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Calculate pair probabilities</span></span>
+<span id="cb4-2"><a></a>sample_probs <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb4-3"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.1</span>,       <span class="co"># (1, 2)</span></span>
+<span id="cb4-4"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.4</span> <span class="sc">*</span> <span class="dv">2</span>,   <span class="co"># (1, 3)</span></span>
+<span id="cb4-5"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.4</span> <span class="sc">*</span> <span class="dv">2</span>,   <span class="co"># (1, 4)</span></span>
+<span id="cb4-6"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.4</span> <span class="sc">*</span> <span class="dv">2</span>,   <span class="co"># (2, 3)</span></span>
+<span id="cb4-7"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.4</span> <span class="sc">*</span> <span class="dv">2</span>,   <span class="co"># (2, 4)</span></span>
+<span id="cb4-8"><a></a>  <span class="fl">0.4</span><span class="sc">*</span><span class="fl">0.4</span> <span class="sc">*</span> <span class="dv">2</span>,   <span class="co"># (3, 4)</span></span>
+<span id="cb4-9"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.1</span> ,      <span class="co"># (1, 1)</span></span>
+<span id="cb4-10"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.1</span>,       <span class="co"># (2, 2)</span></span>
+<span id="cb4-11"><a></a>  <span class="fl">0.4</span><span class="sc">*</span><span class="fl">0.4</span>,       <span class="co"># (3, 3)</span></span>
+<span id="cb4-12"><a></a>  <span class="fl">0.4</span><span class="sc">*</span><span class="fl">0.4</span>        <span class="co"># (4, 4)</span></span>
+<span id="cb4-13"><a></a>)</span>
+<span id="cb4-14"><a></a></span>
+<span id="cb4-15"><a></a>sample_probs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 0.01 0.08 0.08 0.08 0.08 0.32 0.01 0.01 0.16 0.16</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="calculating-expected-value-of-hattau" class="slide level2">
+<h2>Calculating Expected Value of <span class="math inline">\(\hat{\tau}\)</span></h2>
+<div class="eqt">
+<p>The expected value of <span class="math inline">\(\hat{\tau}\)</span> is calculated as:</p>
+<p><span class="math display">\[
+E[\hat{\tau}] = 15(0.01) + 8.75(0.08) + \cdots + 10(0.16) = 10
+\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>tau_hats <span class="sc">*</span> sample_probs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 0.15 0.70 0.80 1.10 1.20 2.80 0.10 0.20 1.20 1.60</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># Calculate the expected value of tau_hat</span></span>
+<span id="cb8-2"><a></a>E_tau_hat <span class="ot">&lt;-</span> <span class="fu">sum</span>(tau_hats <span class="sc">*</span> sample_probs)</span>
+<span id="cb8-3"><a></a>E_tau_hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9.85</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="calculating-variance-of-hattau" class="slide level2">
+<h2>Calculating Variance of <span class="math inline">\(\hat{\tau}\)</span></h2>
+<div class="eqt">
+<p>The variance of <span class="math inline">\(\hat{\tau}\)</span> is calculated as follows:</p>
+<p><span class="math display">\[
+V(\hat{\tau}) = \sum_i(\hat{\tau}_i - E[\hat{\tau}_i])^2*p_i)
+\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>var_tau_hat <span class="ot">&lt;-</span> <span class="fu">sum</span>((tau_hats <span class="sc">-</span> E_tau_hat)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sample_probs)</span>
+<span id="cb10-2"><a></a>var_tau_hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.007275</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="concept-of-covariance" class="slide level2">
+<h2>Concept of Covariance</h2>
+<div class="cle4">
+<ul>
+<li><strong>Covariance</strong> provides a measure of the linear relationship between two variables <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span>.</li>
+<li>Defined as: <span class="math display">\[
+\operatorname{cov}(y_1, y_2) = E\left[(y_1-\mu_1)(y_2-\mu_2)\right]
+\]</span> where <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> are the means of <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span>, respectively.</li>
+</ul>
+</div>
+</section>
+<section id="visual-interpretation" class="slide level2">
+<h2>Visual Interpretation</h2>
 <div class="bqt">
 <ul>
-<li>Your name?</li>
-<li>Gender Pronouns?</li>
-<li>Favorite Summer Memory?</li>
-</ul>
-</div>
-</div>
-<div class="right">
-<iframe src="https://giphy.com/embed/Tq8B3WOqXToBlrqClZ" width="3000" height="280" frameborder="0" class="giphy-embed" allowfullscreen="">
-</iframe>
-<p>
-<a href="https://giphy.com/gifs/new-post-creative-Tq8B3WOqXToBlrqClZ">via GIPHY</a>
-</p>
-</div>
-</div>
-</section>
-<section id="class-pipelines" class="slide level2 centered-content">
-<h2>Class Pipelines</h2>
-<p><br></p>
-<div class="bql">
-<ul>
-<li>Most of the course information and schedule will be posted in <a href="https://salisbury.instructure.com/courses/67043">MyClasses</a></li>
-<li>Homework will be posted but not collected</li>
-<li>Labs most Tuesdays; lab reports due in a week from the lab date</li>
-<li>Quizzes every Friday; includes HW, lectures, labs</li>
+<li><strong>Positive Relationship</strong>: If <span class="math inline">\(y_1\)</span> increases as <span class="math inline">\(y_2\)</span> increases, resulting in a positive covariance.</li>
+<li><strong>Negative Relationship</strong>: If <span class="math inline">\(y_1\)</span> decreases as <span class="math inline">\(y_2\)</span> increases, resulting in a negative covariance.</li>
+<li><strong>No Linear Relationship</strong>: Covariance near zero suggests little or no linear relationship.</li>
 </ul>
 </div>
 </section>
-<section id="what-will-a-typical-dayweek-look-like" class="slide level2 centered-content">
-<h2>What will a typical day/week look like?</h2>
-<div class="eqt">
-<div>
+<section id="significance-of-covariance" class="slide level2">
+<h2>Significance of Covariance</h2>
+<div class="dse">
 <ul>
-<li class="fragment">Before class:
-<ul>
-<li class="fragment">Read assigned topics from textbook</li>
-<li class="fragment">Work on homework/lab reports, come with questions</li>
-</ul></li>
-<li class="fragment">During class:
-<ul>
-<li class="fragment">Mini lectures</li>
-<li class="fragment">Class activities</li>
-</ul></li>
+<li><strong>Scale Dependency</strong>: The magnitude of covariance depends on the units of <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span>.</li>
+<li><strong>Normalization</strong>: Standardizing covariance by the product of the standard deviations of <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span> gives the correlation coefficient: <span class="math display">\[
+\rho = \frac{\operatorname{cov}(y_1, y_2)}{\sigma_1 \sigma_2}
+\]</span> where <span class="math inline">\(\sigma_1\)</span> and <span class="math inline">\(\sigma_2\)</span> are standard deviations of <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\)</span>.</li>
 </ul>
 </div>
-</div>
 </section>
-<section id="welcome-to-survey-sampling" class="slide level2">
-<h2>Welcome to Survey Sampling</h2>
-<p><br></p>
-<div class="eqt">
-<div>
-<ul>
-<li class="fragment"><strong>What is Survey Sampling?</strong>
-<ul>
-<li class="fragment">Essential statistical method for collecting representative data.</li>
-<li class="fragment">Key tool in business, health sciences, environmental studies, and more.</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="why-study-survey-sampling" class="slide level2">
-<h2>Why Study Survey Sampling?</h2>
-<p><br></p>
-<div class="lqt">
-<div>
-<ul>
-<li class="fragment"><strong>Data-Driven Decision Making</strong>
-<ul>
-<li class="fragment">Informed decisions require accurate data.</li>
-<li class="fragment">Sampling helps gather this data efficiently and effectively.</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="basic-principles-of-survey-sampling" class="slide level2">
-<h2>Basic Principles of Survey Sampling</h2>
-<p><br></p>
-<div class="eqt">
-<div>
-<ul>
-<li class="fragment"><strong>Random Sampling</strong>
-<ul>
-<li class="fragment">Each member of a population has an equal chance of selection.</li>
-<li class="fragment">Ensures unbiased data representation.</li>
-</ul></li>
-<li class="fragment"><strong>Systematic Approach</strong>
-<ul>
-<li class="fragment">Methodical selection process to avoid sampling bias.</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="introduction-to-survey-biases" class="slide level2">
-<h2>Introduction to Survey Biases</h2>
-<p><br></p>
-<div class="lqt">
-<div>
-<p>Discover how the phrasing of survey questions can influence the responses, potentially leading to biased outcomes.</p>
-<ul>
-<li class="fragment"><strong>Objective</strong>: Understand the impact of wording in survey questions.</li>
-<li class="fragment"><strong>Focus</strong>: Compare biased vs.&nbsp;neutral phrasing.</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="case-study-on-welfare-spending" class="slide level2">
-<h2>Case Study on Welfare Spending</h2>
-<div class="mre">
-<div>
-<ul>
-<li class="fragment">Biased Question: “Do you think the government spends too much money on welfare without adequate proof of its necessity?”
-<ul>
-<li class="fragment">This question suggests unnecessary spending, leading to potentially biased negative responses.</li>
-</ul></li>
-<li class="fragment">Neutral Question: “How should the government allocate funds for welfare?”
-<ul>
-<li class="fragment">Rephrased to remove bias, showing a significant drop in negative responses (only 29% suggest reducing spending).</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="health-care-for-the-elderly" class="slide level2">
-<h2>Health Care for the Elderly</h2>
-<div class="fsp">
-<div>
-<ul>
-<li class="fragment">Original Biased Question: “Do you agree that it is disgraceful for the government to ignore the health care needs of the elderly?”
-<ul>
-<li class="fragment">Emotive language (“disgraceful”) can manipulate responses.</li>
-</ul></li>
-<li class="fragment">Neutral Reformulation: “How do you rate the government’s handling of health care needs for the elderly?”
-<ul>
-<li class="fragment">More objective, allowing respondents to express true opinions without emotional influence.</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="the-importance-of-neutral-question-phrasing" class="slide level2">
-<h2>The Importance of Neutral Question Phrasing</h2>
+<section id="correlation-coefficient" class="slide level2">
+<h2>Correlation Coefficient</h2>
 <div class="cle">
-<div>
-<p>Highlighting the critical need for neutrality in survey questions to obtain accurate and reliable data.</p>
 <ul>
-<li class="fragment"><strong>Key Takeaway</strong>: Survey questions should be carefully crafted to avoid leading respondents.</li>
-<li class="fragment"><strong>Goal</strong>: Achieve unbiased data that truly reflects public opinion.</li>
+<li><strong>Range</strong>: <span class="math inline">\(\rho\)</span> ranges from -1 to 1, indicating the strength and direction of the linear relationship.</li>
+<li><strong>Interpretation</strong>:
+<ul>
+<li><span class="math inline">\(\rho = 1\)</span>: Perfect positive linear relationship.</li>
+<li><span class="math inline">\(\rho = -1\)</span>: Perfect negative linear relationship.</li>
+<li><span class="math inline">\(\rho = 0\)</span>: No linear relationship.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="understanding-estimators" class="slide level2">
+<h2>Understanding Estimators</h2>
+<div class="cle3">
+<ul>
+<li><strong>Properties of a Good Estimator</strong>:
+<ul>
+<li>Unbiasedness: <span class="math inline">\(E(\hat{\theta}) = \theta\)</span></li>
+<li>Small Variance: <span class="math inline">\(V(\hat{\theta}) = \sigma_{\hat{\theta}}^2\)</span> is minimal</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="estimator-distribution-and-error" class="slide level2">
+<h2>Estimator Distribution and Error</h2>
+<div class="cle4">
+<ul>
+<li><strong>Sampling Distribution</strong>: The probability distribution of <span class="math inline">\(\bar{y}\)</span> depends on the sampling mechanism.</li>
+<li><strong>Desired Characteristics</strong>:
+<ul>
+<li><span class="math inline">\(\bar{y}\)</span> should be close to <span class="math inline">\(\mu\)</span>, centering around <span class="math inline">\(\mu\)</span>.</li>
+<li>The sampling plan should ensure <span class="math inline">\(E(\bar{y}) = \mu\)</span> and <span class="math inline">\(V(\bar{y})\)</span> is small.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="confidence-intervals-and-error-bounds" class="slide level2">
+<h2>Confidence Intervals and Error Bounds</h2>
+<div class="cle5">
+<div class="font80">
+<ul>
+<li><strong>Error of Estimation</strong>: <span class="math inline">\(|\hat{\theta} - \theta|\)</span>, the magnitude of deviation from the true parameter.</li>
+<li><strong>Confidence Interval</strong>: An interval within which the parameter is expected to lie with a certain probability <span class="math inline">\((1-\alpha)\)</span>.
+<ul>
+<li><strong>Form</strong>: <span class="math inline">\((\hat{\theta} - B, \hat{\theta} + B)\)</span> where <span class="math inline">\(B = z_{\alpha / 2} \sigma_{\hat{\theta}}\)</span> for normally distributed estimators.</li>
+<li><strong>Use of <span class="math inline">\(t\)</span>-distribution</strong>: When population SD is unknown and the sample size is large, <span class="math inline">\(t\)</span>-scores may replace <span class="math inline">\(z\)</span>-scores.</li>
+</ul></li>
 </ul>
 </div>
 </div>
-</section>
-<section id="group-activity-1" class="slide level2 centered-content" data-background="#ffdf9e">
-<h2><i class="fa fa-pencil-square-o" style="font-size:48px;color:purple">&nbsp;Group&nbsp;Activity&nbsp;1</i></h2>
-<div class="row">
-<div class="left">
-<p><img data-src="https://media.giphy.com/media/RKApDdwsQ6jkwd6RNn/giphy.gif"></p>
-</div>
-<div class="right">
-<p><br></p>
-<div class="lqt">
-<ul>
-<li>Let’s do a small activity today about simple random sampling</li>
-<li>And answer a few survey questions about the class in general</li>
-</ul>
-</div>
-</div>
-</div>
-<p></p><div class="countdown" id="timer_4758ec80" data-update-every="1" tabindex="0" style="top:0;left:0;padding:3px 4px;font-size:1em;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div><p></p>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<iframe width="1280" height="800" src="https://shinylive.io/r/editor/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4ARACrCIIgMQACSXABmfOEtLctAVQCSStUUbbdStKjoEopWiREBXWkoA8AWmPUXAEwAKUADmcOwiShFKygCC6DZ2DhDatKTUcOGR9qlwgRBw1GFgkrSc1lCsSgDCAMoAaip2UErRTqREMAm21NSsQmACuBkRQ1EqJWUVOlq+jdpQ9GkjMgDyraithTOkUNLzi-0icooq6prmWpxwjABuV0rUREG0BNpESoxwUL6WEN++49RyucqnUlFsoCJLjc7p5jE4IAR7CR2Hx1qRcEoiGtWgIlCARjFWu1OlBuhUPl9geDjIx2sCavUNIskpFqbCKb4MARONdCtV8nBEXBfAB9ABysDgnBFknKAEYuTy+hjdF87gBeJTSLB6ACickiSgJSiwFF8dymYNm2wW6RZESxpDRABJwbtbe4vB9flcZOx8fbDVbtja0uxwRiiKgkRBOEpNXROKR2KhgnAADIUII6eNKOUABgEBsiAF85CWRMcsPDgVZ4jHIbx+LFUOwXLmXBiobczJru1c5GAS7hwNB4FR+WkhaKJfBpbLWArudc8IQSORKMgsEQAO5KMVOGD0K64Wd2uW4WVJaIsRwQABMuGiEAgtC0ACE3xBuCIAMy4ZZOFsMx3yIOhrhYEQABZL3aPhaAARycD8SGgJxfBEABWXBAicagqlgVBj26EQADZcAAKXUNQPgqSoWGgbgoHkCAAHZKKIfIqiYu0AA5LycJM+G4igRAATlwapyFuJJKjAuAOhYgtcCwZ4mMYb5ZWuEoRDlC8KKIbgXwqABxKBNE4XTH3oxgHjjMzGAIWgIQgOV-wovCHCUEySAAL1JOBfN0mCKKgAgkPyM4fI0u85Ww0K5285hbks1zyO3aBqG+AAJFhGBKWL2OfXwPj3bKnGYoJdP458dBICpyrIK5dIkgzoB0ZilFCggAGtODve981wd9GCcAgtAMoz+pY+99NMEIlAMeg8pc+9HwAWSgJx8vGrqSClER73clhhSUABpK5Y0OmCLu0pIzr4KqH2wgAxZgIB6pR01oVAetW8ibPw9NWl0RhDvY9MoB7PIlHWlICF0EiH34gAtML1IqABFZDOC+VaJMkVD8nw7cOk0P8hocipqmY81GFS38L11XwdxYb5qibII0jaFjfw2tSoC46pUEFZzmV-f9itKpQpLgAU-xgsU4FofDqlZvg-2wjmrjYLVuGJBnyO1pC31xvX2lQaa-3Y98WGW5gtRVkwNL-fiqMYMmYekNg71-CTvt849SCUWpSXNIKICgoazrsfJWCSABNJwRCHABdIA" title="Webpage example"></iframe>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

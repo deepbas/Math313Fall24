@@ -1,0 +1,334 @@
+---
+title: "Day 4"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Samping"
+author: "Bastola"
+format:
+  revealjs: 
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(xaringanExtra)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+```
+
+
+
+## Introduction to Probability Sampling
+
+::: cle1
+::: font70
+
+- **Objective**: Understand the basics of probability sampling and its importance in statistical inference.
+- **Key Concepts**:
+  - **Finite vs. Infinite Populations**: Differentiates sampling dynamics where populations are either bounded (finite) or theoretically limitless (infinite).
+  - **Independent Selections**: Each sample is selected without influence from the selections of other samples.
+  - **Sampling with Replacement**: After a sample is selected, it is "replaced," allowing it to be selected again in subsequent draws.
+  - **Effects on Variance and Estimation Accuracy**: Discusses how different sampling methods affect the variability and accuracy of statistical estimates.
+
+:::
+:::
+
+
+## Detailed Example of Probability Sampling
+
+::: cle3
+::: font70
+
+- **Probability Equation**:
+  - For each element in the population, the probability of its selection in a sample is denoted as:
+
+$$
+P(\text{selection of element } i) = \delta_i
+$$
+
+- **Example**: Consider sampling from the set \{1, 2, 3, 4\} with defined probabilities.
+  - **Context**: This could represent a scenario where each number corresponds to a category or group within a larger population.
+
+:::
+:::
+
+## Implementation of Sampling Techniques
+
+::: cle2
+::: font70
+Sampling typically involves randomly selecting elements based on their defined probabilities.
+
+  - **Sampling with Replacement**: Each element has an equal or specified chance to be chosen again after it is selected.
+  - **Sampling without Replacement**: Once an element is chosen, it is not returned to the pool for the remainder of the sampling process.
+
+- **Impact on Variability**:
+  - The choice between sampling with or without replacement can significantly affect the variability and bias in the estimation process.
+
+:::
+:::
+
+
+## Sampling with Replacement
+
+::: cle
+::: font80
+- **Definition**: Each element has the same probability of being selected, independent of previous selections.
+- **Probability Notation**:
+  - $\delta_i = \frac{1}{N}$ for all $i$
+
+\begin{align*}
+\hat{\tau} = \frac{1}{n} \sum_{i=1}^n \frac{y_i}{\delta_i}
+\end{align*}
+
+- **Unbiased Estimator**: Shows how sampling with equal probabilities is unbiased regardless of selection order.
+:::
+:::
+
+
+## Advantages of Varying Probabilities
+
+::: cle
+::: font80
+- **Objective**: Improve estimation by varying selection probabilities.
+- **Typical Scenario**: Sampling industrial firms with varying sizes.
+
+\begin{align*}
+\delta_i = \frac{y_i}{\tau}
+\end{align*}
+
+- **Improved Estimates**: Giving higher probabilities to units with greater relevance (e.g., larger firms).
+
+**Impact**: This approach reduces variance and increases the accuracy of the estimates.
+:::
+:::
+
+## Practical Sampling without Replacement
+
+::: cle
+::: font70
+- **Difference from With Replacement**:
+  - Changes in probabilities after each draw.
+  - More aligned with real-world sampling conditions.
+
+\begin{align*}
+\hat{\tau} = \sum_{i=1}^n \frac{y_i}{\pi_i}
+\end{align*}
+
+- **Calculation**: Weights each sampled unit by the reciprocal of its probability of selection.
+:::
+:::
+
+## Example from Section 3.3
+
+
+::: mre
+
+- **Set of Elements**:
+  - Let $U = \{u_1, u_2, u_3, u_4\}$ represent the population elements, where $u_i$ corresponds to an element.
+  
+- **Probabilities**:
+  - Associated probabilities of selection are denoted by $\delta_i$, where:
+    - $\delta_1 = \delta_2 = 0.1$ and $\delta_3 = \delta_4 = 0.4$.
+    
+```{r}
+# Define the elements and their respective probabilities
+elements <- c(1, 2, 3, 4)
+deltas <- c(0.1, 0.1, 0.4, 0.4)
+```
+
+:::
+
+
+## Possible samples and their estimated counts
+
+::: mre
+::: font80
+
+```{r}
+# Possible samples and their probabilities
+samples <- list(c(1, 2), c(1, 3), c(1, 4), c(2, 3), c(2, 4), c(3, 4),
+                c(1, 1), c(2, 2), c(3, 3), c(4, 4))
+# Compute tau_hat for each sample, ensuring to divide by the sample size
+tau_hats <- sapply(samples, function(s) sum(elements[s] / deltas[s]) / length(s))
+
+# Check tau_hats values
+tau_hats
+```
+
+
+The estimator $\hat{\tau}$ for each sample is calculated using the formula:
+
+$$
+\hat{\tau} = \frac{1}{n} \sum_{i=1}^n \frac{y_i}{\delta_i}
+$$
+
+:::
+:::
+
+## Probabilities calculations
+
+::: scroll-box-24
+
+```{r}
+# Calculate pair probabilities
+sample_probs <- c(
+  0.1*0.1,       # (1, 2)
+  0.1*0.4 * 2,   # (1, 3)
+  0.1*0.4 * 2,   # (1, 4)
+  0.1*0.4 * 2,   # (2, 3)
+  0.1*0.4 * 2,   # (2, 4)
+  0.4*0.4 * 2,   # (3, 4)
+  0.1*0.1 ,      # (1, 1)
+  0.1*0.1,       # (2, 2)
+  0.4*0.4,       # (3, 3)
+  0.4*0.4        # (4, 4)
+)
+
+sample_probs
+```
+
+:::
+
+
+## Calculating Expected Value of $\hat{\tau}$
+
+::: eqt
+
+The expected value of $\hat{\tau}$ is calculated as:
+
+$$
+E[\hat{\tau}] = 15(0.01) + 8.75(0.08) + \cdots + 10(0.16) = 10
+$$
+```{r}
+tau_hats * sample_probs
+# Calculate the expected value of tau_hat
+E_tau_hat <- sum(tau_hats * sample_probs)
+E_tau_hat
+```
+
+:::
+
+
+## Calculating Variance of $\hat{\tau}$
+
+::: eqt
+
+The variance of $\hat{\tau}$ is calculated as follows:
+
+$$
+V(\hat{\tau}) = \sum_i(\hat{\tau}_i - E[\hat{\tau}_i])^2*p_i)
+$$
+
+```{r}
+var_tau_hat <- sum((tau_hats - E_tau_hat)^2 * sample_probs)
+var_tau_hat
+```
+
+:::
+
+## Concept of Covariance
+
+::: cle4
+
+- **Covariance** provides a measure of the linear relationship between two variables $y_1$ and $y_2$.
+- Defined as:
+  $$
+  \operatorname{cov}(y_1, y_2) = E\left[(y_1-\mu_1)(y_2-\mu_2)\right]
+  $$
+  where $\mu_1$ and $\mu_2$ are the means of $y_1$ and $y_2$, respectively.
+
+:::
+
+## Visual Interpretation 
+
+::: bqt
+
+- **Positive Relationship**: If $y_1$ increases as $y_2$ increases, resulting in a positive covariance.
+- **Negative Relationship**: If $y_1$ decreases as $y_2$ increases, resulting in a negative covariance.
+- **No Linear Relationship**: Covariance near zero suggests little or no linear relationship.
+
+:::
+
+## Significance of Covariance
+
+::: dse
+
+- **Scale Dependency**: The magnitude of covariance depends on the units of $y_1$ and $y_2$.
+- **Normalization**: Standardizing covariance by the product of the standard deviations of $y_1$ and $y_2$ gives the correlation coefficient:
+  $$
+  \rho = \frac{\operatorname{cov}(y_1, y_2)}{\sigma_1 \sigma_2}
+  $$
+  where $\sigma_1$ and $\sigma_2$ are standard deviations of $y_1$ and $y_2$.
+
+:::
+
+## Correlation Coefficient
+
+::: cle
+
+- **Range**: $\rho$ ranges from -1 to 1, indicating the strength and direction of the linear relationship.
+- **Interpretation**:
+  - $\rho = 1$: Perfect positive linear relationship.
+  - $\rho = -1$: Perfect negative linear relationship.
+  - $\rho = 0$: No linear relationship.
+  
+:::
+
+## Understanding Estimators
+
+::: cle3
+
+- **Properties of a Good Estimator**:
+  - Unbiasedness: $E(\hat{\theta}) = \theta$
+  - Small Variance: $V(\hat{\theta}) = \sigma_{\hat{\theta}}^2$ is minimal
+  
+:::
+
+## Estimator Distribution and Error
+
+::: cle4
+- **Sampling Distribution**: The probability distribution of $\bar{y}$ depends on the sampling mechanism.
+- **Desired Characteristics**:
+  - $\bar{y}$ should be close to $\mu$, centering around $\mu$.
+  - The sampling plan should ensure $E(\bar{y}) = \mu$ and $V(\bar{y})$ is small.
+
+:::
+
+## Confidence Intervals and Error Bounds
+
+::: cle5
+::: font80
+
+- **Error of Estimation**: $|\hat{\theta} - \theta|$, the magnitude of deviation from the true parameter.
+- **Confidence Interval**: An interval within which the parameter is expected to lie with a certain probability $(1-\alpha)$.
+  - **Form**: $(\hat{\theta} - B, \hat{\theta} + B)$ where $B = z_{\alpha / 2} \sigma_{\hat{\theta}}$ for normally distributed estimators.
+  - **Use of $t$-distribution**: When population SD is unknown and the sample size is large, $t$-scores may replace $z$-scores.
+  
+:::
+:::
