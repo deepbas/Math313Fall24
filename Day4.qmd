@@ -15,6 +15,9 @@ format:
     history: true
     chalkboard: 
       src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
     transition: slide
     background-transition: fade    
     touch: false
