@@ -8,7 +8,7 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.56">
+  <meta name="generator" content="quarto-1.5.25">
 
   <meta name="author" content="Bastola">
   <title>Math 313: Survey Design and Sampling – Day 4</title>
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -571,13 +571,13 @@ P(\text{selection of element } i) = \delta_i
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Calculate pair probabilities</span></span>
 <span id="cb4-2"><a></a>sample_probs <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb4-3"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.1</span>,       <span class="co"># (1, 2)</span></span>
+<span id="cb4-3"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.1</span> <span class="sc">*</span> <span class="dv">2</span>,   <span class="co"># (1, 2)</span></span>
 <span id="cb4-4"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.4</span> <span class="sc">*</span> <span class="dv">2</span>,   <span class="co"># (1, 3)</span></span>
 <span id="cb4-5"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.4</span> <span class="sc">*</span> <span class="dv">2</span>,   <span class="co"># (1, 4)</span></span>
 <span id="cb4-6"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.4</span> <span class="sc">*</span> <span class="dv">2</span>,   <span class="co"># (2, 3)</span></span>
 <span id="cb4-7"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.4</span> <span class="sc">*</span> <span class="dv">2</span>,   <span class="co"># (2, 4)</span></span>
 <span id="cb4-8"><a></a>  <span class="fl">0.4</span><span class="sc">*</span><span class="fl">0.4</span> <span class="sc">*</span> <span class="dv">2</span>,   <span class="co"># (3, 4)</span></span>
-<span id="cb4-9"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.1</span> ,      <span class="co"># (1, 1)</span></span>
+<span id="cb4-9"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.1</span>,       <span class="co"># (1, 1)</span></span>
 <span id="cb4-10"><a></a>  <span class="fl">0.1</span><span class="sc">*</span><span class="fl">0.1</span>,       <span class="co"># (2, 2)</span></span>
 <span id="cb4-11"><a></a>  <span class="fl">0.4</span><span class="sc">*</span><span class="fl">0.4</span>,       <span class="co"># (3, 3)</span></span>
 <span id="cb4-12"><a></a>  <span class="fl">0.4</span><span class="sc">*</span><span class="fl">0.4</span>        <span class="co"># (4, 4)</span></span>
@@ -585,7 +585,7 @@ P(\text{selection of element } i) = \delta_i
 <span id="cb4-14"><a></a></span>
 <span id="cb4-15"><a></a>sample_probs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.01 0.08 0.08 0.08 0.08 0.32 0.01 0.01 0.16 0.16</code></pre>
+<pre><code> [1] 0.02 0.08 0.08 0.08 0.08 0.32 0.01 0.01 0.16 0.16</code></pre>
 </div>
 </div>
 </div>
@@ -600,13 +600,13 @@ E[\hat{\tau}] = 15(0.01) + 8.75(0.08) + \cdots + 10(0.16) = 10
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>tau_hats <span class="sc">*</span> sample_probs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.15 0.70 0.80 1.10 1.20 2.80 0.10 0.20 1.20 1.60</code></pre>
+<pre><code> [1] 0.3 0.7 0.8 1.1 1.2 2.8 0.1 0.2 1.2 1.6</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># Calculate the expected value of tau_hat</span></span>
 <span id="cb8-2"><a></a>E_tau_hat <span class="ot">&lt;-</span> <span class="fu">sum</span>(tau_hats <span class="sc">*</span> sample_probs)</span>
 <span id="cb8-3"><a></a>E_tau_hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 9.85</code></pre>
+<pre><code>[1] 10</code></pre>
 </div>
 </div>
 </div>
@@ -622,7 +622,7 @@ V(\hat{\tau}) = \sum_i(\hat{\tau}_i - E[\hat{\tau}_i])^2*p_i)
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>var_tau_hat <span class="ot">&lt;-</span> <span class="fu">sum</span>((tau_hats <span class="sc">-</span> E_tau_hat)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sample_probs)</span>
 <span id="cb10-2"><a></a>var_tau_hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 6.007275</code></pre>
+<pre><code>[1] 6.25</code></pre>
 </div>
 </div>
 </div>
