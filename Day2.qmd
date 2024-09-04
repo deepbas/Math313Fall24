@@ -7,7 +7,9 @@ title-slide-attributes:
 subtitle: "MATH 313: Survey Design and Sampling"
 author: "Bastola"
 format:
-  revealjs: 
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
     theme: [default, scss/main.scss]
     slide_level: 2
     slide-number: true
@@ -57,6 +59,7 @@ yt <- 0
 
 ::: cle
 ::: incremental
+::: font80
 - An **element** is an object on which a measurement is taken.
 - A **population** is a collection of elements about which we wish to make an inference.
 - A **sample unit** are non overlapping collections of elements from the population that cover the entire population. 
@@ -64,7 +67,7 @@ yt <- 0
 - A **sample** is a collection of sampling units drawn from a single frame or from multiple frames.
 :::
 :::
-
+:::
 
 ## Key Concept: Statistic
 

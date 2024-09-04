@@ -71,7 +71,24 @@ html, body {
 }
 
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
+.left, .right {
+  flex: 1; // Both take equal space
+  padding: 10px; // Spacing
+}
+
+.left {
+  order: 1; // Ensures the left block appears first
+}
+
+.right {
+  order: 2; // Ensures the right block appears second
+}
 
 
 // Responsive table, image, and overlay styles
@@ -104,3 +121,91 @@ table, .img-stack img, .image-overlay-container, .shiny-output-panel, .shiny-plo
   font-size: 24px;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+.inverse {
+  background-color: #349632;
+  color: #fff;
+}
+
+.inverse h1, .inverse h2, .inverse h3 {
+  color: #FFD700;
+}
+
+.note {
+  font-size: 0.8em;
+  font-style: italic;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 0.25em;
+  margin-top: 0.5em;
+  border-left: 4px solid #007bff;
+  display: block;
+}
+
+
+// Table styling for clarity and visual segmentation
+table {
+  thead th {
+    background-color: #007bff;
+    color: white;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  tr td.important {
+    background-color: #ffdd59;
+    color: black;
+  }
+}
+
+// Additional custom styles
+.action, .img, .dark-green, .dark-blue, .dark-gray {
+  border-radius: 10px;
+  padding: 0.5em;
+  margin-bottom: 1.5rem;
+}
+
+
+
+.inline-c {
+  background: $inverse-bg;
+  color: $inverse-color;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.green-h, .out-g {
+  background: #9fff9f;
+  color: #215A4A;
+}
+
+.yellow-h, .out-y {
+  background: #ffff9f; 
+  color: #857A30; 
+}
+
+
+// Fade effect
+.fade {
+  opacity: $fade-opacity;
+}
+
+// Code highlights
+.hljs-solarized-light .hljs {
+  color: $body-color;
+}
+
+
+.hljs-github .hljs {
+  background: $background-color;
+  color: white;
+}
+
+
