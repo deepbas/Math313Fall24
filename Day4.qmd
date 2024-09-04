@@ -8,6 +8,7 @@ subtitle: "MATH 313: Survey Design and Samping"
 author: "Bastola"
 format:
   revealjs: 
+    mathjax: true
     theme: [default, scss/main.scss]
     slide_level: 2
     slide-number: true
@@ -226,7 +227,7 @@ sample_probs
 The expected value of $\hat{\tau}$ is calculated as:
 
 $$
-E[\hat{\tau}] = 15(0.01) + 8.75(0.08) + \cdots + 10(0.16) = 10
+E[\hat{\tau}] = 15(0.02) + 8.75(0.08) + \cdots + 10(0.16) = 10
 $$
 ```{r}
 tau_hats * sample_probs
