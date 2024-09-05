@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.25">
 
   <meta name="author" content="Bastola">
-  <title>Math 313: Survey Design and Sampling – Day 3</title>
+  <title>Math 313: Survey Design and Sampling – Day 5</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -328,7 +328,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="images/lake.jpg" data-background-opacity="0.5" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Day 3</h1>
+  <h1 class="title">Day 5</h1>
   <p class="subtitle">MATH 313: Survey Design and Samping</p>
 
 <div class="quarto-title-authors">
@@ -340,131 +340,164 @@ Bastola
 </div>
 
 </section>
-<section id="review-of-key-statistical-concepts" class="slide level2">
-<h2>Review of Key Statistical Concepts</h2>
+<section id="extending-the-sampling-distribution" class="slide level2">
+<h2>Extending the Sampling Distribution</h2>
 <div class="cle">
 <ul>
-<li><strong>Core Parameters and Statistics</strong>
+<li><strong>Computational Application</strong>
 <ul>
-<li>Expected Value</li>
-<li>Variance</li>
-<li>Standard Deviation</li>
-</ul></li>
-<li><strong>Concept of Sampling</strong>
-<ul>
-<li>Using sample statistics to approximate population parameters.</li>
+<li>Calculate probabilities involving statistic <span class="math inline">\(\bar{y}, \hat{\tau}\)</span> etc. from a sample.</li>
+<li>This forms the basis for estimating the variability of these statistic</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="understanding-sampling-distribution" class="slide level2">
-<h2>Understanding Sampling Distribution</h2>
+<section id="error-bounds-and-confidence-intervals" class="slide level2">
+<h2>Error Bounds and Confidence Intervals</h2>
 <div class="cle">
 <ul>
-<li><strong>Accuracy of Approximation</strong>
+<li><strong>From Error Estimation to Confidence</strong>
 <ul>
-<li>How accurately do sample statistics estimate population parameters?</li>
-</ul></li>
-<li><strong>Need for Further Exploration</strong>
-<ul>
-<li>Introduction to the concept of sampling distribution to assess the reliability of statistical approximations.</li>
+<li>Learn to compute error bounds around estimates.</li>
+<li>Extend these bounds to establish confidence intervals.</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<iframe width="1380" height="900" src="https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4BzSampFSAJmGiGzNuwAiAFWUiAxAAINcAGZ84BgKoBJEQFdaBgDwBaAyeoOAJgAUokuHYRAxCDUlpSajg-CDhqILAAZVhZPkkjWk5SRgY7cJJOAwBRAA9ZIkY4RiEwAVxg0M5aLzh6FgAZKFYiPKCIUIGDJpa2xhi49gB3ZtJuAwBeAwBmev7B9Yg7eByCawhUXpr4KAga3AMaorIqgx8iA+oofP6AWTgTg3ZAHuABRDODABuUE8FkWSzqDXWA0221ou32hzAQJyJwIcH+l2ujFu9zsj2eBgAaixaKiLOxAMPAACbfv8gSCFgYAGwQtZQ0IwqpwvYHUgJTgpKKJWgAL3ReAuYCu5GxyRgsgswrFn36AD4DABGWkSmB8RkKc70uygzUABlZ7IGUAIzwAQnlSCQEnZUF4nuLzjVLK73QZhTA8U9aCQahbLSFrXaHU6apVOHBSBiwFg4PHE7VIYMw+sYFA+ON4pn2cRPDAIOwmatw5byqQAPJ5XkJVD3HxydPZ6uDcgleuNxEt1DGTgEHKoZ6hotQzvFoil8uVqddgy1hukJs1AXyqJt+STtmW5Tso+hTsebxYIiTPrs7RrjdgLJPThaKD0KL7gbKXQQQyJKoAjcciSHCIjxowgHYq47h2BANrBuWfC8ucPTrnk5zxpwTQkAIBggJmbqkFAzhuJUka0IB7D4QeAyMBAFQwOwGqmixLHnMc-SLJkc7uuwSF5AAJBxdRDF4jKcAAjowfLcfigT8aQAnIqScFwAI6mZgAvj+tGpnipCFNBZHwYBxLxIRUAYCYzDwOwGmnAeRD0OBgFFIBZB8QiikuoRcDnNR7KDoGzwAPoWSRBgWXZIhLgYqG8gJg67qQEWVBALRjO2VGxQM0i1uwFlWTZgRmcajJBfiCFhU8UAiVAqbsCUjKlWpuEANQXDR1YlHQjEEOwLgAKy4Mx6kGG1OVQgERAwCFvBZEQkg2ew9B8IUYKmucZjUNQjI1O+xr-CWFR7WAkhzl4objZN6yPM57DhJEJo1HcDxBiQGRZDk9B5Ahn5QtpMVdSE8WCYOw6jrQ44IalFAZVocC9tlwODKgUBZIEL24pVH1vB83y4fM-yybxClCe8EAiTUJxicSKKqZ81KE8TnA8eQnkJcpZL2eygMOeyW4KtVRGw6kBC8cxm1DIKgQVe9EDC1A5wk+zZOC0KopqeclSyNaJoAGIAILtIkRQ81CHGGW4JZ4xAnBcDLis6VCoOKer0TtrD6VVMlyNdnlWWFdZsCBHKCq2+tBiW3VDVNYsYdRBHY0dTdgw9bQfUDcNo3tanuVwDNc2ZI6S2wCta2MksUvbbtixHCwRAhhKx3YnXZ0XVdE0o+yd3249UTlej7M1AnaSfdkuQEuwnEs2z8leQJ7tKlrkrCLUJ7rHzsWxJMIUUNkrARUHxU3tWAAGtu4F8Z+MowPTpXxrNyRzgnCec4JVufdMqWiuAUgoN9Fh31gl4R+c8X6KS5qpESH9U5nwgIAgwKt54JSXprGcUIz4lAwKMRBwCH4cXYNHd+GD1hn0SERdKLAvBFEYHfRguBTZ4PvqAzgoDiHLA3lmWKcZ9L20YKtB+yD2C8OoAZOyIkd57zIGweysVXaLyIgZV874LBGThlUbQftqyiPEVwgYmlzipnFqgA2xtTYoWhgURkdAsjsDRgEdoFBJCzEZMNAwUA8hEAAOozDmIsLQWBLBmy4VvRyzkAJwDcvvCBAk4wJn8jwvSYj7bHxDhIkIhgUxpjCNwCwRFVGxUwthCAcS4hECgKA3CBgsmpgTB4naSCvKAmBMaTgWllCaSBlk2CuSLBoDFvLMCvB+CG3QOwBwjIHAYUia3IYszlBgE0gAXSAA" title="StatCrunch"></iframe>
-</section>
-<section id="sampling-distribution" class="slide level2">
-<h2>Sampling Distribution</h2>
-<div title="Definition">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Definition</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Sampling Distribution</strong>: The sampling distribution of a sample statistic <span class="math inline">\(\hat{\theta}\)</span> calculated from a sample of <span class="math inline">\(n\)</span> measurements is probabiity distribution of that statistic <span class="math inline">\(\hat{\theta}\)</span></p>
-</div>
-</div>
-</div>
+<section id="knowledge-review-standardizing-variables" class="slide level2">
+<h2>Knowledge Review: Standardizing Variables</h2>
+<div class="cle4">
+<ul>
+<li><strong>Normal to Standard Normal Transformation</strong>
+<ul>
+<li>For a variable <span class="math inline">\(X \sim \operatorname{Normal}(\text{mean} = a, \text{SD} = b)\)</span>:</li>
+<li>Standardization: <span class="math inline">\(Z = \frac{X-a}{b}\)</span></li>
+<li>Results in <span class="math inline">\(Z \sim \operatorname{Normal}(\text{mean} = 0, \text{SD} = 1)\)</span>, the standard normal distribution.</li>
+</ul></li>
+</ul>
 </div>
 </section>
-<section id="estimator" class="slide level2">
-<h2>Estimator</h2>
-<div title="Definition">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Definition</strong></p>
-</div>
-<div class="callout-content">
-<p>An <strong>estimator</strong> is a function that uses sample data to approximate a population parameter. Commonly, the sample mean (<span class="math inline">\(\bar{x}\)</span>) serves as an estimator for the population mean (<span class="math inline">\(\mu\)</span>).</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="example-estimating-average-height" class="slide level2">
-<h2>Example: Estimating Average Height</h2>
-<div class="mre">
-<p>Consider estimating the average height (<span class="math inline">\(\mu\)</span>) of students. A sample of 5 students yielded these heights in inches: 60, 62, 65, 58, 66.</p>
-<h3 id="calculation">Calculation</h3>
-<p>The sample mean (<span class="math inline">\(\bar{y}\)</span>) is calculated as:</p>
-<p><span class="math display">\[
-\bar{y} = \frac{\sum_{i=1}^{n} y_i}{n} = \frac{60 + 62 + 65 + 58 + 66}{5} = 62.2 \text{ inches}
-\]</span></p>
-<p>This computed <span class="math inline">\(\bar{y} = 62.2\)</span> inches serves as our estimate for the average student height (<span class="math inline">\(\mu\)</span>).</p>
-</div>
-</section>
-<section id="properties-of-the-sampling-distribution-of-barx" class="slide level2">
-<h2>Properties of the Sampling Distribution of <span class="math inline">\(\bar{x}\)</span></h2>
+<section id="calculating-probabilities-for-a-normal-variable" class="slide level2">
+<h2>Calculating Probabilities for a Normal Variable</h2>
 <div class="cle">
-<div class="font80">
-<ol type="1">
-<li><p>The mean of the sampling distribution of <span class="math inline">\(\bar{y}\)</span> equals to the mean of the sampled population. That is <span class="math inline">\(E(\bar{y})=\mu\)</span></p></li>
-<li><p>The variance of the sampling distribution of <span class="math inline">\(\bar{y}\)</span> is given by</p></li>
-</ol>
-<p><span class="math display">\[V(\bar{y})=\frac{\sigma^2}{n}\]</span></p>
-<p><span class="math inline">\(S D(\bar{y})=\sqrt{\frac{\sigma^2}{n}}=\frac{\sigma}{\sqrt{n}}\)</span> The standard deviation <span class="math inline">\(\sigma_{\bar{y}}\)</span> is often referred to as the Standard Error.</p>
-</div>
-</div>
-</section>
-<section id="central-limit-theorem" class="slide level2">
-<h2>Central Limit Theorem</h2>
-<div class="cle">
-<p><strong>Theorem:</strong> Consider a random sample of <span class="math inline">\(n\)</span> observations selected from a population (any population/probability distribution) with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. Then when <span class="math inline">\(n\)</span> is sufficiently large, the sampling distribution of <span class="math inline">\(\bar{y}\)</span> is approximately a normal distribution with mean <span class="math inline">\(E(\bar{y})=\mu\)</span>, and <span class="math inline">\(SD(\bar{y})=\frac{\sigma}{\sqrt{n}}\)</span>.</p>
-</div>
-<div class="green-h">
-<p>The larger <span class="math inline">\(n\)</span> is, the more closely the sampling distribution will approximate a normal shape.</p>
-</div>
-</section>
-<section id="recall-the-simulation-slide-4" class="slide level2">
-<h2>Recall the simulation (Slide 4)</h2>
-<div class="qt">
 <div class="font70">
-<p>Suppose we have selected a random sample of <span class="math inline">\(n=50\)</span> observations from a population with mean <span class="math inline">\(\mu=4\)</span> and variance <span class="math inline">\(\sigma^2=8\)</span>.</p>
+<p>For a normal random variable <span class="math inline">\(X\)</span>, and a specific value <span class="math inline">\(c\)</span>, the probability that <span class="math inline">\(X\)</span> exceeds <span class="math inline">\(c\)</span> can be transformed to a standard normal variable <span class="math inline">\(Z\)</span>. This transformation simplifies the calculation as follows:</p>
+<p><span class="math display">\[
+P(X &gt; c) = P(X-a &gt; c-a) = P\left(\frac{X-a}{b} &gt; \frac{c-a}{b}\right)\]</span> <span class="math display">\[\qquad = P\left(Z &gt; \frac{c-a}{b}\right) = 1 - P\left(Z &lt; \frac{c-a}{b}\right)\]</span></p>
+<p>This step highlights the utility of standardization in statistical analysis, turning complex normal calculations into simpler standard normal calculations.</p>
+</div>
+</div>
+</section>
+<section id="calculating-interval-probabilities" class="slide level2">
+<h2>Calculating Interval Probabilities</h2>
+<p><br></p>
+<div class="cle5">
+<div class="font60">
+<p>Determining the probability that <span class="math inline">\(X\)</span> lies between two values <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span> involves subtracting the probability of <span class="math inline">\(X\)</span> being less than <span class="math inline">\(c\)</span> from the probability of <span class="math inline">\(X\)</span> being less than <span class="math inline">\(d\)</span>:</p>
+<p><span class="math display">\[
+P(c &lt; X &lt; d) = P(X &lt; d) - P(X &lt; c) = P\left(Z &lt; \frac{d-a}{b}\right) - P\left(Z &lt; \frac{c-a}{b}\right)
+\]</span></p>
+<p>When <span class="math inline">\(X = \bar{y}\)</span>, representing the mean of a sample, and with <span class="math inline">\(a = \mu\)</span> and <span class="math inline">\(b = \frac{\sigma}{\sqrt{n}}\)</span>, this formulation directly supports the creation of confidence intervals around the sample mean.</p>
+</div>
+</div>
+</section>
+<section id="estimating-the-population-mean" class="slide level2">
+<h2>Estimating the Population Mean</h2>
+<div class="cle4">
+<div class="font70">
+<p>When estimating the population mean <span class="math inline">\(\mu\)</span>, which is unknown, we use the sample mean <span class="math inline">\(\bar{y}\)</span>. The difference <span class="math inline">\(|\bar{y} - \mu|\)</span> represents the error of our estimation.</p>
+<h3 id="error-bound-for-confidence">Error Bound for Confidence</h3>
+<p>To ensure the reliability of our estimate, we define a bound <span class="math inline">\(B\)</span> such that:</p>
+<p><span class="math display">\[
+P(|\bar{y} - \mu| \leqslant B) \geqslant 1 - \alpha
+\]</span></p>
+<p>This bound indicates that the true population mean is likely within <span class="math inline">\(B\)</span> units of our sample mean with a confidence level of <span class="math inline">\(1 - \alpha\)</span>. The smaller the error, the closer our sample mean is to the true population mean, enhancing the estimation’s accuracy.</p>
+</div>
+</div>
+</section>
+<section id="standardizing-and-solving-for-b" class="slide level2">
+<h2>Standardizing and Solving for <span class="math inline">\(B\)</span></h2>
+<div class="cle4">
+<div class="font60">
+<p>Transforming our problem using the standard deviation of the sample mean, we standardize:</p>
+<p><span class="math display">\[P(-B\leqslant \bar{y}-\mu\leqslant B)=P\left(\frac{-B}{\sigma/\sqrt{n}}\leqslant \frac{\bar{y}-\mu}{\sigma/\sqrt{n}}\leqslant \frac{B}{\sigma/\sqrt{n}}\right)\geqslant 1-\alpha\]</span></p>
+<p>Leveraging the symmetry of the standard normal distribution gives us:</p>
+<p><span class="math display">\[\frac{B}{\sigma/\sqrt{n}}=z_{1-\frac{\alpha}{2}}\]</span></p>
+<p>Concluding with the critical value for <span class="math inline">\(B\)</span>:</p>
+<p><span class="math display">\[B=z_{1-\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt{n}}\]</span></p>
+<p>This calculation shows how <span class="math inline">\(B\)</span> scales with both the sample size <span class="math inline">\(n\)</span> and the standard deviation <span class="math inline">\(\sigma\)</span>, key to interpreting the confidence in our estimate.</p>
+</div>
+</div>
+</section>
+<section id="using-t-distribution" class="slide level2">
+<h2>Using <span class="math inline">\(t\)</span>-Distribution</h2>
+<div class="cle4">
+<div class="font60">
+<p>When the population standard deviation <span class="math inline">\(\sigma\)</span> is unknown, we use the sample standard deviation <span class="math inline">\(s\)</span> and the <span class="math inline">\(t\)</span>-distribution to standardize the problem:</p>
+<p><span class="math display">\[P(-B\leqslant \bar{y}-\mu\leqslant B)=P\left(\frac{-B}{s/\sqrt{n}}\leqslant \frac{\bar{y}-\mu}{s/\sqrt{n}}\leqslant \frac{B}{s/\sqrt{n}}\right)\geqslant 1-\alpha\]</span></p>
+<p>Leveraging the properties of the <span class="math inline">\(t\)</span>-distribution, given the degrees of freedom <span class="math inline">\(n-1\)</span>, we find:</p>
+<p><span class="math display">\[\frac{B}{s/\sqrt{n}}=t_{1-\frac{\alpha}{2}, n-1}\]</span></p>
+<p>Concluding with the critical value for <span class="math inline">\(B\)</span>:</p>
+<p><span class="math display">\[B=t_{1-\frac{\alpha}{2}, n-1}\cdot \frac{s}{\sqrt{n}}\]</span></p>
+<p>This calculation shows how <span class="math inline">\(B\)</span> scales with the sample size <span class="math inline">\(n\)</span> and the sample standard deviation <span class="math inline">\(s\)</span>, crucial for interpreting the confidence in our estimate when <span class="math inline">\(\sigma\)</span> is unknown.</p>
+</div>
+</div>
+</section>
+<section id="case-study" class="slide level2">
+<h2>Case Study</h2>
+<div class="cle3">
+<div class="font70">
+<p>In a standard math quiz for the public school system of a county, each student was graded on a four-point scale <span class="math inline">\((0,1,2,3), 3\)</span> being a perfect score. The results for all students are given as follows:</p>
+<span class="math display">\[\begin{array}{ll}
+\hline \text { Score, y} &amp; \text { Propotion, P(y) } \\
+\hline 3 &amp; 0.64 \\
+2 &amp; 0.16 \\
+1 &amp; 0.08 \\
+0 &amp; 0.12 \\
+\hline
+\end{array}\]</span>
+</div>
+</div>
+</section>
+<section id="quiz" class="slide level2">
+<h2>Quiz</h2>
 <ol type="a">
-<li>What is the value of the mean <span class="math inline">\(E(\bar{y})\)</span> and standard deviation (standard error) <span class="math inline">\(\sigma_{\bar{y}}=\sqrt{V(\bar{y})}\)</span> of the sampling distribution of the sample mean <span class="math inline">\(\bar{y}\)</span>.</li>
+<li>Compute the expected value of the quiz score.</li>
 </ol>
 <p><br></p>
 <ol start="2" type="a">
-<li>Use the sample data of size 50, compute the mean and standard deviation of <span class="math inline">\(\bar{y}\)</span>. Compare the results with a.</li>
+<li>Compute the standard deviation of the quiz score.</li>
 </ol>
 <p><br></p>
 <ol start="3" type="a">
-<li>What is the probability that the sample mean is greater than 5?</li>
+<li>A sample of 100 students is randomly selected. What is the probability of this sample mean greater than 2.425 ?</li>
 </ol>
-<p><br></p>
+</section>
+<section id="solutions" class="slide level2">
+<h2>Solutions</h2>
+<details>
+<summary>
+<red>Click for answer</red>
+</summary>
+<div class="font60">
+<ol type="a">
+<li><p><span class="math inline">\(E(y)=\sum y \cdot P(y)=\mu =2.32\)</span></p></li>
+<li><p><span class="math inline">\(V(y)=\sum(y-\mu)^2 \cdot P(y)=\sigma^2=1.098\)</span></p></li>
+</ol>
+<p><span class="math inline">\(\operatorname{\operatorname {SD}}(y)=\sigma=\sqrt{1.098} \approx 1.048\)</span></p>
+<ol start="3" type="a">
+<li>A sample of <span class="math inline">\(n=100\)</span> students is selected</li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+\begin{aligned}
+P(\bar{y}&gt;2.425) &amp; =P\left(z&gt;\frac{2.425-\mu}{\sigma / \sqrt{n}}\right) \\
+&amp; =P\left(z&gt;\frac{2.425-2.32}{1.048 / \sqrt{100}}\right) \\
+&amp; \approx P(z&gt;1)=1-P(z&lt;1) \\
+&amp; =1-0.8413=0.1587
+\end{aligned}
+\end{align*}\]</span></p>
 </div>
-</div>
+</details>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -504,7 +537,7 @@ Bastola
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true,"src":"chalkboard.json"},
+'chalkboard': {"buttons":true,"src":"chalkboard.json","eraser":{"src":"img/sponge.png","radius":20}},
 'smaller': false,
  
         // Display controls in the bottom right corner

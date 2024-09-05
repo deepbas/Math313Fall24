@@ -1,0 +1,239 @@
+---
+title: "Day 5"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Samping"
+author: "Bastola"
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(xaringanExtra)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+```
+
+## Extending the Sampling Distribution
+
+::: cle
+
+- **Computational Application**
+  - Calculate probabilities involving statistic $\bar{y}, \hat{\tau}$ etc. from a sample.
+  - This forms the basis for estimating the variability of these statistic
+:::
+
+## Error Bounds and Confidence Intervals
+
+::: cle
+
+- **From Error Estimation to Confidence**
+  - Learn to compute error bounds around estimates.
+  - Extend these bounds to establish confidence intervals.
+:::
+
+
+## Knowledge Review: Standardizing Variables
+
+::: cle4
+- **Normal to Standard Normal Transformation**
+  - For a variable $X \sim \operatorname{Normal}(\text{mean} = a, \text{SD} = b)$:
+  - Standardization: $Z = \frac{X-a}{b}$
+  - Results in $Z \sim \operatorname{Normal}(\text{mean} = 0, \text{SD} = 1)$, the standard normal distribution.
+:::
+
+
+## Calculating Probabilities for a Normal Variable
+
+::: cle
+::: font70
+
+For a normal random variable $X$, and a specific value $c$, the probability that $X$ exceeds $c$ can be transformed to a standard normal variable $Z$. This transformation simplifies the calculation as follows:
+
+$$
+P(X > c) = P(X-a > c-a) = P\left(\frac{X-a}{b} > \frac{c-a}{b}\right)$$
+$$\qquad = P\left(Z > \frac{c-a}{b}\right) = 1 - P\left(Z < \frac{c-a}{b}\right)$$
+
+This step highlights the utility of standardization in statistical analysis, turning complex normal calculations into simpler standard normal calculations.
+
+:::
+:::
+
+
+## Calculating Interval Probabilities
+
+<br>
+
+::: cle5
+::: font60
+
+Determining the probability that $X$ lies between two values $c$ and $d$ involves subtracting the probability of $X$ being less than $c$ from the probability of $X$ being less than $d$:
+
+$$
+P(c < X < d) = P(X < d) - P(X < c) = P\left(Z < \frac{d-a}{b}\right) - P\left(Z < \frac{c-a}{b}\right)
+$$
+
+When $X = \bar{y}$, representing the mean of a sample, and with $a = \mu$ and $b = \frac{\sigma}{\sqrt{n}}$, this formulation directly supports the creation of confidence intervals around the sample mean.
+
+:::
+:::
+
+
+## Estimating the Population Mean
+
+::: cle4
+::: font70
+
+When estimating the population mean $\mu$, which is unknown, we use the sample mean $\bar{y}$. The difference $|\bar{y} - \mu|$ represents the error of our estimation.
+
+### Error Bound for Confidence
+
+To ensure the reliability of our estimate, we define a bound $B$ such that:
+
+$$
+P(|\bar{y} - \mu| \leqslant B) \geqslant 1 - \alpha
+$$
+
+This bound indicates that the true population mean is likely within $B$ units of our sample mean with a confidence level of $1 - \alpha$. The smaller the error, the closer our sample mean is to the true population mean, enhancing the estimation's accuracy.
+
+:::
+:::
+
+
+
+## Standardizing and Solving for $B$
+
+::: cle4
+::: font60
+
+Transforming our problem using the standard deviation of the sample mean, we standardize:
+
+$$P(-B\leqslant \bar{y}-\mu\leqslant B)=P\left(\frac{-B}{\sigma/\sqrt{n}}\leqslant \frac{\bar{y}-\mu}{\sigma/\sqrt{n}}\leqslant \frac{B}{\sigma/\sqrt{n}}\right)\geqslant 1-\alpha$$
+
+Leveraging the symmetry of the standard normal distribution gives us:
+
+$$\frac{B}{\sigma/\sqrt{n}}=z_{1-\frac{\alpha}{2}}$$
+
+Concluding with the critical value for $B$:
+
+$$B=z_{1-\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt{n}}$$
+
+This calculation shows how $B$ scales with both the sample size $n$ and the standard deviation $\sigma$, key to interpreting the confidence in our estimate.
+
+:::
+:::
+
+## Using $t$-Distribution
+
+::: cle4
+::: font60
+
+When the population standard deviation $\sigma$ is unknown, we use the sample standard deviation $s$ and the $t$-distribution to standardize the problem:
+
+$$P(-B\leqslant \bar{y}-\mu\leqslant B)=P\left(\frac{-B}{s/\sqrt{n}}\leqslant \frac{\bar{y}-\mu}{s/\sqrt{n}}\leqslant \frac{B}{s/\sqrt{n}}\right)\geqslant 1-\alpha$$
+
+Leveraging the properties of the $t$-distribution, given the degrees of freedom $n-1$, we find:
+
+$$\frac{B}{s/\sqrt{n}}=t_{1-\frac{\alpha}{2}, n-1}$$
+
+Concluding with the critical value for $B$:
+
+$$B=t_{1-\frac{\alpha}{2}, n-1}\cdot \frac{s}{\sqrt{n}}$$
+
+This calculation shows how $B$ scales with the sample size $n$ and the sample standard deviation $s$, crucial for interpreting the confidence in our estimate when $\sigma$ is unknown.
+
+:::
+:::
+
+
+
+## Case Study
+
+::: cle3
+::: font70
+
+In a standard math quiz for the public school system of a county, each student was graded on a four-point scale $(0,1,2,3), 3$ being a perfect score. The results for all students are given as follows:
+
+\begin{array}{ll}
+\hline \text { Score, y} & \text { Propotion, P(y) } \\
+\hline 3 & 0.64 \\
+2 & 0.16 \\
+1 & 0.08 \\
+0 & 0.12 \\
+\hline
+\end{array}
+
+:::
+:::
+
+## Quiz
+
+
+a. Compute the expected value of the quiz score.
+
+<br>
+
+b. Compute the standard deviation of the quiz score.
+
+<br>
+
+c. A sample of 100 students is randomly selected. What is the probability of this sample mean greater than 2.425 ?
+
+## Solutions
+
+<details> <summary><red>Click for answer</red></summary>
+::: font60
+
+a. $E(y)=\sum y \cdot P(y)=\mu =2.32$ 
+
+b. $V(y)=\sum(y-\mu)^2 \cdot P(y)=\sigma^2=1.098$
+
+$\operatorname{\operatorname {SD}}(y)=\sigma=\sqrt{1.098} \approx 1.048$
+
+c. A sample of $n=100$ students is selected
+
+\begin{align*}
+\begin{aligned}
+P(\bar{y}>2.425) & =P\left(z>\frac{2.425-\mu}{\sigma / \sqrt{n}}\right) \\
+& =P\left(z>\frac{2.425-2.32}{1.048 / \sqrt{100}}\right) \\
+& \approx P(z>1)=1-P(z<1) \\
+& =1-0.8413=0.1587 
+\end{aligned}
+\end{align*}
+
+:::
+</details>
+
