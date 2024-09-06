@@ -26,9 +26,9 @@ website:
           - text: "Lecture 4"
             href: Day4.html
             target: "_blank"
-          # - text: "Lecture 5"
-          #   href: Day5.html
-          #   target: "_blank"
+          - text: "Lecture 5"
+            href: Day5.html
+            target: "_blank"
 
           # Add additional lectures here
       # - text: "Class Activities"
