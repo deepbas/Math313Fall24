@@ -4,7 +4,7 @@ title-slide-attributes:
   data-background-image: images/lake.jpg
   data-background-size: contain
   data-background-opacity: "0.5"
-subtitle: "MATH 313: Survey Design and Samping"
+subtitle: "MATH 313: Survey Design and Sampling"
 author: "Bastola"
 format:
   revealjs:
