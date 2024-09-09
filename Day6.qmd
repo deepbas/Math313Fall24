@@ -47,3 +47,186 @@ theme_set(theme_tufte(base_size = 10))
 yt <- 0
 ```
 
+
+## Population Probability Calculation
+
+
+> In general, if $X$ is a random variable following a normal distribution with the mean $a$ and standard deviation $b$, then we can compute the probability of $X<c$ for some number $c$ with the following R function:
+
+
+
+```{{r}}
+1 - pnorm(x = c, mean = a, sd = b)
+```
+
+
+## Sampling Distribution 
+
+::: font80
+> When dealing with a sample mean $\bar{y}$, the variable $\bar{y}$ is normally distributed with mean $\mu$ and standard deviation $\frac{\sigma}{\sqrt{n}}$, where $n$ is the sample size. This is described mathematically as:
+$$
+X = \bar{y}, \quad a = \mu, \quad b = \frac{\sigma}{\sqrt{n}}
+$$
+For computing the probability of $X < c$, use the R code below:
+:::
+
+```{{r}}
+1 - pnorm(x = c, mean = a, sd = b)
+```
+
+## 
+
+```{=html}
+<iframe width="1380" height="1100" src="https://shinylive.io/r/app/#h=0&code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4BzSampFSAJmEQRAYgAEAETgAzPnHUBVAJLqdRRurSzaBKKVol1pbvfUATZgHdOV9b05SIklmGBEAV1p1AB4AWjNqSPcABShJOHYRdWznWlJqOFSIOGpMsAAtWIBlYkYDKAh3dWTYgDUoRLghMAFcLJz+7M5adzh6FgAZKFYicNJMiByl9WHR8cYikoXlnec4AA9SYwhUObKALwB9TlquvHVugFEyOEtKm4sDC3Vj8kYANw66nYcAwkgwuHUsQAjBgAJwANkhsMRAkQ3UhgM66gAvA8wDDcNDur1BrtslACA4SAAhOZBCBlcKodz2OCXWTyDH4wwstnNOSkElkpakxa7EU5GBQPibUqS5ac0gAeTmp3m3QgFhgyUFwvFO2UopEyjUWl0+hWr3+r3UckktnUdQAjpE6k0gh5vH4AkEQrARJxrba4mZwhAqY5GXx1ZDZqRY1bOMMSAJ1CAyWSNAAxcORpyepXObgGLWMaXUDy0QKMBhzKNkpWXMswGLxHR56mMq4fOqcNMZg3LauXPh-LFtu0USQudg92799QAPnUxKHSzkXlel3os0ak9oOnYI7H1o6aZgfDn1wXaZKQahABZshpDA-Ys-zJZ-tXwkC6qgfYUKQ9hRuoRA6FCxw6Aq6jMqg267uGTShtK+zXr2cD9rBLBwFAHKXFi4QGKGh7Hpwo4vAC57prB5L0dk7iHkeqAtuwBDsJuiF7u4kLwdxyG9Oo8ANLi6gAAyQpwTR4tCAhGgxinqAAvuo94GIOSladkrHauw-GMDuPGQiJix4pJKwyauCnabsymwbB8bqgAJC2uryJOdSNK87nzJpimsiBk6BVAGA6KEGT7GJQbOuwH6Qo+kIFBAM7cBg8ZidC4nifJdE5Kgk7SEq7AhZCUBYew+zyeoADUeU7IE9iXB2EZduwLVie4LZlYwki+HidCBOwpliRZ0mZdVdXrop6REDAly4VAXAgaQYndC1+YqPcHV4l12o9X1YmDfMI3mVJVlyX0022cs+x0K2eIcVxhlIY0fHoAJjRCXo1CVni3T0J03IdKgrijRgACsaZTTd1BQPQnDsA4+QGP9YBVCBjQsE0ABy2pApo1akLW9D1k4ADC4QAnckKsGtYAkrV9XLC4cDwJcl4QLQFbsNDzNLHd8NlO8tyMzDtmsPd7AWeJkM5Uz130az8DsFA+zVhg5CHBgdN4iUbPATucMQAA1rzZXq5wmu2CbVu62pBTwGQRsNGbk38zkDRaitGTdFrQr3FFZ3qPbsuPhDSXwyU0WAWOR7dBMuirQAgnUUDNLERFwIg6gAKQYI+MH3ItBFZ0JHuKcQciWGjrKMCbIRwBQ3LmGQOiUqj+K7tQ7jcsM5yd1lNn0bHZDsKgw9LMpw-2SoQ4aNo7fhNQq1KmSRAI8G7D+TsTZsVAVsQOE8C1hxHGEtZuVDtPIhZkYfLkOoRZOKTpAMuoBB0AQJvr5v1OPDaMeMY5jOWZIFdkSpIQ72WPOT4vhQwHwwEfE+th9KiCJstRgnAbDzGAaQZysC6iQgxCSK+5I956UIVhGeyhZ5miwOGYs9R0Bf1Ak4QMvB+DJ3QPpKIeJIhSWDDXK01NGDKDAMpAAukAA" title="Webpage example"></iframe>
+```
+
+
+## Example 1
+
+> Suppose the heights of all male adults from a particular region follow a normal distribution with mean 5.6 ft and variance $1.44 \mathrm{ft}^2$. A sample of 100 male adults from this region is randomly selected and their heights are measured. 
+
+a. What is the expected value and standard deviation of the average height, $\bar{y}$, of this sample?
+
+<br>
+
+
+
+## Example 1
+
+b. What is the probability that the average height of this sample is less than 5 ft ?
+
+<br>
+
+c. What is the probability that the average height of this sample is greater than 6 ft ?
+
+<br>
+
+## Example 1
+
+d. What is the probability that the average height of this sample is between 5.2 ft and 5.9 ft ?
+
+<br>
+
+e. What is the probability that a randomly selected male adult from this region has a height greater than 6 ft ?
+
+<br>
+
+
+
+
+## Percentiles in Statistical Distributions
+
+::: font80
+> The $100 \times p$th percentile of a random variable $X$ is a value $c$ such that:
+    $$P(X < c) = p$$
+  This defines the point below which a given percentage ($p$) of observations fall.
+  
+  
+**Standard Normal Distribution**
+
+  - For a standard normal random variable $Z$, the $100 \times p$th percentile is denoted $z_p$.
+  - Example in R: `qnorm(p)` where `p` is the desired percentile.
+
+:::
+
+## Percentiles in Statistical Distributions
+
+::: cle
+::: font80
+- **General Normal Distribution**
+  - For a normally distributed variable $X$ with mean $\mu$ and standard deviation $\sigma$:
+    $$c = \mu + z_p \cdot \sigma$$
+  - This is calculated in R using: `qnorm(p, mean = mu, sd = sigma)`
+  - Represents the value below which $100 \times p$ percent of the data in the distribution lies.
+  
+:::
+:::
+
+##
+
+
+```{=html}
+<iframe width="1380" height="1100" src="https://shinylive.io/r/app/#h=0&code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4BzSampFSAJmEQRAV1oACADwBaDQDNq6gCYAFKJLjsRG2xtK1S1OOYhxq1sKbiMCFB872RBoAWjoAysSMcBoAIrScpIwMqg4kGgCiAB6yRNGMQmACuDZ2nLTGcPQsADJQrESp1hB2rRrlldWMru7Nbf32cFmkAJIQqE2FqD5+ZLTOAPp8E6SFuBqFGWQ+Gt6+-vMx7HAYkhjrAAwYFwoArAKIaxoAblBGMQC8G2BXN7eFxVKAzsEFU8GSBDGK088CgKjw3wAsnA4Y8ERdAS1gSCwT5aJDxpMwJxjE9CuFSHDjCxjHE4M9aFA0hA0esAIyY7F2KAEZkAIVSpBInlUqGp5AWuVWCMKAFUxUyYqY5NLlMDOQMYFA+D0PEDgVKAPKpaGFCB5GDK+QA-WtNV2ZTKEScHzPHa6AyqCC82jC5apdaNUgrdYuzjlEgCDQgfUAYg0ADEvT70kKNNEIJVGPZuDEpRpqi7aancxpJLQ3S1-aROPqpUnvcztHp9Mnmexpvs5s51rCIKHjFGY1j+vGAMJvAiqaiKnMxABeOk4URi+kYRBgc40ndmATgtrs84Wy7yMQ9AEdzYwYB2Zgcexo+xovn2B8-2oORAfbPHYnB9HwMSkKW+Z0DAji1iObRZGBnDNhoBDsE+egACwaAAVB+vYoi0ADUGhoZhJL2v0rCwfBiEXOsxhXjer6Pjh770SS77ERhGhshgCgYt+GxQa047RLOwF5iqvHilA8ESRga6wFYWSsXA57sDBtAwJwwBsgAuusqnqcACg6RozgQJIwEYEG75shcGIkW0qDwdIUrsBJ6xQHAnAqQIUa4bxrSJEyCyto2voQOwwXvjRFpuYwkhwV8dCJEhjEvjhb5fMRPl+XYlgbgsLAolwlKkO+hTBSm8LrBFXxRdeMVxe+iWkMlcJMWlH6sYOJT8VyAx6e+iHIQR7EkusR4ntExQGPM1ClWA9DvE8byoNwklfFc9waL5PX9DO9CeQ4TifN8AByFpvHECRJCkTZjqojBuk8rBzQCW3ZbYInwAs4EQGpbzsFlO3QXtngAGpvKo+5FG9QOtGRansPD6mA71c7wOwUBZAkGDkMMGDPV87hwPAZALAtcIANYA25WOcDj+IU3TBMaETJOkGTM4QFT3kw6jcLmsVViFLj0q6W1cLrMzSMaYZ7FXAAnOse3uKxqDJGQ+ieGEE1wIgGgAKRcfoBh5Lsd7drrBsYCh+hPONK7rDu95wFNxByNmXyFNEpIIvoJCkPoPLHYU9BENQPuhrQ87HfcvFq3wzWoHZAC+X5QfGhr7a6QGlqK4qifIGg8k29CCiQ+pEFnD1wBklbNdWAAkeeKpKKrrMOwIJGHirsB3vX1m2oUY3ToLgvi7CN07FtLISpBTY39GN8RvHJynTrpxoACCqQbky+JvNQz2WG4zDkFulSB9OJX5ukAWMKQooVyaqQN7RVolR6GZZu-vdxyqDYVXYL8O4lx2RrxEKnFQEAeB8FYJvdA7B1DvnUKGbOHt2hoOUGAZOWkgA" title="Webpage example"></iframe>
+
+```
+
+
+## Example 2
+
+::: font80
+> According to the National Center of Education Statistics report, the SAT scores for all exam takers in Maryland in 2017 has a mean of 1060 and standard deviation of 199. Assume that the SAT scores follow a normal distribution.
+:::
+
+a. A top-ranked university only accepts the top $10 \%$ students in Maryland. Find the minimum SAT score for being admitted to that university in 2017.
+
+## Example 2
+
+b. Find the SAT scores that separate the middle $80 \%$ of the scores from the top and bottom $10 \%$.
+
+<br>
+
+c. A random sample of 200 SAT scores is selected. Find the minimum possible value $c$ such that only $5 \%$ of chance the sample mean $\bar{y}$ is greater than $c$.
+
+
+
+
+## What is Simple Random Sampling?
+
+::: fsp
+- **Definition**: Simple Random Sampling (SRS) is a method where each sample of size $n$ from a population of size $N$ has an equal chance of being selected.
+- **Properties**:
+  - Every element has an equal probability of selection.
+  - Selections are independent of each other.
+
+:::
+
+::: notes
+Introduce the concept of SRS, emphasizing its unbiased nature and the independence of selections, fundamental for inferential statistics.
+:::
+
+
+## Why Use Simple Random Sampling?
+
+::: owh
+- **Fairness and Simplicity**:
+  - Ensures each member of the population has an equal opportunity to be chosen.
+  - Easy to understand and implement.
+- **Minimized Bias**:
+  - Reduces the chance of sampling bias; results are more likely to be representative of the population.
+:::
+
+::: notes
+Discuss the inherent fairness of SRS and how it minimizes sampling bias, crucial for credible statistical analysis.
+:::
+
+
+## Limitations of Simple Random Sampling
+
+::: zen
+- **Feasibility and Cost**:
+  - Not practical for very large populations due to logistical complexities and costs.
+- **Variability**:
+  - Can lead to higher variability between samples compared to more complex designs.
+:::
+
+::: notes
+Critique SRS by highlighting potential logistical issues in large populations and variability concerns.
+:::
+
+## Simple Random Sampling in Action: Nielsen Ratings
+
+::: dse
+::: font80
+- **Application**:
+  - Nielsen uses a form of SRS to measure television viewership across the U.S.
+- **Process**:
+  - Randomly selects households to install People Meters.
+  - Collects and processes viewership data to provide ratings.
+- **Impact**:
+  - Ratings influence TV programming and advertising decisions globally.
+:::
+:::
+
+::: notes
+Showcase the practical application of SRS in Nielsen's methodology, emphasizing its influence on the television industry.
+:::

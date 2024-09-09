@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -329,7 +394,7 @@
 
 <section id="title-slide" data-background-image="images/lake.jpg" data-background-opacity="0.5" data-background-size="contain" class="quarto-title-block center">
   <h1 class="title">Day 6</h1>
-  <p class="subtitle">MATH 313: Survey Design and Samping</p>
+  <p class="subtitle">MATH 313: Survey Design and Sampling</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -340,8 +405,235 @@ Bastola
 </div>
 
 </section>
-<section class="slide level2">
+<section id="population-probability-calculation" class="slide level2">
+<h2>Population Probability Calculation</h2>
+<blockquote>
+<p>In general, if <span class="math inline">\(X\)</span> is a random variable following a normal distribution with the mean <span class="math inline">\(a\)</span> and standard deviation <span class="math inline">\(b\)</span>, then we can compute the probability of <span class="math inline">\(X&lt;c\)</span> for some number <span class="math inline">\(c\)</span> with the following R function:</p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a></a><span class="in">1 - pnorm(x = c, mean = a, sd = b)</span></span>
+<span id="cb1-3"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sampling-distribution" class="slide level2">
+<h2>Sampling Distribution</h2>
+<div class="font80">
+<blockquote>
+<p>When dealing with a sample mean <span class="math inline">\(\bar{y}\)</span>, the variable <span class="math inline">\(\bar{y}\)</span> is normally distributed with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\frac{\sigma}{\sqrt{n}}\)</span>, where <span class="math inline">\(n\)</span> is the sample size. This is described mathematically as: <span class="math display">\[
+X = \bar{y}, \quad a = \mu, \quad b = \frac{\sigma}{\sqrt{n}}
+\]</span> For computing the probability of <span class="math inline">\(X &lt; c\)</span>, use the R code below:</p>
+</blockquote>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a></a><span class="in">1 - pnorm(x = c, mean = a, sd = b)</span></span>
+<span id="cb2-3"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<iframe width="1380" height="1100" src="https://shinylive.io/r/app/#h=0&amp;code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4BzSampFSAJmEQRAYgAEAETgAzPnHUBVAJLqdRRurSzaBKKVol1pbvfUATZgHdOV9b05SIklmGBEAV1p1AB4AWjNqSPcABShJOHYRdWznWlJqOFSIOGpMsAAtWIBlYkYDKAh3dWTYgDUoRLghMAFcLJz+7M5adzh6FgAZKFYicNJMiByl9WHR8cYikoXlnec4AA9SYwhUObKALwB9TlquvHVugFEyOEtKm4sDC3Vj8kYANw66nYcAwkgwuHUsQAjBgAJwANkhsMRAkQ3UhgM66gAvA8wDDcNDur1BrtslACA4SAAhOZBCBlcKodz2OCXWTyDH4wwstnNOSkElkpakxa7EU5GBQPibUqS5ac0gAeTmp3m3QgFhgyUFwvFO2UopEyjUWl0+hWr3+r3UckktnUdQAjpE6k0gh5vH4AkEQrARJxrba4mZwhAqY5GXx1ZDZqRY1bOMMSAJ1CAyWSNAAxcORpyepXObgGLWMaXUDy0QKMBhzKNkpWXMswGLxHR56mMq4fOqcNMZg3LauXPh-LFtu0USQudg92799QAPnUxKHSzkXlel3os0ak9oOnYI7H1o6aZgfDn1wXaZKQahABZshpDA-Ys-zJZ-tXwkC6qgfYUKQ9hRuoRA6FCxw6Aq6jMqg267uGTShtK+zXr2cD9rBLBwFAHKXFi4QGKGh7Hpwo4vAC57prB5L0dk7iHkeqAtuwBDsJuiF7u4kLwdxyG9Oo8ANLi6gAAyQpwTR4tCAhGgxinqAAvuo94GIOSladkrHauw-GMDuPGQiJix4pJKwyauCnabsymwbB8bqgAJC2uryJOdSNK87nzJpimsiBk6BVAGA6KEGT7GJQbOuwH6Qo+kIFBAM7cBg8ZidC4nifJdE5Kgk7SEq7AhZCUBYew+zyeoADUeU7IE9iXB2EZduwLVie4LZlYwki+HidCBOwpliRZ0mZdVdXrop6REDAly4VAXAgaQYndC1+YqPcHV4l12o9X1YmDfMI3mVJVlyX0022cs+x0K2eIcVxhlIY0fHoAJjRCXo1CVni3T0J03IdKgrijRgACsaZTTd1BQPQnDsA4+QGP9YBVCBjQsE0ABy2pApo1akLW9D1k4ADC4QAnckKsGtYAkrV9XLC4cDwJcl4QLQFbsNDzNLHd8NlO8tyMzDtmsPd7AWeJkM5Uz130az8DsFA+zVhg5CHBgdN4iUbPATucMQAA1rzZXq5wmu2CbVu62pBTwGQRsNGbk38zkDRaitGTdFrQr3FFZ3qPbsuPhDSXwyU0WAWOR7dBMuirQAgnUUDNLERFwIg6gAKQYI+MH3ItBFZ0JHuKcQciWGjrKMCbIRwBQ3LmGQOiUqj+K7tQ7jcsM5yd1lNn0bHZDsKgw9LMpw-2SoQ4aNo7fhNQq1KmSRAI8G7D+TsTZsVAVsQOE8C1hxHGEtZuVDtPIhZkYfLkOoRZOKTpAMuoBB0AQJvr5v1OPDaMeMY5jOWZIFdkSpIQ72WPOT4vhQwHwwEfE+th9KiCJstRgnAbDzGAaQZysC6iQgxCSK+5I956UIVhGeyhZ5miwOGYs9R0Bf1Ak4QMvB+DJ3QPpKIeJIhSWDDXK01NGDKDAMpAAukAA" title="Webpage example"></iframe>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example 1</h2>
+<blockquote>
+<p>Suppose the heights of all male adults from a particular region follow a normal distribution with mean 5.6 ft and variance <span class="math inline">\(1.44 \mathrm{ft}^2\)</span>. A sample of 100 male adults from this region is randomly selected and their heights are measured.</p>
+</blockquote>
+<ol type="a">
+<li>What is the expected value and standard deviation of the average height, <span class="math inline">\(\bar{y}\)</span>, of this sample?</li>
+</ol>
+<p><br></p>
+</section>
+<section id="example-1-1" class="slide level2">
+<h2>Example 1</h2>
+<ol start="2" type="a">
+<li>What is the probability that the average height of this sample is less than 5 ft ?</li>
+</ol>
+<p><br></p>
+<ol start="3" type="a">
+<li>What is the probability that the average height of this sample is greater than 6 ft ?</li>
+</ol>
+<p><br></p>
+</section>
+<section id="example-1-2" class="slide level2">
+<h2>Example 1</h2>
+<ol start="4" type="a">
+<li>What is the probability that the average height of this sample is between 5.2 ft and 5.9 ft ?</li>
+</ol>
+<p><br></p>
+<ol start="5" type="a">
+<li>What is the probability that a randomly selected male adult from this region has a height greater than 6 ft ?</li>
+</ol>
+<p><br></p>
+</section>
+<section id="percentiles-in-statistical-distributions" class="slide level2">
+<h2>Percentiles in Statistical Distributions</h2>
+<div class="font80">
+<blockquote>
+<p>The <span class="math inline">\(100 \times p\)</span>th percentile of a random variable <span class="math inline">\(X\)</span> is a value <span class="math inline">\(c\)</span> such that: <span class="math display">\[P(X &lt; c) = p\]</span> This defines the point below which a given percentage (<span class="math inline">\(p\)</span>) of observations fall.</p>
+</blockquote>
+<p><strong>Standard Normal Distribution</strong></p>
+<ul>
+<li>For a standard normal random variable <span class="math inline">\(Z\)</span>, the <span class="math inline">\(100 \times p\)</span>th percentile is denoted <span class="math inline">\(z_p\)</span>.</li>
+<li>Example in R: <code>qnorm(p)</code> where <code>p</code> is the desired percentile.</li>
+</ul>
+</div>
+</section>
+<section id="percentiles-in-statistical-distributions-1" class="slide level2">
+<h2>Percentiles in Statistical Distributions</h2>
+<div class="cle">
+<div class="font80">
+<ul>
+<li><strong>General Normal Distribution</strong>
+<ul>
+<li>For a normally distributed variable <span class="math inline">\(X\)</span> with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>: <span class="math display">\[c = \mu + z_p \cdot \sigma\]</span></li>
+<li>This is calculated in R using: <code>qnorm(p, mean = mu, sd = sigma)</code></li>
+<li>Represents the value below which <span class="math inline">\(100 \times p\)</span> percent of the data in the distribution lies.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<iframe width="1380" height="1100" src="https://shinylive.io/r/app/#h=0&amp;code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4BzSampFSAJmEQRAV1oACADwBaDQDNq6gCYAFKJLjsRG2xtK1S1OOYhxq1sKbiMCFB872RBoAWjoAysSMcBoAIrScpIwMqg4kGgCiAB6yRNGMQmACuDZ2nLTGcPQsADJQrESp1hB2rRrlldWMru7Nbf32cFmkAJIQqE2FqD5+ZLTOAPp8E6SFuBqFGWQ+Gt6+-vMx7HAYkhjrAAwYFwoArAKIaxoAblBGMQC8G2BXN7eFxVKAzsEFU8GSBDGK088CgKjw3wAsnA4Y8ERdAS1gSCwT5aJDxpMwJxjE9CuFSHDjCxjHE4M9aFA0hA0esAIyY7F2KAEZkAIVSpBInlUqGp5AWuVWCMKAFUxUyYqY5NLlMDOQMYFA+D0PEDgVKAPKpaGFCB5GDK+QA-WtNV2ZTKEScHzPHa6AyqCC82jC5apdaNUgrdYuzjlEgCDQgfUAYg0ADEvT70kKNNEIJVGPZuDEpRpqi7aancxpJLQ3S1-aROPqpUnvcztHp9Mnmexpvs5s51rCIKHjFGY1j+vGAMJvAiqaiKnMxABeOk4URi+kYRBgc40ndmATgtrs84Wy7yMQ9AEdzYwYB2Zgcexo+xovn2B8-2oORAfbPHYnB9HwMSkKW+Z0DAji1iObRZGBnDNhoBDsE+egACwaAAVB+vYoi0ADUGhoZhJL2v0rCwfBiEXOsxhXjer6Pjh770SS77ERhGhshgCgYt+GxQa047RLOwF5iqvHilA8ESRga6wFYWSsXA57sDBtAwJwwBsgAuusqnqcACg6RozgQJIwEYEG75shcGIkW0qDwdIUrsBJ6xQHAnAqQIUa4bxrSJEyCyto2voQOwwXvjRFpuYwkhwV8dCJEhjEvjhb5fMRPl+XYlgbgsLAolwlKkO+hTBSm8LrBFXxRdeMVxe+iWkMlcJMWlH6sYOJT8VyAx6e+iHIQR7EkusR4ntExQGPM1ClWA9DvE8byoNwklfFc9waL5PX9DO9CeQ4TifN8AByFpvHECRJCkTZjqojBuk8rBzQCW3ZbYInwAs4EQGpbzsFlO3QXtngAGpvKo+5FG9QOtGRansPD6mA71c7wOwUBZAkGDkMMGDPV87hwPAZALAtcIANYA25WOcDj+IU3TBMaETJOkGTM4QFT3kw6jcLmsVViFLj0q6W1cLrMzSMaYZ7FXAAnOse3uKxqDJGQ+ieGEE1wIgGgAKRcfoBh5Lsd7drrBsYCh+hPONK7rDu95wFNxByNmXyFNEpIIvoJCkPoPLHYU9BENQPuhrQ87HfcvFq3wzWoHZAC+X5QfGhr7a6QGlqK4qifIGg8k29CCiQ+pEFnD1wBklbNdWAAkeeKpKKrrMOwIJGHirsB3vX1m2oUY3ToLgvi7CN07FtLISpBTY39GN8RvHJynTrpxoACCqQbky+JvNQz2WG4zDkFulSB9OJX5ukAWMKQooVyaqQN7RVolR6GZZu-vdxyqDYVXYL8O4lx2RrxEKnFQEAeB8FYJvdA7B1DvnUKGbOHt2hoOUGAZOWkgA" title="Webpage example"></iframe>
 
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example 2</h2>
+<div class="font80">
+<blockquote>
+<p>According to the National Center of Education Statistics report, the SAT scores for all exam takers in Maryland in 2017 has a mean of 1060 and standard deviation of 199. Assume that the SAT scores follow a normal distribution.</p>
+</blockquote>
+</div>
+<ol type="a">
+<li>A top-ranked university only accepts the top <span class="math inline">\(10 \%\)</span> students in Maryland. Find the minimum SAT score for being admitted to that university in 2017.</li>
+</ol>
+</section>
+<section id="example-2-1" class="slide level2">
+<h2>Example 2</h2>
+<ol start="2" type="a">
+<li>Find the SAT scores that separate the middle <span class="math inline">\(80 \%\)</span> of the scores from the top and bottom <span class="math inline">\(10 \%\)</span>.</li>
+</ol>
+<p><br></p>
+<ol start="3" type="a">
+<li>A random sample of 200 SAT scores is selected. Find the minimum possible value <span class="math inline">\(c\)</span> such that only <span class="math inline">\(5 \%\)</span> of chance the sample mean <span class="math inline">\(\bar{y}\)</span> is greater than <span class="math inline">\(c\)</span>.</li>
+</ol>
+</section>
+<section id="what-is-simple-random-sampling" class="slide level2">
+<h2>What is Simple Random Sampling?</h2>
+<div class="fsp">
+<ul>
+<li><strong>Definition</strong>: Simple Random Sampling (SRS) is a method where each sample of size <span class="math inline">\(n\)</span> from a population of size <span class="math inline">\(N\)</span> has an equal chance of being selected.</li>
+<li><strong>Properties</strong>:
+<ul>
+<li>Every element has an equal probability of selection.</li>
+<li>Selections are independent of each other.</li>
+</ul></li>
+</ul>
+</div>
+<aside class="notes">
+<p>Introduce the concept of SRS, emphasizing its unbiased nature and the independence of selections, fundamental for inferential statistics.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-use-simple-random-sampling" class="slide level2">
+<h2>Why Use Simple Random Sampling?</h2>
+<div class="owh">
+<ul>
+<li><strong>Fairness and Simplicity</strong>:
+<ul>
+<li>Ensures each member of the population has an equal opportunity to be chosen.</li>
+<li>Easy to understand and implement.</li>
+</ul></li>
+<li><strong>Minimized Bias</strong>:
+<ul>
+<li>Reduces the chance of sampling bias; results are more likely to be representative of the population.</li>
+</ul></li>
+</ul>
+</div>
+<aside class="notes">
+<p>Discuss the inherent fairness of SRS and how it minimizes sampling bias, crucial for credible statistical analysis.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="limitations-of-simple-random-sampling" class="slide level2">
+<h2>Limitations of Simple Random Sampling</h2>
+<div class="zen">
+<ul>
+<li><strong>Feasibility and Cost</strong>:
+<ul>
+<li>Not practical for very large populations due to logistical complexities and costs.</li>
+</ul></li>
+<li><strong>Variability</strong>:
+<ul>
+<li>Can lead to higher variability between samples compared to more complex designs.</li>
+</ul></li>
+</ul>
+</div>
+<aside class="notes">
+<p>Critique SRS by highlighting potential logistical issues in large populations and variability concerns.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="simple-random-sampling-in-action-nielsen-ratings" class="slide level2">
+<h2>Simple Random Sampling in Action: Nielsen Ratings</h2>
+<div class="dse">
+<div class="font80">
+<ul>
+<li><strong>Application</strong>:
+<ul>
+<li>Nielsen uses a form of SRS to measure television viewership across the U.S.</li>
+</ul></li>
+<li><strong>Process</strong>:
+<ul>
+<li>Randomly selects households to install People Meters.</li>
+<li>Collects and processes viewership data to provide ratings.</li>
+</ul></li>
+<li><strong>Impact</strong>:
+<ul>
+<li>Ratings influence TV programming and advertising decisions globally.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p>Showcase the practical application of SRS in Nielsen’s methodology, emphasizing its influence on the television industry.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
