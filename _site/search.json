@@ -1,206 +1,94 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Math 313: Fall 2024",
-    "section": "",
-    "text": "Welcome to the world of survey statistics!"
+    "objectID": "Day1.html#something-about-me",
+    "href": "Day1.html#something-about-me",
+    "title": "Day 1",
+    "section": "Something about me",
+    "text": "Something about me\n\n\n\n\n\nFirst year at Salisbury\nOriginally from Nepal\nResearch in Statistical Computation and Applied Statistics\nAvid learner and traveler\n\n\n\n\n\n\n\n\n\nMy website"
   },
   {
-    "objectID": "Day2.html#statistical-practice",
-    "href": "Day2.html#statistical-practice",
-    "title": "Day 2",
-    "section": "Statistical Practice",
-    "text": "Statistical Practice\n\n\nAccessing Population Data: Often, it’s impractical or impossible to examine every individual in a population.\nWhy Sample?: We select a sample of size \\(n\\) because it allows us to estimate population characteristics like mean \\(\\mu\\) and standard deviation \\(\\sigma\\).\nPurpose of Sampling: Sampling helps infer the broader population’s characteristics from a representative set of data."
+    "objectID": "Day1.html#active-participation",
+    "href": "Day1.html#active-participation",
+    "title": "Day 1",
+    "section": "Active Participation",
+    "text": "Active Participation\n\n\n\nEngage Actively\n\nTake lecture notes\nFollow class handouts\n\nAsk Questions\n\nEvery question is valuable; we’re learning together\n\nGain Conceptual Understanding\n\nTo be able to apply the knowledge; understanding the concepts is key"
   },
   {
-    "objectID": "Day2.html#population-and-sample",
-    "href": "Day2.html#population-and-sample",
-    "title": "Day 2",
-    "section": "Population and Sample",
-    "text": "Population and Sample\n\n\n\n\nAn element is an object on which a measurement is taken.\nA population is a collection of elements about which we wish to make an inference.\nA sample unit are non overlapping collections of elements from the population that cover the entire population.\nA frame is a list of sampling units.\nA sample is a collection of sampling units drawn from a single frame or from multiple frames."
+    "objectID": "Day1.html#tell-me-something-about-yourself",
+    "href": "Day1.html#tell-me-something-about-yourself",
+    "title": "Day 1",
+    "section": "Tell me something about yourself!",
+    "text": "Tell me something about yourself!\n\n\n\n\n\nYour name?\nGender Pronouns?\nFavorite Summer Memory?\n\n\n\n\n\n\n\nvia GIPHY"
   },
   {
-    "objectID": "Day2.html#key-concept-statistic",
-    "href": "Day2.html#key-concept-statistic",
-    "title": "Day 2",
-    "section": "Key Concept: Statistic",
-    "text": "Key Concept: Statistic\n\n\n\nStatistic help us summarize information about groups.\nExample: In a poll of 500 likely voters:\n\n68% indicated that the economy is their top concern.\n\nThis 68% is a statistic—it describes the sample of voters."
+    "objectID": "Day1.html#class-pipelines",
+    "href": "Day1.html#class-pipelines",
+    "title": "Day 1",
+    "section": "Class Pipelines",
+    "text": "Class Pipelines\n\n\n\nMost of the course information and schedule will be posted in MyClasses\nHomework will be posted but not collected\nLabs most Tuesdays; lab reports due in a week from the lab date\nQuizzes every Friday; includes HW, lectures, labs"
   },
   {
-    "objectID": "Day2.html#definition-parameter",
-    "href": "Day2.html#definition-parameter",
-    "title": "Day 2",
-    "section": "Definition: Parameter",
-    "text": "Definition: Parameter\n\n\n\nA parameter is a number that describes a population.\nConsider this scenario: After an election, 53% of voters supported a new park funding proposition.\n\nThis 53% is a parameter—it describes the entire voting population’s preference."
+    "objectID": "Day1.html#what-will-a-typical-dayweek-look-like",
+    "href": "Day1.html#what-will-a-typical-dayweek-look-like",
+    "title": "Day 1",
+    "section": "What will a typical day/week look like?",
+    "text": "What will a typical day/week look like?\n\n\n\nBefore class:\n\nRead assigned topics from textbook\nWork on homework/lab reports, come with questions\n\nDuring class:\n\nMini lectures\nClass activities"
   },
   {
-    "objectID": "Day2.html#key-sample-statistics",
-    "href": "Day2.html#key-sample-statistics",
-    "title": "Day 2",
-    "section": "Key Sample Statistics",
-    "text": "Key Sample Statistics\n\n\nSample Mean (\\(\\bar{y}\\)):\n\nCalculation: \\(\\bar{y} = \\frac{1}{n} \\sum_{i=1}^n y_i\\)\n\nSample Variance (\\(S^2\\)):\n\nCalculation: \\(S^2 = \\frac{1}{n-1} \\sum_{i=1}^n (y_i - \\bar{y})^2\\)\n\nSample Standard Deviation (\\(S\\)):\n\nCalculation: \\(S = \\sqrt{S^2}\\)"
+    "objectID": "Day1.html#welcome-to-survey-sampling",
+    "href": "Day1.html#welcome-to-survey-sampling",
+    "title": "Day 1",
+    "section": "Welcome to Survey Sampling",
+    "text": "Welcome to Survey Sampling\n\n\n\n\nWhat is Survey Sampling?\n\nEssential statistical method for collecting representative data.\nKey tool in business, health sciences, environmental studies, and more."
   },
   {
-    "objectID": "Day2.html#understanding-random-variables-r.v.",
-    "href": "Day2.html#understanding-random-variables-r.v.",
-    "title": "Day 2",
-    "section": "Understanding Random Variables (R.V.)",
-    "text": "Understanding Random Variables (R.V.)\n\n\nRandom Sampling: The process of randomly selecting an element from a population to survey its characteristics.\nDefinition (Random Variables): A random variable is a numerical outcome of a probability experiment.\n\n\n\n\nRandom variables help us quantify the results of random sampling in numeric terms."
+    "objectID": "Day1.html#why-study-survey-sampling",
+    "href": "Day1.html#why-study-survey-sampling",
+    "title": "Day 1",
+    "section": "Why Study Survey Sampling?",
+    "text": "Why Study Survey Sampling?\n\n\n\n\nData-Driven Decision Making\n\nInformed decisions require accurate data.\nSampling helps gather this data efficiently and effectively."
   },
   {
-    "objectID": "Day2.html#probability-distribution-of-a-r.v.",
-    "href": "Day2.html#probability-distribution-of-a-r.v.",
-    "title": "Day 2",
-    "section": "Probability Distribution of a R.V.",
-    "text": "Probability Distribution of a R.V.\n\n\nAccess to Population Data: If every element of the population is accessible, we can describe the chances of obtaining specific values of a random variable.\nDefinition (Probability Distribution): For a discrete random variable, the probability distribution specifies the probability for each possible value of the random variable.\n\n\n\n\nThe probability distribution is fundamental in understanding how values of a random variable are distributed across possible outcomes."
+    "objectID": "Day1.html#basic-principles-of-survey-sampling",
+    "href": "Day1.html#basic-principles-of-survey-sampling",
+    "title": "Day 1",
+    "section": "Basic Principles of Survey Sampling",
+    "text": "Basic Principles of Survey Sampling\n\n\n\n\nRandom Sampling\n\nEach member of a population has an equal chance of selection.\nEnsures unbiased data representation.\n\nSystematic Approach\n\nMethodical selection process to avoid sampling bias."
   },
   {
-    "objectID": "Day2.html#probability-distribution-number-of-children",
-    "href": "Day2.html#probability-distribution-number-of-children",
-    "title": "Day 2",
-    "section": "Probability Distribution: Number of Children",
-    "text": "Probability Distribution: Number of Children\n\\(Y=\\{\\text{Number of children per woman}\\}\\)"
+    "objectID": "Day1.html#introduction-to-survey-biases",
+    "href": "Day1.html#introduction-to-survey-biases",
+    "title": "Day 1",
+    "section": "Introduction to Survey Biases",
+    "text": "Introduction to Survey Biases\n\n\n\nDiscover how the phrasing of survey questions can influence the responses, potentially leading to biased outcomes.\n\nObjective: Understand the impact of wording in survey questions.\nFocus: Compare biased vs. neutral phrasing."
   },
   {
-    "objectID": "Day2.html#probability-distribution-table",
-    "href": "Day2.html#probability-distribution-table",
-    "title": "Day 2",
-    "section": "Probability Distribution Table",
-    "text": "Probability Distribution Table\n\n\n\n\n\n\nNumber_of_Children\nProbability\n\n\n\n\n0\n0.273\n\n\n1\n0.160\n\n\n2\n0.244\n\n\n3\n0.154\n\n\n4\n0.082\n\n\n5\n0.039\n\n\n6\n0.020\n\n\n7\n0.011\n\n\n8\n0.017"
+    "objectID": "Day1.html#case-study-on-welfare-spending",
+    "href": "Day1.html#case-study-on-welfare-spending",
+    "title": "Day 1",
+    "section": "Case Study on Welfare Spending",
+    "text": "Case Study on Welfare Spending\n\n\n\nBiased Question: “Do you think the government spends too much money on welfare without adequate proof of its necessity?”\n\nThis question suggests unnecessary spending, leading to potentially biased negative responses.\n\nNeutral Question: “How should the government allocate funds for welfare?”\n\nRephrased to remove bias, showing a significant drop in negative responses (only 29% suggest reducing spending)."
   },
   {
-    "objectID": "Day2.html#probability-rules-for-py",
-    "href": "Day2.html#probability-rules-for-py",
-    "title": "Day 2",
-    "section": "Probability Rules for \\(P(y)\\)",
-    "text": "Probability Rules for \\(P(y)\\)\n\n\n\nRule 1: Probability values are restricted between 0 and 1.\n\nNotation: \\(0 \\leqslant P(y) \\leqslant 1\\)\n\nRule 2: The sum of the probabilities for all possible outcomes equals 1.\n\nNotation: \\(\\sum_y P(y) = 1\\)"
+    "objectID": "Day1.html#health-care-for-the-elderly",
+    "href": "Day1.html#health-care-for-the-elderly",
+    "title": "Day 1",
+    "section": "Health Care for the Elderly",
+    "text": "Health Care for the Elderly\n\n\n\nOriginal Biased Question: “Do you agree that it is disgraceful for the government to ignore the health care needs of the elderly?”\n\nEmotive language (“disgraceful”) can manipulate responses.\n\nNeutral Reformulation: “How do you rate the government’s handling of health care needs for the elderly?”\n\nMore objective, allowing respondents to express true opinions without emotional influence."
   },
   {
-    "objectID": "Day2.html#quiz",
-    "href": "Day2.html#quiz",
-    "title": "Day 2",
-    "section": "Quiz",
-    "text": "Quiz\n\nWhat is the probability that a randomly selected woman has exactly two children?\n\n \n\nWhat is the probability that a randomly selected woman has fewer two children?"
+    "objectID": "Day1.html#the-importance-of-neutral-question-phrasing",
+    "href": "Day1.html#the-importance-of-neutral-question-phrasing",
+    "title": "Day 1",
+    "section": "The Importance of Neutral Question Phrasing",
+    "text": "The Importance of Neutral Question Phrasing\n\n\nHighlighting the critical need for neutrality in survey questions to obtain accurate and reliable data.\n\nKey Takeaway: Survey questions should be carefully crafted to avoid leading respondents.\nGoal: Achieve unbiased data that truly reflects public opinion."
   },
   {
-    "objectID": "Day2.html#population-expected-value",
-    "href": "Day2.html#population-expected-value",
-    "title": "Day 2",
-    "section": "Population Expected Value",
-    "text": "Population Expected Value\n\nThe expected value summarizes the center of a distribution.\n\nExpected Value:\n\nNotation: \\(E(y)=\\sum_y y \\cdot p(y)\\)\n\\(E(y)\\) represents the average or mean value of all measurements in the population.\n\nPopulation Mean (\\(\\mu\\)): Denoted by \\(\\mu\\), it is equivalent to \\(E(y)\\) and is a parameter describing the population."
-  },
-  {
-    "objectID": "Day2.html#variability-measures-variance-and-standard-deviation",
-    "href": "Day2.html#variability-measures-variance-and-standard-deviation",
-    "title": "Day 2",
-    "section": "Variability Measures: Variance and Standard Deviation",
-    "text": "Variability Measures: Variance and Standard Deviation\n\n\n\nVariance: Measures the spread of measurements around the mean (\\(\\mu\\)).\n\nFormula: \\(\\sigma^2=V(y)=E\\left[(y-\\mu)^2\\right]=\\sum_y(y-\\mu)^2 \\cdot p(y)\\)\n\nStandard Deviation (SD): The square root of the variance, reflecting the average deviation from the mean.\n\nFormula: \\(\\sigma =SD=\\sqrt{\\sigma^2}\\)"
-  },
-  {
-    "objectID": "Day2.html#calculate-sample-statistics",
-    "href": "Day2.html#calculate-sample-statistics",
-    "title": "Day 2",
-    "section": "Calculate Sample Statistics",
-    "text": "Calculate Sample Statistics\n\nQuestion: A simple random sample of size 10 from a population includes the following measurements:\n\n\\(2, 0, 1, 0, 3, 2, 2, 6, 0, 1\\)\n\nTask: Calculate the sample mean, variance, and standard deviation."
-  },
-  {
-    "objectID": "Day2.html#chebyshevs-inequality-explained",
-    "href": "Day2.html#chebyshevs-inequality-explained",
-    "title": "Day 2",
-    "section": "Chebyshev’s Inequality Explained",
-    "text": "Chebyshev’s Inequality Explained\n\n\nKey Concept: Chebyshev’s Inequality states that for any dataset, the proportion of data within \\(k\\) standard deviations from the mean is at least \\(1 - \\frac{1}{k^2}\\) for any \\(k &gt; 1\\).\nImplication: As \\(k\\) increases, a larger proportion of the data is expected to fall closer to the mean, providing insight into data spread and central tendency."
-  },
-  {
-    "objectID": "Day2.html#exercise",
-    "href": "Day2.html#exercise",
-    "title": "Day 2",
-    "section": "Exercise",
-    "text": "Exercise\n\n\n\nTask: Calculate the minimum proportion of data within \\(k\\) standard deviations of the mean for \\(k=2\\) and \\(k=3\\).\n\nFor \\(k=2\\): \\[\n\\text{Proportion} = 1 - \\frac{1}{k^2} = \\ldots\n\\]\nFor \\(k=3\\): \\[\n\\text{Proportion} = 1 - \\frac{1}{k^2} = \\ldots\n\\]"
-  },
-  {
-    "objectID": "Day2.html#understanding-chebyshevs-inequality",
-    "href": "Day2.html#understanding-chebyshevs-inequality",
-    "title": "Day 2",
-    "section": "Understanding Chebyshev’s Inequality",
-    "text": "Understanding Chebyshev’s Inequality\n\n\nChebyshev’s Inequality Formula: \\[\nP(|y-\\mu| \\leq k \\cdot \\sigma) \\geqslant 1-\\frac{1}{k^2}\n\\]\n\nInterpretation: This formula states that the probability of the random variable \\(y\\) falling within \\(k\\) standard deviations (\\(\\sigma\\)) of the mean (\\(\\mu\\)) is at least \\(1 - \\frac{1}{k^2}\\)."
-  },
-  {
-    "objectID": "Day5.html#extending-the-sampling-distribution",
-    "href": "Day5.html#extending-the-sampling-distribution",
-    "title": "Day 5",
-    "section": "Extending the Sampling Distribution",
-    "text": "Extending the Sampling Distribution\n\n\nComputational Application\n\nCalculate probabilities involving statistic \\(\\bar{y}, \\hat{\\tau}\\) etc. from a sample.\nThis forms the basis for estimating the variability of these statistic"
-  },
-  {
-    "objectID": "Day5.html#error-bounds-and-confidence-intervals",
-    "href": "Day5.html#error-bounds-and-confidence-intervals",
-    "title": "Day 5",
-    "section": "Error Bounds and Confidence Intervals",
-    "text": "Error Bounds and Confidence Intervals\n\n\nFrom Error Estimation to Confidence\n\nLearn to compute error bounds around estimates.\nExtend these bounds to establish confidence intervals."
-  },
-  {
-    "objectID": "Day5.html#knowledge-review-standardizing-variables",
-    "href": "Day5.html#knowledge-review-standardizing-variables",
-    "title": "Day 5",
-    "section": "Knowledge Review: Standardizing Variables",
-    "text": "Knowledge Review: Standardizing Variables\n\n\nNormal to Standard Normal Transformation\n\nFor a variable \\(X \\sim \\operatorname{Normal}(\\text{mean} = a, \\text{SD} = b)\\):\nStandardization: \\(Z = \\frac{X-a}{b}\\)\nResults in \\(Z \\sim \\operatorname{Normal}(\\text{mean} = 0, \\text{SD} = 1)\\), the standard normal distribution."
-  },
-  {
-    "objectID": "Day5.html#calculating-probabilities-for-a-normal-variable",
-    "href": "Day5.html#calculating-probabilities-for-a-normal-variable",
-    "title": "Day 5",
-    "section": "Calculating Probabilities for a Normal Variable",
-    "text": "Calculating Probabilities for a Normal Variable\n\n\nFor a normal random variable \\(X\\), and a specific value \\(c\\), the probability that \\(X\\) exceeds \\(c\\) can be transformed to a standard normal variable \\(Z\\). This transformation simplifies the calculation as follows:\n\\[\nP(X &gt; c) = P(X-a &gt; c-a) = P\\left(\\frac{X-a}{b} &gt; \\frac{c-a}{b}\\right)\\] \\[\\qquad = P\\left(Z &gt; \\frac{c-a}{b}\\right) = 1 - P\\left(Z &lt; \\frac{c-a}{b}\\right)\\]\nThis step highlights the utility of standardization in statistical analysis, turning complex normal calculations into simpler standard normal calculations."
-  },
-  {
-    "objectID": "Day5.html#calculating-interval-probabilities",
-    "href": "Day5.html#calculating-interval-probabilities",
-    "title": "Day 5",
-    "section": "Calculating Interval Probabilities",
-    "text": "Calculating Interval Probabilities\n\n\n\nDetermining the probability that \\(X\\) lies between two values \\(c\\) and \\(d\\) involves subtracting the probability of \\(X\\) being less than \\(c\\) from the probability of \\(X\\) being less than \\(d\\):\n\\[\nP(c &lt; X &lt; d) = P(X &lt; d) - P(X &lt; c) = P\\left(Z &lt; \\frac{d-a}{b}\\right) - P\\left(Z &lt; \\frac{c-a}{b}\\right)\n\\]\nWhen \\(X = \\bar{y}\\), representing the mean of a sample, and with \\(a = \\mu\\) and \\(b = \\frac{\\sigma}{\\sqrt{n}}\\), this formulation directly supports the creation of confidence intervals around the sample mean."
-  },
-  {
-    "objectID": "Day5.html#estimating-the-population-mean",
-    "href": "Day5.html#estimating-the-population-mean",
-    "title": "Day 5",
-    "section": "Estimating the Population Mean",
-    "text": "Estimating the Population Mean\n\n\nWhen estimating the population mean \\(\\mu\\), which is unknown, we use the sample mean \\(\\bar{y}\\). The difference \\(|\\bar{y} - \\mu|\\) represents the error of our estimation.\nError Bound for Confidence\nTo ensure the reliability of our estimate, we define a bound \\(B\\) such that:\n\\[\nP(|\\bar{y} - \\mu| \\leqslant B) \\geqslant 1 - \\alpha\n\\]\nThis bound indicates that the true population mean is likely within \\(B\\) units of our sample mean with a confidence level of \\(1 - \\alpha\\). The smaller the error, the closer our sample mean is to the true population mean, enhancing the estimation’s accuracy."
-  },
-  {
-    "objectID": "Day5.html#standardizing-and-solving-for-b",
-    "href": "Day5.html#standardizing-and-solving-for-b",
-    "title": "Day 5",
-    "section": "Standardizing and Solving for \\(B\\)",
-    "text": "Standardizing and Solving for \\(B\\)\n\n\nTransforming our problem using the standard deviation of the sample mean, we standardize:\n\\[P(-B\\leqslant \\bar{y}-\\mu\\leqslant B)=P\\left(\\frac{-B}{\\sigma/\\sqrt{n}}\\leqslant \\frac{\\bar{y}-\\mu}{\\sigma/\\sqrt{n}}\\leqslant \\frac{B}{\\sigma/\\sqrt{n}}\\right)\\geqslant 1-\\alpha\\]\nLeveraging the symmetry of the standard normal distribution gives us:\n\\[\\frac{B}{\\sigma/\\sqrt{n}}=z_{1-\\frac{\\alpha}{2}}\\]\nConcluding with the critical value for \\(B\\):\n\\[B=z_{1-\\frac{\\alpha}{2}}\\cdot \\frac{\\sigma}{\\sqrt{n}}\\]\nThis calculation shows how \\(B\\) scales with both the sample size \\(n\\) and the standard deviation \\(\\sigma\\), key to interpreting the confidence in our estimate."
-  },
-  {
-    "objectID": "Day5.html#using-t-distribution",
-    "href": "Day5.html#using-t-distribution",
-    "title": "Day 5",
-    "section": "Using \\(t\\)-Distribution",
-    "text": "Using \\(t\\)-Distribution\n\n\nWhen the population standard deviation \\(\\sigma\\) is unknown, we use the sample standard deviation \\(s\\) and the \\(t\\)-distribution to standardize the problem:\n\\[P(-B\\leqslant \\bar{y}-\\mu\\leqslant B)=P\\left(\\frac{-B}{s/\\sqrt{n}}\\leqslant \\frac{\\bar{y}-\\mu}{s/\\sqrt{n}}\\leqslant \\frac{B}{s/\\sqrt{n}}\\right)\\geqslant 1-\\alpha\\]\nLeveraging the properties of the \\(t\\)-distribution, given the degrees of freedom \\(n-1\\), we find:\n\\[\\frac{B}{s/\\sqrt{n}}=t_{1-\\frac{\\alpha}{2}, n-1}\\]\nConcluding with the critical value for \\(B\\):\n\\[B=t_{1-\\frac{\\alpha}{2}, n-1}\\cdot \\frac{s}{\\sqrt{n}}\\]\nThis calculation shows how \\(B\\) scales with the sample size \\(n\\) and the sample standard deviation \\(s\\), crucial for interpreting the confidence in our estimate when \\(\\sigma\\) is unknown."
-  },
-  {
-    "objectID": "Day5.html#case-study",
-    "href": "Day5.html#case-study",
-    "title": "Day 5",
-    "section": "Case Study",
-    "text": "Case Study\n\n\nIn a standard math quiz for the public school system of a county, each student was graded on a four-point scale \\((0,1,2,3), 3\\) being a perfect score. The results for all students are given as follows:\n\\[\\begin{array}{ll}\n\\hline \\text { Score, y} & \\text { Propotion, P(y) } \\\\\n\\hline 3 & 0.64 \\\\\n2 & 0.16 \\\\\n1 & 0.08 \\\\\n0 & 0.12 \\\\\n\\hline\n\\end{array}\\]"
-  },
-  {
-    "objectID": "Day5.html#quiz",
-    "href": "Day5.html#quiz",
-    "title": "Day 5",
-    "section": "Quiz",
-    "text": "Quiz\n\nCompute the expected value of the quiz score.\n\n\n\nCompute the standard deviation of the quiz score.\n\n\n\nA sample of 100 students is randomly selected. What is the probability of this sample mean greater than 2.425 ?"
-  },
-  {
-    "objectID": "Day5.html#solutions",
-    "href": "Day5.html#solutions",
-    "title": "Day 5",
-    "section": "Solutions",
-    "text": "Solutions\n\n\nClick for answer\n\n\n\n\\(E(y)=\\sum y \\cdot P(y)=\\mu =2.32\\)\n\\(V(y)=\\sum(y-\\mu)^2 \\cdot P(y)=\\sigma^2=1.098\\)\n\n\\(\\operatorname{\\operatorname {SD}}(y)=\\sigma=\\sqrt{1.098} \\approx 1.048\\)\n\nA sample of \\(n=100\\) students is selected\n\n\\[\\begin{align*}\n\\begin{aligned}\nP(\\bar{y}&gt;2.425) & =P\\left(z&gt;\\frac{2.425-\\mu}{\\sigma / \\sqrt{n}}\\right) \\\\\n& =P\\left(z&gt;\\frac{2.425-2.32}{1.048 / \\sqrt{100}}\\right) \\\\\n& \\approx P(z&gt;1)=1-P(z&lt;1) \\\\\n& =1-0.8413=0.1587\n\\end{aligned}\n\\end{align*}\\]"
+    "objectID": "Day1.html#group-activity-1",
+    "href": "Day1.html#group-activity-1",
+    "title": "Day 1",
+    "section": " Group Activity 1",
+    "text": "Group Activity 1\n\n\n\n\n\n\n\n\nLet’s do a small activity today about simple random sampling\nAnd answer a few survey questions about the class in general\n\n\n\n\n −+ 10:00"
   },
   {
     "objectID": "Day3.html#review-of-key-statistical-concepts",
@@ -257,55 +145,6 @@
     "title": "Day 3",
     "section": "Recall the simulation (Slide 4)",
     "text": "Recall the simulation (Slide 4)\n\n\nSuppose we have selected a random sample of \\(n=50\\) observations from a population with mean \\(\\mu=4\\) and variance \\(\\sigma^2=8\\).\n\nWhat is the value of the mean \\(E(\\bar{y})\\) and standard deviation (standard error) \\(\\sigma_{\\bar{y}}=\\sqrt{V(\\bar{y})}\\) of the sampling distribution of the sample mean \\(\\bar{y}\\).\n\n\n\nUse the sample data of size 50, compute the mean and standard deviation of \\(\\bar{y}\\). Compare the results with a.\n\n\n\nWhat is the probability that the sample mean is greater than 5?"
-  },
-  {
-    "objectID": "RandRStudio.html",
-    "href": "RandRStudio.html",
-    "title": "Setting Up R and RStudio",
-    "section": "",
-    "text": "This lab tutorial will guide you through installing R and RStudio on your computer, managing packages, and loading data into R. This setup is essential for performing all kinds of data analysis tasks in R."
-  },
-  {
-    "objectID": "RandRStudio.html#on-windows",
-    "href": "RandRStudio.html#on-windows",
-    "title": "Setting Up R and RStudio",
-    "section": "On Windows",
-    "text": "On Windows\n\n\nDownload R:\n\nVisit CRAN and download the latest version of R for Windows.\nRun the downloaded .exe file and follow the installation instructions.\n\n\n\nDownload RStudio:\n\nGo to the RStudio Download page and download the free version of RStudio Desktop for Windows.\nInstall it by running the downloaded .exe file."
-  },
-  {
-    "objectID": "RandRStudio.html#on-mac",
-    "href": "RandRStudio.html#on-mac",
-    "title": "Setting Up R and RStudio",
-    "section": "On Mac",
-    "text": "On Mac\n\n\nDownload R:\n\nNavigate to CRAN and choose the version for macOS.\nOpen the downloaded .pkg file to start the installation.\n\n\n\nDownload RStudio:\n\nVisit RStudio Download page and select RStudio for macOS.\nOpen the downloaded .dmg file and drag RStudio to your Applications folder."
-  },
-  {
-    "objectID": "RandRStudio.html#understanding-r-markdown-documents",
-    "href": "RandRStudio.html#understanding-r-markdown-documents",
-    "title": "Setting Up R and RStudio",
-    "section": "Understanding R Markdown Documents",
-    "text": "Understanding R Markdown Documents\nR Markdown allows you to integrate code and text in the same document, facilitating reproducible research and interactive data analysis reports. Here’s a quick overview:"
-  },
-  {
-    "objectID": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
-    "href": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
-    "title": "Setting Up R and RStudio",
-    "section": "Managing .Rmd Files and Setting the Working Directory",
-    "text": "Managing .Rmd Files and Setting the Working Directory\nDownloading and Organizing .Rmd Files\nTo effectively manage your course materials in RStudio, follow these steps:\n\n\nDownload .Rmd File:\n\nNavigate to MyClasses and locate the desired .Rmd file for your course.\nDownload the file to your local machine.\n\n\n\nCreate a Course Folder:\n\nCreate a new folder named math216 in a suitable location on your computer or within your RStudio account.\n\n\n\nOrganize Files:\n\nMove the downloaded .Rmd file into the math216 folder to keep your course materials organized.\n\n\nText Portions\nText in R Markdown is written using standard markdown syntax. This allows you to add headers, lists, links, and other styling features to create dynamic reports."
-  },
-  {
-    "objectID": "RandRStudio.html#text-formatting-in-r-markdown",
-    "href": "RandRStudio.html#text-formatting-in-r-markdown",
-    "title": "Setting Up R and RStudio",
-    "section": "Text Formatting in R Markdown",
-    "text": "Text Formatting in R Markdown\nMarkdown is a lightweight markup language that allows you to add formatting elements using plain text. Here’s how you can use different Markdown syntax to format text within your R Markdown documents.\nHeaders\nCreate headers by prefixing the text with one or more hash symbols (#). The number of # symbols before the text determines the level of the header.\n# Header 1\n## Header 2\n### Header 3\nLists\nYou can create bulleted or numbered lists:\n\n\nUnordered Lists (bullets):\n\n- Item 1\n- Item 2\n  - Subitem 1\n  - Subitem 2\n\n\nOrdered Lists:\n\n1. First item\n2. Second item\n   1. Subitem 1\n   2. Subitem 2\nLinks\nInclude hyperlinks using the format [link text](URL):\n[Visit Canvas](https://salisbury.instructure.com/courses/66117)\nEmphasis\nItalicize or bold text using asterisks or underscores:\n\n\nItalic: *Italic* or _Italic_\n\n\nBold: **Bold** or __Bold__\n\nImages\nEmbed images using the format ![Alt text](image_URL \"Optional Title\"):\n![Example Image](path_to_image.jpg \"This is an image\")\nBlockquotes\nCreate blockquotes with &gt;:\n&gt; This is a blockquote.\nCode\nDisplay inline code with backticks and code blocks with triple backticks:\n\nInline code: `code`\n\nCode block:\n\n\\```\nThis is a code block\n\\```\nHorizontal Rules\nInsert a horizontal line with three or more hyphens:\n---\nCombining Markdown with R Code\nMarkdown can be interleaved with executable R code chunks:\n\n# Calculate the sum of numbers from 1 to 10\nsum(1:10)\n\n[1] 55"
-  },
-  {
-    "objectID": "RandRStudio.html#r-code-chunk-options",
-    "href": "RandRStudio.html#r-code-chunk-options",
-    "title": "Setting Up R and RStudio",
-    "section": "R Code Chunk Options",
-    "text": "R Code Chunk Options\nBefore diving into data loading, let’s understand important R chunk options:\n\n\neval: Use eval=FALSE to prevent code from running but still display it.\n\necho: With echo=FALSE, the code is run but not displayed in the document.\n\ninclude: include=FALSE runs the code and hides both the code and output from the final output.\n\nExample to demonstrate:\n\n# This code will run, and both code and output will appear in the document.\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
   },
   {
     "objectID": "Day6.html#population-probability-calculation",
@@ -525,6 +364,13 @@
     "text": "Confidence Intervals and Error Bounds\n\n\n\nError of Estimation: \\(|\\hat{\\theta} - \\theta|\\), the magnitude of deviation from the true parameter.\nConfidence Interval: An interval within which the parameter is expected to lie with a certain probability \\((1-\\alpha)\\).\n\nForm: \\((\\hat{\\theta} - B, \\hat{\\theta} + B)\\) where \\(B = z_{\\alpha / 2} \\sigma_{\\hat{\\theta}}\\) for normally distributed estimators.\nUse of \\(t\\)-distribution: When population SD is unknown and the sample size is large, \\(t\\)-scores may replace \\(z\\)-scores."
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Math 313: Fall 2024",
+    "section": "",
+    "text": "Welcome to the world of survey statistics!"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -539,94 +385,248 @@
     "text": "Acquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
   },
   {
-    "objectID": "Day1.html#something-about-me",
-    "href": "Day1.html#something-about-me",
-    "title": "Day 1",
-    "section": "Something about me",
-    "text": "Something about me\n\n\n\n\n\nFirst year at Salisbury\nOriginally from Nepal\nResearch in Statistical Computation and Applied Statistics\nAvid learner and traveler\n\n\n\n\n\n\n\n\n\nMy website"
+    "objectID": "Day5.html#extending-the-sampling-distribution",
+    "href": "Day5.html#extending-the-sampling-distribution",
+    "title": "Day 5",
+    "section": "Extending the Sampling Distribution",
+    "text": "Extending the Sampling Distribution\n\n\nComputational Application\n\nCalculate probabilities involving statistic \\(\\bar{y}, \\hat{\\tau}\\) etc. from a sample.\nThis forms the basis for estimating the variability of these statistic"
   },
   {
-    "objectID": "Day1.html#active-participation",
-    "href": "Day1.html#active-participation",
-    "title": "Day 1",
-    "section": "Active Participation",
-    "text": "Active Participation\n\n\n\nEngage Actively\n\nTake lecture notes\nFollow class handouts\n\nAsk Questions\n\nEvery question is valuable; we’re learning together\n\nGain Conceptual Understanding\n\nTo be able to apply the knowledge; understanding the concepts is key"
+    "objectID": "Day5.html#error-bounds-and-confidence-intervals",
+    "href": "Day5.html#error-bounds-and-confidence-intervals",
+    "title": "Day 5",
+    "section": "Error Bounds and Confidence Intervals",
+    "text": "Error Bounds and Confidence Intervals\n\n\nFrom Error Estimation to Confidence\n\nLearn to compute error bounds around estimates.\nExtend these bounds to establish confidence intervals."
   },
   {
-    "objectID": "Day1.html#tell-me-something-about-yourself",
-    "href": "Day1.html#tell-me-something-about-yourself",
-    "title": "Day 1",
-    "section": "Tell me something about yourself!",
-    "text": "Tell me something about yourself!\n\n\n\n\n\nYour name?\nGender Pronouns?\nFavorite Summer Memory?\n\n\n\n\n\n\n\nvia GIPHY"
+    "objectID": "Day5.html#knowledge-review-standardizing-variables",
+    "href": "Day5.html#knowledge-review-standardizing-variables",
+    "title": "Day 5",
+    "section": "Knowledge Review: Standardizing Variables",
+    "text": "Knowledge Review: Standardizing Variables\n\n\nNormal to Standard Normal Transformation\n\nFor a variable \\(X \\sim \\operatorname{Normal}(\\text{mean} = a, \\text{SD} = b)\\):\nStandardization: \\(Z = \\frac{X-a}{b}\\)\nResults in \\(Z \\sim \\operatorname{Normal}(\\text{mean} = 0, \\text{SD} = 1)\\), the standard normal distribution."
   },
   {
-    "objectID": "Day1.html#class-pipelines",
-    "href": "Day1.html#class-pipelines",
-    "title": "Day 1",
-    "section": "Class Pipelines",
-    "text": "Class Pipelines\n\n\n\nMost of the course information and schedule will be posted in MyClasses\nHomework will be posted but not collected\nLabs most Tuesdays; lab reports due in a week from the lab date\nQuizzes every Friday; includes HW, lectures, labs"
+    "objectID": "Day5.html#calculating-probabilities-for-a-normal-variable",
+    "href": "Day5.html#calculating-probabilities-for-a-normal-variable",
+    "title": "Day 5",
+    "section": "Calculating Probabilities for a Normal Variable",
+    "text": "Calculating Probabilities for a Normal Variable\n\n\nFor a normal random variable \\(X\\), and a specific value \\(c\\), the probability that \\(X\\) exceeds \\(c\\) can be transformed to a standard normal variable \\(Z\\). This transformation simplifies the calculation as follows:\n\\[\nP(X &gt; c) = P(X-a &gt; c-a) = P\\left(\\frac{X-a}{b} &gt; \\frac{c-a}{b}\\right)\\] \\[\\qquad = P\\left(Z &gt; \\frac{c-a}{b}\\right) = 1 - P\\left(Z &lt; \\frac{c-a}{b}\\right)\\]\nThis step highlights the utility of standardization in statistical analysis, turning complex normal calculations into simpler standard normal calculations."
   },
   {
-    "objectID": "Day1.html#what-will-a-typical-dayweek-look-like",
-    "href": "Day1.html#what-will-a-typical-dayweek-look-like",
-    "title": "Day 1",
-    "section": "What will a typical day/week look like?",
-    "text": "What will a typical day/week look like?\n\n\n\nBefore class:\n\nRead assigned topics from textbook\nWork on homework/lab reports, come with questions\n\nDuring class:\n\nMini lectures\nClass activities"
+    "objectID": "Day5.html#calculating-interval-probabilities",
+    "href": "Day5.html#calculating-interval-probabilities",
+    "title": "Day 5",
+    "section": "Calculating Interval Probabilities",
+    "text": "Calculating Interval Probabilities\n\n\n\nDetermining the probability that \\(X\\) lies between two values \\(c\\) and \\(d\\) involves subtracting the probability of \\(X\\) being less than \\(c\\) from the probability of \\(X\\) being less than \\(d\\):\n\\[\nP(c &lt; X &lt; d) = P(X &lt; d) - P(X &lt; c) = P\\left(Z &lt; \\frac{d-a}{b}\\right) - P\\left(Z &lt; \\frac{c-a}{b}\\right)\n\\]\nWhen \\(X = \\bar{y}\\), representing the mean of a sample, and with \\(a = \\mu\\) and \\(b = \\frac{\\sigma}{\\sqrt{n}}\\), this formulation directly supports the creation of confidence intervals around the sample mean."
   },
   {
-    "objectID": "Day1.html#welcome-to-survey-sampling",
-    "href": "Day1.html#welcome-to-survey-sampling",
-    "title": "Day 1",
-    "section": "Welcome to Survey Sampling",
-    "text": "Welcome to Survey Sampling\n\n\n\n\nWhat is Survey Sampling?\n\nEssential statistical method for collecting representative data.\nKey tool in business, health sciences, environmental studies, and more."
+    "objectID": "Day5.html#estimating-the-population-mean",
+    "href": "Day5.html#estimating-the-population-mean",
+    "title": "Day 5",
+    "section": "Estimating the Population Mean",
+    "text": "Estimating the Population Mean\n\n\nWhen estimating the population mean \\(\\mu\\), which is unknown, we use the sample mean \\(\\bar{y}\\). The difference \\(|\\bar{y} - \\mu|\\) represents the error of our estimation.\nError Bound for Confidence\nTo ensure the reliability of our estimate, we define a bound \\(B\\) such that:\n\\[\nP(|\\bar{y} - \\mu| \\leqslant B) \\geqslant 1 - \\alpha\n\\]\nThis bound indicates that the true population mean is likely within \\(B\\) units of our sample mean with a confidence level of \\(1 - \\alpha\\). The smaller the error, the closer our sample mean is to the true population mean, enhancing the estimation’s accuracy."
   },
   {
-    "objectID": "Day1.html#why-study-survey-sampling",
-    "href": "Day1.html#why-study-survey-sampling",
-    "title": "Day 1",
-    "section": "Why Study Survey Sampling?",
-    "text": "Why Study Survey Sampling?\n\n\n\n\nData-Driven Decision Making\n\nInformed decisions require accurate data.\nSampling helps gather this data efficiently and effectively."
+    "objectID": "Day5.html#standardizing-and-solving-for-b",
+    "href": "Day5.html#standardizing-and-solving-for-b",
+    "title": "Day 5",
+    "section": "Standardizing and Solving for \\(B\\)",
+    "text": "Standardizing and Solving for \\(B\\)\n\n\nTransforming our problem using the standard deviation of the sample mean, we standardize:\n\\[P(-B\\leqslant \\bar{y}-\\mu\\leqslant B)=P\\left(\\frac{-B}{\\sigma/\\sqrt{n}}\\leqslant \\frac{\\bar{y}-\\mu}{\\sigma/\\sqrt{n}}\\leqslant \\frac{B}{\\sigma/\\sqrt{n}}\\right)\\geqslant 1-\\alpha\\]\nLeveraging the symmetry of the standard normal distribution gives us:\n\\[\\frac{B}{\\sigma/\\sqrt{n}}=z_{1-\\frac{\\alpha}{2}}\\]\nConcluding with the critical value for \\(B\\):\n\\[B=z_{1-\\frac{\\alpha}{2}}\\cdot \\frac{\\sigma}{\\sqrt{n}}\\]\nThis calculation shows how \\(B\\) scales with both the sample size \\(n\\) and the standard deviation \\(\\sigma\\), key to interpreting the confidence in our estimate."
   },
   {
-    "objectID": "Day1.html#basic-principles-of-survey-sampling",
-    "href": "Day1.html#basic-principles-of-survey-sampling",
-    "title": "Day 1",
-    "section": "Basic Principles of Survey Sampling",
-    "text": "Basic Principles of Survey Sampling\n\n\n\n\nRandom Sampling\n\nEach member of a population has an equal chance of selection.\nEnsures unbiased data representation.\n\nSystematic Approach\n\nMethodical selection process to avoid sampling bias."
+    "objectID": "Day5.html#using-t-distribution",
+    "href": "Day5.html#using-t-distribution",
+    "title": "Day 5",
+    "section": "Using \\(t\\)-Distribution",
+    "text": "Using \\(t\\)-Distribution\n\n\nWhen the population standard deviation \\(\\sigma\\) is unknown, we use the sample standard deviation \\(s\\) and the \\(t\\)-distribution to standardize the problem:\n\\[P(-B\\leqslant \\bar{y}-\\mu\\leqslant B)=P\\left(\\frac{-B}{s/\\sqrt{n}}\\leqslant \\frac{\\bar{y}-\\mu}{s/\\sqrt{n}}\\leqslant \\frac{B}{s/\\sqrt{n}}\\right)\\geqslant 1-\\alpha\\]\nLeveraging the properties of the \\(t\\)-distribution, given the degrees of freedom \\(n-1\\), we find:\n\\[\\frac{B}{s/\\sqrt{n}}=t_{1-\\frac{\\alpha}{2}, n-1}\\]\nConcluding with the critical value for \\(B\\):\n\\[B=t_{1-\\frac{\\alpha}{2}, n-1}\\cdot \\frac{s}{\\sqrt{n}}\\]\nThis calculation shows how \\(B\\) scales with the sample size \\(n\\) and the sample standard deviation \\(s\\), crucial for interpreting the confidence in our estimate when \\(\\sigma\\) is unknown."
   },
   {
-    "objectID": "Day1.html#introduction-to-survey-biases",
-    "href": "Day1.html#introduction-to-survey-biases",
-    "title": "Day 1",
-    "section": "Introduction to Survey Biases",
-    "text": "Introduction to Survey Biases\n\n\n\nDiscover how the phrasing of survey questions can influence the responses, potentially leading to biased outcomes.\n\nObjective: Understand the impact of wording in survey questions.\nFocus: Compare biased vs. neutral phrasing."
+    "objectID": "Day5.html#case-study",
+    "href": "Day5.html#case-study",
+    "title": "Day 5",
+    "section": "Case Study",
+    "text": "Case Study\n\n\nIn a standard math quiz for the public school system of a county, each student was graded on a four-point scale \\((0,1,2,3), 3\\) being a perfect score. The results for all students are given as follows:\n\\[\\begin{array}{ll}\n\\hline \\text { Score, y} & \\text { Propotion, P(y) } \\\\\n\\hline 3 & 0.64 \\\\\n2 & 0.16 \\\\\n1 & 0.08 \\\\\n0 & 0.12 \\\\\n\\hline\n\\end{array}\\]"
   },
   {
-    "objectID": "Day1.html#case-study-on-welfare-spending",
-    "href": "Day1.html#case-study-on-welfare-spending",
-    "title": "Day 1",
-    "section": "Case Study on Welfare Spending",
-    "text": "Case Study on Welfare Spending\n\n\n\nBiased Question: “Do you think the government spends too much money on welfare without adequate proof of its necessity?”\n\nThis question suggests unnecessary spending, leading to potentially biased negative responses.\n\nNeutral Question: “How should the government allocate funds for welfare?”\n\nRephrased to remove bias, showing a significant drop in negative responses (only 29% suggest reducing spending)."
+    "objectID": "Day5.html#quiz",
+    "href": "Day5.html#quiz",
+    "title": "Day 5",
+    "section": "Quiz",
+    "text": "Quiz\n\nCompute the expected value of the quiz score.\n\n\n\nCompute the standard deviation of the quiz score.\n\n\n\nA sample of 100 students is randomly selected. What is the probability of this sample mean greater than 2.425 ?"
   },
   {
-    "objectID": "Day1.html#health-care-for-the-elderly",
-    "href": "Day1.html#health-care-for-the-elderly",
-    "title": "Day 1",
-    "section": "Health Care for the Elderly",
-    "text": "Health Care for the Elderly\n\n\n\nOriginal Biased Question: “Do you agree that it is disgraceful for the government to ignore the health care needs of the elderly?”\n\nEmotive language (“disgraceful”) can manipulate responses.\n\nNeutral Reformulation: “How do you rate the government’s handling of health care needs for the elderly?”\n\nMore objective, allowing respondents to express true opinions without emotional influence."
+    "objectID": "Day5.html#solutions",
+    "href": "Day5.html#solutions",
+    "title": "Day 5",
+    "section": "Solutions",
+    "text": "Solutions\n\n\nClick for answer\n\n\n\n\\(E(y)=\\sum y \\cdot P(y)=\\mu =2.32\\)\n\\(V(y)=\\sum(y-\\mu)^2 \\cdot P(y)=\\sigma^2=1.098\\)\n\n\\(\\operatorname{\\operatorname {SD}}(y)=\\sigma=\\sqrt{1.098} \\approx 1.048\\)\n\nA sample of \\(n=100\\) students is selected\n\n\\[\\begin{align*}\n\\begin{aligned}\nP(\\bar{y}&gt;2.425) & =P\\left(z&gt;\\frac{2.425-\\mu}{\\sigma / \\sqrt{n}}\\right) \\\\\n& =P\\left(z&gt;\\frac{2.425-2.32}{1.048 / \\sqrt{100}}\\right) \\\\\n& \\approx P(z&gt;1)=1-P(z&lt;1) \\\\\n& =1-0.8413=0.1587\n\\end{aligned}\n\\end{align*}\\]"
   },
   {
-    "objectID": "Day1.html#the-importance-of-neutral-question-phrasing",
-    "href": "Day1.html#the-importance-of-neutral-question-phrasing",
-    "title": "Day 1",
-    "section": "The Importance of Neutral Question Phrasing",
-    "text": "The Importance of Neutral Question Phrasing\n\n\nHighlighting the critical need for neutrality in survey questions to obtain accurate and reliable data.\n\nKey Takeaway: Survey questions should be carefully crafted to avoid leading respondents.\nGoal: Achieve unbiased data that truly reflects public opinion."
+    "objectID": "Day2.html#statistical-practice",
+    "href": "Day2.html#statistical-practice",
+    "title": "Day 2",
+    "section": "Statistical Practice",
+    "text": "Statistical Practice\n\n\nAccessing Population Data: Often, it’s impractical or impossible to examine every individual in a population.\nWhy Sample?: We select a sample of size \\(n\\) because it allows us to estimate population characteristics like mean \\(\\mu\\) and standard deviation \\(\\sigma\\).\nPurpose of Sampling: Sampling helps infer the broader population’s characteristics from a representative set of data."
   },
   {
-    "objectID": "Day1.html#group-activity-1",
-    "href": "Day1.html#group-activity-1",
-    "title": "Day 1",
-    "section": " Group Activity 1",
-    "text": "Group Activity 1\n\n\n\n\n\n\n\n\nLet’s do a small activity today about simple random sampling\nAnd answer a few survey questions about the class in general\n\n\n\n\n −+ 10:00"
+    "objectID": "Day2.html#population-and-sample",
+    "href": "Day2.html#population-and-sample",
+    "title": "Day 2",
+    "section": "Population and Sample",
+    "text": "Population and Sample\n\n\n\n\nAn element is an object on which a measurement is taken.\nA population is a collection of elements about which we wish to make an inference.\nA sample unit are non overlapping collections of elements from the population that cover the entire population.\nA frame is a list of sampling units.\nA sample is a collection of sampling units drawn from a single frame or from multiple frames."
+  },
+  {
+    "objectID": "Day2.html#key-concept-statistic",
+    "href": "Day2.html#key-concept-statistic",
+    "title": "Day 2",
+    "section": "Key Concept: Statistic",
+    "text": "Key Concept: Statistic\n\n\n\nStatistic help us summarize information about groups.\nExample: In a poll of 500 likely voters:\n\n68% indicated that the economy is their top concern.\n\nThis 68% is a statistic—it describes the sample of voters."
+  },
+  {
+    "objectID": "Day2.html#definition-parameter",
+    "href": "Day2.html#definition-parameter",
+    "title": "Day 2",
+    "section": "Definition: Parameter",
+    "text": "Definition: Parameter\n\n\n\nA parameter is a number that describes a population.\nConsider this scenario: After an election, 53% of voters supported a new park funding proposition.\n\nThis 53% is a parameter—it describes the entire voting population’s preference."
+  },
+  {
+    "objectID": "Day2.html#key-sample-statistics",
+    "href": "Day2.html#key-sample-statistics",
+    "title": "Day 2",
+    "section": "Key Sample Statistics",
+    "text": "Key Sample Statistics\n\n\nSample Mean (\\(\\bar{y}\\)):\n\nCalculation: \\(\\bar{y} = \\frac{1}{n} \\sum_{i=1}^n y_i\\)\n\nSample Variance (\\(S^2\\)):\n\nCalculation: \\(S^2 = \\frac{1}{n-1} \\sum_{i=1}^n (y_i - \\bar{y})^2\\)\n\nSample Standard Deviation (\\(S\\)):\n\nCalculation: \\(S = \\sqrt{S^2}\\)"
+  },
+  {
+    "objectID": "Day2.html#understanding-random-variables-r.v.",
+    "href": "Day2.html#understanding-random-variables-r.v.",
+    "title": "Day 2",
+    "section": "Understanding Random Variables (R.V.)",
+    "text": "Understanding Random Variables (R.V.)\n\n\nRandom Sampling: The process of randomly selecting an element from a population to survey its characteristics.\nDefinition (Random Variables): A random variable is a numerical outcome of a probability experiment.\n\n\n\n\nRandom variables help us quantify the results of random sampling in numeric terms."
+  },
+  {
+    "objectID": "Day2.html#probability-distribution-of-a-r.v.",
+    "href": "Day2.html#probability-distribution-of-a-r.v.",
+    "title": "Day 2",
+    "section": "Probability Distribution of a R.V.",
+    "text": "Probability Distribution of a R.V.\n\n\nAccess to Population Data: If every element of the population is accessible, we can describe the chances of obtaining specific values of a random variable.\nDefinition (Probability Distribution): For a discrete random variable, the probability distribution specifies the probability for each possible value of the random variable.\n\n\n\n\nThe probability distribution is fundamental in understanding how values of a random variable are distributed across possible outcomes."
+  },
+  {
+    "objectID": "Day2.html#probability-distribution-number-of-children",
+    "href": "Day2.html#probability-distribution-number-of-children",
+    "title": "Day 2",
+    "section": "Probability Distribution: Number of Children",
+    "text": "Probability Distribution: Number of Children\n\\(Y=\\{\\text{Number of children per woman}\\}\\)"
+  },
+  {
+    "objectID": "Day2.html#probability-distribution-table",
+    "href": "Day2.html#probability-distribution-table",
+    "title": "Day 2",
+    "section": "Probability Distribution Table",
+    "text": "Probability Distribution Table\n\n\n\n\n\n\nNumber_of_Children\nProbability\n\n\n\n\n0\n0.273\n\n\n1\n0.160\n\n\n2\n0.244\n\n\n3\n0.154\n\n\n4\n0.082\n\n\n5\n0.039\n\n\n6\n0.020\n\n\n7\n0.011\n\n\n8\n0.017"
+  },
+  {
+    "objectID": "Day2.html#probability-rules-for-py",
+    "href": "Day2.html#probability-rules-for-py",
+    "title": "Day 2",
+    "section": "Probability Rules for \\(P(y)\\)",
+    "text": "Probability Rules for \\(P(y)\\)\n\n\n\nRule 1: Probability values are restricted between 0 and 1.\n\nNotation: \\(0 \\leqslant P(y) \\leqslant 1\\)\n\nRule 2: The sum of the probabilities for all possible outcomes equals 1.\n\nNotation: \\(\\sum_y P(y) = 1\\)"
+  },
+  {
+    "objectID": "Day2.html#quiz",
+    "href": "Day2.html#quiz",
+    "title": "Day 2",
+    "section": "Quiz",
+    "text": "Quiz\n\nWhat is the probability that a randomly selected woman has exactly two children?\n\n \n\nWhat is the probability that a randomly selected woman has fewer two children?"
+  },
+  {
+    "objectID": "Day2.html#population-expected-value",
+    "href": "Day2.html#population-expected-value",
+    "title": "Day 2",
+    "section": "Population Expected Value",
+    "text": "Population Expected Value\n\nThe expected value summarizes the center of a distribution.\n\nExpected Value:\n\nNotation: \\(E(y)=\\sum_y y \\cdot p(y)\\)\n\\(E(y)\\) represents the average or mean value of all measurements in the population.\n\nPopulation Mean (\\(\\mu\\)): Denoted by \\(\\mu\\), it is equivalent to \\(E(y)\\) and is a parameter describing the population."
+  },
+  {
+    "objectID": "Day2.html#variability-measures-variance-and-standard-deviation",
+    "href": "Day2.html#variability-measures-variance-and-standard-deviation",
+    "title": "Day 2",
+    "section": "Variability Measures: Variance and Standard Deviation",
+    "text": "Variability Measures: Variance and Standard Deviation\n\n\n\nVariance: Measures the spread of measurements around the mean (\\(\\mu\\)).\n\nFormula: \\(\\sigma^2=V(y)=E\\left[(y-\\mu)^2\\right]=\\sum_y(y-\\mu)^2 \\cdot p(y)\\)\n\nStandard Deviation (SD): The square root of the variance, reflecting the average deviation from the mean.\n\nFormula: \\(\\sigma =SD=\\sqrt{\\sigma^2}\\)"
+  },
+  {
+    "objectID": "Day2.html#calculate-sample-statistics",
+    "href": "Day2.html#calculate-sample-statistics",
+    "title": "Day 2",
+    "section": "Calculate Sample Statistics",
+    "text": "Calculate Sample Statistics\n\nQuestion: A simple random sample of size 10 from a population includes the following measurements:\n\n\\(2, 0, 1, 0, 3, 2, 2, 6, 0, 1\\)\n\nTask: Calculate the sample mean, variance, and standard deviation."
+  },
+  {
+    "objectID": "Day2.html#chebyshevs-inequality-explained",
+    "href": "Day2.html#chebyshevs-inequality-explained",
+    "title": "Day 2",
+    "section": "Chebyshev’s Inequality Explained",
+    "text": "Chebyshev’s Inequality Explained\n\n\nKey Concept: Chebyshev’s Inequality states that for any dataset, the proportion of data within \\(k\\) standard deviations from the mean is at least \\(1 - \\frac{1}{k^2}\\) for any \\(k &gt; 1\\).\nImplication: As \\(k\\) increases, a larger proportion of the data is expected to fall closer to the mean, providing insight into data spread and central tendency."
+  },
+  {
+    "objectID": "Day2.html#exercise",
+    "href": "Day2.html#exercise",
+    "title": "Day 2",
+    "section": "Exercise",
+    "text": "Exercise\n\n\n\nTask: Calculate the minimum proportion of data within \\(k\\) standard deviations of the mean for \\(k=2\\) and \\(k=3\\).\n\nFor \\(k=2\\): \\[\n\\text{Proportion} = 1 - \\frac{1}{k^2} = \\ldots\n\\]\nFor \\(k=3\\): \\[\n\\text{Proportion} = 1 - \\frac{1}{k^2} = \\ldots\n\\]"
+  },
+  {
+    "objectID": "Day2.html#understanding-chebyshevs-inequality",
+    "href": "Day2.html#understanding-chebyshevs-inequality",
+    "title": "Day 2",
+    "section": "Understanding Chebyshev’s Inequality",
+    "text": "Understanding Chebyshev’s Inequality\n\n\nChebyshev’s Inequality Formula: \\[\nP(|y-\\mu| \\leq k \\cdot \\sigma) \\geqslant 1-\\frac{1}{k^2}\n\\]\n\nInterpretation: This formula states that the probability of the random variable \\(y\\) falling within \\(k\\) standard deviations (\\(\\sigma\\)) of the mean (\\(\\mu\\)) is at least \\(1 - \\frac{1}{k^2}\\)."
+  },
+  {
+    "objectID": "RandRStudio.html",
+    "href": "RandRStudio.html",
+    "title": "Setting Up R and RStudio",
+    "section": "",
+    "text": "This lab tutorial will guide you through installing R and RStudio on your computer, managing packages, and loading data into R. This setup is essential for performing all kinds of data analysis tasks in R."
+  },
+  {
+    "objectID": "RandRStudio.html#on-windows",
+    "href": "RandRStudio.html#on-windows",
+    "title": "Setting Up R and RStudio",
+    "section": "On Windows",
+    "text": "On Windows\n\n\nDownload R:\n\nVisit CRAN and download the latest version of R for Windows.\nRun the downloaded .exe file and follow the installation instructions.\n\n\n\nDownload RStudio:\n\nGo to the RStudio Download page and download the free version of RStudio Desktop for Windows.\nInstall it by running the downloaded .exe file."
+  },
+  {
+    "objectID": "RandRStudio.html#on-mac",
+    "href": "RandRStudio.html#on-mac",
+    "title": "Setting Up R and RStudio",
+    "section": "On Mac",
+    "text": "On Mac\n\n\nDownload R:\n\nNavigate to CRAN and choose the version for macOS.\nOpen the downloaded .pkg file to start the installation.\n\n\n\nDownload RStudio:\n\nVisit RStudio Download page and select RStudio for macOS.\nOpen the downloaded .dmg file and drag RStudio to your Applications folder."
+  },
+  {
+    "objectID": "RandRStudio.html#understanding-r-markdown-documents",
+    "href": "RandRStudio.html#understanding-r-markdown-documents",
+    "title": "Setting Up R and RStudio",
+    "section": "Understanding R Markdown Documents",
+    "text": "Understanding R Markdown Documents\nR Markdown allows you to integrate code and text in the same document, facilitating reproducible research and interactive data analysis reports. Here’s a quick overview:"
+  },
+  {
+    "objectID": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
+    "href": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
+    "title": "Setting Up R and RStudio",
+    "section": "Managing .Rmd Files and Setting the Working Directory",
+    "text": "Managing .Rmd Files and Setting the Working Directory\nDownloading and Organizing .Rmd Files\nTo effectively manage your course materials in RStudio, follow these steps:\n\n\nDownload .Rmd File:\n\nNavigate to MyClasses and locate the desired .Rmd file for your course.\nDownload the file to your local machine.\n\n\n\nCreate a Course Folder:\n\nCreate a new folder named math216 in a suitable location on your computer or within your RStudio account.\n\n\n\nOrganize Files:\n\nMove the downloaded .Rmd file into the math216 folder to keep your course materials organized.\n\n\nText Portions\nText in R Markdown is written using standard markdown syntax. This allows you to add headers, lists, links, and other styling features to create dynamic reports."
+  },
+  {
+    "objectID": "RandRStudio.html#text-formatting-in-r-markdown",
+    "href": "RandRStudio.html#text-formatting-in-r-markdown",
+    "title": "Setting Up R and RStudio",
+    "section": "Text Formatting in R Markdown",
+    "text": "Text Formatting in R Markdown\nMarkdown is a lightweight markup language that allows you to add formatting elements using plain text. Here’s how you can use different Markdown syntax to format text within your R Markdown documents.\nHeaders\nCreate headers by prefixing the text with one or more hash symbols (#). The number of # symbols before the text determines the level of the header.\n# Header 1\n## Header 2\n### Header 3\nLists\nYou can create bulleted or numbered lists:\n\n\nUnordered Lists (bullets):\n\n- Item 1\n- Item 2\n  - Subitem 1\n  - Subitem 2\n\n\nOrdered Lists:\n\n1. First item\n2. Second item\n   1. Subitem 1\n   2. Subitem 2\nLinks\nInclude hyperlinks using the format [link text](URL):\n[Visit Canvas](https://salisbury.instructure.com/courses/66117)\nEmphasis\nItalicize or bold text using asterisks or underscores:\n\n\nItalic: *Italic* or _Italic_\n\n\nBold: **Bold** or __Bold__\n\nImages\nEmbed images using the format ![Alt text](image_URL \"Optional Title\"):\n![Example Image](path_to_image.jpg \"This is an image\")\nBlockquotes\nCreate blockquotes with &gt;:\n&gt; This is a blockquote.\nCode\nDisplay inline code with backticks and code blocks with triple backticks:\n\nInline code: `code`\n\nCode block:\n\n\\```\nThis is a code block\n\\```\nHorizontal Rules\nInsert a horizontal line with three or more hyphens:\n---\nCombining Markdown with R Code\nMarkdown can be interleaved with executable R code chunks:\n\n# Calculate the sum of numbers from 1 to 10\nsum(1:10)\n\n[1] 55"
+  },
+  {
+    "objectID": "RandRStudio.html#r-code-chunk-options",
+    "href": "RandRStudio.html#r-code-chunk-options",
+    "title": "Setting Up R and RStudio",
+    "section": "R Code Chunk Options",
+    "text": "R Code Chunk Options\nBefore diving into data loading, let’s understand important R chunk options:\n\n\neval: Use eval=FALSE to prevent code from running but still display it.\n\necho: With echo=FALSE, the code is run but not displayed in the document.\n\ninclude: include=FALSE runs the code and hides both the code and output from the final output.\n\nExample to demonstrate:\n\n# This code will run, and both code and output will appear in the document.\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
   }
 ]

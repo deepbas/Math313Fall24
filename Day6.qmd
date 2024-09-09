@@ -230,3 +230,12 @@ Critique SRS by highlighting potential logistical issues in large populations an
 ::: notes
 Showcase the practical application of SRS in Nielsen's methodology, emphasizing its influence on the television industry.
 :::
+
+
+## 
+
+```{=html}
+<iframe width="1380" height="1100" src="https://www.nielsen.com/insights/2024/beyond-big-data-the-audience-watching-over-the-air/"></iframe>
+
+```
+
