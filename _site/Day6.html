@@ -408,7 +408,7 @@ Bastola
 <section id="population-probability-calculation" class="slide level2">
 <h2>Population Probability Calculation</h2>
 <blockquote>
-<p>In general, if <span class="math inline">\(X\)</span> is a random variable following a normal distribution with the mean <span class="math inline">\(a\)</span> and standard deviation <span class="math inline">\(b\)</span>, then we can compute the probability of <span class="math inline">\(X&lt;c\)</span> for some number <span class="math inline">\(c\)</span> with the following R function:</p>
+<p>In general, if <span class="math inline">\(X\)</span> is a random variable following a normal distribution with the mean <span class="math inline">\(a\)</span> and standard deviation <span class="math inline">\(b\)</span>, then we can compute the probability of <span class="math inline">\(X&gt;c\)</span> for some number <span class="math inline">\(c\)</span> with the following R function:</p>
 </blockquote>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a></a><span class="in">```{r}</span></span>
 <span id="cb1-2"><a></a><span class="in">1 - pnorm(x = c, mean = a, sd = b)</span></span>
@@ -420,7 +420,7 @@ Bastola
 <blockquote>
 <p>When dealing with a sample mean <span class="math inline">\(\bar{y}\)</span>, the variable <span class="math inline">\(\bar{y}\)</span> is normally distributed with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\frac{\sigma}{\sqrt{n}}\)</span>, where <span class="math inline">\(n\)</span> is the sample size. This is described mathematically as: <span class="math display">\[
 X = \bar{y}, \quad a = \mu, \quad b = \frac{\sigma}{\sqrt{n}}
-\]</span> For computing the probability of <span class="math inline">\(X &lt; c\)</span>, use the R code below:</p>
+\]</span> For computing the probability of <span class="math inline">\(X&gt;c\)</span>, use the R code below:</p>
 </blockquote>
 </div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a></a><span class="in">```{r}</span></span>
@@ -467,7 +467,7 @@ X = \bar{y}, \quad a = \mu, \quad b = \frac{\sigma}{\sqrt{n}}
 <h2>Percentiles in Statistical Distributions</h2>
 <div class="font80">
 <blockquote>
-<p>The <span class="math inline">\(100 \times p\)</span>th percentile of a random variable <span class="math inline">\(X\)</span> is a value <span class="math inline">\(c\)</span> such that: <span class="math display">\[P(X &lt; c) = p\]</span> This defines the point below which a given percentage (<span class="math inline">\(p\)</span>) of observations fall.</p>
+<p>The <span class="math inline">\(100 \times p\)</span>th percentile of a random variable <span class="math inline">\(X\)</span> is a value <span class="math inline">\(c\)</span> such that: <span class="math display">\[P(X&lt;c) = p\]</span> This defines the point below which a given percentage (<span class="math inline">\(p\)</span>) of observations fall.</p>
 </blockquote>
 <p><strong>Standard Normal Distribution</strong></p>
 <ul>

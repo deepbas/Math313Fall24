@@ -151,14 +151,14 @@
     "href": "Day6.html#population-probability-calculation",
     "title": "Day 6",
     "section": "Population Probability Calculation",
-    "text": "Population Probability Calculation\n\nIn general, if \\(X\\) is a random variable following a normal distribution with the mean \\(a\\) and standard deviation \\(b\\), then we can compute the probability of \\(X&lt;c\\) for some number \\(c\\) with the following R function:\n\n```{r}\n1 - pnorm(x = c, mean = a, sd = b)\n```"
+    "text": "Population Probability Calculation\n\nIn general, if \\(X\\) is a random variable following a normal distribution with the mean \\(a\\) and standard deviation \\(b\\), then we can compute the probability of \\(X&gt;c\\) for some number \\(c\\) with the following R function:\n\n```{r}\n1 - pnorm(x = c, mean = a, sd = b)\n```"
   },
   {
     "objectID": "Day6.html#sampling-distribution",
     "href": "Day6.html#sampling-distribution",
     "title": "Day 6",
     "section": "Sampling Distribution",
-    "text": "Sampling Distribution\n\n\nWhen dealing with a sample mean \\(\\bar{y}\\), the variable \\(\\bar{y}\\) is normally distributed with mean \\(\\mu\\) and standard deviation \\(\\frac{\\sigma}{\\sqrt{n}}\\), where \\(n\\) is the sample size. This is described mathematically as: \\[\nX = \\bar{y}, \\quad a = \\mu, \\quad b = \\frac{\\sigma}{\\sqrt{n}}\n\\] For computing the probability of \\(X &lt; c\\), use the R code below:\n\n\n```{r}\n1 - pnorm(x = c, mean = a, sd = b)\n```"
+    "text": "Sampling Distribution\n\n\nWhen dealing with a sample mean \\(\\bar{y}\\), the variable \\(\\bar{y}\\) is normally distributed with mean \\(\\mu\\) and standard deviation \\(\\frac{\\sigma}{\\sqrt{n}}\\), where \\(n\\) is the sample size. This is described mathematically as: \\[\nX = \\bar{y}, \\quad a = \\mu, \\quad b = \\frac{\\sigma}{\\sqrt{n}}\n\\] For computing the probability of \\(X&gt;c\\), use the R code below:\n\n\n```{r}\n1 - pnorm(x = c, mean = a, sd = b)\n```"
   },
   {
     "objectID": "Day6.html#example-1",
@@ -186,7 +186,7 @@
     "href": "Day6.html#percentiles-in-statistical-distributions",
     "title": "Day 6",
     "section": "Percentiles in Statistical Distributions",
-    "text": "Percentiles in Statistical Distributions\n\n\nThe \\(100 \\times p\\)th percentile of a random variable \\(X\\) is a value \\(c\\) such that: \\[P(X &lt; c) = p\\] This defines the point below which a given percentage (\\(p\\)) of observations fall.\n\nStandard Normal Distribution\n\nFor a standard normal random variable \\(Z\\), the \\(100 \\times p\\)th percentile is denoted \\(z_p\\).\nExample in R: qnorm(p) where p is the desired percentile."
+    "text": "Percentiles in Statistical Distributions\n\n\nThe \\(100 \\times p\\)th percentile of a random variable \\(X\\) is a value \\(c\\) such that: \\[P(X&lt;c) = p\\] This defines the point below which a given percentage (\\(p\\)) of observations fall.\n\nStandard Normal Distribution\n\nFor a standard normal random variable \\(Z\\), the \\(100 \\times p\\)th percentile is denoted \\(z_p\\).\nExample in R: qnorm(p) where p is the desired percentile."
   },
   {
     "objectID": "Day6.html#percentiles-in-statistical-distributions-1",

@@ -51,7 +51,7 @@ yt <- 0
 ## Population Probability Calculation
 
 
-> In general, if $X$ is a random variable following a normal distribution with the mean $a$ and standard deviation $b$, then we can compute the probability of $X<c$ for some number $c$ with the following R function:
+> In general, if $X$ is a random variable following a normal distribution with the mean $a$ and standard deviation $b$, then we can compute the probability of $X>c$ for some number $c$ with the following R function:
 
 
 
@@ -67,7 +67,7 @@ yt <- 0
 $$
 X = \bar{y}, \quad a = \mu, \quad b = \frac{\sigma}{\sqrt{n}}
 $$
-For computing the probability of $X < c$, use the R code below:
+For computing the probability of $X>c$, use the R code below:
 :::
 
 ```{{r}}
@@ -118,7 +118,7 @@ e. What is the probability that a randomly selected male adult from this region 
 
 ::: font80
 > The $100 \times p$th percentile of a random variable $X$ is a value $c$ such that:
-    $$P(X < c) = p$$
+    $$P(X<c) = p$$
   This defines the point below which a given percentage ($p$) of observations fall.
   
   
