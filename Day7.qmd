@@ -89,7 +89,7 @@ To draw a simple random sample, number every item $(1, 2, \ldots, N)$ in the pop
 ## 
 
 ::: font60
-> Example 2: Use the random number table, select a random sample with size 10 from the list of States in U.S.A. use the last two digit on the $9^{th}$ line and $10^{th}$ column as the starting point.
+> Example 2: Use the random number table, select a random sample with size 10 from the list of States in U.S.A. Use the last two digit on the $10^{th}$ line and $9^{th}$ column as the starting point.
 :::
 
 

@@ -487,7 +487,7 @@
     "href": "Day7.html#section-2",
     "title": "Day 7",
     "section": "",
-    "text": "Example 2: Use the random number table, select a random sample with size 10 from the list of States in U.S.A. use the last two digit on the \\(9^{th}\\) line and \\(10^{th}\\) column as the starting point."
+    "text": "Example 2: Use the random number table, select a random sample with size 10 from the list of States in U.S.A. Use the last two digit on the \\(10^{th}\\) line and \\(9^{th}\\) column as the starting point."
   },
   {
     "objectID": "Day7.html#estimation-using-simple-random-sampling",
