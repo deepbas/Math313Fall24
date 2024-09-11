@@ -125,7 +125,6 @@ states_df <- data.frame(
 # Render the data frame as a DataTable without column headers or footer
 datatable(states_df, options = list(paging = FALSE, searching = FALSE, info = FALSE), 
           colnames = rep("", ncol(states_df)), rownames = FALSE)
-
 ```
 
 :::
