@@ -1,0 +1,214 @@
+---
+title: "Day 7"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: "Bastola"
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+```
+
+
+## Simple Random Sampling
+
+<br>
+
+::: {.callout-note title="Definition"}
+
+If a sample of size $n$ is drawn from a population of size $N$ such that
+every possible sample of size $n$ has the same chance of being selected,
+then the sampling procedure is called **simple random sampling**. The sample thus obtained is called a **simple random sample**.
+
+:::
+
+## How to Draw a Simple Random Sample
+
+::: cle2
+::: font80
+
+To draw a simple random sample, number every item $(1, 2, \ldots, N)$ in the population and select a list of $n$ non-repeated random numbers within $1, 2, \ldots, N$. 
+
+- In the lab, we saw how to generate such a list using **R**. 
+- We can also use a random number table (textbook Appendix A, Table A.2).
+
+:::
+:::
+
+## Random Numbers Table
+<center>
+![](images/random_table.png)
+</center>
+
+##
+
+::: font60
+> Example 1: Use the random number table, select a random sample with size 5 from a population with $N=20$. use the rightmost digit on the $15^{th}$ line and $9^{th}$ column as the starting point.
+:::
+
+
+## 
+
+::: font60
+> Example 2: Use the random number table, select a random sample with size 10 from the list of States in U.S.A. use the last two digit on the $3^{rd}$ line and $1^{st}$ column as the starting point.
+:::
+
+
+##
+
+::: font60
+
+```{r, echo=FALSE}
+library(DT)
+
+# Define the list of US states with numbering
+states <- c("1. Alabama", "2. Alaska", "3. Arizona", "4. Arkansas", "5. California", 
+            "6. Colorado", "7. Connecticut", "8. Delaware", "9. Florida", "10. Georgia", 
+            "11. Hawaii", "12. Idaho", "13. Illinois", "14. Indiana", "15. Iowa", 
+            "16. Kansas", "17. Kentucky", "18. Louisiana", "19. Maine", "20. Maryland", 
+            "21. Massachusetts", "22. Michigan", "23. Minnesota", "24. Mississippi", 
+            "25. Missouri", "26. Montana", "27. Nebraska", "28. Nevada", "29. New Hampshire", 
+            "30. New Jersey", "31. New Mexico", "32. New York", "33. North Carolina", 
+            "34. North Dakota", "35. Ohio", "36. Oklahoma", "37. Oregon", "38. Pennsylvania", 
+            "39. Rhode Island", "40. South Carolina", "41. South Dakota", "42. Tennessee", 
+            "43. Texas", "44. Utah", "45. Vermont", "46. Virginia", "47. Washington", 
+            "48. West Virginia", "49. Wisconsin", "50. Wyoming")
+
+# Create a data frame with these states arranged into 5 columns
+states_df <- data.frame(
+  Col1 = states[1:10],
+  Col2 = states[11:20],
+  Col3 = states[21:30],
+  Col4 = states[31:40],
+  Col5 = states[41:50]
+)
+
+# Render the data frame as a DataTable without column headers or footer
+datatable(states_df, options = list(paging = FALSE, searching = FALSE, info = FALSE), 
+          colnames = rep("", ncol(states_df)), rownames = FALSE)
+
+```
+
+:::
+
+
+## Estimation Using Simple Random Sampling
+
+::: cle2
+::: font80
+
+- **Population Mean ($\mu$)**: Estimated using the sample mean.
+- **Population Total ($\tau$)**: Estimated using the product of mean and population size.
+
+$$\bar{y} = \frac{1}{n} \sum_{i=1}^n y_i$$
+$$\hat{\tau} = N \cdot \bar{y}$$
+
+:::
+:::
+
+## Variance Estimates in Sampling
+
+::: cle2
+::: font70
+
+::: row
+::: left
+
+**Variance of the Sample Mean ($V(\bar{y})$)**:
+
+- The variance is calculated using:
+  $$ V(\bar{y}) = \frac{\sigma^2}{n} \left(\frac{N-n}{N-1}\right) $$
+- Adjusted for finite population:
+  $$ = \left(1 - \frac{n}{N}\right) \frac{s^2}{n} $$
+:::
+
+::: right
+
+**Sample Variance ($s^2$)**:
+  $$ s^2 = \frac{1}{n-1} \sum (y_i - \bar{y})^2 $$
+
+**Expectation of Sample Variance**:
+  $$ E(s^2) = \frac{N}{N-1} \cdot \sigma^2 $$
+
+
+:::
+:::
+
+:::
+:::
+
+## Variance of Estimated Total ($V(\hat{\tau})$)
+
+::: cle2
+::: font80
+
+- Adjusted for scaling by the population size:
+  $$ V(\hat{\tau}) = N^2 \cdot V(\bar{y}) $$
+- Which results in:
+  $$ = N^2 \cdot \left(1 - \frac{n}{N}\right) \frac{s^2}{n} $$
+
+:::
+:::
+
+## Constructing Confidence Intervals
+
+::: cle2
+::: font60
+
+For both the population mean ($\mu$) and total ($\tau$), use the respective variance calculations to construct confidence intervals, accounting for the finite population correction.
+
+- This approach ensures more accurate estimations by adjusting for the finite size of the population.
+
+**Note**:  When the population variance $\sigma^2$ is unknown, we use $s^2$ as an estimator. However, to account for the finite population size, the sample variance $s^2$ should be multiplied by $\frac{N-1}{N}$ to make it an unbiased estimator of $\sigma^2$. This scaling helps adjust the variance estimate to reflect the true variability in the population more accurately.
+
+:::
+:::
+
+
+## 
+
+::: font60
+> Example 3: The census population of each states in U.S.A in 2020 is listed below. Use the simple random sample we obtained in Example 2, estimate the average census population, $\bar{y}$ of a state in the U.S.A., then compute the estimated variance of $\bar{y}$. Do the same computation for the total census population for the whole 50 states.
+:::
+
+
+
+##
+
