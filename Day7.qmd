@@ -214,3 +214,31 @@ For both the population mean ($\mu$) and total ($\tau$), use the respective vari
 
 ##
 
+
+
+##
+
+
+```{=html}
+<iframe width="1380" height="1200" src="https://ballotpedia.org/United_States_census,_2020" title="Webpage example"></iframe>
+```
+
+
+
+##
+
+
+<details><summary><red>Click for answer</red></summary>
+
+```{r}
+y <- c(92949493, 1963333, 21570527, 5124712, 1795045, 1379089, 29183290, 
+4241500, 867770, 3013756)
+y.bar <- mean(y)
+y.bar
+tau.hat <- 50 * y.bar
+tau.hat
+
+```
+
+
+</details>
