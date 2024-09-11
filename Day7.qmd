@@ -89,7 +89,7 @@ To draw a simple random sample, number every item $(1, 2, \ldots, N)$ in the pop
 ## 
 
 ::: font60
-> Example 2: Use the random number table, select a random sample with size 10 from the list of States in U.S.A. use the last two digit on the $3^{rd}$ line and $1^{st}$ column as the starting point.
+> Example 2: Use the random number table, select a random sample with size 10 from the list of States in U.S.A. use the last two digit on the $9^{th}$ line and $10^{th}$ column as the starting point.
 :::
 
 
@@ -228,16 +228,16 @@ For both the population mean ($\mu$) and total ($\tau$), use the respective vari
 ##
 
 
-<details><summary><red>Click for answer</red></summary>
+<details><summary><red>Calculations</red></summary>
 
 ```{r}
-y <- c(92949493, 1963333, 21570527, 5124712, 1795045, 1379089, 29183290, 
-4241500, 867770, 3013756)
+y <- c(1098163, 4661468, 2120220, 3963516, 5782171, 10725274, 11808848, 1963333, 1085407, 643503)
 y.bar <- mean(y)
 y.bar
 tau.hat <- 50 * y.bar
 tau.hat
-
+s2 <- sd(y)
+s2
 ```
 
 
