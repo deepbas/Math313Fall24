@@ -413,22 +413,15 @@
     "text": "How to Draw a Simple Random Sample\n\n\nTo draw a simple random sample, number every item \\((1, 2, \\ldots, N)\\) in the population and select a list of \\(n\\) non-repeated random numbers within \\(1, 2, \\ldots, N\\).\n\nIn the lab, we saw how to generate such a list using R.\nWe can also use a random number table (textbook Appendix A, Table A.2)."
   },
   {
-    "objectID": "Day7.html#random-numbers-table",
-    "href": "Day7.html#random-numbers-table",
-    "title": "Day 7",
-    "section": "Random Numbers Table",
-    "text": "Random Numbers Table"
-  },
-  {
-    "objectID": "Day7.html#section",
-    "href": "Day7.html#section",
+    "objectID": "Day7.html#section-1",
+    "href": "Day7.html#section-1",
     "title": "Day 7",
     "section": "",
     "text": "Example 1: Use the random number table, select a random sample with size 5 from a population with \\(N=20\\). use the rightmost digit on the \\(15^{th}\\) line and \\(9^{th}\\) column as the starting point."
   },
   {
-    "objectID": "Day7.html#section-1",
-    "href": "Day7.html#section-1",
+    "objectID": "Day7.html#section-2",
+    "href": "Day7.html#section-2",
     "title": "Day 7",
     "section": "",
     "text": "Example 2: Use the random number table, select a random sample with size 10 from the list of States in U.S.A. use the last two digit on the \\(3^{rd}\\) line and \\(1^{st}\\) column as the starting point."
@@ -462,8 +455,8 @@
     "text": "Constructing Confidence Intervals\n\n\nFor both the population mean (\\(\\mu\\)) and total (\\(\\tau\\)), use the respective variance calculations to construct confidence intervals, accounting for the finite population correction.\n\nThis approach ensures more accurate estimations by adjusting for the finite size of the population.\n\nNote: When the population variance \\(\\sigma^2\\) is unknown, we use \\(s^2\\) as an estimator. However, to account for the finite population size, the sample variance \\(s^2\\) should be multiplied by \\(\\frac{N-1}{N}\\) to make it an unbiased estimator of \\(\\sigma^2\\). This scaling helps adjust the variance estimate to reflect the true variability in the population more accurately."
   },
   {
-    "objectID": "Day7.html#section-3",
-    "href": "Day7.html#section-3",
+    "objectID": "Day7.html#section-4",
+    "href": "Day7.html#section-4",
     "title": "Day 7",
     "section": "",
     "text": "Example 3: The census population of each states in U.S.A in 2020 is listed below. Use the simple random sample we obtained in Example 2, estimate the average census population, \\(\\bar{y}\\) of a state in the U.S.A., then compute the estimated variance of \\(\\bar{y}\\). Do the same computation for the total census population for the whole 50 states."

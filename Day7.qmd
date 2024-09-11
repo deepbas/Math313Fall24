@@ -72,10 +72,12 @@ To draw a simple random sample, number every item $(1, 2, \ldots, N)$ in the pop
 :::
 :::
 
-## Random Numbers Table
-<center>
-![](images/random_table.png)
-</center>
+## 
+
+<div style="text-align: center;">
+  <img src="images/random_table.png" alt="Random Table">
+</div>
+
 
 ##
 
