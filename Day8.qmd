@@ -1,0 +1,238 @@
+---
+title: "Day 8"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: "Bastola"
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+```
+
+
+## Key Quantities in Survey Sampling
+
+::: font60
+::: cle4
+::: row
+::: left
+Estimator of the Population Mean
+
+- **Estimator**:
+  $$
+  \hat{\mu} = \bar{y}
+  $$
+- **Estimated Variance**:
+  $$
+  \hat{V}(\bar{y}) = \left(1-\frac{n}{N}\right) \frac{S^2}{n}
+  $$
+:::
+
+::: right
+Estimator of the Population Total
+
+- **Estimator**:
+  $$
+  \hat{\tau} = N \cdot \bar{y}
+  $$
+- **Estimated Variance**:
+  $$
+  \hat{V}(\hat{\tau}) = N^2 \cdot \left(1-\frac{n}{N}\right) \frac{S^2}{n}
+  $$
+:::
+:::
+:::
+:::
+
+
+## Error Bounds for Survey Estimates
+
+::: cle3
+::: font80
+### Mean Estimation Error Bound
+
+  $$
+  \text{B} = t_{1-\frac{\alpha}{2}, n-1} \cdot \sqrt{\left(1-\frac{n}{N}\right) \cdot \frac{S^2}{n}}
+  $$
+
+### Total Estimation Error Bound
+
+  $$
+  \text{B} = t_{1-\frac{\alpha}{2}, n-1} \cdot \sqrt{N^2 \cdot \left(1-\frac{n}{N}\right) \cdot \frac{s^2}{n}}
+  $$
+:::
+:::
+
+
+
+## Computing t-Distribution Critical Values in R
+
+::: cle3
+::: font70
+
+### Critical Value Calculation in R
+
+```{{r}}
+qt(1 - alpha / 2, df = n - 1)
+```
+  
+This function computes the critical value $t_{1-\alpha / 2, n-1}$ for the t-distribution.
+
+### Confidence Interval Formula
+
+\begin{align*}
+\hat{\theta} \pm B
+\end{align*}
+
+
+Here, $\hat{\theta}$ is the estimate for the parameter of interest and $B$ represents the bound on the error of estimation, computed as outlined in previous slides.
+
+:::
+:::
+
+##
+
+::: font50
+> Example 1: A simple random sample of 100 houses within a community is selected and their monthly energy usages are recorded. The sample mean and sample standard deviation are founded to be $\bar{y}=$ 887 kWh and $s=120 \mathrm{kWh}$. If there are $N=8000$ houses within the community. Estimate the true mean monthly energy usage per house, $\mu$, and the total monthly energy usages for the community, $\tau$. The estimation should include the estimator, the estimated variance, the $95 \%$ bound on the error of estimation, and the $95 \%$ confidence interval for the population parameter.
+
+
+```{r}
+qt(1 - 0.05/2, df = 99)
+```
+
+:::
+
+## Error Bounds for Known Population Variance
+
+::: cle5
+::: font80
+
+Mean Estimation Error
+
+  $$
+  B_{\bar{y}} = z_{1-\frac{\alpha}{2}} \cdot \sqrt{\left(\frac{N-n}{N-1}\right) \cdot \frac{\sigma^2}{n}}
+  $$
+
+Total Estimation Error
+  $$
+  B_{\hat{\tau}} = z_{1-\frac{\alpha}{2}} \cdot N \cdot \sqrt{\left(\frac{N-n}{N-1}\right) \cdot \frac{\sigma^2}{n}}
+  $$
+
+:::
+:::
+
+
+## Sample Size and Estimation Accuracy
+
+::: cle4
+::: font80
+- **Key Insight**: Larger sample sizes $n$ reduce the error bounds $B$, increasing the precision of estimates.
+- **Trade-off**: Larger samples increase costs but provide more reliable data.
+:::
+:::
+
+::: green-h
+Select $B$ based on desired confidence and precision. Solve for $n$ given $B$, using the error bound formulas.
+:::
+
+
+
+## Sample Size Determination for Estimating Population Mean $\mu$
+
+::: cle4
+::: font70
+
+Case 1: Known Population Variance $\sigma^2$
+
+  $$
+  n = \frac{N \sigma^2}{(N-1) \left(\frac{B_{\bar{y}}}{z_{1-\frac{\alpha}{2}}}\right)^2 + \sigma^2}
+  $$
+
+Case 2: Known Sample Variance $s^2$ from Previous Experiment
+
+  $$
+  n = \frac{N s^2}{N \left(\frac{B_{\bar{y}}}{z_{1-\frac{\alpha}{2}}}\right)^2 + s^2}
+  $$
+:::
+:::
+
+
+## Sample Size Determination for Estimating Population Total $\tau$
+
+::: cle4
+::: font70
+
+Case 1: Known Population Variance $\sigma^2$
+  $$
+  n = \frac{N \sigma^2}{(N-1) \left(\frac{B_{\hat{\tau}}}{z_{1-\frac{\alpha}{2}} \cdot N}\right)^2 + \sigma^2}
+  $$
+
+Case 2: Known Sample Variance $s^2$ from Previous Experiment
+  $$
+  n = \frac{N s^2}{N \left(\frac{B_{\hat{\tau}}}{z_{1-\frac{\alpha}{2}} \cdot N}\right)^2 + s^2}
+  $$
+:::
+:::
+
+## Using Range, R
+
+<br>
+<br>
+
+::: green-h
+**If $\sigma^2$ and $s^2$ are unknown, but the range $R$ is given:** Use equation for $\sigma^2$ but approximate $\sigma \approx \frac{R}{4}$.
+:::
+
+
+##
+
+::: font50
+> Example 2: To study the monthly energy usages in a community with $N=8000$ houses, a researcher want to select a simple random sample with size $n$. Historical data shows that the sample standard deviation of the the monthly energy usages in this community is $s=120 \mathrm{kWh}$. Find the sample size needed to estimate the average usage $\mu$ with a bound on the error of estimation $B_{\bar{y}}=50 \mathrm{kWh}$. How about the sample size required for estimate total usage $\tau$ with $B_{\hat{\tau}}=160000$? 
+
+:::
+
+##
+
+::: font50
+> Example 3: The average amount of money $\mu$ for a hospital's accounts receivable must be estimated. Although no prior data are available to estimate the population variance, it is known that most accounts lie within a $\$ 100$ range. There are $N=1000$ open accounts. Find the sample size needed to estimate $\mu$ with a bound on the error of estimation $B_{\bar{y}}=\$ 3$.
+:::
+
+
+
