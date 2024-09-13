@@ -329,6 +329,83 @@
     "text": "Acquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
   },
   {
+    "objectID": "Day8.html#key-quantities-in-survey-sampling",
+    "href": "Day8.html#key-quantities-in-survey-sampling",
+    "title": "Day 8",
+    "section": "Key Quantities in Survey Sampling",
+    "text": "Key Quantities in Survey Sampling\n\n\n\n\nEstimator of the Population Mean\n\nEstimator: \\[\n\\hat{\\mu} = \\bar{y}\n\\]\nEstimated Variance: \\[\n\\hat{V}(\\bar{y}) = \\left(1-\\frac{n}{N}\\right) \\frac{S^2}{n}\n\\]\n\n\n\nEstimator of the Population Total\n\nEstimator: \\[\n\\hat{\\tau} = N \\cdot \\bar{y}\n\\]\nEstimated Variance: \\[\n\\hat{V}(\\hat{\\tau}) = N^2 \\cdot \\left(1-\\frac{n}{N}\\right) \\frac{S^2}{n}\n\\]"
+  },
+  {
+    "objectID": "Day8.html#error-bounds-for-survey-estimates",
+    "href": "Day8.html#error-bounds-for-survey-estimates",
+    "title": "Day 8",
+    "section": "Error Bounds for Survey Estimates",
+    "text": "Error Bounds for Survey Estimates\n\n\nMean Estimation Error Bound\n\\[\n  \\text{B} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{S^2}{n}}\n  \\]\nTotal Estimation Error Bound\n\\[\n  \\text{B} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{N^2 \\cdot \\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s^2}{n}}\n  \\]"
+  },
+  {
+    "objectID": "Day8.html#computing-t-distribution-critical-values-in-r",
+    "href": "Day8.html#computing-t-distribution-critical-values-in-r",
+    "title": "Day 8",
+    "section": "Computing t-Distribution Critical Values in R",
+    "text": "Computing t-Distribution Critical Values in R\n\n\nCritical Value Calculation in R\n```{r}\nqt(1 - alpha / 2, df = n - 1)\n```\nThis function computes the critical value \\(t_{1-\\alpha / 2, n-1}\\) for the t-distribution.\nConfidence Interval Formula\n\\[\\begin{align*}\n\\hat{\\theta} \\pm B\n\\end{align*}\\]\nHere, \\(\\hat{\\theta}\\) is the estimate for the parameter of interest and \\(B\\) represents the bound on the error of estimation, computed as outlined in previous slides."
+  },
+  {
+    "objectID": "Day8.html#section",
+    "href": "Day8.html#section",
+    "title": "Day 8",
+    "section": "",
+    "text": "Example 1: A simple random sample of 100 houses within a community is selected and their monthly energy usages are recorded. The sample mean and sample standard deviation are founded to be \\(\\bar{y}=\\) 887 kWh and \\(s=120 \\mathrm{kWh}\\). If there are \\(N=8000\\) houses within the community. Estimate the true mean monthly energy usage per house, \\(\\mu\\), and the total monthly energy usages for the community, \\(\\tau\\). The estimation should include the estimator, the estimated variance, the \\(95 \\%\\) bound on the error of estimation, and the \\(95 \\%\\) confidence interval for the population parameter.\n\n\nqt(1 - 0.05/2, df = 99)\n\n[1] 1.984217"
+  },
+  {
+    "objectID": "Day8.html#error-bounds-for-known-population-variance",
+    "href": "Day8.html#error-bounds-for-known-population-variance",
+    "title": "Day 8",
+    "section": "Error Bounds for Known Population Variance",
+    "text": "Error Bounds for Known Population Variance\n\n\nMean Estimation Error\n\\[\n  B_{\\bar{y}} = z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}}\n  \\]\nTotal Estimation Error \\[\n  B_{\\hat{\\tau}} = z_{1-\\frac{\\alpha}{2}} \\cdot N \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}}\n  \\]"
+  },
+  {
+    "objectID": "Day8.html#sample-size-and-estimation-accuracy",
+    "href": "Day8.html#sample-size-and-estimation-accuracy",
+    "title": "Day 8",
+    "section": "Sample Size and Estimation Accuracy",
+    "text": "Sample Size and Estimation Accuracy\n\n\n\nKey Insight: Larger sample sizes \\(n\\) reduce the error bounds \\(B\\), increasing the precision of estimates.\nTrade-off: Larger samples increase costs but provide more reliable data.\n\n\n\n\nSelect \\(B\\) based on desired confidence and precision. Solve for \\(n\\) given \\(B\\), using the error bound formulas."
+  },
+  {
+    "objectID": "Day8.html#sample-size-determination-for-estimating-population-mean-mu",
+    "href": "Day8.html#sample-size-determination-for-estimating-population-mean-mu",
+    "title": "Day 8",
+    "section": "Sample Size Determination for Estimating Population Mean \\(\\mu\\)",
+    "text": "Sample Size Determination for Estimating Population Mean \\(\\mu\\)\n\n\nCase 1: Known Population Variance \\(\\sigma^2\\)\n\\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment\n\\[\n  n = \\frac{N s^2}{N \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + s^2}\n  \\]"
+  },
+  {
+    "objectID": "Day8.html#sample-size-determination-for-estimating-population-total-tau",
+    "href": "Day8.html#sample-size-determination-for-estimating-population-total-tau",
+    "title": "Day 8",
+    "section": "Sample Size Determination for Estimating Population Total \\(\\tau\\)",
+    "text": "Sample Size Determination for Estimating Population Total \\(\\tau\\)\n\n\nCase 1: Known Population Variance \\(\\sigma^2\\) \\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\hat{\\tau}}}{z_{1-\\frac{\\alpha}{2}} \\cdot N}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment \\[\n  n = \\frac{N s^2}{N \\left(\\frac{B_{\\hat{\\tau}}}{z_{1-\\frac{\\alpha}{2}} \\cdot N}\\right)^2 + s^2}\n  \\]"
+  },
+  {
+    "objectID": "Day8.html#using-range-r",
+    "href": "Day8.html#using-range-r",
+    "title": "Day 8",
+    "section": "Using Range, R",
+    "text": "Using Range, R\n \n\nIf \\(\\sigma^2\\) and \\(s^2\\) are unknown, but the range \\(R\\) is given: Use equation for \\(\\sigma^2\\) but approximate \\(\\sigma \\approx \\frac{R}{4}\\)."
+  },
+  {
+    "objectID": "Day8.html#section-1",
+    "href": "Day8.html#section-1",
+    "title": "Day 8",
+    "section": "",
+    "text": "Example 2: To study the monthly energy usages in a community with \\(N=8000\\) houses, a researcher want to select a simple random sample with size \\(n\\). Historical data shows that the sample standard deviation of the the monthly energy usages in this community is \\(s=120 \\mathrm{kWh}\\). Find the sample size needed to estimate the average usage \\(\\mu\\) with a bound on the error of estimation \\(B_{\\bar{y}}=50 \\mathrm{kWh}\\). How about the sample size required for estimate total usage \\(\\tau\\) with \\(B_{\\hat{\\tau}}=160000\\)?"
+  },
+  {
+    "objectID": "Day8.html#section-2",
+    "href": "Day8.html#section-2",
+    "title": "Day 8",
+    "section": "",
+    "text": "Example 3: The average amount of money \\(\\mu\\) for a hospital’s accounts receivable must be estimated. Although no prior data are available to estimate the population variance, it is known that most accounts lie within a \\(\\$ 100\\) range. There are \\(N=1000\\) open accounts. Find the sample size needed to estimate \\(\\mu\\) with a bound on the error of estimation \\(B_{\\bar{y}}=\\$ 3\\)."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Math 313: Fall 2024",
@@ -698,117 +775,5 @@
     "title": "Setting Up R and RStudio",
     "section": "R Code Chunk Options",
     "text": "R Code Chunk Options\nBefore diving into data loading, let’s understand important R chunk options:\n\n\neval: Use eval=FALSE to prevent code from running but still display it.\n\necho: With echo=FALSE, the code is run but not displayed in the document.\n\ninclude: include=FALSE runs the code and hides both the code and output from the final output.\n\nExample to demonstrate:\n\n# This code will run, and both code and output will appear in the document.\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
-  },
-  {
-    "objectID": "Day8.html#key-quantities-in-survey-sampling",
-    "href": "Day8.html#key-quantities-in-survey-sampling",
-    "title": "Day 8",
-    "section": "Key Quantities in Survey Sampling",
-    "text": "Key Quantities in Survey Sampling\n\n\n\n\nEstimator of the Population Mean\n\nEstimator: \\[\n\\hat{\\mu} = \\bar{y}\n\\]\nEstimated Variance: \\[\n\\hat{V}(\\bar{y}) = \\left(1-\\frac{n}{N}\\right) \\frac{S^2}{n}\n\\]\n\n\n\nEstimator of the Population Total\n\nEstimator: \\[\n\\hat{\\tau} = N \\cdot \\bar{y}\n\\]\nEstimated Variance: \\[\n\\hat{V}(\\hat{\\tau}) = N^2 \\cdot \\left(1-\\frac{n}{N}\\right) \\frac{S^2}{n}\n\\]"
-  },
-  {
-    "objectID": "Day8.html#error-bounds-for-survey-estimates",
-    "href": "Day8.html#error-bounds-for-survey-estimates",
-    "title": "Day 8",
-    "section": "Error Bounds for Survey Estimates",
-    "text": "Error Bounds for Survey Estimates\n\n\nMean Estimation Error Bound\n\\[\n  \\text{B} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{S^2}{n}}\n  \\]\nTotal Estimation Error Bound\n\\[\n  \\text{B} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{N^2 \\cdot \\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s^2}{n}}\n  \\]"
-  },
-  {
-    "objectID": "Day8.html#computing-t-distribution-critical-values-in-r",
-    "href": "Day8.html#computing-t-distribution-critical-values-in-r",
-    "title": "Day 8",
-    "section": "Computing t-Distribution Critical Values in R",
-    "text": "Computing t-Distribution Critical Values in R\n\n\nCritical Value Calculation in R\n```{r}\nqt(1 - alpha / 2, df = n - 1)\n```\nThis function computes the critical value \\(t_{1-\\alpha / 2, n-1}\\) for the t-distribution.\nConfidence Interval Formula\n\\[\\begin{align*}\n\\hat{\\theta} \\pm B\n\\end{align*}\\]\nHere, \\(\\hat{\\theta}\\) is the estimate for the parameter of interest and \\(B\\) represents the bound on the error of estimation, computed as outlined in previous slides."
-  },
-  {
-    "objectID": "Day8.html#section",
-    "href": "Day8.html#section",
-    "title": "Day 8",
-    "section": "",
-    "text": "Example 1: A simple random sample of 100 houses within a community is selected and their monthly energy usages are recorded. The sample mean and sample standard deviation are founded to be \\(\\bar{y}=\\) 887 kWh and \\(s=120 \\mathrm{kWh}\\). If there are \\(N=8000\\) houses within the community. Estimate the true mean monthly energy usage per house, \\(\\mu\\), and the total monthly energy usages for the community, \\(\\tau\\). The estimation should include the estimator, the estimated variance, the \\(95 \\%\\) bound on the error of estimation, and the \\(95 \\%\\) confidence interval for the population parameter.\n\n\nqt(1 - 0.05/2, df = 99)\n\n[1] 1.984217"
-  },
-  {
-    "objectID": "Day8.html#error-bounds-for-known-population-variance",
-    "href": "Day8.html#error-bounds-for-known-population-variance",
-    "title": "Day 8",
-    "section": "Error Bounds for Known Population Variance",
-    "text": "Error Bounds for Known Population Variance\n\n\nMean Estimation Error\n\\[\n  B_{\\bar{y}} = z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}}\n  \\]\nTotal Estimation Error \\[\n  B_{\\hat{\\tau}} = z_{1-\\frac{\\alpha}{2}} \\cdot N \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}}\n  \\]"
-  },
-  {
-    "objectID": "Day8.html#sample-size-and-estimation-accuracy",
-    "href": "Day8.html#sample-size-and-estimation-accuracy",
-    "title": "Day 8",
-    "section": "Sample Size and Estimation Accuracy",
-    "text": "Sample Size and Estimation Accuracy\n\n\n\nKey Insight: Larger sample sizes \\(n\\) reduce the error bounds \\(B\\), increasing the precision of estimates.\nTrade-off: Larger samples increase costs but provide more reliable data.\n\n\n\n\nSelect \\(B\\) based on desired confidence and precision. Solve for \\(n\\) given \\(B\\), using the error bound formulas."
-  },
-  {
-    "objectID": "Day8.html#ample-size-and-estimation-accuracy",
-    "href": "Day8.html#ample-size-and-estimation-accuracy",
-    "title": "Day 8",
-    "section": "ample Size and Estimation Accuracy",
-    "text": "ample Size and Estimation Accuracy\n\n\nKey Insight: Larger sample sizes \\(n\\) reduce the error bounds \\(B\\), increasing the precision of estimates.\nTrade-off: Larger samples increase costs but provide more reliable data."
-  },
-  {
-    "objectID": "Day8.html#setting-the-maximum-acceptable-error-bound-b",
-    "href": "Day8.html#setting-the-maximum-acceptable-error-bound-b",
-    "title": "Day 8",
-    "section": "Setting the Maximum Acceptable Error Bound \\(B\\)",
-    "text": "Setting the Maximum Acceptable Error Bound \\(B\\)\n\n\nApproach: Select \\(B\\) based on desired confidence and precision.\nCalculation: Solve for \\(n\\) given \\(B\\), using the error bound formulas."
-  },
-  {
-    "objectID": "Day8.html#formula-to-determine-sample-size",
-    "href": "Day8.html#formula-to-determine-sample-size",
-    "title": "Day 8",
-    "section": "Formula to Determine Sample Size",
-    "text": "Formula to Determine Sample Size"
-  },
-  {
-    "objectID": "Day8.html#sample-size-determination-based-on-variance-information",
-    "href": "Day8.html#sample-size-determination-based-on-variance-information",
-    "title": "Day 8",
-    "section": "Sample Size Determination Based on Variance Information",
-    "text": "Sample Size Determination Based on Variance Information\nCase 1: Known Population Variance \\(\\sigma^2\\)\n\\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment\n\\[\n  n = \\frac{N s^2}{(N-1) \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + s^2}\n  \\]"
-  },
-  {
-    "objectID": "Day8.html#sample-size-determination",
-    "href": "Day8.html#sample-size-determination",
-    "title": "Day 8",
-    "section": "Sample Size Determination",
-    "text": "Sample Size Determination\n\n\nCase 1: Known Population Variance \\(\\sigma^2\\)\n\\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment\n\\[\n  n = \\frac{N s^2}{N \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + s^2}\n  \\]"
-  },
-  {
-    "objectID": "Day8.html#using-range-r",
-    "href": "Day8.html#using-range-r",
-    "title": "Day 8",
-    "section": "Using Range, R",
-    "text": "Using Range, R\n \n\nIf \\(\\sigma^2\\) and \\(s^2\\) are unknown, but the range \\(R\\) is given: Use equation for \\(\\sigma^2\\) but approximate \\(\\sigma \\approx \\frac{R}{4}\\)."
-  },
-  {
-    "objectID": "Day8.html#sample-size-determination-for-estimating-population-mean-mu",
-    "href": "Day8.html#sample-size-determination-for-estimating-population-mean-mu",
-    "title": "Day 8",
-    "section": "Sample Size Determination for Estimating Population Mean \\(\\mu\\)",
-    "text": "Sample Size Determination for Estimating Population Mean \\(\\mu\\)\n\n\nCase 1: Known Population Variance \\(\\sigma^2\\)\n\\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment\n\\[\n  n = \\frac{N s^2}{N \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + s^2}\n  \\]"
-  },
-  {
-    "objectID": "Day8.html#sample-size-determination-for-estimating-population-total-tau",
-    "href": "Day8.html#sample-size-determination-for-estimating-population-total-tau",
-    "title": "Day 8",
-    "section": "Sample Size Determination for Estimating Population Total \\(\\tau\\)",
-    "text": "Sample Size Determination for Estimating Population Total \\(\\tau\\)\n\n\nCase 1: Known Population Variance \\(\\sigma^2\\) \\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\hat{\\tau}}}{z_{1-\\frac{\\alpha}{2}} \\cdot N}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment \\[\n  n = \\frac{N s^2}{N \\left(\\frac{B_{\\hat{\\tau}}}{z_{1-\\frac{\\alpha}{2}} \\cdot N}\\right)^2 + s^2}\n  \\]"
-  },
-  {
-    "objectID": "Day8.html#section-1",
-    "href": "Day8.html#section-1",
-    "title": "Day 8",
-    "section": "",
-    "text": "Example 2: To study the monthly energy usages in a community with \\(N=8000\\) houses, a researcher want to select a simple random sample with size \\(n\\). Historical data shows that the sample standard deviation of the the monthly energy usages in this community is \\(s=120 \\mathrm{kWh}\\). Find the sample size needed to estimate the average usage \\(\\mu\\) with a bound on the error of estimation \\(B_{\\bar{y}}=50 \\mathrm{kWh}\\). How about the sample size required for estimate total usage \\(\\tau\\) with \\(B_{\\hat{\\tau}}=160000\\)?"
-  },
-  {
-    "objectID": "Day8.html#section-2",
-    "href": "Day8.html#section-2",
-    "title": "Day 8",
-    "section": "",
-    "text": "Example 3: The average amount of money \\(\\mu\\) for a hospital’s accounts receivable must be estimated. Although no prior data are available to estimate the population variance, it is known that most accounts lie within a \\(\\$ 100\\) range. There are \\(N=1000\\) open accounts. Find the sample size needed to estimate \\(\\mu\\) with a bound on the error of estimation \\(B_{\\bar{y}}=\\$ 3\\)."
   }
 ]
