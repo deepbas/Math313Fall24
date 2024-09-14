@@ -61,7 +61,7 @@ Estimator of the Population Mean
   $$
 - **Estimated Variance**:
   $$
-  \hat{V}(\bar{y}) = \left(1-\frac{n}{N}\right) \frac{S^2}{n}
+  \hat{V}(\bar{y}) = \left(1-\frac{n}{N}\right) \frac{s^2}{n}
   $$
 :::
 
@@ -74,7 +74,7 @@ Estimator of the Population Total
   $$
 - **Estimated Variance**:
   $$
-  \hat{V}(\hat{\tau}) = N^2 \cdot \left(1-\frac{n}{N}\right) \frac{S^2}{n}
+  \hat{V}(\hat{\tau}) = N^2 \cdot \left(1-\frac{n}{N}\right) \frac{s^2}{n}
   $$
 :::
 :::
@@ -89,7 +89,7 @@ Estimator of the Population Total
 ### Mean Estimation Error Bound
 
   $$
-  \text{B} = t_{1-\frac{\alpha}{2}, n-1} \cdot \sqrt{\left(1-\frac{n}{N}\right) \cdot \frac{S^2}{n}}
+  \text{B} = t_{1-\frac{\alpha}{2}, n-1} \cdot \sqrt{\left(1-\frac{n}{N}\right) \cdot \frac{s^2}{n}}
   $$
 
 ### Total Estimation Error Bound
@@ -235,4 +235,43 @@ Case 2: Known Sample Variance $s^2$ from Previous Experiment
 :::
 
 
+## 
 
+<details><summary><red>Derivations for known $\sigma^2$ (Supplementary)</red></summary>
+
+::: font60
+::: scrollable
+\begin{align*}
+& \text{Starting with the margin of error equation:} \\
+& B_{\bar{y}} = z_{1-\frac{\alpha}{2}} \cdot \sqrt{\left(\frac{N-n}{N-1}\right) \cdot \frac{\sigma^2}{n}} \\
+& \text{Squaring both sides and isolating } n: \\
+& \left(\frac{B_{\bar{y}}}{z_{1-\frac{\alpha}{2}}}\right)^2 = \frac{N-n}{N-1} \cdot \frac{\sigma^2}{n} \\
+& \text{Cross-multiplying and rearranging for } n: \\
+& (N-1) \left(\frac{B_{\bar{y}}^2}{z_{1-\frac{\alpha}{2}}^2 \sigma^2}\right) \cdot n + n = N \\
+& n \left( (N-1) \left(\frac{B_{\bar{y}}^2}{z_{1-\frac{\alpha}{2}}^2 \sigma^2}\right) + 1 \right) = N \\
+& n = \frac{N}{(N-1) \left(\frac{B_{\bar{y}}^2}{z_{1-\frac{\alpha}{2}}^2 \sigma^2}\right) + 1}
+\end{align*}
+:::
+:::
+
+</details>
+
+
+##
+
+<details><summary><red>Derivations for unknown $\sigma^2$ (Supplementary)</red></summary>
+
+::: font60
+::: scrollable
+\begin{align*}
+& \text{Given the margin of error for unknown variance:} \\
+& B_{\bar{y}} = t_{1-\frac{\alpha}{2}, n-1} \cdot \sqrt{\left(1-\frac{n}{N}\right) \cdot \frac{s^2}{n}} \\
+& \text{Simplify and square both sides to isolate } n: \\
+& \frac{B_{\bar{y}}}{t_{1-\frac{\alpha}{2}, n-1}} = \sqrt{\frac{N-n}{N} \cdot \frac{s^2}{n}} \\
+& \left(\frac{B_{\bar{y}}}{t_{1-\frac{\alpha}{2}, n-1}}\right)^2 = \frac{N-n}{N} \cdot \frac{s^2}{n} \\
+& \text{Rearrange to solve for } n: \\
+& n \left(\frac{B_{\bar{y}}^2}{t_{1-\frac{\alpha}{2}, n-1}^2} + \frac{s^2}{N}\right) = s^2 \\
+& n = \frac{s^2}{\frac{B_{\bar{y}}^2}{t_{1-\frac{\alpha}{2}, n-1}^2} + \frac{s^2}{N}}
+\end{align*}
+:::
+:::

@@ -1,0 +1,285 @@
+---
+title: "Day 9"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: "Bastola"
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+```
+
+
+
+## Overview of Population Proportion Estimation
+
+::: cle4
+::: font80
+
+- **Framework**: Observations in a sample are indicators ($Y_i$) representing the presence (1) or absence (0) of a characteristic.
+- **Mathematical Basis**: $Y_i$ follows a Binomial distribution, useful in estimating proportions where outcomes are binary.
+- **Calculation**: The sample proportion $\hat{p}$ is computed as $\hat{p} = \bar{y} = \frac{1}{n} \sum Y_i$, where $n$ is the sample size.
+
+:::
+:::
+
+## Political Campaign Analysis
+
+::: cle4
+::: font80
+
+- **Objective**: Estimate the proportion of voters supporting a new policy.
+- **Survey**: Randomly sample 1,500 voters; $Y_i=1$ if a voter supports, and 0 otherwise.
+- **Statistical Relevance**: Results direct strategic decisions and policy development with precision due to the binary nature of survey responses.
+
+
+:::
+:::
+
+## Market Share Estimation
+
+::: cle4
+::: font80
+
+- **Scenario**: Determining the market share of a new product in a competitive beverage market.
+- **Approach**: Survey 2,000 consumers, with $Y_i=1$ if they prefer the new product.
+- **Outcome**: Enables businesses to infer market share and adjust strategies based on the proportion $\hat{p}$, reflecting consumer preferences.
+
+:::
+:::
+
+## Educational Research
+
+::: cle4
+::: font80
+
+- **Study Goal**: Assess the integration rate of digital tools in classrooms.
+- **Data Collection**: A survey of 350 schools, where $Y_i=1$ indicates digital tool adoption.
+- **Implications**: Estimating $\hat{p}$ assists in evaluating the effectiveness of tech policies and funding allocations in education.
+
+:::
+:::
+
+## Environmental Conservation Efforts
+
+::: cle4
+::: font80
+
+- **Focus**: Measure public support for new environmental conservation laws.
+- **Methodology**: Conduct a survey where each response $Y_i=1$ if the individual supports conservation efforts.
+- **Statistical Analysis**: Utilizing the binomial model to estimate $p$, the proportion of the population favoring conservation, guiding legislative and community actions.
+
+:::
+:::
+
+
+## Bernoulli Distribution: Estimation
+
+::: cle4
+::: font80
+
+- **Binary Data**: $Y_i = 1$ for responses in the category; $0$ otherwise.
+- **Total Responses**: $\sum Y_i$ counts responses in the category.
+- **Proportion Estimate**: 
+  - $\hat{p} = \bar{Y} = \frac{1}{n} \sum Y_i$, the sample proportion.
+- **Bernoulli Distribution**: $Y_i$ follows with success $p$.
+- **Variance**: $\sigma^2 = pq$ where $q = 1 - p$.
+
+:::
+:::
+
+## Estimation of Population Proportion
+
+::: cle4
+::: font70
+
+- **Estimator for Proportion $p$**:
+  - $\hat{p}=\bar{y}=\frac{1}{n}\sum_{i=1}^n y_i$
+- **Variance of Estimator $\hat{p}$**:
+  - $\hat{V}(\hat{p})=\left(1-\frac{n}{N}\right)\cdot\frac{\hat{p}(1-\hat{p})}{n-1}$
+  - Using $n-1$ provides an unbiased estimator.
+- **Error Bound on Estimation**:
+  - $B_{\hat{p}}=t_{1-\frac{\alpha}{2}, n-1}\cdot\sqrt{\hat{V}(\hat{p})}$
+  - Represents the $(1-\alpha)$ confidence interval for $\hat{p}$.
+  
+:::
+:::
+
+
+##
+
+::: font60
+> Example 1: A simple random sample of $n=200$ college seniors was selected to estimate the proportion of $N=1200$ seniors going on to graduate school. Suppose 37 of them indicated that he or she plans to attend graduate school. Using the sample data:
+
+
+
+a. Estimate $p$, the proportion of seniors planing to attend graduate school.
+
+<br>
+<br>
+<br>
+
+b. Compute the $95 \%$ bounds on the error of estimation.
+
+<br>
+<br>
+:::
+
+## 
+
+::: font60
+
+c. Compute the $95 \%$ confidence interval for the estimation.
+
+::: custom-space
+:::
+
+
+d. Estimate the number of seniors who plan to attend graduate college.
+
+<br>
+<br>
+
+:::
+
+## Sample Size for Estimating $p$
+
+::: cle4
+::: font70
+
+- **Sample Size with Known $\hat{p}$**:
+  - $n=\frac{N \hat{p} \hat{q}}{(N-1)\left(\frac{B_{\hat{p}}}{Z_{1-\frac{\alpha}{2}}}\right)^2+\hat{p} \hat{q}}$
+  - Uses $\hat{p}$ from similar past surveys to minimize error bound $B_{\hat{p}}$.
+
+- **Sample Size with Unknown $\hat{p}$**:
+  - $n=\frac{N(0.5)(0.5)}{(N-1)\left(\frac{B_p}{Z_{1-\frac{\alpha}{2}}}\right)^2+(0.5)(0.5)}$
+  - Applies a conservative estimate, assuming $\hat{p}=0.5$, to ensure a robust sample size calculation.
+
+:::
+:::
+
+
+##
+
+::: font60
+> Example 2: Student government leaders at a college want to conduct a survey to determine the proportion of students who favor a proposed honor code. Because interviewing $N=2000$ students in a reasonable length of time is almost impossible, determine the sample size (numbers of students to be interviewed) needed to estimate $p$ with a $95 \%$ bound on the error of estimation $B=0.05$ for the following cases:
+
+
+a. No prior information is available to estimate $p$
+
+<br>
+<br>
+<br>
+
+b. A similar survey performed in another college provides $\hat{p}=0.61$.
+
+<br>
+<br>
+
+:::
+
+##
+
+::: font50
+> Example 3:Suppose you are a public health researcher aiming to estimate the proportion of residents in a large city who are willing to participate in a new health program designed to improve community health outcomes. From previous smaller-scale studies conducted in similar demographic settings, you estimate that around 45% of the population is likely to participate ($\hat{p} = 0.45$). The city has a population of 100,000 residents ($N = 100,000$), and you want to design a survey that will provide a reliable estimate of the population proportion with a high level of confidence.
+
+Calculate the minimum sample size required to estimate the population proportion with a margin of error ($B_{\hat{p}}$) of 5% at a 95% confidence level.
+:::
+
+
+<!--
+
+Step 1: Calculate the necessary sample size. Given $\$ \backslash$ hat $\{p\}=0.45 \$$, we can compute $\$ \backslash$ hat $\{q\}=1$ \hat\{p\} = 0.55\$. The desired margin of error at the 95\% confidence level, where $\$ Z \_\{1-\backslash f r a c\{\backslash a l p h a\}$ $\{2\}\}=1.96 \$$ for $95 \%$ confidence:
+
+B_{\hat{p}}=0.05 n=\frac{N \hat{p} \hat{q}}{(N-1)\left(\frac{B_{\hat{p}}}{Z_{1-\frac{\alpha}{2}}}\right)^2+\hat{p} \hat{q}}
+
+The calculated sample size needed to achieve a 5% margin of error at a 95% confidence level is 379.
+
+-->
+
+##
+
+::: font50
+Once the sample size is determined, simulate survey data assuming the estimated proportion is accurate, then compute the 95% confidence interval for the population proportion based on the sample data.
+
+
+<details><summary><red>Click for answer</red></summary>
+::: scrollable
+```{r}
+# Load necessary library
+library(stats)
+
+# Given values
+p_hat <- 0.45
+q_hat <- 1 - p_hat
+N <- 100000
+B_p <- 0.05
+z <- qnorm(0.975)  # Z-value for 95% confidence
+
+# Calculating sample size
+n <- N * p_hat * q_hat / ((N - 1) * (B_p / z)^2 + p_hat * q_hat)
+n <- ceiling(n)
+
+# Set seed for reproducibility
+set.seed(42)
+
+# Simulate survey data
+survey_responses <- rbinom(n, size = 1, prob = p_hat)
+sample_p_hat <- mean(survey_responses)
+sample_q_hat <- 1 - sample_p_hat
+
+# Calculate the standard error and confidence interval
+standard_error <- sqrt(sample_p_hat * sample_q_hat / n)
+confidence_interval <- c(sample_p_hat - z * standard_error, sample_p_hat + z * standard_error)
+
+# Output results
+list(sample_size = n, confidence_interval = confidence_interval)
+```
+
+
+Based on the simulated survey data, the 95% confidence interval for the proportion of residents willing to participate in the health program is approximately (0.391, 0.491).
+:::
+
+</details>
+
+
+:::
+
+

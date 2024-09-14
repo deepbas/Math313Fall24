@@ -417,7 +417,7 @@ Bastola
 \hat{\mu} = \bar{y}
 \]</span></li>
 <li><strong>Estimated Variance</strong>: <span class="math display">\[
-\hat{V}(\bar{y}) = \left(1-\frac{n}{N}\right) \frac{S^2}{n}
+\hat{V}(\bar{y}) = \left(1-\frac{n}{N}\right) \frac{s^2}{n}
 \]</span></li>
 </ul>
 </div>
@@ -428,7 +428,7 @@ Bastola
 \hat{\tau} = N \cdot \bar{y}
 \]</span></li>
 <li><strong>Estimated Variance</strong>: <span class="math display">\[
-\hat{V}(\hat{\tau}) = N^2 \cdot \left(1-\frac{n}{N}\right) \frac{S^2}{n}
+\hat{V}(\hat{\tau}) = N^2 \cdot \left(1-\frac{n}{N}\right) \frac{s^2}{n}
 \]</span></li>
 </ul>
 </div>
@@ -442,7 +442,7 @@ Bastola
 <div class="font80">
 <h3 id="mean-estimation-error-bound">Mean Estimation Error Bound</h3>
 <p><span class="math display">\[
-  \text{B} = t_{1-\frac{\alpha}{2}, n-1} \cdot \sqrt{\left(1-\frac{n}{N}\right) \cdot \frac{S^2}{n}}
+  \text{B} = t_{1-\frac{\alpha}{2}, n-1} \cdot \sqrt{\left(1-\frac{n}{N}\right) \cdot \frac{s^2}{n}}
   \]</span></p>
 <h3 id="total-estimation-error-bound">Total Estimation Error Bound</h3>
 <p><span class="math display">\[
@@ -560,13 +560,56 @@ Bastola
 <p>Example 3: The average amount of money <span class="math inline">\(\mu\)</span> for a hospital’s accounts receivable must be estimated. Although no prior data are available to estimate the population variance, it is known that most accounts lie within a <span class="math inline">\(\$ 100\)</span> range. There are <span class="math inline">\(N=1000\)</span> open accounts. Find the sample size needed to estimate <span class="math inline">\(\mu\)</span> with a bound on the error of estimation <span class="math inline">\(B_{\bar{y}}=\$ 3\)</span>.</p>
 </blockquote>
 </div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<details>
+<summary>
+<red>Derivations for known <span class="math inline">\(\sigma^2\)</span> (Supplementary)</red>
+</summary>
+<div class="font60">
+<div class="scrollable">
+<p><span class="math display">\[\begin{align*}
+&amp; \text{Starting with the margin of error equation:} \\
+&amp; B_{\bar{y}} = z_{1-\frac{\alpha}{2}} \cdot \sqrt{\left(\frac{N-n}{N-1}\right) \cdot \frac{\sigma^2}{n}} \\
+&amp; \text{Squaring both sides and isolating } n: \\
+&amp; \left(\frac{B_{\bar{y}}}{z_{1-\frac{\alpha}{2}}}\right)^2 = \frac{N-n}{N-1} \cdot \frac{\sigma^2}{n} \\
+&amp; \text{Cross-multiplying and rearranging for } n: \\
+&amp; (N-1) \left(\frac{B_{\bar{y}}^2}{z_{1-\frac{\alpha}{2}}^2 \sigma^2}\right) \cdot n + n = N \\
+&amp; n \left( (N-1) \left(\frac{B_{\bar{y}}^2}{z_{1-\frac{\alpha}{2}}^2 \sigma^2}\right) + 1 \right) = N \\
+&amp; n = \frac{N}{(N-1) \left(\frac{B_{\bar{y}}^2}{z_{1-\frac{\alpha}{2}}^2 \sigma^2}\right) + 1}
+\end{align*}\]</span></p>
+</div>
+</div>
+</details>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<details>
+<summary>
+<red>Derivations for unknown <span class="math inline">\(\sigma^2\)</span> (Supplementary)</red>
+</summary>
+<div class="font60">
+<div class="scrollable">
+<p><span class="math display">\[\begin{align*}
+&amp; \text{Given the margin of error for unknown variance:} \\
+&amp; B_{\bar{y}} = t_{1-\frac{\alpha}{2}, n-1} \cdot \sqrt{\left(1-\frac{n}{N}\right) \cdot \frac{s^2}{n}} \\
+&amp; \text{Simplify and square both sides to isolate } n: \\
+&amp; \frac{B_{\bar{y}}}{t_{1-\frac{\alpha}{2}, n-1}} = \sqrt{\frac{N-n}{N} \cdot \frac{s^2}{n}} \\
+&amp; \left(\frac{B_{\bar{y}}}{t_{1-\frac{\alpha}{2}, n-1}}\right)^2 = \frac{N-n}{N} \cdot \frac{s^2}{n} \\
+&amp; \text{Rearrange to solve for } n: \\
+&amp; n \left(\frac{B_{\bar{y}}^2}{t_{1-\frac{\alpha}{2}, n-1}^2} + \frac{s^2}{N}\right) = s^2 \\
+&amp; n = \frac{s^2}{\frac{B_{\bar{y}}^2}{t_{1-\frac{\alpha}{2}, n-1}^2} + \frac{s^2}{N}}
+\end{align*}\]</span></p>
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</details></section>
     </div>
   </div>
 

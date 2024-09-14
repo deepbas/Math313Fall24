@@ -26,15 +26,17 @@ html, body {
 }
 
 .scroll-box {
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow-y: auto; // Allows vertical scrolling if content overflows
+  overflow-x: hidden; // Keeps horizontal overflow hidden
   padding: 0.5em;
   border: 1px solid $border-color;
   border-radius: 15px;
   box-shadow: 0 0 8px $highlight-color;
   background-color: $blockquote-bg;
   margin-bottom: 1em;
+  height: 500px; // You can adjust the height as necessary
 }
+
 
 
 .reveal h1 {
@@ -141,6 +143,10 @@ table, .img-stack img, .image-overlay-container, .shiny-output-panel, .shiny-plo
   margin-top: 0.5em;
   border-left: 4px solid #007bff;
   display: block;
+}
+
+.custom-space {
+    margin-top: 200px; /* Adjust the pixel value based on the space you need */
 }
 
 
