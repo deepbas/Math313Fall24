@@ -245,7 +245,7 @@ Once the sample size is determined, simulate survey data assuming the estimated 
 ```{r}
 # Load necessary library
 library(stats)
-
+set.seed(123)
 # Given values
 p_hat <- 0.45
 q_hat <- 1 - p_hat
@@ -264,10 +264,10 @@ set.seed(42)
 survey_responses <- rbinom(n, size = 1, prob = p_hat)
 sample_p_hat <- mean(survey_responses)
 sample_q_hat <- 1 - sample_p_hat
-
+t <- qt(0.975, df = n-1)
 # Calculate the standard error and confidence interval
-standard_error <- sqrt(sample_p_hat * sample_q_hat / n)
-confidence_interval <- c(sample_p_hat - z * standard_error, sample_p_hat + z * standard_error)
+standard_error <- sqrt((1 - n/N)*sample_p_hat * sample_q_hat / (n - 1))
+confidence_interval <- c(sample_p_hat - t * standard_error, sample_p_hat + t * standard_error)
 
 # Output results
 list(sample_size = n, confidence_interval = confidence_interval)
