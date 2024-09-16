@@ -347,7 +347,7 @@
     "href": "Day9.html#section-4",
     "title": "Day 9",
     "section": "",
-    "text": "Once the sample size is determined, simulate survey data assuming the estimated proportion is accurate, then compute the 95% confidence interval for the population proportion based on the sample data.\n\n\nClick for answer\n\n\n\n# Load necessary library\nlibrary(stats)\n\n# Given values\np_hat &lt;- 0.45\nq_hat &lt;- 1 - p_hat\nN &lt;- 100000\nB_p &lt;- 0.05\nz &lt;- qnorm(0.975)  # Z-value for 95% confidence\n\n# Calculating sample size\nn &lt;- N * p_hat * q_hat / ((N - 1) * (B_p / z)^2 + p_hat * q_hat)\nn &lt;- ceiling(n)\n\n# Set seed for reproducibility\nset.seed(42)\n\n# Simulate survey data\nsurvey_responses &lt;- rbinom(n, size = 1, prob = p_hat)\nsample_p_hat &lt;- mean(survey_responses)\nsample_q_hat &lt;- 1 - sample_p_hat\n\n# Calculate the standard error and confidence interval\nstandard_error &lt;- sqrt(sample_p_hat * sample_q_hat / n)\nconfidence_interval &lt;- c(sample_p_hat - z * standard_error, sample_p_hat + z * standard_error)\n\n# Output results\nlist(sample_size = n, confidence_interval = confidence_interval)\n\n$sample_size\n[1] 379\n\n$confidence_interval\n[1] 0.3828372 0.4825981\n\n\nBased on the simulated survey data, the 95% confidence interval for the proportion of residents willing to participate in the health program is approximately (0.391, 0.491)."
+    "text": "Once the sample size is determined, simulate survey data assuming the estimated proportion is accurate, then compute the 95% confidence interval for the population proportion based on the sample data.\n\n\nClick for answer\n\n\n\n# Load necessary library\nlibrary(stats)\nset.seed(123)\n# Given values\np_hat &lt;- 0.45\nq_hat &lt;- 1 - p_hat\nN &lt;- 100000\nB_p &lt;- 0.05\nz &lt;- qnorm(0.975)  # Z-value for 95% confidence\n\n# Calculating sample size\nn &lt;- N * p_hat * q_hat / ((N - 1) * (B_p / z)^2 + p_hat * q_hat)\nn &lt;- ceiling(n)\n\n# Set seed for reproducibility\nset.seed(42)\n\n# Simulate survey data\nsurvey_responses &lt;- rbinom(n, size = 1, prob = p_hat)\nsample_p_hat &lt;- mean(survey_responses)\nsample_q_hat &lt;- 1 - sample_p_hat\nt &lt;- qt(0.975, df = n-1)\n# Calculate the standard error and confidence interval\nstandard_error &lt;- sqrt((1 - n/N)*sample_p_hat * sample_q_hat / (n - 1))\nconfidence_interval &lt;- c(sample_p_hat - t * standard_error, sample_p_hat + t * standard_error)\n\n# Output results\nlist(sample_size = n, confidence_interval = confidence_interval)\n\n$sample_size\n[1] 379\n\n$confidence_interval\n[1] 0.3827059 0.4827295\n\n\nBased on the simulated survey data, the 95% confidence interval for the proportion of residents willing to participate in the health program is approximately (0.391, 0.491)."
   },
   {
     "objectID": "Day7.html#simple-random-sampling",
@@ -609,138 +609,11 @@
     "text": "Central Limit Theorem\n\nTheorem: Consider a random sample of \\(n\\) observations selected from a population (any population/probability distribution) with mean \\(\\mu\\) and variance \\(\\sigma^2\\). Then when \\(n\\) is sufficiently large, the sampling distribution of \\(\\bar{y}\\) is approximately a normal distribution with mean \\(E(\\bar{y})=\\mu\\), and \\(SD(\\bar{y})=\\frac{\\sigma}{\\sqrt{n}}\\).\n\n\nThe larger \\(n\\) is, the more closely the sampling distribution will approximate a normal shape."
   },
   {
-<<<<<<< HEAD
-    "objectID": "Day5.html#using-t-distribution",
-    "href": "Day5.html#using-t-distribution",
-    "title": "Day 5",
-    "section": "Using \\(t\\)-Distribution",
-    "text": "Using \\(t\\)-Distribution\n\n\nWhen the population standard deviation \\(\\sigma\\) is unknown, we use the sample standard deviation \\(s\\) and the \\(t\\)-distribution to standardize the problem:\n\\[P(-B\\leqslant \\bar{y}-\\mu\\leqslant B)=P\\left(\\frac{-B}{s/\\sqrt{n}}\\leqslant \\frac{\\bar{y}-\\mu}{s/\\sqrt{n}}\\leqslant \\frac{B}{s/\\sqrt{n}}\\right)\\geqslant 1-\\alpha\\]\nLeveraging the properties of the \\(t\\)-distribution, given the degrees of freedom \\(n-1\\), we find:\n\\[\\frac{B}{s/\\sqrt{n}}=t_{1-\\frac{\\alpha}{2}, n-1}\\]\nConcluding with the critical value for \\(B\\):\n\\[B=t_{1-\\frac{\\alpha}{2}, n-1}\\cdot \\frac{s}{\\sqrt{n}}\\]\nThis calculation shows how \\(B\\) scales with the sample size \\(n\\) and the sample standard deviation \\(s\\), crucial for interpreting the confidence in our estimate when \\(\\sigma\\) is unknown."
-  },
-  {
-    "objectID": "Day5.html#case-study",
-    "href": "Day5.html#case-study",
-    "title": "Day 5",
-    "section": "Case Study",
-    "text": "Case Study\n\n\nIn a standard math quiz for the public school system of a county, each student was graded on a four-point scale \\((0,1,2,3), 3\\) being a perfect score. The results for all students are given as follows:\n\\[\\begin{array}{ll}\n\\hline \\text { Score, y} & \\text { Propotion, P(y) } \\\\\n\\hline 3 & 0.64 \\\\\n2 & 0.16 \\\\\n1 & 0.08 \\\\\n0 & 0.12 \\\\\n\\hline\n\\end{array}\\]"
-  },
-  {
-    "objectID": "Day5.html#quiz",
-    "href": "Day5.html#quiz",
-    "title": "Day 5",
-    "section": "Quiz",
-    "text": "Quiz\n\nCompute the expected value of the quiz score.\n\n\n\nCompute the standard deviation of the quiz score.\n\n\n\nA sample of 100 students is randomly selected. What is the probability of this sample mean greater than 2.425 ?"
-  },
-  {
-    "objectID": "Day5.html#solutions",
-    "href": "Day5.html#solutions",
-    "title": "Day 5",
-    "section": "Solutions",
-    "text": "Solutions\n\n\nClick for answer\n\n\n\n\\(E(y)=\\sum y \\cdot P(y)=\\mu =2.32\\)\n\\(V(y)=\\sum(y-\\mu)^2 \\cdot P(y)=\\sigma^2=1.098\\)\n\n\\(\\operatorname{\\operatorname {SD}}(y)=\\sigma=\\sqrt{1.098} \\approx 1.048\\)\n\nA sample of \\(n=100\\) students is selected\n\n\\[\\begin{align*}\n\\begin{aligned}\nP(\\bar{y}&gt;2.425) & =P\\left(z&gt;\\frac{2.425-\\mu}{\\sigma / \\sqrt{n}}\\right) \\\\\n& =P\\left(z&gt;\\frac{2.425-2.32}{1.048 / \\sqrt{100}}\\right) \\\\\n& \\approx P(z&gt;1)=1-P(z&lt;1) \\\\\n& =1-0.8413=0.1587\n\\end{aligned}\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Welcome to Survey Design and Sampling, where we apply statistical principles to real-world survey challenges in fields like business, social sciences, health sciences, and environmental studies. This course emphasizes practical applications over theoretical foundations, preparing students to design, implement, and analyze surveys effectively. Through case studies and hands-on projects, students will tackle the peculiarities and inferential challenges of survey design across various domains.\nWe will explore data collection methods, address potential biases, and discuss ethical considerations in survey execution. The course aims to cultivate both technical skills and critical thinking about how survey methodologies influence research outcomes and professional decisions. By understanding these dynamics, students will be equipped to conduct impactful research with consideration for cultural and ethical contexts.\n\n\n\n\nAcquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
-  },
-  {
-    "objectID": "about.html#learning-objectives",
-    "href": "about.html#learning-objectives",
-    "title": "About",
-    "section": "",
-    "text": "Acquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
-  },
-  {
-    "objectID": "Day8.html#key-quantities-in-survey-sampling",
-    "href": "Day8.html#key-quantities-in-survey-sampling",
-    "title": "Day 8",
-    "section": "Key Quantities in Survey Sampling",
-    "text": "Key Quantities in Survey Sampling\n\n\n\n\nEstimator of the Population Mean\n\nEstimator: \\[\n\\hat{\\mu} = \\bar{y}\n\\]\nEstimated Variance: \\[\n\\hat{V}(\\bar{y}) = \\left(1-\\frac{n}{N}\\right) \\frac{S^2}{n}\n\\]\n\n\n\nEstimator of the Population Total\n\nEstimator: \\[\n\\hat{\\tau} = N \\cdot \\bar{y}\n\\]\nEstimated Variance: \\[\n\\hat{V}(\\hat{\\tau}) = N^2 \\cdot \\left(1-\\frac{n}{N}\\right) \\frac{S^2}{n}\n\\]"
-  },
-  {
-    "objectID": "Day8.html#error-bounds-for-survey-estimates",
-    "href": "Day8.html#error-bounds-for-survey-estimates",
-    "title": "Day 8",
-    "section": "Error Bounds for Survey Estimates",
-    "text": "Error Bounds for Survey Estimates\n\n\nMean Estimation Error Bound\n\\[\n  \\text{B} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{S^2}{n}}\n  \\]\nTotal Estimation Error Bound\n\\[\n  \\text{B} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{N^2 \\cdot \\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s^2}{n}}\n  \\]"
-  },
-  {
-    "objectID": "Day8.html#computing-t-distribution-critical-values-in-r",
-    "href": "Day8.html#computing-t-distribution-critical-values-in-r",
-    "title": "Day 8",
-    "section": "Computing t-Distribution Critical Values in R",
-    "text": "Computing t-Distribution Critical Values in R\n\n\nCritical Value Calculation in R\n```{r}\nqt(1 - alpha / 2, df = n - 1)\n```\nThis function computes the critical value \\(t_{1-\\alpha / 2, n-1}\\) for the t-distribution.\nConfidence Interval Formula\n\\[\\begin{align*}\n\\hat{\\theta} \\pm B\n\\end{align*}\\]\nHere, \\(\\hat{\\theta}\\) is the estimate for the parameter of interest and \\(B\\) represents the bound on the error of estimation, computed as outlined in previous slides."
-  },
-  {
-    "objectID": "Day8.html#section",
-    "href": "Day8.html#section",
-    "title": "Day 8",
-    "section": "",
-    "text": "Example 1: A simple random sample of 100 houses within a community is selected and their monthly energy usages are recorded. The sample mean and sample standard deviation are founded to be \\(\\bar{y}=\\) 887 kWh and \\(s=120 \\mathrm{kWh}\\). If there are \\(N=8000\\) houses within the community. Estimate the true mean monthly energy usage per house, \\(\\mu\\), and the total monthly energy usages for the community, \\(\\tau\\). The estimation should include the estimator, the estimated variance, the \\(95 \\%\\) bound on the error of estimation, and the \\(95 \\%\\) confidence interval for the population parameter.\n\n\nqt(1 - 0.05/2, df = 99)\n\n[1] 1.984217"
-  },
-  {
-    "objectID": "Day8.html#error-bounds-for-known-population-variance",
-    "href": "Day8.html#error-bounds-for-known-population-variance",
-    "title": "Day 8",
-    "section": "Error Bounds for Known Population Variance",
-    "text": "Error Bounds for Known Population Variance\n\n\nMean Estimation Error\n\\[\n  B_{\\bar{y}} = z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}}\n  \\]\nTotal Estimation Error \\[\n  B_{\\hat{\\tau}} = z_{1-\\frac{\\alpha}{2}} \\cdot N \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}}\n  \\]"
-  },
-  {
-    "objectID": "Day8.html#sample-size-and-estimation-accuracy",
-    "href": "Day8.html#sample-size-and-estimation-accuracy",
-    "title": "Day 8",
-    "section": "Sample Size and Estimation Accuracy",
-    "text": "Sample Size and Estimation Accuracy\n\n\n\nKey Insight: Larger sample sizes \\(n\\) reduce the error bounds \\(B\\), increasing the precision of estimates.\nTrade-off: Larger samples increase costs but provide more reliable data.\n\n\n\n\nSelect \\(B\\) based on desired confidence and precision. Solve for \\(n\\) given \\(B\\), using the error bound formulas."
-  },
-  {
-    "objectID": "Day8.html#sample-size-determination-for-estimating-population-mean-mu",
-    "href": "Day8.html#sample-size-determination-for-estimating-population-mean-mu",
-    "title": "Day 8",
-    "section": "Sample Size Determination for Estimating Population Mean \\(\\mu\\)",
-    "text": "Sample Size Determination for Estimating Population Mean \\(\\mu\\)\n\n\nCase 1: Known Population Variance \\(\\sigma^2\\)\n\\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment\n\\[\n  n = \\frac{N s^2}{N \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + s^2}\n  \\]"
-  },
-  {
-    "objectID": "Day8.html#sample-size-determination-for-estimating-population-total-tau",
-    "href": "Day8.html#sample-size-determination-for-estimating-population-total-tau",
-    "title": "Day 8",
-    "section": "Sample Size Determination for Estimating Population Total \\(\\tau\\)",
-    "text": "Sample Size Determination for Estimating Population Total \\(\\tau\\)\n\n\nCase 1: Known Population Variance \\(\\sigma^2\\) \\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\hat{\\tau}}}{z_{1-\\frac{\\alpha}{2}} \\cdot N}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment \\[\n  n = \\frac{N s^2}{N \\left(\\frac{B_{\\hat{\\tau}}}{z_{1-\\frac{\\alpha}{2}} \\cdot N}\\right)^2 + s^2}\n  \\]"
-  },
-  {
-    "objectID": "Day8.html#using-range-r",
-    "href": "Day8.html#using-range-r",
-    "title": "Day 8",
-    "section": "Using Range, R",
-    "text": "Using Range, R\n \n\nIf \\(\\sigma^2\\) and \\(s^2\\) are unknown, but the range \\(R\\) is given: Use equation for \\(\\sigma^2\\) but approximate \\(\\sigma \\approx \\frac{R}{4}\\)."
-  },
-  {
-    "objectID": "Day8.html#section-1",
-    "href": "Day8.html#section-1",
-    "title": "Day 8",
-    "section": "",
-    "text": "Example 2: To study the monthly energy usages in a community with \\(N=8000\\) houses, a researcher want to select a simple random sample with size \\(n\\). Historical data shows that the sample standard deviation of the the monthly energy usages in this community is \\(s=120 \\mathrm{kWh}\\). Find the sample size needed to estimate the average usage \\(\\mu\\) with a bound on the error of estimation \\(B_{\\bar{y}}=50 \\mathrm{kWh}\\). How about the sample size required for estimate total usage \\(\\tau\\) with \\(B_{\\hat{\\tau}}=160000\\)?"
-  },
-  {
-    "objectID": "Day8.html#section-2",
-    "href": "Day8.html#section-2",
-    "title": "Day 8",
-    "section": "",
-    "text": "Example 3: The average amount of money \\(\\mu\\) for a hospital’s accounts receivable must be estimated. Although no prior data are available to estimate the population variance, it is known that most accounts lie within a \\(\\$ 100\\) range. There are \\(N=1000\\) open accounts. Find the sample size needed to estimate \\(\\mu\\) with a bound on the error of estimation \\(B_{\\bar{y}}=\\$ 3\\)."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Math 313: Fall 2024",
-    "section": "",
-    "text": "Welcome to the world of survey statistics!"
-=======
     "objectID": "Day3.html#recall-the-simulation-slide-4",
     "href": "Day3.html#recall-the-simulation-slide-4",
     "title": "Day 3",
     "section": "Recall the simulation (Slide 4)",
     "text": "Recall the simulation (Slide 4)\n\n\nSuppose we have selected a random sample of \\(n=50\\) observations from a population with mean \\(\\mu=4\\) and variance \\(\\sigma^2=8\\).\n\nWhat is the value of the mean \\(E(\\bar{y})\\) and standard deviation (standard error) \\(\\sigma_{\\bar{y}}=\\sqrt{V(\\bar{y})}\\) of the sampling distribution of the sample mean \\(\\bar{y}\\).\n\n\n\nUse the sample data of size 50, compute the mean and standard deviation of \\(\\bar{y}\\). Compare the results with a.\n\n\n\nWhat is the probability that the sample mean is greater than 5?"
->>>>>>> 9fc88e3 (9-14-1)
   },
   {
     "objectID": "Day4.html#introduction-to-probability-sampling",
@@ -1063,57 +936,5 @@
     "title": "Day 2",
     "section": "Understanding Chebyshev’s Inequality",
     "text": "Understanding Chebyshev’s Inequality\n\n\nChebyshev’s Inequality Formula: \\[\nP(|y-\\mu| \\leq k \\cdot \\sigma) \\geqslant 1-\\frac{1}{k^2}\n\\]\n\nInterpretation: This formula states that the probability of the random variable \\(y\\) falling within \\(k\\) standard deviations (\\(\\sigma\\)) of the mean (\\(\\mu\\)) is at least \\(1 - \\frac{1}{k^2}\\)."
-<<<<<<< HEAD
-  },
-  {
-    "objectID": "RandRStudio.html",
-    "href": "RandRStudio.html",
-    "title": "Setting Up R and RStudio",
-    "section": "",
-    "text": "This lab tutorial will guide you through installing R and RStudio on your computer, managing packages, and loading data into R. This setup is essential for performing all kinds of data analysis tasks in R."
-  },
-  {
-    "objectID": "RandRStudio.html#on-windows",
-    "href": "RandRStudio.html#on-windows",
-    "title": "Setting Up R and RStudio",
-    "section": "On Windows",
-    "text": "On Windows\n\n\nDownload R:\n\nVisit CRAN and download the latest version of R for Windows.\nRun the downloaded .exe file and follow the installation instructions.\n\n\n\nDownload RStudio:\n\nGo to the RStudio Download page and download the free version of RStudio Desktop for Windows.\nInstall it by running the downloaded .exe file."
-  },
-  {
-    "objectID": "RandRStudio.html#on-mac",
-    "href": "RandRStudio.html#on-mac",
-    "title": "Setting Up R and RStudio",
-    "section": "On Mac",
-    "text": "On Mac\n\n\nDownload R:\n\nNavigate to CRAN and choose the version for macOS.\nOpen the downloaded .pkg file to start the installation.\n\n\n\nDownload RStudio:\n\nVisit RStudio Download page and select RStudio for macOS.\nOpen the downloaded .dmg file and drag RStudio to your Applications folder."
-  },
-  {
-    "objectID": "RandRStudio.html#understanding-r-markdown-documents",
-    "href": "RandRStudio.html#understanding-r-markdown-documents",
-    "title": "Setting Up R and RStudio",
-    "section": "Understanding R Markdown Documents",
-    "text": "Understanding R Markdown Documents\nR Markdown allows you to integrate code and text in the same document, facilitating reproducible research and interactive data analysis reports. Here’s a quick overview:"
-  },
-  {
-    "objectID": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
-    "href": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
-    "title": "Setting Up R and RStudio",
-    "section": "Managing .Rmd Files and Setting the Working Directory",
-    "text": "Managing .Rmd Files and Setting the Working Directory\nDownloading and Organizing .Rmd Files\nTo effectively manage your course materials in RStudio, follow these steps:\n\n\nDownload .Rmd File:\n\nNavigate to MyClasses and locate the desired .Rmd file for your course.\nDownload the file to your local machine.\n\n\n\nCreate a Course Folder:\n\nCreate a new folder named math216 in a suitable location on your computer or within your RStudio account.\n\n\n\nOrganize Files:\n\nMove the downloaded .Rmd file into the math216 folder to keep your course materials organized.\n\n\nText Portions\nText in R Markdown is written using standard markdown syntax. This allows you to add headers, lists, links, and other styling features to create dynamic reports."
-  },
-  {
-    "objectID": "RandRStudio.html#text-formatting-in-r-markdown",
-    "href": "RandRStudio.html#text-formatting-in-r-markdown",
-    "title": "Setting Up R and RStudio",
-    "section": "Text Formatting in R Markdown",
-    "text": "Text Formatting in R Markdown\nMarkdown is a lightweight markup language that allows you to add formatting elements using plain text. Here’s how you can use different Markdown syntax to format text within your R Markdown documents.\nHeaders\nCreate headers by prefixing the text with one or more hash symbols (#). The number of # symbols before the text determines the level of the header.\n# Header 1\n## Header 2\n### Header 3\nLists\nYou can create bulleted or numbered lists:\n\n\nUnordered Lists (bullets):\n\n- Item 1\n- Item 2\n  - Subitem 1\n  - Subitem 2\n\n\nOrdered Lists:\n\n1. First item\n2. Second item\n   1. Subitem 1\n   2. Subitem 2\nLinks\nInclude hyperlinks using the format [link text](URL):\n[Visit Canvas](https://salisbury.instructure.com/courses/66117)\nEmphasis\nItalicize or bold text using asterisks or underscores:\n\n\nItalic: *Italic* or _Italic_\n\n\nBold: **Bold** or __Bold__\n\nImages\nEmbed images using the format ![Alt text](image_URL \"Optional Title\"):\n![Example Image](path_to_image.jpg \"This is an image\")\nBlockquotes\nCreate blockquotes with &gt;:\n&gt; This is a blockquote.\nCode\nDisplay inline code with backticks and code blocks with triple backticks:\n\nInline code: `code`\n\nCode block:\n\n\\```\nThis is a code block\n\\```\nHorizontal Rules\nInsert a horizontal line with three or more hyphens:\n---\nCombining Markdown with R Code\nMarkdown can be interleaved with executable R code chunks:\n\n# Calculate the sum of numbers from 1 to 10\nsum(1:10)\n\n[1] 55"
-  },
-  {
-    "objectID": "RandRStudio.html#r-code-chunk-options",
-    "href": "RandRStudio.html#r-code-chunk-options",
-    "title": "Setting Up R and RStudio",
-    "section": "R Code Chunk Options",
-    "text": "R Code Chunk Options\nBefore diving into data loading, let’s understand important R chunk options:\n\n\neval: Use eval=FALSE to prevent code from running but still display it.\n\necho: With echo=FALSE, the code is run but not displayed in the document.\n\ninclude: include=FALSE runs the code and hides both the code and output from the final output.\n\nExample to demonstrate:\n\n# This code will run, and both code and output will appear in the document.\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
-=======
->>>>>>> 9fc88e3 (9-14-1)
   }
 ]
