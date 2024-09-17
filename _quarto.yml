@@ -38,7 +38,49 @@ website:
           - text: "Lecture 8"
             href: Day8.html
             target: "_blank"
-           # - text: "Lecture 5"
+          - text: "Lecture 9"
+            href: Day9.html
+            target: "_blank"
+          - text: "Lecture 10"
+            href: Day10.html
+            target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+           # - text: "Lecture 8"
+           #  href: Day8.html
+           #  target: "_blank"
+            # - text: "Lecture 5"
           #   href: Day5.html
           #   target: "_blank"
            # - text: "Lecture 5"

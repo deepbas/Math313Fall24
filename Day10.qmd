@@ -49,7 +49,7 @@ yt <- 0
 
 ## Introduction to Comparing Estimators
 
-::: cle5
+::: cle15
 ::: font80
 
 - **Overview**: Comparing estimates like means or proportions helps us understand differences between groups or changes over time.
@@ -61,7 +61,7 @@ yt <- 0
 
 ## Comparing Means of Two Populations
 
-::: cle5
+::: cle11
 ::: font80
 
 - **Context**: Compare the mean incomes of two ethnic groups using samples from each group.
@@ -77,7 +77,7 @@ yt <- 0
 ::: font80
 
 - **Formula**: The difference in sample means is used as an estimator for the difference in population means.
-- **Variance Consideration**: Compute sample variances $S_X^2$ and $S_Y^2$ to assess variability within each sample.
+- **Variance Consideration**: Compute sample variances $s_X^2$ and $s_Y^2$ to assess variability within each sample.
 
 
 :::
@@ -85,7 +85,7 @@ yt <- 0
 
 ## Example: Political Preference Analysis
 
-::: cle5
+::: cle3
 ::: font80
 
 - **Scenario**: Evaluate whether Republicans are gaining on Democrats by comparing the proportions of voters in two different polls.
@@ -98,7 +98,7 @@ yt <- 0
 
 ## Understanding Differences
 
-::: cle5
+::: cle6
 ::: font80
 
 - **Insights**: These comparisons help identify significant trends or disparities, guiding strategic decisions and policy formulations.
@@ -110,18 +110,18 @@ yt <- 0
 
 ## Estimation of Difference Between Means{.font80}
 
-::: cle5
+::: cle7
 ::: font80
 
 - **Estimator of Difference**:
   - $\hat{\Delta} = \bar{y} - \bar{x}$, where $\hat{\Delta}$ estimates $\mu_y - \mu_x$.
 
 - **Estimated Variance of the Difference**:
-  - $\hat{V}(\hat{\Delta}) = \frac{S_y^2}{n_1} + \frac{S_x^2}{n_2}$, assuming samples are independent.
+  - $\hat{V}(\hat{\Delta}) = \frac{s_y^2}{n_1} + \frac{s_x^2}{n_2}$, assuming samples are independent.
 
 - **Error Bound on Estimation** ($1-\alpha$ confidence level):
   - $B = t_{1-\frac{\alpha}{2}, df} \cdot \sqrt{\hat{V}(\hat{\Delta})}$
-  - Degrees of freedom (df): $df = \frac{\left(\frac{S_y^2}{n_1} + \frac{S_x^2}{n_2}\right)^2}{\frac{(S_y^2/n_1)^2}{n_1-1} + \frac{(S_x^2/n_2)^2}{n_2-1}}$
+  - Degrees of freedom (df): $df = \frac{\left(\frac{s_y^2}{n_1} + \frac{s_x^2}{n_2}\right)^2}{\frac{(s_y^2/n_1)^2}{n_1-1} + \frac{(s_x^2/n_2)^2}{n_2-1}}$
   
 :::
 :::
@@ -129,10 +129,42 @@ yt <- 0
 
 ##
 
+::: font60
+
+> Example 1: A drug company has developed a new drug that is designed to reduce high blood pressure. To test the drug, a sample of 15 patients is recruited to take drug. Their systolic blood pressures are reduced by an average of 28.3 millimeters, with a standard deviation of 12.0 millimeters. In addition, another sample of 20 patients takes a standard drug. The blood pressures in this group are reduced by an average of 17.1 millimeters with a standard deviation of 9.0 millimeters. Assume that blood pressure reductions are approximately normally distributed, answer the following questions.
+
+a. Estimate the difference between the population mean reduction for the new drug and that of the standard drug.
+
+<br>
+<br>
+
+b. Compute the $95 \%$ bounds on the error of estimation.
+
+::: custom-space
+:::
+
+:::
+
+##
+
+::: font60
+
+c. Compute the $95 \%$ confidence interval for the estimation.
+
+::: custom-space
+:::
+
+d. Based on the result of c , can you draw a conclusion that there is a significant difference in mean
+
+::: custom-space
+:::
+
+:::
+
 
 ## Estimation of $p_1-p_2$ for Independent Samples{.font70}
 
-::: cle5
+::: cle15
 ::: font80
 
 - **Estimator for Difference Between Two Proportions**:
@@ -152,7 +184,7 @@ yt <- 0
 
 ## Estimation of $p_1-p_2$ for Dependent Samples{.font70}
 
-::: cle5
+::: cle13
 ::: font80
 
 - **Estimator for Difference Between Two Proportions**:
@@ -170,3 +202,32 @@ yt <- 0
 :::
 
 ##
+
+::: font60
+> Example 2: The notion of banning smoking from the workplace has been around for a long time.A Time/Yankelovich poll of 800 adult Americans carried out on April 6, 1994 (see Time, April 18, 1994) asked: <center><br>
+*Should smoking be banned from workplaces, should there be special smoking areas, or should there be no restrictions?* </center><br>
+The results are given in the following table:
+
+|  | Nonsmokers | Smokers |
+| :--- | :---: | :---: |
+| Banned | $44 \%$ | $8 \%$ |
+| Special areas | $52 \%$ | $80 \%$ |
+| No restrictions | $3 \%$ | $11 \%$ |
+
+:::
+
+##
+
+::: font60
+
+Based on a sample of approximately 600 non-smokers and 200 smokers, estimate
+
+(a) the true difference between the proportions choosing "banned"
+
+::: custom-space
+:::
+
+(b) the true difference between the proportions of nonsmokers choosing "banned" and "special areas".
+
+
+:::

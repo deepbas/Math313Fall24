@@ -342,7 +342,7 @@ Bastola
 </section>
 <section id="introduction-to-comparing-estimators" class="slide level2">
 <h2>Introduction to Comparing Estimators</h2>
-<div class="cle5">
+<div class="cle15">
 <div class="font80">
 <ul>
 <li><strong>Overview</strong>: Comparing estimates like means or proportions helps us understand differences between groups or changes over time.</li>
@@ -353,7 +353,7 @@ Bastola
 </section>
 <section id="comparing-means-of-two-populations" class="slide level2">
 <h2>Comparing Means of Two Populations</h2>
-<div class="cle5">
+<div class="cle11">
 <div class="font80">
 <ul>
 <li><strong>Context</strong>: Compare the mean incomes of two ethnic groups using samples from each group.</li>
@@ -368,14 +368,14 @@ Bastola
 <div class="font80">
 <ul>
 <li><strong>Formula</strong>: The difference in sample means is used as an estimator for the difference in population means.</li>
-<li><strong>Variance Consideration</strong>: Compute sample variances <span class="math inline">\(S_X^2\)</span> and <span class="math inline">\(S_Y^2\)</span> to assess variability within each sample.</li>
+<li><strong>Variance Consideration</strong>: Compute sample variances <span class="math inline">\(s_X^2\)</span> and <span class="math inline">\(s_Y^2\)</span> to assess variability within each sample.</li>
 </ul>
 </div>
 </div>
 </section>
 <section id="example-political-preference-analysis" class="slide level2">
 <h2>Example: Political Preference Analysis</h2>
-<div class="cle5">
+<div class="cle3">
 <div class="font80">
 <ul>
 <li><strong>Scenario</strong>: Evaluate whether Republicans are gaining on Democrats by comparing the proportions of voters in two different polls.</li>
@@ -386,7 +386,7 @@ Bastola
 </section>
 <section id="understanding-differences" class="slide level2">
 <h2>Understanding Differences</h2>
-<div class="cle5">
+<div class="cle6">
 <div class="font80">
 <ul>
 <li><strong>Insights</strong>: These comparisons help identify significant trends or disparities, guiding strategic decisions and policy formulations.</li>
@@ -397,7 +397,7 @@ Bastola
 </section>
 <section id="estimation-of-difference-between-means" class="slide level2 font80">
 <h2>Estimation of Difference Between Means</h2>
-<div class="cle5">
+<div class="cle7">
 <div class="font80">
 <ul>
 <li><strong>Estimator of Difference</strong>:
@@ -406,12 +406,12 @@ Bastola
 </ul></li>
 <li><strong>Estimated Variance of the Difference</strong>:
 <ul>
-<li><span class="math inline">\(\hat{V}(\hat{\Delta}) = \frac{S_y^2}{n_1} + \frac{S_x^2}{n_2}\)</span>, assuming samples are independent.</li>
+<li><span class="math inline">\(\hat{V}(\hat{\Delta}) = \frac{s_y^2}{n_1} + \frac{s_x^2}{n_2}\)</span>, assuming samples are independent.</li>
 </ul></li>
 <li><strong>Error Bound on Estimation</strong> (<span class="math inline">\(1-\alpha\)</span> confidence level):
 <ul>
 <li><span class="math inline">\(B = t_{1-\frac{\alpha}{2}, df} \cdot \sqrt{\hat{V}(\hat{\Delta})}\)</span></li>
-<li>Degrees of freedom (df): <span class="math inline">\(df = \frac{\left(\frac{S_y^2}{n_1} + \frac{S_x^2}{n_2}\right)^2}{\frac{(S_y^2/n_1)^2}{n_1-1} + \frac{(S_x^2/n_2)^2}{n_2-1}}\)</span></li>
+<li>Degrees of freedom (df): <span class="math inline">\(df = \frac{\left(\frac{s_y^2}{n_1} + \frac{s_x^2}{n_2}\right)^2}{\frac{(s_y^2/n_1)^2}{n_1-1} + \frac{(s_x^2/n_2)^2}{n_2-1}}\)</span></li>
 </ul></li>
 </ul>
 </div>
@@ -419,10 +419,42 @@ Bastola
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
+<div class="font60">
+<blockquote>
+<p>Example 1: A drug company has developed a new drug that is designed to reduce high blood pressure. To test the drug, a sample of 15 patients is recruited to take drug. Their systolic blood pressures are reduced by an average of 28.3 millimeters, with a standard deviation of 12.0 millimeters. In addition, another sample of 20 patients takes a standard drug. The blood pressures in this group are reduced by an average of 17.1 millimeters with a standard deviation of 9.0 millimeters. Assume that blood pressure reductions are approximately normally distributed, answer the following questions.</p>
+</blockquote>
+<ol type="a">
+<li>Estimate the difference between the population mean reduction for the new drug and that of the standard drug.</li>
+</ol>
+<p><br> <br></p>
+<ol start="2" type="a">
+<li>Compute the <span class="math inline">\(95 \%\)</span> bounds on the error of estimation.</li>
+</ol>
+<div class="custom-space">
+
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="font60">
+<ol start="3" type="a">
+<li>Compute the <span class="math inline">\(95 \%\)</span> confidence interval for the estimation.</li>
+</ol>
+<div class="custom-space">
+
+</div>
+<ol start="4" type="a">
+<li>Based on the result of c , can you draw a conclusion that there is a significant difference in mean</li>
+</ol>
+<div class="custom-space">
+
+</div>
+</div>
 </section>
 <section id="estimation-of-p_1-p_2-for-independent-samples" class="slide level2 font70">
 <h2>Estimation of <span class="math inline">\(p_1-p_2\)</span> for Independent Samples</h2>
-<div class="cle5">
+<div class="cle15">
 <div class="font80">
 <ul>
 <li><strong>Estimator for Difference Between Two Proportions</strong>:
@@ -445,7 +477,7 @@ Bastola
 </section>
 <section id="estimation-of-p_1-p_2-for-dependent-samples" class="slide level2 font70">
 <h2>Estimation of <span class="math inline">\(p_1-p_2\)</span> for Dependent Samples</h2>
-<div class="cle5">
+<div class="cle13">
 <div class="font80">
 <ul>
 <li><strong>Estimator for Difference Between Two Proportions</strong>:
@@ -466,8 +498,58 @@ Bastola
 </div>
 </div>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
+<div class="font60">
+<blockquote>
+Example 2: The notion of banning smoking from the workplace has been around for a long time.A Time/Yankelovich poll of 800 adult Americans carried out on April 6, 1994 (see Time, April 18, 1994) asked:
+<center>
+<br> <em>Should smoking be banned from workplaces, should there be special smoking areas, or should there be no restrictions?</em>
+</center>
+<p><br> The results are given in the following table:</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Nonsmokers</th>
+<th style="text-align: center;">Smokers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Banned</td>
+<td style="text-align: center;"><span class="math inline">\(44 \%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8 \%\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Special areas</td>
+<td style="text-align: center;"><span class="math inline">\(52 \%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(80 \%\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">No restrictions</td>
+<td style="text-align: center;"><span class="math inline">\(3 \%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(11 \%\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="font60">
+<p>Based on a sample of approximately 600 non-smokers and 200 smokers, estimate</p>
+<ol type="a">
+<li>the true difference between the proportions choosing “banned”</li>
+</ol>
+<div class="custom-space">
+
+</div>
+<ol start="2" type="a">
+<li>the true difference between the proportions of nonsmokers choosing “banned” and “special areas”.</li>
+</ol>
+</div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

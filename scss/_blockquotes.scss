@@ -396,3 +396,215 @@ ul li::marker {
 color: #81D4FA; // Light blue markers for list items
 font-size: 1.3em; // Larger marker for visibility
 }
+
+
+
+
+
+/* Frost Elegance (cle7) */
+blockquote, .cle7 {
+    display: block;
+    font-size: 0.95em;
+    margin: 1em 10px;
+    border: solid 3px #B3E5FC; /* Light blue */
+    border-left-width: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background-color: #E1F5FE; /* Soft blue */
+    color: #039BE5; /* Cyan blue */
+    padding: 0.75em;
+    border-radius: 10px;
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+    ul li::marker {
+        color: #81D4FA; /* Sky blue */
+        font-size: 1.3em;
+    }
+}
+
+/* Rose Elegance (cle8) */
+blockquote, .cle8 {
+    display: block;
+    font-size: 0.95em;
+    margin: 1em 10px;
+    border: solid 3px #F48FB1; /* Soft pink */
+    border-left-width: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background-color: #FCE4EC; /* Light pink */
+    color: #D81B60; /* Deep pink */
+    padding: 0.75em;
+    border-radius: 10px;
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+    ul li::marker {
+        color: #F06292; /* Bright pink */
+        font-size: 1.3em;
+    }
+}
+
+/* Aqua Elegance (cle9) */
+blockquote, .cle9 {
+    display: block;
+    font-size: 0.95em;
+    margin: 1em 10px;
+    border: solid 3px #80DEEA; /* Cyan */
+    border-left-width: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background-color: #E0F7FA; /* Pale cyan */
+    color: #00ACC1; /* Dark cyan */
+    padding: 0.75em;
+    border-radius: 10px;
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+    ul li::marker {
+        color: #4DD0E1; /* Bright cyan */
+        font-size: 1.3em;
+    }
+}
+
+/* Lavender Elegance (cle10) */
+blockquote, .cle10 {
+    display: block;
+    font-size: 0.95em;
+    margin: 1em 10px;
+    border: solid 3px #CE93D8; /* Lavender */
+    border-left-width: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background-color: #F3E5F5; /* Light lavender */
+    color: #8E24AA; /* Purple */
+    padding: 0.75em;
+    border-radius: 10px;
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+    ul li::marker {
+        color: #BA68C8; /* Pastel purple */
+        font-size: 1.3em;
+    }
+}
+
+
+
+/* Mint Elegance (cle12) */
+blockquote, .cle12 {
+    display: block;
+    font-size: 0.95em;
+    margin: 1em 10px;
+    border: solid 3px #A5D6A7; /* Mint */
+    border-left-width: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background-color: #E8F5E9; /* Light mint */
+    color: #388E3C; /* Dark mint */
+    padding: 0.75em;
+    border-radius: 10px;
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+    ul li::marker {
+        color: #C8E6C9; /* Pale mint */
+        font-size: 1.3em;
+    }
+}
+
+
+/* Azure Elegance (cle14) */
+blockquote, .cle14 {
+    display: block;
+    font-size: 0.95em;
+    margin: 1em 10px;
+    border: solid 3px #64B5F6; /* Azure */
+    border-left-width: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background-color: #BBDEFB; /* Light azure */
+    color: #1976D2; /* Dark azure */
+    padding: 0.75em;
+    border-radius: 10px;
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+    ul li::marker {
+        color: #90CAF9; /* Bright azure */
+        font-size: 1.3em;
+    }
+}
+
+
+
+/* Honey Elegance (cle6) */
+blockquote, .cle6 {
+    display: block;
+    font-size: 0.95em;
+    margin: 1em 10px;
+    border: solid 3px #355952; /* Cascades green */
+    border-left-width: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background-color: #FAF6E7; /* Highly-reflective white */
+    color: #355952; /* Cascades green */
+    padding: 0.75em;
+    border-radius: 10px;
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+    ul li::marker {
+        color: #EAB63E; /* Bakelite gold */
+        font-size: 1.3em;
+    }
+}
+
+/* Coral Elegance (cle11) */
+blockquote, .cle11 {
+    display: block;
+    font-size: 0.95em;
+    margin: 1em 10px;
+    border: solid 3px #8E24AA; /* Deep purple */
+    border-left-width: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background-color: #F3E5F5; /* Light lavender */
+    color: #6A1B9A; /* Darker purple */
+    padding: 0.75em;
+    border-radius: 10px;
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+    ul li::marker {
+        color: #BA68C8; /* Pastel purple */
+        font-size: 1.3em;
+    }
+}
+
+
+/* Sienna Elegance (cle13) */
+blockquote, .cle13 {
+    display: block;
+    font-size: 0.95em;
+    margin: 1em 10px;
+    border: solid 3px #6061A8; /* Perfect red */
+    border-left-width: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background-color: #F4F7F7; /* Off-white */
+    color: #6061A8; /* Perfect red */
+    padding: 0.75em;
+    border-radius: 10px;
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+    ul li::marker {
+        color: #CE8F30; /* Ochre */
+        font-size: 1.3em;
+    }
+}
+
+/* Sage Elegance (cle15) */
+blockquote, .cle15 {
+    display: block;
+    font-size: 0.95em;
+    margin: 1em 10px;
+    border: solid 3px #01579B; /* Deep Space Sparkle */
+    border-left-width: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background-color: #B3E5FC; /* Light blue */
+    color: #01579B; /* Deep Space Sparkle */
+    padding: 0.75em;
+    border-radius: 10px;
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+    ul li::marker {
+        color: #FFC107; /* Amber */
+        font-size: 1.3em;
+    }
+}
+
+
