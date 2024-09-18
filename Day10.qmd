@@ -110,7 +110,7 @@ yt <- 0
 
 ## Estimation of Difference Between Means{.font80}
 
-::: cle7
+::: cle13
 ::: font80
 
 - **Estimator of Difference**:
@@ -184,7 +184,7 @@ d. Based on the result of c , can you draw a conclusion that there is a signific
 
 ## Estimation of $p_1-p_2$ for Dependent Samples{.font70}
 
-::: cle13
+::: cle15
 ::: font80
 
 - **Estimator for Difference Between Two Proportions**:
