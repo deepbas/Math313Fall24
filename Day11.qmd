@@ -1,0 +1,225 @@
+---
+title: "Day 11"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: "Bastola"
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+
+#<iframe width="1380" height="900" src="https://www.geogebra.org/m/mehn8u8s"></iframe>
+#::: {.callout-note title="Definition"}
+```
+
+
+## Practices for Simple Random Sampling {.font60}
+
+
+**Example 1:** Find the sample sizes required for the following estimations.
+
+A. Estimating the population mean if the population size is 8000 , the data has a range of 100 , and the $98 \%$ bound on the error of estimation should be 5.
+
+
+
+##
+
+::: font60
+B. Estimating the population total if the population size is 3000 , previous study provides $s^2=1000$, and the $92 \%$ bound on the error of estimation should be 8000.
+:::
+
+##
+
+::: font60
+C. Estimating the population proportion if the population size is 10000 and the $90 \%$ bound on the error of the estimation should be 0.05
+:::
+
+
+## {.font40}
+
+**Example 2:** The populations of states within western and eastern U.S.A. are presented in the following tables.
+
+
+::: row
+
+::: left
+
+<center> Population (in thousand) - Western U.S.A </center> 
+ 
+
+| Index | Name | Pop | 
+| :---: | :---: | :---: | 
+| 1 | Alaska | 733 | 
+| 2 | Arizona | 7151 | 
+| 3 | California | 39538 | 
+| 4 | Colorado | 5733 | 
+| 5 | Hawaii | 1455 | 
+| 6 | Idaho | 1839 |  
+| 7 | Kansas | 2938 |  
+| 8 | Montana | 1084 |  
+| 9 | Nebraska | 1962 | 
+| 10 | Nevada | 3105 | 
+| 11 | New Mexico | 2117 | 
+| 12 | North Dakota | 779 |  
+| 13 | Oklahoma | 3959 |  
+| 14 | Oregon | 4237 |  
+| 15 | South Dakota | 887 |  
+| 16 | Texas | 29146 |  |  |  |
+| 17 | Utah | 3272 |
+| 18 | Washington | 7705 |
+| 19 | Wyoming | 577 |
+
+:::
+
+::: right
+
+<center> Population (in thousand) - Eastern U.S.A </center>
+
+| Index | Name |  | Index | Name | Pop |
+| :--- | :--- | ---: | :---: | :--- | ---: |
+| 1 | Alabama | 5024 | 17 | Mississippi | 2961 |
+| 2 | Arkansas | 3011 | 18 | Missouri | 6155 |
+| 3 | Connecticut | 3605 | 19 | New Hampshire | 1377 |
+| 4 | Delaware | 990 | 20 | New Jersey | 9289 |
+| 5 | Florida | 21538 | 21 | New York | 20201 |
+| 6 | Georgia | 10712 | 22 | North Carolina | 10439 |
+| 7 | Illinois | 12813 | 23 | Ohio | 11799 |
+| 8 | Indiana | 6786 | 24 | Pennsylvania | 13003 |
+| 9 | Iowa | 3190 | 25 | Rhode Island | 1097 |
+| 10 | Kentucky | 4506 | 26 | South Carolina | 5118 |
+| 11 | Louisiana | 4658 | 27 | Tennessee | 6911 |
+| 12 | Maine | 1362 | 28 | Vermont | 643 |
+| 13 | Maryland | 6177 | 29 | Virginia | 8631 |
+| 14 | Massachusetts | 7030 | 30 | West Virginia | 1794 |
+| 15 | Michigan | 10077 | 31 | Wisconsin | 5894 |
+| 16 | Minnesota | 5706 |  |  |  |
+
+:::
+:::
+
+
+##
+
+![](images/random_table.png)
+
+
+## {.font80}
+
+A. Use the random number table, select a simple random sample with size 8 from the list of states in Western U.S.A., using the first two digit on the 5th line and 11th column as the starting point.
+
+::: custom-space
+:::
+
+B. Use the random number table, select a simple random sample with size 10 from the list of states in Eastern U.S.A., using the first two digit on the 4th line and 5th column as the starting point.
+
+## {.font80}
+
+C. Use the data provided, estimate the average population per state for Western U.S.A.
+
+<details><summary>Solution</summary>
+
+
+```{r}
+# western
+ny <- 8
+Ny <- 19
+y <- c(733, 1839, 3105, 2117, 779, 4237, 887, 7705) 
+y.bar <- mean(y); y.bar
+sy <- sd(y); sy
+Vy.bar <- (1 - ny/Ny)* sy^2/ny
+CI <- y.bar + c(-1,1)*qt(0.975, df = ny-1)*sqrt(Vy.bar); CI
+```
+
+
+</details>
+
+## {.font80}
+
+D. Use the data provided, estimate the average population per state for Eastern U.S.A.
+
+<details><summary>Solution</summary>
+
+```{r}
+# eastern
+nx <- 10
+Nx <- 31
+x <- c(5024, 10712, 12813, 4658, 7030, 10077, 5706, 6155, 20201, 6911)
+x.bar <- mean(x); x.bar
+sx <- sd(x); sx
+Vx.bar <- (1 - nx/Nx)* sx^2/nx
+CI <- x.bar + c(-1,1)*qt(0.975, df = nx-1)*sqrt(Vx.bar); CI
+```
+
+</details>
+
+## {.font80}
+
+
+E. Use the data provided, estimate the total population for Western and Eastern U.S.A, respectively.
+
+<details><summary>Solution</summary>
+
+```{r}
+tau.y <- Ny*y.bar; tau.y # western
+tau.x <- Nx*x.bar; tau.x # eastern
+V.tau.y <- Ny^2 * Vy.bar
+V.tau.x <- Nx^2 * Vx.bar
+CI.tau.y <- tau.y + c(-1,1)*qt(0.975, df = ny-1)*sqrt(V.tau.y); CI.tau.y
+CI.tau.x <- tau.x + c(-1,1)*qt(0.975, df = nx-1)*sqrt(V.tau.x); CI.tau.x
+```
+
+
+
+</delta>
+
+## {.font80}
+
+F. Compare the average populations per state between Western and Eastern U.S.A.
+
+<details><summary>Solution</summary>
+
+```{r}
+delta <- y.bar - x.bar; delta # western - eastern
+V.delta <- sy^2/ny + sx^2/nx
+df <- (sy^2/ny + sx^2/nx)^2/((sy^2/ny)^2/(ny -1) + (sx^2/nx)^2/(nx -1)); df
+CI <- delta + c(-1,1)*qt(0.975, df = df-1)*sqrt(V.delta); CI
+```
+
+</details>
