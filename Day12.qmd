@@ -1,0 +1,154 @@
+---
+title: "Day 12"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: "Bastola"
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+#<iframe width="1380" height="900" src="https://www.geogebra.org/m/mehn8u8s"></iframe>
+#::: {.callout-note title="Definition"}
+```
+
+
+## Stratified Random Sampling {.font90}
+
+<br>
+
+::: {.callout-note title="Definition"}
+
+**Stratified random sampling** involves dividing the population into non-overlapping groups (strata) and then conducting a simple random sample within each stratum.
+
+- **Purpose:** To maximize the information obtained for a given cost in sample surveys.
+
+:::
+
+## Comparison with Simple Random Sampling {.font80}
+
+<br>
+
+::: cle15
+
+- **Basic Approach:** Simple random sampling involves selecting individuals randomly from the entire population without prior grouping.
+- **Stratified Approach:** Enhances precision by grouping similar items together and then sampling.
+
+
+:::
+
+## Implementation Example {.font80}
+
+<br>
+
+::: cle14
+
+- **Context:** Estimating voter preferences on tax revenue allocation for ambulance services in a county.
+- **Strata:** Two cities and one rural area in the county.
+- **Sampling Method:** Conduct a simple random sample from each stratum (each city and rural area).
+
+
+:::
+
+## Advantages of Stratified Random Sampling {.font80}
+
+<br>
+
+::: cle13
+
+1. **Reduced Error:** Stratification can yield a smaller bound on the error of estimation compared to simple random sampling.
+2. **Cost Efficiency:** By grouping population elements, the cost per observation may be reduced.
+3. **Subgroup Analysis:** Allows for estimates of population parameters for specific, identifiable subgroups within the population.
+
+:::
+
+## Step 1: Defining and Classifying Strata {.font80}
+
+::: cle12
+
+- **Initial Setup:** Specify strata clearly. Each sampling unit must uniquely classify into one stratum.
+- **Classification Challenges:** For example, whether a town of 1000 inhabitants is 'urban' or 'rural' can depend on proximity to larger cities or isolation.
+- **Criteria Definition:** Essential to define terms like 'urban' and 'rural' to prevent classification ambiguity.
+
+:::
+
+## Step 2: Sampling Process and Notations {.font80}
+
+::: cle11
+
+- **Assigning Units:** Place each unit, e.g., household, into the appropriate stratum based on clear, predefined criteria.
+- **Sampling Notations:**
+  - **L:** Number of strata.
+  - **$N_i$:** Number of sampling units in stratum $i$.
+  - **$N$:** Total population size, $N = N_1 + N_2 + \cdots + N_L$.
+
+
+:::
+
+## Step 3: Sample Selection and Independence {.font80}
+
+<br>
+
+::: cle10
+- **Independent Sampling:** Ensure that the sample from each stratum is chosen independently using different random sampling methods.
+- **Choosing Sample Sizes:** Appropriate number of samples from each stratum and ensuring selections from different strata do not influence each other will be covered later.
+
+:::
+
+## {.font60}
+
+> Example 1: An advertising agency wants to understand how much focus to give to TV advertising in a specific county. To do this, they plan to survey how many hours households watch TV each week. The county includes two towns-Town A, centered around a factory with many families having schoolage children, and Town B, a wealthier suburb with older residents and fewer children-and a rural area. The numbers of households are 155 in Town A, 62 in Town B, and 93 in the rural area. Analyze the advantages of using stratified random sampling in this scenario.
+
+
+##
+
+
+
+## {.font60}
+
+> Exampe 2: A corporation is evaluating the effectiveness of a new business machine by gathering ratings from its division heads across three regions: North America, Europe, and Asia. To ensure that the ratings are representative and to manage costs effectively, stratified sampling is chosen as the method. The costs of conducting interviews vary by region, and so do the variances in the ratings obtained. The company aims to estimate the average effectiveness rating of the machine with a desired variance in the estimate of $V\left(\bar{y}_{\text {st }}\right)=0.1$. Determine the optimal sample size $n$ that achieves the variance bound of $V\left(\bar{y}_{\text {st }}\right)=0.1$ and calculate the appropriate allocation of the sample size across the strata based on the Neyman allocation principle, which considers both the stratum variances and the costs associated with sampling each stratum. The following table provides the costs per interview, the variances of the ratings, and the total number of division heads in each region. 
+
+| Stratum | North America | Europe | Asia |
+| :---: | :---: | :---: | :---: |
+| $c$ | $\$ 9$ | $\$ 25$ | $\$ 36$ |
+| $\sigma^2$ | 2.25 | 3.24 | 3.24 |
+| $N$ | 112 | 68 | 39 |
+
+
+##

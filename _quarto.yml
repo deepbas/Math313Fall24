@@ -47,44 +47,44 @@ website:
           - text: "Lecture 11"
             href: Day11.html
             target: "_blank"
-           # - text: "Lecture 8"
-           #  href: Day8.html
+          - text: "Lecture 12"
+            href: Day12.html
+            target: "_blank"
+       # - text: "Lecture 13"
+         #  href: Day13.html
+         #  target: "_blank"
+       # - text: "Lecture 14"
+           #  href: Day14.html
            #  target: "_blank"
-           # - text: "Lecture 8"
-           #  href: Day8.html
+           # - text: "Lecture 15"
+           #  href: Day15.html
            #  target: "_blank"
-           # - text: "Lecture 8"
-           #  href: Day8.html
+           # - text: "Lecture 16"
+           #  href: Day16.html
            #  target: "_blank"
-           # - text: "Lecture 8"
-           #  href: Day8.html
+           # - text: "Lecture 17"
+           #  href: Day17.html
            #  target: "_blank"
-           # - text: "Lecture 8"
-           #  href: Day8.html
+           # - text: "Lecture 18"
+           #  href: Day18.html
            #  target: "_blank"
-           # - text: "Lecture 8"
-           #  href: Day8.html
+           # - text: "Lecture 19"
+           #  href: Day19.html
            #  target: "_blank"
-           # - text: "Lecture 8"
-           #  href: Day8.html
+           # - text: "Lecture 20"
+           #  href: Day20.html
            #  target: "_blank"
-           # - text: "Lecture 8"
-           #  href: Day8.html
+           # - text: "Lecture 21"
+           #  href: Day21.html
            #  target: "_blank"
-           # - text: "Lecture 8"
-           #  href: Day8.html
-           #  target: "_blank"
-           # - text: "Lecture 8"
-           #  href: Day8.html
-           #  target: "_blank"
-           # - text: "Lecture 8"
-           #  href: Day8.html
-           #  target: "_blank"
-            # - text: "Lecture 5"
-          #   href: Day5.html
+          # - text: "Lecture 22"
+          #   href: Day22.html
           #   target: "_blank"
-           # - text: "Lecture 5"
-          #   href: Day5.html
+          # - text: "Lecture 23"
+          #   href: Day23.html
+          #   target: "_blank"
+          # - text: "Lecture 24"
+          #   href: Day24.html
           #   target: "_blank"
            
           
