@@ -1,0 +1,162 @@
+---
+title: "Day 13"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: "Bastola"
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+```
+
+
+## Recap: Stratified Sampling {.font80}
+
+::: cle13
+
+
+- **Objective**: Leverage stratified random sampling to estimate population characteristics more accurately.
+- **Approach**: Divide population into homogeneous groups (strata) to reduce sampling error.
+- **Application**: Widely used in surveys and research where population subgroups are to be measured with greater precision.
+
+
+:::
+
+## Stratification Explained {.font70}
+
+::: cle12
+
+- **Strata**: $L$ distinct groups within the population, each representing key sub-populations.
+- **Sizes**:
+  - Total population: $N = \sum_{i=1}^L N_i$
+  - Each stratum: $N_i$ (sub-population size), $n_i$ (sample size)
+- **Metrics**:
+  - Sample mean for stratum $i$: $\bar{Y}_i$
+  - Total for stratum $i$: $\tau_i$
+  - Population total: $\tau = \sum_{i=1}^L \tau_i$
+  
+:::
+
+## Estimation Methodology {.font80}
+
+<br>
+
+::: cle8
+- **Population Mean**: $\bar{y}_{st} = \frac{1}{N} \sum_{i=1}^L N_i \bar{Y}_i$, a weighted average where weights are proportional to stratum size.
+- **Population Total**: $\hat{\tau}_{st} = N \cdot \bar{y}_{st}$, scaled up mean to reflect total population size.
+
+:::
+
+## Variance and Precision {.font80}
+
+::: cle14
+- **Key Concept**: Estimating variance helps assess the precision and reliability of our estimates.
+- **Variance of Mean Estimation**:
+  $$\hat{V}(\bar{y}_{st}) = \frac{1}{N^2} \sum_{i=1}^L N_i^2 \left(1 - \frac{n_i}{N_i}\right) \frac{s_i^2}{n_i}$$
+- **Variance of Total Estimation**:
+  $$\hat{V}(\hat{\tau}_{st}) = N^2 \cdot \hat{V}(\bar{y}_{st})$$
+:::
+
+## Degree of Freedom and Critical Values {.font80}
+
+::: cle9
+- **Degrees of Freedom**: Crucial for determining the appropriate $t$ critical value when constructing confidence intervals.
+  $$df = \frac{\left(\sum_{i=1}^L a_i s_i^2\right)^2}{\sum_{i=1}^L \frac{(a_i s_i^2)^2}{n_i-1}}$$
+- **Factor**: $a_i = \frac{N_i(N_i-n_i)}{n_i}$ represents the adjusted sample size contributing to variance calculation.
+
+
+:::
+
+## Error Bounds and Confidence Intervals {.font80}
+
+::: cle9
+- **Error Bound**:
+  $$B = t_{1-\frac{\alpha}{2}, df} \cdot \sqrt{\hat{V}(\bar{y}_{st})}$$
+- **Confidence Interval**:
+  $$\text{Estimator} \pm B$$
+  Provides a range within which we can be $(1-\alpha) \times 100\%$ confident that the population parameter lies.
+:::
+
+## Practical Implications {.font80}
+
+::: cle14
+- **Use Case**: Stratified sampling is ideal when certain strata are expected to differ significantly, and each requires individual analysis.
+- **Advantage**: Increases efficiency and reduces costs by focusing resources on strategically sampled subgroups.
+- **Limitation**: Requires detailed advance knowledge of the population structure, which may not always be available.
+:::
+
+## {.font50} 
+
+
+::: row
+::: left
+
+> Example 1: In a continuation of Example 1 from Day 12, imagine an advertising firm conducting a survey to measure weekly television-viewing habits across different locales. The firm, equipped with sufficient resources, opts to collect random samples of households from town A, town B, and a rural area. Details regarding the sample sizes will be addressed subsequently. Each selected household is surveyed to record their television-viewing hours per week, and the collected data is summarized in a table. Using this data, the task is to calculate both the average and total weekly television-viewing hours for households throughout the entire county and to establish an error bound for these estimates.
+
+:::
+
+::: right
+::: font70
+| Town A | Town B | Rural |
+| :--- | :---: | ---: |
+| 35 | 27 | 8 |
+| 43 | 15 | 14 |
+| 36 | 4 | 12 |
+| 39 | 41 | 15 |
+| 28 | 49 | 30 |
+| 28 | 25 | 32 |
+| 29 | 10 | 21 |
+| 25 | 30 | 20 |
+| 38 |  | 34 |
+| 27 |  | 7 |
+| 26 |  | 11 |
+| 32 |  | 24 |
+| 29 |  |  |
+| 40 |  |  |
+| 35 |  |  |
+| 41 |  |  |
+| 37 |  |  |
+| 31 |  |  |
+| 45 |  |  |
+| 34 |  |  |
+
+:::
+:::
+:::

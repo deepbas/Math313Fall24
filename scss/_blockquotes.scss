@@ -410,7 +410,7 @@ blockquote, .cle7 {
     border-left-width: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     background-color: #E1F5FE; /* Soft blue */
-    color: #039BE5; /* Cyan blue */
+    color: #01579B; /* Deep blue */
     padding: 0.75em;
     border-radius: 10px;
     font-style: italic;
@@ -450,7 +450,7 @@ blockquote, .cle9 {
     border-left-width: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     background-color: #E0F7FA; /* Pale cyan */
-    color: #00ACC1; /* Dark cyan */
+    color: #006064; /* Deeper cyan */
     padding: 0.75em;
     border-radius: 10px;
     font-style: italic;
@@ -482,7 +482,6 @@ blockquote, .cle10 {
 }
 
 
-
 /* Mint Elegance (cle12) */
 blockquote, .cle12 {
     display: block;
@@ -491,18 +490,17 @@ blockquote, .cle12 {
     border: solid 3px #A5D6A7; /* Mint */
     border-left-width: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    background-color: #E8F5E9; /* Light mint */
-    color: #388E3C; /* Dark mint */
+    background-color: #F1FAF5; /* Lighter mint */
+    color: #00695C; /* Deeper mint */
     padding: 0.75em;
     border-radius: 10px;
     font-style: italic;
     font-family: 'Times New Roman', serif;
     ul li::marker {
-        color: #C8E6C9; /* Pale mint */
+        color: #B2DFDB; /* Light mint */
         font-size: 1.3em;
     }
 }
-
 
 /* Azure Elegance (cle14) */
 blockquote, .cle14 {
@@ -512,8 +510,8 @@ blockquote, .cle14 {
     border: solid 3px #64B5F6; /* Azure */
     border-left-width: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    background-color: #BBDEFB; /* Light azure */
-    color: #1976D2; /* Dark azure */
+    background-color: #E3F2FD; /* Lighter azure */
+    color: #0D47A1; /* Darker azure */
     padding: 0.75em;
     border-radius: 10px;
     font-style: italic;
@@ -523,8 +521,6 @@ blockquote, .cle14 {
         font-size: 1.3em;
     }
 }
-
-
 
 /* Honey Elegance (cle6) */
 blockquote, .cle6 {
@@ -566,7 +562,6 @@ blockquote, .cle11 {
     }
 }
 
-
 /* Sienna Elegance (cle13) */
 blockquote, .cle13 {
     display: block;
@@ -576,7 +571,7 @@ blockquote, .cle13 {
     border-left-width: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     background-color: #F4F7F7; /* Off-white */
-    color: #6061A8; /* Perfect red */
+    color: #3E3F7A; /* Darker perfect red */
     padding: 0.75em;
     border-radius: 10px;
     font-style: italic;
@@ -595,7 +590,7 @@ blockquote, .cle15 {
     border: solid 3px #01579B; /* Deep Space Sparkle */
     border-left-width: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    background-color: #B3E5FC; /* Light blue */
+    background-color: #E0F7FA; /* Pale cyan */
     color: #01579B; /* Deep Space Sparkle */
     padding: 0.75em;
     border-radius: 10px;
@@ -606,5 +601,4 @@ blockquote, .cle15 {
         font-size: 1.3em;
     }
 }
-
 
