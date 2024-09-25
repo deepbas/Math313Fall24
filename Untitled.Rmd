@@ -1,0 +1,66 @@
+---
+title: "notes"
+output: html_document
+date: "2024-09-25"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+# samples, mean and sd
+A <- c(35, 43, 36, 39, 28, 28, 29, 25, 38, 27, 26, 32, 29, 40, 35, 41, 37, 31, 45, 34)
+mu_A <- mean(A)
+s_A <- sd(A)
+
+B <- c(27, 15, 4, 41, 49, 25, 10, 30)
+mu_B <- mean(B)
+s_B <- sd(B)
+
+R <- c(8, 14, 12, 15, 30, 32, 21, 20, 34, 7 ,11, 24)
+mu_R <- mean(R)
+s_R <- sd(R)
+
+mu <- c(mu_A, mu_B, mu_R)
+s <- c(s_A, s_B, s_R)
+
+# Total Population
+N <- c(155, 62, 93)
+# Sample sizes
+n <- c(20, 8, 12)
+
+# adjusted ssample sizes
+a.adjust <- N*(N-n)/n
+a.adjust
+
+# numerator for df
+df.num <- (sum(a.adjust*s^2))^2
+df.denom <- sum((a.adjust*s^2)^2/(n-1))
+
+df <- df.num/df.denom
+df
+
+# mean tv hours
+y.bar.st <- sum(N*mu)/sum(N)
+y.bar.st
+
+v.st <- sum(N^2 *(1 - n/N)*s^2/n)/sum(N)^2
+
+CI <- y.bar.st + qt(0.975, df = df)*c(-1,1)*sqrt(v.st)
+CI
+
+tau.hat <- sum(N)* y.bar.st
+tau.hat
+
+v.tau.hat <- sum(N)^2*v.st
+v.tau.hat
+
+CI <- tau.hat + c(-1,1)*qt(0.975, df)*sqrt(v.tau.hat)
+CI
+
+
+```
+
