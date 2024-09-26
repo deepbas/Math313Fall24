@@ -50,10 +50,10 @@ website:
           - text: "Lecture 12"
             href: Day12.html
             target: "_blank"
-       # - text: "Lecture 13"
-         #  href: Day13.html
-         #  target: "_blank"
-       # - text: "Lecture 14"
+          - text: "Lecture 13"
+            href: Day13.html
+            target: "_blank"
+        # - text: "Lecture 14"
            #  href: Day14.html
            #  target: "_blank"
            # - text: "Lecture 15"
