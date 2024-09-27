@@ -70,158 +70,130 @@
     "text": "Calculations\n\n\nA &lt;- c(35, 43, 36, 39, 28, 28, 29, 25, 38, 27, 26, 32, 29, 40, 35, 41, 37, 31, 45, 34)\nB &lt;- c(27, 15, 4, 41, 49, 25, 10, 30)\nR &lt;- c(8, 14, 12, 15, 30, 32, 21, 20, 34, 7, 11, 24)\nmean(A); sd(A); length(A)\n\n[1] 33.9\n\n\n[1] 5.94625\n\n\n[1] 20\n\nmean(B); sd(B); length(B)\n\n[1] 25.125\n\n\n[1] 15.24502\n\n\n[1] 8\n\nmean(R); sd(R); length(R)\n\n[1] 19\n\n\n[1] 9.36143\n\n\n[1] 12\n\n# Given\nN_A &lt;- 155\nN_B &lt;- 62\nN_R &lt;- 93"
   },
   {
-    "objectID": "Day12.html#stratified-random-sampling",
-    "href": "Day12.html#stratified-random-sampling",
-    "title": "Day 12",
-    "section": "Stratified Random Sampling",
-    "text": "Stratified Random Sampling\n\n\n\n\n\n\n\n\nDefinition\n\n\nStratified random sampling involves dividing the population into non-overlapping groups (strata) and then conducting a simple random sample within each stratum.\n\nPurpose: To maximize the information obtained for a given cost in sample surveys."
+    "objectID": "Day10.html#introduction-to-comparing-estimators",
+    "href": "Day10.html#introduction-to-comparing-estimators",
+    "title": "Day 10",
+    "section": "Introduction to Comparing Estimators",
+    "text": "Introduction to Comparing Estimators\n\n\n\nOverview: Comparing estimates like means or proportions helps us understand differences between groups or changes over time.\nApplications: From socio-economic studies to political analyses, comparing estimators is pivotal in interpreting data."
   },
   {
-    "objectID": "Day12.html#comparison-with-simple-random-sampling",
-    "href": "Day12.html#comparison-with-simple-random-sampling",
-    "title": "Day 12",
-    "section": "Comparison with Simple Random Sampling",
-    "text": "Comparison with Simple Random Sampling\n\n\n\nBasic Approach: Simple random sampling involves selecting individuals randomly from the entire population without prior grouping.\nStratified Approach: Enhances precision by grouping similar items together and then sampling."
+    "objectID": "Day10.html#comparing-means-of-two-populations",
+    "href": "Day10.html#comparing-means-of-two-populations",
+    "title": "Day 10",
+    "section": "Comparing Means of Two Populations",
+    "text": "Comparing Means of Two Populations\n\n\n\nContext: Compare the mean incomes of two ethnic groups using samples from each group.\nCalculation: \\(\\bar{X}\\) and \\(\\bar{Y}\\) represent the sample means, where comparisons are made by analyzing the difference \\(\\mu_y - \\mu_x\\)."
   },
   {
-    "objectID": "Day12.html#implementation-example",
-    "href": "Day12.html#implementation-example",
-    "title": "Day 12",
-    "section": "Implementation Example",
-    "text": "Implementation Example\n\n\n\nContext: Estimating voter preferences on tax revenue allocation for ambulance services in a county.\nStrata: Two cities and one rural area in the county.\nSampling Method: Conduct a simple random sample from each stratum (each city and rural area)."
+    "objectID": "Day10.html#statistical-methodology",
+    "href": "Day10.html#statistical-methodology",
+    "title": "Day 10",
+    "section": "Statistical Methodology",
+    "text": "Statistical Methodology\n\n\n\nFormula: The difference in sample means is used as an estimator for the difference in population means.\nVariance Consideration: Compute sample variances \\(s_X^2\\) and \\(s_Y^2\\) to assess variability within each sample."
   },
   {
-    "objectID": "Day12.html#advantages-of-stratified-random-sampling",
-    "href": "Day12.html#advantages-of-stratified-random-sampling",
-    "title": "Day 12",
-    "section": "Advantages of Stratified Random Sampling",
-    "text": "Advantages of Stratified Random Sampling\n\n\n\nReduced Error: Stratification can yield a smaller bound on the error of estimation compared to simple random sampling.\nCost Efficiency: By grouping population elements, the cost per observation may be reduced.\nSubgroup Analysis: Allows for estimates of population parameters for specific, identifiable subgroups within the population."
+    "objectID": "Day10.html#example-political-preference-analysis",
+    "href": "Day10.html#example-political-preference-analysis",
+    "title": "Day 10",
+    "section": "Example: Political Preference Analysis",
+    "text": "Example: Political Preference Analysis\n\n\n\nScenario: Evaluate whether Republicans are gaining on Democrats by comparing the proportions of voters in two different polls.\nComparison Metric: Look at the difference between the proportions voting for each party."
   },
   {
-    "objectID": "Day12.html#step-1-defining-and-classifying-strata",
-    "href": "Day12.html#step-1-defining-and-classifying-strata",
-    "title": "Day 12",
-    "section": "Step 1: Defining and Classifying Strata",
-    "text": "Step 1: Defining and Classifying Strata\n\n\nInitial Setup: Specify strata clearly. Each sampling unit must uniquely classify into one stratum.\nClassification Challenges: For example, whether a town of 1000 inhabitants is ‘urban’ or ‘rural’ can depend on proximity to larger cities or isolation.\nCriteria Definition: Essential to define terms like ‘urban’ and ‘rural’ to prevent classification ambiguity."
+    "objectID": "Day10.html#understanding-differences",
+    "href": "Day10.html#understanding-differences",
+    "title": "Day 10",
+    "section": "Understanding Differences",
+    "text": "Understanding Differences\n\n\n\nInsights: These comparisons help identify significant trends or disparities, guiding strategic decisions and policy formulations.\nPractical Application: Enables researchers and analysts to make informed conclusions based on empirical data."
   },
   {
-    "objectID": "Day12.html#step-2-sampling-process-and-notations",
-    "href": "Day12.html#step-2-sampling-process-and-notations",
-    "title": "Day 12",
-    "section": "Step 2: Sampling Process and Notations",
-    "text": "Step 2: Sampling Process and Notations\n\n\nAssigning Units: Place each unit, e.g., household, into the appropriate stratum based on clear, predefined criteria.\nSampling Notations:\n\nL: Number of strata.\n\\(N_i\\): Number of sampling units in stratum \\(i\\).\n\\(N\\): Total population size, \\(N = N_1 + N_2 + \\cdots + N_L\\)."
+    "objectID": "Day10.html#estimation-of-difference-between-means",
+    "href": "Day10.html#estimation-of-difference-between-means",
+    "title": "Day 10",
+    "section": "Estimation of Difference Between Means",
+    "text": "Estimation of Difference Between Means\n\n\n\nEstimator of Difference:\n\n\\(\\hat{\\Delta} = \\bar{y} - \\bar{x}\\), where \\(\\hat{\\Delta}\\) estimates \\(\\mu_y - \\mu_x\\).\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{\\Delta}) = \\frac{s_y^2}{n_1} + \\frac{s_x^2}{n_2}\\), assuming samples are independent.\n\nError Bound on Estimation (\\(1-\\alpha\\) confidence level):\n\n\\(B = t_{1-\\frac{\\alpha}{2}, df} \\cdot \\sqrt{\\hat{V}(\\hat{\\Delta})}\\)\nDegrees of freedom (df): \\(df = \\frac{\\left(\\frac{s_y^2}{n_1} + \\frac{s_x^2}{n_2}\\right)^2}{\\frac{(s_y^2/n_1)^2}{n_1-1} + \\frac{(s_x^2/n_2)^2}{n_2-1}}\\)"
   },
   {
-    "objectID": "Day12.html#step-3-sample-selection-and-independence",
-    "href": "Day12.html#step-3-sample-selection-and-independence",
-    "title": "Day 12",
-    "section": "Step 3: Sample Selection and Independence",
-    "text": "Step 3: Sample Selection and Independence\n\n\n\nIndependent Sampling: Ensure that the sample from each stratum is chosen independently using different random sampling methods.\nChoosing Sample Sizes: Appropriate number of samples from each stratum and ensuring selections from different strata do not influence each other will be covered later."
-  },
-  {
-    "objectID": "Day12.html#section",
-    "href": "Day12.html#section",
-    "title": "Day 12",
+    "objectID": "Day10.html#section",
+    "href": "Day10.html#section",
+    "title": "Day 10",
     "section": "",
-    "text": "Example 1: An advertising agency wants to understand how much focus to give to TV advertising in a specific county. To do this, they plan to survey how many hours households watch TV each week. The county includes two towns-Town A, centered around a factory with many families having schoolage children, and Town B, a wealthier suburb with older residents and fewer children-and a rural area. The numbers of households are 155 in Town A, 62 in Town B, and 93 in the rural area. Analyze the advantages of using stratified random sampling in this scenario."
+    "text": "Example 1: A drug company has developed a new drug that is designed to reduce high blood pressure. To test the drug, a sample of 15 patients is recruited to take drug. Their systolic blood pressures are reduced by an average of 28.3 millimeters, with a standard deviation of 12.0 millimeters. In addition, another sample of 20 patients takes a standard drug. The blood pressures in this group are reduced by an average of 17.1 millimeters with a standard deviation of 9.0 millimeters. Assume that blood pressure reductions are approximately normally distributed, answer the following questions.\n\n\nEstimate the difference between the population mean reduction for the new drug and that of the standard drug.\n\n \n\nCompute the \\(95 \\%\\) bounds on the error of estimation."
   },
   {
-    "objectID": "Day12.html#section-2",
-    "href": "Day12.html#section-2",
-    "title": "Day 12",
+    "objectID": "Day10.html#section-1",
+    "href": "Day10.html#section-1",
+    "title": "Day 10",
     "section": "",
-    "text": "Exampe 2: A corporation is evaluating the effectiveness of a new business machine by gathering ratings from its division heads across three regions: North America, Europe, and Asia. To ensure that the ratings are representative and to manage costs effectively, stratified sampling is chosen as the method. The costs of conducting interviews vary by region, and so do the variances in the ratings obtained. The company aims to estimate the average effectiveness rating of the machine with a desired variance in the estimate of \\(V\\left(\\bar{y}_{\\text {st }}\\right)=0.1\\). Determine the optimal sample size \\(n\\) that achieves the variance bound of \\(V\\left(\\bar{y}_{\\text {st }}\\right)=0.1\\) and calculate the appropriate allocation of the sample size across the strata based on the Neyman allocation principle, which considers both the stratum variances and the costs associated with sampling each stratum. The following table provides the costs per interview, the variances of the ratings, and the total number of division heads in each region.\n\n\n\n\nStratum\nNorth America\nEurope\nAsia\n\n\n\n\n\\(c\\)\n\\(\\$ 9\\)\n\\(\\$ 25\\)\n\\(\\$ 36\\)\n\n\n\\(\\sigma^2\\)\n2.25\n3.24\n3.24\n\n\n\\(N\\)\n112\n68\n39"
+    "text": "Compute the \\(95 \\%\\) confidence interval for the estimation.\n\n\n\n\n\nBased on the result of c , can you draw a conclusion that there is a significant difference in mean"
   },
   {
-    "objectID": "Day1.html#something-about-me",
-    "href": "Day1.html#something-about-me",
-    "title": "Day 1",
-    "section": "Something about me",
-    "text": "Something about me\n\n\n\n\n\nFirst year at Salisbury\nOriginally from Nepal\nResearch in Statistical Computation and Applied Statistics\nAvid learner and traveler\n\n\n\n\n\n\n\n\n\nMy website"
+    "objectID": "Day10.html#estimation-of-p_1-p_2-for-independent-samples",
+    "href": "Day10.html#estimation-of-p_1-p_2-for-independent-samples",
+    "title": "Day 10",
+    "section": "Estimation of \\(p_1-p_2\\) for Independent Samples",
+    "text": "Estimation of \\(p_1-p_2\\) for Independent Samples\n\n\n\nEstimator for Difference Between Two Proportions:\n\n\\(\\hat{p}_1-\\hat{p}_2\\), estimates the difference between proportions from two independent samples.\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{p}_1-\\hat{p}_2) = \\frac{\\hat{p}_1(1-\\hat{p}_1)}{n_1} + \\frac{\\hat{p}_2(1-\\hat{p}_2)}{n_2}\\)\nEnsures the variance captures the sampling variability of each proportion.\n\nBound on the Error of Estimation:\n\n\\(B = Z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\hat{V}(\\hat{p}_1-\\hat{p}_2)}\\)\nThis bound helps gauge the confidence interval for the difference between the two proportions, facilitating decision making."
   },
   {
-    "objectID": "Day1.html#active-participation",
-    "href": "Day1.html#active-participation",
-    "title": "Day 1",
-    "section": "Active Participation",
-    "text": "Active Participation\n\n\n\nEngage Actively\n\nTake lecture notes\nFollow class handouts\n\nAsk Questions\n\nEvery question is valuable; we’re learning together\n\nGain Conceptual Understanding\n\nTo be able to apply the knowledge; understanding the concepts is key"
+    "objectID": "Day10.html#estimation-of-p_1-p_2-for-dependent-samples",
+    "href": "Day10.html#estimation-of-p_1-p_2-for-dependent-samples",
+    "title": "Day 10",
+    "section": "Estimation of \\(p_1-p_2\\) for Dependent Samples",
+    "text": "Estimation of \\(p_1-p_2\\) for Dependent Samples\n\n\n\nEstimator for Difference Between Two Proportions:\n\n\\(\\hat{p}_1-\\hat{p}_2\\), which estimates the difference between two correlated proportions.\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{p}_1-\\hat{p}_2) = \\frac{\\hat{p}_1(1-\\hat{p}_1)}{n} + \\frac{\\hat{p}_2(1-\\hat{p}_2)}{n} + 2 \\frac{\\hat{p}_1 \\hat{p}_2}{n}\\)\nThis variance calculation includes a term for the covariance between \\(\\hat{p}_1\\) and \\(\\hat{p}_2\\), reflecting their dependence.\n\nBound on the Error of Estimation:\n\n\\(B = Z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\hat{V}(\\hat{p}_1-\\hat{p}_2)}\\)\nThis bound provides a measure of uncertainty around the estimated difference, aiding in robust decision making under uncertainty."
   },
   {
-    "objectID": "Day1.html#tell-me-something-about-yourself",
-    "href": "Day1.html#tell-me-something-about-yourself",
-    "title": "Day 1",
-    "section": "Tell me something about yourself!",
-    "text": "Tell me something about yourself!\n\n\n\n\n\nYour name?\nGender Pronouns?\nFavorite Summer Memory?\n\n\n\n\n\n\n\nvia GIPHY"
+    "objectID": "Day10.html#section-2",
+    "href": "Day10.html#section-2",
+    "title": "Day 10",
+    "section": "",
+    "text": "Example 2: The notion of banning smoking from the workplace has been around for a long time.A Time/Yankelovich poll of 800 adult Americans carried out on April 6, 1994 (see Time, April 18, 1994) asked:\n\n Should smoking be banned from workplaces, should there be special smoking areas, or should there be no restrictions?\n\n The results are given in the following table:\n\n\n\n\n\nNonsmokers\nSmokers\n\n\n\n\nBanned\n\\(44 \\%\\)\n\\(8 \\%\\)\n\n\nSpecial areas\n\\(52 \\%\\)\n\\(80 \\%\\)\n\n\nNo restrictions\n\\(3 \\%\\)\n\\(11 \\%\\)"
   },
   {
-    "objectID": "Day1.html#class-pipelines",
-    "href": "Day1.html#class-pipelines",
-    "title": "Day 1",
-    "section": "Class Pipelines",
-    "text": "Class Pipelines\n\n\n\nMost of the course information and schedule will be posted in MyClasses\nHomework will be posted but not collected\nLabs most Tuesdays; lab reports due in a week from the lab date\nQuizzes every Friday; includes HW, lectures, labs"
+    "objectID": "Day10.html#section-3",
+    "href": "Day10.html#section-3",
+    "title": "Day 10",
+    "section": "",
+    "text": "Based on a sample of approximately 600 non-smokers and 200 smokers, estimate\n\nthe true difference between the proportions choosing “banned”\n\n\n\n\n\nthe true difference between the proportions of nonsmokers choosing “banned” and “special areas”."
   },
   {
-    "objectID": "Day1.html#what-will-a-typical-dayweek-look-like",
-    "href": "Day1.html#what-will-a-typical-dayweek-look-like",
-    "title": "Day 1",
-    "section": "What will a typical day/week look like?",
-    "text": "What will a typical day/week look like?\n\n\n\nBefore class:\n\nRead assigned topics from textbook\nWork on homework/lab reports, come with questions\n\nDuring class:\n\nMini lectures\nClass activities"
+    "objectID": "Day14.html#introduction-to-stratified-sampling",
+    "href": "Day14.html#introduction-to-stratified-sampling",
+    "title": "Day 14",
+    "section": "Introduction to Stratified Sampling",
+    "text": "Introduction to Stratified Sampling\n\n\n\nOverview: In stratified sampling, the population is divided into homogeneous subgroups, and samples are taken from each.\nKey Concept: Unlike simple random sampling with one total sample size \\(n\\), stratified sampling requires determining \\(L+1\\) sample sizes: \\(n\\), the total sample size, and \\(n_1, n_2, \\ldots, n_L\\), the sample size for each stratum."
   },
   {
-    "objectID": "Day1.html#welcome-to-survey-sampling",
-    "href": "Day1.html#welcome-to-survey-sampling",
-    "title": "Day 1",
-    "section": "Welcome to Survey Sampling",
-    "text": "Welcome to Survey Sampling\n\n\n\n\nWhat is Survey Sampling?\n\nEssential statistical method for collecting representative data.\nKey tool in business, health sciences, environmental studies, and more."
+    "objectID": "Day14.html#objective-of-sample-allocation",
+    "href": "Day14.html#objective-of-sample-allocation",
+    "title": "Day 14",
+    "section": "Objective of Sample Allocation",
+    "text": "Objective of Sample Allocation\n\n\nObjective: Minimize the variance of the estimator at the lowest possible cost.\nFactors Influencing Allocation:\n\nNumber of elements in each stratum, \\(N_i\\).\nVariability within each stratum, \\(\\sigma_i\\).\nCost of sampling from each stratum, \\(c_i\\)."
   },
   {
-    "objectID": "Day1.html#why-study-survey-sampling",
-    "href": "Day1.html#why-study-survey-sampling",
-    "title": "Day 1",
-    "section": "Why Study Survey Sampling?",
-    "text": "Why Study Survey Sampling?\n\n\n\n\nData-Driven Decision Making\n\nInformed decisions require accurate data.\nSampling helps gather this data efficiently and effectively."
+    "objectID": "Day14.html#allocation-formulas",
+    "href": "Day14.html#allocation-formulas",
+    "title": "Day 14",
+    "section": "Allocation Formulas",
+    "text": "Allocation Formulas\n\n\nNeyman Allocation (Equal Costs): \\[\nw_i=\\frac{N_i \\sigma_i}{\\sum_{j=1}^L N_j \\sigma_j}\n\\]\nProportional Allocation (Equal Costs and Variability): \\[\nw_i=\\frac{N_i}{N}\n\\]\nGeneral Allocation (Varying Costs and Variability): \\[\nw_i=\\frac{\\frac{N_i \\sigma_i}{\\sqrt{c_i}}}{\\sum_{k=1}^L \\frac{N_k \\sigma_k}{\\sqrt{c_k}}}\n\\]"
   },
   {
-    "objectID": "Day1.html#basic-principles-of-survey-sampling",
-    "href": "Day1.html#basic-principles-of-survey-sampling",
-    "title": "Day 1",
-    "section": "Basic Principles of Survey Sampling",
-    "text": "Basic Principles of Survey Sampling\n\n\n\n\nRandom Sampling\n\nEach member of a population has an equal chance of selection.\nEnsures unbiased data representation.\n\nSystematic Approach\n\nMethodical selection process to avoid sampling bias."
+    "objectID": "Day14.html#sample-size-determination",
+    "href": "Day14.html#sample-size-determination",
+    "title": "Day 14",
+    "section": "Sample Size Determination",
+    "text": "Sample Size Determination\n\n\nEstimation of Mean/Average or Total: \\[\nn=\\frac{\\sum_{i=1}^L N_i^2 \\frac{\\sigma_i^2}{w_i}}{N^2 D^2 + \\sum_{i=1}^L N_i \\sigma_i^2}\n\\]\nWhere:\n\n\\(D=\\frac{B}{Z_{1-\\frac{\\alpha}{2}}}\\) for estimating means.\n\\(D=\\frac{B}{N \\cdot Z_{1-\\frac{\\alpha}{2}}}\\) for estimating totals."
   },
   {
-    "objectID": "Day1.html#introduction-to-survey-biases",
-    "href": "Day1.html#introduction-to-survey-biases",
-    "title": "Day 1",
-    "section": "Introduction to Survey Biases",
-    "text": "Introduction to Survey Biases\n\n\n\nDiscover how the phrasing of survey questions can influence the responses, potentially leading to biased outcomes.\n\nObjective: Understand the impact of wording in survey questions.\nFocus: Compare biased vs. neutral phrasing."
+    "objectID": "Day14.html#practical-considerations",
+    "href": "Day14.html#practical-considerations",
+    "title": "Day 14",
+    "section": "Practical Considerations",
+    "text": "Practical Considerations\n\n\nDecision Points:\n\nDetermining total sample size \\(n\\) based on budget and desired precision.\nChoosing an allocation strategy based on known stratum characteristics and costs.\n\nCommon Errors: Misestimating \\(N_i\\), \\(\\sigma_i\\), or \\(c_i\\) can lead to inefficient allocations.\nSummary: Effective sample size selection in stratified sampling crucially depends on accurate stratum characterization and cost considerations.\nFurther Steps: Implementation of chosen sampling strategy and subsequent data collection."
   },
   {
-    "objectID": "Day1.html#case-study-on-welfare-spending",
-    "href": "Day1.html#case-study-on-welfare-spending",
-    "title": "Day 1",
-    "section": "Case Study on Welfare Spending",
-    "text": "Case Study on Welfare Spending\n\n\n\nBiased Question: “Do you think the government spends too much money on welfare without adequate proof of its necessity?”\n\nThis question suggests unnecessary spending, leading to potentially biased negative responses.\n\nNeutral Question: “How should the government allocate funds for welfare?”\n\nRephrased to remove bias, showing a significant drop in negative responses (only 29% suggest reducing spending)."
-  },
-  {
-    "objectID": "Day1.html#health-care-for-the-elderly",
-    "href": "Day1.html#health-care-for-the-elderly",
-    "title": "Day 1",
-    "section": "Health Care for the Elderly",
-    "text": "Health Care for the Elderly\n\n\n\nOriginal Biased Question: “Do you agree that it is disgraceful for the government to ignore the health care needs of the elderly?”\n\nEmotive language (“disgraceful”) can manipulate responses.\n\nNeutral Reformulation: “How do you rate the government’s handling of health care needs for the elderly?”\n\nMore objective, allowing respondents to express true opinions without emotional influence."
-  },
-  {
-    "objectID": "Day1.html#the-importance-of-neutral-question-phrasing",
-    "href": "Day1.html#the-importance-of-neutral-question-phrasing",
-    "title": "Day 1",
-    "section": "The Importance of Neutral Question Phrasing",
-    "text": "The Importance of Neutral Question Phrasing\n\n\nHighlighting the critical need for neutrality in survey questions to obtain accurate and reliable data.\n\nKey Takeaway: Survey questions should be carefully crafted to avoid leading respondents.\nGoal: Achieve unbiased data that truly reflects public opinion."
-  },
-  {
-    "objectID": "Day1.html#group-activity-1",
-    "href": "Day1.html#group-activity-1",
-    "title": "Day 1",
-    "section": " Group Activity 1",
-    "text": "Group Activity 1\n\n\n\n\n\n\n\n\nLet’s do a small activity today about simple random sampling\nAnd answer a few survey questions about the class in general\n\n\n\n\n −+ 10:00"
+    "objectID": "Day14.html#section",
+    "href": "Day14.html#section",
+    "title": "Day 14",
+    "section": "",
+    "text": "Example 1: The advertising firm in Example 1 of Day 13 finds that obtaining an observation from a rural household costs more than obtaining a response in town A or B . The increase is due to the costs of traveling from one rural household to another. The cost per observation in each town is estimated to be \\(\\$ 9\\) (i.e., \\(c_1=c_2=9\\) ), and the costs per observation in the rural area to be \\(\\$ 16\\) (i.e., \\(c_3=16\\) ). The stratum standard deviations (approximated by the strata sample variances from a prior survey) are \\(\\sigma_1 \\approx 5, \\sigma_2 \\approx 15\\), and \\(\\sigma_3 \\approx 10\\). Find the overall sample size \\(n\\) and the stratum sample sizes, \\(n_1, n_2\\), and \\(n_3\\), that allow the firm to estimate, at minimum cost, the average television-viewing time with a bound on the error of estimation equal to 2 hours. (Recall that \\(N=310, N_1=155, N_2=62, N_3=93\\))"
   },
   {
     "objectID": "about.html",
@@ -1008,88 +980,158 @@
     "text": "Understanding Chebyshev’s Inequality\n\n\nChebyshev’s Inequality Formula: \\[\nP(|y-\\mu| \\leq k \\cdot \\sigma) \\geqslant 1-\\frac{1}{k^2}\n\\]\n\nInterpretation: This formula states that the probability of the random variable \\(y\\) falling within \\(k\\) standard deviations (\\(\\sigma\\)) of the mean (\\(\\mu\\)) is at least \\(1 - \\frac{1}{k^2}\\)."
   },
   {
-    "objectID": "Day10.html#introduction-to-comparing-estimators",
-    "href": "Day10.html#introduction-to-comparing-estimators",
-    "title": "Day 10",
-    "section": "Introduction to Comparing Estimators",
-    "text": "Introduction to Comparing Estimators\n\n\n\nOverview: Comparing estimates like means or proportions helps us understand differences between groups or changes over time.\nApplications: From socio-economic studies to political analyses, comparing estimators is pivotal in interpreting data."
+    "objectID": "Day1.html#something-about-me",
+    "href": "Day1.html#something-about-me",
+    "title": "Day 1",
+    "section": "Something about me",
+    "text": "Something about me\n\n\n\n\n\nFirst year at Salisbury\nOriginally from Nepal\nResearch in Statistical Computation and Applied Statistics\nAvid learner and traveler\n\n\n\n\n\n\n\n\n\nMy website"
   },
   {
-    "objectID": "Day10.html#comparing-means-of-two-populations",
-    "href": "Day10.html#comparing-means-of-two-populations",
-    "title": "Day 10",
-    "section": "Comparing Means of Two Populations",
-    "text": "Comparing Means of Two Populations\n\n\n\nContext: Compare the mean incomes of two ethnic groups using samples from each group.\nCalculation: \\(\\bar{X}\\) and \\(\\bar{Y}\\) represent the sample means, where comparisons are made by analyzing the difference \\(\\mu_y - \\mu_x\\)."
+    "objectID": "Day1.html#active-participation",
+    "href": "Day1.html#active-participation",
+    "title": "Day 1",
+    "section": "Active Participation",
+    "text": "Active Participation\n\n\n\nEngage Actively\n\nTake lecture notes\nFollow class handouts\n\nAsk Questions\n\nEvery question is valuable; we’re learning together\n\nGain Conceptual Understanding\n\nTo be able to apply the knowledge; understanding the concepts is key"
   },
   {
-    "objectID": "Day10.html#statistical-methodology",
-    "href": "Day10.html#statistical-methodology",
-    "title": "Day 10",
-    "section": "Statistical Methodology",
-    "text": "Statistical Methodology\n\n\n\nFormula: The difference in sample means is used as an estimator for the difference in population means.\nVariance Consideration: Compute sample variances \\(s_X^2\\) and \\(s_Y^2\\) to assess variability within each sample."
+    "objectID": "Day1.html#tell-me-something-about-yourself",
+    "href": "Day1.html#tell-me-something-about-yourself",
+    "title": "Day 1",
+    "section": "Tell me something about yourself!",
+    "text": "Tell me something about yourself!\n\n\n\n\n\nYour name?\nGender Pronouns?\nFavorite Summer Memory?\n\n\n\n\n\n\n\nvia GIPHY"
   },
   {
-    "objectID": "Day10.html#example-political-preference-analysis",
-    "href": "Day10.html#example-political-preference-analysis",
-    "title": "Day 10",
-    "section": "Example: Political Preference Analysis",
-    "text": "Example: Political Preference Analysis\n\n\n\nScenario: Evaluate whether Republicans are gaining on Democrats by comparing the proportions of voters in two different polls.\nComparison Metric: Look at the difference between the proportions voting for each party."
+    "objectID": "Day1.html#class-pipelines",
+    "href": "Day1.html#class-pipelines",
+    "title": "Day 1",
+    "section": "Class Pipelines",
+    "text": "Class Pipelines\n\n\n\nMost of the course information and schedule will be posted in MyClasses\nHomework will be posted but not collected\nLabs most Tuesdays; lab reports due in a week from the lab date\nQuizzes every Friday; includes HW, lectures, labs"
   },
   {
-    "objectID": "Day10.html#understanding-differences",
-    "href": "Day10.html#understanding-differences",
-    "title": "Day 10",
-    "section": "Understanding Differences",
-    "text": "Understanding Differences\n\n\n\nInsights: These comparisons help identify significant trends or disparities, guiding strategic decisions and policy formulations.\nPractical Application: Enables researchers and analysts to make informed conclusions based on empirical data."
+    "objectID": "Day1.html#what-will-a-typical-dayweek-look-like",
+    "href": "Day1.html#what-will-a-typical-dayweek-look-like",
+    "title": "Day 1",
+    "section": "What will a typical day/week look like?",
+    "text": "What will a typical day/week look like?\n\n\n\nBefore class:\n\nRead assigned topics from textbook\nWork on homework/lab reports, come with questions\n\nDuring class:\n\nMini lectures\nClass activities"
   },
   {
-    "objectID": "Day10.html#estimation-of-difference-between-means",
-    "href": "Day10.html#estimation-of-difference-between-means",
-    "title": "Day 10",
-    "section": "Estimation of Difference Between Means",
-    "text": "Estimation of Difference Between Means\n\n\n\nEstimator of Difference:\n\n\\(\\hat{\\Delta} = \\bar{y} - \\bar{x}\\), where \\(\\hat{\\Delta}\\) estimates \\(\\mu_y - \\mu_x\\).\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{\\Delta}) = \\frac{s_y^2}{n_1} + \\frac{s_x^2}{n_2}\\), assuming samples are independent.\n\nError Bound on Estimation (\\(1-\\alpha\\) confidence level):\n\n\\(B = t_{1-\\frac{\\alpha}{2}, df} \\cdot \\sqrt{\\hat{V}(\\hat{\\Delta})}\\)\nDegrees of freedom (df): \\(df = \\frac{\\left(\\frac{s_y^2}{n_1} + \\frac{s_x^2}{n_2}\\right)^2}{\\frac{(s_y^2/n_1)^2}{n_1-1} + \\frac{(s_x^2/n_2)^2}{n_2-1}}\\)"
+    "objectID": "Day1.html#welcome-to-survey-sampling",
+    "href": "Day1.html#welcome-to-survey-sampling",
+    "title": "Day 1",
+    "section": "Welcome to Survey Sampling",
+    "text": "Welcome to Survey Sampling\n\n\n\n\nWhat is Survey Sampling?\n\nEssential statistical method for collecting representative data.\nKey tool in business, health sciences, environmental studies, and more."
   },
   {
-    "objectID": "Day10.html#section",
-    "href": "Day10.html#section",
-    "title": "Day 10",
+    "objectID": "Day1.html#why-study-survey-sampling",
+    "href": "Day1.html#why-study-survey-sampling",
+    "title": "Day 1",
+    "section": "Why Study Survey Sampling?",
+    "text": "Why Study Survey Sampling?\n\n\n\n\nData-Driven Decision Making\n\nInformed decisions require accurate data.\nSampling helps gather this data efficiently and effectively."
+  },
+  {
+    "objectID": "Day1.html#basic-principles-of-survey-sampling",
+    "href": "Day1.html#basic-principles-of-survey-sampling",
+    "title": "Day 1",
+    "section": "Basic Principles of Survey Sampling",
+    "text": "Basic Principles of Survey Sampling\n\n\n\n\nRandom Sampling\n\nEach member of a population has an equal chance of selection.\nEnsures unbiased data representation.\n\nSystematic Approach\n\nMethodical selection process to avoid sampling bias."
+  },
+  {
+    "objectID": "Day1.html#introduction-to-survey-biases",
+    "href": "Day1.html#introduction-to-survey-biases",
+    "title": "Day 1",
+    "section": "Introduction to Survey Biases",
+    "text": "Introduction to Survey Biases\n\n\n\nDiscover how the phrasing of survey questions can influence the responses, potentially leading to biased outcomes.\n\nObjective: Understand the impact of wording in survey questions.\nFocus: Compare biased vs. neutral phrasing."
+  },
+  {
+    "objectID": "Day1.html#case-study-on-welfare-spending",
+    "href": "Day1.html#case-study-on-welfare-spending",
+    "title": "Day 1",
+    "section": "Case Study on Welfare Spending",
+    "text": "Case Study on Welfare Spending\n\n\n\nBiased Question: “Do you think the government spends too much money on welfare without adequate proof of its necessity?”\n\nThis question suggests unnecessary spending, leading to potentially biased negative responses.\n\nNeutral Question: “How should the government allocate funds for welfare?”\n\nRephrased to remove bias, showing a significant drop in negative responses (only 29% suggest reducing spending)."
+  },
+  {
+    "objectID": "Day1.html#health-care-for-the-elderly",
+    "href": "Day1.html#health-care-for-the-elderly",
+    "title": "Day 1",
+    "section": "Health Care for the Elderly",
+    "text": "Health Care for the Elderly\n\n\n\nOriginal Biased Question: “Do you agree that it is disgraceful for the government to ignore the health care needs of the elderly?”\n\nEmotive language (“disgraceful”) can manipulate responses.\n\nNeutral Reformulation: “How do you rate the government’s handling of health care needs for the elderly?”\n\nMore objective, allowing respondents to express true opinions without emotional influence."
+  },
+  {
+    "objectID": "Day1.html#the-importance-of-neutral-question-phrasing",
+    "href": "Day1.html#the-importance-of-neutral-question-phrasing",
+    "title": "Day 1",
+    "section": "The Importance of Neutral Question Phrasing",
+    "text": "The Importance of Neutral Question Phrasing\n\n\nHighlighting the critical need for neutrality in survey questions to obtain accurate and reliable data.\n\nKey Takeaway: Survey questions should be carefully crafted to avoid leading respondents.\nGoal: Achieve unbiased data that truly reflects public opinion."
+  },
+  {
+    "objectID": "Day1.html#group-activity-1",
+    "href": "Day1.html#group-activity-1",
+    "title": "Day 1",
+    "section": " Group Activity 1",
+    "text": "Group Activity 1\n\n\n\n\n\n\n\n\nLet’s do a small activity today about simple random sampling\nAnd answer a few survey questions about the class in general\n\n\n\n\n −+ 10:00"
+  },
+  {
+    "objectID": "Day12.html#stratified-random-sampling",
+    "href": "Day12.html#stratified-random-sampling",
+    "title": "Day 12",
+    "section": "Stratified Random Sampling",
+    "text": "Stratified Random Sampling\n\n\n\n\n\n\n\n\nDefinition\n\n\nStratified random sampling involves dividing the population into non-overlapping groups (strata) and then conducting a simple random sample within each stratum.\n\nPurpose: To maximize the information obtained for a given cost in sample surveys."
+  },
+  {
+    "objectID": "Day12.html#comparison-with-simple-random-sampling",
+    "href": "Day12.html#comparison-with-simple-random-sampling",
+    "title": "Day 12",
+    "section": "Comparison with Simple Random Sampling",
+    "text": "Comparison with Simple Random Sampling\n\n\n\nBasic Approach: Simple random sampling involves selecting individuals randomly from the entire population without prior grouping.\nStratified Approach: Enhances precision by grouping similar items together and then sampling."
+  },
+  {
+    "objectID": "Day12.html#implementation-example",
+    "href": "Day12.html#implementation-example",
+    "title": "Day 12",
+    "section": "Implementation Example",
+    "text": "Implementation Example\n\n\n\nContext: Estimating voter preferences on tax revenue allocation for ambulance services in a county.\nStrata: Two cities and one rural area in the county.\nSampling Method: Conduct a simple random sample from each stratum (each city and rural area)."
+  },
+  {
+    "objectID": "Day12.html#advantages-of-stratified-random-sampling",
+    "href": "Day12.html#advantages-of-stratified-random-sampling",
+    "title": "Day 12",
+    "section": "Advantages of Stratified Random Sampling",
+    "text": "Advantages of Stratified Random Sampling\n\n\n\nReduced Error: Stratification can yield a smaller bound on the error of estimation compared to simple random sampling.\nCost Efficiency: By grouping population elements, the cost per observation may be reduced.\nSubgroup Analysis: Allows for estimates of population parameters for specific, identifiable subgroups within the population."
+  },
+  {
+    "objectID": "Day12.html#step-1-defining-and-classifying-strata",
+    "href": "Day12.html#step-1-defining-and-classifying-strata",
+    "title": "Day 12",
+    "section": "Step 1: Defining and Classifying Strata",
+    "text": "Step 1: Defining and Classifying Strata\n\n\nInitial Setup: Specify strata clearly. Each sampling unit must uniquely classify into one stratum.\nClassification Challenges: For example, whether a town of 1000 inhabitants is ‘urban’ or ‘rural’ can depend on proximity to larger cities or isolation.\nCriteria Definition: Essential to define terms like ‘urban’ and ‘rural’ to prevent classification ambiguity."
+  },
+  {
+    "objectID": "Day12.html#step-2-sampling-process-and-notations",
+    "href": "Day12.html#step-2-sampling-process-and-notations",
+    "title": "Day 12",
+    "section": "Step 2: Sampling Process and Notations",
+    "text": "Step 2: Sampling Process and Notations\n\n\nAssigning Units: Place each unit, e.g., household, into the appropriate stratum based on clear, predefined criteria.\nSampling Notations:\n\nL: Number of strata.\n\\(N_i\\): Number of sampling units in stratum \\(i\\).\n\\(N\\): Total population size, \\(N = N_1 + N_2 + \\cdots + N_L\\)."
+  },
+  {
+    "objectID": "Day12.html#step-3-sample-selection-and-independence",
+    "href": "Day12.html#step-3-sample-selection-and-independence",
+    "title": "Day 12",
+    "section": "Step 3: Sample Selection and Independence",
+    "text": "Step 3: Sample Selection and Independence\n\n\n\nIndependent Sampling: Ensure that the sample from each stratum is chosen independently using different random sampling methods.\nChoosing Sample Sizes: Appropriate number of samples from each stratum and ensuring selections from different strata do not influence each other will be covered later."
+  },
+  {
+    "objectID": "Day12.html#section",
+    "href": "Day12.html#section",
+    "title": "Day 12",
     "section": "",
-    "text": "Example 1: A drug company has developed a new drug that is designed to reduce high blood pressure. To test the drug, a sample of 15 patients is recruited to take drug. Their systolic blood pressures are reduced by an average of 28.3 millimeters, with a standard deviation of 12.0 millimeters. In addition, another sample of 20 patients takes a standard drug. The blood pressures in this group are reduced by an average of 17.1 millimeters with a standard deviation of 9.0 millimeters. Assume that blood pressure reductions are approximately normally distributed, answer the following questions.\n\n\nEstimate the difference between the population mean reduction for the new drug and that of the standard drug.\n\n \n\nCompute the \\(95 \\%\\) bounds on the error of estimation."
+    "text": "Example 1: An advertising agency wants to understand how much focus to give to TV advertising in a specific county. To do this, they plan to survey how many hours households watch TV each week. The county includes two towns-Town A, centered around a factory with many families having schoolage children, and Town B, a wealthier suburb with older residents and fewer children-and a rural area. The numbers of households are 155 in Town A, 62 in Town B, and 93 in the rural area. Analyze the advantages of using stratified random sampling in this scenario."
   },
   {
-    "objectID": "Day10.html#section-1",
-    "href": "Day10.html#section-1",
-    "title": "Day 10",
+    "objectID": "Day12.html#section-2",
+    "href": "Day12.html#section-2",
+    "title": "Day 12",
     "section": "",
-    "text": "Compute the \\(95 \\%\\) confidence interval for the estimation.\n\n\n\n\n\nBased on the result of c , can you draw a conclusion that there is a significant difference in mean"
-  },
-  {
-    "objectID": "Day10.html#estimation-of-p_1-p_2-for-independent-samples",
-    "href": "Day10.html#estimation-of-p_1-p_2-for-independent-samples",
-    "title": "Day 10",
-    "section": "Estimation of \\(p_1-p_2\\) for Independent Samples",
-    "text": "Estimation of \\(p_1-p_2\\) for Independent Samples\n\n\n\nEstimator for Difference Between Two Proportions:\n\n\\(\\hat{p}_1-\\hat{p}_2\\), estimates the difference between proportions from two independent samples.\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{p}_1-\\hat{p}_2) = \\frac{\\hat{p}_1(1-\\hat{p}_1)}{n_1} + \\frac{\\hat{p}_2(1-\\hat{p}_2)}{n_2}\\)\nEnsures the variance captures the sampling variability of each proportion.\n\nBound on the Error of Estimation:\n\n\\(B = Z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\hat{V}(\\hat{p}_1-\\hat{p}_2)}\\)\nThis bound helps gauge the confidence interval for the difference between the two proportions, facilitating decision making."
-  },
-  {
-    "objectID": "Day10.html#estimation-of-p_1-p_2-for-dependent-samples",
-    "href": "Day10.html#estimation-of-p_1-p_2-for-dependent-samples",
-    "title": "Day 10",
-    "section": "Estimation of \\(p_1-p_2\\) for Dependent Samples",
-    "text": "Estimation of \\(p_1-p_2\\) for Dependent Samples\n\n\n\nEstimator for Difference Between Two Proportions:\n\n\\(\\hat{p}_1-\\hat{p}_2\\), which estimates the difference between two correlated proportions.\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{p}_1-\\hat{p}_2) = \\frac{\\hat{p}_1(1-\\hat{p}_1)}{n} + \\frac{\\hat{p}_2(1-\\hat{p}_2)}{n} + 2 \\frac{\\hat{p}_1 \\hat{p}_2}{n}\\)\nThis variance calculation includes a term for the covariance between \\(\\hat{p}_1\\) and \\(\\hat{p}_2\\), reflecting their dependence.\n\nBound on the Error of Estimation:\n\n\\(B = Z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\hat{V}(\\hat{p}_1-\\hat{p}_2)}\\)\nThis bound provides a measure of uncertainty around the estimated difference, aiding in robust decision making under uncertainty."
-  },
-  {
-    "objectID": "Day10.html#section-2",
-    "href": "Day10.html#section-2",
-    "title": "Day 10",
-    "section": "",
-    "text": "Example 2: The notion of banning smoking from the workplace has been around for a long time.A Time/Yankelovich poll of 800 adult Americans carried out on April 6, 1994 (see Time, April 18, 1994) asked:\n\n Should smoking be banned from workplaces, should there be special smoking areas, or should there be no restrictions?\n\n The results are given in the following table:\n\n\n\n\n\nNonsmokers\nSmokers\n\n\n\n\nBanned\n\\(44 \\%\\)\n\\(8 \\%\\)\n\n\nSpecial areas\n\\(52 \\%\\)\n\\(80 \\%\\)\n\n\nNo restrictions\n\\(3 \\%\\)\n\\(11 \\%\\)"
-  },
-  {
-    "objectID": "Day10.html#section-3",
-    "href": "Day10.html#section-3",
-    "title": "Day 10",
-    "section": "",
-    "text": "Based on a sample of approximately 600 non-smokers and 200 smokers, estimate\n\nthe true difference between the proportions choosing “banned”\n\n\n\n\n\nthe true difference between the proportions of nonsmokers choosing “banned” and “special areas”."
+    "text": "Exampe 2: A corporation is evaluating the effectiveness of a new business machine by gathering ratings from its division heads across three regions: North America, Europe, and Asia. To ensure that the ratings are representative and to manage costs effectively, stratified sampling is chosen as the method. The costs of conducting interviews vary by region, and so do the variances in the ratings obtained. The company aims to estimate the average effectiveness rating of the machine with a desired variance in the estimate of \\(V\\left(\\bar{y}_{\\text {st }}\\right)=0.1\\). Determine the optimal sample size \\(n\\) that achieves the variance bound of \\(V\\left(\\bar{y}_{\\text {st }}\\right)=0.1\\) and calculate the appropriate allocation of the sample size across the strata based on the Neyman allocation principle, which considers both the stratum variances and the costs associated with sampling each stratum. The following table provides the costs per interview, the variances of the ratings, and the total number of division heads in each region.\n\n\n\n\nStratum\nNorth America\nEurope\nAsia\n\n\n\n\n\\(c\\)\n\\(\\$ 9\\)\n\\(\\$ 25\\)\n\\(\\$ 36\\)\n\n\n\\(\\sigma^2\\)\n2.25\n3.24\n3.24\n\n\n\\(N\\)\n112\n68\n39"
   },
   {
     "objectID": "Day11.html#practices-for-simple-random-sampling",

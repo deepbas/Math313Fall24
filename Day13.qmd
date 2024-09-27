@@ -44,6 +44,8 @@ select <- dplyr::select
 theme_set(theme_tufte(base_size = 10))
 
 yt <- 0
+#<iframe width="1380" height="900" src="https://www.geogebra.org/m/mehn8u8s"></iframe>
+#::: {.callout-note title="Definition"}
 ```
 
 
