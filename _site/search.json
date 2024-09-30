@@ -466,7 +466,7 @@
     "href": "Day15.html#degrees-of-freedom-for-variance-estimation",
     "title": "Day 15",
     "section": "Degrees of Freedom for Variance Estimation",
-    "text": "Degrees of Freedom for Variance Estimation\n\n\nDegrees of Freedom Formula: \\[\ndf=\\frac{\\left(\\sum_{i=1}^L a_i p_i(1-p_i)\\right)^2}{\\sum_{i=1}^L \\frac{(a_i p_i)^2}{n_i-1}}\n\\]\nImportance: Correct degrees of freedom are crucial for accurate inference and confidence interval construction."
+    "text": "Degrees of Freedom for Variance Estimation\n\n\nDegrees of Freedom Formula: \\[\ndf=\\frac{\\left(\\sum_{i=1}^L a_i p_i(1-p_i)\\right)^2}{\\sum_{i=1}^L \\frac{(a_i p_i(1-p_i))^2}{n_i-1}}\n\\]\nImportance: Correct degrees of freedom are crucial for accurate inference and confidence interval construction."
   },
   {
     "objectID": "Day15.html#example-1",
