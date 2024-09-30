@@ -5,3 +5,4 @@ title: "Math 313: Fall 2024"
 Welcome to the world of survey statistics!
 
 <img src="images/survey.jpg" alt="Credit: Freepik" style="width: 100%;"/>
+<a href="https://www.freepik.com/free-photo/business-survey-research-concept_16459855.htm#query=survey&position=3&from_view=keyword&track=ais_hybrid&uuid=4a21da04-af1b-4f7a-ac46-a3860690ef03">Image by rawpixel.com</a> on Freepik
