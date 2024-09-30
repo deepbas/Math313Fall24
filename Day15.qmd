@@ -118,7 +118,7 @@ yt <- 0
 ::: cle11
 - **Degrees of Freedom Formula:**
   $$
-  df=\frac{\left(\sum_{i=1}^L a_i p_i(1-p_i)\right)^2}{\sum_{i=1}^L \frac{(a_i p_i)^2}{n_i-1}}
+  df=\frac{\left(\sum_{i=1}^L a_i p_i(1-p_i)\right)^2}{\sum_{i=1}^L \frac{(a_i p_i(1-p_i))^2}{n_i-1}}
   $$
 - **Importance:** Correct degrees of freedom are crucial for accurate inference and confidence interval construction.
 :::
