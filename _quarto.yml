@@ -115,6 +115,10 @@ website:
         menu:
           - text: "R and RStudio"
             href: RandRStudio.html
+      - text: "Guidelines"
+        menu:
+          - text: "Lab Report Guidelines"
+            href: LabReportGuidelines.html
           # - text: "Posit Tutorial"
           #   href: posit.html
           # - text: "Softwares"
