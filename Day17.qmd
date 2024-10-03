@@ -49,100 +49,116 @@ yt <- 0
 ## Introduction to Estimating Proportions {.font80}
 
 ::: cle15
-- **Context:** Estimating proportions in a population is key for decisions in marketing, public health, and policy making.
-- **Example:** Determining the proportion of voters favoring a particular policy, the proportion of households with internet access, or the percentage of people immunized in different regions.
+
+- Review of previous sampling methods: Simple Random and Stratified Sampling
+- Introduction to new methods based on relationships between variables:
+  - Ratio
+  - Regression
+  - Difference
+- Focus on **Ratio Estimation** using a practical example
 :::
 
-## Real-World Application {.font80}
 
-::: cle13
-- **Marketing:** A company may want to estimate the proportion of consumers who prefer a new product over existing ones. Stratified sampling can be used to ensure various demographics are represented.
-- **Public Health:** Health officials estimate the proportion of the population that has been vaccinated by stratifying the population by age, location, and other relevant factors.
+## Why Use Ratio Estimation? {.font80}
+
+::: cle14
+
+- **Efficiency**: Improves the estimation of population totals using subsidiary information
+- **Cost-effective**: Reduces the need for exhaustive data collection
+- **Applications**: Useful in many fields such as agriculture, economics, and market research
 :::
 
-## Objective of Sample Allocation {.font80}
+## Case Study: Estimating Sugar Content in Oranges {.font80}
 
-::: cle13
-- **Objective:** Minimize the variance of the estimator while controlling costs.
-- **Factors Influencing Allocation:** 
-  1. Population proportion in each stratum, $p_i$.
-  2. Variability of the proportion, expressed as $p_i(1-p_i)$.
-  3. Sampling cost per stratum, $c_i$.
-:::
-
-## Step 1: Determine Weights for Sample Sizes {.font70}
-
-::: cle6
-- **Weight Formula:**
-  $$
-  W_i=\frac{N_i \frac{\sqrt{p_i (1-p_i)}}{\sqrt{c_i}}}{\sum_{j=1}^L N_j \frac{\sqrt{p_j (1-p_j)}}{\sqrt{c_j}}}
-  $$
-- **Purpose:** Adjust sample sizes to optimize precision and cost.
-:::
-
-## Step 2: Calculate Total Sample Size {.font80}
 
 ::: cle12
-- **Sample Size Formula:**
-  $$
-  n=\frac{\sum_{i=1}^L N_i^2 \frac{p_i (1-p_i)}{w_i}}{N^2 D^2 + \sum_{i=1}^L N_i p_i (1-p_i)}
-  $$
-- **Where:**
-  - $D=\frac{B}{Z_{1-\frac{\alpha}{2}}}$, defining the precision level for confidence intervals.
+
+- **Objective**: Estimate total sugar content of an orange shipment
+- **Challenge**: Direct measurement is time-consuming and costly
 :::
 
-## Step 3: Data Collection {.font80}
+## Relationship Between Variables {.font80}
 
-<br>
-<br>
 
 ::: cle11
-- **Implementation:** Collect data according to the sample sizes and weights determined in Steps 1 and 2.
+
+- **Observed Relationship**: Sugar content ($y$) is closely related to the weight ($x$) of oranges
+- **Utilization**:
+  - Use weight as a subsidiary variable to estimate sugar content
+  - Avoids the need to count total number of oranges ($N$)
+:::
+ 
+## Mathematical Basis of Ratio Estimation {.font80}
+
+
+::: cle6
+
+$$
+\begin{align*}
+\text{Given:} & \quad \frac{\mu_y}{\mu_x} = \frac{N \mu_y}{N \mu_x} = \frac{\tau_y}{\tau_x} \\
+\text{Implication:} & \quad \tau_y = \frac{\mu_y}{\mu_x} \cdot \tau_x \\
+\end{align*}
+$$
+
+- **$\mu_y$ and $\mu_x$**: Mean sugar content and mean weight per orange, respectively
+- **$\tau_y$ and $\tau_x$**: Total sugar content and total weight, respectively
 :::
 
-## Step 4: Estimation of Population Proportion {.font80}
+## Estimation Procedure {.font80}
 
-::: cle11
-- **Estimator Formula:**
-  $$
-  \hat{p}_{st}=\frac{1}{N}(N_1\hat{p}_1 + N_2\hat{p}_2 + \cdots + N_L\hat{p}_L)
-  $$
-- **Variance of Estimator:**
-  $$
-  \hat{V}(\hat{p}_{st})=\frac{1}{N^2} \cdot \sum_{i=1}^L N_i^2\left(1-\frac{n_i}{N_i}\right)\cdot\left(\frac{\hat{p}_i(1-\hat{p}_i)}{n_i-1}\right)
-  $$
+
+::: cle7
+
+- **Sample** $n$ oranges and measure:
+  - Sugar content $y_1, y_2, \ldots, y_n$
+  - Weight $x_1, x_2, \ldots, x_n$
+- **Calculate Sample Means**:
+  - $\bar{y}$ for sugar content
+  - $\bar{x}$ for weight
+
+$$
+\text{Ratio Estimator:} \quad \hat{R} = \frac{\bar{y}}{\bar{x}}
+$$
 :::
 
-## Degrees of Freedom for Variance Estimation {.font80}
+## Advantages of Ratio Estimation {.font80}
 
-::: cle11
-- **Degrees of Freedom Formula:**
-  $$
-  df=\frac{\left(\sum_{i=1}^L a_i p_i(1-p_i)\right)^2}{\sum_{i=1}^L \frac{(a_i p_i(1-p_i))^2}{n_i-1}}
-  $$
-- **Importance:** Correct degrees of freedom are crucial for accurate inference and confidence interval construction.
+
+::: cle12
+
+- **Precision**: More precise estimates when $x$ and $y$ are correlated
+- **Flexibility**: Can be adapted to various types of data and study designs
+- **Scalability**: Effective for large datasets
+:::
+
+## Conclusion {.font80}
+
+
+::: cle10
+
+- Ratio estimation leverages relationships between variables to enhance statistical efficiency and reduce costs.
+- Essential tool for researchers dealing with correlated variables in large populations.
 :::
 
 
-## Example 1 {.font60}
+## {.font60}
 
-::: blockquote
+> Example 1: A consumer survey was conducted to determine the ratio of the money spent on food to the total income per year for households in a small community. A simple random sample of 14 households was selected from 150 in the community. Sample data are given in the accompanying table. How to estimate the population ratio, $R$ ?
 
-An advertising firm wants to estimate the proportion of households viewing TV show X in a county. The county is divided into three strata: town A, town B, and the rural area, containing $N_1=155$, $N_2=62$, and $N_3=93$ households, respectively. From a study conducted three years ago, the previous estimates of proportions were $\hat{p}_1^*=0.80$, $\hat{p}_2^*=0.25$, and $\hat{p}_3^*=0.50$ (these values are used for selecting sample sizes, not as the current proportions).
-
-**Costs:** The costs of obtaining an observation are $c_1=c_2=9$, $c_3=16$.
-
-a. The firm aims to estimate the population proportion $p$ with a 95% bound on the error of estimation equal to 0.1. The task is to find the total sample size $n$ and the strata sample sizes $n_1$, $n_2$, $n_3$ that will achieve the desired bound at minimum cost.
-
-b. Based on the new survey performed with the determined sample sizes, the new sample proportions are $\hat{p}_1=0.78$, $\hat{p}_2=0.35$, $\hat{p}_3=0.52$. Estimate the proportion of households viewing TV show X with a 95% bound on the error of estimation.
-
-:::
-
+<center>
+![](images/Day17Ex1.png){width=60%}
+</center>
 
 
 ##
 
+## {.font60}
 
+
+> Example 2: An advertising firm is concerned about the effect of a new regional promotional campaign on the total dollar sales for a particular product. A simple random sample of $n=20$ stores is drawn from the regional stores in which the product is sold. Quarterly sales data are obtained for the current three-month period and the three-month period prior to the new campaign. How to estimate the change?
+
+<center>
+![](images/Day17Ex2.png){width=60%}
+</center>
 
 ##
-

@@ -340,7 +340,7 @@
     "href": "Day17.html#introduction-to-estimating-proportions",
     "title": "Day 17",
     "section": "Introduction to Estimating Proportions",
-    "text": "Introduction to Estimating Proportions\n\n\nContext: Estimating proportions in a population is key for decisions in marketing, public health, and policy making.\nExample: Determining the proportion of voters favoring a particular policy, the proportion of households with internet access, or the percentage of people immunized in different regions."
+    "text": "Introduction to Estimating Proportions\n\n\nReview of previous sampling methods: Simple Random and Stratified Sampling\nIntroduction to new methods based on relationships between variables:\n\nRatio\nRegression\nDifference\n\nFocus on Ratio Estimation using a practical example"
   },
   {
     "objectID": "Day17.html#real-world-application",
@@ -1419,5 +1419,75 @@
     "title": "Day 11",
     "section": "",
     "text": "F. Compare the average populations per state between Western and Eastern U.S.A.\n\n\nSolution\n\n\ndelta &lt;- y.bar - x.bar; delta # western - eastern\n\n[1] -6253.45\n\nV.delta &lt;- sy^2/ny + sx^2/nx\ndf &lt;- (sy^2/ny + sx^2/nx)^2/((sy^2/ny)^2/(ny -1) + (sx^2/nx)^2/(nx -1)); df\n\n[1] 13.72751\n\nCI &lt;- delta + c(-1,1)*qt(0.975, df = df-1)*sqrt(V.delta); CI\n\n[1] -9999.12 -2507.78"
+  },
+  {
+    "objectID": "Day17.html#why-use-ratio-estimation",
+    "href": "Day17.html#why-use-ratio-estimation",
+    "title": "Day 17",
+    "section": "Why Use Ratio Estimation?",
+    "text": "Why Use Ratio Estimation?\n\n\nEfficiency: Improves the estimation of population totals using subsidiary information\nCost-effective: Reduces the need for exhaustive data collection\nApplications: Useful in many fields such as agriculture, economics, and market research"
+  },
+  {
+    "objectID": "Day17.html#case-study-estimating-sugar-content-in-oranges",
+    "href": "Day17.html#case-study-estimating-sugar-content-in-oranges",
+    "title": "Day 17",
+    "section": "Case Study: Estimating Sugar Content in Oranges",
+    "text": "Case Study: Estimating Sugar Content in Oranges\n\n\nObjective: Estimate total sugar content of an orange shipment\nChallenge: Direct measurement is time-consuming and costly"
+  },
+  {
+    "objectID": "Day17.html#relationship-between-variables",
+    "href": "Day17.html#relationship-between-variables",
+    "title": "Day 17",
+    "section": "Relationship Between Variables",
+    "text": "Relationship Between Variables\n\n\nObserved Relationship: Sugar content (\\(y\\)) is closely related to the weight (\\(x\\)) of oranges\nUtilization:\n\nUse weight as a subsidiary variable to estimate sugar content\nAvoids the need to count total number of oranges (\\(N\\))"
+  },
+  {
+    "objectID": "Day17.html#mathematical-basis-of-ratio-estimation",
+    "href": "Day17.html#mathematical-basis-of-ratio-estimation",
+    "title": "Day 17",
+    "section": "Mathematical Basis of Ratio Estimation",
+    "text": "Mathematical Basis of Ratio Estimation\n\n\\[\n\\begin{align*}\n\\text{Given:} & \\quad \\frac{\\mu_y}{\\mu_x} = \\frac{N \\mu_y}{N \\mu_x} = \\frac{\\tau_y}{\\tau_x} \\\\\n\\text{Implication:} & \\quad \\tau_y = \\frac{\\mu_y}{\\mu_x} \\cdot \\tau_x \\\\\n\\end{align*}\n\\]\n\n\\(\\mu_y\\) and \\(\\mu_x\\): Mean sugar content and mean weight per orange, respectively\n\\(\\tau_y\\) and \\(\\tau_x\\): Total sugar content and total weight, respectively"
+  },
+  {
+    "objectID": "Day17.html#estimation-procedure",
+    "href": "Day17.html#estimation-procedure",
+    "title": "Day 17",
+    "section": "Estimation Procedure",
+    "text": "Estimation Procedure\n\n\nSample \\(n\\) oranges and measure:\n\nSugar content \\(y_1, y_2, \\ldots, y_n\\)\nWeight \\(x_1, x_2, \\ldots, x_n\\)\n\nCalculate Sample Means:\n\n\\(\\bar{y}\\) for sugar content\n\\(\\bar{x}\\) for weight\n\n\n\\[\n\\text{Ratio Estimator:} \\quad \\hat{R} = \\frac{\\bar{y}}{\\bar{x}}\n\\]"
+  },
+  {
+    "objectID": "Day17.html#advantages-of-ratio-estimation",
+    "href": "Day17.html#advantages-of-ratio-estimation",
+    "title": "Day 17",
+    "section": "Advantages of Ratio Estimation",
+    "text": "Advantages of Ratio Estimation\n\n\nPrecision: More precise estimates when \\(x\\) and \\(y\\) are correlated\nFlexibility: Can be adapted to various types of data and study designs\nScalability: Effective for large datasets"
+  },
+  {
+    "objectID": "Day17.html#conclusion",
+    "href": "Day17.html#conclusion",
+    "title": "Day 17",
+    "section": "Conclusion",
+    "text": "Conclusion\n\n\nRatio estimation leverages relationships between variables to enhance statistical efficiency and reduce costs.\nEssential tool for researchers dealing with correlated variables in large populations."
+  },
+  {
+    "objectID": "Day17.html#section",
+    "href": "Day17.html#section",
+    "title": "Day 17",
+    "section": "",
+    "text": "Example 1: A consumer survey was conducted to determine the ratio of the money spent on food to the total income per year for households in a small community. A simple random sample of 14 households was selected from 150 in the community. Sample data are given in the accompanying table. How to estimate the population ratio, \\(R\\) ?"
+  },
+  {
+    "objectID": "Day17.html#section-1",
+    "href": "Day17.html#section-1",
+    "title": "Day 17",
+    "section": "",
+    "text": "Example 2: An advertising firm is concerned about the effect of a new regional promotional campaign on the total dollar sales for a particular product. A simple random sample of \\(n=20\\) stores is drawn from the regional stores in which the product is sold. Quarterly sales data are obtained for the current three-month period and the three-month period prior to the new campaign. How to estimate the change?"
+  },
+  {
+    "objectID": "Day17.html#section-2",
+    "href": "Day17.html#section-2",
+    "title": "Day 17",
+    "section": "",
+    "text": "Example 2: An advertising firm is concerned about the effect of a new regional promotional campaign on the total dollar sales for a particular product. A simple random sample of \\(n=20\\) stores is drawn from the regional stores in which the product is sold. Quarterly sales data are obtained for the current three-month period and the three-month period prior to the new campaign. How to estimate the change?"
   }
 ]

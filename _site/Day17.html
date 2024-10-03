@@ -344,107 +344,125 @@ Bastola
 <h2>Introduction to Estimating Proportions</h2>
 <div class="cle15">
 <ul>
-<li><strong>Context:</strong> Estimating proportions in a population is key for decisions in marketing, public health, and policy making.</li>
-<li><strong>Example:</strong> Determining the proportion of voters favoring a particular policy, the proportion of households with internet access, or the percentage of people immunized in different regions.</li>
-</ul>
-</div>
-</section>
-<section id="real-world-application" class="slide level2 font80">
-<h2>Real-World Application</h2>
-<div class="cle13">
+<li>Review of previous sampling methods: Simple Random and Stratified Sampling</li>
+<li>Introduction to new methods based on relationships between variables:
 <ul>
-<li><strong>Marketing:</strong> A company may want to estimate the proportion of consumers who prefer a new product over existing ones. Stratified sampling can be used to ensure various demographics are represented.</li>
-<li><strong>Public Health:</strong> Health officials estimate the proportion of the population that has been vaccinated by stratifying the population by age, location, and other relevant factors.</li>
+<li>Ratio</li>
+<li>Regression</li>
+<li>Difference</li>
+</ul></li>
+<li>Focus on <strong>Ratio Estimation</strong> using a practical example</li>
 </ul>
 </div>
 </section>
-<section id="objective-of-sample-allocation" class="slide level2 font80">
-<h2>Objective of Sample Allocation</h2>
-<div class="cle13">
+<section id="why-use-ratio-estimation" class="slide level2 font80">
+<h2>Why Use Ratio Estimation?</h2>
+<div class="cle14">
 <ul>
-<li><strong>Objective:</strong> Minimize the variance of the estimator while controlling costs.</li>
-<li><strong>Factors Influencing Allocation:</strong>
-<ol type="1">
-<li>Population proportion in each stratum, <span class="math inline">\(p_i\)</span>.</li>
-<li>Variability of the proportion, expressed as <span class="math inline">\(p_i(1-p_i)\)</span>.</li>
-<li>Sampling cost per stratum, <span class="math inline">\(c_i\)</span>.</li>
-</ol></li>
+<li><strong>Efficiency</strong>: Improves the estimation of population totals using subsidiary information</li>
+<li><strong>Cost-effective</strong>: Reduces the need for exhaustive data collection</li>
+<li><strong>Applications</strong>: Useful in many fields such as agriculture, economics, and market research</li>
 </ul>
 </div>
 </section>
-<section id="step-1-determine-weights-for-sample-sizes" class="slide level2 font70">
-<h2>Step 1: Determine Weights for Sample Sizes</h2>
-<div class="cle6">
-<ul>
-<li><strong>Weight Formula:</strong> <span class="math display">\[
-W_i=\frac{N_i \frac{\sqrt{p_i (1-p_i)}}{\sqrt{c_i}}}{\sum_{j=1}^L N_j \frac{\sqrt{p_j (1-p_j)}}{\sqrt{c_j}}}
-\]</span></li>
-<li><strong>Purpose:</strong> Adjust sample sizes to optimize precision and cost.</li>
-</ul>
-</div>
-</section>
-<section id="step-2-calculate-total-sample-size" class="slide level2 font80">
-<h2>Step 2: Calculate Total Sample Size</h2>
+<section id="case-study-estimating-sugar-content-in-oranges" class="slide level2 font80">
+<h2>Case Study: Estimating Sugar Content in Oranges</h2>
 <div class="cle12">
 <ul>
-<li><strong>Sample Size Formula:</strong> <span class="math display">\[
-n=\frac{\sum_{i=1}^L N_i^2 \frac{p_i (1-p_i)}{w_i}}{N^2 D^2 + \sum_{i=1}^L N_i p_i (1-p_i)}
-\]</span></li>
-<li><strong>Where:</strong>
+<li><strong>Objective</strong>: Estimate total sugar content of an orange shipment</li>
+<li><strong>Challenge</strong>: Direct measurement is time-consuming and costly</li>
+</ul>
+</div>
+</section>
+<section id="relationship-between-variables" class="slide level2 font80">
+<h2>Relationship Between Variables</h2>
+<div class="cle11">
 <ul>
-<li><span class="math inline">\(D=\frac{B}{Z_{1-\frac{\alpha}{2}}}\)</span>, defining the precision level for confidence intervals.</li>
+<li><strong>Observed Relationship</strong>: Sugar content (<span class="math inline">\(y\)</span>) is closely related to the weight (<span class="math inline">\(x\)</span>) of oranges</li>
+<li><strong>Utilization</strong>:
+<ul>
+<li>Use weight as a subsidiary variable to estimate sugar content</li>
+<li>Avoids the need to count total number of oranges (<span class="math inline">\(N\)</span>)</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="step-3-data-collection" class="slide level2 font80">
-<h2>Step 3: Data Collection</h2>
-<p><br> <br></p>
-<div class="cle11">
+<section id="mathematical-basis-of-ratio-estimation" class="slide level2 font80">
+<h2>Mathematical Basis of Ratio Estimation</h2>
+<div class="cle6">
+<p><span class="math display">\[
+\begin{align*}
+\text{Given:} &amp; \quad \frac{\mu_y}{\mu_x} = \frac{N \mu_y}{N \mu_x} = \frac{\tau_y}{\tau_x} \\
+\text{Implication:} &amp; \quad \tau_y = \frac{\mu_y}{\mu_x} \cdot \tau_x \\
+\end{align*}
+\]</span></p>
 <ul>
-<li><strong>Implementation:</strong> Collect data according to the sample sizes and weights determined in Steps 1 and 2.</li>
+<li><strong><span class="math inline">\(\mu_y\)</span> and <span class="math inline">\(\mu_x\)</span></strong>: Mean sugar content and mean weight per orange, respectively</li>
+<li><strong><span class="math inline">\(\tau_y\)</span> and <span class="math inline">\(\tau_x\)</span></strong>: Total sugar content and total weight, respectively</li>
 </ul>
 </div>
 </section>
-<section id="step-4-estimation-of-population-proportion" class="slide level2 font80">
-<h2>Step 4: Estimation of Population Proportion</h2>
-<div class="cle11">
+<section id="estimation-procedure" class="slide level2 font80">
+<h2>Estimation Procedure</h2>
+<div class="cle7">
 <ul>
-<li><strong>Estimator Formula:</strong> <span class="math display">\[
-\hat{p}_{st}=\frac{1}{N}(N_1\hat{p}_1 + N_2\hat{p}_2 + \cdots + N_L\hat{p}_L)
-\]</span></li>
-<li><strong>Variance of Estimator:</strong> <span class="math display">\[
-\hat{V}(\hat{p}_{st})=\frac{1}{N^2} \cdot \sum_{i=1}^L N_i^2\left(1-\frac{n_i}{N_i}\right)\cdot\left(\frac{\hat{p}_i(1-\hat{p}_i)}{n_i-1}\right)
-\]</span></li>
+<li><strong>Sample</strong> <span class="math inline">\(n\)</span> oranges and measure:
+<ul>
+<li>Sugar content <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span></li>
+<li>Weight <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span></li>
+</ul></li>
+<li><strong>Calculate Sample Means</strong>:
+<ul>
+<li><span class="math inline">\(\bar{y}\)</span> for sugar content</li>
+<li><span class="math inline">\(\bar{x}\)</span> for weight</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+\text{Ratio Estimator:} \quad \hat{R} = \frac{\bar{y}}{\bar{x}}
+\]</span></p>
+</div>
+</section>
+<section id="advantages-of-ratio-estimation" class="slide level2 font80">
+<h2>Advantages of Ratio Estimation</h2>
+<div class="cle12">
+<ul>
+<li><strong>Precision</strong>: More precise estimates when <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are correlated</li>
+<li><strong>Flexibility</strong>: Can be adapted to various types of data and study designs</li>
+<li><strong>Scalability</strong>: Effective for large datasets</li>
 </ul>
 </div>
 </section>
-<section id="degrees-of-freedom-for-variance-estimation" class="slide level2 font80">
-<h2>Degrees of Freedom for Variance Estimation</h2>
-<div class="cle11">
+<section id="conclusion" class="slide level2 font80">
+<h2>Conclusion</h2>
+<div class="cle10">
 <ul>
-<li><strong>Degrees of Freedom Formula:</strong> <span class="math display">\[
-df=\frac{\left(\sum_{i=1}^L a_i p_i(1-p_i)\right)^2}{\sum_{i=1}^L \frac{(a_i p_i(1-p_i))^2}{n_i-1}}
-\]</span></li>
-<li><strong>Importance:</strong> Correct degrees of freedom are crucial for accurate inference and confidence interval construction.</li>
+<li>Ratio estimation leverages relationships between variables to enhance statistical efficiency and reduce costs.</li>
+<li>Essential tool for researchers dealing with correlated variables in large populations.</li>
 </ul>
 </div>
 </section>
-<section id="example-1" class="slide level2 font60">
-<h2>Example 1</h2>
-<div class="blockquote">
-<p>An advertising firm wants to estimate the proportion of households viewing TV show X in a county. The county is divided into three strata: town A, town B, and the rural area, containing <span class="math inline">\(N_1=155\)</span>, <span class="math inline">\(N_2=62\)</span>, and <span class="math inline">\(N_3=93\)</span> households, respectively. From a study conducted three years ago, the previous estimates of proportions were <span class="math inline">\(\hat{p}_1^*=0.80\)</span>, <span class="math inline">\(\hat{p}_2^*=0.25\)</span>, and <span class="math inline">\(\hat{p}_3^*=0.50\)</span> (these values are used for selecting sample sizes, not as the current proportions).</p>
-<p><strong>Costs:</strong> The costs of obtaining an observation are <span class="math inline">\(c_1=c_2=9\)</span>, <span class="math inline">\(c_3=16\)</span>.</p>
-<ol type="a">
-<li><p>The firm aims to estimate the population proportion <span class="math inline">\(p\)</span> with a 95% bound on the error of estimation equal to 0.1. The task is to find the total sample size <span class="math inline">\(n\)</span> and the strata sample sizes <span class="math inline">\(n_1\)</span>, <span class="math inline">\(n_2\)</span>, <span class="math inline">\(n_3\)</span> that will achieve the desired bound at minimum cost.</p></li>
-<li><p>Based on the new survey performed with the determined sample sizes, the new sample proportions are <span class="math inline">\(\hat{p}_1=0.78\)</span>, <span class="math inline">\(\hat{p}_2=0.35\)</span>, <span class="math inline">\(\hat{p}_3=0.52\)</span>. Estimate the proportion of households viewing TV show X with a 95% bound on the error of estimation.</p></li>
-</ol>
-</div>
-</section>
-<section id="section" class="slide level2">
+<section id="section" class="slide level2 font60">
 <h2></h2>
+<blockquote>
+<p>Example 1: A consumer survey was conducted to determine the ratio of the money spent on food to the total income per year for households in a small community. A simple random sample of 14 households was selected from 150 in the community. Sample data are given in the accompanying table. How to estimate the population ratio, <span class="math inline">\(R\)</span> ?</p>
+</blockquote>
+<center>
+<img data-src="images/Day17Ex1.png" style="width:60.0%">
+</center>
 </section>
 <section id="section-1" class="slide level2">
+<h2></h2>
+</section>
+<section id="section-2" class="slide level2 font60">
+<h2></h2>
+<blockquote>
+<p>Example 2: An advertising firm is concerned about the effect of a new regional promotional campaign on the total dollar sales for a particular product. A simple random sample of <span class="math inline">\(n=20\)</span> stores is drawn from the regional stores in which the product is sold. Quarterly sales data are obtained for the current three-month period and the three-month period prior to the new campaign. How to estimate the change?</p>
+</blockquote>
+<center>
+<img data-src="images/Day17Ex2.png" style="width:60.0%">
+</center>
+</section>
+<section id="section-3" class="slide level2">
 <h2></h2>
 
 <div class="quarto-auto-generated-content">
