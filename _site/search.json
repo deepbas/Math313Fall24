@@ -1307,5 +1307,82 @@
     "title": "Setting Up R and RStudio",
     "section": "R Code Chunk Options",
     "text": "R Code Chunk Options\nBefore diving into data loading, let’s understand important R chunk options:\n\n\neval: Use eval=FALSE to prevent code from running but still display it.\n\necho: With echo=FALSE, the code is run but not displayed in the document.\n\ninclude: include=FALSE runs the code and hides both the code and output from the final output.\n\nExample to demonstrate:\n\n# This code will run, and both code and output will appear in the document.\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
+  },
+  {
+    "objectID": "Day16.html#issues-in-stratified-sampling",
+    "href": "Day16.html#issues-in-stratified-sampling",
+    "title": "Day 16",
+    "section": "Issues in Stratified Sampling",
+    "text": "Issues in Stratified Sampling\n\nUnderstanding the complexities and challenges of stratified random sampling is crucial for improving survey accuracy and efficiency. By examining common issues such as budget constraints and optimal strata selection:\n\nWe can better design surveys that maximize resource use.\nWe enhance our ability to make informed decisions based on the data collected.\nWe contribute to the development of more sophisticated statistical analysis techniques that are robust against real-world sampling challenges."
+  },
+  {
+    "objectID": "Day16.html#sample-size-constraints-by-budget",
+    "href": "Day16.html#sample-size-constraints-by-budget",
+    "title": "Day 16",
+    "section": "Sample Size Constraints by Budget",
+    "text": "Sample Size Constraints by Budget\n\nNot all sampling can afford ideal sample sizes due to budget constraints. Optimal allocation aims to minimize variance under fixed budget conditions."
+  },
+  {
+    "objectID": "Day16.html#allocation-formula",
+    "href": "Day16.html#allocation-formula",
+    "title": "Day 16",
+    "section": "Allocation Formula",
+    "text": "Allocation Formula\n\nUse the proportional allocation formula to determine sample sizes: \\[n_i =  \\frac{C}{\\sum_{i=1}^k c_i w_i}  w_i\\] Where:\n\n\\(n_i\\) = sample size for stratum \\(i\\)\n\\(C\\) = total budget\n\\(c_i\\) = cost per unit sampled in stratum \\(i\\)\n\\(w_i\\) = weight (proportion) of stratum \\(i\\) in the population"
+  },
+  {
+    "objectID": "Day16.html#optimal-rule-for-choosing-strata",
+    "href": "Day16.html#optimal-rule-for-choosing-strata",
+    "title": "Day 16",
+    "section": "Optimal Rule for Choosing Strata",
+    "text": "Optimal Rule for Choosing Strata\n\nGoal: Minimize variance of the estimator. Strata should be homogeneous internally and heterogeneous externally.\n\nCumulative Square Root of Frequency Method\n\nUseful for delineating strata based on available frequency data. Summarize and stratify based on the cumulative square root of category frequencies. Generally, limit to five or six strata to avoid over-complication."
+  },
+  {
+    "objectID": "Day16.html#issues-in-stratified-sampling-budget-constraints",
+    "href": "Day16.html#issues-in-stratified-sampling-budget-constraints",
+    "title": "Day 16",
+    "section": "Issues in Stratified Sampling: Budget Constraints",
+    "text": "Issues in Stratified Sampling: Budget Constraints\n\nUnderstanding the complexities and challenges of stratified random sampling is crucial for enhancing survey accuracy and efficiency. By addressing common issues such as budget constraints and optimal strata selection:\n\nWe recognize that not all sampling can afford ideal sample sizes due to budget limits.\nOptimal allocation under fixed budgets aims to minimize variance, enhancing survey design to maximize resource use.\nThis approach not only improves decision-making based on the data collected but also contributes to developing sophisticated statistical analysis techniques that are robust against real-world challenges."
+  },
+  {
+    "objectID": "Day16.html#calculation-step",
+    "href": "Day16.html#calculation-step",
+    "title": "Day 16",
+    "section": "Calculation Step",
+    "text": "Calculation Step\n\n\nCalculate weights \\(w_i\\) for each stratum.\nCompute \\(n=\\frac{C}{c_1 w_1+c_2 w_2+\\cdots+c_k w_k}\\).\nRound down to nearest whole number for actual sample size."
+  },
+  {
+    "objectID": "Day16.html#cumulative-square-root-of-frequency-method",
+    "href": "Day16.html#cumulative-square-root-of-frequency-method",
+    "title": "Day 16",
+    "section": "Cumulative Square Root of Frequency Method",
+    "text": "Cumulative Square Root of Frequency Method\n\nUseful for delineating strata based on available frequency data. Summarize and stratify based on the cumulative square root of category frequencies. Generally, limit to five or six strata to avoid over-complication."
+  },
+  {
+    "objectID": "Day16.html#practical-example",
+    "href": "Day16.html#practical-example",
+    "title": "Day 16",
+    "section": "Practical Example",
+    "text": "Practical Example\n\nStratify a population by income to estimate average household income:\n\nGroup low-income households in one stratum.\nGroup high-income households in another stratum.\n\nThis method is theoretical as it requires prior knowledge of incomes."
+  },
+  {
+    "objectID": "Day16.html#section",
+    "href": "Day16.html#section",
+    "title": "Day 16",
+    "section": "",
+    "text": "Example 1: In the television viewing example \\(\\left(N_1=155, N_2=62\\right.\\), and \\(\\left.N_3=93\\right)\\), the cost of obtaining an observation is \\(c_1=c_2=\\$ 9, c_3=\\$ 16\\). Let the stratum standard deviations be approximated by \\(\\sigma_1 \\approx 5, \\sigma_2 \\approx 15, \\sigma_3 \\approx 10\\). Given that the advertising firm has only \\(\\$ 500\\) to spend on sampling, choose the sample size and the allocation that minimize \\(V\\left(\\bar{y}_{s t}\\right)\\)."
+  },
+  {
+    "objectID": "Day16.html#section-1",
+    "href": "Day16.html#section-1",
+    "title": "Day 16",
+    "section": "",
+    "text": "Example 2: In the television viewing example \\(\\left(N_1=155, N_2=62\\right.\\), and \\(\\left.N_3=93\\right)\\), the cost of obtaining an observation is \\(c_1=c_2=\\$ 9, c_3=\\$ 16\\). Let the stratum standard deviations-be approximated by \\(p_1 \\approx 0.80, p_2 \\approx 0.25, p_3 \\approx 0.50\\) using some similar survey performed two years ago. Given that the advertising firm has only \\(\\$ 500\\) to spend on sampling, choose the sample size and the allocation that \\(minimize V\\left(\\hat{p}_{s t}\\right)\\)."
+  },
+  {
+    "objectID": "Day16.html#section-2",
+    "href": "Day16.html#section-2",
+    "title": "Day 16",
+    "section": "",
+    "text": "Example 3: An investigator wishes to estimate the average yearly sales for 56 firms, using a sample of \\(n=15\\) firms. Frequency data on these firms is available in the form of classification by \\(\\$ 50,000\\) increments and appears in the accompanying table. How can we best allocate the firms to \\(L=3\\) strata?"
   }
 ]
