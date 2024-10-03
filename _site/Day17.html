@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.25">
 
   <meta name="author" content="Bastola">
-  <title>Math 313: Survey Design and Sampling – Day 12</title>
+  <title>Math 313: Survey Design and Sampling – Day 17</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -328,7 +328,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="images/lake.jpg" data-background-opacity="0.5" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Day 12</h1>
+  <h1 class="title">Day 17</h1>
   <p class="subtitle">MATH 313: Survey Design and Sampling</p>
 
 <div class="quarto-title-authors">
@@ -340,140 +340,111 @@ Bastola
 </div>
 
 </section>
-<section id="stratified-random-sampling" class="slide level2 font90">
-<h2>Stratified Random Sampling</h2>
-<p><br></p>
-<div title="Definition">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Definition</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Stratified random sampling</strong> involves dividing the population into non-overlapping groups (strata) and then conducting a simple random sample within each stratum.</p>
-<ul>
-<li><strong>Purpose:</strong> To maximize the information obtained for a given cost in sample surveys.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="comparison-with-simple-random-sampling" class="slide level2 font80">
-<h2>Comparison with Simple Random Sampling</h2>
-<p><br></p>
+<section id="introduction-to-estimating-proportions" class="slide level2 font80">
+<h2>Introduction to Estimating Proportions</h2>
 <div class="cle15">
 <ul>
-<li><strong>Basic Approach:</strong> Simple random sampling involves selecting individuals randomly from the entire population without prior grouping.</li>
-<li><strong>Stratified Approach:</strong> Enhances precision by grouping similar items together and then sampling.</li>
+<li><strong>Context:</strong> Estimating proportions in a population is key for decisions in marketing, public health, and policy making.</li>
+<li><strong>Example:</strong> Determining the proportion of voters favoring a particular policy, the proportion of households with internet access, or the percentage of people immunized in different regions.</li>
 </ul>
 </div>
 </section>
-<section id="implementation-example" class="slide level2 font80">
-<h2>Implementation Example</h2>
-<p><br></p>
-<div class="cle14">
-<ul>
-<li><strong>Context:</strong> Estimating voter preferences on tax revenue allocation for ambulance services in a county.</li>
-<li><strong>Strata:</strong> Two cities and one rural area in the county.</li>
-<li><strong>Sampling Method:</strong> Conduct a simple random sample from each stratum (each city and rural area).</li>
-</ul>
-</div>
-</section>
-<section id="advantages-of-stratified-random-sampling" class="slide level2 font80">
-<h2>Advantages of Stratified Random Sampling</h2>
-<p><br></p>
+<section id="real-world-application" class="slide level2 font80">
+<h2>Real-World Application</h2>
 <div class="cle13">
-<ol type="1">
-<li><strong>Reduced Error:</strong> Stratification can yield a smaller bound on the error of estimation compared to simple random sampling.</li>
-<li><strong>Cost Efficiency:</strong> By grouping population elements, the cost per observation may be reduced.</li>
-<li><strong>Subgroup Analysis:</strong> Allows for estimates of population parameters for specific, identifiable subgroups within the population.</li>
-</ol>
+<ul>
+<li><strong>Marketing:</strong> A company may want to estimate the proportion of consumers who prefer a new product over existing ones. Stratified sampling can be used to ensure various demographics are represented.</li>
+<li><strong>Public Health:</strong> Health officials estimate the proportion of the population that has been vaccinated by stratifying the population by age, location, and other relevant factors.</li>
+</ul>
 </div>
 </section>
-<section id="step-1-defining-and-classifying-strata" class="slide level2 font80">
-<h2>Step 1: Defining and Classifying Strata</h2>
+<section id="objective-of-sample-allocation" class="slide level2 font80">
+<h2>Objective of Sample Allocation</h2>
+<div class="cle13">
+<ul>
+<li><strong>Objective:</strong> Minimize the variance of the estimator while controlling costs.</li>
+<li><strong>Factors Influencing Allocation:</strong>
+<ol type="1">
+<li>Population proportion in each stratum, <span class="math inline">\(p_i\)</span>.</li>
+<li>Variability of the proportion, expressed as <span class="math inline">\(p_i(1-p_i)\)</span>.</li>
+<li>Sampling cost per stratum, <span class="math inline">\(c_i\)</span>.</li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="step-1-determine-weights-for-sample-sizes" class="slide level2 font70">
+<h2>Step 1: Determine Weights for Sample Sizes</h2>
+<div class="cle6">
+<ul>
+<li><strong>Weight Formula:</strong> <span class="math display">\[
+W_i=\frac{N_i \frac{\sqrt{p_i (1-p_i)}}{\sqrt{c_i}}}{\sum_{j=1}^L N_j \frac{\sqrt{p_j (1-p_j)}}{\sqrt{c_j}}}
+\]</span></li>
+<li><strong>Purpose:</strong> Adjust sample sizes to optimize precision and cost.</li>
+</ul>
+</div>
+</section>
+<section id="step-2-calculate-total-sample-size" class="slide level2 font80">
+<h2>Step 2: Calculate Total Sample Size</h2>
 <div class="cle12">
 <ul>
-<li><strong>Initial Setup:</strong> Specify strata clearly. Each sampling unit must uniquely classify into one stratum.</li>
-<li><strong>Classification Challenges:</strong> For example, whether a town of 1000 inhabitants is ‘urban’ or ‘rural’ can depend on proximity to larger cities or isolation.</li>
-<li><strong>Criteria Definition:</strong> Essential to define terms like ‘urban’ and ‘rural’ to prevent classification ambiguity.</li>
-</ul>
-</div>
-</section>
-<section id="step-2-sampling-process-and-notations" class="slide level2 font80">
-<h2>Step 2: Sampling Process and Notations</h2>
-<div class="cle11">
+<li><strong>Sample Size Formula:</strong> <span class="math display">\[
+n=\frac{\sum_{i=1}^L N_i^2 \frac{p_i (1-p_i)}{w_i}}{N^2 D^2 + \sum_{i=1}^L N_i p_i (1-p_i)}
+\]</span></li>
+<li><strong>Where:</strong>
 <ul>
-<li><strong>Assigning Units:</strong> Place each unit, e.g., household, into the appropriate stratum based on clear, predefined criteria.</li>
-<li><strong>Sampling Notations:</strong>
-<ul>
-<li><strong>L:</strong> Number of strata.</li>
-<li><strong><span class="math inline">\(N_i\)</span>:</strong> Number of sampling units in stratum <span class="math inline">\(i\)</span>.</li>
-<li><strong><span class="math inline">\(N\)</span>:</strong> Total population size, <span class="math inline">\(N = N_1 + N_2 + \cdots + N_L\)</span>.</li>
+<li><span class="math inline">\(D=\frac{B}{Z_{1-\frac{\alpha}{2}}}\)</span>, defining the precision level for confidence intervals.</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="step-3-sample-selection-and-independence" class="slide level2 font80">
-<h2>Step 3: Sample Selection and Independence</h2>
-<p><br></p>
-<div class="cle10">
+<section id="step-3-data-collection" class="slide level2 font80">
+<h2>Step 3: Data Collection</h2>
+<p><br> <br></p>
+<div class="cle11">
 <ul>
-<li><strong>Independent Sampling:</strong> Ensure that the sample from each stratum is chosen independently using different random sampling methods.</li>
-<li><strong>Choosing Sample Sizes:</strong> Appropriate number of samples from each stratum and ensuring selections from different strata do not influence each other will be covered later.</li>
+<li><strong>Implementation:</strong> Collect data according to the sample sizes and weights determined in Steps 1 and 2.</li>
 </ul>
 </div>
 </section>
-<section id="section" class="slide level2 font60">
+<section id="step-4-estimation-of-population-proportion" class="slide level2 font80">
+<h2>Step 4: Estimation of Population Proportion</h2>
+<div class="cle11">
+<ul>
+<li><strong>Estimator Formula:</strong> <span class="math display">\[
+\hat{p}_{st}=\frac{1}{N}(N_1\hat{p}_1 + N_2\hat{p}_2 + \cdots + N_L\hat{p}_L)
+\]</span></li>
+<li><strong>Variance of Estimator:</strong> <span class="math display">\[
+\hat{V}(\hat{p}_{st})=\frac{1}{N^2} \cdot \sum_{i=1}^L N_i^2\left(1-\frac{n_i}{N_i}\right)\cdot\left(\frac{\hat{p}_i(1-\hat{p}_i)}{n_i-1}\right)
+\]</span></li>
+</ul>
+</div>
+</section>
+<section id="degrees-of-freedom-for-variance-estimation" class="slide level2 font80">
+<h2>Degrees of Freedom for Variance Estimation</h2>
+<div class="cle11">
+<ul>
+<li><strong>Degrees of Freedom Formula:</strong> <span class="math display">\[
+df=\frac{\left(\sum_{i=1}^L a_i p_i(1-p_i)\right)^2}{\sum_{i=1}^L \frac{(a_i p_i(1-p_i))^2}{n_i-1}}
+\]</span></li>
+<li><strong>Importance:</strong> Correct degrees of freedom are crucial for accurate inference and confidence interval construction.</li>
+</ul>
+</div>
+</section>
+<section id="example-1" class="slide level2 font60">
+<h2>Example 1</h2>
+<div class="blockquote">
+<p>An advertising firm wants to estimate the proportion of households viewing TV show X in a county. The county is divided into three strata: town A, town B, and the rural area, containing <span class="math inline">\(N_1=155\)</span>, <span class="math inline">\(N_2=62\)</span>, and <span class="math inline">\(N_3=93\)</span> households, respectively. From a study conducted three years ago, the previous estimates of proportions were <span class="math inline">\(\hat{p}_1^*=0.80\)</span>, <span class="math inline">\(\hat{p}_2^*=0.25\)</span>, and <span class="math inline">\(\hat{p}_3^*=0.50\)</span> (these values are used for selecting sample sizes, not as the current proportions).</p>
+<p><strong>Costs:</strong> The costs of obtaining an observation are <span class="math inline">\(c_1=c_2=9\)</span>, <span class="math inline">\(c_3=16\)</span>.</p>
+<ol type="a">
+<li><p>The firm aims to estimate the population proportion <span class="math inline">\(p\)</span> with a 95% bound on the error of estimation equal to 0.1. The task is to find the total sample size <span class="math inline">\(n\)</span> and the strata sample sizes <span class="math inline">\(n_1\)</span>, <span class="math inline">\(n_2\)</span>, <span class="math inline">\(n_3\)</span> that will achieve the desired bound at minimum cost.</p></li>
+<li><p>Based on the new survey performed with the determined sample sizes, the new sample proportions are <span class="math inline">\(\hat{p}_1=0.78\)</span>, <span class="math inline">\(\hat{p}_2=0.35\)</span>, <span class="math inline">\(\hat{p}_3=0.52\)</span>. Estimate the proportion of households viewing TV show X with a 95% bound on the error of estimation.</p></li>
+</ol>
+</div>
+</section>
+<section id="section" class="slide level2">
 <h2></h2>
-<blockquote>
-<p>Example 1: An advertising agency wants to understand how much focus to give to TV advertising in a specific county. To do this, they plan to survey how many hours households watch TV each week. The county includes two towns-Town A, centered around a factory with many families having schoolage children, and Town B, a wealthier suburb with older residents and fewer children-and a rural area. The numbers of households are 155 in Town A, 62 in Town B, and 93 in the rural area. Analyze the advantages of using stratified random sampling in this scenario.</p>
-</blockquote>
 </section>
 <section id="section-1" class="slide level2">
-<h2></h2>
-</section>
-<section id="section-2" class="slide level2 font60">
-<h2></h2>
-<blockquote>
-<p>Exampe 2: A corporation is evaluating the effectiveness of a new business machine by gathering ratings from its division heads across three regions: North America, Europe, and Asia. To ensure that the ratings are representative and to manage costs effectively, stratified sampling is chosen as the method. The costs of conducting interviews vary by region, and so do the variances in the ratings obtained. The company aims to estimate the average effectiveness rating of the machine with a desired variance in the estimate of <span class="math inline">\(V\left(\bar{y}_{\text {st }}\right)=0.1\)</span>. Determine the optimal sample size <span class="math inline">\(n\)</span> that achieves the variance bound of <span class="math inline">\(V\left(\bar{y}_{\text {st }}\right)=0.1\)</span> and calculate the appropriate allocation of the sample size across the strata based on the Neyman allocation principle, which considers both the stratum variances and the costs associated with sampling each stratum. The following table provides the costs per interview, the variances of the ratings, and the total number of division heads in each region.</p>
-</blockquote>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Stratum</th>
-<th style="text-align: center;">North America</th>
-<th style="text-align: center;">Europe</th>
-<th style="text-align: center;">Asia</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(c\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 9\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 25\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 36\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\sigma^2\)</span></td>
-<td style="text-align: center;">2.25</td>
-<td style="text-align: center;">3.24</td>
-<td style="text-align: center;">3.24</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(N\)</span></td>
-<td style="text-align: center;">112</td>
-<td style="text-align: center;">68</td>
-<td style="text-align: center;">39</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="section-3" class="slide level2">
 <h2></h2>
 
 <div class="quarto-auto-generated-content">
