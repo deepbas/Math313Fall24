@@ -46,7 +46,7 @@ theme_set(theme_tufte(base_size = 10))
 yt <- 0
 ```
 
-## Introduction to Estimating Proportions {.font80}
+## What we learned and what's next? {.font80}
 
 ::: cle15
 
@@ -55,7 +55,7 @@ yt <- 0
   - Ratio
   - Regression
   - Difference
-- Focus on **Ratio Estimation** using a practical example
+- Today: Focus on **Ratio Estimation** using a practical example
 :::
 
 
