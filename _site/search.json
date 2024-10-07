@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< Updated upstream
     "objectID": "index.html",
     "href": "index.html",
     "title": "Math 313: Fall 2024",
@@ -574,6 +575,8 @@
     "text": "Derivations for unknown \\(\\sigma^2\\) (Supplementary)\n\n\n\n\\[\\begin{align*}\n& \\text{Given the margin of error for unknown variance:} \\\\\n& B_{\\bar{y}} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s^2}{n}} \\\\\n& \\text{Simplify and square both sides to isolate } n: \\\\\n& \\frac{B_{\\bar{y}}}{t_{1-\\frac{\\alpha}{2}, n-1}} = \\sqrt{\\frac{N-n}{N} \\cdot \\frac{s^2}{n}} \\\\\n& \\left(\\frac{B_{\\bar{y}}}{t_{1-\\frac{\\alpha}{2}, n-1}}\\right)^2 = \\frac{N-n}{N} \\cdot \\frac{s^2}{n} \\\\\n& \\text{Rearrange to solve for } n: \\\\\n& n \\left(\\frac{B_{\\bar{y}}^2}{t_{1-\\frac{\\alpha}{2}, n-1}^2} + \\frac{s^2}{N}\\right) = s^2 \\\\\n& n = \\frac{s^2}{\\frac{B_{\\bar{y}}^2}{t_{1-\\frac{\\alpha}{2}, n-1}^2} + \\frac{s^2}{N}}\n\\end{align*}\\]"
   },
   {
+=======
+>>>>>>> Stashed changes
     "objectID": "Day17.html#what-we-learned-and-whats-next",
     "href": "Day17.html#what-we-learned-and-whats-next",
     "title": "Day 17",
@@ -642,6 +645,7 @@
     "title": "Day 17",
     "section": "",
     "text": "Example 2: An advertising firm is concerned about the effect of a new regional promotional campaign on the total dollar sales for a particular product. A simple random sample of \\(n=20\\) stores is drawn from the regional stores in which the product is sold. Quarterly sales data are obtained for the current three-month period and the three-month period prior to the new campaign. How to estimate the change?"
+<<<<<<< Updated upstream
   },
   {
     "objectID": "Day7.html#simple-random-sampling",
@@ -1426,5 +1430,7 @@
     "title": "Day 11",
     "section": "",
     "text": "F. Compare the average populations per state between Western and Eastern U.S.A.\n\n\nSolution\n\n\ndelta &lt;- y.bar - x.bar; delta # western - eastern\n\n[1] -6253.45\n\nV.delta &lt;- sy^2/ny + sx^2/nx\ndf &lt;- (sy^2/ny + sx^2/nx)^2/((sy^2/ny)^2/(ny -1) + (sx^2/nx)^2/(nx -1)); df\n\n[1] 13.72751\n\nCI &lt;- delta + c(-1,1)*qt(0.975, df = df-1)*sqrt(V.delta); CI\n\n[1] -9999.12 -2507.78"
+=======
+>>>>>>> Stashed changes
   }
 ]
