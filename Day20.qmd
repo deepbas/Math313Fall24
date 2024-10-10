@@ -210,6 +210,7 @@ cv_2002
 ```{r}
 # Calculate the correlation coefficient
 correlation <- cor(costs$X1994, costs$X2002)
+correlation
 
 # Set the assumed slope of the regression line through the origin
 r <- mean_2002 / mean_1994
