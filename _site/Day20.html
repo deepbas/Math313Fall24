@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.25">
 
   <meta name="author" content="Bastola">
-  <title>Math 313: Survey Design and Sampling – Day 19</title>
+  <title>Math 313: Survey Design and Sampling – Day 20</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -393,7 +393,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="images/lake.jpg" data-background-opacity="0.5" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Day 19</h1>
+  <h1 class="title">Day 20</h1>
   <p class="subtitle">MATH 313: Survey Design and Sampling</p>
 
 <div class="quarto-title-authors">
@@ -405,75 +405,81 @@ Bastola
 </div>
 
 </section>
-<section id="recall-introduction-to-ratio-estimators" class="slide level2 font80">
-<h2>Recall: Introduction to Ratio Estimators</h2>
+<section id="correlation-coefficient-hatrho" class="slide level2 font80">
+<h2>Correlation Coefficient <span class="math inline">\(\hat{\rho}\)</span></h2>
 <div class="cle6">
-<p>Ratio estimators are utilized for their efficiency in estimating population parameters where relationships are proportional. For instance, they can effectively estimate the total sugar content in oranges based on their weight, providing a quick method compared to direct measurements.</p>
-<p>The estimator for the population ratio <span class="math inline">\(R\)</span> is given by: <span class="math display">\[
-r = \frac{\bar{y}}{\bar{x}} = \frac{\sum_{i=1}^n y_i}{\sum_{i=1}^n x_i}
-\]</span> where <span class="math inline">\(\bar{y}\)</span> and <span class="math inline">\(\bar{x}\)</span> are the sample means of sugar content (<span class="math inline">\(y_i\)</span>) and weight (<span class="math inline">\(x_i\)</span>) of oranges respectively.</p>
+<ul>
+<li>Measures the linear relationship strength between two variables.</li>
+<li>Estimated using the Pearson method by default:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Use R's cor() function for Pearson correlation</span></span>
+<span id="cb1-2"><a></a><span class="fu">cor</span>(X, Y)  <span class="co"># X and Y are numeric vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="variance-of-ratio-estimator" class="slide level2 font80">
-<h2>Variance of Ratio Estimator</h2>
+<section id="calculation-of-covariance-and-standard-deviations" class="slide level2 font80">
+<h2>Calculation of Covariance and Standard Deviations</h2>
 <div class="cle6">
-<p>Understanding the variability of our ratio estimator is crucial for assessing the reliability of our sugar content estimations based on orange weights. The estimated variance of <span class="math inline">\(r\)</span>, when <span class="math inline">\(\mu_x\)</span> (mean weight per unit in the population) is known: <span class="math display">\[
-\hat{V}(r) = \left(1-\frac{n}{N}\right) \cdot \left(\frac{1}{\mu_x^2}\right) \cdot \frac{s_r^2}{n}
-\]</span> where <span class="math inline">\(s_r^2 = \frac{\sum_{i=1}^n (y_i - r x_i)^2}{n-1}\)</span>.</p>
-</div>
-</section>
-<section id="ratio-estimator-of-population-total-tau_y" class="slide level2 font80">
-<h2>Ratio Estimator of Population Total <span class="math inline">\(\tau_y\)</span></h2>
-<div class="cle6">
-<p>Estimating the total sugar content efficiently allows businesses to manage their inventory more effectively. <span class="math display">\[
-\hat{\tau}_y = r \cdot \tau_x
-\]</span> <span class="math inline">\(\tau_x = N \mu_x\)</span> represents the total weight of the orange shipment.</p>
-</div>
-</section>
-<section id="variance-of-hattau_y" class="slide level2 font80">
-<h2>Variance of <span class="math inline">\(\hat{\tau}_y\)</span></h2>
-<div class="cle6">
-<p>Quantifying the uncertainty in our total sugar content estimate helps in making informed decisions: <span class="math display">\[
-\hat{V}(\hat{\tau}_y) = \left(N \mu_x\right)^2 \cdot \hat{V}(r) = N^2 \left(1-\frac{n}{N}\right) \cdot \frac{s_r^2}{n}
+<p>Formulae for covariance and standard deviations:</p>
+<p><span class="math display">\[
+s_{xy} = \frac{1}{n-1} \sum_{i=1}^n\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)
+\]</span></p>
+<p><span class="math display">\[
+s_x^2 = \frac{1}{n-1} \sum_{i=1}^n\left(x_i-\bar{x}\right)^2
+\]</span></p>
+<p><span class="math display">\[
+s_y^2 = \frac{1}{n-1} \sum_{i=1}^n\left(y_i-\bar{y}\right)^2
 \]</span></p>
 </div>
 </section>
-<section id="ratio-estimator-of-population-mean-mu_y" class="slide level2 font80">
-<h2>Ratio Estimator of Population Mean <span class="math inline">\(\mu_y\)</span></h2>
+<section id="coefficient-of-variation-cv" class="slide level2 font80">
+<h2>Coefficient of Variation (CV)</h2>
+<div class="cle12">
+<ul>
+<li>Represents the ratio of the standard deviation to the mean.</li>
+<li>Provides a standardized measure of dispersion of a probability distribution or frequency distribution.</li>
+</ul>
+<p><strong>Motivation for using CV</strong>:</p>
+<ul>
+<li>Unlike the standard deviation, the coefficient of variation is unitless. This makes it especially useful when comparing data with different units or vastly different mean values.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Calculate Coefficient of Variation for two variables X and Y</span></span>
+<span id="cb2-2"><a></a>cv_x <span class="ot">&lt;-</span> <span class="fu">sd</span>(X) <span class="sc">/</span> <span class="fu">mean</span>(X)</span>
+<span id="cb2-3"><a></a>cv_y <span class="ot">&lt;-</span> <span class="fu">sd</span>(Y) <span class="sc">/</span> <span class="fu">mean</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="large-sample-confidence-interval-for-ratio-r" class="slide level2 font80">
+<h2>Large-Sample Confidence Interval for Ratio <span class="math inline">\(R\)</span></h2>
 <div class="cle6">
-<p>Ratio estimators also aid in predicting the average sugar content per orange, which is vital for quality control. <span class="math display">\[
-\hat{\mu}_y = r \cdot \mu_x
+<p>Approximate <span class="math inline">\(90\%\)</span> confidence interval for <span class="math inline">\(R\)</span>:</p>
+<p><span class="math display">\[
+r \pm 1.645 \sqrt{\hat{V}(r)}
+\]</span></p>
+<p>Where <span class="math inline">\(\hat{V}(r)\)</span> is the estimated variance of <span class="math inline">\(r\)</span>, in terms of <span class="math inline">\(\hat{\rho}\)</span>:</p>
+<p><span class="math display">\[
+\hat{V}(r) = \frac{1-f}{n} r^2 \left((\operatorname{cv}(y))^2 + (\operatorname{cv}(x))^2 - 2 \hat{\rho} \cdot \operatorname{cv}(x) \cdot \operatorname{cv}(y)\right)
 \]</span></p>
 </div>
 </section>
-<section id="variance-and-confidence-interval" class="slide level2 font80">
-<h2>Variance and Confidence Interval</h2>
-<div class="cle6">
-<p>Providing confidence intervals around our estimates assures stakeholders of the precision of our sugar content assessments: <span class="math display">\[
-\hat{V}(\hat{\mu}_y) = \mu_x^2 \cdot \hat{V}(r) = \left(1-\frac{n}{N}\right) \cdot \frac{s_r^2}{n}
-\]</span> <span class="math display">\[
-\hat{\mu}_y \pm t_{1-\frac{\alpha}{2}, n-1} \cdot \sqrt{\hat{V}(\hat{\mu}_y)}
-\]</span></p>
-</div>
-</section>
-<section id="section" class="slide level2 font50">
+<section id="section" class="slide level2 font40">
 <h2></h2>
 <blockquote>
-<p>Example 1: (Textbook Ex 6.1) A forester is interested in estimating the total volume of trees in a timber sale. He records the volume for each tree in a simple random sample. In addition, he measures the basal area for each tree marked for sale. He then uses a ratio estimator of total volume. The forester decides to take a simple random sample of <span class="math inline">\(n=12\)</span> from the <span class="math inline">\(N=250\)</span> trees marked for sale. Let <span class="math inline">\(x\)</span> denote basal area and <span class="math inline">\(y\)</span> the cubic-foot volume for a tree. The total basal area for all 250 trees, <span class="math inline">\(\tau_x\)</span>, is 75 square feet. Use the data in the accompanying table to estimate <span class="math inline">\(\tau_y\)</span>, the total cubic-foot volume for those trees marked for sale, and place a bound on the error of estimation.</p>
+<p>Example 1: The U.S. government’s American Housing Survey keeps tabs on many aspects of the characteristics of housing in America, including monthly costs for home ownership and the value of houses. One aspect of the survey tracks 47 metropolitan statistical areas (MSAs) over time by sampling a subset of them every four years or so. The survey for 2002 sampled the 13 MSAs listed in Table 6.1. Also listed there are the typical monthly costs of home ownership (not including maintenance) for 2002 and 1994 as well as the typical values of houses in those two years, respectively. These data are for owner-occupied houses only. Use these data to estimate <span class="math inline">\(R\)</span>, the ratio of mean typical monthly costs for 2002 as compared to those of 1994 for all 47 MSAs and calculate an appropriate margin of error.</p>
 </blockquote>
-
-<img data-src="images/Day19-1.png" class="r-stretch"></section>
-<section id="section-1" class="slide level2">
+<div style="text-align: center;">
+<p><img src="images/housing.png" style="width: 60%;"></p>
+</div>
+</section>
+<section id="section-1" class="slide level2 font80">
 <h2></h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Scatter-plot</a></li><li><a href="#tabset-1-2">R-code</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Scatter-plot</a></li><li><a href="#tabset-1-2">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="Day19_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+<p><img data-src="Day20_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -481,46 +487,104 @@ r = \frac{\bar{y}}{\bar{x}} = \frac{\sum_{i=1}^n y_i}{\sum_{i=1}^n x_i}
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-4"><a></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,</span>
-<span id="cb1-5"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.4</span>, <span class="fl">0.9</span>, <span class="fl">0.7</span>, <span class="fl">0.2</span>, <span class="fl">0.6</span>, <span class="fl">0.5</span>, <span class="fl">0.8</span>, <span class="fl">0.4</span>, <span class="fl">0.8</span>, <span class="fl">0.6</span>),</span>
-<span id="cb1-6"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">19</span>, <span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">12</span>, <span class="dv">9</span>, <span class="dv">20</span>, <span class="dv">9</span>, <span class="dv">18</span>, <span class="dv">13</span>)</span>
-<span id="cb1-7"><a></a>)</span>
-<span id="cb1-8"><a></a></span>
-<span id="cb1-9"><a></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb1-10"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb1-11"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb1-12"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Scatterplot of Volume vs. Basal Area"</span>,</span>
-<span id="cb1-13"><a></a>       <span class="at">x =</span> <span class="st">"Basal Area"</span>, <span class="at">y =</span> <span class="st">"Volume"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>costs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-2"><a></a>  <span class="at">MSA =</span> <span class="fu">c</span>(<span class="st">"Anaheim-Santa Ana, CA"</span>, <span class="st">"Buffalo, NY"</span>, <span class="st">"Charlotte, NC-SC"</span>, <span class="st">"Columbus, OH"</span>,</span>
+<span id="cb3-3"><a></a>          <span class="st">"Dallas, TX"</span>, <span class="st">"Fort Worth-Arlington, TX"</span>, <span class="st">"Kansas City, MO-KS"</span>, <span class="st">"Miami-Fort Lauderdale, FL"</span>,</span>
+<span id="cb3-4"><a></a>          <span class="st">"Milwaukee, WI"</span>, <span class="st">"Phoenix, AS"</span>, <span class="st">"Portland, OR-WA"</span>, <span class="st">"Riverside-San Bernardino-Ontario, CA"</span>, <span class="st">"San Diego, CA"</span>),</span>
+<span id="cb3-5"><a></a>  <span class="at">X1994 =</span> <span class="fu">c</span>(<span class="dv">1087</span>, <span class="dv">571</span>, <span class="dv">518</span>, <span class="dv">612</span>, <span class="dv">770</span>, <span class="dv">655</span>, <span class="dv">552</span>, <span class="dv">710</span>, <span class="dv">656</span>, <span class="dv">636</span>, <span class="dv">676</span>, <span class="dv">773</span>, <span class="dv">829</span>),</span>
+<span id="cb3-6"><a></a>  <span class="at">X2002 =</span> <span class="fu">c</span>(<span class="dv">1363</span>, <span class="dv">670</span>, <span class="dv">761</span>, <span class="dv">746</span>, <span class="dv">991</span>, <span class="dv">798</span>, <span class="dv">728</span>, <span class="dv">842</span>, <span class="dv">849</span>, <span class="dv">885</span>, <span class="dv">986</span>, <span class="dv">934</span>, <span class="dv">1167</span>)</span>
+<span id="cb3-7"><a></a>)</span>
+<span id="cb3-8"><a></a></span>
+<span id="cb3-9"><a></a>correlation_coefficient <span class="ot">&lt;-</span> <span class="fu">cor</span>(costs<span class="sc">$</span>X1994, costs<span class="sc">$</span>X2002)</span>
+<span id="cb3-10"><a></a></span>
+<span id="cb3-11"><a></a><span class="fu">ggplot</span>(costs, <span class="fu">aes</span>(<span class="at">x =</span> X1994, <span class="at">y =</span> X2002)) <span class="sc">+</span></span>
+<span id="cb3-12"><a></a>  <span class="fu">geom_point</span>(<span class="at">pch =</span> <span class="dv">3</span>) <span class="sc">+</span>  </span>
+<span id="cb3-13"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x <span class="sc">-</span> <span class="dv">1</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb3-14"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Regression Through Origin and Specific Point"</span>,</span>
+<span id="cb3-15"><a></a>       <span class="at">x =</span> <span class="st">"Typical Cost per Month in 1994"</span>,</span>
+<span id="cb3-16"><a></a>       <span class="at">y =</span> <span class="st">"Typical Cost per Month in 2002"</span>) <span class="sc">+</span></span>
+<span id="cb3-17"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="cn">Inf</span>, <span class="at">y =</span> <span class="cn">Inf</span>, <span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">"Correlation: %.2f"</span>, correlation_coefficient), </span>
+<span id="cb3-18"><a></a>           <span class="at">hjust =</span> <span class="fl">1.05</span>, <span class="at">vjust =</span> <span class="fl">1.05</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">angle =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-</section>
-<section id="section-3" class="slide level2 font50">
+<section id="section-2" class="slide level2 font60">
 <h2></h2>
 <blockquote>
-<p>Example 2: (Textbook Ex 6.4) A corporation is interested in estimating the total earnings from sales of color television sets at the end of a three-month period. The total earnings figures are available for all districts within the corporation for the corresponding three-month period of the previous year. A simple random sample of 13 district offices is selected from the 123 offices within the corporation. Using a ratio estimator, estimate <span class="math inline">\(\tau_y\)</span> and place a bound on the error of estimation. Use the data in the accompanying table and take <span class="math inline">\(\tau_x=128,200\)</span></p>
+<p>Calculate an approximate <span class="math inline">\(90\%\)</span> confidence interval for the ratio <span class="math inline">\(R\)</span> using the correlation coefficient from the above example.</p>
 </blockquote>
-
-<img data-src="images/Day19-2.png" class="r-stretch"></section>
-<section id="section-4" class="slide level2">
-<h2></h2>
 </section>
-<section id="section-5" class="slide level2 font50">
+<section id="section-3" class="slide level2 font80">
 <h2></h2>
-<blockquote>
-<p>Example 3: (Textbook Ex 6.6) An investigator has a colony of <span class="math inline">\(N=763\)</span> rats that have been subjected to a standard drug. The average length of time to thread a maze correctly under the influence of the standard drug was found to be <span class="math inline">\(\mu_x=17.2\)</span> seconds. The investigator now would like to subject a random sample of 11 rats to a new drug. Estimate the average time required to thread the maze while under the influence of the new drug. (The data are shown in the accompanying table.) Place a bound on the error of estimation.</p>
-</blockquote>
-
-<img data-src="images/Day19-3.png" class="r-stretch"></section>
-<section id="section-6" class="slide level2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Calculate means</span></span>
+<span id="cb4-2"><a></a>mean_1994 <span class="ot">&lt;-</span> <span class="fu">mean</span>(costs<span class="sc">$</span>X1994)</span>
+<span id="cb4-3"><a></a>mean_1994</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 695.7692</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>mean_2002 <span class="ot">&lt;-</span> <span class="fu">mean</span>(costs<span class="sc">$</span>X2002)</span>
+<span id="cb6-2"><a></a>mean_2002</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 901.5385</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># Calculate standard deviations</span></span>
+<span id="cb8-2"><a></a>sd_1994 <span class="ot">&lt;-</span> <span class="fu">sd</span>(costs<span class="sc">$</span>X1994)</span>
+<span id="cb8-3"><a></a>sd_1994</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 148.479</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>sd_2002 <span class="ot">&lt;-</span> <span class="fu">sd</span>(costs<span class="sc">$</span>X2002)</span>
+<span id="cb10-2"><a></a>sd_2002</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 192.4784</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># Calculate coefficients of variation</span></span>
+<span id="cb12-2"><a></a>cv_1994 <span class="ot">&lt;-</span> sd_1994 <span class="sc">/</span> mean_1994</span>
+<span id="cb12-3"><a></a>cv_1994</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2134027</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>cv_2002 <span class="ot">&lt;-</span> sd_2002 <span class="sc">/</span> mean_2002</span>
+<span id="cb14-2"><a></a>cv_2002</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2134999</code></pre>
+</div>
+</div>
+</section>
+<section id="section-4" class="slide level2 font80">
 <h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># Calculate the correlation coefficient</span></span>
+<span id="cb16-2"><a></a>correlation <span class="ot">&lt;-</span> <span class="fu">cor</span>(costs<span class="sc">$</span>X1994, costs<span class="sc">$</span>X2002)</span>
+<span id="cb16-3"><a></a></span>
+<span id="cb16-4"><a></a><span class="co"># Set the assumed slope of the regression line through the origin</span></span>
+<span id="cb16-5"><a></a>r <span class="ot">&lt;-</span> mean_2002 <span class="sc">/</span> mean_1994</span>
+<span id="cb16-6"><a></a>r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.295744</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># Sample size</span></span>
+<span id="cb18-2"><a></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(costs<span class="sc">$</span>X1994)</span>
+<span id="cb18-3"><a></a></span>
+<span id="cb18-4"><a></a><span class="co"># No sampling fraction in this context</span></span>
+<span id="cb18-5"><a></a>f <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb18-6"><a></a></span>
+<span id="cb18-7"><a></a><span class="co"># Variance calculation </span></span>
+<span id="cb18-8"><a></a>var_r <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">-</span> f) <span class="sc">/</span> n) <span class="sc">*</span> r<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (cv_2002<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> cv_1994<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> </span>
+<span id="cb18-9"><a></a>                              <span class="dv">2</span> <span class="sc">*</span> correlation <span class="sc">*</span> cv_1994 <span class="sc">*</span> cv_2002)</span>
+<span id="cb18-10"><a></a></span>
+<span id="cb18-11"><a></a><span class="co"># Calculate the confidence interval at 90% confidence level</span></span>
+<span id="cb18-12"><a></a>z <span class="ot">&lt;-</span> <span class="fl">1.645</span>  <span class="co"># z-value for 90% CI</span></span>
+<span id="cb18-13"><a></a>ci_lower <span class="ot">&lt;-</span> r <span class="sc">-</span> z <span class="sc">*</span> <span class="fu">sqrt</span>(var_r)</span>
+<span id="cb18-14"><a></a>ci_upper <span class="ot">&lt;-</span> r <span class="sc">+</span> z <span class="sc">*</span> <span class="fu">sqrt</span>(var_r)</span>
+<span id="cb18-15"><a></a><span class="fu">c</span>(ci_lower, ci_upper)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.251310 1.340177</code></pre>
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

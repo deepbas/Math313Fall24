@@ -336,15 +336,22 @@
     "text": "Example 1: (Textbook Ex 6.1) A forester is interested in estimating the total volume of trees in a timber sale. He records the volume for each tree in a simple random sample. In addition, he measures the basal area for each tree marked for sale. He then uses a ratio estimator of total volume. The forester decides to take a simple random sample of \\(n=12\\) from the \\(N=250\\) trees marked for sale. Let \\(x\\) denote basal area and \\(y\\) the cubic-foot volume for a tree. The total basal area for all 250 trees, \\(\\tau_x\\), is 75 square feet. Use the data in the accompanying table to estimate \\(\\tau_y\\), the total cubic-foot volume for those trees marked for sale, and place a bound on the error of estimation."
   },
   {
-    "objectID": "Day19.html#section-2",
-    "href": "Day19.html#section-2",
+    "objectID": "Day19.html#section-1",
+    "href": "Day19.html#section-1",
+    "title": "Day 19",
+    "section": "",
+    "text": "Scatter-plotR-code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(ggplot2)\n\ndata &lt;- data.frame(\n  id = 1:12,\n  x = c(0.3, 0.5, 0.4, 0.9, 0.7, 0.2, 0.6, 0.5, 0.8, 0.4, 0.8, 0.6),\n  y = c(6, 9, 7, 19, 15, 5, 12, 9, 20, 9, 18, 13)\n)\n\nggplot(data, aes(x = x, y = y)) +\n  geom_point() + \n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Scatterplot of Volume vs. Basal Area\",\n       x = \"Basal Area\", y = \"Volume\")"
+  },
+  {
+    "objectID": "Day19.html#section-3",
+    "href": "Day19.html#section-3",
     "title": "Day 19",
     "section": "",
     "text": "Example 2: (Textbook Ex 6.4) A corporation is interested in estimating the total earnings from sales of color television sets at the end of a three-month period. The total earnings figures are available for all districts within the corporation for the corresponding three-month period of the previous year. A simple random sample of 13 district offices is selected from the 123 offices within the corporation. Using a ratio estimator, estimate \\(\\tau_y\\) and place a bound on the error of estimation. Use the data in the accompanying table and take \\(\\tau_x=128,200\\)"
   },
   {
-    "objectID": "Day19.html#section-4",
-    "href": "Day19.html#section-4",
+    "objectID": "Day19.html#section-5",
+    "href": "Day19.html#section-5",
     "title": "Day 19",
     "section": "",
     "text": "Example 3: (Textbook Ex 6.6) An investigator has a colony of \\(N=763\\) rats that have been subjected to a standard drug. The average length of time to thread a maze correctly under the influence of the standard drug was found to be \\(\\mu_x=17.2\\) seconds. The investigator now would like to subject a random sample of 11 rats to a new drug. Estimate the average time required to thread the maze while under the influence of the new drug. (The data are shown in the accompanying table.) Place a bound on the error of estimation."
@@ -637,6 +644,118 @@
     "text": "Once the sample size is determined, simulate survey data assuming the estimated proportion is accurate, then compute the 95% confidence interval for the population proportion based on the sample data.\n\n\nClick for answer\n\n\n\n# Load necessary library\nlibrary(stats)\nset.seed(123)\n# Given values\np_hat &lt;- 0.45\nq_hat &lt;- 1 - p_hat\nN &lt;- 100000\nB_p &lt;- 0.05\nz &lt;- qnorm(0.975)  # Z-value for 95% confidence\n\n# Calculating sample size\nn &lt;- N * p_hat * q_hat / ((N - 1) * (B_p / z)^2 + p_hat * q_hat)\nn &lt;- ceiling(n)\n\n# Set seed for reproducibility\nset.seed(42)\n\n# Simulate survey data\nsurvey_responses &lt;- rbinom(n, size = 1, prob = p_hat)\nsample_p_hat &lt;- mean(survey_responses)\nsample_q_hat &lt;- 1 - sample_p_hat\nt &lt;- qt(0.975, df = n-1)\n# Calculate the standard error and confidence interval\nstandard_error &lt;- sqrt((1 - n/N)*sample_p_hat * sample_q_hat / (n - 1))\nconfidence_interval &lt;- c(sample_p_hat - t * standard_error, sample_p_hat + t * standard_error)\n\n# Output results\nlist(sample_size = n, confidence_interval = confidence_interval)\n\n$sample_size\n[1] 379\n\n$confidence_interval\n[1] 0.3827059 0.4827295\n\n\nBased on the simulated survey data, the 95% confidence interval for the proportion of residents willing to participate in the health program is approximately (0.391, 0.491)."
   },
   {
+    "objectID": "Day20.html#correlation-coefficient-hatrho",
+    "href": "Day20.html#correlation-coefficient-hatrho",
+    "title": "Day 20",
+    "section": "Correlation Coefficient \\(\\hat{\\rho}\\)",
+    "text": "Correlation Coefficient \\(\\hat{\\rho}\\)\n\n\nMeasures the linear relationship strength between two variables.\nEstimated using the Pearson method by default:\n\n# Use R's cor() function for Pearson correlation\ncor(X, Y)  # X and Y are numeric vector"
+  },
+  {
+    "objectID": "Day20.html#calculation-of-covariance-and-standard-deviations",
+    "href": "Day20.html#calculation-of-covariance-and-standard-deviations",
+    "title": "Day 20",
+    "section": "Calculation of Covariance and Standard Deviations",
+    "text": "Calculation of Covariance and Standard Deviations\n\nFormulae for covariance and standard deviations:\n\\[\ns_{xy} = \\frac{1}{n-1} \\sum_{i=1}^n\\left(x_i-\\bar{x}\\right)\\left(y_i-\\bar{y}\\right)\n\\]\n\\[\ns_x^2 = \\frac{1}{n-1} \\sum_{i=1}^n\\left(x_i-\\bar{x}\\right)^2\n\\]\n\\[\ns_y^2 = \\frac{1}{n-1} \\sum_{i=1}^n\\left(y_i-\\bar{y}\\right)^2\n\\]"
+  },
+  {
+    "objectID": "Day20.html#coefficient-of-variation-cv",
+    "href": "Day20.html#coefficient-of-variation-cv",
+    "title": "Day 20",
+    "section": "Coefficient of Variation (CV)",
+    "text": "Coefficient of Variation (CV)\n\n\nRepresents the ratio of the standard deviation to the mean.\nProvides a standardized measure of dispersion of a probability distribution or frequency distribution.\n\nMotivation for using CV:\n\nUnlike the standard deviation, the coefficient of variation is unitless. This makes it especially useful when comparing data with different units or vastly different mean values.\n\n# Calculate Coefficient of Variation for two variables X and Y\ncv_x &lt;- sd(X) / mean(X)\ncv_y &lt;- sd(Y) / mean(Y)"
+  },
+  {
+    "objectID": "Day20.html#large-sample-confidence-interval-for-ratio-r",
+    "href": "Day20.html#large-sample-confidence-interval-for-ratio-r",
+    "title": "Day 20",
+    "section": "Large-Sample Confidence Interval for Ratio \\(R\\)",
+    "text": "Large-Sample Confidence Interval for Ratio \\(R\\)\n\nApproximate \\(90\\%\\) confidence interval for \\(R\\):\n\\[\nr \\pm 1.645 \\sqrt{\\hat{V}(r)}\n\\]\nWhere \\(\\hat{V}(r)\\) is the estimated variance of \\(r\\), in terms of \\(\\hat{\\rho}\\):\n\\[\n\\hat{V}(r) = \\frac{1-f}{n} r^2 \\left((\\operatorname{cv}(y))^2 + (\\operatorname{cv}(x))^2 - 2 \\hat{\\rho} \\cdot \\operatorname{cv}(x) \\cdot \\operatorname{cv}(y)\\right)\n\\]"
+  },
+  {
+    "objectID": "Day20.html#section",
+    "href": "Day20.html#section",
+    "title": "Day 20",
+    "section": "",
+    "text": "Example 1: The U.S. government’s American Housing Survey keeps tabs on many aspects of the characteristics of housing in America, including monthly costs for home ownership and the value of houses. One aspect of the survey tracks 47 metropolitan statistical areas (MSAs) over time by sampling a subset of them every four years or so. The survey for 2002 sampled the 13 MSAs listed in Table 6.1. Also listed there are the typical monthly costs of home ownership (not including maintenance) for 2002 and 1994 as well as the typical values of houses in those two years, respectively. These data are for owner-occupied houses only. Use these data to estimate \\(R\\), the ratio of mean typical monthly costs for 2002 as compared to those of 1994 for all 47 MSAs and calculate an appropriate margin of error."
+  },
+  {
+    "objectID": "Day20.html#section-1",
+    "href": "Day20.html#section-1",
+    "title": "Day 20",
+    "section": "",
+    "text": "Scatter-plotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncosts &lt;- data.frame(\n  MSA = c(\"Anaheim-Santa Ana, CA\", \"Buffalo, NY\", \"Charlotte, NC-SC\", \"Columbus, OH\",\n          \"Dallas, TX\", \"Fort Worth-Arlington, TX\", \"Kansas City, MO-KS\", \"Miami-Fort Lauderdale, FL\",\n          \"Milwaukee, WI\", \"Phoenix, AS\", \"Portland, OR-WA\", \"Riverside-San Bernardino-Ontario, CA\", \"San Diego, CA\"),\n  X1994 = c(1087, 571, 518, 612, 770, 655, 552, 710, 656, 636, 676, 773, 829),\n  X2002 = c(1363, 670, 761, 746, 991, 798, 728, 842, 849, 885, 986, 934, 1167)\n)\n\ncorrelation_coefficient &lt;- cor(costs$X1994, costs$X2002)\n\nggplot(costs, aes(x = X1994, y = X2002)) +\n  geom_point(pch = 3) +  \n  geom_smooth(method = \"lm\", formula = y ~ x - 1, se = FALSE, color = \"blue\") +\n  labs(title = \"Regression Through Origin and Specific Point\",\n       x = \"Typical Cost per Month in 1994\",\n       y = \"Typical Cost per Month in 2002\") +\n  annotate(\"text\", x = Inf, y = Inf, label = sprintf(\"Correlation: %.2f\", correlation_coefficient), \n           hjust = 1.05, vjust = 1.05, size = 5, color = \"red\", fontface = \"bold\", angle = 0)"
+  },
+  {
+    "objectID": "Day20.html#section-2",
+    "href": "Day20.html#section-2",
+    "title": "Day 20",
+    "section": "",
+    "text": "Calculate an approximate \\(90\\%\\) confidence interval for the ratio \\(R\\) using the correlation coefficient from the above example."
+  },
+  {
+    "objectID": "Day20.html#section-3",
+    "href": "Day20.html#section-3",
+    "title": "Day 20",
+    "section": "",
+    "text": "# Calculate means\nmean_1994 &lt;- mean(costs$X1994)\nmean_1994\n\n[1] 695.7692\n\nmean_2002 &lt;- mean(costs$X2002)\nmean_2002\n\n[1] 901.5385\n\n# Calculate standard deviations\nsd_1994 &lt;- sd(costs$X1994)\nsd_1994\n\n[1] 148.479\n\nsd_2002 &lt;- sd(costs$X2002)\nsd_2002\n\n[1] 192.4784\n\n# Calculate coefficients of variation\ncv_1994 &lt;- sd_1994 / mean_1994\ncv_1994\n\n[1] 0.2134027\n\ncv_2002 &lt;- sd_2002 / mean_2002\ncv_2002\n\n[1] 0.2134999"
+  },
+  {
+    "objectID": "Day20.html#section-4",
+    "href": "Day20.html#section-4",
+    "title": "Day 20",
+    "section": "",
+    "text": "# Calculate the correlation coefficient\ncorrelation &lt;- cor(costs$X1994, costs$X2002)\n\n# Set the assumed slope of the regression line through the origin\nr &lt;- mean_2002 / mean_1994\nr\n\n[1] 1.295744\n\n# Sample size\nn &lt;- length(costs$X1994)\n\n# No sampling fraction in this context\nf &lt;- 0\n\n# Variance calculation \nvar_r &lt;- ((1 - f) / n) * r^2 * (cv_2002^2 + cv_1994^2 - \n                              2 * correlation * cv_1994 * cv_2002)\n\n# Calculate the confidence interval at 90% confidence level\nz &lt;- 1.645  # z-value for 90% CI\nci_lower &lt;- r - z * sqrt(var_r)\nci_upper &lt;- r + z * sqrt(var_r)\nc(ci_lower, ci_upper)\n\n[1] 1.251310 1.340177"
+  },
+  {
+    "objectID": "RandRStudio.html",
+    "href": "RandRStudio.html",
+    "title": "Setting Up R and RStudio",
+    "section": "",
+    "text": "This lab tutorial will guide you through installing R and RStudio on your computer, managing packages, and loading data into R. This setup is essential for performing all kinds of data analysis tasks in R."
+  },
+  {
+    "objectID": "RandRStudio.html#on-windows",
+    "href": "RandRStudio.html#on-windows",
+    "title": "Setting Up R and RStudio",
+    "section": "On Windows",
+    "text": "On Windows\n\n\nDownload R:\n\nVisit CRAN and download the latest version of R for Windows.\nRun the downloaded .exe file and follow the installation instructions.\n\n\n\nDownload RStudio:\n\nGo to the RStudio Download page and download the free version of RStudio Desktop for Windows.\nInstall it by running the downloaded .exe file."
+  },
+  {
+    "objectID": "RandRStudio.html#on-mac",
+    "href": "RandRStudio.html#on-mac",
+    "title": "Setting Up R and RStudio",
+    "section": "On Mac",
+    "text": "On Mac\n\n\nDownload R:\n\nNavigate to CRAN and choose the version for macOS.\nOpen the downloaded .pkg file to start the installation.\n\n\n\nDownload RStudio:\n\nVisit RStudio Download page and select RStudio for macOS.\nOpen the downloaded .dmg file and drag RStudio to your Applications folder."
+  },
+  {
+    "objectID": "RandRStudio.html#understanding-r-markdown-documents",
+    "href": "RandRStudio.html#understanding-r-markdown-documents",
+    "title": "Setting Up R and RStudio",
+    "section": "Understanding R Markdown Documents",
+    "text": "Understanding R Markdown Documents\nR Markdown allows you to integrate code and text in the same document, facilitating reproducible research and interactive data analysis reports. Here’s a quick overview:"
+  },
+  {
+    "objectID": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
+    "href": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
+    "title": "Setting Up R and RStudio",
+    "section": "Managing .Rmd Files and Setting the Working Directory",
+    "text": "Managing .Rmd Files and Setting the Working Directory\nDownloading and Organizing .Rmd Files\nTo effectively manage your course materials in RStudio, follow these steps:\n\n\nDownload .Rmd File:\n\nNavigate to MyClasses and locate the desired .Rmd file for your course.\nDownload the file to your local machine.\n\n\n\nCreate a Course Folder:\n\nCreate a new folder named math216 in a suitable location on your computer or within your RStudio account.\n\n\n\nOrganize Files:\n\nMove the downloaded .Rmd file into the math216 folder to keep your course materials organized.\n\n\nText Portions\nText in R Markdown is written using standard markdown syntax. This allows you to add headers, lists, links, and other styling features to create dynamic reports."
+  },
+  {
+    "objectID": "RandRStudio.html#text-formatting-in-r-markdown",
+    "href": "RandRStudio.html#text-formatting-in-r-markdown",
+    "title": "Setting Up R and RStudio",
+    "section": "Text Formatting in R Markdown",
+    "text": "Text Formatting in R Markdown\nMarkdown is a lightweight markup language that allows you to add formatting elements using plain text. Here’s how you can use different Markdown syntax to format text within your R Markdown documents.\nHeaders\nCreate headers by prefixing the text with one or more hash symbols (#). The number of # symbols before the text determines the level of the header.\n# Header 1\n## Header 2\n### Header 3\nLists\nYou can create bulleted or numbered lists:\n\n\nUnordered Lists (bullets):\n\n- Item 1\n- Item 2\n  - Subitem 1\n  - Subitem 2\n\n\nOrdered Lists:\n\n1. First item\n2. Second item\n   1. Subitem 1\n   2. Subitem 2\nLinks\nInclude hyperlinks using the format [link text](URL):\n[Visit Canvas](https://salisbury.instructure.com/courses/66117)\nEmphasis\nItalicize or bold text using asterisks or underscores:\n\n\nItalic: *Italic* or _Italic_\n\n\nBold: **Bold** or __Bold__\n\nImages\nEmbed images using the format ![Alt text](image_URL \"Optional Title\"):\n![Example Image](path_to_image.jpg \"This is an image\")\nBlockquotes\nCreate blockquotes with &gt;:\n&gt; This is a blockquote.\nCode\nDisplay inline code with backticks and code blocks with triple backticks:\n\nInline code: `code`\n\nCode block:\n\n\\```\nThis is a code block\n\\```\nHorizontal Rules\nInsert a horizontal line with three or more hyphens:\n---\nCombining Markdown with R Code\nMarkdown can be interleaved with executable R code chunks:\n\n# Calculate the sum of numbers from 1 to 10\nsum(1:10)\n\n[1] 55"
+  },
+  {
+    "objectID": "RandRStudio.html#r-code-chunk-options",
+    "href": "RandRStudio.html#r-code-chunk-options",
+    "title": "Setting Up R and RStudio",
+    "section": "R Code Chunk Options",
+    "text": "R Code Chunk Options\nBefore diving into data loading, let’s understand important R chunk options:\n\n\neval: Use eval=FALSE to prevent code from running but still display it.\n\necho: With echo=FALSE, the code is run but not displayed in the document.\n\ninclude: include=FALSE runs the code and hides both the code and output from the final output.\n\nExample to demonstrate:\n\n# This code will run, and both code and output will appear in the document.\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
+  },
+  {
     "objectID": "Day6.html#population-probability-calculation",
     "href": "Day6.html#population-probability-calculation",
     "title": "Day 6",
@@ -726,55 +845,6 @@
     "title": "Day 6",
     "section": "Simple Random Sampling in Action: Nielsen Ratings",
     "text": "Simple Random Sampling in Action: Nielsen Ratings\n\n\n\nApplication:\n\nNielsen uses a form of SRS to measure television viewership across the U.S.\n\nProcess:\n\nRandomly selects households to install People Meters.\nCollects and processes viewership data to provide ratings.\n\nImpact:\n\nRatings influence TV programming and advertising decisions globally.\n\n\n\n\n\nShowcase the practical application of SRS in Nielsen’s methodology, emphasizing its influence on the television industry."
-  },
-  {
-    "objectID": "RandRStudio.html",
-    "href": "RandRStudio.html",
-    "title": "Setting Up R and RStudio",
-    "section": "",
-    "text": "This lab tutorial will guide you through installing R and RStudio on your computer, managing packages, and loading data into R. This setup is essential for performing all kinds of data analysis tasks in R."
-  },
-  {
-    "objectID": "RandRStudio.html#on-windows",
-    "href": "RandRStudio.html#on-windows",
-    "title": "Setting Up R and RStudio",
-    "section": "On Windows",
-    "text": "On Windows\n\n\nDownload R:\n\nVisit CRAN and download the latest version of R for Windows.\nRun the downloaded .exe file and follow the installation instructions.\n\n\n\nDownload RStudio:\n\nGo to the RStudio Download page and download the free version of RStudio Desktop for Windows.\nInstall it by running the downloaded .exe file."
-  },
-  {
-    "objectID": "RandRStudio.html#on-mac",
-    "href": "RandRStudio.html#on-mac",
-    "title": "Setting Up R and RStudio",
-    "section": "On Mac",
-    "text": "On Mac\n\n\nDownload R:\n\nNavigate to CRAN and choose the version for macOS.\nOpen the downloaded .pkg file to start the installation.\n\n\n\nDownload RStudio:\n\nVisit RStudio Download page and select RStudio for macOS.\nOpen the downloaded .dmg file and drag RStudio to your Applications folder."
-  },
-  {
-    "objectID": "RandRStudio.html#understanding-r-markdown-documents",
-    "href": "RandRStudio.html#understanding-r-markdown-documents",
-    "title": "Setting Up R and RStudio",
-    "section": "Understanding R Markdown Documents",
-    "text": "Understanding R Markdown Documents\nR Markdown allows you to integrate code and text in the same document, facilitating reproducible research and interactive data analysis reports. Here’s a quick overview:"
-  },
-  {
-    "objectID": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
-    "href": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
-    "title": "Setting Up R and RStudio",
-    "section": "Managing .Rmd Files and Setting the Working Directory",
-    "text": "Managing .Rmd Files and Setting the Working Directory\nDownloading and Organizing .Rmd Files\nTo effectively manage your course materials in RStudio, follow these steps:\n\n\nDownload .Rmd File:\n\nNavigate to MyClasses and locate the desired .Rmd file for your course.\nDownload the file to your local machine.\n\n\n\nCreate a Course Folder:\n\nCreate a new folder named math216 in a suitable location on your computer or within your RStudio account.\n\n\n\nOrganize Files:\n\nMove the downloaded .Rmd file into the math216 folder to keep your course materials organized.\n\n\nText Portions\nText in R Markdown is written using standard markdown syntax. This allows you to add headers, lists, links, and other styling features to create dynamic reports."
-  },
-  {
-    "objectID": "RandRStudio.html#text-formatting-in-r-markdown",
-    "href": "RandRStudio.html#text-formatting-in-r-markdown",
-    "title": "Setting Up R and RStudio",
-    "section": "Text Formatting in R Markdown",
-    "text": "Text Formatting in R Markdown\nMarkdown is a lightweight markup language that allows you to add formatting elements using plain text. Here’s how you can use different Markdown syntax to format text within your R Markdown documents.\nHeaders\nCreate headers by prefixing the text with one or more hash symbols (#). The number of # symbols before the text determines the level of the header.\n# Header 1\n## Header 2\n### Header 3\nLists\nYou can create bulleted or numbered lists:\n\n\nUnordered Lists (bullets):\n\n- Item 1\n- Item 2\n  - Subitem 1\n  - Subitem 2\n\n\nOrdered Lists:\n\n1. First item\n2. Second item\n   1. Subitem 1\n   2. Subitem 2\nLinks\nInclude hyperlinks using the format [link text](URL):\n[Visit Canvas](https://salisbury.instructure.com/courses/66117)\nEmphasis\nItalicize or bold text using asterisks or underscores:\n\n\nItalic: *Italic* or _Italic_\n\n\nBold: **Bold** or __Bold__\n\nImages\nEmbed images using the format ![Alt text](image_URL \"Optional Title\"):\n![Example Image](path_to_image.jpg \"This is an image\")\nBlockquotes\nCreate blockquotes with &gt;:\n&gt; This is a blockquote.\nCode\nDisplay inline code with backticks and code blocks with triple backticks:\n\nInline code: `code`\n\nCode block:\n\n\\```\nThis is a code block\n\\```\nHorizontal Rules\nInsert a horizontal line with three or more hyphens:\n---\nCombining Markdown with R Code\nMarkdown can be interleaved with executable R code chunks:\n\n# Calculate the sum of numbers from 1 to 10\nsum(1:10)\n\n[1] 55"
-  },
-  {
-    "objectID": "RandRStudio.html#r-code-chunk-options",
-    "href": "RandRStudio.html#r-code-chunk-options",
-    "title": "Setting Up R and RStudio",
-    "section": "R Code Chunk Options",
-    "text": "R Code Chunk Options\nBefore diving into data loading, let’s understand important R chunk options:\n\n\neval: Use eval=FALSE to prevent code from running but still display it.\n\necho: With echo=FALSE, the code is run but not displayed in the document.\n\ninclude: include=FALSE runs the code and hides both the code and output from the final output.\n\nExample to demonstrate:\n\n# This code will run, and both code and output will appear in the document.\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
   },
   {
     "objectID": "Day7.html#simple-random-sampling",
@@ -1489,26 +1559,5 @@
     "title": "Day 11",
     "section": "",
     "text": "F. Compare the average populations per state between Western and Eastern U.S.A.\n\n\nSolution\n\n\ndelta &lt;- y.bar - x.bar; delta # western - eastern\n\n[1] -6253.45\n\nV.delta &lt;- sy^2/ny + sx^2/nx\ndf &lt;- (sy^2/ny + sx^2/nx)^2/((sy^2/ny)^2/(ny -1) + (sx^2/nx)^2/(nx -1)); df\n\n[1] 13.72751\n\nCI &lt;- delta + c(-1,1)*qt(0.975, df = df-1)*sqrt(V.delta); CI\n\n[1] -9999.12 -2507.78"
-  },
-  {
-    "objectID": "Day19.html#section-1",
-    "href": "Day19.html#section-1",
-    "title": "Day 19",
-    "section": "",
-    "text": "Scatter-plotR-code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(ggplot2)\n\ndata &lt;- data.frame(\n  id = 1:12,\n  x = c(0.3, 0.5, 0.4, 0.9, 0.7, 0.2, 0.6, 0.5, 0.8, 0.4, 0.8, 0.6),\n  y = c(6, 9, 7, 19, 15, 5, 12, 9, 20, 9, 18, 13)\n)\n\nggplot(data, aes(x = x, y = y)) +\n  geom_point() + \n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Scatterplot of Volume vs. Basal Area\",\n       x = \"Basal Area\", y = \"Volume\")"
-  },
-  {
-    "objectID": "Day19.html#section-3",
-    "href": "Day19.html#section-3",
-    "title": "Day 19",
-    "section": "",
-    "text": "Example 2: (Textbook Ex 6.4) A corporation is interested in estimating the total earnings from sales of color television sets at the end of a three-month period. The total earnings figures are available for all districts within the corporation for the corresponding three-month period of the previous year. A simple random sample of 13 district offices is selected from the 123 offices within the corporation. Using a ratio estimator, estimate \\(\\tau_y\\) and place a bound on the error of estimation. Use the data in the accompanying table and take \\(\\tau_x=128,200\\)"
-  },
-  {
-    "objectID": "Day19.html#section-5",
-    "href": "Day19.html#section-5",
-    "title": "Day 19",
-    "section": "",
-    "text": "Example 3: (Textbook Ex 6.6) An investigator has a colony of \\(N=763\\) rats that have been subjected to a standard drug. The average length of time to thread a maze correctly under the influence of the standard drug was found to be \\(\\mu_x=17.2\\) seconds. The investigator now would like to subject a random sample of 11 rats to a new drug. Estimate the average time required to thread the maze while under the influence of the new drug. (The data are shown in the accompanying table.) Place a bound on the error of estimation."
   }
 ]
