@@ -218,17 +218,16 @@ r
 
 # Sample size
 n <- length(costs$X1994)
+N <- 47
 
 # No sampling fraction in this context
-f <- 0
+f <- n/N
 
 # Variance calculation 
 var_r <- ((1 - f) / n) * r^2 * (cv_2002^2 + cv_1994^2 - 
                               2 * correlation * cv_1994 * cv_2002)
 
 # Calculate the confidence interval at 90% confidence level
-z <- 1.645  # z-value for 90% CI
-ci_lower <- r - z * sqrt(var_r)
-ci_upper <- r + z * sqrt(var_r)
-c(ci_lower, ci_upper)
+ci <- r + c(-1,1)*qt(0.95, df = n)* sqrt(var_r)
+ci
 ```
