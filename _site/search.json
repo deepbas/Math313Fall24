@@ -60,7 +60,7 @@
     "href": "Day20.html#section-4",
     "title": "Day 20",
     "section": "",
-    "text": "# Calculate the correlation coefficient\ncorrelation &lt;- cor(costs$X1994, costs$X2002)\ncorrelation\n\n[1] 0.9380038\n\n# Set the assumed slope of the regression line through the origin\nr &lt;- mean_2002 / mean_1994\nr\n\n[1] 1.295744\n\n# Sample size\nn &lt;- length(costs$X1994)\n\n# No sampling fraction in this context\nf &lt;- 0\n\n# Variance calculation \nvar_r &lt;- ((1 - f) / n) * r^2 * (cv_2002^2 + cv_1994^2 - \n                              2 * correlation * cv_1994 * cv_2002)\n\n# Calculate the confidence interval at 90% confidence level\nz &lt;- 1.645  # z-value for 90% CI\nci_lower &lt;- r - z * sqrt(var_r)\nci_upper &lt;- r + z * sqrt(var_r)\nc(ci_lower, ci_upper)\n\n[1] 1.251310 1.340177"
+    "text": "# Calculate the correlation coefficient\ncorrelation &lt;- cor(costs$X1994, costs$X2002)\ncorrelation\n\n[1] 0.9380038\n\n# Set the assumed slope of the regression line through the origin\nr &lt;- mean_2002 / mean_1994\nr\n\n[1] 1.295744\n\n# Sample size\nn &lt;- length(costs$X1994)\nN &lt;- 47\n\n# Sampling fraction \nf &lt;- n/N\n\n# Variance calculation \nvar_r &lt;- ((1 - f) / n) * r^2 * (cv_2002^2 + cv_1994^2 - \n                              2 * correlation * cv_1994 * cv_2002)\n\n# Calculate the confidence interval at 90% confidence level\nci &lt;- r + c(-1,1)*qt(0.95, df = n)* sqrt(var_r)\nci\n\n[1] 1.255058 1.336429"
   },
   {
     "objectID": "RandRStudio.html",
@@ -574,85 +574,9 @@
     "text": "Degrees of Freedom for Variance Estimation\n\n\nDegrees of Freedom Formula: \\[\ndf=\\frac{\\left(\\sum_{i=1}^L a_i p_i(1-p_i)\\right)^2}{\\sum_{i=1}^L \\frac{(a_i p_i(1-p_i))^2}{n_i-1}}\n\\]\nImportance: Correct degrees of freedom are crucial for accurate inference and confidence interval construction."
   },
   {
-<<<<<<< HEAD
     "objectID": "Day15.html#example-1",
     "href": "Day15.html#example-1",
     "title": "Day 15",
-=======
-    "objectID": "Day20.html#section-4",
-    "href": "Day20.html#section-4",
-    "title": "Day 20",
-    "section": "",
-    "text": "# Calculate the correlation coefficient\ncorrelation &lt;- cor(costs$X1994, costs$X2002)\n\n# Set the assumed slope of the regression line through the origin\nr &lt;- mean_2002 / mean_1994\nr\n\n[1] 1.295744\n\n# Sample size\nn &lt;- length(costs$X1994)\nN &lt;- 47\n\n# No sampling fraction in this context\nf &lt;- n/N\n\n# Variance calculation \nvar_r &lt;- ((1 - f) / n) * r^2 * (cv_2002^2 + cv_1994^2 - \n                              2 * correlation * cv_1994 * cv_2002)\n\n# Calculate the confidence interval at 90% confidence level\nci &lt;- r + c(-1,1)*qt(0.95, df = n)* sqrt(var_r)\nci\n\n[1] 1.255058 1.336429"
-  },
-  {
-    "objectID": "RandRStudio.html",
-    "href": "RandRStudio.html",
-    "title": "Setting Up R and RStudio",
-    "section": "",
-    "text": "This lab tutorial will guide you through installing R and RStudio on your computer, managing packages, and loading data into R. This setup is essential for performing all kinds of data analysis tasks in R."
-  },
-  {
-    "objectID": "RandRStudio.html#on-windows",
-    "href": "RandRStudio.html#on-windows",
-    "title": "Setting Up R and RStudio",
-    "section": "On Windows",
-    "text": "On Windows\n\n\nDownload R:\n\nVisit CRAN and download the latest version of R for Windows.\nRun the downloaded .exe file and follow the installation instructions.\n\n\n\nDownload RStudio:\n\nGo to the RStudio Download page and download the free version of RStudio Desktop for Windows.\nInstall it by running the downloaded .exe file."
-  },
-  {
-    "objectID": "RandRStudio.html#on-mac",
-    "href": "RandRStudio.html#on-mac",
-    "title": "Setting Up R and RStudio",
-    "section": "On Mac",
-    "text": "On Mac\n\n\nDownload R:\n\nNavigate to CRAN and choose the version for macOS.\nOpen the downloaded .pkg file to start the installation.\n\n\n\nDownload RStudio:\n\nVisit RStudio Download page and select RStudio for macOS.\nOpen the downloaded .dmg file and drag RStudio to your Applications folder."
-  },
-  {
-    "objectID": "RandRStudio.html#understanding-r-markdown-documents",
-    "href": "RandRStudio.html#understanding-r-markdown-documents",
-    "title": "Setting Up R and RStudio",
-    "section": "Understanding R Markdown Documents",
-    "text": "Understanding R Markdown Documents\nR Markdown allows you to integrate code and text in the same document, facilitating reproducible research and interactive data analysis reports. Here’s a quick overview:"
-  },
-  {
-    "objectID": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
-    "href": "RandRStudio.html#managing-.rmd-files-and-setting-the-working-directory",
-    "title": "Setting Up R and RStudio",
-    "section": "Managing .Rmd Files and Setting the Working Directory",
-    "text": "Managing .Rmd Files and Setting the Working Directory\nDownloading and Organizing .Rmd Files\nTo effectively manage your course materials in RStudio, follow these steps:\n\n\nDownload .Rmd File:\n\nNavigate to MyClasses and locate the desired .Rmd file for your course.\nDownload the file to your local machine.\n\n\n\nCreate a Course Folder:\n\nCreate a new folder named math216 in a suitable location on your computer or within your RStudio account.\n\n\n\nOrganize Files:\n\nMove the downloaded .Rmd file into the math216 folder to keep your course materials organized.\n\n\nText Portions\nText in R Markdown is written using standard markdown syntax. This allows you to add headers, lists, links, and other styling features to create dynamic reports."
-  },
-  {
-    "objectID": "RandRStudio.html#text-formatting-in-r-markdown",
-    "href": "RandRStudio.html#text-formatting-in-r-markdown",
-    "title": "Setting Up R and RStudio",
-    "section": "Text Formatting in R Markdown",
-    "text": "Text Formatting in R Markdown\nMarkdown is a lightweight markup language that allows you to add formatting elements using plain text. Here’s how you can use different Markdown syntax to format text within your R Markdown documents.\nHeaders\nCreate headers by prefixing the text with one or more hash symbols (#). The number of # symbols before the text determines the level of the header.\n# Header 1\n## Header 2\n### Header 3\nLists\nYou can create bulleted or numbered lists:\n\n\nUnordered Lists (bullets):\n\n- Item 1\n- Item 2\n  - Subitem 1\n  - Subitem 2\n\n\nOrdered Lists:\n\n1. First item\n2. Second item\n   1. Subitem 1\n   2. Subitem 2\nLinks\nInclude hyperlinks using the format [link text](URL):\n[Visit Canvas](https://salisbury.instructure.com/courses/66117)\nEmphasis\nItalicize or bold text using asterisks or underscores:\n\n\nItalic: *Italic* or _Italic_\n\n\nBold: **Bold** or __Bold__\n\nImages\nEmbed images using the format ![Alt text](image_URL \"Optional Title\"):\n![Example Image](path_to_image.jpg \"This is an image\")\nBlockquotes\nCreate blockquotes with &gt;:\n&gt; This is a blockquote.\nCode\nDisplay inline code with backticks and code blocks with triple backticks:\n\nInline code: `code`\n\nCode block:\n\n\\```\nThis is a code block\n\\```\nHorizontal Rules\nInsert a horizontal line with three or more hyphens:\n---\nCombining Markdown with R Code\nMarkdown can be interleaved with executable R code chunks:\n\n# Calculate the sum of numbers from 1 to 10\nsum(1:10)\n\n[1] 55"
-  },
-  {
-    "objectID": "RandRStudio.html#r-code-chunk-options",
-    "href": "RandRStudio.html#r-code-chunk-options",
-    "title": "Setting Up R and RStudio",
-    "section": "R Code Chunk Options",
-    "text": "R Code Chunk Options\nBefore diving into data loading, let’s understand important R chunk options:\n\n\neval: Use eval=FALSE to prevent code from running but still display it.\n\necho: With echo=FALSE, the code is run but not displayed in the document.\n\ninclude: include=FALSE runs the code and hides both the code and output from the final output.\n\nExample to demonstrate:\n\n# This code will run, and both code and output will appear in the document.\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
-  },
-  {
-    "objectID": "Day6.html#population-probability-calculation",
-    "href": "Day6.html#population-probability-calculation",
-    "title": "Day 6",
-    "section": "Population Probability Calculation",
-    "text": "Population Probability Calculation\n\nIn general, if \\(X\\) is a random variable following a normal distribution with the mean \\(a\\) and standard deviation \\(b\\), then we can compute the probability of \\(X&gt;c\\) for some number \\(c\\) with the following R function:\n\n```{r}\n1 - pnorm(x = c, mean = a, sd = b)\n```"
-  },
-  {
-    "objectID": "Day6.html#sampling-distribution",
-    "href": "Day6.html#sampling-distribution",
-    "title": "Day 6",
-    "section": "Sampling Distribution",
-    "text": "Sampling Distribution\n\n\nWhen dealing with a sample mean \\(\\bar{y}\\), the variable \\(\\bar{y}\\) is normally distributed with mean \\(\\mu\\) and standard deviation \\(\\frac{\\sigma}{\\sqrt{n}}\\), where \\(n\\) is the sample size. This is described mathematically as: \\[\nX = \\bar{y}, \\quad a = \\mu, \\quad b = \\frac{\\sigma}{\\sqrt{n}}\n\\] For computing the probability of \\(X&gt;c\\), use the R code below:\n\n\n```{r}\n1 - pnorm(x = c, mean = a, sd = b)\n```"
-  },
-  {
-    "objectID": "Day6.html#example-1",
-    "href": "Day6.html#example-1",
-    "title": "Day 6",
->>>>>>> 7ba3b10 (10-10-3)
     "section": "Example 1",
     "text": "Example 1\n\nAn advertising firm wants to estimate the proportion of households viewing TV show X in a county. The county is divided into three strata: town A, town B, and the rural area, containing \\(N_1=155\\), \\(N_2=62\\), and \\(N_3=93\\) households, respectively. From a study conducted three years ago, the previous estimates of proportions were \\(\\hat{p}_1^*=0.80\\), \\(\\hat{p}_2^*=0.25\\), and \\(\\hat{p}_3^*=0.50\\) (these values are used for selecting sample sizes, not as the current proportions).\nCosts: The costs of obtaining an observation are \\(c_1=c_2=9\\), \\(c_3=16\\).\n\nThe firm aims to estimate the population proportion \\(p\\) with a 95% bound on the error of estimation equal to 0.1. The task is to find the total sample size \\(n\\) and the strata sample sizes \\(n_1\\), \\(n_2\\), \\(n_3\\) that will achieve the desired bound at minimum cost.\nBased on the new survey performed with the determined sample sizes, the new sample proportions are \\(\\hat{p}_1=0.78\\), \\(\\hat{p}_2=0.35\\), \\(\\hat{p}_3=0.52\\). Estimate the proportion of households viewing TV show X with a 95% bound on the error of estimation."
   },

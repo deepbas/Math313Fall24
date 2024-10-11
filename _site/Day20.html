@@ -569,38 +569,20 @@ r \pm 1.645 \sqrt{\hat{V}(r)}
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.295744</code></pre>
 </div>
-<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># Sample size</span></span>
 <span id="cb20-2"><a></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(costs<span class="sc">$</span>X1994)</span>
-<span id="cb20-3"><a></a></span>
-<span id="cb20-4"><a></a><span class="co"># No sampling fraction in this context</span></span>
-<span id="cb20-5"><a></a>f <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb20-6"><a></a></span>
-<span id="cb20-7"><a></a><span class="co"># Variance calculation </span></span>
-<span id="cb20-8"><a></a>var_r <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">-</span> f) <span class="sc">/</span> n) <span class="sc">*</span> r<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (cv_2002<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> cv_1994<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> </span>
-<span id="cb20-9"><a></a>                              <span class="dv">2</span> <span class="sc">*</span> correlation <span class="sc">*</span> cv_1994 <span class="sc">*</span> cv_2002)</span>
-<span id="cb20-10"><a></a></span>
-<span id="cb20-11"><a></a><span class="co"># Calculate the confidence interval at 90% confidence level</span></span>
-<span id="cb20-12"><a></a>z <span class="ot">&lt;-</span> <span class="fl">1.645</span>  <span class="co"># z-value for 90% CI</span></span>
-<span id="cb20-13"><a></a>ci_lower <span class="ot">&lt;-</span> r <span class="sc">-</span> z <span class="sc">*</span> <span class="fu">sqrt</span>(var_r)</span>
-<span id="cb20-14"><a></a>ci_upper <span class="ot">&lt;-</span> r <span class="sc">+</span> z <span class="sc">*</span> <span class="fu">sqrt</span>(var_r)</span>
-<span id="cb20-15"><a></a><span class="fu">c</span>(ci_lower, ci_upper)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-=======
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># Sample size</span></span>
-<span id="cb18-2"><a></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(costs<span class="sc">$</span>X1994)</span>
-<span id="cb18-3"><a></a>N <span class="ot">&lt;-</span> <span class="dv">47</span></span>
-<span id="cb18-4"><a></a></span>
-<span id="cb18-5"><a></a><span class="co"># No sampling fraction in this context</span></span>
-<span id="cb18-6"><a></a>f <span class="ot">&lt;-</span> n<span class="sc">/</span>N</span>
-<span id="cb18-7"><a></a></span>
-<span id="cb18-8"><a></a><span class="co"># Variance calculation </span></span>
-<span id="cb18-9"><a></a>var_r <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">-</span> f) <span class="sc">/</span> n) <span class="sc">*</span> r<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (cv_2002<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> cv_1994<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> </span>
-<span id="cb18-10"><a></a>                              <span class="dv">2</span> <span class="sc">*</span> correlation <span class="sc">*</span> cv_1994 <span class="sc">*</span> cv_2002)</span>
-<span id="cb18-11"><a></a></span>
-<span id="cb18-12"><a></a><span class="co"># Calculate the confidence interval at 90% confidence level</span></span>
-<span id="cb18-13"><a></a>ci <span class="ot">&lt;-</span> r <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.95</span>, <span class="at">df =</span> n)<span class="sc">*</span> <span class="fu">sqrt</span>(var_r)</span>
-<span id="cb18-14"><a></a>ci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
->>>>>>> 7ba3b10 (10-10-3)
+<span id="cb20-3"><a></a>N <span class="ot">&lt;-</span> <span class="dv">47</span></span>
+<span id="cb20-4"><a></a></span>
+<span id="cb20-5"><a></a><span class="co"># Sampling fraction </span></span>
+<span id="cb20-6"><a></a>f <span class="ot">&lt;-</span> n<span class="sc">/</span>N</span>
+<span id="cb20-7"><a></a></span>
+<span id="cb20-8"><a></a><span class="co"># Variance calculation </span></span>
+<span id="cb20-9"><a></a>var_r <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">-</span> f) <span class="sc">/</span> n) <span class="sc">*</span> r<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (cv_2002<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> cv_1994<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> </span>
+<span id="cb20-10"><a></a>                              <span class="dv">2</span> <span class="sc">*</span> correlation <span class="sc">*</span> cv_1994 <span class="sc">*</span> cv_2002)</span>
+<span id="cb20-11"><a></a></span>
+<span id="cb20-12"><a></a><span class="co"># Calculate the confidence interval at 90% confidence level</span></span>
+<span id="cb20-13"><a></a>ci <span class="ot">&lt;-</span> r <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">qt</span>(<span class="fl">0.95</span>, <span class="at">df =</span> n)<span class="sc">*</span> <span class="fu">sqrt</span>(var_r)</span>
+<span id="cb20-14"><a></a>ci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.255058 1.336429</code></pre>
 </div>

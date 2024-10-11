@@ -220,7 +220,7 @@ r
 n <- length(costs$X1994)
 N <- 47
 
-# No sampling fraction in this context
+# Sampling fraction 
 f <- n/N
 
 # Variance calculation 
