@@ -71,9 +71,9 @@ website:
           - text: "Lecture 20"
             href: Day20.html
             target: "_blank"
-           # - text: "Lecture 21"
-           #  href: Day21.html
-           #  target: "_blank"
+          - text: "Lecture 21"
+            href: Day21.html
+            target: "_blank"
           # - text: "Lecture 22"
           #   href: Day22.html
           #   target: "_blank"

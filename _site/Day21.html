@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.25">
 
   <meta name="author" content="Bastola">
-  <title>Math 313: Survey Design and Sampling – Day 12</title>
+  <title>Math 313: Survey Design and Sampling – Day 21</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -328,7 +328,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="images/lake.jpg" data-background-opacity="0.5" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Day 12</h1>
+  <h1 class="title">Day 21</h1>
   <p class="subtitle">MATH 313: Survey Design and Sampling</p>
 
 <div class="quarto-title-authors">
@@ -340,139 +340,76 @@ Bastola
 </div>
 
 </section>
-<section id="stratified-random-sampling" class="slide level2 font90">
-<h2>Stratified Random Sampling</h2>
-<p><br></p>
-<div title="Definition">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Definition</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Stratified random sampling</strong> involves dividing the population into non-overlapping groups (strata) and then conducting a simple random sample within each stratum.</p>
+<section id="recap-introduction-to-ratio-estimation" class="slide level2 font80">
+<h2>Recap: Introduction to Ratio Estimation</h2>
+<div class="cle6">
 <ul>
-<li><strong>Purpose:</strong> To maximize the information obtained for a given cost in sample surveys.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="comparison-with-simple-random-sampling" class="slide level2 font80">
-<h2>Comparison with Simple Random Sampling</h2>
-<p><br></p>
-<div class="cle15">
-<ul>
-<li><strong>Basic Approach:</strong> Simple random sampling involves selecting individuals randomly from the entire population without prior grouping.</li>
-<li><strong>Stratified Approach:</strong> Enhances precision by grouping similar items together and then sampling.</li>
+<li><strong>Population Ratio</strong> (<span class="math inline">\(R\)</span>), <strong>Mean</strong> (<span class="math inline">\(\mu_y\)</span>), and <strong>Total</strong> (<span class="math inline">\(\tau_y\)</span>) are estimated using ratio estimation.</li>
+<li><strong>Important Note</strong>: While <span class="math inline">\(\mu_y\)</span> and <span class="math inline">\(\tau_y\)</span> estimates can assume a normal distribution for large samples due to the Central Limit Theorem, this is <strong>not true for <span class="math inline">\(R\)</span></strong>.</li>
 </ul>
 </div>
 </section>
-<section id="implementation-example" class="slide level2 font80">
-<h2>Implementation Example</h2>
-<p><br></p>
-<div class="cle14">
+<section id="sample-size-for-estimating-mu_y-and-tau_y" class="slide level2 font80">
+<h2>Sample Size for Estimating <span class="math inline">\(\mu_y\)</span> and <span class="math inline">\(\tau_y\)</span></h2>
+<div class="cle6">
 <ul>
-<li><strong>Context:</strong> Estimating voter preferences on tax revenue allocation for ambulance services in a county.</li>
-<li><strong>Strata:</strong> Two cities and one rural area in the county.</li>
-<li><strong>Sampling Method:</strong> Conduct a simple random sample from each stratum (each city and rural area).</li>
+<li>The normal assumption facilitates determining the bound on error, <span class="math inline">\(\boldsymbol{B}\)</span>, leading to the formula for required sample size.</li>
 </ul>
-</div>
-</section>
-<section id="advantages-of-stratified-random-sampling" class="slide level2 font80">
-<h2>Advantages of Stratified Random Sampling</h2>
-<p><br></p>
-<div class="cle13">
-<ol type="1">
-<li><strong>Reduced Error:</strong> Stratification can yield a smaller bound on the error of estimation compared to simple random sampling.</li>
-<li><strong>Cost Efficiency:</strong> By grouping population elements, the cost per observation may be reduced.</li>
-<li><strong>Subgroup Analysis:</strong> Allows for estimates of population parameters for specific, identifiable subgroups within the population.</li>
-</ol>
-</div>
-</section>
-<section id="step-1-defining-and-classifying-strata" class="slide level2 font80">
-<h2>Step 1: Defining and Classifying Strata</h2>
-<div class="cle12">
+<p>Formula to Determine Sample Size: <span class="math display">\[
+B = Z_{1-\frac{\alpha}{2}} \cdot \sqrt{\hat{V}}
+\]</span></p>
 <ul>
-<li><strong>Initial Setup:</strong> Specify strata clearly. Each sampling unit must uniquely classify into one stratum.</li>
-<li><strong>Classification Challenges:</strong> For example, whether a town of 1000 inhabitants is ‘urban’ or ‘rural’ can depend on proximity to larger cities or isolation.</li>
-<li><strong>Criteria Definition:</strong> Essential to define terms like ‘urban’ and ‘rural’ to prevent classification ambiguity.</li>
-</ul>
-</div>
-</section>
-<section id="step-2-sampling-process-and-notations" class="slide level2 font80">
-<h2>Step 2: Sampling Process and Notations</h2>
-<div class="cle11">
+<li>Where:
 <ul>
-<li><strong>Assigning Units:</strong> Place each unit, e.g., household, into the appropriate stratum based on clear, predefined criteria.</li>
-<li><strong>Sampling Notations:</strong>
-<ul>
-<li><strong>L:</strong> Number of strata.</li>
-<li><strong><span class="math inline">\(N_i\)</span>:</strong> Number of sampling units in stratum <span class="math inline">\(i\)</span>.</li>
-<li><strong><span class="math inline">\(N\)</span>:</strong> Total population size, <span class="math inline">\(N = N_1 + N_2 + \cdots + N_L\)</span>.</li>
+<li><span class="math inline">\(\hat{V}\)</span> for <span class="math inline">\(\mu_y\)</span>: <span class="math inline">\(\left(1-\frac{n}{N}\right) \cdot \frac{\sigma_r^2}{n}\)</span></li>
+<li><span class="math inline">\(\hat{V}\)</span> for <span class="math inline">\(\tau_y\)</span>: <span class="math inline">\(N^2 \left(1-\frac{n}{N}\right) \cdot \frac{\sigma_r^2}{n}\)</span></li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="step-3-sample-selection-and-independence" class="slide level2 font80">
-<h2>Step 3: Sample Selection and Independence</h2>
-<p><br></p>
-<div class="cle10">
+<section id="calculating-sample-size" class="slide level2 font80">
+<h2>Calculating Sample Size</h2>
+<div class="cle6">
 <ul>
-<li><strong>Independent Sampling:</strong> Ensure that the sample from each stratum is chosen independently using different random sampling methods.</li>
-<li><strong>Choosing Sample Sizes:</strong> Appropriate number of samples from each stratum and ensuring selections from different strata do not influence each other will be covered later.</li>
+<li><p>Solving for <span class="math inline">\(n\)</span>, we derive: <span class="math display">\[
+n = \frac{N \cdot \sigma_r^2}{N \cdot D^2 + \sigma_r^2}
+\]</span></p></li>
+<li><p>Where <span class="math inline">\(D\)</span> varies based on whether estimating <span class="math inline">\(\mu_y\)</span> or <span class="math inline">\(\tau_y\)</span>:</p>
+<ul>
+<li>For <span class="math inline">\(\mu_y\)</span>: <span class="math inline">\(D = \frac{B}{z}\)</span></li>
+<li>For <span class="math inline">\(\tau_y\)</span>: <span class="math inline">\(D = \frac{B}{N\cdot Z}\)</span></li>
+</ul></li>
 </ul>
 </div>
 </section>
-<section id="section" class="slide level2 font60">
+<section id="preliminary-studies" class="slide level2 font80">
+<h2>Preliminary Studies</h2>
+<div class="cle6">
+<ul>
+<li>When <span class="math inline">\(\sigma_r\)</span> is unknown, conduct a preliminary study to estimate <span class="math inline">\(\sigma_r^2\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+S_r^2 = \frac{\sum_{i=1}^{n^{\prime}} \left(y_i - r x_i\right)^2}{n^{\prime} - 1}
+\]</span></p>
+</div>
+</section>
+<section id="section" class="slide level2 font50">
 <h2></h2>
 <blockquote>
-<p>Example 1: An advertising agency wants to understand how much focus to give to TV advertising in a specific county. To do this, they plan to survey how many hours households watch TV each week. The county includes two towns-Town A, centered around a factory with many families having schoolage children, and Town B, a wealthier suburb with older residents and fewer children-and a rural area. The numbers of households are 155 in Town A, 62 in Town B, and 93 in the rural area. Analyze the advantages of using stratified random sampling in this scenario.</p>
+<p>Example 1: An investigator wishes to estimate the average number of trees <span class="math inline">\(\mu_y\)</span> per acre on an <span class="math inline">\(N=1000\)</span> acre plantation. She plans to sample <span class="math inline">\(n\)</span> 1-acre plots and count the number of trees <span class="math inline">\(y\)</span> on each plot. She also has aerial photographs of the plantation from which she can estimate the number of trees <span class="math inline">\(x\)</span> on each plot for the entire plantation. Hence, she knows <span class="math inline">\(\mu_x\)</span> approximately. Therefore, to use a ratio estimator of <span class="math inline">\(\mu_y\)</span> seems appropriate. The investigator need to determine the sample size needed to estimate <span class="math inline">\(\mu_y\)</span> with a <span class="math inline">\(95 \%\)</span> bound on the error of estimation of <span class="math inline">\(B=1.0\)</span>. Since no prior information is available, she must conduct a preliminary study to estimate <span class="math inline">\(\sigma_r^2\)</span>. A preliminary study of <span class="math inline">\(n^{\prime}=10\)</span> plots is conducted and the result is given as follows. Use the data to determine the size.</p>
 </blockquote>
-</section>
+
+<img src="images/Day21-1.png" style="display: block; margin: auto;" width="60%" loading="lazy" decoding="async" class="r-stretch"></section>
 <section id="section-1" class="slide level2">
 <h2></h2>
 </section>
-<section id="section-2" class="slide level2 font60">
+<section id="section-2" class="slide level2 font50">
 <h2></h2>
 <blockquote>
-<p>Exampe 2: A corporation is evaluating the effectiveness of a new business machine by gathering ratings from its division heads across three regions: North America, Europe, and Asia. To ensure that the ratings are representative and to manage costs effectively, stratified sampling is chosen as the method. The costs of conducting interviews vary by region, and so do the variances in the ratings obtained. The company aims to estimate the average effectiveness rating of the machine with a desired variance in the estimate of <span class="math inline">\(V\left(\bar{y}_{\text {st }}\right)=0.1\)</span>. Determine the optimal sample size <span class="math inline">\(n\)</span> that achieves the variance bound of <span class="math inline">\(V\left(\bar{y}_{\text {st }}\right)=0.1\)</span> and calculate the appropriate allocation of the sample size across the strata based on the Neyman allocation principle, which considers both the stratum variances and the costs associated with sampling each stratum. The following table provides the costs per interview, the variances of the ratings, and the total number of division heads in each region.</p>
+<p>Example 2: An auditor wishes to compare the actual dollar value of an inventory of a hospital, <span class="math inline">\(\tau_y\)</span>, with the recorded inventory, <span class="math inline">\(\tau_x\)</span>. The recorded inventory <span class="math inline">\(\tau_x\)</span> can be summarized from computer-stored hospital records. The actual inventory <span class="math inline">\(\tau_y\)</span> could be determined by examining and counting all the hospital supplies, but this process would be very time-consuming and costly. Hence, the auditor plans to estimate <span class="math inline">\(\tau_y\)</span> from a sample of <span class="math inline">\(n\)</span> different items randomly selected from the hospital’s supplies. Records in the computer list <span class="math inline">\(N=2100\)</span> different item types and the number of each particular item in the hospital inventory. With these data, a total value for each item, <span class="math inline">\(x\)</span>, can be obtained by multiplying the total number of each recorded item by the unit value per item. The total dollar value of the inventory obtained from the computer, <span class="math inline">\(\tau_x\)</span>, is found to be <span class="math inline">\(\$ 45,000\)</span>. Determine the sample size (number of items) needed to estimate <span class="math inline">\(\tau_y\)</span> with a <span class="math inline">\(95 \%\)</span> bound on the error of estimation of magnitude <span class="math inline">\(B=\$ 500\)</span>. A preliminary study with 15 different items were conducted to estimate <span class="math inline">\(\sigma_r^2\)</span>, and the results are given in the following table.</p>
 </blockquote>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Stratum</th>
-<th style="text-align: center;">North America</th>
-<th style="text-align: center;">Europe</th>
-<th style="text-align: center;">Asia</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(c\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 9\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 25\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 36\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\sigma^2\)</span></td>
-<td style="text-align: center;">2.25</td>
-<td style="text-align: center;">3.24</td>
-<td style="text-align: center;">3.24</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(N\)</span></td>
-<td style="text-align: center;">112</td>
-<td style="text-align: center;">68</td>
-<td style="text-align: center;">39</td>
-</tr>
-</tbody>
-</table>
-</section>
+
+<img src="images/Day21-2.png" style="display: block; margin: auto;" width="60%" loading="lazy" decoding="async" class="r-stretch"></section>
 <section id="section-3" class="slide level2">
 <h2></h2>
 

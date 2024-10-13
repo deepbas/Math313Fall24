@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.25">
 
   <meta name="author" content="Bastola">
-  <title>Math 313: Survey Design and Sampling – Day 12</title>
+  <title>Math 313: Survey Design and Sampling – Day 23</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -328,7 +328,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="images/lake.jpg" data-background-opacity="0.5" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Day 12</h1>
+  <h1 class="title">Day 23</h1>
   <p class="subtitle">MATH 313: Survey Design and Sampling</p>
 
 <div class="quarto-title-authors">
@@ -340,140 +340,70 @@ Bastola
 </div>
 
 </section>
-<section id="stratified-random-sampling" class="slide level2 font90">
-<h2>Stratified Random Sampling</h2>
-<p><br></p>
-<div title="Definition">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Definition</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Stratified random sampling</strong> involves dividing the population into non-overlapping groups (strata) and then conducting a simple random sample within each stratum.</p>
+<section id="difference-estimator-of-mu_y" class="slide level2 font80">
+<h2>Difference Estimator of <span class="math inline">\(\mu_y\)</span></h2>
+<div class="cle6">
 <ul>
-<li><strong>Purpose:</strong> To maximize the information obtained for a given cost in sample surveys.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="comparison-with-simple-random-sampling" class="slide level2 font80">
-<h2>Comparison with Simple Random Sampling</h2>
-<p><br></p>
-<div class="cle15">
-<ul>
-<li><strong>Basic Approach:</strong> Simple random sampling involves selecting individuals randomly from the entire population without prior grouping.</li>
-<li><strong>Stratified Approach:</strong> Enhances precision by grouping similar items together and then sampling.</li>
+<li>The Difference Estimation method adjusts the sample mean <span class="math inline">\(\bar{y}\)</span> by a value dependent on the difference <span class="math inline">\((\mu_x - \bar{x})\)</span>.</li>
+<li>This method is akin to a special case of regression where the regression coefficient <span class="math inline">\(b\)</span> is set to 1, simplifying the estimation process.</li>
 </ul>
 </div>
 </section>
-<section id="implementation-example" class="slide level2 font80">
-<h2>Implementation Example</h2>
-<p><br></p>
-<div class="cle14">
+<section id="assumptions-and-methodology" class="slide level2 font80">
+<h2>Assumptions and Methodology</h2>
+<div class="cle6">
 <ul>
-<li><strong>Context:</strong> Estimating voter preferences on tax revenue allocation for ambulance services in a county.</li>
-<li><strong>Strata:</strong> Two cities and one rural area in the county.</li>
-<li><strong>Sampling Method:</strong> Conduct a simple random sample from each stratum (each city and rural area).</li>
+<li>Assume a linear relationship without a slope component: <span class="math inline">\(y = x + a\)</span>.</li>
+<li>Thus, any change in <span class="math inline">\(x\)</span> directly translates to a change in <span class="math inline">\(y\)</span>: <span class="math display">\[
+\mu_y - \bar{y} = \mu_x - \bar{x}
+\]</span></li>
 </ul>
 </div>
 </section>
-<section id="advantages-of-stratified-random-sampling" class="slide level2 font80">
-<h2>Advantages of Stratified Random Sampling</h2>
-<p><br></p>
-<div class="cle13">
-<ol type="1">
-<li><strong>Reduced Error:</strong> Stratification can yield a smaller bound on the error of estimation compared to simple random sampling.</li>
-<li><strong>Cost Efficiency:</strong> By grouping population elements, the cost per observation may be reduced.</li>
-<li><strong>Subgroup Analysis:</strong> Allows for estimates of population parameters for specific, identifiable subgroups within the population.</li>
-</ol>
-</div>
-</section>
-<section id="step-1-defining-and-classifying-strata" class="slide level2 font80">
-<h2>Step 1: Defining and Classifying Strata</h2>
-<div class="cle12">
+<section id="formulation-of-the-difference-estimator" class="slide level2 font80">
+<h2>Formulation of the Difference Estimator</h2>
+<div class="cle6">
 <ul>
-<li><strong>Initial Setup:</strong> Specify strata clearly. Each sampling unit must uniquely classify into one stratum.</li>
-<li><strong>Classification Challenges:</strong> For example, whether a town of 1000 inhabitants is ‘urban’ or ‘rural’ can depend on proximity to larger cities or isolation.</li>
-<li><strong>Criteria Definition:</strong> Essential to define terms like ‘urban’ and ‘rural’ to prevent classification ambiguity.</li>
+<li>The difference estimator for the population mean <span class="math inline">\(\mu_y\)</span> is: <span class="math display">\[
+\hat{\mu}_{y D} = \bar{y} + (\mu_x - \bar{x}) = \mu_x + (\bar{y} - \bar{x})
+\]</span></li>
+<li>Here, <span class="math inline">\(\bar{d} = \bar{y} - \bar{x}\)</span> represents the average difference between the variables.</li>
 </ul>
 </div>
 </section>
-<section id="step-2-sampling-process-and-notations" class="slide level2 font80">
-<h2>Step 2: Sampling Process and Notations</h2>
-<div class="cle11">
+<section id="variance-of-the-difference-estimator" class="slide level2 font80">
+<h2>Variance of the Difference Estimator</h2>
+<div class="cle6">
 <ul>
-<li><strong>Assigning Units:</strong> Place each unit, e.g., household, into the appropriate stratum based on clear, predefined criteria.</li>
-<li><strong>Sampling Notations:</strong>
-<ul>
-<li><strong>L:</strong> Number of strata.</li>
-<li><strong><span class="math inline">\(N_i\)</span>:</strong> Number of sampling units in stratum <span class="math inline">\(i\)</span>.</li>
-<li><strong><span class="math inline">\(N\)</span>:</strong> Total population size, <span class="math inline">\(N = N_1 + N_2 + \cdots + N_L\)</span>.</li>
-</ul></li>
+<li>The estimated variance of <span class="math inline">\(\hat{\mu}_{y D}\)</span> is given by: <span class="math display">\[
+\hat{V}(\hat{\mu}_{y D}) = \left(1-\frac{n}{N}\right) \cdot \left(\frac{1}{n}\right) \cdot \frac{\sum_{i=1}^n\left(y_i - x_i - \bar{d}\right)^2}{(n-1)}
+\]</span></li>
+<li>This accounts for the sampling variability and the differences between the paired observations.</li>
 </ul>
 </div>
 </section>
-<section id="step-3-sample-selection-and-independence" class="slide level2 font80">
-<h2>Step 3: Sample Selection and Independence</h2>
-<p><br></p>
-<div class="cle10">
+<section id="error-bounds-and-confidence-interval" class="slide level2 font80">
+<h2>Error Bounds and Confidence Interval</h2>
+<div class="cle6">
 <ul>
-<li><strong>Independent Sampling:</strong> Ensure that the sample from each stratum is chosen independently using different random sampling methods.</li>
-<li><strong>Choosing Sample Sizes:</strong> Appropriate number of samples from each stratum and ensuring selections from different strata do not influence each other will be covered later.</li>
+<li><span class="math inline">\((1-\alpha) \times 100\%\)</span> bound on the error of estimation: <span class="math display">\[
+B = t_{1-\frac{\alpha}{2}, (n-1)} \cdot \sqrt{\hat{V}(\hat{\mu}_{y D})}
+\]</span></li>
+<li>Confidence Interval for <span class="math inline">\(\hat{\mu}_{y D}\)</span>: <span class="math display">\[
+\hat{\mu}_{y D} \pm B
+\]</span></li>
+<li>This interval estimates where the true mean <span class="math inline">\(\mu_y\)</span> lies with <span class="math inline">\((1-\alpha) \times 100\%\)</span> confidence.</li>
 </ul>
 </div>
 </section>
-<section id="section" class="slide level2 font60">
+<section id="section" class="slide level2 font40">
 <h2></h2>
 <blockquote>
-<p>Example 1: An advertising agency wants to understand how much focus to give to TV advertising in a specific county. To do this, they plan to survey how many hours households watch TV each week. The county includes two towns-Town A, centered around a factory with many families having schoolage children, and Town B, a wealthier suburb with older residents and fewer children-and a rural area. The numbers of households are 155 in Town A, 62 in Town B, and 93 in the rural area. Analyze the advantages of using stratified random sampling in this scenario.</p>
+<p>Example 1: Auditors are often interested in comparing the audited value of items with the bookvalue. Generally, book values are known for every item in the population, and auditvalues are obtained for a sample of these items. The book values can then be used toobtain a good estimate of the total or average audit value for the population. Suppose a population contains 180 inventory items with a stated book value of <span class="math inline">\(\$ 13,320\)</span>. Let <span class="math inline">\(x_i\)</span> denote the book value and <span class="math inline">\(y_i\)</span> the audit value of the <span class="math inline">\(i\)</span> th item. A simple random sample of items yields the results shown in the following table. A plot of these data shows them to lie along a straight line through the origin, with a slope fairly close to 1 . Estimate the mean audit value of <span class="math inline">\(\mu_y\)</span> by the difference method for this population (estimator value, estimated variance, <span class="math inline">\(95 \%\)</span> bound on error, and <span class="math inline">\(95 \%\)</span> confidence interval).</p>
 </blockquote>
-</section>
+
+<img src="images/Day23-1.png" style="display: block; margin: auto;" width="60%" loading="lazy" decoding="async" class="r-stretch"></section>
 <section id="section-1" class="slide level2">
-<h2></h2>
-</section>
-<section id="section-2" class="slide level2 font60">
-<h2></h2>
-<blockquote>
-<p>Exampe 2: A corporation is evaluating the effectiveness of a new business machine by gathering ratings from its division heads across three regions: North America, Europe, and Asia. To ensure that the ratings are representative and to manage costs effectively, stratified sampling is chosen as the method. The costs of conducting interviews vary by region, and so do the variances in the ratings obtained. The company aims to estimate the average effectiveness rating of the machine with a desired variance in the estimate of <span class="math inline">\(V\left(\bar{y}_{\text {st }}\right)=0.1\)</span>. Determine the optimal sample size <span class="math inline">\(n\)</span> that achieves the variance bound of <span class="math inline">\(V\left(\bar{y}_{\text {st }}\right)=0.1\)</span> and calculate the appropriate allocation of the sample size across the strata based on the Neyman allocation principle, which considers both the stratum variances and the costs associated with sampling each stratum. The following table provides the costs per interview, the variances of the ratings, and the total number of division heads in each region.</p>
-</blockquote>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Stratum</th>
-<th style="text-align: center;">North America</th>
-<th style="text-align: center;">Europe</th>
-<th style="text-align: center;">Asia</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(c\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 9\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 25\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 36\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\sigma^2\)</span></td>
-<td style="text-align: center;">2.25</td>
-<td style="text-align: center;">3.24</td>
-<td style="text-align: center;">3.24</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(N\)</span></td>
-<td style="text-align: center;">112</td>
-<td style="text-align: center;">68</td>
-<td style="text-align: center;">39</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="section-3" class="slide level2">
 <h2></h2>
 
 <div class="quarto-auto-generated-content">
