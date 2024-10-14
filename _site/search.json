@@ -1383,14 +1383,14 @@
     "href": "Day21.html#calculating-sample-size",
     "title": "Day 21",
     "section": "Calculating Sample Size",
-    "text": "Calculating Sample Size\n\n\nSolving for \\(n\\), we derive: \\[\nn = \\frac{N \\cdot \\sigma_r^2}{N \\cdot D^2 + \\sigma_r^2}\n\\]\nWhere \\(D\\) varies based on whether estimating \\(\\mu_y\\) or \\(\\tau_y\\):\n\nFor \\(\\mu_y\\): \\(D = \\frac{B}{z}\\)\nFor \\(\\tau_y\\): \\(D = \\frac{B}{N\\cdot Z}\\)"
+    "text": "Calculating Sample Size\n\n\nSolving for \\(n\\), we derive: \\[\nn = \\frac{N \\cdot \\sigma_r^2}{N \\cdot D^2 + \\sigma_r^2}\n\\]\nWhere \\(D\\) varies based on whether estimating \\(\\mu_y\\) or \\(\\tau_y\\):\n\nFor \\(\\mu_y\\): \\(D = \\frac{B}{Z}\\)\nFor \\(\\tau_y\\): \\(D = \\frac{B}{N\\cdot Z}\\)"
   },
   {
     "objectID": "Day21.html#preliminary-studies",
     "href": "Day21.html#preliminary-studies",
     "title": "Day 21",
     "section": "Preliminary Studies",
-    "text": "Preliminary Studies\n\n\nWhen \\(\\sigma_r\\) is unknown, conduct a preliminary study to estimate \\(\\sigma_r^2\\):\n\n\\[\nS_r^2 = \\frac{\\sum_{i=1}^{n^{\\prime}} \\left(y_i - r x_i\\right)^2}{n^{\\prime} - 1}\n\\]"
+    "text": "Preliminary Studies\n\n\nWhen \\(\\sigma_r\\) is unknown, conduct a preliminary study to estimate \\(\\sigma_r^2\\):\n\n\\[\ns_r^2 = \\frac{\\sum_{i=1}^{n^{\\prime}} \\left(y_i - r x_i\\right)^2}{n^{\\prime} - 1}\n\\]"
   },
   {
     "objectID": "Day21.html#section",

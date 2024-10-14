@@ -85,7 +85,7 @@ n = \frac{N \cdot \sigma_r^2}{N \cdot D^2 + \sigma_r^2}
 $$
 
 - Where $D$ varies based on whether estimating $\mu_y$ or $\tau_y$:
-  - For $\mu_y$: $D = \frac{B}{z}$
+  - For $\mu_y$: $D = \frac{B}{Z}$
   - For $\tau_y$: $D = \frac{B}{N\cdot Z}$
 
 :::
@@ -97,7 +97,7 @@ $$
 - When $\sigma_r$ is unknown, conduct a preliminary study to estimate $\sigma_r^2$:
 
 $$
-S_r^2 = \frac{\sum_{i=1}^{n^{\prime}} \left(y_i - r x_i\right)^2}{n^{\prime} - 1}
+s_r^2 = \frac{\sum_{i=1}^{n^{\prime}} \left(y_i - r x_i\right)^2}{n^{\prime} - 1}
 $$
 
 :::
