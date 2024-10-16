@@ -50,7 +50,7 @@ yt <- 0
 ## Regression Estimator of $\mu_y$ {.font80}
 
 ::: cle6
-- Discusses using regression estimation when there is evidence of a linear relationship between $y$ and $x$, without the restriction of passing through the origin.
+- Use regression estimator when there is evidence of a linear relationship between $y$ and $x$, without the restriction of passing through the origin.
 - Essential for situations where the auxiliary variable $x$ provides valuable information for estimating the mean $\mu_y$.
 
 :::
@@ -127,5 +127,7 @@ $$
 
 ##
 
+
+##
 
 
