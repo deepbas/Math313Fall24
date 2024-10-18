@@ -59,7 +59,7 @@ yt <- 0
 
 ## Assumptions and Methodology {.font80}
 
-::: cle6
+::: cle7
 - Assume a linear relationship without a slope component: $y = x + a$.
 - Thus, any change in $x$ directly translates to a change in $y$: 
   $$
@@ -70,7 +70,7 @@ yt <- 0
 
 ## Formulation of the Difference Estimator {.font80}
 
-::: cle6
+::: cle8
 - The difference estimator for the population mean $\mu_y$ is:
   $$
   \hat{\mu}_{y D} = \bar{y} + (\mu_x - \bar{x}) = \mu_x + (\bar{y} - \bar{x})
@@ -81,7 +81,7 @@ yt <- 0
 
 ## Variance of the Difference Estimator {.font80}
 
-::: cle6
+::: cle9
 - The estimated variance of $\hat{\mu}_{y D}$ is given by:
   $$
   \hat{V}(\hat{\mu}_{y D}) = \left(1-\frac{n}{N}\right) \cdot \left(\frac{1}{n}\right) \cdot \frac{\sum_{i=1}^n\left(y_i - x_i - \bar{d}\right)^2}{(n-1)}
@@ -92,7 +92,7 @@ yt <- 0
 
 ## Error Bounds and Confidence Interval {.font80}
 
-::: cle6
+::: cle10
 - $(1-\alpha) \times 100\%$ bound on the error of estimation:
   $$
   B = t_{1-\frac{\alpha}{2}, (n-1)} \cdot \sqrt{\hat{V}(\hat{\mu}_{y D})}
