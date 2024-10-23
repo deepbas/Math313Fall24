@@ -351,20 +351,14 @@ Bastola
 <p><strong>Definition:</strong> A 1-in-k systematic sample with a random start is obtained by randomly selecting one element from the first <span class="math inline">\(k\)</span> elements and every <span class="math inline">\(k^{th}\)</span> element thereafter.</p>
 </div>
 </section>
-<section id="advantages-and-problems-of-systematic-sampling" class="slide level2 font70">
-<h2>Advantages and Problems of Systematic Sampling</h2>
+<section id="advantages-of-systematic-sampling" class="slide level2 font70">
+<h2>Advantages of Systematic Sampling</h2>
 <div class="cle7">
 <p><strong>Advantages:</strong></p>
 <ul>
 <li>Simplicity, especially useful with manual frames or registers.</li>
 <li>High intra-sample variability can make it more accurate than simple random sampling (SRS).</li>
 </ul>
-<p><strong>Problems:</strong></p>
-<ul>
-<li>Cycled behavior in the sampling frame may bias the results.</li>
-<li>It is challenging to estimate unbiased sampling errors due to the dependency on a single starting point.</li>
-</ul>
-<p>Understanding these trade-offs is crucial for effective use of systematic sampling in practice.</p>
 </div>
 </section>
 <section id="how-to-draw-a-systematic-sample" class="slide level2 font80">
@@ -390,20 +384,25 @@ Bastola
 <p><strong>Key Point:</strong> The entire sample can be considered as a single cluster, which complicates variance estimation as many second-order inclusion probabilities are zero.</p>
 </div>
 </section>
-<section id="practical-considerations-in-systematic-sampling" class="slide level2 font80">
+<section id="practical-considerations-in-systematic-sampling" class="slide level2 font70">
 <h2>Practical Considerations in Systematic Sampling</h2>
 <div class="cle8">
-<p>While systematic sampling offers many advantages, its effectiveness depends on:</p>
+<p>Systematic sampling offers several advantages, but its effectiveness hinges on two key factors:</p>
 <ul>
-<li>The order of the sampling units.</li>
-<li>The randomness of the starting point.</li>
+<li><strong>Order of the sampling units:</strong> The population must not have periodic patterns that align with the sampling interval.</li>
+<li><strong>Randomness of the starting point:</strong> A truly random starting point ensures that the entire population is well-represented.</li>
 </ul>
-<p>The spread of the sample through the population should ideally cover the entire range to ensure representative data collection.</p>
+<p>However, there are potential issues:</p>
+<ul>
+<li><strong>Cyclic behavior:</strong> If the population exhibits periodic patterns, it can introduce bias.</li>
+<li><strong>Difficulty in error estimation:</strong> Estimating unbiased sampling errors is challenging, as results depend heavily on a single starting point.</li>
+</ul>
+<p>Recognizing these trade-offs is crucial for the effective use of systematic sampling in practice.</p>
 </div>
 </section>
 <section id="applications-of-systematic-sampling" class="slide level2 font80">
 <h2>Applications of Systematic Sampling</h2>
-<div class="cle8">
+<div class="cle9">
 <p>Systematic sampling’s methodology allows for diverse applications, from national censuses to quality control in manufacturing:</p>
 <ul>
 <li>Ensures consistent coverage across a population.</li>
@@ -428,14 +427,59 @@ Bastola
 <p>This method ensures each element has an equal chance of selection, regardless of the frame’s total size relative to <span class="math inline">\(n\)</span>.</p>
 </div>
 </section>
-<section id="section" class="slide level2 font40">
+<section id="section" class="slide level2 font50">
 <h2></h2>
 <blockquote>
-<p>Example 1:</p>
+<p>Example 1: (Ex 7.3, Textbook) We are working with a retail store with four departments. Each department has charge accounts, and we want to estimate the proportion of past-due accounts using systematic sampling. The key questions involve listing systematic samples and computing exact variances, followed by comparing these results with simple random sampling variances.</p>
 </blockquote>
+<p>We are given the following information:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Department 1</th>
+<th>Department 2</th>
+<th>Department 3</th>
+<th>Department 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Account numbers</strong></td>
+<td>1-11</td>
+<td>12-20</td>
+<td>21-28</td>
+<td>29-40</td>
+</tr>
+<tr class="even">
+<td><strong>Delinquent accounts</strong></td>
+<td>1, 2, 3, 4</td>
+<td>12, 13, 14</td>
+<td>21, 22, 23, 24, 25</td>
+<td>29, 30, 31, 32</td>
+</tr>
+</tbody>
+</table>
+<p>The store wishes to estimate the proportion of past-due accounts using systematic sampling.</p>
+<p>Part (a): 1-in-10 Systematic Samples</p>
+<p>List all possible 1-in-10 systematic samples and compute the exact variance of the sample proportion.</p>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-1" class="slide level2 font50">
 <h2></h2>
+<p>Part (b): 1-in-5 Systematic Samples</p>
+<p>Next, list all possible 1-in-5 systematic samples and compute the exact variance of the sample proportion.</p>
+</section>
+<section id="section-2" class="slide level2 font50">
+<h2></h2>
+<p>Part (c): Comparing Systematic Sampling with Simple Random Sampling</p>
+<p>We will now compare the variances obtained in parts (a) and (b) with simple random sampling of sizes <span class="math inline">\(n=4\)</span> and <span class="math inline">\(n=8\)</span>.</p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
