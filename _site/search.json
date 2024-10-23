@@ -1278,7 +1278,7 @@
     "href": "Day25-Prelim.html#advantages-and-problems-of-systematic-sampling",
     "title": "Day 25",
     "section": "Advantages and Problems of Systematic Sampling",
-    "text": "Advantages and Problems of Systematic Sampling\n\nAdvantages:\n\nSimplicity, especially useful with manual frames or registers.\nHigh intra-sample variability can make it more accurate than simple random sampling (SRS).\n\nProblems:\n\nCycled behavior in the sampling frame may bias the results.\nIt is challenging to estimate unbiased sampling errors due to the dependency on a single starting point.\n\nUnderstanding these trade-offs is crucial for effective use of systematic sampling in practice."
+    "text": "Advantages and Problems of Systematic Sampling\n\nAdvantages:\n\nSimplicity, especially useful with manual frames or registers.\nHigh intra-sample variability can make it more accurate than simple random sampling (SRS)."
   },
   {
     "objectID": "Day25-Prelim.html#how-to-draw-a-systematic-sample",
@@ -1299,7 +1299,7 @@
     "href": "Day25-Prelim.html#practical-considerations-in-systematic-sampling",
     "title": "Day 25",
     "section": "Practical Considerations in Systematic Sampling",
-    "text": "Practical Considerations in Systematic Sampling\n\nWhile systematic sampling offers many advantages, its effectiveness depends on:\n\nThe order of the sampling units.\nThe randomness of the starting point.\n\nThe spread of the sample through the population should ideally cover the entire range to ensure representative data collection."
+    "text": "Practical Considerations in Systematic Sampling\n\nWhile systematic sampling offers many advantages, its has some drawbacks:\n\nCycled behavior in the sampling frame may bias the results.\nIt is challenging to estimate unbiased sampling errors due to the dependency on a single starting point.\n\nThe spread of the sample through the population should ideally cover the entire range to ensure representative data collection."
   },
   {
     "objectID": "Day25-Prelim.html#applications-of-systematic-sampling",
@@ -1832,5 +1832,61 @@
     "title": "Day 11",
     "section": "",
     "text": "F. Compare the average populations per state between Western and Eastern U.S.A.\n\n\nSolution\n\n\ndelta &lt;- y.bar - x.bar; delta # western - eastern\n\n[1] -6253.45\n\nV.delta &lt;- sy^2/ny + sx^2/nx\ndf &lt;- (sy^2/ny + sx^2/nx)^2/((sy^2/ny)^2/(ny -1) + (sx^2/nx)^2/(nx -1)); df\n\n[1] 13.72751\n\nCI &lt;- delta + c(-1,1)*qt(0.975, df = df-1)*sqrt(V.delta); CI\n\n[1] -9999.12 -2507.78"
+  },
+  {
+    "objectID": "Day25.html#introduction-to-systematic-sampling",
+    "href": "Day25.html#introduction-to-systematic-sampling",
+    "title": "Day 25",
+    "section": "Introduction to Systematic Sampling",
+    "text": "Introduction to Systematic Sampling\n\nSystematic sampling simplifies the sample selection process, making it a widely used design in survey sampling due to:\n\nEase of implementation in the field.\nLower susceptibility to selection errors compared to simple random and stratified random sampling.\n\nDefinition: A 1-in-k systematic sample with a random start is obtained by randomly selecting one element from the first \\(k\\) elements and every \\(k^{th}\\) element thereafter."
+  },
+  {
+    "objectID": "Day25.html#advantages-and-problems-of-systematic-sampling",
+    "href": "Day25.html#advantages-and-problems-of-systematic-sampling",
+    "title": "Day 25",
+    "section": "Advantages and Problems of Systematic Sampling",
+    "text": "Advantages and Problems of Systematic Sampling\n\nAdvantages:\n\nSimplicity, especially useful with manual frames or registers.\nHigh intra-sample variability can make it more accurate than simple random sampling (SRS)."
+  },
+  {
+    "objectID": "Day25.html#how-to-draw-a-systematic-sample",
+    "href": "Day25.html#how-to-draw-a-systematic-sample",
+    "title": "Day 25",
+    "section": "How to Draw a Systematic Sample",
+    "text": "How to Draw a Systematic Sample\n\nTo draw a systematic sample:\n\nChoose \\(k\\) such that \\(k \\leq \\frac{N}{n}\\) where \\(N\\) is the population size and \\(n\\) is the desired sample size.\nRandomly select one element from the first \\(k\\) elements.\nContinue selecting every \\(k^{th}\\) element thereafter.\n\nExample: For \\(N=15000\\) and \\(n=1600\\), choose \\(k=9\\) for a 1-in-9 systematic sample."
+  },
+  {
+    "objectID": "Day25.html#understanding-sampling-probabilities-in-systematic-sampling",
+    "href": "Day25.html#understanding-sampling-probabilities-in-systematic-sampling",
+    "title": "Day 25",
+    "section": "Understanding Sampling Probabilities in Systematic Sampling",
+    "text": "Understanding Sampling Probabilities in Systematic Sampling\n\nIn systematic sampling:\n\nEach unit’s selection probability, \\(\\pi_k\\), is \\(\\frac{1}{a} = \\frac{n}{N}\\) when \\(N\\) is a multiple of \\(a\\).\nIssues arise when there are extra units beyond \\(a \\times n\\), leading to slight imbalances in probabilities.\n\nKey Point: The entire sample can be considered as a single cluster, which complicates variance estimation as many second-order inclusion probabilities are zero."
+  },
+  {
+    "objectID": "Day25.html#practical-considerations-in-systematic-sampling",
+    "href": "Day25.html#practical-considerations-in-systematic-sampling",
+    "title": "Day 25",
+    "section": "Practical Considerations in Systematic Sampling",
+    "text": "Practical Considerations in Systematic Sampling\n\nWhile systematic sampling offers many advantages, its has some drawbacks:\n\nCycled behavior in the sampling frame may bias the results.\nIt is challenging to estimate unbiased sampling errors due to the dependency on a single starting point.\n\nThe spread of the sample through the population should ideally cover the entire range to ensure representative data collection."
+  },
+  {
+    "objectID": "Day25.html#applications-of-systematic-sampling",
+    "href": "Day25.html#applications-of-systematic-sampling",
+    "title": "Day 25",
+    "section": "Applications of Systematic Sampling",
+    "text": "Applications of Systematic Sampling\n\nSystematic sampling’s methodology allows for diverse applications, from national censuses to quality control in manufacturing:\n\nEnsures consistent coverage across a population.\nFacilitates easier and less error-prone data collection in field settings.\n\nThis versatility makes it a favored choice in many large-scale and long-term studies."
+  },
+  {
+    "objectID": "Day25.html#handling-non-integer-fracnn-in-systematic-sampling",
+    "href": "Day25.html#handling-non-integer-fracnn-in-systematic-sampling",
+    "title": "Day 25",
+    "section": "Handling Non-Integer \\(\\frac{N}{n}\\) in Systematic Sampling",
+    "text": "Handling Non-Integer \\(\\frac{N}{n}\\) in Systematic Sampling\n\nWhen \\(\\frac{N}{n}\\) is not an integer (\\(N = na + c\\)):\n\nIf the starting value \\(r \\leq c\\), the sample includes \\(n+1\\) units.\nOtherwise, the sample includes \\(n\\) units.\n\nAlternative Method:\n\nGenerate a random number \\(\\varepsilon\\) from a uniform distribution over \\((0, a)\\).\nSelect elements \\(i\\) such that \\(i-1 &lt; \\varepsilon + (j-1)a \\leq i\\); for \\(j = 1, \\ldots, n\\) and \\(i = 1, \\ldots, N\\).\n\nThis method ensures each element has an equal chance of selection, regardless of the frame’s total size relative to \\(n\\)."
+  },
+  {
+    "objectID": "Day25.html#section",
+    "href": "Day25.html#section",
+    "title": "Day 25",
+    "section": "",
+    "text": "Example 1:"
   }
 ]
