@@ -63,7 +63,11 @@ Systematic sampling simplifies the sample selection process, making it a widely 
 :::
 
 
+<<<<<<< HEAD
 ## Advantages and Problems of Systematic Sampling {.font70}
+=======
+## Advantages of Systematic Sampling {.font70}
+>>>>>>> origin/main
 
 ::: cle7
 
@@ -101,14 +105,23 @@ In systematic sampling:
 
 :::
 
+<<<<<<< HEAD
 ## Practical Considerations in Systematic Sampling {.font80}
 
 ::: cle8
 
+=======
+## Practical Considerations in Systematic Sampling {.font70}
+
+::: cle8
+
+<<<<<<<< HEAD:Day25-Prelim.qmd
+>>>>>>> origin/main
 While systematic sampling offers many advantages, its has some drawbacks:
 
 - Cycled behavior in the sampling frame may bias the results.
 - It is challenging to estimate unbiased sampling errors due to the dependency on a single starting point.
+<<<<<<< HEAD
 
 The spread of the sample through the population should ideally cover the entire range to ensure representative data collection.
 
@@ -117,6 +130,28 @@ The spread of the sample through the population should ideally cover the entire 
 ## Applications of Systematic Sampling {.font80}
 
 ::: cle8
+=======
+========
+Systematic sampling offers several advantages, but its effectiveness hinges on two key factors:
+
+- **Order of the sampling units:** The population must not have periodic patterns that align with the sampling interval.
+- **Randomness of the starting point:** A truly random starting point ensures that the entire population is well-represented.
+>>>>>>>> origin/main:Day25.qmd
+
+However, there are potential issues:
+
+- **Cyclic behavior:** If the population exhibits periodic patterns, it can introduce bias.
+- **Difficulty in error estimation:** Estimating unbiased sampling errors is challenging, as results depend heavily on a single starting point.
+
+Recognizing these trade-offs is crucial for the effective use of systematic sampling in practice.
+
+:::
+
+
+## Applications of Systematic Sampling {.font80}
+
+::: cle9
+>>>>>>> origin/main
 
 Systematic sampling's methodology allows for diverse applications, from national censuses to quality control in manufacturing:
 
@@ -146,6 +181,7 @@ This method ensures each element has an equal chance of selection, regardless of
 
 :::
 
+<<<<<<< HEAD
 ## {.font40}
 
 > Example 1:
@@ -153,4 +189,42 @@ This method ensures each element has an equal chance of selection, regardless of
 
 
 ##
+=======
+## {.font50}
+
+> Example 1: (Ex 7.3, Textbook) We are working with a retail store with four departments. Each department has charge accounts, and we want to estimate the proportion of past-due accounts using systematic sampling. The key questions involve listing systematic samples and computing exact variances, followed by comparing these results with simple random sampling variances.
+
+
+We are given the following information:
+
+|                 | Department 1 | Department 2 | Department 3   | Department 4   |
+|-----------------|--------------|--------------|----------------|----------------|
+| **Account numbers** | 1-11        | 12-20       | 21-28         | 29-40         |
+| **Delinquent accounts** | 1, 2, 3, 4 | 12, 13, 14 | 21, 22, 23, 24, 25 | 29, 30, 31, 32 |
+
+
+The store wishes to estimate the proportion of past-due accounts using systematic sampling.
+
+Part (a): 1-in-10 Systematic Samples
+
+List all possible 1-in-10 systematic samples and compute the exact variance of the sample proportion.
+
+
+
+
+## {.font50}
+
+Part (b): 1-in-5 Systematic Samples
+
+Next, list all possible 1-in-5 systematic samples and compute the exact variance of the sample proportion.
+
+
+
+## {.font50}
+
+Part (c): Comparing Systematic Sampling with Simple Random Sampling
+
+We will now compare the variances obtained in parts (a) and (b) with simple random sampling of sizes $n=4$ and $n=8$.
+
+>>>>>>> origin/main
 
