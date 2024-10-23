@@ -183,6 +183,6 @@ Next, list all possible 1-in-5 systematic samples and compute the exact variance
 
 Part (c): Comparing Systematic Sampling with Simple Random Sampling
 
-We will now compare the variances obtained in parts (a) and (b) with simple random sampling of sizes $n=4$ and $n=8$.
+We will now compare the variances obtained in parts (a) and (b) with simple random sampling of sizes $n=4$.
 
 
