@@ -543,7 +543,7 @@
     "href": "Day26-Prelim.html#variance-considerations-in-systematic-sampling",
     "title": "Day 26",
     "section": "Variance Considerations in Systematic Sampling",
-    "text": "Variance Considerations in Systematic Sampling\n\nSystematic sampling can exhibit different variance properties based on the population structure:\n\nRandom Population: \\(\\rho \\approx 0\\), variance is similar to simple random sampling.\nOrdered Population: \\(\\rho &lt; 0\\), potentially lower variance than simple random sampling.\nPeriodic Population: \\(\\rho &gt; 0\\), possibly higher variance due to repetitive patterns.\n\nVariance Formula: \\[\nV(\\bar{y}_{\\text{sy}}) = \\frac{\\sigma^2}{n} [1 + (n-1) \\rho]\n\\]\nThe correlation \\(\\rho\\) affects variance estimation significantly depending on the population’s arrangement."
+    "text": "Variance Considerations in Systematic Sampling\n\nSystematic sampling can exhibit different variance properties based on the population structure:\n\nRandom Population: \\(\\rho \\approx 0\\), variance is similar to simple random sampling.\nOrdered Population: \\(\\rho &lt; 0\\), potentially lower variance than simple random sampling.\nPeriodic Population: \\(\\rho &gt; 0\\), possibly higher variance due to repetitive patterns.\n\nVariance Formula: \\[\nV(\\bar{y}_{\\text{sy}}) = \\frac{\\sigma^2}{n} [1 + (n-1) \\rho]\n\\]\nHere, \\(\\rho\\) is a measure of the correlation between pairs of elements within the same systematic sample. The correlation \\(\\rho\\) affects variance estimation significantly depending on the population’s arrangement."
   },
   {
     "objectID": "Day26-Prelim.html#practical-implications-and-applications",
@@ -557,7 +557,7 @@
     "href": "Day26-Prelim.html#section",
     "title": "Day 26",
     "section": "",
-    "text": "Example 1:"
+    "text": "&lt;img src=\"images/random.png\" style=\"width: 30%;\" loading=\"lazy\" decoding=\"async\"&gt;\n&lt;img src=\"images/ordered.png\" style=\"width: 30%;\" loading=\"lazy\" decoding=\"async\"&gt;\n&lt;img src=\"images/periodic.png\" style=\"width: 30%;\" loading=\"lazy\" decoding=\"async\"&gt;"
   },
   {
     "objectID": "Day9.html#overview-of-population-proportion-estimation",
@@ -1846,5 +1846,96 @@
     "title": "Day 20",
     "section": "",
     "text": "# Calculate the correlation coefficient\ncorrelation &lt;- cor(costs$X1994, costs$X2002)\ncorrelation\n\n[1] 0.9380038\n\n# Set the assumed slope of the regression line through the origin\nr &lt;- mean_2002 / mean_1994\nr\n\n[1] 1.295744\n\n# Sample size\nn &lt;- length(costs$X1994)\nN &lt;- 47\n\n# Sampling fraction \nf &lt;- n/N\n\n# Variance calculation \nvar_r &lt;- ((1 - f) / n) * r^2 * (cv_2002^2 + cv_1994^2 - \n                              2 * correlation * cv_1994 * cv_2002)\n\n# Calculate the confidence interval at 90% confidence level\nci &lt;- r + c(-1,1)*qt(0.95, df = n)* sqrt(var_r)\nci\n\n[1] 1.255058 1.336429"
+  },
+  {
+    "objectID": "Day26-Prelim.html#population-types",
+    "href": "Day26-Prelim.html#population-types",
+    "title": "Day 26",
+    "section": "Population Types",
+    "text": "Population Types\n\n\nRandom Population: Elements are in random order. Only suitable for certain variance formulas.\n\n\\[\n\\hat{V}\\left(\\bar{Y}_{\\text{sy}}\\right) \\text{ is applicable only to random order populations.}\n\\]\n\nOrdered Population: Elements show a trend (upward or downward).\nPeriodic Population: Elements exhibit regular upward and downward cycles."
+  },
+  {
+    "objectID": "Day26-Prelim.html#systematic-sampling-and-population-types",
+    "href": "Day26-Prelim.html#systematic-sampling-and-population-types",
+    "title": "Day 26",
+    "section": "Systematic Sampling and Population Types",
+    "text": "Systematic Sampling and Population Types\n\n\nRandom Population: Systematic sampling approximates simple random sampling.\n\n\\[\n\\rho \\approx 0 \\quad \\text{Systematic} \\approx \\text{Simple Random}\n\\]\n\nOrdered Population: Large differences between elements. Systematic sampling preferred if \\(\\rho &lt; 0\\).\nPeriodic Population: Small differences between elements. Systematic sampling less effective if \\(\\rho &gt; 0\\) (close to 1)."
+  },
+  {
+    "objectID": "Day26-Prelim.html#estimating-population-total",
+    "href": "Day26-Prelim.html#estimating-population-total",
+    "title": "Day 26",
+    "section": "Estimating Population Total",
+    "text": "Estimating Population Total\n\nSystematic Sampling Estimator for Population Total \\(\\tau\\):\n\\[\n\\hat{\\tau}_{sy} = N \\cdot \\bar{y}_{sy}\n\\]\nEstimated Variance of \\(\\hat{\\tau}_{sy}\\):\n\\[\n\\hat{V}\\left(\\hat{\\tau}_{sy}\\right) = N^{2} \\left(1 - \\frac{n}{N}\\right) \\frac{s^{2}}{n}\n\\]"
+  },
+  {
+    "objectID": "Day26-Prelim.html#special-considerations",
+    "href": "Day26-Prelim.html#special-considerations",
+    "title": "Day 26",
+    "section": "Special Considerations",
+    "text": "Special Considerations\n\nNon-Random Populations: If the population is not randomly ordered, use \\(\\hat{V}\\left(\\bar{y}_{sy}\\right)\\) cautiously as it may not provide accurate variance estimates."
+  },
+  {
+    "objectID": "Day26-Prelim.html#section-1",
+    "href": "Day26-Prelim.html#section-1",
+    "title": "Day 26",
+    "section": "",
+    "text": "Example 1:"
+  },
+  {
+    "objectID": "Day26.html#estimation-of-population-mean",
+    "href": "Day26.html#estimation-of-population-mean",
+    "title": "Day 26",
+    "section": "Estimation of Population Mean",
+    "text": "Estimation of Population Mean\n\nThe population mean \\(\\mu\\) can be estimated from a systematic sample using the sample mean \\(\\bar{y}_{\\text{sy}}\\):\n\\[\n\\hat{\\mu} = \\bar{y}_{\\text{sy}} = \\frac{\\sum_{i=1}^{n} y_i}{n}\n\\]\nVariance Estimation: \\[\n\\hat{V}(\\bar{y}_{\\text{sy}}) = \\left(1-\\frac{n}{N}\\right) \\frac{s^2}{n}\n\\]\nThis assumes the population is randomly ordered. The estimated variance matches that of simple random sampling under similar conditions."
+  },
+  {
+    "objectID": "Day26.html#variance-considerations-in-systematic-sampling",
+    "href": "Day26.html#variance-considerations-in-systematic-sampling",
+    "title": "Day 26",
+    "section": "Variance Considerations in Systematic Sampling",
+    "text": "Variance Considerations in Systematic Sampling\n\nSystematic sampling can exhibit different variance properties based on the population structure:\n\nRandom Population: \\(\\rho \\approx 0\\), variance is similar to simple random sampling.\nOrdered Population: \\(\\rho &lt; 0\\), potentially lower variance than simple random sampling.\nPeriodic Population: \\(\\rho &gt; 0\\), possibly higher variance due to repetitive patterns.\n\nVariance Formula: \\[\nV(\\bar{y}_{\\text{sy}}) = \\frac{\\sigma^2}{n} [1 + (n-1) \\rho]\n\\]\nHere, \\(\\rho\\) is a measure of the correlation between pairs of elements within the same systematic sample. The correlation \\(\\rho\\) affects variance estimation significantly depending on the population’s arrangement."
+  },
+  {
+    "objectID": "Day26.html#population-types",
+    "href": "Day26.html#population-types",
+    "title": "Day 26",
+    "section": "Population Types",
+    "text": "Population Types\n\n\nRandom Population: Elements are in random order. Only suitable for certain variance formulas.\n\n\\[\n\\hat{V}\\left(\\bar{Y}_{\\text{sy}}\\right) \\text{ is applicable only to random order populations.}\n\\]\n\nOrdered Population: Elements show a trend (upward or downward).\nPeriodic Population: Elements exhibit regular upward and downward cycles."
+  },
+  {
+    "objectID": "Day26.html#systematic-sampling-and-population-types",
+    "href": "Day26.html#systematic-sampling-and-population-types",
+    "title": "Day 26",
+    "section": "Systematic Sampling and Population Types",
+    "text": "Systematic Sampling and Population Types\n\n\nRandom Population: Systematic sampling approximates simple random sampling.\n\n\\[\n\\rho \\approx 0 \\quad \\text{Systematic} \\approx \\text{Simple Random}\n\\]\n\nOrdered Population: Large differences between elements. Systematic sampling preferred if \\(\\rho &lt; 0\\).\nPeriodic Population: Small differences between elements. Systematic sampling less effective if \\(\\rho &gt; 0\\) (close to 1)."
+  },
+  {
+    "objectID": "Day26.html#estimating-population-total",
+    "href": "Day26.html#estimating-population-total",
+    "title": "Day 26",
+    "section": "Estimating Population Total",
+    "text": "Estimating Population Total\n\nSystematic Sampling Estimator for Population Total \\(\\tau\\):\n\\[\n\\hat{\\tau}_{sy} = N \\cdot \\bar{y}_{sy}\n\\]\nEstimated Variance of \\(\\hat{\\tau}_{sy}\\):\n\\[\n\\hat{V}\\left(\\hat{\\tau}_{sy}\\right) = N^{2} \\left(1 - \\frac{n}{N}\\right) \\frac{s^{2}}{n}\n\\]"
+  },
+  {
+    "objectID": "Day26.html#section-1",
+    "href": "Day26.html#section-1",
+    "title": "Day 26",
+    "section": "",
+    "text": "Example 1: (Ex 7.11, textbook) A college is concerned about improving its relations with a neighboring community. A 1-in-150 systematic sample of the \\(N=4500\\) students listed in the directory is taken to estimate the total amount of money spent on clothing during one quarter of the school year. The results of the sample are listed in the accompanying table. Use these data to estimate \\(\\tau\\) and place a bound on the error of estimation."
+  },
+  {
+    "objectID": "Day26.html#section-2",
+    "href": "Day26.html#section-2",
+    "title": "Day 26",
+    "section": "",
+    "text": "(Ex 7.12, textbook) What sample size is needed to estimate \\(\\tau\\) in Example 1 with a bound on the error of estimation approximately equal to \\(\\$ 10,000\\) ? What systematic sampling scheme do you recommend?"
+  },
+  {
+    "objectID": "Day26.html#section-3",
+    "href": "Day26.html#section-3",
+    "title": "Day 26",
+    "section": "",
+    "text": "Example 2: Foresters are interested in determining the mean timber volume per acre for 520 one-acre plots \\((N=520)\\). A 1 -in- 25 systematic sample is conducted. Using the data presented in the accompanying table, estimate \\(\\mu\\), the average timber volume per plot, and place a bound on the error of estimation."
   }
 ]
