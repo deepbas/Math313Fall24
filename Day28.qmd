@@ -1,0 +1,141 @@
+---
+title: "Day 28"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: "Bastola"
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+```
+
+
+## Comprehensive Guide to Cluster Sampling {.font80}
+
+::: cle7
+**Cluster Sampling** emerges as a cost-effective and efficient sampling design, particularly advantageous in scenarios where a full listing of population elements is impractical or overly expensive. This sampling method is instrumental in gathering substantial information with minimized resource expenditure.
+:::
+
+## Key Concepts and Benefits {.font80}
+::: cle6
+- **Cost Reduction:** By sampling clusters (e.g., city blocks or regions), rather than individual units (e.g., households), significant savings on logistical and operational costs are achieved, especially when geographical dispersion of the population elements is a factor.
+- **Feasibility:** The necessity for a detailed frame listing all elements is circumvented, allowing for practical implementation in large-scale surveys or studies.
+:::
+
+## Implementation Steps {.font80}
+::: cle6
+1. **Identify Clusters:** Divide the population into natural clusters.
+2. **Determine Sample Size:** Set the number of clusters, $n$, and cluster size, $m_i$ (the number of elements in cluster $i$).
+3. **Random Selection:** Randomly choose $n$ clusters from the population.
+4. **Data Collection:** Gather data from every element within each chosen cluster, ensuring comprehensive coverage.
+:::
+
+
+## Design Considerations {.font80}
+::: cle5
+- **Cluster Homogeneity:** Unlike strata, which should be as homogeneous as possible to minimize variance within each stratum, clusters should be internally heterogeneous but similar to each other to maximize the representativeness of the sample. This configuration enhances the accuracy of the estimates derived from the sample.
+:::
+
+## Practical Application Example {.font80}
+Imagine estimating the average income per household in a large city. Cluster sampling allows selecting city blocks as clusters and surveying every household within those blocks, thereby reducing the cost and complexity of the sampling process.
+
+## Strategic Advantages {.font80}
+::: cle7
+- **Reduced Travel Expenses:** By concentrating the survey within geographical clusters, travel time and related costs for surveyors are significantly lowered.
+- **Ease of Sampling:** Using a frame that lists clusters (like city blocks), rather than individual households, simplifies the sampling process and enhances operational efficiency.
+
+This method not only aligns with the objectives of minimizing costs and simplifying logistics but also adapts flexibly to various survey environments, proving essential for researchers and organizations aiming for efficient data collection strategies.
+
+:::
+
+## Estimating the Population Mean with Cluster Sampling {.font60}
+
+::: cle7
+In cluster sampling, the estimation of the population mean $\mu$ is performed using a ratio estimator based on sampled clusters. This method allows us to approximate the overall population mean by leveraging the proportional representation of each cluster.
+
+### **Notations and Definitions**
+- $M$: Total number of clusters in the population.
+- $m$: Number of clusters selected in the sample.
+- $n_i$: Number of elements in the $i^{th}$ cluster.
+- $\bar{y}$: Ratio estimator for the population mean.
+
+### **Ratio Estimator Formula**
+The population mean $\mu$ is estimated using the following ratio:
+$$
+\bar{y}=\frac{\sum_{i=1}^{m} \tau_i}{\sum_{i=1}^{m} n_i}
+$$
+where $\tau_i$ is the total of all observations within the $i^{th}$ cluster.
+:::
+
+## Variance and Confidence Interval for $\bar{y}$ {.font70}
+
+::: cle7
+Understanding the variability and confidence of our estimate is crucial. The estimated variance of $\bar{y}$ and the confidence interval provide insights into the precision of our estimate.
+
+### **Estimated Variance of $\bar{y}$**
+The variance of $\bar{y}$ gives us an idea of how much the estimated mean might vary from sample to sample.
+
+### **Confidence Interval**
+When the number of clusters $m > 20$, $\bar{y}$ can be assumed to follow a normal distribution, allowing us to construct a confidence interval:
+$$
+\bar{y} \pm B
+$$
+where $B$ is the bound on the error of estimation.
+:::
+
+## {.font40}
+
+> Example 1: A sociologist wants to estimate the per-capita income in a certain small city. No list of resi-
+dent adults is available. So she performed cluster sampling. The city is marked off into rectangular blocks,
+except for two industrial areas and three parks that contain only a few houses. The sociologist decides
+that each of the city blocks will be considered one cluster, the two industrial areas will be considered one
+cluster, and finally, the three parks will be considered one cluster. The clusters are numbered on a city
+map, with the numbers from 1 to 415.The experimenter has enough time and money to sample clusters
+and to interview every household within each cluster. Hence, 25 random numbers between1 and 415 are
+selected, and the clusters having these numbers are marked on the map.Interviewers are then assigned to
+each of the sampled clusters. The data on incomes are presented in the following. Use the data to estimate
+the per-capita income in the city and place a bound on the error of estimation.
+
+
+<img src="images/Day28-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
+
+
+
+

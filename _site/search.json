@@ -532,340 +532,319 @@
     "text": "Understanding Chebyshev’s Inequality\n\n\nChebyshev’s Inequality Formula: \\[\nP(|y-\\mu| \\leq k \\cdot \\sigma) \\geqslant 1-\\frac{1}{k^2}\n\\]\n\nInterpretation: This formula states that the probability of the random variable \\(y\\) falling within \\(k\\) standard deviations (\\(\\sigma\\)) of the mean (\\(\\mu\\)) is at least \\(1 - \\frac{1}{k^2}\\)."
   },
   {
-    "objectID": "Day5.html#extending-the-sampling-distribution",
-    "href": "Day5.html#extending-the-sampling-distribution",
-    "title": "Day 5",
-    "section": "Extending the Sampling Distribution",
-    "text": "Extending the Sampling Distribution\n\n\nComputational Application\n\nCalculate probabilities involving statistic \\(\\bar{y}, \\hat{\\tau}\\) etc. from a sample.\nThis forms the basis for estimating the variability of these statistic"
+    "objectID": "Day28.html#comprehensive-guide-to-cluster-sampling",
+    "href": "Day28.html#comprehensive-guide-to-cluster-sampling",
+    "title": "Day 28",
+    "section": "Comprehensive Guide to Cluster Sampling",
+    "text": "Comprehensive Guide to Cluster Sampling\n\nCluster Sampling emerges as a cost-effective and efficient sampling design, particularly advantageous in scenarios where a full listing of population elements is impractical or overly expensive. This sampling method is instrumental in gathering substantial information with minimized resource expenditure."
   },
   {
-    "objectID": "Day5.html#error-bounds-and-confidence-intervals",
-    "href": "Day5.html#error-bounds-and-confidence-intervals",
-    "title": "Day 5",
-    "section": "Error Bounds and Confidence Intervals",
-    "text": "Error Bounds and Confidence Intervals\n\n\nFrom Error Estimation to Confidence\n\nLearn to compute error bounds around estimates.\nExtend these bounds to establish confidence intervals."
+    "objectID": "Day28.html#key-concepts-and-benefits",
+    "href": "Day28.html#key-concepts-and-benefits",
+    "title": "Day 28",
+    "section": "Key Concepts and Benefits",
+    "text": "Key Concepts and Benefits\n\n\nCost Reduction: By sampling clusters (e.g., city blocks or regions), rather than individual units (e.g., households), significant savings on logistical and operational costs are achieved, especially when geographical dispersion of the population elements is a factor.\nFeasibility: The necessity for a detailed frame listing all elements is circumvented, allowing for practical implementation in large-scale surveys or studies."
   },
   {
-    "objectID": "Day5.html#knowledge-review-standardizing-variables",
-    "href": "Day5.html#knowledge-review-standardizing-variables",
-    "title": "Day 5",
-    "section": "Knowledge Review: Standardizing Variables",
-    "text": "Knowledge Review: Standardizing Variables\n\n\nNormal to Standard Normal Transformation\n\nFor a variable \\(X \\sim \\operatorname{Normal}(\\text{mean} = a, \\text{SD} = b)\\):\nStandardization: \\(Z = \\frac{X-a}{b}\\)\nResults in \\(Z \\sim \\operatorname{Normal}(\\text{mean} = 0, \\text{SD} = 1)\\), the standard normal distribution."
+    "objectID": "Day28.html#implementation-steps",
+    "href": "Day28.html#implementation-steps",
+    "title": "Day 28",
+    "section": "Implementation Steps",
+    "text": "Implementation Steps\n\n\nIdentify Clusters: Divide the population into natural clusters.\nDetermine Sample Size: Set the number of clusters, \\(n\\), and cluster size, \\(m_i\\) (the number of elements in cluster \\(i\\)).\nRandom Selection: Randomly choose \\(n\\) clusters from the population.\nData Collection: Gather data from every element within each chosen cluster, ensuring comprehensive coverage."
   },
   {
-    "objectID": "Day5.html#calculating-probabilities-for-a-normal-variable",
-    "href": "Day5.html#calculating-probabilities-for-a-normal-variable",
-    "title": "Day 5",
-    "section": "Calculating Probabilities for a Normal Variable",
-    "text": "Calculating Probabilities for a Normal Variable\n\n\nFor a normal random variable \\(X\\), and a specific value \\(c\\), the probability that \\(X\\) exceeds \\(c\\) can be transformed to a standard normal variable \\(Z\\). This transformation simplifies the calculation as follows:\n\\[\nP(X &gt; c) = P(X-a &gt; c-a) = P\\left(\\frac{X-a}{b} &gt; \\frac{c-a}{b}\\right)\\] \\[\\qquad = P\\left(Z &gt; \\frac{c-a}{b}\\right) = 1 - P\\left(Z &lt; \\frac{c-a}{b}\\right)\\]\nThis step highlights the utility of standardization in statistical analysis, turning complex normal calculations into simpler standard normal calculations."
+    "objectID": "Day28.html#design-considerations",
+    "href": "Day28.html#design-considerations",
+    "title": "Day 28",
+    "section": "Design Considerations",
+    "text": "Design Considerations\n\n\nCluster Homogeneity: Unlike strata, which should be as homogeneous as possible to minimize variance within each stratum, clusters should be internally heterogeneous but similar to each other to maximize the representativeness of the sample. This configuration enhances the accuracy of the estimates derived from the sample."
   },
   {
-    "objectID": "Day5.html#calculating-interval-probabilities",
-    "href": "Day5.html#calculating-interval-probabilities",
-    "title": "Day 5",
-    "section": "Calculating Interval Probabilities",
-    "text": "Calculating Interval Probabilities\n\n\n\nDetermining the probability that \\(X\\) lies between two values \\(c\\) and \\(d\\) involves subtracting the probability of \\(X\\) being less than \\(c\\) from the probability of \\(X\\) being less than \\(d\\):\n\\[\nP(c &lt; X &lt; d) = P(X &lt; d) - P(X &lt; c) = P\\left(Z &lt; \\frac{d-a}{b}\\right) - P\\left(Z &lt; \\frac{c-a}{b}\\right)\n\\]\nWhen \\(X = \\bar{y}\\), representing the mean of a sample, and with \\(a = \\mu\\) and \\(b = \\frac{\\sigma}{\\sqrt{n}}\\), this formulation directly supports the creation of confidence intervals around the sample mean."
+    "objectID": "Day28.html#practical-application-example",
+    "href": "Day28.html#practical-application-example",
+    "title": "Day 28",
+    "section": "Practical Application Example",
+    "text": "Practical Application Example\nImagine estimating the average income per household in a large city. Cluster sampling allows selecting city blocks as clusters and surveying every household within those blocks, thereby reducing the cost and complexity of the sampling process."
   },
   {
-    "objectID": "Day5.html#estimating-the-population-mean",
-    "href": "Day5.html#estimating-the-population-mean",
-    "title": "Day 5",
-    "section": "Estimating the Population Mean",
-    "text": "Estimating the Population Mean\n\n\nWhen estimating the population mean \\(\\mu\\), which is unknown, we use the sample mean \\(\\bar{y}\\). The difference \\(|\\bar{y} - \\mu|\\) represents the error of our estimation.\nError Bound for Confidence\nTo ensure the reliability of our estimate, we define a bound \\(B\\) such that:\n\\[\nP(|\\bar{y} - \\mu| \\leqslant B) \\geqslant 1 - \\alpha\n\\]\nThis bound indicates that the true population mean is likely within \\(B\\) units of our sample mean with a confidence level of \\(1 - \\alpha\\). The smaller the error, the closer our sample mean is to the true population mean, enhancing the estimation’s accuracy."
+    "objectID": "Day28.html#strategic-advantages",
+    "href": "Day28.html#strategic-advantages",
+    "title": "Day 28",
+    "section": "Strategic Advantages",
+    "text": "Strategic Advantages\n\n\nReduced Travel Expenses: By concentrating the survey within geographical clusters, travel time and related costs for surveyors are significantly lowered.\nEase of Sampling: Using a frame that lists clusters (like city blocks), rather than individual households, simplifies the sampling process and enhances operational efficiency.\n\nThis method not only aligns with the objectives of minimizing costs and simplifying logistics but also adapts flexibly to various survey environments, proving essential for researchers and organizations aiming for efficient data collection strategies."
   },
   {
-    "objectID": "Day5.html#standardizing-and-solving-for-b",
-    "href": "Day5.html#standardizing-and-solving-for-b",
-    "title": "Day 5",
-    "section": "Standardizing and Solving for \\(B\\)",
-    "text": "Standardizing and Solving for \\(B\\)\n\n\nTransforming our problem using the standard deviation of the sample mean, we standardize:\n\\[P(-B\\leqslant \\bar{y}-\\mu\\leqslant B)=P\\left(\\frac{-B}{\\sigma/\\sqrt{n}}\\leqslant \\frac{\\bar{y}-\\mu}{\\sigma/\\sqrt{n}}\\leqslant \\frac{B}{\\sigma/\\sqrt{n}}\\right)\\geqslant 1-\\alpha\\]\nLeveraging the symmetry of the standard normal distribution gives us:\n\\[\\frac{B}{\\sigma/\\sqrt{n}}=z_{1-\\frac{\\alpha}{2}}\\]\nConcluding with the critical value for \\(B\\):\n\\[B=z_{1-\\frac{\\alpha}{2}}\\cdot \\frac{\\sigma}{\\sqrt{n}}\\]\nThis calculation shows how \\(B\\) scales with both the sample size \\(n\\) and the standard deviation \\(\\sigma\\), key to interpreting the confidence in our estimate."
+    "objectID": "Day28.html#estimating-the-population-mean-with-cluster-sampling",
+    "href": "Day28.html#estimating-the-population-mean-with-cluster-sampling",
+    "title": "Day 28",
+    "section": "Estimating the Population Mean with Cluster Sampling",
+    "text": "Estimating the Population Mean with Cluster Sampling\n\nIn cluster sampling, the estimation of the population mean \\(\\mu\\) is performed using a ratio estimator based on sampled clusters. This method allows us to approximate the overall population mean by leveraging the proportional representation of each cluster.\nNotations and Definitions\n\n\\(M\\): Total number of clusters in the population.\n\\(m\\): Number of clusters selected in the sample.\n\\(n_i\\): Number of elements in the \\(i^{th}\\) cluster.\n\\(\\bar{y}\\): Ratio estimator for the population mean.\n\nRatio Estimator Formula\nThe population mean \\(\\mu\\) is estimated using the following ratio: \\[\n\\bar{y}=\\frac{\\sum_{i=1}^{m} \\tau_i}{\\sum_{i=1}^{m} n_i}\n\\] where \\(\\tau_i\\) is the total of all observations within the \\(i^{th}\\) cluster."
   },
   {
-    "objectID": "Day5.html#using-t-distribution",
-    "href": "Day5.html#using-t-distribution",
-    "title": "Day 5",
-    "section": "Using \\(t\\)-Distribution",
-    "text": "Using \\(t\\)-Distribution\n\n\nWhen the population standard deviation \\(\\sigma\\) is unknown, we use the sample standard deviation \\(s\\) and the \\(t\\)-distribution to standardize the problem:\n\\[P(-B\\leqslant \\bar{y}-\\mu\\leqslant B)=P\\left(\\frac{-B}{s/\\sqrt{n}}\\leqslant \\frac{\\bar{y}-\\mu}{s/\\sqrt{n}}\\leqslant \\frac{B}{s/\\sqrt{n}}\\right)\\geqslant 1-\\alpha\\]\nLeveraging the properties of the \\(t\\)-distribution, given the degrees of freedom \\(n-1\\), we find:\n\\[\\frac{B}{s/\\sqrt{n}}=t_{1-\\frac{\\alpha}{2}, n-1}\\]\nConcluding with the critical value for \\(B\\):\n\\[B=t_{1-\\frac{\\alpha}{2}, n-1}\\cdot \\frac{s}{\\sqrt{n}}\\]\nThis calculation shows how \\(B\\) scales with the sample size \\(n\\) and the sample standard deviation \\(s\\), crucial for interpreting the confidence in our estimate when \\(\\sigma\\) is unknown."
+    "objectID": "Day28.html#variance-and-confidence-interval-for-bary",
+    "href": "Day28.html#variance-and-confidence-interval-for-bary",
+    "title": "Day 28",
+    "section": "Variance and Confidence Interval for \\(\\bar{y}\\)",
+    "text": "Variance and Confidence Interval for \\(\\bar{y}\\)\n\nUnderstanding the variability and confidence of our estimate is crucial. The estimated variance of \\(\\bar{y}\\) and the confidence interval provide insights into the precision of our estimate.\nEstimated Variance of \\(\\bar{y}\\)\nThe variance of \\(\\bar{y}\\) gives us an idea of how much the estimated mean might vary from sample to sample.\nConfidence Interval\nWhen the number of clusters \\(m &gt; 20\\), \\(\\bar{y}\\) can be assumed to follow a normal distribution, allowing us to construct a confidence interval: \\[\n\\bar{y} \\pm B\n\\] where \\(B\\) is the bound on the error of estimation."
   },
   {
-    "objectID": "Day5.html#case-study",
-    "href": "Day5.html#case-study",
-    "title": "Day 5",
-    "section": "Case Study",
-    "text": "Case Study\n\n\nIn a standard math quiz for the public school system of a county, each student was graded on a four-point scale \\((0,1,2,3), 3\\) being a perfect score. The results for all students are given as follows:\n\\[\\begin{array}{ll}\n\\hline \\text { Score, y} & \\text { Propotion, P(y) } \\\\\n\\hline 3 & 0.64 \\\\\n2 & 0.16 \\\\\n1 & 0.08 \\\\\n0 & 0.12 \\\\\n\\hline\n\\end{array}\\]"
-  },
-  {
-    "objectID": "Day5.html#quiz",
-    "href": "Day5.html#quiz",
-    "title": "Day 5",
-    "section": "Quiz",
-    "text": "Quiz\n\nCompute the expected value of the quiz score.\n\n\n\nCompute the standard deviation of the quiz score.\n\n\n\nA sample of 100 students is randomly selected. What is the probability of this sample mean greater than 2.425 ?"
-  },
-  {
-    "objectID": "Day5.html#solutions",
-    "href": "Day5.html#solutions",
-    "title": "Day 5",
-    "section": "Solutions",
-    "text": "Solutions\n\n\nClick for answer\n\n\n\n\\(E(y)=\\sum y \\cdot P(y)=\\mu =2.32\\)\n\\(V(y)=\\sum(y-\\mu)^2 \\cdot P(y)=\\sigma^2=1.098\\)\n\n\\(\\operatorname{\\operatorname {SD}}(y)=\\sigma=\\sqrt{1.098} \\approx 1.048\\)\n\nA sample of \\(n=100\\) students is selected\n\n\\[\\begin{align*}\n\\begin{aligned}\nP(\\bar{y}&gt;2.425) & =P\\left(z&gt;\\frac{2.425-\\mu}{\\sigma / \\sqrt{n}}\\right) \\\\\n& =P\\left(z&gt;\\frac{2.425-2.32}{1.048 / \\sqrt{100}}\\right) \\\\\n& \\approx P(z&gt;1)=1-P(z&lt;1) \\\\\n& =1-0.8413=0.1587\n\\end{aligned}\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "Day4.html#introduction-to-probability-sampling",
-    "href": "Day4.html#introduction-to-probability-sampling",
-    "title": "Day 4",
-    "section": "Introduction to Probability Sampling",
-    "text": "Introduction to Probability Sampling\n\n\n\nObjective: Understand the basics of probability sampling and its importance in statistical inference.\nKey Concepts:\n\nFinite vs. Infinite Populations: Differentiates sampling dynamics where populations are either bounded (finite) or theoretically limitless (infinite).\nIndependent Selections: Each sample is selected without influence from the selections of other samples.\nSampling with Replacement: After a sample is selected, it is “replaced,” allowing it to be selected again in subsequent draws.\nEffects on Variance and Estimation Accuracy: Discusses how different sampling methods affect the variability and accuracy of statistical estimates."
-  },
-  {
-    "objectID": "Day4.html#detailed-example-of-probability-sampling",
-    "href": "Day4.html#detailed-example-of-probability-sampling",
-    "title": "Day 4",
-    "section": "Detailed Example of Probability Sampling",
-    "text": "Detailed Example of Probability Sampling\n\n\n\nProbability Equation:\n\nFor each element in the population, the probability of its selection in a sample is denoted as:\n\n\n\\[\nP(\\text{selection of element } i) = \\delta_i\n\\]\n\nExample: Consider sampling from the set {1, 2, 3, 4} with defined probabilities.\n\nContext: This could represent a scenario where each number corresponds to a category or group within a larger population."
-  },
-  {
-    "objectID": "Day4.html#implementation-of-sampling-techniques",
-    "href": "Day4.html#implementation-of-sampling-techniques",
-    "title": "Day 4",
-    "section": "Implementation of Sampling Techniques",
-    "text": "Implementation of Sampling Techniques\n\n\nSampling typically involves randomly selecting elements based on their defined probabilities.\n\nSampling with Replacement: Each element has an equal or specified chance to be chosen again after it is selected.\nSampling without Replacement: Once an element is chosen, it is not returned to the pool for the remainder of the sampling process.\nImpact on Variability:\n\nThe choice between sampling with or without replacement can significantly affect the variability and bias in the estimation process."
-  },
-  {
-    "objectID": "Day4.html#sampling-with-replacement",
-    "href": "Day4.html#sampling-with-replacement",
-    "title": "Day 4",
-    "section": "Sampling with Replacement",
-    "text": "Sampling with Replacement\n\n\n\nDefinition: Each element has the same probability of being selected, independent of previous selections.\nProbability Notation:\n\n\\(\\delta_i = \\frac{1}{N}\\) for all \\(i\\)\n\n\n\\[\\begin{align*}\n\\hat{\\tau} = \\frac{1}{n} \\sum_{i=1}^n \\frac{y_i}{\\delta_i}\n\\end{align*}\\]\n\nUnbiased Estimator: Shows how sampling with equal probabilities is unbiased regardless of selection order."
-  },
-  {
-    "objectID": "Day4.html#advantages-of-varying-probabilities",
-    "href": "Day4.html#advantages-of-varying-probabilities",
-    "title": "Day 4",
-    "section": "Advantages of Varying Probabilities",
-    "text": "Advantages of Varying Probabilities\n\n\n\nObjective: Improve estimation by varying selection probabilities.\nTypical Scenario: Sampling industrial firms with varying sizes.\n\n\\[\\begin{align*}\n\\delta_i = \\frac{y_i}{\\tau}\n\\end{align*}\\]\n\nImproved Estimates: Giving higher probabilities to units with greater relevance (e.g., larger firms).\n\nImpact: This approach reduces variance and increases the accuracy of the estimates."
-  },
-  {
-    "objectID": "Day4.html#practical-sampling-without-replacement",
-    "href": "Day4.html#practical-sampling-without-replacement",
-    "title": "Day 4",
-    "section": "Practical Sampling without Replacement",
-    "text": "Practical Sampling without Replacement\n\n\n\nDifference from With Replacement:\n\nChanges in probabilities after each draw.\nMore aligned with real-world sampling conditions.\n\n\n\\[\\begin{align*}\n\\hat{\\tau} = \\sum_{i=1}^n \\frac{y_i}{\\pi_i}\n\\end{align*}\\]\n\nCalculation: Weights each sampled unit by the reciprocal of its probability of selection."
-  },
-  {
-    "objectID": "Day4.html#example-from-section-3.3",
-    "href": "Day4.html#example-from-section-3.3",
-    "title": "Day 4",
-    "section": "Example from Section 3.3",
-    "text": "Example from Section 3.3\n\n\nSet of Elements:\n\nLet \\(U = \\{u_1, u_2, u_3, u_4\\}\\) represent the population elements, where \\(u_i\\) corresponds to an element.\n\nProbabilities:\n\nAssociated probabilities of selection are denoted by \\(\\delta_i\\), where:\n\n\\(\\delta_1 = \\delta_2 = 0.1\\) and \\(\\delta_3 = \\delta_4 = 0.4\\).\n\n\n\n\n# Define the elements and their respective probabilities\nelements &lt;- c(1, 2, 3, 4)\ndeltas &lt;- c(0.1, 0.1, 0.4, 0.4)"
-  },
-  {
-    "objectID": "Day4.html#possible-samples-and-their-estimated-counts",
-    "href": "Day4.html#possible-samples-and-their-estimated-counts",
-    "title": "Day 4",
-    "section": "Possible samples and their estimated counts",
-    "text": "Possible samples and their estimated counts\n\n\n\n# Possible samples and their probabilities\nsamples &lt;- list(c(1, 2), c(1, 3), c(1, 4), c(2, 3), c(2, 4), c(3, 4),\n                c(1, 1), c(2, 2), c(3, 3), c(4, 4))\n# Compute tau_hat for each sample, ensuring to divide by the sample size\ntau_hats &lt;- sapply(samples, function(s) sum(elements[s] / deltas[s]) / length(s))\n\n# Check tau_hats values\ntau_hats\n\n [1] 15.00  8.75 10.00 13.75 15.00  8.75 10.00 20.00  7.50 10.00\n\n\nThe estimator \\(\\hat{\\tau}\\) for each sample is calculated using the formula:\n\\[\n\\hat{\\tau} = \\frac{1}{n} \\sum_{i=1}^n \\frac{y_i}{\\delta_i}\n\\]"
-  },
-  {
-    "objectID": "Day4.html#probabilities-calculations",
-    "href": "Day4.html#probabilities-calculations",
-    "title": "Day 4",
-    "section": "Probabilities calculations",
-    "text": "Probabilities calculations\n\n\n# Calculate pair probabilities\nsample_probs &lt;- c(\n  0.1*0.1 * 2,   # (1, 2)\n  0.1*0.4 * 2,   # (1, 3)\n  0.1*0.4 * 2,   # (1, 4)\n  0.1*0.4 * 2,   # (2, 3)\n  0.1*0.4 * 2,   # (2, 4)\n  0.4*0.4 * 2,   # (3, 4)\n  0.1*0.1,       # (1, 1)\n  0.1*0.1,       # (2, 2)\n  0.4*0.4,       # (3, 3)\n  0.4*0.4        # (4, 4)\n)\n\nsample_probs\n\n [1] 0.02 0.08 0.08 0.08 0.08 0.32 0.01 0.01 0.16 0.16"
-  },
-  {
-    "objectID": "Day4.html#calculating-expected-value-of-hattau",
-    "href": "Day4.html#calculating-expected-value-of-hattau",
-    "title": "Day 4",
-    "section": "Calculating Expected Value of \\(\\hat{\\tau}\\)",
-    "text": "Calculating Expected Value of \\(\\hat{\\tau}\\)\n\nThe expected value of \\(\\hat{\\tau}\\) is calculated as:\n\\[\nE[\\hat{\\tau}] = 15(0.02) + 8.75(0.08) + \\cdots + 10(0.16) = 10\n\\]\n\ntau_hats * sample_probs\n\n [1] 0.3 0.7 0.8 1.1 1.2 2.8 0.1 0.2 1.2 1.6\n\n# Calculate the expected value of tau_hat\nE_tau_hat &lt;- sum(tau_hats * sample_probs)\nE_tau_hat\n\n[1] 10"
-  },
-  {
-    "objectID": "Day4.html#calculating-variance-of-hattau",
-    "href": "Day4.html#calculating-variance-of-hattau",
-    "title": "Day 4",
-    "section": "Calculating Variance of \\(\\hat{\\tau}\\)",
-    "text": "Calculating Variance of \\(\\hat{\\tau}\\)\n\nThe variance of \\(\\hat{\\tau}\\) is calculated as follows:\n\\[\nV(\\hat{\\tau}) = \\sum_i(\\hat{\\tau}_i - E[\\hat{\\tau}_i])^2*p_i)\n\\]\n\nvar_tau_hat &lt;- sum((tau_hats - E_tau_hat)^2 * sample_probs)\nvar_tau_hat\n\n[1] 6.25"
-  },
-  {
-    "objectID": "Day4.html#concept-of-covariance",
-    "href": "Day4.html#concept-of-covariance",
-    "title": "Day 4",
-    "section": "Concept of Covariance",
-    "text": "Concept of Covariance\n\n\nCovariance provides a measure of the linear relationship between two variables \\(y_1\\) and \\(y_2\\).\nDefined as: \\[\n\\operatorname{cov}(y_1, y_2) = E\\left[(y_1-\\mu_1)(y_2-\\mu_2)\\right]\n\\] where \\(\\mu_1\\) and \\(\\mu_2\\) are the means of \\(y_1\\) and \\(y_2\\), respectively."
-  },
-  {
-    "objectID": "Day4.html#visual-interpretation",
-    "href": "Day4.html#visual-interpretation",
-    "title": "Day 4",
-    "section": "Visual Interpretation",
-    "text": "Visual Interpretation\n\n\nPositive Relationship: If \\(y_1\\) increases as \\(y_2\\) increases, resulting in a positive covariance.\nNegative Relationship: If \\(y_1\\) decreases as \\(y_2\\) increases, resulting in a negative covariance.\nNo Linear Relationship: Covariance near zero suggests little or no linear relationship."
-  },
-  {
-    "objectID": "Day4.html#significance-of-covariance",
-    "href": "Day4.html#significance-of-covariance",
-    "title": "Day 4",
-    "section": "Significance of Covariance",
-    "text": "Significance of Covariance\n\n\nScale Dependency: The magnitude of covariance depends on the units of \\(y_1\\) and \\(y_2\\).\nNormalization: Standardizing covariance by the product of the standard deviations of \\(y_1\\) and \\(y_2\\) gives the correlation coefficient: \\[\n\\rho = \\frac{\\operatorname{cov}(y_1, y_2)}{\\sigma_1 \\sigma_2}\n\\] where \\(\\sigma_1\\) and \\(\\sigma_2\\) are standard deviations of \\(y_1\\) and \\(y_2\\)."
-  },
-  {
-    "objectID": "Day4.html#correlation-coefficient",
-    "href": "Day4.html#correlation-coefficient",
-    "title": "Day 4",
-    "section": "Correlation Coefficient",
-    "text": "Correlation Coefficient\n\n\nRange: \\(\\rho\\) ranges from -1 to 1, indicating the strength and direction of the linear relationship.\nInterpretation:\n\n\\(\\rho = 1\\): Perfect positive linear relationship.\n\\(\\rho = -1\\): Perfect negative linear relationship.\n\\(\\rho = 0\\): No linear relationship."
-  },
-  {
-    "objectID": "Day4.html#understanding-estimators",
-    "href": "Day4.html#understanding-estimators",
-    "title": "Day 4",
-    "section": "Understanding Estimators",
-    "text": "Understanding Estimators\n\n\nProperties of a Good Estimator:\n\nUnbiasedness: \\(E(\\hat{\\theta}) = \\theta\\)\nSmall Variance: \\(V(\\hat{\\theta}) = \\sigma_{\\hat{\\theta}}^2\\) is minimal"
-  },
-  {
-    "objectID": "Day4.html#estimator-distribution-and-error",
-    "href": "Day4.html#estimator-distribution-and-error",
-    "title": "Day 4",
-    "section": "Estimator Distribution and Error",
-    "text": "Estimator Distribution and Error\n\n\nSampling Distribution: The probability distribution of \\(\\bar{y}\\) depends on the sampling mechanism.\nDesired Characteristics:\n\n\\(\\bar{y}\\) should be close to \\(\\mu\\), centering around \\(\\mu\\).\nThe sampling plan should ensure \\(E(\\bar{y}) = \\mu\\) and \\(V(\\bar{y})\\) is small."
-  },
-  {
-    "objectID": "Day4.html#confidence-intervals-and-error-bounds",
-    "href": "Day4.html#confidence-intervals-and-error-bounds",
-    "title": "Day 4",
-    "section": "Confidence Intervals and Error Bounds",
-    "text": "Confidence Intervals and Error Bounds\n\n\n\nError of Estimation: \\(|\\hat{\\theta} - \\theta|\\), the magnitude of deviation from the true parameter.\nConfidence Interval: An interval within which the parameter is expected to lie with a certain probability \\((1-\\alpha)\\).\n\nForm: \\((\\hat{\\theta} - B, \\hat{\\theta} + B)\\) where \\(B = z_{\\alpha / 2} \\sigma_{\\hat{\\theta}}\\) for normally distributed estimators.\nUse of \\(t\\)-distribution: When population SD is unknown and the sample size is large, \\(t\\)-scores may replace \\(z\\)-scores."
-  },
-  {
-    "objectID": "Day8.html#key-quantities-in-survey-sampling",
-    "href": "Day8.html#key-quantities-in-survey-sampling",
-    "title": "Day 8",
-    "section": "Key Quantities in Survey Sampling",
-    "text": "Key Quantities in Survey Sampling\n\n\n\n\nEstimator of the Population Mean\n\nEstimator: \\[\n\\hat{\\mu} = \\bar{y}\n\\]\nEstimated Variance: \\[\n\\hat{V}(\\bar{y}) = \\left(1-\\frac{n}{N}\\right) \\frac{s^2}{n}\n\\]\n\n\n\nEstimator of the Population Total\n\nEstimator: \\[\n\\hat{\\tau} = N \\cdot \\bar{y}\n\\]\nEstimated Variance: \\[\n\\hat{V}(\\hat{\\tau}) = N^2 \\cdot \\left(1-\\frac{n}{N}\\right) \\frac{s^2}{n}\n\\]"
-  },
-  {
-    "objectID": "Day8.html#error-bounds-for-survey-estimates",
-    "href": "Day8.html#error-bounds-for-survey-estimates",
-    "title": "Day 8",
-    "section": "Error Bounds for Survey Estimates",
-    "text": "Error Bounds for Survey Estimates\n\n\nMean Estimation Error Bound\n\\[\n  \\text{B} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s^2}{n}}\n  \\]\nTotal Estimation Error Bound\n\\[\n  \\text{B} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{N^2 \\cdot \\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s^2}{n}}\n  \\]"
-  },
-  {
-    "objectID": "Day8.html#computing-t-distribution-critical-values-in-r",
-    "href": "Day8.html#computing-t-distribution-critical-values-in-r",
-    "title": "Day 8",
-    "section": "Computing t-Distribution Critical Values in R",
-    "text": "Computing t-Distribution Critical Values in R\n\n\nCritical Value Calculation in R\n```{r}\nqt(1 - alpha / 2, df = n - 1)\n```\nThis function computes the critical value \\(t_{1-\\alpha / 2, n-1}\\) for the t-distribution.\nConfidence Interval Formula\n\\[\\begin{align*}\n\\hat{\\theta} \\pm B\n\\end{align*}\\]\nHere, \\(\\hat{\\theta}\\) is the estimate for the parameter of interest and \\(B\\) represents the bound on the error of estimation, computed as outlined in previous slides."
-  },
-  {
-    "objectID": "Day8.html#section",
-    "href": "Day8.html#section",
-    "title": "Day 8",
+    "objectID": "Day28.html#section",
+    "href": "Day28.html#section",
+    "title": "Day 28",
     "section": "",
-    "text": "Example 1: A simple random sample of 100 houses within a community is selected and their monthly energy usages are recorded. The sample mean and sample standard deviation are founded to be \\(\\bar{y}=\\) 887 kWh and \\(s=120 \\mathrm{kWh}\\). If there are \\(N=8000\\) houses within the community. Estimate the true mean monthly energy usage per house, \\(\\mu\\), and the total monthly energy usages for the community, \\(\\tau\\). The estimation should include the estimator, the estimated variance, the \\(95 \\%\\) bound on the error of estimation, and the \\(95 \\%\\) confidence interval for the population parameter.\n\n\nqt(1 - 0.05/2, df = 99)\n\n[1] 1.984217"
+    "text": "Example 1: A sociologist wants to estimate the per-capita income in a certain small city. No list of resi- dent adults is available. So she performed cluster sampling. The city is marked off into rectangular blocks, except for two industrial areas and three parks that contain only a few houses. The sociologist decides that each of the city blocks will be considered one cluster, the two industrial areas will be considered one cluster, and finally, the three parks will be considered one cluster. The clusters are numbered on a city map, with the numbers from 1 to 415.The experimenter has enough time and money to sample clusters and to interview every household within each cluster. Hence, 25 random numbers between1 and 415 are selected, and the clusters having these numbers are marked on the map.Interviewers are then assigned to each of the sampled clusters. The data on incomes are presented in the following. Use the data to estimate the per-capita income in the city and place a bound on the error of estimation."
   },
   {
-    "objectID": "Day8.html#error-bounds-for-known-population-variance",
-    "href": "Day8.html#error-bounds-for-known-population-variance",
-    "title": "Day 8",
-    "section": "Error Bounds for Known Population Variance",
-    "text": "Error Bounds for Known Population Variance\n\n\nMean Estimation Error\n\\[\n  B_{\\bar{y}} = z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}}\n  \\]\nTotal Estimation Error \\[\n  B_{\\hat{\\tau}} = z_{1-\\frac{\\alpha}{2}} \\cdot N \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}}\n  \\]"
+    "objectID": "Day25.html#introduction-to-systematic-sampling",
+    "href": "Day25.html#introduction-to-systematic-sampling",
+    "title": "Day 25",
+    "section": "Introduction to Systematic Sampling",
+    "text": "Introduction to Systematic Sampling\n\nSystematic sampling simplifies the sample selection process, making it a widely used design in survey sampling due to:\n\nEase of implementation in the field.\nLower susceptibility to selection errors compared to simple random and stratified random sampling.\n\nDefinition: A 1-in-k systematic sample with a random start is obtained by randomly selecting one element from the first \\(k\\) elements and every \\(k^{th}\\) element thereafter."
   },
   {
-    "objectID": "Day8.html#sample-size-and-estimation-accuracy",
-    "href": "Day8.html#sample-size-and-estimation-accuracy",
-    "title": "Day 8",
-    "section": "Sample Size and Estimation Accuracy",
-    "text": "Sample Size and Estimation Accuracy\n\n\n\nKey Insight: Larger sample sizes \\(n\\) reduce the error bounds \\(B\\), increasing the precision of estimates.\nTrade-off: Larger samples increase costs but provide more reliable data.\n\n\n\n\nSelect \\(B\\) based on desired confidence and precision. Solve for \\(n\\) given \\(B\\), using the error bound formulas."
+    "objectID": "Day25.html#advantages-of-systematic-sampling",
+    "href": "Day25.html#advantages-of-systematic-sampling",
+    "title": "Day 25",
+    "section": "Advantages of Systematic Sampling",
+    "text": "Advantages of Systematic Sampling\n\nAdvantages:\n\nSimplicity, especially useful with manual frames or registers.\nHigh intra-sample variability can make it more accurate than simple random sampling (SRS)."
   },
   {
-    "objectID": "Day8.html#sample-size-determination-for-estimating-population-mean-mu",
-    "href": "Day8.html#sample-size-determination-for-estimating-population-mean-mu",
-    "title": "Day 8",
-    "section": "Sample Size Determination for Estimating Population Mean \\(\\mu\\)",
-    "text": "Sample Size Determination for Estimating Population Mean \\(\\mu\\)\n\n\nCase 1: Known Population Variance \\(\\sigma^2\\)\n\\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment\n\\[\n  n = \\frac{N s^2}{N \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + s^2}\n  \\]"
+    "objectID": "Day25.html#how-to-draw-a-systematic-sample",
+    "href": "Day25.html#how-to-draw-a-systematic-sample",
+    "title": "Day 25",
+    "section": "How to Draw a Systematic Sample",
+    "text": "How to Draw a Systematic Sample\n\nTo draw a systematic sample:\n\nChoose \\(k\\) such that \\(k \\leq \\frac{N}{n}\\) where \\(N\\) is the population size and \\(n\\) is the desired sample size.\nRandomly select one element from the first \\(k\\) elements.\nContinue selecting every \\(k^{th}\\) element thereafter.\n\nExample: For \\(N=15000\\) and \\(n=1600\\), choose \\(k=9\\) for a 1-in-9 systematic sample."
   },
   {
-    "objectID": "Day8.html#sample-size-determination-for-estimating-population-total-tau",
-    "href": "Day8.html#sample-size-determination-for-estimating-population-total-tau",
-    "title": "Day 8",
-    "section": "Sample Size Determination for Estimating Population Total \\(\\tau\\)",
-    "text": "Sample Size Determination for Estimating Population Total \\(\\tau\\)\n\n\nCase 1: Known Population Variance \\(\\sigma^2\\) \\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\hat{\\tau}}}{z_{1-\\frac{\\alpha}{2}} \\cdot N}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment \\[\n  n = \\frac{N s^2}{N \\left(\\frac{B_{\\hat{\\tau}}}{z_{1-\\frac{\\alpha}{2}} \\cdot N}\\right)^2 + s^2}\n  \\]"
+    "objectID": "Day25.html#understanding-sampling-probabilities-in-systematic-sampling",
+    "href": "Day25.html#understanding-sampling-probabilities-in-systematic-sampling",
+    "title": "Day 25",
+    "section": "Understanding Sampling Probabilities in Systematic Sampling",
+    "text": "Understanding Sampling Probabilities in Systematic Sampling\n\nIn systematic sampling:\n\nEach unit’s selection probability, \\(\\pi_k\\), is \\(\\frac{1}{a} = \\frac{n}{N}\\) when \\(N\\) is a multiple of \\(a\\).\nIssues arise when there are extra units beyond \\(a \\times n\\), leading to slight imbalances in probabilities.\n\nKey Point: The entire sample can be considered as a single cluster, which complicates variance estimation as many second-order inclusion probabilities are zero."
   },
   {
-    "objectID": "Day8.html#using-range-r",
-    "href": "Day8.html#using-range-r",
-    "title": "Day 8",
-    "section": "Using Range, R",
-    "text": "Using Range, R\n \n\nIf \\(\\sigma^2\\) and \\(s^2\\) are unknown, but the range \\(R\\) is given: Use equation for \\(\\sigma^2\\) but approximate \\(\\sigma \\approx \\frac{R}{4}\\)."
+    "objectID": "Day25.html#practical-considerations-in-systematic-sampling",
+    "href": "Day25.html#practical-considerations-in-systematic-sampling",
+    "title": "Day 25",
+    "section": "Practical Considerations in Systematic Sampling",
+    "text": "Practical Considerations in Systematic Sampling\n\nWhile systematic sampling offers many advantages, its has some drawbacks:\n\nCycled behavior in the sampling frame may bias the results.\nIt is challenging to estimate unbiased sampling errors due to the dependency on a single starting point.\n\nThe spread of the sample through the population should ideally cover the entire range to ensure representative data collection."
   },
   {
-    "objectID": "Day8.html#section-1",
-    "href": "Day8.html#section-1",
-    "title": "Day 8",
+    "objectID": "Day25.html#applications-of-systematic-sampling",
+    "href": "Day25.html#applications-of-systematic-sampling",
+    "title": "Day 25",
+    "section": "Applications of Systematic Sampling",
+    "text": "Applications of Systematic Sampling\n\nSystematic sampling’s methodology allows for diverse applications, from national censuses to quality control in manufacturing:\n\nEnsures consistent coverage across a population.\nFacilitates easier and less error-prone data collection in field settings.\n\nThis versatility makes it a favored choice in many large-scale and long-term studies."
+  },
+  {
+    "objectID": "Day25.html#handling-non-integer-fracnn-in-systematic-sampling",
+    "href": "Day25.html#handling-non-integer-fracnn-in-systematic-sampling",
+    "title": "Day 25",
+    "section": "Handling Non-Integer \\(\\frac{N}{n}\\) in Systematic Sampling",
+    "text": "Handling Non-Integer \\(\\frac{N}{n}\\) in Systematic Sampling\n\nWhen \\(\\frac{N}{n}\\) is not an integer (\\(N = na + c\\)):\n\nIf the starting value \\(r \\leq c\\), the sample includes \\(n+1\\) units.\nOtherwise, the sample includes \\(n\\) units.\n\nAlternative Method:\n\nGenerate a random number \\(\\varepsilon\\) from a uniform distribution over \\((0, a)\\).\nSelect elements \\(i\\) such that \\(i-1 &lt; \\varepsilon + (j-1)a \\leq i\\); for \\(j = 1, \\ldots, n\\) and \\(i = 1, \\ldots, N\\).\n\nThis method ensures each element has an equal chance of selection, regardless of the frame’s total size relative to \\(n\\)."
+  },
+  {
+    "objectID": "Day25.html#section",
+    "href": "Day25.html#section",
+    "title": "Day 25",
     "section": "",
-    "text": "Example 2: To study the monthly energy usages in a community with \\(N=8000\\) houses, a researcher want to select a simple random sample with size \\(n\\). Historical data shows that the sample standard deviation of the the monthly energy usages in this community is \\(s=120 \\mathrm{kWh}\\). Find the sample size needed to estimate the average usage \\(\\mu\\) with a bound on the error of estimation \\(B_{\\bar{y}}=50 \\mathrm{kWh}\\). How about the sample size required for estimate total usage \\(\\tau\\) with \\(B_{\\hat{\\tau}}=160000\\)?"
+    "text": "Example 1: (Ex 7.3, Textbook) We are working with a retail store with four departments. Each department has charge accounts, and we want to estimate the proportion of past-due accounts using systematic sampling. The key questions involve listing systematic samples and computing exact variances, followed by comparing these results with simple random sampling variances.\n\nWe are given the following information:\n\n\n\n\n\n\n\n\n\n\n\nDepartment 1\nDepartment 2\nDepartment 3\nDepartment 4\n\n\n\n\nAccount numbers\n1-11\n12-20\n21-28\n29-40\n\n\nDelinquent accounts\n1, 2, 3, 4\n12, 13, 14\n21, 22, 23, 24, 25\n29, 30, 31, 32\n\n\n\nThe store wishes to estimate the proportion of past-due accounts using systematic sampling.\nPart (a): 1-in-10 Systematic Samples\nList all possible 1-in-10 systematic samples and compute the exact variance of the sample proportion."
   },
   {
-    "objectID": "Day8.html#section-2",
-    "href": "Day8.html#section-2",
-    "title": "Day 8",
+    "objectID": "Day25.html#section-1",
+    "href": "Day25.html#section-1",
+    "title": "Day 25",
     "section": "",
-    "text": "Example 3: The average amount of money \\(\\mu\\) for a hospital’s accounts receivable must be estimated. Although no prior data are available to estimate the population variance, it is known that most accounts lie within a \\(\\$ 100\\) range. There are \\(N=1000\\) open accounts. Find the sample size needed to estimate \\(\\mu\\) with a bound on the error of estimation \\(B_{\\bar{y}}=\\$ 3\\)."
+    "text": "Part (b): 1-in-5 Systematic Samples\nNext, list all possible 1-in-5 systematic samples and compute the exact variance of the sample proportion."
   },
   {
-    "objectID": "Day8.html#section-3",
-    "href": "Day8.html#section-3",
-    "title": "Day 8",
+    "objectID": "Day25.html#section-2",
+    "href": "Day25.html#section-2",
+    "title": "Day 25",
     "section": "",
-    "text": "Derivations for known \\(\\sigma^2\\) (Supplementary)\n\n\n\n\\[\\begin{align*}\n& \\text{Starting with the margin of error equation:} \\\\\n& B_{\\bar{y}} = z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}} \\\\\n& \\text{Squaring both sides and isolating } n: \\\\\n& \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 = \\frac{N-n}{N-1} \\cdot \\frac{\\sigma^2}{n} \\\\\n& \\text{Cross-multiplying and rearranging for } n: \\\\\n& (N-1) \\left(\\frac{B_{\\bar{y}}^2}{z_{1-\\frac{\\alpha}{2}}^2 \\sigma^2}\\right) \\cdot n + n = N \\\\\n& n \\left( (N-1) \\left(\\frac{B_{\\bar{y}}^2}{z_{1-\\frac{\\alpha}{2}}^2 \\sigma^2}\\right) + 1 \\right) = N \\\\\n& n = \\frac{N}{(N-1) \\left(\\frac{B_{\\bar{y}}^2}{z_{1-\\frac{\\alpha}{2}}^2 \\sigma^2}\\right) + 1}\n\\end{align*}\\]"
+    "text": "Part (c): Comparing Systematic Sampling with Simple Random Sampling\nWe will now compare the variances obtained in parts (a) and (b) with simple random sampling of sizes \\(n=4\\)."
   },
   {
-    "objectID": "Day8.html#section-4",
-    "href": "Day8.html#section-4",
-    "title": "Day 8",
+    "objectID": "Day26.html#estimation-of-population-mean",
+    "href": "Day26.html#estimation-of-population-mean",
+    "title": "Day 26",
+    "section": "Estimation of Population Mean",
+    "text": "Estimation of Population Mean\n\nThe population mean \\(\\mu\\) can be estimated from a systematic sample using the sample mean \\(\\bar{y}_{\\text{sy}}\\):\n\\[\n\\hat{\\mu} = \\bar{y}_{\\text{sy}} = \\frac{\\sum_{i=1}^{n} y_i}{n}\n\\]\nVariance Estimation: \\[\n\\hat{V}(\\bar{y}_{\\text{sy}}) = \\left(1-\\frac{n}{N}\\right) \\frac{s^2}{n}\n\\]\nThis assumes the population is randomly ordered. The estimated variance matches that of simple random sampling under similar conditions."
+  },
+  {
+    "objectID": "Day26.html#variance-considerations-in-systematic-sampling",
+    "href": "Day26.html#variance-considerations-in-systematic-sampling",
+    "title": "Day 26",
+    "section": "Variance Considerations in Systematic Sampling",
+    "text": "Variance Considerations in Systematic Sampling\n\nSystematic sampling can exhibit different variance properties based on the population structure:\n\nRandom Population: \\(\\rho \\approx 0\\), variance is similar to simple random sampling.\nOrdered Population: \\(\\rho &lt; 0\\), potentially lower variance than simple random sampling.\nPeriodic Population: \\(\\rho &gt; 0\\), possibly higher variance due to repetitive patterns.\n\nVariance Formula: \\[\nV(\\bar{y}_{\\text{sy}}) = \\frac{\\sigma^2}{n} [1 + (n-1) \\rho]\n\\]\nHere, \\(\\rho\\) is a measure of the correlation between pairs of elements within the same systematic sample. The correlation \\(\\rho\\) affects variance estimation significantly depending on the population’s arrangement."
+  },
+  {
+    "objectID": "Day26.html#population-types",
+    "href": "Day26.html#population-types",
+    "title": "Day 26",
+    "section": "Population Types",
+    "text": "Population Types\n\n\nRandom Population: Elements are in random order. Only suitable for certain variance formulas.\n\n\\[\n\\hat{V}\\left(\\bar{Y}_{\\text{sy}}\\right) \\text{ is applicable only to random order populations.}\n\\]\n\nOrdered Population: Elements show a trend (upward or downward).\nPeriodic Population: Elements exhibit regular upward and downward cycles."
+  },
+  {
+    "objectID": "Day26.html#systematic-sampling-and-population-types",
+    "href": "Day26.html#systematic-sampling-and-population-types",
+    "title": "Day 26",
+    "section": "Systematic Sampling and Population Types",
+    "text": "Systematic Sampling and Population Types\n\n\nRandom Population: Systematic sampling approximates simple random sampling.\n\n\\[\n\\rho \\approx 0 \\quad \\text{Systematic} \\approx \\text{Simple Random}\n\\]\n\nOrdered Population: Large differences between elements. Systematic sampling preferred if \\(\\rho &lt; 0\\).\nPeriodic Population: Small differences between elements. Systematic sampling less effective if \\(\\rho &gt; 0\\) (close to 1)."
+  },
+  {
+    "objectID": "Day26.html#estimating-population-total",
+    "href": "Day26.html#estimating-population-total",
+    "title": "Day 26",
+    "section": "Estimating Population Total",
+    "text": "Estimating Population Total\n\nSystematic Sampling Estimator for Population Total \\(\\tau\\):\n\\[\n\\hat{\\tau}_{sy} = N \\cdot \\bar{y}_{sy}\n\\]\nEstimated Variance of \\(\\hat{\\tau}_{sy}\\):\n\\[\n\\hat{V}\\left(\\hat{\\tau}_{sy}\\right) = N^{2} \\left(1 - \\frac{n}{N}\\right) \\frac{s^{2}}{n}\n\\]"
+  },
+  {
+    "objectID": "Day26.html#section-1",
+    "href": "Day26.html#section-1",
+    "title": "Day 26",
     "section": "",
-    "text": "Derivations for unknown \\(\\sigma^2\\) (Supplementary)\n\n\n\n\\[\\begin{align*}\n& \\text{Given the margin of error for unknown variance:} \\\\\n& B_{\\bar{y}} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s^2}{n}} \\\\\n& \\text{Simplify and square both sides to isolate } n: \\\\\n& \\frac{B_{\\bar{y}}}{t_{1-\\frac{\\alpha}{2}, n-1}} = \\sqrt{\\frac{N-n}{N} \\cdot \\frac{s^2}{n}} \\\\\n& \\left(\\frac{B_{\\bar{y}}}{t_{1-\\frac{\\alpha}{2}, n-1}}\\right)^2 = \\frac{N-n}{N} \\cdot \\frac{s^2}{n} \\\\\n& \\text{Rearrange to solve for } n: \\\\\n& n \\left(\\frac{B_{\\bar{y}}^2}{t_{1-\\frac{\\alpha}{2}, n-1}^2} + \\frac{s^2}{N}\\right) = s^2 \\\\\n& n = \\frac{s^2}{\\frac{B_{\\bar{y}}^2}{t_{1-\\frac{\\alpha}{2}, n-1}^2} + \\frac{s^2}{N}}\n\\end{align*}\\]"
+    "text": "Example 1: (Ex 7.11, textbook) A college is concerned about improving its relations with a neighboring community. A 1-in-150 systematic sample of the \\(N=4500\\) students listed in the directory is taken to estimate the total amount of money spent on clothing during one quarter of the school year. The results of the sample are listed in the accompanying table. Use these data to estimate \\(\\tau\\) and place a bound on the error of estimation."
   },
   {
-    "objectID": "Day23.html#difference-estimator-of-mu_y",
-    "href": "Day23.html#difference-estimator-of-mu_y",
-    "title": "Day 23",
-    "section": "Difference Estimator of \\(\\mu_y\\)",
-    "text": "Difference Estimator of \\(\\mu_y\\)\n\n\nThe Difference Estimation method adjusts the sample mean \\(\\bar{y}\\) by a value dependent on the difference \\((\\mu_x - \\bar{x})\\).\nThis method is akin to a special case of regression where the regression coefficient \\(b\\) is set to 1, simplifying the estimation process."
-  },
-  {
-    "objectID": "Day23.html#assumptions-and-methodology",
-    "href": "Day23.html#assumptions-and-methodology",
-    "title": "Day 23",
-    "section": "Assumptions and Methodology",
-    "text": "Assumptions and Methodology\n\n\nAssume a linear relationship without a slope component: \\(y = x + a\\).\nThus, any change in \\(x\\) directly translates to a change in \\(y\\): \\[\n\\mu_y - \\bar{y} = \\mu_x - \\bar{x}\n\\]"
-  },
-  {
-    "objectID": "Day23.html#formulation-of-the-difference-estimator",
-    "href": "Day23.html#formulation-of-the-difference-estimator",
-    "title": "Day 23",
-    "section": "Formulation of the Difference Estimator",
-    "text": "Formulation of the Difference Estimator\n\n\nThe difference estimator for the population mean \\(\\mu_y\\) is: \\[\n\\hat{\\mu}_{y D} = \\bar{y} + (\\mu_x - \\bar{x}) = \\mu_x + (\\bar{y} - \\bar{x})\n\\]\nHere, \\(\\bar{d} = \\bar{y} - \\bar{x}\\) represents the average difference between the variables."
-  },
-  {
-    "objectID": "Day23.html#variance-of-the-difference-estimator",
-    "href": "Day23.html#variance-of-the-difference-estimator",
-    "title": "Day 23",
-    "section": "Variance of the Difference Estimator",
-    "text": "Variance of the Difference Estimator\n\n\nThe estimated variance of \\(\\hat{\\mu}_{y D}\\) is given by: \\[\n\\hat{V}(\\hat{\\mu}_{y D}) = \\left(1-\\frac{n}{N}\\right) \\cdot \\left(\\frac{1}{n}\\right) \\cdot \\frac{\\sum_{i=1}^n\\left(y_i - x_i - \\bar{d}\\right)^2}{(n-1)}\n\\]\nThis accounts for the sampling variability and the differences between the paired observations."
-  },
-  {
-    "objectID": "Day23.html#error-bounds-and-confidence-interval",
-    "href": "Day23.html#error-bounds-and-confidence-interval",
-    "title": "Day 23",
-    "section": "Error Bounds and Confidence Interval",
-    "text": "Error Bounds and Confidence Interval\n\n\n\\((1-\\alpha) \\times 100\\%\\) bound on the error of estimation: \\[\nB = t_{1-\\frac{\\alpha}{2}, (n-1)} \\cdot \\sqrt{\\hat{V}(\\hat{\\mu}_{y D})}\n\\]\nConfidence Interval for \\(\\hat{\\mu}_{y D}\\): \\[\n\\hat{\\mu}_{y D} \\pm B\n\\]\nThis interval estimates where the true mean \\(\\mu_y\\) lies with \\((1-\\alpha) \\times 100\\%\\) confidence."
-  },
-  {
-    "objectID": "Day23.html#section",
-    "href": "Day23.html#section",
-    "title": "Day 23",
+    "objectID": "Day26.html#section-2",
+    "href": "Day26.html#section-2",
+    "title": "Day 26",
     "section": "",
-    "text": "Example 1: Auditors are often interested in comparing the audited value of items with the bookvalue. Generally, book values are known for every item in the population, and auditvalues are obtained for a sample of these items. The book values can then be used toobtain a good estimate of the total or average audit value for the population. Suppose a population contains 180 inventory items with a stated book value of \\(\\$ 13,320\\). Let \\(x_i\\) denote the book value and \\(y_i\\) the audit value of the \\(i\\) th item. A simple random sample of items yields the results shown in the following table. A plot of these data shows them to lie along a straight line through the origin, with a slope fairly close to 1 . Estimate the mean audit value of \\(\\mu_y\\) by the difference method for this population (estimator value, estimated variance, \\(95 \\%\\) bound on error, and \\(95 \\%\\) confidence interval)."
+    "text": "(Ex 7.12, textbook) What sample size is needed to estimate \\(\\tau\\) in Example 1 with a bound on the error of estimation approximately equal to \\(\\$ 10,000\\) ? What systematic sampling scheme do you recommend?"
+  },
+  {
+    "objectID": "Day26.html#section-3",
+    "href": "Day26.html#section-3",
+    "title": "Day 26",
+    "section": "",
+    "text": "Example 2: Foresters are interested in determining the mean timber volume per acre for 520 one-acre plots \\((N=520)\\). A 1 -in- 25 systematic sample is conducted. Using the data presented in the accompanying table, estimate \\(\\mu\\), the average timber volume per plot, and place a bound on the error of estimation."
+  },
+  {
+    "objectID": "Day3.html#review-of-key-statistical-concepts",
+    "href": "Day3.html#review-of-key-statistical-concepts",
+    "title": "Day 3",
+    "section": "Review of Key Statistical Concepts",
+    "text": "Review of Key Statistical Concepts\n\n\nCore Parameters and Statistics\n\nExpected Value\nVariance\nStandard Deviation\n\nConcept of Sampling\n\nUsing sample statistics to approximate population parameters."
+  },
+  {
+    "objectID": "Day3.html#understanding-sampling-distribution",
+    "href": "Day3.html#understanding-sampling-distribution",
+    "title": "Day 3",
+    "section": "Understanding Sampling Distribution",
+    "text": "Understanding Sampling Distribution\n\n\nAccuracy of Approximation\n\nHow accurately do sample statistics estimate population parameters?\n\nNeed for Further Exploration\n\nIntroduction to the concept of sampling distribution to assess the reliability of statistical approximations."
+  },
+  {
+    "objectID": "Day3.html#sampling-distribution",
+    "href": "Day3.html#sampling-distribution",
+    "title": "Day 3",
+    "section": "Sampling Distribution",
+    "text": "Sampling Distribution\n\n\n\n\n\n\n\nDefinition\n\n\nSampling Distribution: The sampling distribution of a sample statistic \\(\\hat{\\theta}\\) calculated from a sample of \\(n\\) measurements is probabiity distribution of that statistic \\(\\hat{\\theta}\\)"
+  },
+  {
+    "objectID": "Day3.html#estimator",
+    "href": "Day3.html#estimator",
+    "title": "Day 3",
+    "section": "Estimator",
+    "text": "Estimator\n\n\n\n\n\n\n\nDefinition\n\n\nAn estimator is a function that uses sample data to approximate a population parameter. Commonly, the sample mean (\\(\\bar{x}\\)) serves as an estimator for the population mean (\\(\\mu\\))."
+  },
+  {
+    "objectID": "Day3.html#example-estimating-average-height",
+    "href": "Day3.html#example-estimating-average-height",
+    "title": "Day 3",
+    "section": "Example: Estimating Average Height",
+    "text": "Example: Estimating Average Height\n\nConsider estimating the average height (\\(\\mu\\)) of students. A sample of 5 students yielded these heights in inches: 60, 62, 65, 58, 66.\nCalculation\nThe sample mean (\\(\\bar{y}\\)) is calculated as:\n\\[\n\\bar{y} = \\frac{\\sum_{i=1}^{n} y_i}{n} = \\frac{60 + 62 + 65 + 58 + 66}{5} = 62.2 \\text{ inches}\n\\]\nThis computed \\(\\bar{y} = 62.2\\) inches serves as our estimate for the average student height (\\(\\mu\\))."
+  },
+  {
+    "objectID": "Day3.html#properties-of-the-sampling-distribution-of-barx",
+    "href": "Day3.html#properties-of-the-sampling-distribution-of-barx",
+    "title": "Day 3",
+    "section": "Properties of the Sampling Distribution of \\(\\bar{x}\\)",
+    "text": "Properties of the Sampling Distribution of \\(\\bar{x}\\)\n\n\n\nThe mean of the sampling distribution of \\(\\bar{y}\\) equals to the mean of the sampled population. That is \\(E(\\bar{y})=\\mu\\)\nThe variance of the sampling distribution of \\(\\bar{y}\\) is given by\n\n\\[V(\\bar{y})=\\frac{\\sigma^2}{n}\\]\n\\(S D(\\bar{y})=\\sqrt{\\frac{\\sigma^2}{n}}=\\frac{\\sigma}{\\sqrt{n}}\\) The standard deviation \\(\\sigma_{\\bar{y}}\\) is often referred to as the Standard Error."
+  },
+  {
+    "objectID": "Day3.html#central-limit-theorem",
+    "href": "Day3.html#central-limit-theorem",
+    "title": "Day 3",
+    "section": "Central Limit Theorem",
+    "text": "Central Limit Theorem\n\nTheorem: Consider a random sample of \\(n\\) observations selected from a population (any population/probability distribution) with mean \\(\\mu\\) and variance \\(\\sigma^2\\). Then when \\(n\\) is sufficiently large, the sampling distribution of \\(\\bar{y}\\) is approximately a normal distribution with mean \\(E(\\bar{y})=\\mu\\), and \\(SD(\\bar{y})=\\frac{\\sigma}{\\sqrt{n}}\\).\n\n\nThe larger \\(n\\) is, the more closely the sampling distribution will approximate a normal shape."
+  },
+  {
+    "objectID": "Day3.html#recall-the-simulation-slide-4",
+    "href": "Day3.html#recall-the-simulation-slide-4",
+    "title": "Day 3",
+    "section": "Recall the simulation (Slide 4)",
+    "text": "Recall the simulation (Slide 4)\n\n\nSuppose we have selected a random sample of \\(n=50\\) observations from a population with mean \\(\\mu=4\\) and variance \\(\\sigma^2=8\\).\n\nWhat is the value of the mean \\(E(\\bar{y})\\) and standard deviation (standard error) \\(\\sigma_{\\bar{y}}=\\sqrt{V(\\bar{y})}\\) of the sampling distribution of the sample mean \\(\\bar{y}\\).\n\n\n\nUse the sample data of size 50, compute the mean and standard deviation of \\(\\bar{y}\\). Compare the results with a.\n\n\n\nWhat is the probability that the sample mean is greater than 5?"
+  },
+  {
+    "objectID": "Day17.html#what-we-learned-and-whats-next",
+    "href": "Day17.html#what-we-learned-and-whats-next",
+    "title": "Day 17",
+    "section": "What we learned and what’s next?",
+    "text": "What we learned and what’s next?\n\n\nReview of previous sampling methods: Simple Random and Stratified Sampling\nIntroduction to new methods based on relationships between variables:\n\nRatio\nRegression\nDifference\n\nToday: Focus on Ratio Estimation using a practical example"
+  },
+  {
+    "objectID": "Day17.html#why-use-ratio-estimation",
+    "href": "Day17.html#why-use-ratio-estimation",
+    "title": "Day 17",
+    "section": "Why Use Ratio Estimation?",
+    "text": "Why Use Ratio Estimation?\n\n\nEfficiency: Improves the estimation of population totals using subsidiary information\nCost-effective: Reduces the need for exhaustive data collection\nApplications: Useful in many fields such as agriculture, economics, and market research"
+  },
+  {
+    "objectID": "Day17.html#case-study-estimating-sugar-content-in-oranges",
+    "href": "Day17.html#case-study-estimating-sugar-content-in-oranges",
+    "title": "Day 17",
+    "section": "Case Study: Estimating Sugar Content in Oranges",
+    "text": "Case Study: Estimating Sugar Content in Oranges\n\n\nObjective: Estimate total sugar content of an orange shipment\nChallenge: Direct measurement is time-consuming and costly"
+  },
+  {
+    "objectID": "Day17.html#relationship-between-variables",
+    "href": "Day17.html#relationship-between-variables",
+    "title": "Day 17",
+    "section": "Relationship Between Variables",
+    "text": "Relationship Between Variables\n\n\nObserved Relationship: Sugar content (\\(y\\)) is closely related to the weight (\\(x\\)) of oranges\nUtilization:\n\nUse weight as a subsidiary variable to estimate sugar content\nAvoids the need to count total number of oranges (\\(N\\))"
+  },
+  {
+    "objectID": "Day17.html#mathematical-basis-of-ratio-estimation",
+    "href": "Day17.html#mathematical-basis-of-ratio-estimation",
+    "title": "Day 17",
+    "section": "Mathematical Basis of Ratio Estimation",
+    "text": "Mathematical Basis of Ratio Estimation\n\n\\[\n\\begin{align*}\n\\text{Given:} & \\quad \\frac{\\mu_y}{\\mu_x} = \\frac{N \\mu_y}{N \\mu_x} = \\frac{\\tau_y}{\\tau_x} \\\\\n\\text{Implication:} & \\quad \\tau_y = \\frac{\\mu_y}{\\mu_x} \\cdot \\tau_x \\\\\n\\end{align*}\n\\]\n\n\\(\\mu_y\\) and \\(\\mu_x\\): Mean sugar content and mean weight per orange, respectively\n\\(\\tau_y\\) and \\(\\tau_x\\): Total sugar content and total weight, respectively"
+  },
+  {
+    "objectID": "Day17.html#estimation-procedure",
+    "href": "Day17.html#estimation-procedure",
+    "title": "Day 17",
+    "section": "Estimation Procedure",
+    "text": "Estimation Procedure\n\n\nSample \\(n\\) oranges and measure:\n\nSugar content \\(y_1, y_2, \\ldots, y_n\\)\nWeight \\(x_1, x_2, \\ldots, x_n\\)\n\nCalculate Sample Means:\n\n\\(\\bar{y}\\) for sugar content\n\\(\\bar{x}\\) for weight\n\n\n\\[\n\\text{Ratio Estimator:} \\quad \\hat{R} = \\frac{\\bar{y}}{\\bar{x}}\n\\]"
+  },
+  {
+    "objectID": "Day17.html#advantages-of-ratio-estimation",
+    "href": "Day17.html#advantages-of-ratio-estimation",
+    "title": "Day 17",
+    "section": "Advantages of Ratio Estimation",
+    "text": "Advantages of Ratio Estimation\n\n\nPrecision: More precise estimates when \\(x\\) and \\(y\\) are correlated\nFlexibility: Can be adapted to various types of data and study designs\nScalability: Effective for large datasets"
+  },
+  {
+    "objectID": "Day17.html#conclusion",
+    "href": "Day17.html#conclusion",
+    "title": "Day 17",
+    "section": "Conclusion",
+    "text": "Conclusion\n\n\nRatio estimation leverages relationships between variables to enhance statistical efficiency and reduce costs.\nEssential tool for researchers dealing with correlated variables in large populations."
+  },
+  {
+    "objectID": "Day17.html#section",
+    "href": "Day17.html#section",
+    "title": "Day 17",
+    "section": "",
+    "text": "Example 1: A consumer survey was conducted to determine the ratio of the money spent on food to the total income per year for households in a small community. A simple random sample of 14 households was selected from 150 in the community. Sample data are given in the accompanying table. How to estimate the population ratio, \\(R\\) ?"
+  },
+  {
+    "objectID": "Day17.html#section-2",
+    "href": "Day17.html#section-2",
+    "title": "Day 17",
+    "section": "",
+    "text": "Example 2: An advertising firm is concerned about the effect of a new regional promotional campaign on the total dollar sales for a particular product. A simple random sample of \\(n=20\\) stores is drawn from the regional stores in which the product is sold. Quarterly sales data are obtained for the current three-month period and the three-month period prior to the new campaign. How to estimate the change?"
   },
   {
     "objectID": "Day9.html#overview-of-population-proportion-estimation",
@@ -1071,6 +1050,55 @@
     "text": "R Code Chunk Options\nBefore diving into data loading, let’s understand important R chunk options:\n\n\neval: Use eval=FALSE to prevent code from running but still display it.\n\necho: With echo=FALSE, the code is run but not displayed in the document.\n\ninclude: include=FALSE runs the code and hides both the code and output from the final output.\n\nExample to demonstrate:\n\n# This code will run, and both code and output will appear in the document.\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
   },
   {
+    "objectID": "Day27.html#welcome-to-repeated-systematic-sampling",
+    "href": "Day27.html#welcome-to-repeated-systematic-sampling",
+    "title": "Day 27",
+    "section": "Welcome to Repeated Systematic Sampling",
+    "text": "Welcome to Repeated Systematic Sampling\n\nToday, we delve deeper into an advanced statistical technique—Repeated Systematic Sampling. Building on your understanding of systematic sampling, this method enhances the accuracy and reliability of our estimates by incorporating multiple starting points across the sampling frame.\nWhy does this matter? Even though systematic sampling is efficient, it doesn’t always equate to simple random sampling, potentially leading to biases. Repeated systematic sampling addresses this issue by averaging multiple systematic samples, thus approximating the randomness and reducing bias."
+  },
+  {
+    "objectID": "Day27.html#what-will-you-learn",
+    "href": "Day27.html#what-will-you-learn",
+    "title": "Day 27",
+    "section": "What will you learn?",
+    "text": "What will you learn?\n\n\nThe setup for repeated systematic sampling, including choosing multiple starting points.\nDetailed formulas for estimating population mean and variance using repeated samples.\nPractical application: Calculating accurate estimates for variables like average visitors per car in a systematic manner."
+  },
+  {
+    "objectID": "Day27.html#repeated-systematic-sampling-procedure",
+    "href": "Day27.html#repeated-systematic-sampling-procedure",
+    "title": "Day 27",
+    "section": "Repeated Systematic Sampling Procedure",
+    "text": "Repeated Systematic Sampling Procedure\n\nRepeated systematic sampling improves estimation reliability by utilizing multiple starting points. Here’s how we execute this method within a population of \\(N\\) elements:\n\nStep 1: Calculate the interval \\(k=\\frac{N}{n}\\), defining the spacing between selected elements.\nStep 2: Set the number of samples, \\(n_s\\), typically 10 for comprehensive coverage.\nStep 3: Determine the extended interval \\(k' = k \\cdot n_s\\), adjusting for multiple samples.\nStep 4: Randomly select \\(n_s\\) starting points from 1 to \\(k'\\).\nStep 5: From each starting point, conduct 1-in-\\(k'\\) sampling to capture diverse data points.\nStep 6: Aggregate all individual samples to form the complete systematic sample.\n\nThis approach systematically covers the population, ensuring each segment is represented, minimizing bias and enhancing the robustness of your results."
+  },
+  {
+    "objectID": "Day27.html#estimation-of-population-mean",
+    "href": "Day27.html#estimation-of-population-mean",
+    "title": "Day 27",
+    "section": "Estimation of Population Mean",
+    "text": "Estimation of Population Mean\n\nThe estimator of the population mean \\(\\mu\\), using \\(n_s\\) systematic samples, is calculated with an emphasis on ensuring each sample contributes to a more reliable estimate:\n\\[\n\\hat{\\mu}=\\sum_{i=1}^{n_s} \\bar{y}_i \\cdot \\frac{1}{n_s}\n\\]\nHere, \\(\\bar{y}_i\\) represents the mean of the \\(i^{th}\\) systematic sample."
+  },
+  {
+    "objectID": "Day27.html#variance-estimation",
+    "href": "Day27.html#variance-estimation",
+    "title": "Day 27",
+    "section": "Variance Estimation",
+    "text": "Variance Estimation\n\nThe variance of the estimated mean \\(\\hat{\\mu}\\) is crucial for understanding the spread and reliability of our estimate across different systematic samples. It is calculated as follows:\n\\[\nS_{\\bar{y}}^2=\\frac{\\sum_{i=1}^{n_s}\\left(\\overline{y_i}-\\hat{\\mu}\\right)^2}{n_s-1}\n\\]\n\\[\n\\hat{V}(\\hat{\\mu})=\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{S_{\\bar{y}}^2}{n_s}\n\\]\nThis formula helps quantify the uncertainty in our estimate, adjusting for the sample size relative to the population."
+  },
+  {
+    "objectID": "Day27.html#estimation-of-population-total",
+    "href": "Day27.html#estimation-of-population-total",
+    "title": "Day 27",
+    "section": "Estimation of Population Total",
+    "text": "Estimation of Population Total\n\nUsing repeated systematic sampling, the population total \\(\\tau\\) can be estimated from the means of the systematic samples, adjusted for the population size:\n\\[\n\\hat{\\tau}=N \\cdot \\hat{\\mu}=\\frac{N}{n_s} \\cdot \\sum_{i=1}^{n_s} \\bar{y}_i\n\\]\nTo understand the reliability of this estimation, the variance of \\(\\hat{\\tau}\\) is also calculated, using the variance of \\(\\hat{\\mu}\\) scaled by the square of the population size:\n\\[\n\\hat{V}(\\hat{\\tau})=N^2 \\cdot \\hat{V}(\\hat{\\mu})=N^2\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{S_{\\bar{y}}^2}{n_s}\n\\]\nHere, \\(S_{\\bar{y}}^2\\) is calculated as \\(\\frac{\\sum_{i=1}^{n_s}\\left(\\overline{y_i}-\\hat{\\mu}\\right)^2}{n_s-1}\\), reflecting the dispersion within and across the systematic samples."
+  },
+  {
+    "objectID": "Day27.html#section",
+    "href": "Day27.html#section",
+    "title": "Day 27",
+    "section": "",
+    "text": "Example 1: A state park charges admission by carload rather than by person, and a park official wants to estimate the average number of people per car for a particular summer holiday. She knows from past experience that there should be approximately 400 cars entering the park, and she wants to sample 80 cars. To obtain an estimate of the variance, she uses repeated systematic sampling with ten samples of eight cars each. Using the data given in the following table, estimate the average number of people per car and place a 95% bound on the error of estimation."
+  },
+  {
     "objectID": "Day6.html#population-probability-calculation",
     "href": "Day6.html#population-probability-calculation",
     "title": "Day 6",
@@ -1232,256 +1260,382 @@
     "text": "Calculations\n\n\ny &lt;- c(1098163, 4661468, 2120220, 3963516, 5782171, 10725274, 11808848, 1963333, 1085407, 643503)\ny.bar &lt;- mean(y)\ny.bar\n\n[1] 4385190\n\ntau.hat &lt;- 50 * y.bar\ntau.hat\n\n[1] 219259515\n\ns2 &lt;- sd(y)\ns2\n\n[1] 4002803"
   },
   {
-    "objectID": "Day17.html#what-we-learned-and-whats-next",
-    "href": "Day17.html#what-we-learned-and-whats-next",
-    "title": "Day 17",
-    "section": "What we learned and what’s next?",
-    "text": "What we learned and what’s next?\n\n\nReview of previous sampling methods: Simple Random and Stratified Sampling\nIntroduction to new methods based on relationships between variables:\n\nRatio\nRegression\nDifference\n\nToday: Focus on Ratio Estimation using a practical example"
+    "objectID": "Day29.html#estimating-the-population-total-with-cluster-sampling",
+    "href": "Day29.html#estimating-the-population-total-with-cluster-sampling",
+    "title": "Day 29",
+    "section": "Estimating the Population Total with Cluster Sampling",
+    "text": "Estimating the Population Total with Cluster Sampling\n\nCluster sampling is not only effective for estimating mean values but also invaluable for calculating the total of a population characteristic, such as total income, total population, or total number of cases in epidemiological studies. This method is especially useful when complete enumeration isn’t feasible or when the population size is uncertain."
   },
   {
-    "objectID": "Day17.html#why-use-ratio-estimation",
-    "href": "Day17.html#why-use-ratio-estimation",
-    "title": "Day 17",
-    "section": "Why Use Ratio Estimation?",
-    "text": "Why Use Ratio Estimation?\n\n\nEfficiency: Improves the estimation of population totals using subsidiary information\nCost-effective: Reduces the need for exhaustive data collection\nApplications: Useful in many fields such as agriculture, economics, and market research"
+    "objectID": "Day29.html#why-estimate-population-totals",
+    "href": "Day29.html#why-estimate-population-totals",
+    "title": "Day 29",
+    "section": "Why Estimate Population Totals?",
+    "text": "Why Estimate Population Totals?\n\nEstimating population totals is crucial for:\n\nAllocating resources appropriately based on total needs.\nPlanning and policy-making in governmental and non-governmental sectors.\nEvaluating total market sizes or total disease burden in public health initiatives."
   },
   {
-    "objectID": "Day17.html#case-study-estimating-sugar-content-in-oranges",
-    "href": "Day17.html#case-study-estimating-sugar-content-in-oranges",
-    "title": "Day 17",
-    "section": "Case Study: Estimating Sugar Content in Oranges",
-    "text": "Case Study: Estimating Sugar Content in Oranges\n\n\nObjective: Estimate total sugar content of an orange shipment\nChallenge: Direct measurement is time-consuming and costly"
+    "objectID": "Day29.html#estimator-of-the-population-total-tau",
+    "href": "Day29.html#estimator-of-the-population-total-tau",
+    "title": "Day 29",
+    "section": "Estimator of the Population Total \\(\\tau\\)",
+    "text": "Estimator of the Population Total \\(\\tau\\)\n\nThe population total \\(\\tau\\) can be estimated from the sample data by scaling up the sample mean estimate by the known or estimated total number of elements, \\(N\\), across all clusters: \\[\n\\tau = N \\cdot \\bar{y}\n\\] where \\(\\bar{y}\\) is the estimated mean from the cluster sample, and \\(N\\) is the total number of elements (e.g., people, households) in the population."
   },
   {
-    "objectID": "Day17.html#relationship-between-variables",
-    "href": "Day17.html#relationship-between-variables",
-    "title": "Day 17",
-    "section": "Relationship Between Variables",
-    "text": "Relationship Between Variables\n\n\nObserved Relationship: Sugar content (\\(y\\)) is closely related to the weight (\\(x\\)) of oranges\nUtilization:\n\nUse weight as a subsidiary variable to estimate sugar content\nAvoids the need to count total number of oranges (\\(N\\))"
+    "objectID": "Day29.html#variance-estimation",
+    "href": "Day29.html#variance-estimation",
+    "title": "Day 29",
+    "section": "Variance Estimation",
+    "text": "Variance Estimation\n\nThe variance of the estimator \\(\\tau\\), if \\(N\\) is known, can be derived from the variance of \\(\\bar{y}\\): \\[\n\\hat{V}(\\tau) = N^2 \\cdot \\hat{V}(\\bar{y})\n\\] This variance helps in constructing confidence intervals around the estimated total, giving a sense of the reliability of the estimate."
   },
   {
-    "objectID": "Day17.html#mathematical-basis-of-ratio-estimation",
-    "href": "Day17.html#mathematical-basis-of-ratio-estimation",
-    "title": "Day 17",
-    "section": "Mathematical Basis of Ratio Estimation",
-    "text": "Mathematical Basis of Ratio Estimation\n\n\\[\n\\begin{align*}\n\\text{Given:} & \\quad \\frac{\\mu_y}{\\mu_x} = \\frac{N \\mu_y}{N \\mu_x} = \\frac{\\tau_y}{\\tau_x} \\\\\n\\text{Implication:} & \\quad \\tau_y = \\frac{\\mu_y}{\\mu_x} \\cdot \\tau_x \\\\\n\\end{align*}\n\\]\n\n\\(\\mu_y\\) and \\(\\mu_x\\): Mean sugar content and mean weight per orange, respectively\n\\(\\tau_y\\) and \\(\\tau_x\\): Total sugar content and total weight, respectively"
+    "objectID": "Day29.html#estimating-population-total-when-n-is-unknown",
+    "href": "Day29.html#estimating-population-total-when-n-is-unknown",
+    "title": "Day 29",
+    "section": "Estimating Population Total When \\(N\\) is Unknown",
+    "text": "Estimating Population Total When \\(N\\) is Unknown\n\nIn scenarios where the total population size \\(N\\) is not known, cluster sampling requires an alternative approach to estimate the total. This is often the case in large-scale studies where the exact count of population elements is impractical to determine.\nAlternative Methods for Estimating \\(\\tau\\)\nWithout a known \\(N\\), the estimation must rely on statistical methods that can infer \\(\\tau\\) effectively from the sampled data:\n\nRatio estimators or other complex statistical models might be employed to project the total based on sampled data.\n\nPractical Application Example\nConsider a city-wide survey to estimate the total resident income without a known total population size. Surveyors might sample specific city blocks (clusters) and total the incomes within these clusters. These totals are then projected to the entire city using the ratio of sampled to the estimated total population, aiding city planners in fiscal decisions."
   },
   {
-    "objectID": "Day17.html#estimation-procedure",
-    "href": "Day17.html#estimation-procedure",
-    "title": "Day 17",
-    "section": "Estimation Procedure",
-    "text": "Estimation Procedure\n\n\nSample \\(n\\) oranges and measure:\n\nSugar content \\(y_1, y_2, \\ldots, y_n\\)\nWeight \\(x_1, x_2, \\ldots, x_n\\)\n\nCalculate Sample Means:\n\n\\(\\bar{y}\\) for sugar content\n\\(\\bar{x}\\) for weight\n\n\n\\[\n\\text{Ratio Estimator:} \\quad \\hat{R} = \\frac{\\bar{y}}{\\bar{x}}\n\\]"
-  },
-  {
-    "objectID": "Day17.html#advantages-of-ratio-estimation",
-    "href": "Day17.html#advantages-of-ratio-estimation",
-    "title": "Day 17",
-    "section": "Advantages of Ratio Estimation",
-    "text": "Advantages of Ratio Estimation\n\n\nPrecision: More precise estimates when \\(x\\) and \\(y\\) are correlated\nFlexibility: Can be adapted to various types of data and study designs\nScalability: Effective for large datasets"
-  },
-  {
-    "objectID": "Day17.html#conclusion",
-    "href": "Day17.html#conclusion",
-    "title": "Day 17",
-    "section": "Conclusion",
-    "text": "Conclusion\n\n\nRatio estimation leverages relationships between variables to enhance statistical efficiency and reduce costs.\nEssential tool for researchers dealing with correlated variables in large populations."
-  },
-  {
-    "objectID": "Day17.html#section",
-    "href": "Day17.html#section",
-    "title": "Day 17",
+    "objectID": "Day29.html#section",
+    "href": "Day29.html#section",
+    "title": "Day 29",
     "section": "",
-    "text": "Example 1: A consumer survey was conducted to determine the ratio of the money spent on food to the total income per year for households in a small community. A simple random sample of 14 households was selected from 150 in the community. Sample data are given in the accompanying table. How to estimate the population ratio, \\(R\\) ?"
+    "text": "Example 1: (Same as Day 28) A sociologist wants to estimate the per-capita income in a certain small city. No list of resi- dent adults is available. So she performed cluster sampling. The city is marked off into rectangular blocks, except for two industrial areas and three parks that contain only a few houses. The sociologist decides that each of the city blocks will be considered one cluster, the two industrial areas will be considered one cluster, and finally, the three parks will be considered one cluster. The clusters are numbered on a city map, with the numbers from 1 to 415.The experimenter has enough time and money to sample clusters and to interview every household within each cluster. Hence, 25 random numbers between1 and 415 are selected, and the clusters having these numbers are marked on the map.Interviewers are then assigned to each of the sampled clusters. The data on incomes are presented in the following. Use the data to estimate the per-capita income in the city and place a bound on the error of estimation.\n\n\nUse the data in Example 1, estimate the total income of all residents of the city, if (a), the population size is not known; (b), if there are 2500 residents in the city."
   },
   {
-    "objectID": "Day17.html#section-2",
-    "href": "Day17.html#section-2",
-    "title": "Day 17",
+    "objectID": "Day23.html#difference-estimator-of-mu_y",
+    "href": "Day23.html#difference-estimator-of-mu_y",
+    "title": "Day 23",
+    "section": "Difference Estimator of \\(\\mu_y\\)",
+    "text": "Difference Estimator of \\(\\mu_y\\)\n\n\nThe Difference Estimation method adjusts the sample mean \\(\\bar{y}\\) by a value dependent on the difference \\((\\mu_x - \\bar{x})\\).\nThis method is akin to a special case of regression where the regression coefficient \\(b\\) is set to 1, simplifying the estimation process."
+  },
+  {
+    "objectID": "Day23.html#assumptions-and-methodology",
+    "href": "Day23.html#assumptions-and-methodology",
+    "title": "Day 23",
+    "section": "Assumptions and Methodology",
+    "text": "Assumptions and Methodology\n\n\nAssume a linear relationship without a slope component: \\(y = x + a\\).\nThus, any change in \\(x\\) directly translates to a change in \\(y\\): \\[\n\\mu_y - \\bar{y} = \\mu_x - \\bar{x}\n\\]"
+  },
+  {
+    "objectID": "Day23.html#formulation-of-the-difference-estimator",
+    "href": "Day23.html#formulation-of-the-difference-estimator",
+    "title": "Day 23",
+    "section": "Formulation of the Difference Estimator",
+    "text": "Formulation of the Difference Estimator\n\n\nThe difference estimator for the population mean \\(\\mu_y\\) is: \\[\n\\hat{\\mu}_{y D} = \\bar{y} + (\\mu_x - \\bar{x}) = \\mu_x + (\\bar{y} - \\bar{x})\n\\]\nHere, \\(\\bar{d} = \\bar{y} - \\bar{x}\\) represents the average difference between the variables."
+  },
+  {
+    "objectID": "Day23.html#variance-of-the-difference-estimator",
+    "href": "Day23.html#variance-of-the-difference-estimator",
+    "title": "Day 23",
+    "section": "Variance of the Difference Estimator",
+    "text": "Variance of the Difference Estimator\n\n\nThe estimated variance of \\(\\hat{\\mu}_{y D}\\) is given by: \\[\n\\hat{V}(\\hat{\\mu}_{y D}) = \\left(1-\\frac{n}{N}\\right) \\cdot \\left(\\frac{1}{n}\\right) \\cdot \\frac{\\sum_{i=1}^n\\left(y_i - x_i - \\bar{d}\\right)^2}{(n-1)}\n\\]\nThis accounts for the sampling variability and the differences between the paired observations."
+  },
+  {
+    "objectID": "Day23.html#error-bounds-and-confidence-interval",
+    "href": "Day23.html#error-bounds-and-confidence-interval",
+    "title": "Day 23",
+    "section": "Error Bounds and Confidence Interval",
+    "text": "Error Bounds and Confidence Interval\n\n\n\\((1-\\alpha) \\times 100\\%\\) bound on the error of estimation: \\[\nB = t_{1-\\frac{\\alpha}{2}, (n-1)} \\cdot \\sqrt{\\hat{V}(\\hat{\\mu}_{y D})}\n\\]\nConfidence Interval for \\(\\hat{\\mu}_{y D}\\): \\[\n\\hat{\\mu}_{y D} \\pm B\n\\]\nThis interval estimates where the true mean \\(\\mu_y\\) lies with \\((1-\\alpha) \\times 100\\%\\) confidence."
+  },
+  {
+    "objectID": "Day23.html#section",
+    "href": "Day23.html#section",
+    "title": "Day 23",
     "section": "",
-    "text": "Example 2: An advertising firm is concerned about the effect of a new regional promotional campaign on the total dollar sales for a particular product. A simple random sample of \\(n=20\\) stores is drawn from the regional stores in which the product is sold. Quarterly sales data are obtained for the current three-month period and the three-month period prior to the new campaign. How to estimate the change?"
+    "text": "Example 1: Auditors are often interested in comparing the audited value of items with the bookvalue. Generally, book values are known for every item in the population, and auditvalues are obtained for a sample of these items. The book values can then be used toobtain a good estimate of the total or average audit value for the population. Suppose a population contains 180 inventory items with a stated book value of \\(\\$ 13,320\\). Let \\(x_i\\) denote the book value and \\(y_i\\) the audit value of the \\(i\\) th item. A simple random sample of items yields the results shown in the following table. A plot of these data shows them to lie along a straight line through the origin, with a slope fairly close to 1 . Estimate the mean audit value of \\(\\mu_y\\) by the difference method for this population (estimator value, estimated variance, \\(95 \\%\\) bound on error, and \\(95 \\%\\) confidence interval)."
   },
   {
-    "objectID": "Day3.html#review-of-key-statistical-concepts",
-    "href": "Day3.html#review-of-key-statistical-concepts",
-    "title": "Day 3",
-    "section": "Review of Key Statistical Concepts",
-    "text": "Review of Key Statistical Concepts\n\n\nCore Parameters and Statistics\n\nExpected Value\nVariance\nStandard Deviation\n\nConcept of Sampling\n\nUsing sample statistics to approximate population parameters."
+    "objectID": "Day8.html#key-quantities-in-survey-sampling",
+    "href": "Day8.html#key-quantities-in-survey-sampling",
+    "title": "Day 8",
+    "section": "Key Quantities in Survey Sampling",
+    "text": "Key Quantities in Survey Sampling\n\n\n\n\nEstimator of the Population Mean\n\nEstimator: \\[\n\\hat{\\mu} = \\bar{y}\n\\]\nEstimated Variance: \\[\n\\hat{V}(\\bar{y}) = \\left(1-\\frac{n}{N}\\right) \\frac{s^2}{n}\n\\]\n\n\n\nEstimator of the Population Total\n\nEstimator: \\[\n\\hat{\\tau} = N \\cdot \\bar{y}\n\\]\nEstimated Variance: \\[\n\\hat{V}(\\hat{\\tau}) = N^2 \\cdot \\left(1-\\frac{n}{N}\\right) \\frac{s^2}{n}\n\\]"
   },
   {
-    "objectID": "Day3.html#understanding-sampling-distribution",
-    "href": "Day3.html#understanding-sampling-distribution",
-    "title": "Day 3",
-    "section": "Understanding Sampling Distribution",
-    "text": "Understanding Sampling Distribution\n\n\nAccuracy of Approximation\n\nHow accurately do sample statistics estimate population parameters?\n\nNeed for Further Exploration\n\nIntroduction to the concept of sampling distribution to assess the reliability of statistical approximations."
+    "objectID": "Day8.html#error-bounds-for-survey-estimates",
+    "href": "Day8.html#error-bounds-for-survey-estimates",
+    "title": "Day 8",
+    "section": "Error Bounds for Survey Estimates",
+    "text": "Error Bounds for Survey Estimates\n\n\nMean Estimation Error Bound\n\\[\n  \\text{B} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s^2}{n}}\n  \\]\nTotal Estimation Error Bound\n\\[\n  \\text{B} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{N^2 \\cdot \\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s^2}{n}}\n  \\]"
   },
   {
-    "objectID": "Day3.html#sampling-distribution",
-    "href": "Day3.html#sampling-distribution",
-    "title": "Day 3",
-    "section": "Sampling Distribution",
-    "text": "Sampling Distribution\n\n\n\n\n\n\n\nDefinition\n\n\nSampling Distribution: The sampling distribution of a sample statistic \\(\\hat{\\theta}\\) calculated from a sample of \\(n\\) measurements is probabiity distribution of that statistic \\(\\hat{\\theta}\\)"
+    "objectID": "Day8.html#computing-t-distribution-critical-values-in-r",
+    "href": "Day8.html#computing-t-distribution-critical-values-in-r",
+    "title": "Day 8",
+    "section": "Computing t-Distribution Critical Values in R",
+    "text": "Computing t-Distribution Critical Values in R\n\n\nCritical Value Calculation in R\n```{r}\nqt(1 - alpha / 2, df = n - 1)\n```\nThis function computes the critical value \\(t_{1-\\alpha / 2, n-1}\\) for the t-distribution.\nConfidence Interval Formula\n\\[\\begin{align*}\n\\hat{\\theta} \\pm B\n\\end{align*}\\]\nHere, \\(\\hat{\\theta}\\) is the estimate for the parameter of interest and \\(B\\) represents the bound on the error of estimation, computed as outlined in previous slides."
   },
   {
-    "objectID": "Day3.html#estimator",
-    "href": "Day3.html#estimator",
-    "title": "Day 3",
-    "section": "Estimator",
-    "text": "Estimator\n\n\n\n\n\n\n\nDefinition\n\n\nAn estimator is a function that uses sample data to approximate a population parameter. Commonly, the sample mean (\\(\\bar{x}\\)) serves as an estimator for the population mean (\\(\\mu\\))."
-  },
-  {
-    "objectID": "Day3.html#example-estimating-average-height",
-    "href": "Day3.html#example-estimating-average-height",
-    "title": "Day 3",
-    "section": "Example: Estimating Average Height",
-    "text": "Example: Estimating Average Height\n\nConsider estimating the average height (\\(\\mu\\)) of students. A sample of 5 students yielded these heights in inches: 60, 62, 65, 58, 66.\nCalculation\nThe sample mean (\\(\\bar{y}\\)) is calculated as:\n\\[\n\\bar{y} = \\frac{\\sum_{i=1}^{n} y_i}{n} = \\frac{60 + 62 + 65 + 58 + 66}{5} = 62.2 \\text{ inches}\n\\]\nThis computed \\(\\bar{y} = 62.2\\) inches serves as our estimate for the average student height (\\(\\mu\\))."
-  },
-  {
-    "objectID": "Day3.html#properties-of-the-sampling-distribution-of-barx",
-    "href": "Day3.html#properties-of-the-sampling-distribution-of-barx",
-    "title": "Day 3",
-    "section": "Properties of the Sampling Distribution of \\(\\bar{x}\\)",
-    "text": "Properties of the Sampling Distribution of \\(\\bar{x}\\)\n\n\n\nThe mean of the sampling distribution of \\(\\bar{y}\\) equals to the mean of the sampled population. That is \\(E(\\bar{y})=\\mu\\)\nThe variance of the sampling distribution of \\(\\bar{y}\\) is given by\n\n\\[V(\\bar{y})=\\frac{\\sigma^2}{n}\\]\n\\(S D(\\bar{y})=\\sqrt{\\frac{\\sigma^2}{n}}=\\frac{\\sigma}{\\sqrt{n}}\\) The standard deviation \\(\\sigma_{\\bar{y}}\\) is often referred to as the Standard Error."
-  },
-  {
-    "objectID": "Day3.html#central-limit-theorem",
-    "href": "Day3.html#central-limit-theorem",
-    "title": "Day 3",
-    "section": "Central Limit Theorem",
-    "text": "Central Limit Theorem\n\nTheorem: Consider a random sample of \\(n\\) observations selected from a population (any population/probability distribution) with mean \\(\\mu\\) and variance \\(\\sigma^2\\). Then when \\(n\\) is sufficiently large, the sampling distribution of \\(\\bar{y}\\) is approximately a normal distribution with mean \\(E(\\bar{y})=\\mu\\), and \\(SD(\\bar{y})=\\frac{\\sigma}{\\sqrt{n}}\\).\n\n\nThe larger \\(n\\) is, the more closely the sampling distribution will approximate a normal shape."
-  },
-  {
-    "objectID": "Day3.html#recall-the-simulation-slide-4",
-    "href": "Day3.html#recall-the-simulation-slide-4",
-    "title": "Day 3",
-    "section": "Recall the simulation (Slide 4)",
-    "text": "Recall the simulation (Slide 4)\n\n\nSuppose we have selected a random sample of \\(n=50\\) observations from a population with mean \\(\\mu=4\\) and variance \\(\\sigma^2=8\\).\n\nWhat is the value of the mean \\(E(\\bar{y})\\) and standard deviation (standard error) \\(\\sigma_{\\bar{y}}=\\sqrt{V(\\bar{y})}\\) of the sampling distribution of the sample mean \\(\\bar{y}\\).\n\n\n\nUse the sample data of size 50, compute the mean and standard deviation of \\(\\bar{y}\\). Compare the results with a.\n\n\n\nWhat is the probability that the sample mean is greater than 5?"
-  },
-  {
-    "objectID": "Day26.html#estimation-of-population-mean",
-    "href": "Day26.html#estimation-of-population-mean",
-    "title": "Day 26",
-    "section": "Estimation of Population Mean",
-    "text": "Estimation of Population Mean\n\nThe population mean \\(\\mu\\) can be estimated from a systematic sample using the sample mean \\(\\bar{y}_{\\text{sy}}\\):\n\\[\n\\hat{\\mu} = \\bar{y}_{\\text{sy}} = \\frac{\\sum_{i=1}^{n} y_i}{n}\n\\]\nVariance Estimation: \\[\n\\hat{V}(\\bar{y}_{\\text{sy}}) = \\left(1-\\frac{n}{N}\\right) \\frac{s^2}{n}\n\\]\nThis assumes the population is randomly ordered. The estimated variance matches that of simple random sampling under similar conditions."
-  },
-  {
-    "objectID": "Day26.html#variance-considerations-in-systematic-sampling",
-    "href": "Day26.html#variance-considerations-in-systematic-sampling",
-    "title": "Day 26",
-    "section": "Variance Considerations in Systematic Sampling",
-    "text": "Variance Considerations in Systematic Sampling\n\nSystematic sampling can exhibit different variance properties based on the population structure:\n\nRandom Population: \\(\\rho \\approx 0\\), variance is similar to simple random sampling.\nOrdered Population: \\(\\rho &lt; 0\\), potentially lower variance than simple random sampling.\nPeriodic Population: \\(\\rho &gt; 0\\), possibly higher variance due to repetitive patterns.\n\nVariance Formula: \\[\nV(\\bar{y}_{\\text{sy}}) = \\frac{\\sigma^2}{n} [1 + (n-1) \\rho]\n\\]\nHere, \\(\\rho\\) is a measure of the correlation between pairs of elements within the same systematic sample. The correlation \\(\\rho\\) affects variance estimation significantly depending on the population’s arrangement."
-  },
-  {
-    "objectID": "Day26.html#population-types",
-    "href": "Day26.html#population-types",
-    "title": "Day 26",
-    "section": "Population Types",
-    "text": "Population Types\n\n\nRandom Population: Elements are in random order. Only suitable for certain variance formulas.\n\n\\[\n\\hat{V}\\left(\\bar{Y}_{\\text{sy}}\\right) \\text{ is applicable only to random order populations.}\n\\]\n\nOrdered Population: Elements show a trend (upward or downward).\nPeriodic Population: Elements exhibit regular upward and downward cycles."
-  },
-  {
-    "objectID": "Day26.html#systematic-sampling-and-population-types",
-    "href": "Day26.html#systematic-sampling-and-population-types",
-    "title": "Day 26",
-    "section": "Systematic Sampling and Population Types",
-    "text": "Systematic Sampling and Population Types\n\n\nRandom Population: Systematic sampling approximates simple random sampling.\n\n\\[\n\\rho \\approx 0 \\quad \\text{Systematic} \\approx \\text{Simple Random}\n\\]\n\nOrdered Population: Large differences between elements. Systematic sampling preferred if \\(\\rho &lt; 0\\).\nPeriodic Population: Small differences between elements. Systematic sampling less effective if \\(\\rho &gt; 0\\) (close to 1)."
-  },
-  {
-    "objectID": "Day26.html#estimating-population-total",
-    "href": "Day26.html#estimating-population-total",
-    "title": "Day 26",
-    "section": "Estimating Population Total",
-    "text": "Estimating Population Total\n\nSystematic Sampling Estimator for Population Total \\(\\tau\\):\n\\[\n\\hat{\\tau}_{sy} = N \\cdot \\bar{y}_{sy}\n\\]\nEstimated Variance of \\(\\hat{\\tau}_{sy}\\):\n\\[\n\\hat{V}\\left(\\hat{\\tau}_{sy}\\right) = N^{2} \\left(1 - \\frac{n}{N}\\right) \\frac{s^{2}}{n}\n\\]"
-  },
-  {
-    "objectID": "Day26.html#section-1",
-    "href": "Day26.html#section-1",
-    "title": "Day 26",
+    "objectID": "Day8.html#section",
+    "href": "Day8.html#section",
+    "title": "Day 8",
     "section": "",
-    "text": "Example 1: (Ex 7.11, textbook) A college is concerned about improving its relations with a neighboring community. A 1-in-150 systematic sample of the \\(N=4500\\) students listed in the directory is taken to estimate the total amount of money spent on clothing during one quarter of the school year. The results of the sample are listed in the accompanying table. Use these data to estimate \\(\\tau\\) and place a bound on the error of estimation."
+    "text": "Example 1: A simple random sample of 100 houses within a community is selected and their monthly energy usages are recorded. The sample mean and sample standard deviation are founded to be \\(\\bar{y}=\\) 887 kWh and \\(s=120 \\mathrm{kWh}\\). If there are \\(N=8000\\) houses within the community. Estimate the true mean monthly energy usage per house, \\(\\mu\\), and the total monthly energy usages for the community, \\(\\tau\\). The estimation should include the estimator, the estimated variance, the \\(95 \\%\\) bound on the error of estimation, and the \\(95 \\%\\) confidence interval for the population parameter.\n\n\nqt(1 - 0.05/2, df = 99)\n\n[1] 1.984217"
   },
   {
-    "objectID": "Day26.html#section-2",
-    "href": "Day26.html#section-2",
-    "title": "Day 26",
+    "objectID": "Day8.html#error-bounds-for-known-population-variance",
+    "href": "Day8.html#error-bounds-for-known-population-variance",
+    "title": "Day 8",
+    "section": "Error Bounds for Known Population Variance",
+    "text": "Error Bounds for Known Population Variance\n\n\nMean Estimation Error\n\\[\n  B_{\\bar{y}} = z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}}\n  \\]\nTotal Estimation Error \\[\n  B_{\\hat{\\tau}} = z_{1-\\frac{\\alpha}{2}} \\cdot N \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}}\n  \\]"
+  },
+  {
+    "objectID": "Day8.html#sample-size-and-estimation-accuracy",
+    "href": "Day8.html#sample-size-and-estimation-accuracy",
+    "title": "Day 8",
+    "section": "Sample Size and Estimation Accuracy",
+    "text": "Sample Size and Estimation Accuracy\n\n\n\nKey Insight: Larger sample sizes \\(n\\) reduce the error bounds \\(B\\), increasing the precision of estimates.\nTrade-off: Larger samples increase costs but provide more reliable data.\n\n\n\n\nSelect \\(B\\) based on desired confidence and precision. Solve for \\(n\\) given \\(B\\), using the error bound formulas."
+  },
+  {
+    "objectID": "Day8.html#sample-size-determination-for-estimating-population-mean-mu",
+    "href": "Day8.html#sample-size-determination-for-estimating-population-mean-mu",
+    "title": "Day 8",
+    "section": "Sample Size Determination for Estimating Population Mean \\(\\mu\\)",
+    "text": "Sample Size Determination for Estimating Population Mean \\(\\mu\\)\n\n\nCase 1: Known Population Variance \\(\\sigma^2\\)\n\\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment\n\\[\n  n = \\frac{N s^2}{N \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 + s^2}\n  \\]"
+  },
+  {
+    "objectID": "Day8.html#sample-size-determination-for-estimating-population-total-tau",
+    "href": "Day8.html#sample-size-determination-for-estimating-population-total-tau",
+    "title": "Day 8",
+    "section": "Sample Size Determination for Estimating Population Total \\(\\tau\\)",
+    "text": "Sample Size Determination for Estimating Population Total \\(\\tau\\)\n\n\nCase 1: Known Population Variance \\(\\sigma^2\\) \\[\n  n = \\frac{N \\sigma^2}{(N-1) \\left(\\frac{B_{\\hat{\\tau}}}{z_{1-\\frac{\\alpha}{2}} \\cdot N}\\right)^2 + \\sigma^2}\n  \\]\nCase 2: Known Sample Variance \\(s^2\\) from Previous Experiment \\[\n  n = \\frac{N s^2}{N \\left(\\frac{B_{\\hat{\\tau}}}{z_{1-\\frac{\\alpha}{2}} \\cdot N}\\right)^2 + s^2}\n  \\]"
+  },
+  {
+    "objectID": "Day8.html#using-range-r",
+    "href": "Day8.html#using-range-r",
+    "title": "Day 8",
+    "section": "Using Range, R",
+    "text": "Using Range, R\n \n\nIf \\(\\sigma^2\\) and \\(s^2\\) are unknown, but the range \\(R\\) is given: Use equation for \\(\\sigma^2\\) but approximate \\(\\sigma \\approx \\frac{R}{4}\\)."
+  },
+  {
+    "objectID": "Day8.html#section-1",
+    "href": "Day8.html#section-1",
+    "title": "Day 8",
     "section": "",
-    "text": "(Ex 7.12, textbook) What sample size is needed to estimate \\(\\tau\\) in Example 1 with a bound on the error of estimation approximately equal to \\(\\$ 10,000\\) ? What systematic sampling scheme do you recommend?"
+    "text": "Example 2: To study the monthly energy usages in a community with \\(N=8000\\) houses, a researcher want to select a simple random sample with size \\(n\\). Historical data shows that the sample standard deviation of the the monthly energy usages in this community is \\(s=120 \\mathrm{kWh}\\). Find the sample size needed to estimate the average usage \\(\\mu\\) with a bound on the error of estimation \\(B_{\\bar{y}}=50 \\mathrm{kWh}\\). How about the sample size required for estimate total usage \\(\\tau\\) with \\(B_{\\hat{\\tau}}=160000\\)?"
   },
   {
-    "objectID": "Day26.html#section-3",
-    "href": "Day26.html#section-3",
-    "title": "Day 26",
+    "objectID": "Day8.html#section-2",
+    "href": "Day8.html#section-2",
+    "title": "Day 8",
     "section": "",
-    "text": "Example 2: Foresters are interested in determining the mean timber volume per acre for 520 one-acre plots \\((N=520)\\). A 1 -in- 25 systematic sample is conducted. Using the data presented in the accompanying table, estimate \\(\\mu\\), the average timber volume per plot, and place a bound on the error of estimation."
+    "text": "Example 3: The average amount of money \\(\\mu\\) for a hospital’s accounts receivable must be estimated. Although no prior data are available to estimate the population variance, it is known that most accounts lie within a \\(\\$ 100\\) range. There are \\(N=1000\\) open accounts. Find the sample size needed to estimate \\(\\mu\\) with a bound on the error of estimation \\(B_{\\bar{y}}=\\$ 3\\)."
   },
   {
-    "objectID": "Day25.html#introduction-to-systematic-sampling",
-    "href": "Day25.html#introduction-to-systematic-sampling",
-    "title": "Day 25",
-    "section": "Introduction to Systematic Sampling",
-    "text": "Introduction to Systematic Sampling\n\nSystematic sampling simplifies the sample selection process, making it a widely used design in survey sampling due to:\n\nEase of implementation in the field.\nLower susceptibility to selection errors compared to simple random and stratified random sampling.\n\nDefinition: A 1-in-k systematic sample with a random start is obtained by randomly selecting one element from the first \\(k\\) elements and every \\(k^{th}\\) element thereafter."
-  },
-  {
-    "objectID": "Day25.html#advantages-of-systematic-sampling",
-    "href": "Day25.html#advantages-of-systematic-sampling",
-    "title": "Day 25",
-    "section": "Advantages of Systematic Sampling",
-    "text": "Advantages of Systematic Sampling\n\nAdvantages:\n\nSimplicity, especially useful with manual frames or registers.\nHigh intra-sample variability can make it more accurate than simple random sampling (SRS)."
-  },
-  {
-    "objectID": "Day25.html#how-to-draw-a-systematic-sample",
-    "href": "Day25.html#how-to-draw-a-systematic-sample",
-    "title": "Day 25",
-    "section": "How to Draw a Systematic Sample",
-    "text": "How to Draw a Systematic Sample\n\nTo draw a systematic sample:\n\nChoose \\(k\\) such that \\(k \\leq \\frac{N}{n}\\) where \\(N\\) is the population size and \\(n\\) is the desired sample size.\nRandomly select one element from the first \\(k\\) elements.\nContinue selecting every \\(k^{th}\\) element thereafter.\n\nExample: For \\(N=15000\\) and \\(n=1600\\), choose \\(k=9\\) for a 1-in-9 systematic sample."
-  },
-  {
-    "objectID": "Day25.html#understanding-sampling-probabilities-in-systematic-sampling",
-    "href": "Day25.html#understanding-sampling-probabilities-in-systematic-sampling",
-    "title": "Day 25",
-    "section": "Understanding Sampling Probabilities in Systematic Sampling",
-    "text": "Understanding Sampling Probabilities in Systematic Sampling\n\nIn systematic sampling:\n\nEach unit’s selection probability, \\(\\pi_k\\), is \\(\\frac{1}{a} = \\frac{n}{N}\\) when \\(N\\) is a multiple of \\(a\\).\nIssues arise when there are extra units beyond \\(a \\times n\\), leading to slight imbalances in probabilities.\n\nKey Point: The entire sample can be considered as a single cluster, which complicates variance estimation as many second-order inclusion probabilities are zero."
-  },
-  {
-    "objectID": "Day25.html#practical-considerations-in-systematic-sampling",
-    "href": "Day25.html#practical-considerations-in-systematic-sampling",
-    "title": "Day 25",
-    "section": "Practical Considerations in Systematic Sampling",
-    "text": "Practical Considerations in Systematic Sampling\n\nWhile systematic sampling offers many advantages, its has some drawbacks:\n\nCycled behavior in the sampling frame may bias the results.\nIt is challenging to estimate unbiased sampling errors due to the dependency on a single starting point.\n\nThe spread of the sample through the population should ideally cover the entire range to ensure representative data collection."
-  },
-  {
-    "objectID": "Day25.html#applications-of-systematic-sampling",
-    "href": "Day25.html#applications-of-systematic-sampling",
-    "title": "Day 25",
-    "section": "Applications of Systematic Sampling",
-    "text": "Applications of Systematic Sampling\n\nSystematic sampling’s methodology allows for diverse applications, from national censuses to quality control in manufacturing:\n\nEnsures consistent coverage across a population.\nFacilitates easier and less error-prone data collection in field settings.\n\nThis versatility makes it a favored choice in many large-scale and long-term studies."
-  },
-  {
-    "objectID": "Day25.html#handling-non-integer-fracnn-in-systematic-sampling",
-    "href": "Day25.html#handling-non-integer-fracnn-in-systematic-sampling",
-    "title": "Day 25",
-    "section": "Handling Non-Integer \\(\\frac{N}{n}\\) in Systematic Sampling",
-    "text": "Handling Non-Integer \\(\\frac{N}{n}\\) in Systematic Sampling\n\nWhen \\(\\frac{N}{n}\\) is not an integer (\\(N = na + c\\)):\n\nIf the starting value \\(r \\leq c\\), the sample includes \\(n+1\\) units.\nOtherwise, the sample includes \\(n\\) units.\n\nAlternative Method:\n\nGenerate a random number \\(\\varepsilon\\) from a uniform distribution over \\((0, a)\\).\nSelect elements \\(i\\) such that \\(i-1 &lt; \\varepsilon + (j-1)a \\leq i\\); for \\(j = 1, \\ldots, n\\) and \\(i = 1, \\ldots, N\\).\n\nThis method ensures each element has an equal chance of selection, regardless of the frame’s total size relative to \\(n\\)."
-  },
-  {
-    "objectID": "Day25.html#section",
-    "href": "Day25.html#section",
-    "title": "Day 25",
+    "objectID": "Day8.html#section-3",
+    "href": "Day8.html#section-3",
+    "title": "Day 8",
     "section": "",
-    "text": "Example 1: (Ex 7.3, Textbook) We are working with a retail store with four departments. Each department has charge accounts, and we want to estimate the proportion of past-due accounts using systematic sampling. The key questions involve listing systematic samples and computing exact variances, followed by comparing these results with simple random sampling variances.\n\nWe are given the following information:\n\n\n\n\n\n\n\n\n\n\n\nDepartment 1\nDepartment 2\nDepartment 3\nDepartment 4\n\n\n\n\nAccount numbers\n1-11\n12-20\n21-28\n29-40\n\n\nDelinquent accounts\n1, 2, 3, 4\n12, 13, 14\n21, 22, 23, 24, 25\n29, 30, 31, 32\n\n\n\nThe store wishes to estimate the proportion of past-due accounts using systematic sampling.\nPart (a): 1-in-10 Systematic Samples\nList all possible 1-in-10 systematic samples and compute the exact variance of the sample proportion."
+    "text": "Derivations for known \\(\\sigma^2\\) (Supplementary)\n\n\n\n\\[\\begin{align*}\n& \\text{Starting with the margin of error equation:} \\\\\n& B_{\\bar{y}} = z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\left(\\frac{N-n}{N-1}\\right) \\cdot \\frac{\\sigma^2}{n}} \\\\\n& \\text{Squaring both sides and isolating } n: \\\\\n& \\left(\\frac{B_{\\bar{y}}}{z_{1-\\frac{\\alpha}{2}}}\\right)^2 = \\frac{N-n}{N-1} \\cdot \\frac{\\sigma^2}{n} \\\\\n& \\text{Cross-multiplying and rearranging for } n: \\\\\n& (N-1) \\left(\\frac{B_{\\bar{y}}^2}{z_{1-\\frac{\\alpha}{2}}^2 \\sigma^2}\\right) \\cdot n + n = N \\\\\n& n \\left( (N-1) \\left(\\frac{B_{\\bar{y}}^2}{z_{1-\\frac{\\alpha}{2}}^2 \\sigma^2}\\right) + 1 \\right) = N \\\\\n& n = \\frac{N}{(N-1) \\left(\\frac{B_{\\bar{y}}^2}{z_{1-\\frac{\\alpha}{2}}^2 \\sigma^2}\\right) + 1}\n\\end{align*}\\]"
   },
   {
-    "objectID": "Day25.html#section-1",
-    "href": "Day25.html#section-1",
-    "title": "Day 25",
+    "objectID": "Day8.html#section-4",
+    "href": "Day8.html#section-4",
+    "title": "Day 8",
     "section": "",
-    "text": "Part (b): 1-in-5 Systematic Samples\nNext, list all possible 1-in-5 systematic samples and compute the exact variance of the sample proportion."
+    "text": "Derivations for unknown \\(\\sigma^2\\) (Supplementary)\n\n\n\n\\[\\begin{align*}\n& \\text{Given the margin of error for unknown variance:} \\\\\n& B_{\\bar{y}} = t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s^2}{n}} \\\\\n& \\text{Simplify and square both sides to isolate } n: \\\\\n& \\frac{B_{\\bar{y}}}{t_{1-\\frac{\\alpha}{2}, n-1}} = \\sqrt{\\frac{N-n}{N} \\cdot \\frac{s^2}{n}} \\\\\n& \\left(\\frac{B_{\\bar{y}}}{t_{1-\\frac{\\alpha}{2}, n-1}}\\right)^2 = \\frac{N-n}{N} \\cdot \\frac{s^2}{n} \\\\\n& \\text{Rearrange to solve for } n: \\\\\n& n \\left(\\frac{B_{\\bar{y}}^2}{t_{1-\\frac{\\alpha}{2}, n-1}^2} + \\frac{s^2}{N}\\right) = s^2 \\\\\n& n = \\frac{s^2}{\\frac{B_{\\bar{y}}^2}{t_{1-\\frac{\\alpha}{2}, n-1}^2} + \\frac{s^2}{N}}\n\\end{align*}\\]"
   },
   {
-    "objectID": "Day25.html#section-2",
-    "href": "Day25.html#section-2",
-    "title": "Day 25",
-    "section": "",
-    "text": "Part (c): Comparing Systematic Sampling with Simple Random Sampling\nWe will now compare the variances obtained in parts (a) and (b) with simple random sampling of sizes \\(n=4\\)."
+    "objectID": "Day4.html#introduction-to-probability-sampling",
+    "href": "Day4.html#introduction-to-probability-sampling",
+    "title": "Day 4",
+    "section": "Introduction to Probability Sampling",
+    "text": "Introduction to Probability Sampling\n\n\n\nObjective: Understand the basics of probability sampling and its importance in statistical inference.\nKey Concepts:\n\nFinite vs. Infinite Populations: Differentiates sampling dynamics where populations are either bounded (finite) or theoretically limitless (infinite).\nIndependent Selections: Each sample is selected without influence from the selections of other samples.\nSampling with Replacement: After a sample is selected, it is “replaced,” allowing it to be selected again in subsequent draws.\nEffects on Variance and Estimation Accuracy: Discusses how different sampling methods affect the variability and accuracy of statistical estimates."
+  },
+  {
+    "objectID": "Day4.html#detailed-example-of-probability-sampling",
+    "href": "Day4.html#detailed-example-of-probability-sampling",
+    "title": "Day 4",
+    "section": "Detailed Example of Probability Sampling",
+    "text": "Detailed Example of Probability Sampling\n\n\n\nProbability Equation:\n\nFor each element in the population, the probability of its selection in a sample is denoted as:\n\n\n\\[\nP(\\text{selection of element } i) = \\delta_i\n\\]\n\nExample: Consider sampling from the set {1, 2, 3, 4} with defined probabilities.\n\nContext: This could represent a scenario where each number corresponds to a category or group within a larger population."
+  },
+  {
+    "objectID": "Day4.html#implementation-of-sampling-techniques",
+    "href": "Day4.html#implementation-of-sampling-techniques",
+    "title": "Day 4",
+    "section": "Implementation of Sampling Techniques",
+    "text": "Implementation of Sampling Techniques\n\n\nSampling typically involves randomly selecting elements based on their defined probabilities.\n\nSampling with Replacement: Each element has an equal or specified chance to be chosen again after it is selected.\nSampling without Replacement: Once an element is chosen, it is not returned to the pool for the remainder of the sampling process.\nImpact on Variability:\n\nThe choice between sampling with or without replacement can significantly affect the variability and bias in the estimation process."
+  },
+  {
+    "objectID": "Day4.html#sampling-with-replacement",
+    "href": "Day4.html#sampling-with-replacement",
+    "title": "Day 4",
+    "section": "Sampling with Replacement",
+    "text": "Sampling with Replacement\n\n\n\nDefinition: Each element has the same probability of being selected, independent of previous selections.\nProbability Notation:\n\n\\(\\delta_i = \\frac{1}{N}\\) for all \\(i\\)\n\n\n\\[\\begin{align*}\n\\hat{\\tau} = \\frac{1}{n} \\sum_{i=1}^n \\frac{y_i}{\\delta_i}\n\\end{align*}\\]\n\nUnbiased Estimator: Shows how sampling with equal probabilities is unbiased regardless of selection order."
+  },
+  {
+    "objectID": "Day4.html#advantages-of-varying-probabilities",
+    "href": "Day4.html#advantages-of-varying-probabilities",
+    "title": "Day 4",
+    "section": "Advantages of Varying Probabilities",
+    "text": "Advantages of Varying Probabilities\n\n\n\nObjective: Improve estimation by varying selection probabilities.\nTypical Scenario: Sampling industrial firms with varying sizes.\n\n\\[\\begin{align*}\n\\delta_i = \\frac{y_i}{\\tau}\n\\end{align*}\\]\n\nImproved Estimates: Giving higher probabilities to units with greater relevance (e.g., larger firms).\n\nImpact: This approach reduces variance and increases the accuracy of the estimates."
+  },
+  {
+    "objectID": "Day4.html#practical-sampling-without-replacement",
+    "href": "Day4.html#practical-sampling-without-replacement",
+    "title": "Day 4",
+    "section": "Practical Sampling without Replacement",
+    "text": "Practical Sampling without Replacement\n\n\n\nDifference from With Replacement:\n\nChanges in probabilities after each draw.\nMore aligned with real-world sampling conditions.\n\n\n\\[\\begin{align*}\n\\hat{\\tau} = \\sum_{i=1}^n \\frac{y_i}{\\pi_i}\n\\end{align*}\\]\n\nCalculation: Weights each sampled unit by the reciprocal of its probability of selection."
+  },
+  {
+    "objectID": "Day4.html#example-from-section-3.3",
+    "href": "Day4.html#example-from-section-3.3",
+    "title": "Day 4",
+    "section": "Example from Section 3.3",
+    "text": "Example from Section 3.3\n\n\nSet of Elements:\n\nLet \\(U = \\{u_1, u_2, u_3, u_4\\}\\) represent the population elements, where \\(u_i\\) corresponds to an element.\n\nProbabilities:\n\nAssociated probabilities of selection are denoted by \\(\\delta_i\\), where:\n\n\\(\\delta_1 = \\delta_2 = 0.1\\) and \\(\\delta_3 = \\delta_4 = 0.4\\).\n\n\n\n\n# Define the elements and their respective probabilities\nelements &lt;- c(1, 2, 3, 4)\ndeltas &lt;- c(0.1, 0.1, 0.4, 0.4)"
+  },
+  {
+    "objectID": "Day4.html#possible-samples-and-their-estimated-counts",
+    "href": "Day4.html#possible-samples-and-their-estimated-counts",
+    "title": "Day 4",
+    "section": "Possible samples and their estimated counts",
+    "text": "Possible samples and their estimated counts\n\n\n\n# Possible samples and their probabilities\nsamples &lt;- list(c(1, 2), c(1, 3), c(1, 4), c(2, 3), c(2, 4), c(3, 4),\n                c(1, 1), c(2, 2), c(3, 3), c(4, 4))\n# Compute tau_hat for each sample, ensuring to divide by the sample size\ntau_hats &lt;- sapply(samples, function(s) sum(elements[s] / deltas[s]) / length(s))\n\n# Check tau_hats values\ntau_hats\n\n [1] 15.00  8.75 10.00 13.75 15.00  8.75 10.00 20.00  7.50 10.00\n\n\nThe estimator \\(\\hat{\\tau}\\) for each sample is calculated using the formula:\n\\[\n\\hat{\\tau} = \\frac{1}{n} \\sum_{i=1}^n \\frac{y_i}{\\delta_i}\n\\]"
+  },
+  {
+    "objectID": "Day4.html#probabilities-calculations",
+    "href": "Day4.html#probabilities-calculations",
+    "title": "Day 4",
+    "section": "Probabilities calculations",
+    "text": "Probabilities calculations\n\n\n# Calculate pair probabilities\nsample_probs &lt;- c(\n  0.1*0.1 * 2,   # (1, 2)\n  0.1*0.4 * 2,   # (1, 3)\n  0.1*0.4 * 2,   # (1, 4)\n  0.1*0.4 * 2,   # (2, 3)\n  0.1*0.4 * 2,   # (2, 4)\n  0.4*0.4 * 2,   # (3, 4)\n  0.1*0.1,       # (1, 1)\n  0.1*0.1,       # (2, 2)\n  0.4*0.4,       # (3, 3)\n  0.4*0.4        # (4, 4)\n)\n\nsample_probs\n\n [1] 0.02 0.08 0.08 0.08 0.08 0.32 0.01 0.01 0.16 0.16"
+  },
+  {
+    "objectID": "Day4.html#calculating-expected-value-of-hattau",
+    "href": "Day4.html#calculating-expected-value-of-hattau",
+    "title": "Day 4",
+    "section": "Calculating Expected Value of \\(\\hat{\\tau}\\)",
+    "text": "Calculating Expected Value of \\(\\hat{\\tau}\\)\n\nThe expected value of \\(\\hat{\\tau}\\) is calculated as:\n\\[\nE[\\hat{\\tau}] = 15(0.02) + 8.75(0.08) + \\cdots + 10(0.16) = 10\n\\]\n\ntau_hats * sample_probs\n\n [1] 0.3 0.7 0.8 1.1 1.2 2.8 0.1 0.2 1.2 1.6\n\n# Calculate the expected value of tau_hat\nE_tau_hat &lt;- sum(tau_hats * sample_probs)\nE_tau_hat\n\n[1] 10"
+  },
+  {
+    "objectID": "Day4.html#calculating-variance-of-hattau",
+    "href": "Day4.html#calculating-variance-of-hattau",
+    "title": "Day 4",
+    "section": "Calculating Variance of \\(\\hat{\\tau}\\)",
+    "text": "Calculating Variance of \\(\\hat{\\tau}\\)\n\nThe variance of \\(\\hat{\\tau}\\) is calculated as follows:\n\\[\nV(\\hat{\\tau}) = \\sum_i(\\hat{\\tau}_i - E[\\hat{\\tau}_i])^2*p_i)\n\\]\n\nvar_tau_hat &lt;- sum((tau_hats - E_tau_hat)^2 * sample_probs)\nvar_tau_hat\n\n[1] 6.25"
+  },
+  {
+    "objectID": "Day4.html#concept-of-covariance",
+    "href": "Day4.html#concept-of-covariance",
+    "title": "Day 4",
+    "section": "Concept of Covariance",
+    "text": "Concept of Covariance\n\n\nCovariance provides a measure of the linear relationship between two variables \\(y_1\\) and \\(y_2\\).\nDefined as: \\[\n\\operatorname{cov}(y_1, y_2) = E\\left[(y_1-\\mu_1)(y_2-\\mu_2)\\right]\n\\] where \\(\\mu_1\\) and \\(\\mu_2\\) are the means of \\(y_1\\) and \\(y_2\\), respectively."
+  },
+  {
+    "objectID": "Day4.html#visual-interpretation",
+    "href": "Day4.html#visual-interpretation",
+    "title": "Day 4",
+    "section": "Visual Interpretation",
+    "text": "Visual Interpretation\n\n\nPositive Relationship: If \\(y_1\\) increases as \\(y_2\\) increases, resulting in a positive covariance.\nNegative Relationship: If \\(y_1\\) decreases as \\(y_2\\) increases, resulting in a negative covariance.\nNo Linear Relationship: Covariance near zero suggests little or no linear relationship."
+  },
+  {
+    "objectID": "Day4.html#significance-of-covariance",
+    "href": "Day4.html#significance-of-covariance",
+    "title": "Day 4",
+    "section": "Significance of Covariance",
+    "text": "Significance of Covariance\n\n\nScale Dependency: The magnitude of covariance depends on the units of \\(y_1\\) and \\(y_2\\).\nNormalization: Standardizing covariance by the product of the standard deviations of \\(y_1\\) and \\(y_2\\) gives the correlation coefficient: \\[\n\\rho = \\frac{\\operatorname{cov}(y_1, y_2)}{\\sigma_1 \\sigma_2}\n\\] where \\(\\sigma_1\\) and \\(\\sigma_2\\) are standard deviations of \\(y_1\\) and \\(y_2\\)."
+  },
+  {
+    "objectID": "Day4.html#correlation-coefficient",
+    "href": "Day4.html#correlation-coefficient",
+    "title": "Day 4",
+    "section": "Correlation Coefficient",
+    "text": "Correlation Coefficient\n\n\nRange: \\(\\rho\\) ranges from -1 to 1, indicating the strength and direction of the linear relationship.\nInterpretation:\n\n\\(\\rho = 1\\): Perfect positive linear relationship.\n\\(\\rho = -1\\): Perfect negative linear relationship.\n\\(\\rho = 0\\): No linear relationship."
+  },
+  {
+    "objectID": "Day4.html#understanding-estimators",
+    "href": "Day4.html#understanding-estimators",
+    "title": "Day 4",
+    "section": "Understanding Estimators",
+    "text": "Understanding Estimators\n\n\nProperties of a Good Estimator:\n\nUnbiasedness: \\(E(\\hat{\\theta}) = \\theta\\)\nSmall Variance: \\(V(\\hat{\\theta}) = \\sigma_{\\hat{\\theta}}^2\\) is minimal"
+  },
+  {
+    "objectID": "Day4.html#estimator-distribution-and-error",
+    "href": "Day4.html#estimator-distribution-and-error",
+    "title": "Day 4",
+    "section": "Estimator Distribution and Error",
+    "text": "Estimator Distribution and Error\n\n\nSampling Distribution: The probability distribution of \\(\\bar{y}\\) depends on the sampling mechanism.\nDesired Characteristics:\n\n\\(\\bar{y}\\) should be close to \\(\\mu\\), centering around \\(\\mu\\).\nThe sampling plan should ensure \\(E(\\bar{y}) = \\mu\\) and \\(V(\\bar{y})\\) is small."
+  },
+  {
+    "objectID": "Day4.html#confidence-intervals-and-error-bounds",
+    "href": "Day4.html#confidence-intervals-and-error-bounds",
+    "title": "Day 4",
+    "section": "Confidence Intervals and Error Bounds",
+    "text": "Confidence Intervals and Error Bounds\n\n\n\nError of Estimation: \\(|\\hat{\\theta} - \\theta|\\), the magnitude of deviation from the true parameter.\nConfidence Interval: An interval within which the parameter is expected to lie with a certain probability \\((1-\\alpha)\\).\n\nForm: \\((\\hat{\\theta} - B, \\hat{\\theta} + B)\\) where \\(B = z_{\\alpha / 2} \\sigma_{\\hat{\\theta}}\\) for normally distributed estimators.\nUse of \\(t\\)-distribution: When population SD is unknown and the sample size is large, \\(t\\)-scores may replace \\(z\\)-scores."
+  },
+  {
+    "objectID": "Day5.html#extending-the-sampling-distribution",
+    "href": "Day5.html#extending-the-sampling-distribution",
+    "title": "Day 5",
+    "section": "Extending the Sampling Distribution",
+    "text": "Extending the Sampling Distribution\n\n\nComputational Application\n\nCalculate probabilities involving statistic \\(\\bar{y}, \\hat{\\tau}\\) etc. from a sample.\nThis forms the basis for estimating the variability of these statistic"
+  },
+  {
+    "objectID": "Day5.html#error-bounds-and-confidence-intervals",
+    "href": "Day5.html#error-bounds-and-confidence-intervals",
+    "title": "Day 5",
+    "section": "Error Bounds and Confidence Intervals",
+    "text": "Error Bounds and Confidence Intervals\n\n\nFrom Error Estimation to Confidence\n\nLearn to compute error bounds around estimates.\nExtend these bounds to establish confidence intervals."
+  },
+  {
+    "objectID": "Day5.html#knowledge-review-standardizing-variables",
+    "href": "Day5.html#knowledge-review-standardizing-variables",
+    "title": "Day 5",
+    "section": "Knowledge Review: Standardizing Variables",
+    "text": "Knowledge Review: Standardizing Variables\n\n\nNormal to Standard Normal Transformation\n\nFor a variable \\(X \\sim \\operatorname{Normal}(\\text{mean} = a, \\text{SD} = b)\\):\nStandardization: \\(Z = \\frac{X-a}{b}\\)\nResults in \\(Z \\sim \\operatorname{Normal}(\\text{mean} = 0, \\text{SD} = 1)\\), the standard normal distribution."
+  },
+  {
+    "objectID": "Day5.html#calculating-probabilities-for-a-normal-variable",
+    "href": "Day5.html#calculating-probabilities-for-a-normal-variable",
+    "title": "Day 5",
+    "section": "Calculating Probabilities for a Normal Variable",
+    "text": "Calculating Probabilities for a Normal Variable\n\n\nFor a normal random variable \\(X\\), and a specific value \\(c\\), the probability that \\(X\\) exceeds \\(c\\) can be transformed to a standard normal variable \\(Z\\). This transformation simplifies the calculation as follows:\n\\[\nP(X &gt; c) = P(X-a &gt; c-a) = P\\left(\\frac{X-a}{b} &gt; \\frac{c-a}{b}\\right)\\] \\[\\qquad = P\\left(Z &gt; \\frac{c-a}{b}\\right) = 1 - P\\left(Z &lt; \\frac{c-a}{b}\\right)\\]\nThis step highlights the utility of standardization in statistical analysis, turning complex normal calculations into simpler standard normal calculations."
+  },
+  {
+    "objectID": "Day5.html#calculating-interval-probabilities",
+    "href": "Day5.html#calculating-interval-probabilities",
+    "title": "Day 5",
+    "section": "Calculating Interval Probabilities",
+    "text": "Calculating Interval Probabilities\n\n\n\nDetermining the probability that \\(X\\) lies between two values \\(c\\) and \\(d\\) involves subtracting the probability of \\(X\\) being less than \\(c\\) from the probability of \\(X\\) being less than \\(d\\):\n\\[\nP(c &lt; X &lt; d) = P(X &lt; d) - P(X &lt; c) = P\\left(Z &lt; \\frac{d-a}{b}\\right) - P\\left(Z &lt; \\frac{c-a}{b}\\right)\n\\]\nWhen \\(X = \\bar{y}\\), representing the mean of a sample, and with \\(a = \\mu\\) and \\(b = \\frac{\\sigma}{\\sqrt{n}}\\), this formulation directly supports the creation of confidence intervals around the sample mean."
+  },
+  {
+    "objectID": "Day5.html#estimating-the-population-mean",
+    "href": "Day5.html#estimating-the-population-mean",
+    "title": "Day 5",
+    "section": "Estimating the Population Mean",
+    "text": "Estimating the Population Mean\n\n\nWhen estimating the population mean \\(\\mu\\), which is unknown, we use the sample mean \\(\\bar{y}\\). The difference \\(|\\bar{y} - \\mu|\\) represents the error of our estimation.\nError Bound for Confidence\nTo ensure the reliability of our estimate, we define a bound \\(B\\) such that:\n\\[\nP(|\\bar{y} - \\mu| \\leqslant B) \\geqslant 1 - \\alpha\n\\]\nThis bound indicates that the true population mean is likely within \\(B\\) units of our sample mean with a confidence level of \\(1 - \\alpha\\). The smaller the error, the closer our sample mean is to the true population mean, enhancing the estimation’s accuracy."
+  },
+  {
+    "objectID": "Day5.html#standardizing-and-solving-for-b",
+    "href": "Day5.html#standardizing-and-solving-for-b",
+    "title": "Day 5",
+    "section": "Standardizing and Solving for \\(B\\)",
+    "text": "Standardizing and Solving for \\(B\\)\n\n\nTransforming our problem using the standard deviation of the sample mean, we standardize:\n\\[P(-B\\leqslant \\bar{y}-\\mu\\leqslant B)=P\\left(\\frac{-B}{\\sigma/\\sqrt{n}}\\leqslant \\frac{\\bar{y}-\\mu}{\\sigma/\\sqrt{n}}\\leqslant \\frac{B}{\\sigma/\\sqrt{n}}\\right)\\geqslant 1-\\alpha\\]\nLeveraging the symmetry of the standard normal distribution gives us:\n\\[\\frac{B}{\\sigma/\\sqrt{n}}=z_{1-\\frac{\\alpha}{2}}\\]\nConcluding with the critical value for \\(B\\):\n\\[B=z_{1-\\frac{\\alpha}{2}}\\cdot \\frac{\\sigma}{\\sqrt{n}}\\]\nThis calculation shows how \\(B\\) scales with both the sample size \\(n\\) and the standard deviation \\(\\sigma\\), key to interpreting the confidence in our estimate."
+  },
+  {
+    "objectID": "Day5.html#using-t-distribution",
+    "href": "Day5.html#using-t-distribution",
+    "title": "Day 5",
+    "section": "Using \\(t\\)-Distribution",
+    "text": "Using \\(t\\)-Distribution\n\n\nWhen the population standard deviation \\(\\sigma\\) is unknown, we use the sample standard deviation \\(s\\) and the \\(t\\)-distribution to standardize the problem:\n\\[P(-B\\leqslant \\bar{y}-\\mu\\leqslant B)=P\\left(\\frac{-B}{s/\\sqrt{n}}\\leqslant \\frac{\\bar{y}-\\mu}{s/\\sqrt{n}}\\leqslant \\frac{B}{s/\\sqrt{n}}\\right)\\geqslant 1-\\alpha\\]\nLeveraging the properties of the \\(t\\)-distribution, given the degrees of freedom \\(n-1\\), we find:\n\\[\\frac{B}{s/\\sqrt{n}}=t_{1-\\frac{\\alpha}{2}, n-1}\\]\nConcluding with the critical value for \\(B\\):\n\\[B=t_{1-\\frac{\\alpha}{2}, n-1}\\cdot \\frac{s}{\\sqrt{n}}\\]\nThis calculation shows how \\(B\\) scales with the sample size \\(n\\) and the sample standard deviation \\(s\\), crucial for interpreting the confidence in our estimate when \\(\\sigma\\) is unknown."
+  },
+  {
+    "objectID": "Day5.html#case-study",
+    "href": "Day5.html#case-study",
+    "title": "Day 5",
+    "section": "Case Study",
+    "text": "Case Study\n\n\nIn a standard math quiz for the public school system of a county, each student was graded on a four-point scale \\((0,1,2,3), 3\\) being a perfect score. The results for all students are given as follows:\n\\[\\begin{array}{ll}\n\\hline \\text { Score, y} & \\text { Propotion, P(y) } \\\\\n\\hline 3 & 0.64 \\\\\n2 & 0.16 \\\\\n1 & 0.08 \\\\\n0 & 0.12 \\\\\n\\hline\n\\end{array}\\]"
+  },
+  {
+    "objectID": "Day5.html#quiz",
+    "href": "Day5.html#quiz",
+    "title": "Day 5",
+    "section": "Quiz",
+    "text": "Quiz\n\nCompute the expected value of the quiz score.\n\n\n\nCompute the standard deviation of the quiz score.\n\n\n\nA sample of 100 students is randomly selected. What is the probability of this sample mean greater than 2.425 ?"
+  },
+  {
+    "objectID": "Day5.html#solutions",
+    "href": "Day5.html#solutions",
+    "title": "Day 5",
+    "section": "Solutions",
+    "text": "Solutions\n\n\nClick for answer\n\n\n\n\\(E(y)=\\sum y \\cdot P(y)=\\mu =2.32\\)\n\\(V(y)=\\sum(y-\\mu)^2 \\cdot P(y)=\\sigma^2=1.098\\)\n\n\\(\\operatorname{\\operatorname {SD}}(y)=\\sigma=\\sqrt{1.098} \\approx 1.048\\)\n\nA sample of \\(n=100\\) students is selected\n\n\\[\\begin{align*}\n\\begin{aligned}\nP(\\bar{y}&gt;2.425) & =P\\left(z&gt;\\frac{2.425-\\mu}{\\sigma / \\sqrt{n}}\\right) \\\\\n& =P\\left(z&gt;\\frac{2.425-2.32}{1.048 / \\sqrt{100}}\\right) \\\\\n& \\approx P(z&gt;1)=1-P(z&lt;1) \\\\\n& =1-0.8413=0.1587\n\\end{aligned}\n\\end{align*}\\]"
   },
   {
     "objectID": "about.html",

@@ -1,0 +1,125 @@
+---
+title: "Day 29"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: "Bastola"
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+```
+
+
+## Estimating the Population Total with Cluster Sampling {.font80}
+
+::: cle7
+Cluster sampling is not only effective for estimating mean values but also invaluable for calculating the total of a population characteristic, such as total income, total population, or total number of cases in epidemiological studies. This method is especially useful when complete enumeration isn't feasible or when the population size is uncertain.
+:::
+
+## Why Estimate Population Totals? {.font80}
+
+::: cle7
+Estimating population totals is crucial for:
+
+- Allocating resources appropriately based on total needs.
+- Planning and policy-making in governmental and non-governmental sectors.
+- Evaluating total market sizes or total disease burden in public health initiatives.
+:::
+
+## Estimator of the Population Total $\tau$ {.font80}
+
+::: cle7
+The population total $\tau$ can be estimated from the sample data by scaling up the sample mean estimate by the known or estimated total number of elements, $N$, across all clusters:
+$$
+\tau = N \cdot \bar{y}
+$$
+where $\bar{y}$ is the estimated mean from the cluster sample, and $N$ is the total number of elements (e.g., people, households) in the population.
+:::
+
+## Variance Estimation {.font80}
+
+::: cle7
+The variance of the estimator $\tau$, if $N$ is known, can be derived from the variance of $\bar{y}$:
+$$
+\hat{V}(\tau) = N^2 \cdot \hat{V}(\bar{y})
+$$
+This variance helps in constructing confidence intervals around the estimated total, giving a sense of the reliability of the estimate.
+:::
+
+
+## Estimating Population Total When $N$ is Unknown {.font60}
+
+::: cle7
+In scenarios where the total population size $N$ is not known, cluster sampling requires an alternative approach to estimate the total. This is often the case in large-scale studies where the exact count of population elements is impractical to determine.
+
+### **Alternative Methods for Estimating $\tau$**
+Without a known $N$, the estimation must rely on statistical methods that can infer $\tau$ effectively from the sampled data:
+
+- Ratio estimators or other complex statistical models might be employed to project the total based on sampled data.
+
+### **Practical Application Example**
+Consider a city-wide survey to estimate the total resident income without a known total population size. Surveyors might sample specific city blocks (clusters) and total the incomes within these clusters. These totals are then projected to the entire city using the ratio of sampled to the estimated total population, aiding city planners in fiscal decisions.
+
+:::
+
+
+## {.font40}
+
+> Example 1: (Same as Day 28) A sociologist wants to estimate the per-capita income in a certain small city. No list of resi-
+dent adults is available. So she performed cluster sampling. The city is marked off into rectangular blocks,
+except for two industrial areas and three parks that contain only a few houses. The sociologist decides
+that each of the city blocks will be considered one cluster, the two industrial areas will be considered one
+cluster, and finally, the three parks will be considered one cluster. The clusters are numbered on a city
+map, with the numbers from 1 to 415.The experimenter has enough time and money to sample clusters
+and to interview every household within each cluster. Hence, 25 random numbers between1 and 415 are
+selected, and the clusters having these numbers are marked on the map.Interviewers are then assigned to
+each of the sampled clusters. The data on incomes are presented in the following. Use the data to estimate
+the per-capita income in the city and place a bound on the error of estimation.
+
+
+<img src="images/Day28-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
+
+Use the data in Example 1, estimate the total income of all residents of the city, if (a), the
+population size is not known; (b), if there are 2500 residents in the city.
+
+##
+
+
+##
