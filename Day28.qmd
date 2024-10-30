@@ -88,36 +88,41 @@ This method not only aligns with the objectives of minimizing costs and simplify
 ## Estimating the Population Mean with Cluster Sampling {.font60}
 
 ::: cle7
-In cluster sampling, the estimation of the population mean $\mu$ is performed using a ratio estimator based on sampled clusters. This method allows us to approximate the overall population mean by leveraging the proportional representation of each cluster.
-
-### **Notations and Definitions**
-- $M$: Total number of clusters in the population.
-- $m$: Number of clusters selected in the sample.
-- $n_i$: Number of elements in the $i^{th}$ cluster.
-- $\bar{y}$: Ratio estimator for the population mean.
+The population mean, $\mu$, is estimated using a ratio estimator derived from sampled clusters. This approach leverages the proportional representation of each cluster to approximate the overall population mean.
 
 ### **Ratio Estimator Formula**
-The population mean $\mu$ is estimated using the following ratio:
 $$
-\bar{y}=\frac{\sum_{i=1}^{m} \tau_i}{\sum_{i=1}^{m} n_i}
+\bar{y} = \frac{\sum_{i=1}^{m} \tau_i}{\sum_{i=1}^{m} n_i}
 $$
-where $\tau_i$ is the total of all observations within the $i^{th}$ cluster.
+where $\tau_i$ is the total of all observations within the $i^{th}$ cluster, and $n_i$ is the number of elements in the $i^{th}$ cluster.
 :::
 
-## Variance and Confidence Interval for $\bar{y}$ {.font70}
+## Calculation of Variance in Cluster Sampling {.font70}
 
 ::: cle7
-Understanding the variability and confidence of our estimate is crucial. The estimated variance of $\bar{y}$ and the confidence interval provide insights into the precision of our estimate.
+Estimating the variance of the population mean estimator is critical for assessing the precision of the sampling strategy.
 
-### **Estimated Variance of $\bar{y}$**
-The variance of $\bar{y}$ gives us an idea of how much the estimated mean might vary from sample to sample.
+### **Variance Formula**
+The estimated variance of the mean estimator $\bar{y}$ is given by:
+$$
+\hat{V}(\bar{y}) = \left(1-\frac{m}{M}\right) \frac{s_{\mathrm{r}}^2}{m\bar{N}^2}
+$$
+where $s_{\mathrm{r}}^2 = \frac{\sum_{i=1}^m\left(\tau_i-\bar{y} n_i\right)^2}{m-1}$ is the residual sum of squares from the ratio estimation.
+:::
 
-### **Confidence Interval**
-When the number of clusters $m > 20$, $\bar{y}$ can be assumed to follow a normal distribution, allowing us to construct a confidence interval:
+## Confidence Intervals for Cluster Sampling {.font70}
+
+::: cle7
+Constructing a confidence interval around $\bar{y}$ helps quantify the uncertainty of our estimate.
+
+### **Normal Approximation**
+For sufficiently large $m$, typically $m > 20$, the sampling distribution of $\bar{y}$ can be approximated by a normal distribution, facilitating the computation of confidence intervals.
+
+### **Confidence Interval Calculation**
 $$
-\bar{y} \pm B
+\bar{y} \pm z \cdot \sqrt{\hat{V}(\bar{y})}
 $$
-where $B$ is the bound on the error of estimation.
+where $z$ is the z-score corresponding to the desired confidence level (e.g., 1.96 for 95% confidence).
 :::
 
 ## {.font40}
@@ -136,6 +141,8 @@ the per-capita income in the city and place a bound on the error of estimation.
 
 <img src="images/Day28-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
 
+
+##
 
 
 

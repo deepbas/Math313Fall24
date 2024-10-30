@@ -578,14 +578,21 @@
     "href": "Day28.html#estimating-the-population-mean-with-cluster-sampling",
     "title": "Day 28",
     "section": "Estimating the Population Mean with Cluster Sampling",
-    "text": "Estimating the Population Mean with Cluster Sampling\n\nIn cluster sampling, the estimation of the population mean \\(\\mu\\) is performed using a ratio estimator based on sampled clusters. This method allows us to approximate the overall population mean by leveraging the proportional representation of each cluster.\nNotations and Definitions\n\n\\(M\\): Total number of clusters in the population.\n\\(m\\): Number of clusters selected in the sample.\n\\(n_i\\): Number of elements in the \\(i^{th}\\) cluster.\n\\(\\bar{y}\\): Ratio estimator for the population mean.\n\nRatio Estimator Formula\nThe population mean \\(\\mu\\) is estimated using the following ratio: \\[\n\\bar{y}=\\frac{\\sum_{i=1}^{m} \\tau_i}{\\sum_{i=1}^{m} n_i}\n\\] where \\(\\tau_i\\) is the total of all observations within the \\(i^{th}\\) cluster."
+    "text": "Estimating the Population Mean with Cluster Sampling\n\nThe population mean, \\(\\mu\\), is estimated using a ratio estimator derived from sampled clusters. This approach leverages the proportional representation of each cluster to approximate the overall population mean.\nRatio Estimator Formula\n\\[\n\\bar{y} = \\frac{\\sum_{i=1}^{m} \\tau_i}{\\sum_{i=1}^{m} n_i}\n\\] where \\(\\tau_i\\) is the total of all observations within the \\(i^{th}\\) cluster, and \\(n_i\\) is the number of elements in the \\(i^{th}\\) cluster."
   },
   {
-    "objectID": "Day28.html#variance-and-confidence-interval-for-bary",
-    "href": "Day28.html#variance-and-confidence-interval-for-bary",
+    "objectID": "Day28.html#calculation-of-variance-in-cluster-sampling",
+    "href": "Day28.html#calculation-of-variance-in-cluster-sampling",
     "title": "Day 28",
-    "section": "Variance and Confidence Interval for \\(\\bar{y}\\)",
-    "text": "Variance and Confidence Interval for \\(\\bar{y}\\)\n\nUnderstanding the variability and confidence of our estimate is crucial. The estimated variance of \\(\\bar{y}\\) and the confidence interval provide insights into the precision of our estimate.\nEstimated Variance of \\(\\bar{y}\\)\nThe variance of \\(\\bar{y}\\) gives us an idea of how much the estimated mean might vary from sample to sample.\nConfidence Interval\nWhen the number of clusters \\(m &gt; 20\\), \\(\\bar{y}\\) can be assumed to follow a normal distribution, allowing us to construct a confidence interval: \\[\n\\bar{y} \\pm B\n\\] where \\(B\\) is the bound on the error of estimation."
+    "section": "Calculation of Variance in Cluster Sampling",
+    "text": "Calculation of Variance in Cluster Sampling\n\nEstimating the variance of the population mean estimator is critical for assessing the precision of the sampling strategy.\nVariance Formula\nThe estimated variance of the mean estimator \\(\\bar{y}\\) is given by: \\[\n\\hat{V}(\\bar{y}) = \\left(1-\\frac{m}{M}\\right) \\frac{s_{\\mathrm{r}}^2}{m\\bar{N}^2}\n\\] where \\(s_{\\mathrm{r}}^2 = \\frac{\\sum_{i=1}^m\\left(\\tau_i-\\bar{y} n_i\\right)^2}{m-1}\\) is the residual sum of squares from the ratio estimation."
+  },
+  {
+    "objectID": "Day28.html#confidence-intervals-for-cluster-sampling",
+    "href": "Day28.html#confidence-intervals-for-cluster-sampling",
+    "title": "Day 28",
+    "section": "Confidence Intervals for Cluster Sampling",
+    "text": "Confidence Intervals for Cluster Sampling\n\nConstructing a confidence interval around \\(\\bar{y}\\) helps quantify the uncertainty of our estimate.\nNormal Approximation\nFor sufficiently large \\(m\\), typically \\(m &gt; 20\\), the sampling distribution of \\(\\bar{y}\\) can be approximated by a normal distribution, facilitating the computation of confidence intervals.\nConfidence Interval Calculation\n\\[\n\\bar{y} \\pm z \\cdot \\sqrt{\\hat{V}(\\bar{y})}\n\\] where \\(z\\) is the z-score corresponding to the desired confidence level (e.g., 1.96 for 95% confidence)."
   },
   {
     "objectID": "Day28.html#section",

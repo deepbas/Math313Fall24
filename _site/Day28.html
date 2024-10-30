@@ -391,30 +391,33 @@ Bastola
 <section id="estimating-the-population-mean-with-cluster-sampling" class="slide level2 font60">
 <h2>Estimating the Population Mean with Cluster Sampling</h2>
 <div class="cle7">
-<p>In cluster sampling, the estimation of the population mean <span class="math inline">\(\mu\)</span> is performed using a ratio estimator based on sampled clusters. This method allows us to approximate the overall population mean by leveraging the proportional representation of each cluster.</p>
-<h3 id="notations-and-definitions"><strong>Notations and Definitions</strong></h3>
-<ul>
-<li><span class="math inline">\(M\)</span>: Total number of clusters in the population.</li>
-<li><span class="math inline">\(m\)</span>: Number of clusters selected in the sample.</li>
-<li><span class="math inline">\(n_i\)</span>: Number of elements in the <span class="math inline">\(i^{th}\)</span> cluster.</li>
-<li><span class="math inline">\(\bar{y}\)</span>: Ratio estimator for the population mean.</li>
-</ul>
+<p>The population mean, <span class="math inline">\(\mu\)</span>, is estimated using a ratio estimator derived from sampled clusters. This approach leverages the proportional representation of each cluster to approximate the overall population mean.</p>
 <h3 id="ratio-estimator-formula"><strong>Ratio Estimator Formula</strong></h3>
-<p>The population mean <span class="math inline">\(\mu\)</span> is estimated using the following ratio: <span class="math display">\[
-\bar{y}=\frac{\sum_{i=1}^{m} \tau_i}{\sum_{i=1}^{m} n_i}
-\]</span> where <span class="math inline">\(\tau_i\)</span> is the total of all observations within the <span class="math inline">\(i^{th}\)</span> cluster.</p>
+<p><span class="math display">\[
+\bar{y} = \frac{\sum_{i=1}^{m} \tau_i}{\sum_{i=1}^{m} n_i}
+\]</span> where <span class="math inline">\(\tau_i\)</span> is the total of all observations within the <span class="math inline">\(i^{th}\)</span> cluster, and <span class="math inline">\(n_i\)</span> is the number of elements in the <span class="math inline">\(i^{th}\)</span> cluster.</p>
 </div>
 </section>
-<section id="variance-and-confidence-interval-for-bary" class="slide level2 font70">
-<h2>Variance and Confidence Interval for <span class="math inline">\(\bar{y}\)</span></h2>
+<section id="calculation-of-variance-in-cluster-sampling" class="slide level2 font70">
+<h2>Calculation of Variance in Cluster Sampling</h2>
 <div class="cle7">
-<p>Understanding the variability and confidence of our estimate is crucial. The estimated variance of <span class="math inline">\(\bar{y}\)</span> and the confidence interval provide insights into the precision of our estimate.</p>
-<h3 id="estimated-variance-of-bary"><strong>Estimated Variance of <span class="math inline">\(\bar{y}\)</span></strong></h3>
-<p>The variance of <span class="math inline">\(\bar{y}\)</span> gives us an idea of how much the estimated mean might vary from sample to sample.</p>
-<h3 id="confidence-interval"><strong>Confidence Interval</strong></h3>
-<p>When the number of clusters <span class="math inline">\(m &gt; 20\)</span>, <span class="math inline">\(\bar{y}\)</span> can be assumed to follow a normal distribution, allowing us to construct a confidence interval: <span class="math display">\[
-\bar{y} \pm B
-\]</span> where <span class="math inline">\(B\)</span> is the bound on the error of estimation.</p>
+<p>Estimating the variance of the population mean estimator is critical for assessing the precision of the sampling strategy.</p>
+<h3 id="variance-formula"><strong>Variance Formula</strong></h3>
+<p>The estimated variance of the mean estimator <span class="math inline">\(\bar{y}\)</span> is given by: <span class="math display">\[
+\hat{V}(\bar{y}) = \left(1-\frac{m}{M}\right) \frac{s_{\mathrm{r}}^2}{m\bar{N}^2}
+\]</span> where <span class="math inline">\(s_{\mathrm{r}}^2 = \frac{\sum_{i=1}^m\left(\tau_i-\bar{y} n_i\right)^2}{m-1}\)</span> is the residual sum of squares from the ratio estimation.</p>
+</div>
+</section>
+<section id="confidence-intervals-for-cluster-sampling" class="slide level2 font70">
+<h2>Confidence Intervals for Cluster Sampling</h2>
+<div class="cle7">
+<p>Constructing a confidence interval around <span class="math inline">\(\bar{y}\)</span> helps quantify the uncertainty of our estimate.</p>
+<h3 id="normal-approximation"><strong>Normal Approximation</strong></h3>
+<p>For sufficiently large <span class="math inline">\(m\)</span>, typically <span class="math inline">\(m &gt; 20\)</span>, the sampling distribution of <span class="math inline">\(\bar{y}\)</span> can be approximated by a normal distribution, facilitating the computation of confidence intervals.</p>
+<h3 id="confidence-interval-calculation"><strong>Confidence Interval Calculation</strong></h3>
+<p><span class="math display">\[
+\bar{y} \pm z \cdot \sqrt{\hat{V}(\bar{y})}
+\]</span> where <span class="math inline">\(z\)</span> is the z-score corresponding to the desired confidence level (e.g., 1.96 for 95% confidence).</p>
 </div>
 </section>
 <section id="section" class="slide level2 font40">
@@ -423,8 +426,11 @@ Bastola
 <p>Example 1: A sociologist wants to estimate the per-capita income in a certain small city. No list of resi- dent adults is available. So she performed cluster sampling. The city is marked off into rectangular blocks, except for two industrial areas and three parks that contain only a few houses. The sociologist decides that each of the city blocks will be considered one cluster, the two industrial areas will be considered one cluster, and finally, the three parks will be considered one cluster. The clusters are numbered on a city map, with the numbers from 1 to 415.The experimenter has enough time and money to sample clusters and to interview every household within each cluster. Hence, 25 random numbers between1 and 415 are selected, and the clusters having these numbers are marked on the map.Interviewers are then assigned to each of the sampled clusters. The data on incomes are presented in the following. Use the data to estimate the per-capita income in the city and place a bound on the error of estimation.</p>
 </blockquote>
 
+<img src="images/Day28-1.png" style="display: block; margin: auto;" width="80%" loading="lazy" decoding="async" class="r-stretch"></section>
+<section id="section-1" class="slide level2">
+<h2></h2>
 
-<img src="images/Day28-1.png" style="display: block; margin: auto;" width="80%" loading="lazy" decoding="async" class="r-stretch"><div class="quarto-auto-generated-content">
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
