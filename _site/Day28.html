@@ -355,14 +355,16 @@ Bastola
 </ul>
 </div>
 </section>
-<section id="implementation-steps" class="slide level2 font80">
-<h2>Implementation Steps</h2>
+<section id="implementation-steps-in-cluster-sampling" class="slide level2 font60">
+<h2>Implementation Steps in Cluster Sampling</h2>
 <div class="cle6">
+<p>Cluster sampling involves several key steps, each critical to the success of the sampling strategy. These steps are defined with precise terminology to ensure clarity and accuracy.</p>
 <ol type="1">
-<li><strong>Identify Clusters:</strong> Divide the population into natural clusters.</li>
-<li><strong>Determine Sample Size:</strong> Set the number of clusters, <span class="math inline">\(n\)</span>, and cluster size, <span class="math inline">\(m_i\)</span> (the number of elements in cluster <span class="math inline">\(i\)</span>).</li>
-<li><strong>Random Selection:</strong> Randomly choose <span class="math inline">\(n\)</span> clusters from the population.</li>
-<li><strong>Data Collection:</strong> Gather data from every element within each chosen cluster, ensuring comprehensive coverage.</li>
+<li><p><strong>Identify Clusters:</strong> Divide the population into natural clusters, referred to as <span class="math inline">\(M\)</span>, where <span class="math inline">\(M\)</span> is the total number of clusters in the population.</p></li>
+<li><p><strong>Determine Sample Size:</strong> Decide on the number of clusters, <span class="math inline">\(m\)</span>, to sample randomly. Each cluster <span class="math inline">\(i\)</span> contains <span class="math inline">\(n_i\)</span> elements, contributing to the determination of cluster sizes.</p></li>
+<li><p><strong>Random Selection:</strong> Randomly select <span class="math inline">\(m\)</span> clusters from the population. This step ensures that each cluster has an equal chance of being included in the sample.</p></li>
+<li><p><strong>Data Collection:</strong> Collect data from every element within each chosen cluster. The total number of observations within the <span class="math inline">\(i^{th}\)</span> cluster is represented by <span class="math inline">\(\tau_i\)</span>, and each observation in the cluster is indexed by <span class="math inline">\(j\)</span> (denoted <span class="math inline">\(y_{i j}\)</span>).</p></li>
+<li><p><strong>Statistical Calculation:</strong> Calculate the average cluster size for the sample as <span class="math inline">\(\frac{1}{m} \cdot \sum_{i=1}^m n_i\)</span>, and for the population as <span class="math inline">\(\bar{N} = \frac{N}{M}\)</span>, where <span class="math inline">\(N = \sum_{i=1}^M n_i\)</span> represents the total population size.</p></li>
 </ol>
 </div>
 </section>

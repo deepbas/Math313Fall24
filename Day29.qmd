@@ -63,40 +63,72 @@ Estimating population totals is crucial for:
 - Evaluating total market sizes or total disease burden in public health initiatives.
 :::
 
-## Estimator of the Population Total $\tau$ {.font80}
+
+## Estimator of the Population Total $\tau$ When $N$ is Known {.font80}
 
 ::: cle7
-The population total $\tau$ can be estimated from the sample data by scaling up the sample mean estimate by the known or estimated total number of elements, $N$, across all clusters:
+When the total number of elements in the population, $N$, is known, the population total $\tau$ can be directly estimated using the sampled data:
+
+### **Estimator Formula**
 $$
 \tau = N \cdot \bar{y}
 $$
-where $\bar{y}$ is the estimated mean from the cluster sample, and $N$ is the total number of elements (e.g., people, households) in the population.
+Here, $\bar{y}$ is the estimated mean from the cluster sample, calculated as $\bar{y} = \frac{\sum_{i=1}^{m} y_i}{\sum_{i=1}^{m} n_i}$, where $m$ is the number of sampled clusters, and $y_i$ is the total income for the $i$th cluster.
+
 :::
 
-## Variance Estimation {.font80}
+## Variance Estimation When $N$ is Known {.font80}
 
 ::: cle7
-The variance of the estimator $\tau$, if $N$ is known, can be derived from the variance of $\bar{y}$:
+With a known $N$, the variance of the estimator $\tau$ is derived directly from the variance of $\bar{y}$:
+
+### **Variance Formula**
 $$
 \hat{V}(\tau) = N^2 \cdot \hat{V}(\bar{y})
 $$
-This variance helps in constructing confidence intervals around the estimated total, giving a sense of the reliability of the estimate.
+
 :::
 
 
-## Estimating Population Total When $N$ is Unknown {.font60}
+
+## Estimator of the Population Total $\tau$ When $N$ is Unknown {.font60}
 
 ::: cle7
-In scenarios where the total population size $N$ is not known, cluster sampling requires an alternative approach to estimate the total. This is often the case in large-scale studies where the exact count of population elements is impractical to determine.
+Often, the exact number of elements in the population ($N$) is unknown, which is a common scenario in cluster sampling where only a portion of clusters are surveyed. Thus, a direct estimation using $N \cdot \bar{y}$, where $M$ is the number of clusters and $\bar{y}$ the sample mean, isn't feasible.
 
-### **Alternative Methods for Estimating $\tau$**
-Without a known $N$, the estimation must rely on statistical methods that can infer $\tau$ effectively from the sampled data:
+### **Alternative Estimator $\bar{y}_{\mathrm{t}}$**
 
-- Ratio estimators or other complex statistical models might be employed to project the total based on sampled data.
+Instead, we use the estimator $\bar{y}_{\mathrm{t}}$ given by:
 
-### **Practical Application Example**
-Consider a city-wide survey to estimate the total resident income without a known total population size. Surveyors might sample specific city blocks (clusters) and total the incomes within these clusters. These totals are then projected to the entire city using the ratio of sampled to the estimated total population, aiding city planners in fiscal decisions.
+$$
+\bar{y}_{\mathrm{t}}=\frac{1}{m} \sum_{i=1}^{m} y_{i}
+$$
+This represents the average of the cluster totals for the $m$ sampled clusters and is an unbiased estimator of the average of the $M$ cluster totals in the population. Therefore, to estimate the total population $\tau$, we can use:
 
+$$
+M \bar{y}_{\mathrm{t}}=\frac{M}{m} \sum_{i=1}^{m} y_{i}
+$$
+
+where $M$ can be estimated by extrapolating the sample results to the entire population. If $M$ is completely unknown, proxy measures or statistical models must be used to approximate it.
+
+:::
+
+## Variance Estimation When $N$ is Unknown {.font70}
+
+::: cle7
+The variance of $N \bar{y}_{\mathrm{t}}$, when $N$ is unknown and approximated, is calculated as follows:
+$$
+\hat{V}(M \bar{y}_{\mathrm{t}}) = M^2 \hat{V}(\bar{y}_{\mathrm{t}})
+$$
+where:
+$$
+\hat{V}(\bar{y}_{\mathrm{t}}) = \left(1 - \frac{m}{M}\right) \frac{s_{\mathrm{t}}^2}{m}
+$$
+and $s_{\mathrm{t}}^2$ is computed by:
+$$
+s_{\mathrm{t}}^2 = \frac{\sum_{i=1}^{m}(y_{i} - \bar{y}_{\mathrm{t}})^2}{m-1}
+$$
+This variance helps in constructing confidence intervals that provide insights into the reliability of the estimated total $\tau$.
 :::
 
 

@@ -59,13 +59,22 @@ yt <- 0
 - **Feasibility:** The necessity for a detailed frame listing all elements is circumvented, allowing for practical implementation in large-scale surveys or studies.
 :::
 
-## Implementation Steps {.font80}
+## Implementation Steps in Cluster Sampling {.font60}
+
 ::: cle6
-1. **Identify Clusters:** Divide the population into natural clusters.
-2. **Determine Sample Size:** Set the number of clusters, $n$, and cluster size, $m_i$ (the number of elements in cluster $i$).
-3. **Random Selection:** Randomly choose $n$ clusters from the population.
-4. **Data Collection:** Gather data from every element within each chosen cluster, ensuring comprehensive coverage.
+Cluster sampling involves several key steps, each critical to the success of the sampling strategy. These steps are defined with precise terminology to ensure clarity and accuracy.
+
+1. **Identify Clusters:** Divide the population into natural clusters, referred to as $M$, where $M$ is the total number of clusters in the population.
+
+2. **Determine Sample Size:** Decide on the number of clusters, $m$, to sample randomly. Each cluster $i$ contains $n_i$ elements, contributing to the determination of cluster sizes.
+
+3. **Random Selection:** Randomly select $m$ clusters from the population. This step ensures that each cluster has an equal chance of being included in the sample.
+
+4. **Data Collection:** Collect data from every element within each chosen cluster. The total number of observations within the $i^{th}$ cluster is represented by $\tau_i$, and each observation in the cluster is indexed by $j$ (denoted $y_{i j}$).
+
+5. **Statistical Calculation:** Calculate the average cluster size for the sample as $\frac{1}{m} \cdot \sum_{i=1}^m n_i$, and for the population as $\bar{N} = \frac{N}{M}$, where $N = \sum_{i=1}^M n_i$ represents the total population size.
 :::
+
 
 
 ## Design Considerations {.font80}
