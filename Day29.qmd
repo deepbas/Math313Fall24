@@ -94,7 +94,7 @@ $$
 ## Estimator of the Population Total $\tau$ When $N$ is Unknown {.font60}
 
 ::: cle7
-Often, the exact number of elements in the population ($N$) is unknown, which is a common scenario in cluster sampling where only a portion of clusters are surveyed. Thus, a direct estimation using $N \cdot \bar{y}$, where $M$ is the number of clusters and $\bar{y}$ the sample mean, isn't feasible.
+Often, the exact number of elements in the population ($N$) is unknown, which is a common scenario in cluster sampling where only a portion of clusters are surveyed. Thus, a direct estimation using $N \cdot \bar{y}$ isn't feasible.
 
 ### **Alternative Estimator $\bar{y}_{\mathrm{t}}$**
 
