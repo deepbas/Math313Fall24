@@ -70,7 +70,7 @@ Cluster sampling involves several key steps, each critical to the success of the
 
 3. **Random Selection:** Randomly select $m$ clusters from the population. This step ensures that each cluster has an equal chance of being included in the sample.
 
-4. **Data Collection:** Collect data from every element within each chosen cluster. The total number of observations within the $i^{th}$ cluster is represented by $\tau_i$, and each observation in the cluster is indexed by $j$ (denoted $y_{i j}$).
+4. **Data Collection:** Collect data from every element within each chosen cluster. The total of observations within the $i^{th}$ cluster is represented by $\tau_i$, and each observation in the cluster is indexed by $j$ (denoted $y_{i j}$).
 
 5. **Statistical Calculation:** Calculate the average cluster size for the sample as $\frac{1}{m} \cdot \sum_{i=1}^m n_i$, and for the population as $\bar{N} = \frac{N}{M}$, where $N = \sum_{i=1}^M n_i$ represents the total population size.
 :::
