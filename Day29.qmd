@@ -5,7 +5,7 @@ title-slide-attributes:
   data-background-size: contain
   data-background-opacity: "0.5"
 subtitle: "MATH 313: Survey Design and Sampling"
-author: "Bastola"
+author: ""
 format:
   revealjs:
     html-math-method: mathjax
@@ -142,8 +142,7 @@ cluster, and finally, the three parks will be considered one cluster. The cluste
 map, with the numbers from 1 to 415.The experimenter has enough time and money to sample clusters
 and to interview every household within each cluster. Hence, 25 random numbers between1 and 415 are
 selected, and the clusters having these numbers are marked on the map.Interviewers are then assigned to
-each of the sampled clusters. The data on incomes are presented in the following. Use the data to estimate
-the per-capita income in the city and place a bound on the error of estimation.
+each of the sampled clusters. The data on incomes are presented in the following. 
 
 
 <img src="images/Day28-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">

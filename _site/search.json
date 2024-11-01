@@ -546,11 +546,11 @@
     "text": "Key Concepts and Benefits\n\n\nCost Reduction: By sampling clusters (e.g., city blocks or regions), rather than individual units (e.g., households), significant savings on logistical and operational costs are achieved, especially when geographical dispersion of the population elements is a factor.\nFeasibility: The necessity for a detailed frame listing all elements is circumvented, allowing for practical implementation in large-scale surveys or studies."
   },
   {
-    "objectID": "Day28.html#implementation-steps",
-    "href": "Day28.html#implementation-steps",
+    "objectID": "Day28.html#implementation-steps-in-cluster-sampling",
+    "href": "Day28.html#implementation-steps-in-cluster-sampling",
     "title": "Day 28",
-    "section": "Implementation Steps",
-    "text": "Implementation Steps\n\n\nIdentify Clusters: Divide the population into natural clusters.\nDetermine Sample Size: Set the number of clusters, \\(n\\), and cluster size, \\(m_i\\) (the number of elements in cluster \\(i\\)).\nRandom Selection: Randomly choose \\(n\\) clusters from the population.\nData Collection: Gather data from every element within each chosen cluster, ensuring comprehensive coverage."
+    "section": "Implementation Steps in Cluster Sampling",
+    "text": "Implementation Steps in Cluster Sampling\n\nCluster sampling involves several key steps, each critical to the success of the sampling strategy. These steps are defined with precise terminology to ensure clarity and accuracy.\n\nIdentify Clusters: Divide the population into natural clusters, referred to as \\(M\\), where \\(M\\) is the total number of clusters in the population.\nDetermine Sample Size: Decide on the number of clusters, \\(m\\), to sample randomly. Each cluster \\(i\\) contains \\(n_i\\) elements, contributing to the determination of cluster sizes.\nRandom Selection: Randomly select \\(m\\) clusters from the population. This step ensures that each cluster has an equal chance of being included in the sample.\nData Collection: Collect data from every element within each chosen cluster. The total number of observations within the \\(i^{th}\\) cluster is represented by \\(\\tau_i\\), and each observation in the cluster is indexed by \\(j\\) (denoted \\(y_{i j}\\)).\nStatistical Calculation: Calculate the average cluster size for the sample as \\(\\frac{1}{m} \\cdot \\sum_{i=1}^m n_i\\), and for the population as \\(\\bar{N} = \\frac{N}{M}\\), where \\(N = \\sum_{i=1}^M n_i\\) represents the total population size."
   },
   {
     "objectID": "Day28.html#design-considerations",
@@ -1281,32 +1281,39 @@
     "text": "Why Estimate Population Totals?\n\nEstimating population totals is crucial for:\n\nAllocating resources appropriately based on total needs.\nPlanning and policy-making in governmental and non-governmental sectors.\nEvaluating total market sizes or total disease burden in public health initiatives."
   },
   {
-    "objectID": "Day29.html#estimator-of-the-population-total-tau",
-    "href": "Day29.html#estimator-of-the-population-total-tau",
+    "objectID": "Day29.html#estimator-of-the-population-total-tau-when-n-is-known",
+    "href": "Day29.html#estimator-of-the-population-total-tau-when-n-is-known",
     "title": "Day 29",
-    "section": "Estimator of the Population Total \\(\\tau\\)",
-    "text": "Estimator of the Population Total \\(\\tau\\)\n\nThe population total \\(\\tau\\) can be estimated from the sample data by scaling up the sample mean estimate, \\(\\bar{y}\\), by the known or estimated total number of elements, \\(N\\), across all clusters: \\[\n\\tau = N \\cdot \\bar{y}\n\\] where \\(\\bar{y}\\) is the estimated mean from the cluster sample, and \\(N\\) is the total number of elements in the population (e.g., people, households). If \\(N\\) is unknown, it can be estimated by scaling \\(\\bar{y}\\) by an estimated population size using proxy measures or other statistical estimates."
+    "section": "Estimator of the Population Total \\(\\tau\\) When \\(N\\) is Known",
+    "text": "Estimator of the Population Total \\(\\tau\\) When \\(N\\) is Known\n\nWhen the total number of elements in the population, \\(N\\), is known, the population total \\(\\tau\\) can be directly estimated using the sampled data:\nEstimator Formula\n\\[\n\\tau = N \\cdot \\bar{y}\n\\] Here, \\(\\bar{y}\\) is the estimated mean from the cluster sample, calculated as \\(\\bar{y} = \\frac{\\sum_{i=1}^{m} y_i}{\\sum_{i=1}^{m} n_i}\\), where \\(m\\) is the number of sampled clusters, and \\(y_i\\) is the total income for the \\(i\\)th cluster."
   },
   {
-    "objectID": "Day29.html#variance-estimation",
-    "href": "Day29.html#variance-estimation",
+    "objectID": "Day29.html#variance-estimation-when-n-is-known",
+    "href": "Day29.html#variance-estimation-when-n-is-known",
     "title": "Day 29",
-    "section": "Variance Estimation",
-    "text": "Variance Estimation\n\nThe variance of the estimator \\(\\tau\\), if \\(N\\) is known, can be derived from the variance of \\(\\bar{y}\\): \\[\n\\hat{V}(\\tau) = N^2 \\cdot \\hat{V}(\\bar{y})\n\\] If \\(N\\) is unknown, \\(\\bar{n}\\) can be used to approximate \\(\\bar{N}\\) for the variance calculation: \\[\n\\hat{V}(\\tau) = \\left(\\frac{N}{\\bar{n}}\\right)^2 \\cdot \\hat{V}(\\bar{y})\n\\] This variance helps in constructing confidence intervals around the estimated total, giving a sense of the reliability of the estimate."
+    "section": "Variance Estimation When \\(N\\) is Known",
+    "text": "Variance Estimation When \\(N\\) is Known\n\nWith a known \\(N\\), the variance of the estimator \\(\\tau\\) is derived directly from the variance of \\(\\bar{y}\\):\nVariance Formula\n\\[\n\\hat{V}(\\tau) = N^2 \\cdot \\hat{V}(\\bar{y})\n\\]"
   },
   {
-    "objectID": "Day29.html#estimating-population-total-when-n-is-unknown",
-    "href": "Day29.html#estimating-population-total-when-n-is-unknown",
+    "objectID": "Day29.html#estimator-of-the-population-total-tau-when-n-is-unknown",
+    "href": "Day29.html#estimator-of-the-population-total-tau-when-n-is-unknown",
     "title": "Day 29",
-    "section": "Estimating Population Total When \\(N\\) is Unknown",
-    "text": "Estimating Population Total When \\(N\\) is Unknown\n\nIn scenarios where the total population size \\(N\\) is not known, cluster sampling requires an alternative approach to estimate the total. This often happens in large-scale studies where the exact count of population elements is impractical to determine.\nAlternative Methods for Estimating \\(\\tau\\)\nWithout a known \\(N\\), the estimation must rely on statistical methods that can infer \\(\\tau\\) effectively from the sampled data: - Use \\(\\bar{n}\\), the average number of elements in sampled clusters, to approximate \\(\\bar{N}\\), and scale the sample total accordingly: \\[\n\\tau = \\left(\\frac{N}{\\bar{n}}\\right) \\cdot \\sum_{i=1}^m y_i\n\\] where \\(N\\) is estimated by multiplying the number of clusters, \\(M\\), by \\(\\bar{n}\\). - Ratio estimators or other complex statistical models might be employed to project the total based on sampled data."
+    "section": "Estimator of the Population Total \\(\\tau\\) When \\(N\\) is Unknown",
+    "text": "Estimator of the Population Total \\(\\tau\\) When \\(N\\) is Unknown\n\nOften, the exact number of elements in the population (\\(N\\)) is unknown, which is a common scenario in cluster sampling where only a portion of clusters are surveyed. Thus, a direct estimation using \\(N \\cdot \\bar{y}\\), where \\(M\\) is the number of clusters and \\(\\bar{y}\\) the sample mean, isn’t feasible.\nAlternative Estimator \\(\\bar{y}_{\\mathrm{t}}\\)\nInstead, we use the estimator \\(\\bar{y}_{\\mathrm{t}}\\) given by:\n\\[\n\\bar{y}_{\\mathrm{t}}=\\frac{1}{m} \\sum_{i=1}^{m} y_{i}\n\\] This represents the average of the cluster totals for the \\(m\\) sampled clusters and is an unbiased estimator of the average of the \\(M\\) cluster totals in the population. Therefore, to estimate the total population \\(\\tau\\), we can use:\n\\[\nM \\bar{y}_{\\mathrm{t}}=\\frac{M}{m} \\sum_{i=1}^{m} y_{i}\n\\]\nwhere \\(M\\) can be estimated by extrapolating the sample results to the entire population. If \\(M\\) is completely unknown, proxy measures or statistical models must be used to approximate it."
+  },
+  {
+    "objectID": "Day29.html#variance-estimation-when-n-is-unknown",
+    "href": "Day29.html#variance-estimation-when-n-is-unknown",
+    "title": "Day 29",
+    "section": "Variance Estimation When \\(N\\) is Unknown",
+    "text": "Variance Estimation When \\(N\\) is Unknown\n\nThe variance of \\(N \\bar{y}_{\\mathrm{t}}\\), when \\(N\\) is unknown and approximated, is calculated as follows: \\[\n\\hat{V}(M \\bar{y}_{\\mathrm{t}}) = M^2 \\hat{V}(\\bar{y}_{\\mathrm{t}})\n\\] where: \\[\n\\hat{V}(\\bar{y}_{\\mathrm{t}}) = \\left(1 - \\frac{m}{M}\\right) \\frac{s_{\\mathrm{t}}^2}{m}\n\\] and \\(s_{\\mathrm{t}}^2\\) is computed by: \\[\ns_{\\mathrm{t}}^2 = \\frac{\\sum_{i=1}^{m}(y_{i} - \\bar{y}_{\\mathrm{t}})^2}{m-1}\n\\] This variance helps in constructing confidence intervals that provide insights into the reliability of the estimated total \\(\\tau\\)."
   },
   {
     "objectID": "Day29.html#section",
     "href": "Day29.html#section",
     "title": "Day 29",
     "section": "",
-    "text": "Example 1: (Same as Day 28) A sociologist wants to estimate the per-capita income in a certain small city. No list of resi- dent adults is available. So she performed cluster sampling. The city is marked off into rectangular blocks, except for two industrial areas and three parks that contain only a few houses. The sociologist decides that each of the city blocks will be considered one cluster, the two industrial areas will be considered one cluster, and finally, the three parks will be considered one cluster. The clusters are numbered on a city map, with the numbers from 1 to 415.The experimenter has enough time and money to sample clusters and to interview every household within each cluster. Hence, 25 random numbers between1 and 415 are selected, and the clusters having these numbers are marked on the map.Interviewers are then assigned to each of the sampled clusters. The data on incomes are presented in the following. Use the data to estimate the per-capita income in the city and place a bound on the error of estimation.\n\n\nUse the data in Example 1, estimate the total income of all residents of the city, if (a), the population size is not known; (b), if there are 2500 residents in the city."
+    "text": "Example 1: (Same as Day 28) A sociologist wants to estimate the per-capita income in a certain small city. No list of resi- dent adults is available. So she performed cluster sampling. The city is marked off into rectangular blocks, except for two industrial areas and three parks that contain only a few houses. The sociologist decides that each of the city blocks will be considered one cluster, the two industrial areas will be considered one cluster, and finally, the three parks will be considered one cluster. The clusters are numbered on a city map, with the numbers from 1 to 415.The experimenter has enough time and money to sample clusters and to interview every household within each cluster. Hence, 25 random numbers between1 and 415 are selected, and the clusters having these numbers are marked on the map.Interviewers are then assigned to each of the sampled clusters. The data on incomes are presented in the following.\n\n\nUse the data in Example 1, estimate the total income of all residents of the city, if (a), the population size is not known; (b), if there are 2500 residents in the city."
   },
   {
     "objectID": "Day23.html#difference-estimator-of-mu_y",
@@ -2028,61 +2035,5 @@
     "title": "Day 11",
     "section": "",
     "text": "F. Compare the average populations per state between Western and Eastern U.S.A.\n\n\nSolution\n\n\ndelta &lt;- y.bar - x.bar; delta # western - eastern\n\n[1] -6253.45\n\nV.delta &lt;- sy^2/ny + sx^2/nx\ndf &lt;- (sy^2/ny + sx^2/nx)^2/((sy^2/ny)^2/(ny -1) + (sx^2/nx)^2/(nx -1)); df\n\n[1] 13.72751\n\nCI &lt;- delta + c(-1,1)*qt(0.975, df = df-1)*sqrt(V.delta); CI\n\n[1] -9999.12 -2507.78"
-  },
-  {
-    "objectID": "Day28.html#implementation-steps-in-cluster-sampling",
-    "href": "Day28.html#implementation-steps-in-cluster-sampling",
-    "title": "Day 28",
-    "section": "Implementation Steps in Cluster Sampling",
-    "text": "Implementation Steps in Cluster Sampling\n\nCluster sampling involves several key steps, each critical to the success of the sampling strategy. These steps are defined with precise terminology to ensure clarity and accuracy.\n\nIdentify Clusters: Divide the population into natural clusters, referred to as \\(M\\), where \\(M\\) is the total number of clusters in the population.\nDetermine Sample Size: Decide on the number of clusters, \\(m\\), to sample randomly. Each cluster \\(i\\) contains \\(n_i\\) elements, contributing to the determination of cluster sizes.\nRandom Selection: Randomly select \\(m\\) clusters from the population. This step ensures that each cluster has an equal chance of being included in the sample.\nData Collection: Collect data from every element within each chosen cluster. The total number of observations within the \\(i^{th}\\) cluster is represented by \\(\\tau_i\\), and each observation in the cluster is indexed by \\(j\\) (denoted \\(y_{i j}\\)).\nStatistical Calculation: Calculate the average cluster size for the sample as \\(\\frac{1}{m} \\cdot \\sum_{i=1}^m n_i\\), and for the population as \\(\\bar{N} = \\frac{N}{M}\\), where \\(N = \\sum_{i=1}^M n_i\\) represents the total population size."
-  },
-  {
-    "objectID": "Day29.html#variance-estimation-for-population-total-tau",
-    "href": "Day29.html#variance-estimation-for-population-total-tau",
-    "title": "Day 29",
-    "section": "Variance Estimation for Population Total \\(\\tau\\)",
-    "text": "Variance Estimation for Population Total \\(\\tau\\)\n\nThe variance of the estimator \\(\\tau\\), if \\(N\\) is known, can be derived from the variance of \\(\\bar{y}\\): \\[\n\\hat{V}(\\tau) = N^2 \\cdot \\hat{V}(\\bar{y})\n\\] This variance helps in constructing confidence intervals around the estimated total, giving a sense of the reliability of the estimate. If \\(N\\) is unknown, substitute \\(N\\) with an estimated value based on \\(\\bar{n}\\) or similar metrics: \\[\n\\hat{V}(\\tau) = \\left(\\frac{N}{\\bar{n}}\\right)^2 \\cdot \\hat{V}(\\bar{y})\n\\]"
-  },
-  {
-    "objectID": "Day29.html#confidence-intervals-for-total-estimates",
-    "href": "Day29.html#confidence-intervals-for-total-estimates",
-    "title": "Day 29",
-    "section": "Confidence Intervals for Total Estimates",
-    "text": "Confidence Intervals for Total Estimates\n\nConstructing a confidence interval for \\(\\tau\\) provides a quantifiable measure of uncertainty around the total population estimate. This is crucial for planning, policy-making, and resource allocation.\nConfidence Interval Calculation\nFor both known and unknown \\(N\\), the confidence interval can be calculated as follows: \\[\n\\tau \\pm z \\cdot \\sqrt{\\hat{V}(\\tau)}\n\\] where \\(z\\) is the z-score corresponding to the desired confidence level, typically 1.96 for 95% confidence. This interval reflects the range within which the true total is likely to lie, accounting for sample variability and size."
-  },
-  {
-    "objectID": "Day29.html#estimator-of-the-population-total-tau-when-n-is-unknown",
-    "href": "Day29.html#estimator-of-the-population-total-tau-when-n-is-unknown",
-    "title": "Day 29",
-    "section": "Estimator of the Population Total \\(\\tau\\) When \\(N\\) is Unknown",
-    "text": "Estimator of the Population Total \\(\\tau\\) When \\(N\\) is Unknown\n\nOften, the exact number of elements in the population (\\(N\\)) is unknown, which is a common scenario in cluster sampling where only a portion of clusters are surveyed. Thus, a direct estimation using \\(N \\cdot \\bar{y}\\), where \\(M\\) is the number of clusters and \\(\\bar{y}\\) the sample mean, isn’t feasible.\nAlternative Estimator \\(\\bar{y}_{\\mathrm{t}}\\)\nInstead, we use the estimator \\(\\bar{y}_{\\mathrm{t}}\\) given by:\n\\[\n\\bar{y}_{\\mathrm{t}}=\\frac{1}{m} \\sum_{i=1}^{m} y_{i}\n\\] This represents the average of the cluster totals for the \\(m\\) sampled clusters and is an unbiased estimator of the average of the \\(M\\) cluster totals in the population. Therefore, to estimate the total population \\(\\tau\\), we can use:\n\\[\nM \\bar{y}_{\\mathrm{t}}=\\frac{M}{m} \\sum_{i=1}^{m} y_{i}\n\\]\nwhere \\(M\\) can be estimated by extrapolating the sample results to the entire population. If \\(M\\) is completely unknown, proxy measures or statistical models must be used to approximate it."
-  },
-  {
-    "objectID": "Day29.html#variance-estimation-when-n-is-unknown",
-    "href": "Day29.html#variance-estimation-when-n-is-unknown",
-    "title": "Day 29",
-    "section": "Variance Estimation When \\(N\\) is Unknown",
-    "text": "Variance Estimation When \\(N\\) is Unknown\n\nThe variance of \\(N \\bar{y}_{\\mathrm{t}}\\), when \\(N\\) is unknown and approximated, is calculated as follows: \\[\n\\hat{V}(M \\bar{y}_{\\mathrm{t}}) = M^2 \\hat{V}(\\bar{y}_{\\mathrm{t}})\n\\] where: \\[\n\\hat{V}(\\bar{y}_{\\mathrm{t}}) = \\left(1 - \\frac{m}{M}\\right) \\frac{s_{\\mathrm{t}}^2}{m}\n\\] and \\(s_{\\mathrm{t}}^2\\) is computed by: \\[\ns_{\\mathrm{t}}^2 = \\frac{\\sum_{i=1}^{m}(y_{i} - \\bar{y}_{\\mathrm{t}})^2}{m-1}\n\\] This variance helps in constructing confidence intervals that provide insights into the reliability of the estimated total \\(\\tau\\)."
-  },
-  {
-    "objectID": "Day29.html#practical-considerations-for-estimating-tau-when-n-is-unknown",
-    "href": "Day29.html#practical-considerations-for-estimating-tau-when-n-is-unknown",
-    "title": "Day 29",
-    "section": "Practical Considerations for Estimating \\(\\tau\\) When \\(N\\) is Unknown",
-    "text": "Practical Considerations for Estimating \\(\\tau\\) When \\(N\\) is Unknown\n\nIn scenarios where the total number of elements \\(N\\) is not directly observable: - Estimating \\(N\\): Innovative statistical techniques, such as predictive modeling or using demographic data, may be necessary. - Using \\(\\bar{n}\\) as a Proxy: If \\(N\\) cannot be reliably estimated, \\(\\bar{n}\\), the average number of elements per cluster in the sample, can be used as a proxy to scale up the observed totals to a population level.\nThis approach acknowledges the limitations of available data and adapts the estimation process to provide the most accurate results possible under the circumstances."
-  },
-  {
-    "objectID": "Day29.html#variance-estimation-when-n-is-known",
-    "href": "Day29.html#variance-estimation-when-n-is-known",
-    "title": "Day 29",
-    "section": "Variance Estimation When \\(N\\) is Known",
-    "text": "Variance Estimation When \\(N\\) is Known\n\nWith a known \\(N\\), the variance of the estimator \\(\\tau\\) is derived directly from the variance of \\(\\bar{y}\\):\nVariance Formula\n\\[\n\\hat{V}(\\tau) = N^2 \\cdot \\hat{V}(\\bar{y})\n\\]"
-  },
-  {
-    "objectID": "Day29.html#estimator-of-the-population-total-tau-when-n-is-known",
-    "href": "Day29.html#estimator-of-the-population-total-tau-when-n-is-known",
-    "title": "Day 29",
-    "section": "Estimator of the Population Total \\(\\tau\\) When \\(N\\) is Known",
-    "text": "Estimator of the Population Total \\(\\tau\\) When \\(N\\) is Known\n\nWhen the total number of elements in the population, \\(N\\), is known, the population total \\(\\tau\\) can be directly estimated using the sampled data:\nEstimator Formula\n\\[\n\\tau = N \\cdot \\bar{y}\n\\] Here, \\(\\bar{y}\\) is the estimated mean from the cluster sample, calculated as \\(\\bar{y} = \\frac{\\sum_{i=1}^{m} y_i}{\\sum_{i=1}^{m} n_i}\\), where \\(m\\) is the number of sampled clusters, and \\(y_i\\) is the total income for the \\(i\\)th cluster."
   }
 ]
