@@ -120,21 +120,18 @@ The spread of the sample through the population should ideally cover the entire 
 ## Applications of Systematic Sampling {.font80}
 
 ::: cle9
-
 Systematic sampling's methodology allows for diverse applications, from national censuses to quality control in manufacturing:
 
 - Ensures consistent coverage across a population.
 - Facilitates easier and less error-prone data collection in field settings.
 
 This versatility makes it a favored choice in many large-scale and long-term studies.
-
 :::
 
 
 ## Handling Non-Integer $\frac{N}{n}$ in Systematic Sampling {.font70}
 
 ::: cle4
-
 When $\frac{N}{n}$ is not an integer ($N = na + c$):
 
 - If the starting value $r \leq c$, the sample includes $n+1$ units.
