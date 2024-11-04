@@ -10,8 +10,8 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.25">
 
-  <meta name="author" content="Bastola">
-  <title>Math 313: Survey Design and Sampling – Day 12</title>
+  <meta name="author" content="">
+  <title>Math 313: Survey Design and Sampling – Day 30</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -328,153 +328,129 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="images/lake.jpg" data-background-opacity="0.5" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Day 12</h1>
+  <h1 class="title">Day 30</h1>
   <p class="subtitle">MATH 313: Survey Design and Sampling</p>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Bastola 
-</div>
-</div>
 </div>
 
 </section>
-<section id="stratified-random-sampling" class="slide level2 font90">
-<h2>Stratified Random Sampling</h2>
-<p><br></p>
-<div title="Definition">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Definition</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Stratified random sampling</strong> involves dividing the population into non-overlapping groups (strata) and then conducting a simple random sample within each stratum.</p>
-<ul>
-<li><strong>Purpose:</strong> To maximize the information obtained for a given cost in sample surveys.</li>
-</ul>
-</div>
-</div>
-</div>
+<section id="confidence-interval-for-ratio-estimator" class="slide level2 font70">
+<h2>Confidence Interval for Ratio Estimator</h2>
+<div class="cle9">
+<p>Even when dealing with large samples, the ratio estimator does not adhere to a normal distribution, making it inappropriate to use the <span class="math inline">\(t\)</span> distribution for confidence interval calculations. Instead, we use the Vysochanskij-Petunin Inequality for a more conservative estimation:</p>
+<h3 id="inequality-application"><strong>Inequality Application</strong></h3>
+<p><span class="math display">\[
+P\left[\left|x-\mu_x\right| \leqslant \lambda \sigma_x\right] \geqslant 1-\left(\frac{4}{9 \lambda^2}\right)
+\]</span> This approach provides at least <span class="math inline">\(1-\frac{4}{9 \lambda^2}\)</span> confidence that the true <span class="math inline">\(\mu_x\)</span> lies within <span class="math inline">\((x-\lambda \sigma_x, x+\lambda \sigma_x)\)</span>.</p>
+<p>Setting <span class="math inline">\(\alpha = \frac{4}{9 \lambda^2}\)</span>, we derive: <span class="math display">\[
+\lambda = \sqrt{\frac{4}{9 \alpha}}
+\]</span></p>
 </div>
 </section>
-<section id="comparison-with-simple-random-sampling" class="slide level2 font80">
-<h2>Comparison with Simple Random Sampling</h2>
-<p><br></p>
-<div class="cle15">
-<ul>
-<li><strong>Basic Approach:</strong> Simple random sampling involves selecting individuals randomly from the entire population without prior grouping.</li>
-<li><strong>Stratified Approach:</strong> Enhances precision by grouping similar items together and then sampling.</li>
-</ul>
+<section id="estimation-of-variance-for-ratio-estimators" class="slide level2 font80">
+<h2>Estimation of Variance for Ratio Estimators</h2>
+<div class="cle7">
+<p>When calculating the variance of a ratio estimator, especially under conditions where the population size <span class="math inline">\(N\)</span> is known, we adapt our variance estimation formula as follows:</p>
+<h3 id="variance-of-hattau"><strong>Variance of <span class="math inline">\(\hat{\tau}\)</span></strong></h3>
+<p><span class="math display">\[
+\hat{V}(\hat{\tau}) = N^2 \cdot \hat{V}(\bar{y})
+\]</span> Here, <span class="math inline">\(\bar{y}\)</span> is the estimated mean from the sampled data, and <span class="math inline">\(\hat{V}(\bar{y})\)</span> is the variance of this mean estimated from the cluster sample. This form of variance calculation assumes that <span class="math inline">\(N\)</span> is a fixed quantity and known ahead of time.</p>
 </div>
 </section>
-<section id="implementation-example" class="slide level2 font80">
-<h2>Implementation Example</h2>
-<p><br></p>
-<div class="cle14">
-<ul>
-<li><strong>Context:</strong> Estimating voter preferences on tax revenue allocation for ambulance services in a county.</li>
-<li><strong>Strata:</strong> Two cities and one rural area in the county.</li>
-<li><strong>Sampling Method:</strong> Conduct a simple random sample from each stratum (each city and rural area).</li>
-</ul>
+<section id="selecting-the-sample-size-for-estimating-population-means-and-totals" class="slide level2 font70">
+<h2>Selecting the Sample Size for Estimating Population Means and Totals</h2>
+<div class="cle6">
+<p>The effectiveness of a cluster sample in gathering information is influenced by the number of sampled clusters <span class="math inline">\(m\)</span> and the relative sizes of these clusters. This methodology is particularly valuable for estimating properties like the number of homes with inadequate fire insurance, using groupings such as counties or communities.</p>
+<h3 id="formula-for-estimated-variance-of-bary"><strong>Formula for Estimated Variance of <span class="math inline">\(\bar{y}\)</span></strong></h3>
+<p><span class="math display">\[
+\hat{V}(\bar{y}) = \left(1 - \frac{m}{M}\right) \frac{s_{\mathrm{r}}^2}{m \bar{n}^2}
+\]</span> Here, <span class="math inline">\(s_{\mathrm{r}}^2\)</span> is used to estimate the population variance <span class="math inline">\(\sigma_{\mathrm{r}}^2\)</span> from the sample.</p>
+<h3 id="approximation-of-actual-variance"><strong>Approximation of Actual Variance</strong></h3>
+<p><span class="math display">\[
+V(\bar{y}) = \left(1 - \frac{m}{M}\right) \frac{\sigma_{\mathrm{r}}^2}{m \bar{n}^2}
+\]</span></p>
 </div>
 </section>
-<section id="advantages-of-stratified-random-sampling" class="slide level2 font80">
-<h2>Advantages of Stratified Random Sampling</h2>
-<p><br></p>
-<div class="cle13">
-<ol type="1">
-<li><strong>Reduced Error:</strong> Stratification can yield a smaller bound on the error of estimation compared to simple random sampling.</li>
-<li><strong>Cost Efficiency:</strong> By grouping population elements, the cost per observation may be reduced.</li>
-<li><strong>Subgroup Analysis:</strong> Allows for estimates of population parameters for specific, identifiable subgroups within the population.</li>
-</ol>
-</div>
-</section>
-<section id="step-1-defining-and-classifying-strata" class="slide level2 font80">
-<h2>Step 1: Defining and Classifying Strata</h2>
-<div class="cle12">
-<ul>
-<li><strong>Initial Setup:</strong> Specify strata clearly. Each sampling unit must uniquely classify into one stratum.</li>
-<li><strong>Classification Challenges:</strong> For example, whether a town of 1000 inhabitants is ‘urban’ or ‘rural’ can depend on proximity to larger cities or isolation.</li>
-<li><strong>Criteria Definition:</strong> Essential to define terms like ‘urban’ and ‘rural’ to prevent classification ambiguity.</li>
-</ul>
-</div>
-</section>
-<section id="step-2-sampling-process-and-notations" class="slide level2 font80">
-<h2>Step 2: Sampling Process and Notations</h2>
-<div class="cle11">
-<ul>
-<li><strong>Assigning Units:</strong> Place each unit, e.g., household, into the appropriate stratum based on clear, predefined criteria.</li>
-<li><strong>Sampling Notations:</strong>
-<ul>
-<li><strong>L:</strong> Number of strata.</li>
-<li><strong><span class="math inline">\(N_i\)</span>:</strong> Number of sampling units in stratum <span class="math inline">\(i\)</span>.</li>
-<li><strong><span class="math inline">\(N\)</span>:</strong> Total population size, <span class="math inline">\(N = N_1 + N_2 + \cdots + N_L\)</span>.</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="step-3-sample-selection-and-independence" class="slide level2 font80">
-<h2>Step 3: Sample Selection and Independence</h2>
-<p><br></p>
+<section id="sample-size-determination" class="slide level2 font70">
+<h2>Sample Size Determination</h2>
 <div class="cle10">
-<ul>
-<li><strong>Independent Sampling:</strong> Ensure that the sample from each stratum is chosen independently using different random sampling methods.</li>
-<li><strong>Choosing Sample Sizes:</strong> Appropriate number of samples from each stratum and ensuring selections from different strata do not influence each other will be covered later.</li>
-</ul>
+<p>Choosing the number of clusters <span class="math inline">\(m\)</span> is crucial to minimize the error of estimation. The goal is to select clusters that have as little variation among them as possible. To determine the number of clusters necessary for a specified error bound <span class="math inline">\(B\)</span>, we use:</p>
+<h3 id="error-bound-formula"><strong>Error Bound Formula</strong></h3>
+<p><span class="math display">\[
+2 \sqrt{V(\bar{y})} = B
+\]</span> This equality helps in setting the correct number of clusters to achieve the desired accuracy.</p>
+<h3 id="sample-size-for-estimating-mu-with-a-bound-b"><strong>Sample Size for Estimating <span class="math inline">\(\mu\)</span> with a Bound <span class="math inline">\(B\)</span></strong></h3>
+<p><span class="math display">\[
+m = \frac{M \sigma_{\mathrm{r}}^2}{M D + \sigma_{\mathrm{r}}^2}
+\]</span> where <span class="math inline">\(D = \left(\frac{B^2 \bar{n}^2}{4}\right)\)</span>, and <span class="math inline">\(\sigma_{\mathrm{r}}^2\)</span> is estimated from a preliminary sample.</p>
+</div>
+</section>
+<section id="alternate-estimator-of-population-total-tau-with-unknown-n" class="slide level2 font60">
+<h2>Alternate Estimator of Population Total <span class="math inline">\(\tau\)</span> with Unknown <span class="math inline">\(N\)</span></h2>
+<div class="cle11">
+<p>When the total number of clusters in the population <span class="math inline">\(M\)</span> is unknown, we must modify our estimation approaches:</p>
+<h3 id="alternative-estimator-bary_mathrmt"><strong>Alternative Estimator <span class="math inline">\(\bar{y}_{\mathrm{t}}\)</span></strong></h3>
+<p><span class="math display">\[
+\bar{\tau} = \frac{1}{m} \sum_{i=1}^{m} \tau_i
+\]</span> This estimator represents the average of the cluster totals from the sampled clusters and is used when only a portion of the total clusters are surveyed.</p>
+<h3 id="variance-for-unknown-m"><strong>Variance for Unknown <span class="math inline">\(M\)</span></strong></h3>
+<p><span class="math display">\[
+\hat{V}(M \bar{\tau}) = M^2 \hat{V}(\bar{\tau})
+\]</span> where <span class="math inline">\(\hat{V}(\bar{\tau})\)</span> is computed as: <span class="math display">\[
+\hat{V}(\bar{\tau}) = \left(1 - \frac{m}{M}\right) \frac{s_{\mathrm{t}}^2}{m}
+\]</span></p>
+</div>
+</section>
+<section id="sample-size-determination-for-estimating-tau-with-unknown-n" class="slide level2 font60">
+<h2>Sample Size Determination for Estimating <span class="math inline">\(\tau\)</span> with Unknown <span class="math inline">\(N\)</span></h2>
+<div class="cle12">
+<p>When the total number of clusters <span class="math inline">\(M\)</span> is unknown, an alternative estimation approach is necessary. We adjust the formula to incorporate estimations of <span class="math inline">\(M\)</span> and use proxy measures:</p>
+<h3 id="alternative-formula-derivation"><strong>Alternative Formula Derivation</strong></h3>
+<p><span class="math display">\[
+M^2 \cdot \left(1-\frac{m}{M}\right) \cdot \frac{S_t^2}{m} = \left(\frac{B}{\lambda}\right)^2
+\]</span> From this, the sample size <span class="math inline">\(m\)</span> is calculated as: <span class="math display">\[
+m = \frac{M S_t^2}{\left(\frac{B}{\lambda M}\right)^2 \cdot M + S_t^2}
+\]</span> This formula calculates the number of clusters to sample to ensure the variance of the estimate does not exceed the specified error bound represented by <span class="math inline">\(B\)</span>.</p>
+</div>
+</section>
+<section id="sample-size-determination-for-estimating-tau-with-known-n" class="slide level2 font60">
+<h2>Sample Size Determination for Estimating <span class="math inline">\(\tau\)</span> with Known <span class="math inline">\(N\)</span></h2>
+<div class="cle13">
+<p>When the population size <span class="math inline">\(N\)</span> is known, the formula for determining the number of clusters <span class="math inline">\(m\)</span> needed to estimate the population total <span class="math inline">\(\tau\)</span> with a desired precision is derived from the variance of the estimator:</p>
+<h3 id="formula-derivation"><strong>Formula Derivation</strong></h3>
+<p><span class="math display">\[
+N^2 \cdot \left(1-\frac{m}{M}\right) \cdot \frac{S_r^2}{m \bar{n}^{2}} = \left(\frac{B}{\lambda}\right)^2
+\]</span> Simplifying, we have:</p>
+<p><span class="math display">\[
+\left(1-\frac{m}{M}\right) \frac{S_r^2}{m \bar{n}^2} = \left(\frac{B}{\lambda N}\right)^2
+\]</span></p>
+<p>Which gives us:</p>
+<p><span class="math display">\[
+m = \frac{M S_r^2}{\left(\frac{B}{\lambda N}\right)^2 M \bar{n}^2 + S_r^2}
+\]</span> These equations ensure that the error in estimating <span class="math inline">\(\tau\)</span> does not exceed the bound <span class="math inline">\(B\)</span>.</p>
 </div>
 </section>
 <section id="section" class="slide level2 font60">
 <h2></h2>
 <blockquote>
-<p>Example 1: An advertising agency wants to understand how much focus to give to TV advertising in a specific county. To do this, they plan to survey how many hours households watch TV each week. The county includes two towns-Town A, centered around a factory with many families having schoolage children, and Town B, a wealthier suburb with older residents and fewer children-and a rural area. The numbers of households are 155 in Town A, 62 in Town B, and 93 in the rural area. Analyze the advantages of using stratified random sampling in this scenario.</p>
+<p>Example 1: Use the data in Example 1 of Note 28 as a preliminary sample. Answer the following questions:</p>
 </blockquote>
+<ol type="a">
+<li>How large a sample should be taken in a future survey in order to estimate the average per-capita income <span class="math inline">\(\mu\)</span> with a bound of <span class="math inline">\(\$ 500\)</span> on the <span class="math inline">\(95 \%\)</span> error of estimation?</li>
+</ol>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-1" class="slide level2 font60">
 <h2></h2>
+<ol start="2" type="a">
+<li>Given that there are 2500 residents of the city, how large a sample should be taken in a future survey in order to estimate the total income of all residents, <span class="math inline">\(\tau\)</span>, with a bound of <span class="math inline">\(\$ 1,000,000\)</span> on the <span class="math inline">\(95 \%\)</span> error of estimation?</li>
+</ol>
 </section>
 <section id="section-2" class="slide level2 font60">
 <h2></h2>
-<blockquote>
-<p>Exampe 2: A corporation is evaluating the effectiveness of a new business machine by gathering ratings from its division heads across three regions: North America, Europe, and Asia. To ensure that the ratings are representative and to manage costs effectively, stratified sampling is chosen as the method. The costs of conducting interviews vary by region, and so do the variances in the ratings obtained. The company aims to estimate the average effectiveness rating of the machine with a desired variance in the estimate of <span class="math inline">\(V\left(\bar{y}_{\text {st }}\right)=0.1\)</span>. Determine the optimal sample size <span class="math inline">\(n\)</span> that achieves the variance bound of <span class="math inline">\(V\left(\bar{y}_{\text {st }}\right)=0.1\)</span> and calculate the appropriate allocation of the sample size across the strata based on the Neyman allocation principle, which considers both the stratum variances and the costs associated with sampling each stratum. The following table provides the costs per interview, the variances of the ratings, and the total number of division heads in each region.</p>
-</blockquote>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Stratum</th>
-<th style="text-align: center;">North America</th>
-<th style="text-align: center;">Europe</th>
-<th style="text-align: center;">Asia</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(c\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 9\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 25\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\$ 36\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\sigma^2\)</span></td>
-<td style="text-align: center;">2.25</td>
-<td style="text-align: center;">3.24</td>
-<td style="text-align: center;">3.24</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(N\)</span></td>
-<td style="text-align: center;">112</td>
-<td style="text-align: center;">68</td>
-<td style="text-align: center;">39</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="section-3" class="slide level2">
-<h2></h2>
+<ol start="3" type="a">
+<li>If the number of residents of the city is unknown, how large a sample should be taken in a future survey in order to estimate the total income of all residents, <span class="math inline">\(\tau\)</span>, with a bound of <span class="math inline">\(\$ 1,000,000\)</span> on the <span class="math inline">\(95 \%\)</span> error of estimation?</li>
+</ol>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

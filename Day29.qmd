@@ -73,7 +73,7 @@ When the total number of elements in the population, $N$, is known, the populati
 $$
 \tau = N \cdot \bar{y}
 $$
-Here, $\bar{y}$ is the estimated mean from the cluster sample, calculated as $\bar{y} = \frac{\sum_{i=1}^{m} y_i}{\sum_{i=1}^{m} n_i}$, where $m$ is the number of sampled clusters, and $y_i$ is the total income for the $i$th cluster.
+Here, $\bar{y}$ is the estimated mean from the cluster sample, calculated as $\bar{y} = \frac{\sum_{i=1}^{m} \tau_i}{\sum_{i=1}^{m} n_i}$, where $m$ is the number of sampled clusters, and $\tau_i$ is the total income for the $i$th cluster.
 
 :::
 
@@ -96,17 +96,17 @@ $$
 ::: cle7
 Often, the exact number of elements in the population ($N$) is unknown, which is a common scenario in cluster sampling where only a portion of clusters are surveyed. Thus, a direct estimation using $N \cdot \bar{y}$ isn't feasible.
 
-### **Alternative Estimator $\bar{y}_{\mathrm{t}}$**
+### **Alternative Estimator $\bar{\tau}$**
 
-Instead, we use the estimator $\bar{y}_{\mathrm{t}}$ given by:
+Instead, we use the estimator $\bar{\tau}$ given by:
 
 $$
-\bar{y}_{\mathrm{t}}=\frac{1}{m} \sum_{i=1}^{m} y_{i}
+\bar{\tau}=\frac{1}{m} \sum_{i=1}^{m} \tau_{i}
 $$
 This represents the average of the cluster totals for the $m$ sampled clusters and is an unbiased estimator of the average of the $M$ cluster totals in the population. Therefore, to estimate the total population $\tau$, we can use:
 
 $$
-M \bar{y}_{\mathrm{t}}=\frac{M}{m} \sum_{i=1}^{m} y_{i}
+M \bar{\tau}=\frac{M}{m} \sum_{i=1}^{m} \tau_{i}
 $$
 
 where $M$ can be estimated by extrapolating the sample results to the entire population. If $M$ is completely unknown, proxy measures or statistical models must be used to approximate it.
@@ -116,17 +116,17 @@ where $M$ can be estimated by extrapolating the sample results to the entire pop
 ## Variance Estimation When $N$ is Unknown {.font70}
 
 ::: cle7
-The variance of $N \bar{y}_{\mathrm{t}}$, when $N$ is unknown and approximated, is calculated as follows:
+The variance of $N \bar{\tau}$, when $N$ is unknown and approximated, is calculated as follows:
 $$
-\hat{V}(M \bar{y}_{\mathrm{t}}) = M^2 \hat{V}(\bar{y}_{\mathrm{t}})
+\hat{V}(M \bar{\tau}) = M^2 \hat{V}(\bar{\tau})
 $$
 where:
 $$
-\hat{V}(\bar{y}_{\mathrm{t}}) = \left(1 - \frac{m}{M}\right) \frac{s_{\mathrm{t}}^2}{m}
+\hat{V}(\bar{\tau}) = \left(1 - \frac{m}{M}\right) \frac{s_{\mathrm{t}}^2}{m}
 $$
 and $s_{\mathrm{t}}^2$ is computed by:
 $$
-s_{\mathrm{t}}^2 = \frac{\sum_{i=1}^{m}(y_{i} - \bar{y}_{\mathrm{t}})^2}{m-1}
+s_{\mathrm{t}}^2 = \frac{\sum_{i=1}^{m}(\tau_{i} - \bar{\tau}_{\mathrm{t}})^2}{m-1}
 $$
 This variance helps in constructing confidence intervals that provide insights into the reliability of the estimated total $\tau$.
 :::

@@ -8,7 +8,7 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.56">
+  <meta name="generator" content="quarto-1.5.25">
 
   <meta name="author" content="">
   <title>Math 313: Survey Design and Sampling – Day 29</title>
@@ -359,7 +359,7 @@
 <h3 id="estimator-formula"><strong>Estimator Formula</strong></h3>
 <p><span class="math display">\[
 \tau = N \cdot \bar{y}
-\]</span> Here, <span class="math inline">\(\bar{y}\)</span> is the estimated mean from the cluster sample, calculated as <span class="math inline">\(\bar{y} = \frac{\sum_{i=1}^{m} y_i}{\sum_{i=1}^{m} n_i}\)</span>, where <span class="math inline">\(m\)</span> is the number of sampled clusters, and <span class="math inline">\(y_i\)</span> is the total income for the <span class="math inline">\(i\)</span>th cluster.</p>
+\]</span> Here, <span class="math inline">\(\bar{y}\)</span> is the estimated mean from the cluster sample, calculated as <span class="math inline">\(\bar{y} = \frac{\sum_{i=1}^{m} \tau_i}{\sum_{i=1}^{m} n_i}\)</span>, where <span class="math inline">\(m\)</span> is the number of sampled clusters, and <span class="math inline">\(\tau_i\)</span> is the total income for the <span class="math inline">\(i\)</span>th cluster.</p>
 </div>
 </section>
 <section id="variance-estimation-when-n-is-known" class="slide level2 font80">
@@ -376,13 +376,13 @@
 <h2>Estimator of the Population Total <span class="math inline">\(\tau\)</span> When <span class="math inline">\(N\)</span> is Unknown</h2>
 <div class="cle7">
 <p>Often, the exact number of elements in the population (<span class="math inline">\(N\)</span>) is unknown, which is a common scenario in cluster sampling where only a portion of clusters are surveyed. Thus, a direct estimation using <span class="math inline">\(N \cdot \bar{y}\)</span> isn’t feasible.</p>
-<h3 id="alternative-estimator-bary_mathrmt"><strong>Alternative Estimator <span class="math inline">\(\bar{y}_{\mathrm{t}}\)</span></strong></h3>
-<p>Instead, we use the estimator <span class="math inline">\(\bar{y}_{\mathrm{t}}\)</span> given by:</p>
+<h3 id="alternative-estimator-bartau"><strong>Alternative Estimator <span class="math inline">\(\bar{\tau}\)</span></strong></h3>
+<p>Instead, we use the estimator <span class="math inline">\(\bar{\tau}\)</span> given by:</p>
 <p><span class="math display">\[
-\bar{y}_{\mathrm{t}}=\frac{1}{m} \sum_{i=1}^{m} y_{i}
+\bar{\tau}=\frac{1}{m} \sum_{i=1}^{m} \tau_{i}
 \]</span> This represents the average of the cluster totals for the <span class="math inline">\(m\)</span> sampled clusters and is an unbiased estimator of the average of the <span class="math inline">\(M\)</span> cluster totals in the population. Therefore, to estimate the total population <span class="math inline">\(\tau\)</span>, we can use:</p>
 <p><span class="math display">\[
-M \bar{y}_{\mathrm{t}}=\frac{M}{m} \sum_{i=1}^{m} y_{i}
+M \bar{\tau}=\frac{M}{m} \sum_{i=1}^{m} \tau_{i}
 \]</span></p>
 <p>where <span class="math inline">\(M\)</span> can be estimated by extrapolating the sample results to the entire population. If <span class="math inline">\(M\)</span> is completely unknown, proxy measures or statistical models must be used to approximate it.</p>
 </div>
@@ -390,23 +390,19 @@ M \bar{y}_{\mathrm{t}}=\frac{M}{m} \sum_{i=1}^{m} y_{i}
 <section id="variance-estimation-when-n-is-unknown" class="slide level2 font70">
 <h2>Variance Estimation When <span class="math inline">\(N\)</span> is Unknown</h2>
 <div class="cle7">
-<p>The variance of <span class="math inline">\(N \bar{y}_{\mathrm{t}}\)</span>, when <span class="math inline">\(N\)</span> is unknown and approximated, is calculated as follows: <span class="math display">\[
-\hat{V}(M \bar{y}_{\mathrm{t}}) = M^2 \hat{V}(\bar{y}_{\mathrm{t}})
+<p>The variance of <span class="math inline">\(N \bar{\tau}\)</span>, when <span class="math inline">\(N\)</span> is unknown and approximated, is calculated as follows: <span class="math display">\[
+\hat{V}(M \bar{\tau}) = M^2 \hat{V}(\bar{\tau})
 \]</span> where: <span class="math display">\[
-\hat{V}(\bar{y}_{\mathrm{t}}) = \left(1 - \frac{m}{M}\right) \frac{s_{\mathrm{t}}^2}{m}
+\hat{V}(\bar{\tau}) = \left(1 - \frac{m}{M}\right) \frac{s_{\mathrm{t}}^2}{m}
 \]</span> and <span class="math inline">\(s_{\mathrm{t}}^2\)</span> is computed by: <span class="math display">\[
-s_{\mathrm{t}}^2 = \frac{\sum_{i=1}^{m}(y_{i} - \bar{y}_{\mathrm{t}})^2}{m-1}
+s_{\mathrm{t}}^2 = \frac{\sum_{i=1}^{m}(\tau_{i} - \bar{\tau}_{\mathrm{t}})^2}{m-1}
 \]</span> This variance helps in constructing confidence intervals that provide insights into the reliability of the estimated total <span class="math inline">\(\tau\)</span>.</p>
 </div>
 </section>
 <section id="section" class="slide level2 font40">
 <h2></h2>
 <blockquote>
-<<<<<<< Updated upstream
-<p>Example 1: (Same as Day 28) A sociologist wants to estimate the per-capita income in a certain small city. No list of resi- dent adults is available. So she performed cluster sampling. The city is marked off into rectangular blocks, except for two industrial areas and three parks that contain only a few houses. The sociologist decides that each of the city blocks will be considered one cluster, the two industrial areas will be considered one cluster, and finally, the three parks will be considered one cluster. The clusters are numbered on a city map, with the numbers from 1 to 415.The experimenter has enough time and money to sample clusters and to interview every household within each cluster. Hence, 25 random numbers between1 and 415 are selected, and the clusters having these numbers are marked on the map.Interviewers are then assigned to each of the sampled clusters. The data on incomes are presented in the following.</p>
-=======
 <p>Example 1: (Same as Day 28) A sociologist wants to estimate the per-capita income in a certain small city. No list of resi- dent adults is available. So she performed cluster sampling. The city is marked off into rectangular blocks, except for two industrial areas and three parks that contain only a few houses. The sociologist decides that each of the city blocks will be considered one cluster, the two industrial areas will be considered one cluster, and finally, the three parks will be considered one cluster. The clusters are numbered on a city map, with the numbers from 1 to 415.The experimenter has enough time and money to sample clusters and to interview every household within each cluster. Hence, 25 random numbers between 1 and 415 are selected, and the clusters having these numbers are marked on the map.Interviewers are then assigned to each of the sampled clusters. The data on incomes are presented in the following.</p>
->>>>>>> Stashed changes
 </blockquote>
 
 <img src="images/Day28-1.png" style="display: block; margin: auto;" width="80%" loading="lazy" decoding="async" class="r-stretch"><p>Use the data in Example 1, estimate the total income of all residents of the city, if (a), the population size is not known; (b), if there are 2500 residents in the city.</p>

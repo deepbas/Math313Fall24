@@ -98,6 +98,27 @@ website:
           - text: "Lecture 29"
             href: Day29.html
             target: "_blank"
+          - text: "Lecture 30"
+            href: Day30.html
+            target: "_blank"
+          # - text: "Lecture 24"
+          #   href: Day24.html
+          #   target: "_blank"
+          # - text: "Lecture 24"
+          #   href: Day24.html
+          #   target: "_blank"
+          # - text: "Lecture 24"
+          #   href: Day24.html
+          #   target: "_blank"
+          # - text: "Lecture 24"
+          #   href: Day24.html
+          #   target: "_blank"
+          # - text: "Lecture 24"
+          #   href: Day24.html
+          #   target: "_blank"
+          # - text: "Lecture 24"
+          #   href: Day24.html
+          #   target: "_blank"
           # - text: "Lecture 24"
           #   href: Day24.html
           #   target: "_blank"

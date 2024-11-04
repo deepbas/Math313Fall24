@@ -1,0 +1,199 @@
+---
+title: "Day 30"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: ""
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+```
+
+
+## Confidence Interval for Ratio Estimator {.font70}
+
+::: cle9
+Even when dealing with large samples, the ratio estimator does not adhere to a normal distribution, making it inappropriate to use the $t$ distribution for confidence interval calculations. Instead, we use the Vysochanskij-Petunin Inequality for a more conservative estimation:
+
+### **Inequality Application**
+$$
+P\left[\left|x-\mu_x\right| \leqslant \lambda \sigma_x\right] \geqslant 1-\left(\frac{4}{9 \lambda^2}\right)
+$$
+This approach provides at least $1-\frac{4}{9 \lambda^2}$ confidence that the true $\mu_x$ lies within $(x-\lambda \sigma_x, x+\lambda \sigma_x)$.
+
+Setting $\alpha = \frac{4}{9 \lambda^2}$, we derive:
+$$
+\lambda = \sqrt{\frac{4}{9 \alpha}}
+$$
+:::
+
+## Estimation of Variance for Ratio Estimators {.font80}
+
+::: cle7
+When calculating the variance of a ratio estimator, especially under conditions where the population size $N$ is known, we adapt our variance estimation formula as follows:
+
+### **Variance of $\hat{\tau}$**
+$$
+\hat{V}(\hat{\tau}) = N^2 \cdot \hat{V}(\bar{y})
+$$
+Here, $\bar{y}$ is the estimated mean from the sampled data, and $\hat{V}(\bar{y})$ is the variance of this mean estimated from the cluster sample. This form of variance calculation assumes that $N$ is a fixed quantity and known ahead of time.
+:::
+
+
+## Selecting the Sample Size for Estimating Population Means and Totals {.font70}
+
+::: cle6
+The effectiveness of a cluster sample in gathering information is influenced by the number of sampled clusters $m$ and the relative sizes of these clusters. This methodology is particularly valuable for estimating properties like the number of homes with inadequate fire insurance, using groupings such as counties or communities.
+
+### **Formula for Estimated Variance of $\bar{y}$**
+$$
+\hat{V}(\bar{y}) = \left(1 - \frac{m}{M}\right) \frac{s_{\mathrm{r}}^2}{m \bar{n}^2}
+$$
+Here, $s_{\mathrm{r}}^2$ is used to estimate the population variance $\sigma_{\mathrm{r}}^2$ from the sample.
+
+### **Approximation of Actual Variance**
+$$
+V(\bar{y}) = \left(1 - \frac{m}{M}\right) \frac{\sigma_{\mathrm{r}}^2}{m \bar{n}^2}
+$$
+:::
+
+## Sample Size Determination {.font70}
+
+::: cle10
+Choosing the number of clusters $m$ is crucial to minimize the error of estimation. The goal is to select clusters that have as little variation among them as possible. To determine the number of clusters necessary for a specified error bound $B$, we use:
+
+### **Error Bound Formula**
+$$
+2 \sqrt{V(\bar{y})} = B
+$$
+This equality helps in setting the correct number of clusters to achieve the desired accuracy.
+
+### **Sample Size for Estimating $\mu$ with a Bound $B$**
+$$
+m = \frac{M \sigma_{\mathrm{r}}^2}{M D + \sigma_{\mathrm{r}}^2}
+$$
+where $D = \left(\frac{B^2 \bar{n}^2}{4}\right)$, and $\sigma_{\mathrm{r}}^2$ is estimated from a preliminary sample.
+
+
+:::
+
+## Alternate Estimator of Population Total $\tau$ with Unknown $N$ {.font60}
+
+::: cle11
+When the total number of clusters in the population $M$ is unknown, we must modify our estimation approaches:
+
+### **Alternative Estimator $\bar{y}_{\mathrm{t}}$**
+$$
+\bar{\tau} = \frac{1}{m} \sum_{i=1}^{m} \tau_i
+$$
+This estimator represents the average of the cluster totals from the sampled clusters and is used when only a portion of the total clusters are surveyed.
+
+### **Variance for Unknown $M$**
+$$
+\hat{V}(M \bar{\tau}) = M^2 \hat{V}(\bar{\tau})
+$$
+where $\hat{V}(\bar{\tau})$ is computed as:
+$$
+\hat{V}(\bar{\tau}) = \left(1 - \frac{m}{M}\right) \frac{s_{\mathrm{t}}^2}{m}
+$$
+
+:::
+
+
+## Sample Size Determination for Estimating $\tau$ with Unknown $N$ {.font60}
+
+::: cle12
+When the total number of clusters $M$ is unknown, an alternative estimation approach is necessary. We adjust the formula to incorporate estimations of $M$ and use proxy measures:
+
+### **Alternative Formula Derivation**
+$$
+M^2 \cdot \left(1-\frac{m}{M}\right) \cdot \frac{S_t^2}{m} = \left(\frac{B}{\lambda}\right)^2
+$$
+From this, the sample size $m$ is calculated as:
+$$
+m = \frac{M S_t^2}{\left(\frac{B}{\lambda M}\right)^2 \cdot M + S_t^2}
+$$
+This formula calculates the number of clusters to sample to ensure the variance of the estimate does not exceed the specified error bound represented by $B$.
+:::
+
+
+
+
+## Sample Size Determination for Estimating $\tau$ with Known $N$ {.font60}
+
+::: cle13
+When the population size $N$ is known, the formula for determining the number of clusters $m$ needed to estimate the population total $\tau$ with a desired precision is derived from the variance of the estimator:
+
+### **Formula Derivation**
+$$
+N^2 \cdot \left(1-\frac{m}{M}\right) \cdot \frac{S_r^2}{m \bar{n}^{2}} = \left(\frac{B}{\lambda}\right)^2
+$$
+Simplifying, we have:
+
+$$
+\left(1-\frac{m}{M}\right) \frac{S_r^2}{m \bar{n}^2} = \left(\frac{B}{\lambda N}\right)^2
+$$
+
+Which gives us:
+
+$$
+m = \frac{M S_r^2}{\left(\frac{B}{\lambda N}\right)^2 M \bar{n}^2 + S_r^2}
+$$
+These equations ensure that the error in estimating $\tau$ does not exceed the bound $B$.
+:::
+
+
+## {.font60}
+
+> Example 1: Use the data in Example 1 of Note 28 as a preliminary sample. Answer the following questions:
+
+a. How large a sample should be taken in a future survey in order to estimate the average per-capita income $\mu$ with a bound of $\$ 500$ on the $95 \%$ error of estimation?
+
+## {.font60}
+
+b. Given that there are 2500 residents of the city, how large a sample should be taken in a future survey in order to estimate the total income of all residents, $\tau$, with a bound of $\$ 1,000,000$ on the $95 \%$ error of estimation?
+
+## {.font60}
+
+c. If the number of residents of the city is unknown, how large a sample should be taken in a future survey in order to estimate the total income of all residents, $\tau$, with a bound of $\$ 1,000,000$ on the $95 \%$ error of estimation?
+
+
+
+
