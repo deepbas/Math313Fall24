@@ -101,9 +101,9 @@ website:
           - text: "Lecture 30"
             href: Day30.html
             target: "_blank"
-          # - text: "Lecture 24"
-          #   href: Day24.html
-          #   target: "_blank"
+          - text: "Lecture 31"
+            href: Day31.html
+            target: "_blank"
           # - text: "Lecture 24"
           #   href: Day24.html
           #   target: "_blank"

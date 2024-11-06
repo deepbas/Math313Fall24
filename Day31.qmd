@@ -100,9 +100,9 @@ yt <- 0
 
 ::: cle10
 - **Formula**:
-  $$
-  n = \frac{\left(z_{\alpha/2}\right)^2 \hat{p}(1-\hat{p})}{B^2}
-  $$
+$$
+m=\frac{M S_p^2}{M \cdot\left(\frac{B \bar{n}}{\lambda}\right)^2+S_p^2}
+$$
   - For estimating $p$ with a pre-defined error margin ($B$).
 :::
 
