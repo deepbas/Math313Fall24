@@ -1194,7 +1194,7 @@
     "href": "Day31.html#section",
     "title": "Day 31",
     "section": "",
-    "text": "Example 1:"
+    "text": "Example 1: Recall Example 1 of Day 28, in addition to being asked about their income, the residents are asked whether they rent or own their homes. The results are given in the following table.\n\n\n\n\n\n\nCluster\nResidents, \\(n_i\\)\nRenters, \\(a_i\\)\n\n\n\n\n1\n8\n4\n\n\n2\n12\n7\n\n\n3\n4\n1\n\n\n4\n5\n3\n\n\n5\n6\n3\n\n\n6\n6\n4\n\n\n7\n7\n4\n\n\n8\n5\n2\n\n\n9\n8\n3\n\n\n10\n3\n2\n\n\n11\n2\n1\n\n\n12\n6\n3\n\n\n13\n5\n2\n\n\n\n\n\n\n\n\n\nCluster\nResidents, \\(n_i\\)\nRenters, \\(a_i\\)\n\n\n\n\n14\n10\n5\n\n\n15\n9\n4\n\n\n16\n3\n1\n\n\n17\n6\n4\n\n\n18\n5\n2\n\n\n19\n5\n3\n\n\n20\n4\n1\n\n\n21\n6\n3\n\n\n22\n8\n3\n\n\n23\n7\n4\n\n\n24\n3\n0\n\n\n25\n8\n3"
   },
   {
     "objectID": "Day9.html#overview-of-population-proportion-estimation",
@@ -2203,5 +2203,61 @@
     "title": "Day 11",
     "section": "",
     "text": "F. Compare the average populations per state between Western and Eastern U.S.A.\n\n\nSolution\n\n\ndelta &lt;- y.bar - x.bar; delta # western - eastern\n\n[1] -6253.45\n\nV.delta &lt;- sy^2/ny + sx^2/nx\ndf &lt;- (sy^2/ny + sx^2/nx)^2/((sy^2/ny)^2/(ny -1) + (sx^2/nx)^2/(nx -1)); df\n\n[1] 13.72751\n\nCI &lt;- delta + c(-1,1)*qt(0.975, df = df-1)*sqrt(V.delta); CI\n\n[1] -9999.12 -2507.78"
+  },
+  {
+    "objectID": "Day31.html#introduction-to-cluster-sampling",
+    "href": "Day31.html#introduction-to-cluster-sampling",
+    "title": "Day 31",
+    "section": "Introduction to Cluster Sampling",
+    "text": "Introduction to Cluster Sampling\n\n\nGoal: Estimate the population proportion using cluster sampling.\nContext: Useful in environments where data is naturally clustered."
+  },
+  {
+    "objectID": "Day31.html#key-notations",
+    "href": "Day31.html#key-notations",
+    "title": "Day 31",
+    "section": "Key Notations",
+    "text": "Key Notations\n\n\n\\(M\\): Total clusters in the population.\n\\(m\\): Clusters in the sample.\n\\(n_i\\): Elements in cluster \\(i\\).\n\\(a_i\\): Elements in cluster \\(i\\) with the characteristic of interest.\n\\(N\\): Total population elements.\n\\(\\bar{N} = \\frac{N}{M}\\): Mean cluster size in the population.\n\\(\\bar{n} = \\frac{1}{m} \\sum_{i=1}^{m} n_i\\): Sample mean cluster size."
+  },
+  {
+    "objectID": "Day31.html#estimation-of-population-proportion-p",
+    "href": "Day31.html#estimation-of-population-proportion-p",
+    "title": "Day 31",
+    "section": "Estimation of Population Proportion (\\(p\\))",
+    "text": "Estimation of Population Proportion (\\(p\\))\n\n\nEstimator: \\[\n\\hat{p} = \\frac{\\sum_{i=1}^{m} a_i}{\\sum_{i=1}^{m} n_i}\n\\]\n\nRatio estimation method."
+  },
+  {
+    "objectID": "Day31.html#variance-estimation-of-hatp",
+    "href": "Day31.html#variance-estimation-of-hatp",
+    "title": "Day 31",
+    "section": "Variance Estimation of \\(\\hat{p}\\)",
+    "text": "Variance Estimation of \\(\\hat{p}\\)\n\n\nVariance Formula: \\[\n\\hat{V}(\\hat{p}) = \\left(1 - \\frac{m}{M}\\right) \\frac{S_p^2}{m \\bar{n}^2}\n\\]\n\n\\(S_p^2 = \\frac{\\sum_{i=1}^{m}(a_i - \\hat{p} n_i)^2}{m-1}\\): Sample variance of proportions."
+  },
+  {
+    "objectID": "Day31.html#error-bound-and-confidence-interval",
+    "href": "Day31.html#error-bound-and-confidence-interval",
+    "title": "Day 31",
+    "section": "Error Bound and Confidence Interval",
+    "text": "Error Bound and Confidence Interval\n\n\nError Bound: \\[\nB = \\lambda \\sqrt{\\hat{V}(\\hat{p})}, \\quad \\lambda = \\sqrt{\\frac{4}{9\\alpha}}\n\\]\nConfidence Interval: \\[\n\\hat{p} \\pm B\n\\]\n\nAvoids \\(t\\)-distribution due to ratio nature of \\(\\hat{p}\\)."
+  },
+  {
+    "objectID": "Day31.html#sample-size-calculation",
+    "href": "Day31.html#sample-size-calculation",
+    "title": "Day 31",
+    "section": "Sample Size Calculation",
+    "text": "Sample Size Calculation\n\n\nFormula: \\[\nn = \\frac{\\left(z_{\\alpha/2}\\right)^2 \\hat{p}(1-\\hat{p})}{B^2}\n\\]\n\nFor estimating \\(p\\) with a pre-defined error margin (\\(B\\))."
+  },
+  {
+    "objectID": "Day31.html#recap-key-notations",
+    "href": "Day31.html#recap-key-notations",
+    "title": "Day 31",
+    "section": "Recap: Key Notations",
+    "text": "Recap: Key Notations\n\n\n\\(M\\): Total clusters in the population.\n\\(m\\): Clusters in the sample.\n\\(n_i\\): Elements in cluster \\(i\\).\n\\(a_i\\): Elements in cluster \\(i\\) with the characteristic of interest.\n\\(N\\): Total population elements.\n\\(\\bar{N} = \\frac{N}{M}\\): Mean cluster size in the population.\n\\(\\bar{n} = \\frac{1}{m} \\sum_{i=1}^{m} n_i\\): Sample mean cluster size."
+  },
+  {
+    "objectID": "Day31.html#section-1",
+    "href": "Day31.html#section-1",
+    "title": "Day 31",
+    "section": "",
+    "text": "Use the data to estimate the proportion of residents who live in rented housing. Use \\(95 \\%\\) bound.\n\n\n\n\n\nIf the data is out of date, a new study will be conducted in the same city for the purpose of estimating the proportion \\(p\\) of residents who rent their homes. How large a cluster sample should be taken to estimate \\(p\\) with a bound of 0.04 on the error of estimation?"
   }
 ]

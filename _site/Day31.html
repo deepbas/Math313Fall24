@@ -335,50 +335,246 @@
 </div>
 
 </section>
-<section id="title" class="slide level2 font80">
-<h2>title</h2>
-<div class="cle7">
-
+<section id="recap-key-notations" class="slide level2 font80">
+<h2>Recap: Key Notations</h2>
+<div class="cle1">
+<ul>
+<li><span class="math inline">\(M\)</span>: Total clusters in the population.</li>
+<li><span class="math inline">\(m\)</span>: Clusters in the sample.</li>
+<li><span class="math inline">\(n_i\)</span>: Elements in cluster <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(a_i\)</span>: Elements in cluster <span class="math inline">\(i\)</span> with the characteristic of interest.</li>
+<li><span class="math inline">\(N\)</span>: Total population elements.</li>
+<li><span class="math inline">\(\bar{N} = \frac{N}{M}\)</span>: Mean cluster size in the population.</li>
+<li><span class="math inline">\(\bar{n} = \frac{1}{m} \sum_{i=1}^{m} n_i\)</span>: Sample mean cluster size.</li>
+</ul>
 </div>
 </section>
-<section id="title-1" class="slide level2 font80">
-<h2>title</h2>
-<div class="cle7">
-
+<section id="estimation-of-population-proportion-p" class="slide level2 font80">
+<h2>Estimation of Population Proportion (<span class="math inline">\(p\)</span>)</h2>
+<div class="cle6">
+<ul>
+<li><strong>Estimator</strong>: <span class="math display">\[
+\hat{p} = \frac{\sum_{i=1}^{m} a_i}{\sum_{i=1}^{m} n_i}
+\]</span>
+<ul>
+<li>Ratio estimation method.</li>
+</ul></li>
+</ul>
 </div>
 </section>
-<section id="title-2" class="slide level2 font80">
-<h2>title</h2>
-<div class="cle7">
-
+<section id="variance-estimation-of-hatp" class="slide level2 font80">
+<h2>Variance Estimation of <span class="math inline">\(\hat{p}\)</span></h2>
+<div class="cle15">
+<ul>
+<li><strong>Variance Formula</strong>: <span class="math display">\[
+\hat{V}(\hat{p}) = \left(1 - \frac{m}{M}\right) \frac{S_p^2}{m \bar{n}^2}
+\]</span>
+<ul>
+<li><span class="math inline">\(S_p^2 = \frac{\sum_{i=1}^{m}(a_i - \hat{p} n_i)^2}{m-1}\)</span>: Sample variance of proportions.</li>
+</ul></li>
+</ul>
 </div>
 </section>
-<section id="title-3" class="slide level2 font80">
-<h2>title</h2>
-<div class="cle7">
-
+<section id="error-bound-and-confidence-interval" class="slide level2 font80">
+<h2>Error Bound and Confidence Interval</h2>
+<div class="cle3">
+<ul>
+<li><strong>Error Bound</strong>: <span class="math display">\[
+B = \lambda \sqrt{\hat{V}(\hat{p})}, \quad \lambda = \sqrt{\frac{4}{9\alpha}}
+\]</span></li>
+<li><strong>Confidence Interval</strong>: <span class="math display">\[
+\hat{p} \pm B
+\]</span>
+<ul>
+<li>Avoids <span class="math inline">\(t\)</span>-distribution due to ratio nature of <span class="math inline">\(\hat{p}\)</span>.</li>
+</ul></li>
+</ul>
 </div>
 </section>
-<section id="title-4" class="slide level2 font60">
-<h2>title</h2>
-<div class="cle7">
-
-</div>
-</section>
-<section id="title-5" class="slide level2 font70">
-<h2>title</h2>
-<div class="cle7">
-
+<section id="sample-size-calculation" class="slide level2 font80">
+<h2>Sample Size Calculation</h2>
+<div class="cle10">
+<ul>
+<li><strong>Formula</strong>: <span class="math display">\[
+n = \frac{\left(z_{\alpha/2}\right)^2 \hat{p}(1-\hat{p})}{B^2}
+\]</span>
+<ul>
+<li>For estimating <span class="math inline">\(p\)</span> with a pre-defined error margin (<span class="math inline">\(B\)</span>).</li>
+</ul></li>
+</ul>
 </div>
 </section>
 <section id="section" class="slide level2 font40">
 <h2></h2>
 <blockquote>
-<p>Example 1:</p>
+<p>Example 1: Recall Example 1 of Day 28, in addition to being asked about their income, the residents are asked whether they rent or own their homes. The results are given in the following table.</p>
 </blockquote>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table>
+<thead>
+<tr class="header">
+<th>Cluster</th>
+<th style="text-align: center;">Residents, <span class="math inline">\(n_i\)</span></th>
+<th style="text-align: center;">Renters, <span class="math inline">\(a_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:10%;">
+<!-- empty column to create gap -->
+</div><div class="column" style="width:40%;">
+<table>
+<thead>
+<tr class="header">
+<th>Cluster</th>
+<th style="text-align: center;">Residents, <span class="math inline">\(n_i\)</span></th>
+<th style="text-align: center;">Renters, <span class="math inline">\(a_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>14</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td>17</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td>18</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td>19</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td>21</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td>22</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td>24</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td>25</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-1" class="slide level2 font60">
 <h2></h2>
+<ol type="a">
+<li>Use the data to estimate the proportion of residents who live in rented housing. Use <span class="math inline">\(95 \%\)</span> bound.</li>
+</ol>
+<div class="custom-space">
+
+</div>
+<ol start="2" type="a">
+<li>If the data is out of date, a new study will be conducted in the same city for the purpose of estimating the proportion <span class="math inline">\(p\)</span> of residents who rent their homes. How large a cluster sample should be taken to estimate <span class="math inline">\(p\)</span> with a bound of 0.04 on the error of estimation?</li>
+</ol>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

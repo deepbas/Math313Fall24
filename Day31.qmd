@@ -49,52 +49,118 @@ yt <- 0
 
 
 
-## title {.font80}
 
-::: cle7
+## Recap: Key Notations {.font80}
 
+::: cle1
+- $M$: Total clusters in the population.
+- $m$: Clusters in the sample.
+- $n_i$: Elements in cluster $i$.
+- $a_i$: Elements in cluster $i$ with the characteristic of interest.
+- $N$: Total population elements.
+- $\bar{N} = \frac{N}{M}$: Mean cluster size in the population.
+- $\bar{n} = \frac{1}{m} \sum_{i=1}^{m} n_i$: Sample mean cluster size.
 :::
 
-## title {.font80}
+## Estimation of Population Proportion ($p$) {.font80}
 
-::: cle7
-
+::: cle6
+- **Estimator**:
+  $$
+  \hat{p} = \frac{\sum_{i=1}^{m} a_i}{\sum_{i=1}^{m} n_i}
+  $$
+  - Ratio estimation method.
 :::
 
+## Variance Estimation of $\hat{p}$ {.font80}
 
-## title {.font80}
-
-::: cle7
-
-
+::: cle15
+- **Variance Formula**:
+  $$
+  \hat{V}(\hat{p}) = \left(1 - \frac{m}{M}\right) \frac{S_p^2}{m \bar{n}^2}
+  $$
+  - $S_p^2 = \frac{\sum_{i=1}^{m}(a_i - \hat{p} n_i)^2}{m-1}$: Sample variance of proportions.
 :::
 
-## title {.font80}
+## Error Bound and Confidence Interval {.font80}
 
-::: cle7
-
-
+::: cle3
+- **Error Bound**:
+  $$
+  B = \lambda \sqrt{\hat{V}(\hat{p})}, \quad \lambda = \sqrt{\frac{4}{9\alpha}}
+  $$
+- **Confidence Interval**:
+  $$
+  \hat{p} \pm B
+  $$
+  - Avoids $t$-distribution due to ratio nature of $\hat{p}$.
 :::
 
+## Sample Size Calculation {.font80}
 
-## title {.font60}
-
-::: cle7
-
+::: cle10
+- **Formula**:
+  $$
+  n = \frac{\left(z_{\alpha/2}\right)^2 \hat{p}(1-\hat{p})}{B^2}
+  $$
+  - For estimating $p$ with a pre-defined error margin ($B$).
 :::
-
-## title {.font70}
-
-::: cle7
-
-
-:::
-
 
 ## {.font40}
 
-> Example 1: 
+> Example 1: Recall Example 1 of Day 28, in addition to being asked about their income, the residents are asked whether they rent or own their homes. The results are given in the following table.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+| Cluster | Residents, $n_i$ | Renters, $a_i$ |
+|---------|:----------------:|:--------------:|
+| 1       | 8                | 4              |
+| 2       | 12               | 7              |
+| 3       | 4                | 1              |
+| 4       | 5                | 3              |
+| 5       | 6                | 3              |
+| 6       | 6                | 4              |
+| 7       | 7                | 4              |
+| 8       | 5                | 2              |
+| 9       | 8                | 3              |
+| 10      | 3                | 2              |
+| 11      | 2                | 1              |
+| 12      | 6                | 3              |
+| 13      | 5                | 2              |
+:::
+
+::: {.column width="10%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="40%"}
+| Cluster | Residents, $n_i$ | Renters, $a_i$ |
+|---------|:----------------:|:--------------:|
+| 14      | 10               | 5              |
+| 15      | 9                | 4              |
+| 16      | 3                | 1              |
+| 17      | 6                | 4              |
+| 18      | 5                | 2              |
+| 19      | 5                | 3              |
+| 20      | 4                | 1              |
+| 21      | 6                | 3              |
+| 22      | 8                | 3              |
+| 23      | 7                | 4              |
+| 24      | 3                | 0              |
+| 25      | 8                | 3              |
+:::
+
+::::
 
 
 
-##
+## {.font60}
+
+a. Use the data to estimate the proportion of residents who live in rented housing. Use $95 \%$ bound.
+
+::: custom-space
+:::
+
+
+b. If the data is out of date, a new study will be conducted in the same city for the purpose of estimating the proportion $p$ of residents who rent their homes. How large a cluster sample should be taken to estimate $p$ with a bound of 0.04 on the error of estimation?
