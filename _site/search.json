@@ -1495,7 +1495,7 @@
     "href": "Day31.html#sample-size-calculation",
     "title": "Day 31",
     "section": "Sample Size Calculation",
-    "text": "Sample Size Calculation\n\n\nFormula: \\[\nm=\\frac{M S_p^2}{M \\cdot\\left(\\frac{B \\bar{n}}{\\lambda}\\right)^2+S_p^2}\n\\]\n\nFor estimating \\(p\\) with a pre-defined error margin (\\(B\\))."
+    "text": "Sample Size Calculation\n\n\nFormula:\n\n\\[\nm=\\frac{M S_p^2}{M \\cdot\\left(\\frac{B \\bar{n}}{\\lambda}\\right)^2+S_p^2}\n\\] - For estimating \\(p\\) with a pre-defined error margin (\\(B\\))."
   },
   {
     "objectID": "Day31.html#section",

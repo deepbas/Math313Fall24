@@ -100,6 +100,7 @@ yt <- 0
 
 ::: cle10
 - **Formula**:
+
 $$
 m=\frac{M S_p^2}{M \cdot\left(\frac{B \bar{n}}{\lambda}\right)^2+S_p^2}
 $$
