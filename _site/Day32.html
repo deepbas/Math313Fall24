@@ -364,12 +364,12 @@
 \]</span></p>
 <ul>
 <li>This formula provides a weighted average of the cluster totals from each stratum, where <span class="math inline">\(M_1\)</span>, <span class="math inline">\(M_2\)</span>, and <span class="math inline">\(M_3\)</span> represent the total number of students sampled in public, private, and charter schools, respectively.</li>
-<li><span class="math inline">\(\bar{y}_{\mathrm{t1}}\)</span>, <span class="math inline">\(\bar{y}_{\mathrm{t2}}\)</span>, and <span class="math inline">\(\bar{y}_{\mathrm{t3}}\)</span> are the total performance scores from the sampled clusters in public, private, and charter schools.</li>
+<li><span class="math inline">\(\bar{\tau}_{\mathrm{t1}}\)</span>, <span class="math inline">\(\bar{\tau}_{\mathrm{t2}}\)</span>, and <span class="math inline">\(\bar{\tau}_{\mathrm{t3}}\)</span> are the average total performance scores from the sampled clusters in public, private, and charter schools.</li>
 <li><span class="math inline">\(\bar{n}_{1}\)</span>, <span class="math inline">\(\bar{n}_{2}\)</span>, <span class="math inline">\(\bar{n}_{3}\)</span> are the average class sizes in the sampled clusters of public, private, and charter schools.</li>
 </ul>
 </div>
 </section>
-<section id="variance-of-the-ratio-estimator" class="slide level2 font70">
+<section id="variance-of-the-ratio-estimator" class="slide level2 font60">
 <h2>Variance of the Ratio Estimator</h2>
 <div class="cle6">
 <p><span class="math display">\[
@@ -431,15 +431,20 @@
 <p><span class="math display">\[\hat{V}\left(\hat{\mu}_{\mathrm{pps}}\right)=\frac{1}{m(m-1)} \sum_{i=1}^m\left(\bar{\tau}_i-\hat{\mu}_{\mathrm{pps}}\right)^2\]</span></p>
 </div>
 </section>
-<section id="section" class="slide level2 font60">
+<section id="section" class="slide level2 font50">
 <h2></h2>
 <blockquote>
-<p>Example 1 (Example 8.12 Textbook) An auditor wishes to sample sick-leave records of a large firm in order to estimate the average number of days of sick leave per employee over the past quarter. The firm has eight divisions, with varying numbers of employees per division. Because number of days of sick leave used within each division should be highly correlated with the number of employees, the auditor decides to sample <span class="math inline">\(n=3\)</span> divisions with probabilities proportional to number of employees. Show how to select the sample if the numbers of employees in the eight divisions are <span class="math inline">\(1200,450,2100,860,2840,1910\)</span>, 290 , and 3200.</p>
+<p>Example 1 (Example 8.12 Textbook) An auditor wishes to sample sick-leave records of a large firm in order to estimate the average number of days of sick leave per employee over the past quarter. The firm has eight divisions, with varying numbers of employees per division. Because number of days of sick leave used within each division should be highly correlated with the number of employees, the auditor decides to sample <span class="math inline">\(n=3\)</span> divisions with probabilities proportional to number of employees. Show how to select the sample if the numbers of employees in the eight divisions are <span class="math inline">\(1200,450,2100,860,2840,1910,390, and 3200\)</span>. Suppose the total number of sick-leave days used by the three sampled divisions during the past quarter are, respectively, <span class="math display">\[
+\tau_1=4320 \quad \tau_2=4160 \quad \tau_3=5790
+\]</span></p>
 </blockquote>
 
 <img src="images/Day32-1.png" style="display: block; margin: auto;" width="80%" loading="lazy" decoding="async" class="r-stretch"></section>
-<section id="section-1" class="slide level2">
+<section id="section-1" class="slide level2 font50">
 <h2></h2>
+<blockquote>
+<p>Estimate the average number of sick-leave days used per person for the entire firm and place a bound on the error of estimation.</p>
+</blockquote>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

@@ -104,15 +104,9 @@ website:
           - text: "Lecture 31"
             href: Day31.html
             target: "_blank"
-<<<<<<< HEAD
-          # - text: "Lecture 24"
-          #   href: Day24.html
-          #   target: "_blank"
-=======
           - text: "Lecture 32"
             href: Day32.html
             target: "_blank"
->>>>>>> 288015e (11-7-1)
           # - text: "Lecture 24"
           #   href: Day24.html
           #   target: "_blank"

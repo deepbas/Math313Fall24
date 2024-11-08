@@ -75,12 +75,12 @@ $$
 $$
 
 - This formula provides a weighted average of the cluster totals from each stratum, where $M_1$, $M_2$, and $M_3$ represent the total number of students sampled in public, private, and charter schools, respectively.
-- $\bar{y}_{\mathrm{t1}}$, $\bar{y}_{\mathrm{t2}}$, and $\bar{y}_{\mathrm{t3}}$ are the total performance scores from the sampled clusters in public, private, and charter schools.
+- $\bar{\tau}_{\mathrm{t1}}$, $\bar{\tau}_{\mathrm{t2}}$, and $\bar{\tau}_{\mathrm{t3}}$ are the average total performance scores from the sampled clusters in public, private, and charter schools.
 - $\bar{n}_{1}$, $\bar{n}_{2}$, $\bar{n}_{3}$ are the average class sizes in the sampled clusters of public, private, and charter schools.
 
 :::
 
-## Variance of the Ratio Estimator {.font70}
+## Variance of the Ratio Estimator {.font60}
 
 ::: cle6
 $$
@@ -149,15 +149,21 @@ $$\hat{V}\left(\hat{\mu}_{\mathrm{pps}}\right)=\frac{1}{m(m-1)} \sum_{i=1}^m\lef
 :::
 
 
-## {.font60}
+## {.font50}
 
-> Example 1 (Example 8.12 Textbook) An auditor wishes to sample sick-leave records of a large firm in order to estimate the average number of days of sick leave per employee over the past quarter. The firm has eight divisions, with varying numbers of employees per division. Because number of days of sick leave used within each division should be highly correlated with the number of employees, the auditor decides to sample $n=3$ divisions with probabilities proportional to number of employees. Show how to select the sample if the numbers of employees in the eight divisions are $1200,450,2100,860,2840,1910$, 290 , and 3200.
+> Example 1 (Example 8.12 Textbook) An auditor wishes to sample sick-leave records of a large firm in order to estimate the average number of days of sick leave per employee over the past quarter. The firm has eight divisions, with varying numbers of employees per division. Because number of days of sick leave used within each division should be highly correlated with the number of employees, the auditor decides to sample $n=3$ divisions with probabilities proportional to number of employees. Show how to select the sample if the numbers of employees in the eight divisions are $1200,450,2100,860,2840,1910,390, and 3200$. Suppose the total number of sick-leave days used by the three sampled divisions during the past quarter are, respectively,
+$$
+\tau_1=4320 \quad \tau_2=4160 \quad \tau_3=5790
+$$
 
 
 <img src="images/Day32-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
 
 
-##
+## {.font50}
+
+> Estimate the average number of sick-leave days used per person for the entire firm and place a bound on the error of estimation.
+
 
 
 
