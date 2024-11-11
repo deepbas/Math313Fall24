@@ -1,0 +1,108 @@
+---
+title: "Day 35"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: ""
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+#<img src="images/Day23-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
+```
+
+
+## Introduction to Inverse Sampling {.font80}
+
+::: cle7
+Inverse sampling is a statistical method used to estimate the total population size, $N$, when the number of tagged and recaptured individuals is a key variable.
+:::
+
+## Inverse Sampling Method {.font80}
+
+::: cle12
+- **Procedure**: Start with an initial tagged sample of size $t$. Continue sampling until $s$ tagged individuals are recaptured.
+- **Estimation Formula**:
+  $$
+  \hat{N} = \frac{n \times t}{s}
+  $$
+  Here, $n$ is the number of individuals in the second sample, and $s$ is fixed while $n$ is random.
+:::
+
+## Estimator and Variance {.font80}
+
+::: cle7
+- **Population Size Estimator**:
+  $$
+  \hat{N} = \frac{n \times t}{s}
+  $$
+- **Variance of Estimator**:
+  $$
+  \hat{V}(\hat{N}) = \frac{t^2 \times n \times (n-s)}{s^2 \times (s+1)}
+  $$
+  This formula assumes $s > 0$ and provides an unbiased estimation of $N$.
+:::
+
+## Confidence Interval Calculation {.font80}
+
+::: cle12
+- **Critical Value and Error Bound**:
+  $$
+  \lambda = \sqrt{\frac{4}{9 \alpha}}
+  $$
+  $$
+  B = \lambda \cdot \sqrt{\hat{V}(\hat{N})}
+  $$
+- **Confidence Interval**:
+  $$
+  \hat{N} \pm B
+  $$
+  Provides a conservative estimate of the population size within a specific confidence level.
+:::
+
+## Example 1: Wildlife Preserve Population Estimation {.font60}
+
+> To estimate the number of a specific bird species, a wildlife preserve captures and tags 150 birds. Later, exactly 35 tagged birds are recaptured after sampling a total of 100 birds.
+
+<img src="images/Day32-3.png" style="display: block; margin: auto;" width="80%" loading="lazy" decoding="async">
+
+## Summary and Comparison {.font60}
+
+> Inverse sampling, while similar to direct sampling, offers a more structured approach by fixing the number of tagged recaptures, potentially reducing bias in the estimate of $N$.
+

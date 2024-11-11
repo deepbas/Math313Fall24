@@ -1,0 +1,19 @@
+{
+  "hash": "b5648a959f4b70b37e4d04c6c7767fb7",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Day 36\"\ntitle-slide-attributes:\n  data-background-image: images/lake.jpg\n  data-background-size: contain\n  data-background-opacity: \"0.5\"\nsubtitle: \"MATH 313: Survey Design and Sampling\"\nauthor: \"\"\nformat:\n  revealjs:\n    html-math-method: mathjax\n    mathjax-url: \"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js\"\n    theme: [default, scss/main.scss]\n    slide_level: 2\n    slide-number: true\n    preview-links: auto\n    history: true\n    chalkboard: \n      src: chalkboard.json\n      eraser:\n        src: 'img/sponge.png'\n        radius: 20\n    transition: slide\n    background-transition: fade    \n    touch: false\n    controls: true\n---\n\n\n\n\n\n## Introduction to Quadrat Sampling {.font80}\n\n::: cle7\nQuadrat sampling is used to estimate the number of elements in a fixed location by calculating the density per unit area, then extrapolating to estimate total population size.\n:::\n\n## Quadrat Sampling Method {.font80}\n\n::: cle12\n- **Setup**: A region of total area $A$ is divided into $m$ plots, each with area $a$. The total number of plots in the region is $M$, so $A = M \\cdot a$.\n- **Data Collection**: Count the number of individuals in each randomly selected plot or quadrat.\n:::\n\n## Estimating Density and Population Size {.font80}\n\n::: cle7\n- **Density Estimation**:\n  $$\n  \\hat{\\lambda} = \\frac{\\bar{n}}{a}\n  $$\n  where $\\bar{n}$ is the average count per plot from the sampled quadrats.\n- **Population Size Estimation**:\n  $$\n  \\hat{N} = \\hat{\\lambda} \\cdot A\n  $$\n:::\n\n## Variance and Confidence Interval {.font80}\n\n::: cle12\n- **Variance of the Density Estimator**:\n  $$\n  \\hat{V}(\\hat{\\lambda}) = \\frac{\\hat{\\lambda}}{an}\n  $$\n- **Confidence Interval**:\n  $$\n  \\hat{N} \\pm B\n  $$\n  where $B = t_{\\frac{\\alpha}{2}, m-1} \\cdot \\sqrt{\\hat{V}}$ is the bound on the error of estimation.\n:::\n\n## Example 1: Estimating Fire Ant Density {.font60}\n\n> In Florida, a study to estimate the density of fire ant hills used 50 quadrats, each of 16 m^2. The counts of ant hills per quadrat varied, allowing for an estimate of ant hill density per unit area.\n\n## Example 2: Estimating Disease Prevalence in Trees {.font60}\n\n> In a southern-pine plantation, 10 quadrats of 0.5 acre each are used to estimate the density of trees with fusiform rust. The plots had an average of 2.8 infected trees each, leading to an estimate of total infection prevalence across 200 acres.\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

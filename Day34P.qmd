@@ -1,0 +1,101 @@
+---
+title: "Day 34"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: ""
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+#<img src="images/Day23-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
+```
+
+
+## Introduction to Population Estimation {.font80}
+
+::: cle7
+Exploring different methods to estimate population sizes in various contexts such as wildlife, events, and quality assurance.
+:::
+
+## Direct Sampling Method {.font80}
+
+::: cle12
+Involves tagging and later recapturing animals to estimate total population. The formula used is:
+$$
+\hat{N} = \frac{n \times t}{s}
+$$
+where $n$ is the size of the second sample, $t$ is the number of tagged animals, and $s$ is the number of tagged animals recaptured.
+:::
+
+## Inverse Sampling {.font80}
+
+::: cle7
+A variant of direct sampling that continues until a preset number of tagged animals are recaptured, with the population estimate given by the same formula as direct sampling.
+:::
+
+## Density Estimation Method {.font80}
+
+::: cle12
+Involves estimating animal density per unit area and multiplying by the total area to estimate population size:
+$$
+\hat{N} = \hat{\lambda} \times A
+$$
+where $\hat{\lambda}$ is the estimated density and $A$ is the area.
+:::
+
+## Adaptive Sampling {.font80}
+
+::: cle7
+Enhances density estimates by incorporating high-density clusters found during initial sampling, adapting the approach dynamically.
+:::
+
+## Example 1: Wildlife Conservation {.font60}
+
+> A wildlife reserve estimates the population of a bird species using direct sampling. The first sample tags 300 birds, and a second sample of 200 birds recaptures 62 tagged individuals.
+
+<img src="images/Day32-1.png" style="display: block; margin: auto;" width="80%" loading="lazy" decoding="async">
+
+## Example 2: Event Attendance Estimation {.font60}
+
+> An event organizer uses adaptive sampling to estimate the number of attendees in various sections of a venue, initially counting in a smaller focused area and adjusting based on crowd density.
+
+<img src="images/Day32-2.png" style="display: block; margin: auto;" width="80%" loading="lazy" decoding="async">
+
+
