@@ -1,0 +1,203 @@
+---
+title: "Day 34"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: ""
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+#<img src="images/Day23-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
+```
+
+
+## Direct Sampling {.font70}
+
+::: bql
+::: row
+::: left
+
+1. **Initial Capture**
+   - Capture a random sample of the population.
+   - Sample size = $t$.
+   - Tag each animal in the sample.
+   - Release all tagged animals back into the population.
+:::
+
+
+::: right
+
+2. **Second Capture**
+   - After a time period, capture a second random sample.
+   - Sample size = $n$.
+   - Count the number of tagged animals in the second sample.
+   - Number of tagged animals = $S$.
+:::
+:::
+:::
+
+
+## Estimator of the Population Size $N$ {.font80}
+
+::: cle12
+Involves tagging and later recapturing animals to estimate total population. The formula used is:
+
+$$
+\hat{N} = \frac{n t}{s}
+$$
+- Where:
+
+  - $n$ is the size of the second sample,
+  - $t$ is the size of the first sample,
+  - $s$ is the number of tagged animals found in the second sample.
+
+:::
+
+
+
+
+## Estimated Variance of $\hat{N}$ {.font80}
+
+::: cle14
+
+- The estimated variance of $\hat{N}$ is given by:
+
+$$
+\hat{V}(\hat{N})=\frac{t^2 n(n-s)}{s^3}
+$$
+
+- $(1-\alpha)\%$ Conservative Critical Value using the $VP$ Inequality:
+
+$$
+\lambda=\sqrt{\frac{4}{9 \alpha}}
+$$
+
+:::
+
+## Conservative $(1-\alpha)\%$ Confidence Interval {.font80}
+
+::: cle7
+
+- Conservative $(1-\alpha)\%$ Bound on Error of Estimation:
+
+$$
+B=\lambda \cdot \sqrt{\hat{V}(\hat{N})}
+$$
+
+- Conservative $(1-\alpha)\%$ Confidence Interval:
+
+$$
+\hat{N} \pm B
+$$
+:::
+
+
+## {.font60}
+
+> Example 1: Before posting a schedule for the upcoming hunting season, the game commission for a particular county wishes to estimate the size of the deer population. A random sample of 300 deer is captured $(t=300)$. The deer are tagged and released. A second sample of 200 is taken two weeks later ($\mathrm{n}=200$). If 62 tagged deer are recaptured in the second sample $(s=62)$, estimate $N$ using direct sampling without Chapman, with $95 \%$ conservative bound and confidence interval.
+
+
+##
+
+
+
+## Issue of Bias in $\hat{N}$ {.font70}
+
+::: cle7
+- Although $\hat{N}$ is a very natural estimator, it is biased. The expected value of $\hat{N}$ is given by:
+
+\begin{align*}
+E(\hat{N}) = N + \frac{N(N-t)}{nt} \neq N
+\end{align*}
+
+- When both $n$ and $t$ are large, the term $\frac{N(N-t)}{nt}$ becomes small enough to be negligible. This reduces the bias of $\hat{N}$.
+
+- However, in many practical situations, it is challenging to obtain large enough samples to ignore this bias effectively. Therefore, caution is needed when interpreting the estimates from smaller samples.
+
+:::
+
+
+## Chapman's Estimator for Population Size {.font60}
+
+::: bql
+::: row
+::: left
+
+Chapman's Estimator ($\hat{N}_C$)
+
+- Less biased estimator using direct sampling:
+$$
+\hat{N}_C = \frac{(t+1)(n+1)}{s+1} - 1
+$$
+
+- Variables:
+  - $t$: size of the initial sample,
+  - $n$: size of the second sample,
+  - $s$: tagged animals found in second sample.
+
+:::
+
+::: right
+
+Variance and Confidence Intervals
+
+- Estimated Variance:
+$$
+\hat{V}(\hat{N}_C) = \frac{(t+1)(n+1)(t-s)(n-s)}{(s+1)^2(s+2)}
+$$
+
+- Confidence Interval:
+$$
+\hat{N}_C \pm B_c
+$$
+Where $B_c = \lambda \cdot \sqrt{\hat{V}(\hat{N}_C)}$,
+$$
+\lambda = \sqrt{\frac{4}{9 \alpha}}
+$$
+
+:::
+:::
+:::
+
+
+## {.font60}
+
+> Example 2: Redo Example 1 using the Chapman's estimator.
+

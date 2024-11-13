@@ -335,55 +335,148 @@
 </div>
 
 </section>
-<section id="introduction-to-population-estimation" class="slide level2 font80">
-<h2>Introduction to Population Estimation</h2>
-<div class="cle7">
-<p>Exploring different methods to estimate population sizes in various contexts such as wildlife, events, and quality assurance.</p>
+<section id="direct-sampling" class="slide level2 font70">
+<h2>Direct Sampling</h2>
+<div class="bql">
+<div class="row">
+<div class="left">
+<ol type="1">
+<li><strong>Initial Capture</strong>
+<ul>
+<li>Capture a random sample of the population.</li>
+<li>Sample size = <span class="math inline">\(t\)</span>.</li>
+<li>Tag each animal in the sample.</li>
+<li>Release all tagged animals back into the population.</li>
+</ul></li>
+</ol>
+</div>
+<div class="right">
+<ol start="2" type="1">
+<li><strong>Second Capture</strong>
+<ul>
+<li>After a time period, capture a second random sample.</li>
+<li>Sample size = <span class="math inline">\(n\)</span>.</li>
+<li>Count the number of tagged animals in the second sample.</li>
+<li>Number of tagged animals = <span class="math inline">\(S\)</span>.</li>
+</ul></li>
+</ol>
+</div>
+</div>
 </div>
 </section>
-<section id="direct-sampling-method" class="slide level2 font80">
-<h2>Direct Sampling Method</h2>
+<section id="estimator-of-the-population-size-n" class="slide level2 font80">
+<h2>Estimator of the Population Size <span class="math inline">\(N\)</span></h2>
 <div class="cle12">
-<p>Involves tagging and later recapturing animals to estimate total population. The formula used is: <span class="math display">\[
-\hat{N} = \frac{n \times t}{s}
-\]</span> where <span class="math inline">\(n\)</span> is the size of the second sample, <span class="math inline">\(t\)</span> is the number of tagged animals, and <span class="math inline">\(s\)</span> is the number of tagged animals recaptured.</p>
+<p>Involves tagging and later recapturing animals to estimate total population. The formula used is:</p>
+<p><span class="math display">\[
+\hat{N} = \frac{n t}{s}
+\]</span> - Where:</p>
+<ul>
+<li><span class="math inline">\(n\)</span> is the size of the second sample,</li>
+<li><span class="math inline">\(t\)</span> is the size of the first sample,</li>
+<li><span class="math inline">\(s\)</span> is the number of tagged animals found in the second sample.</li>
+</ul>
 </div>
 </section>
-<section id="inverse-sampling" class="slide level2 font80">
-<h2>Inverse Sampling</h2>
+<section id="estimated-variance-of-hatn" class="slide level2 font80">
+<h2>Estimated Variance of <span class="math inline">\(\hat{N}\)</span></h2>
+<div class="cle14">
+<ul>
+<li>The estimated variance of <span class="math inline">\(\hat{N}\)</span> is given by:</li>
+</ul>
+<p><span class="math display">\[
+\hat{V}(\hat{N})=\frac{t^2 n(n-s)}{s^3}
+\]</span></p>
+<ul>
+<li><span class="math inline">\((1-\alpha)\%\)</span> Conservative Critical Value using the <span class="math inline">\(VP\)</span> Inequality:</li>
+</ul>
+<p><span class="math display">\[
+\lambda=\sqrt{\frac{4}{9 \alpha}}
+\]</span></p>
+</div>
+</section>
+<section id="conservative-1-alpha-confidence-interval" class="slide level2 font80">
+<h2>Conservative <span class="math inline">\((1-\alpha)\%\)</span> Confidence Interval</h2>
 <div class="cle7">
-<p>A variant of direct sampling that continues until a preset number of tagged animals are recaptured, with the population estimate given by the same formula as direct sampling.</p>
+<ul>
+<li>Conservative <span class="math inline">\((1-\alpha)\%\)</span> Bound on Error of Estimation:</li>
+</ul>
+<p><span class="math display">\[
+B=\lambda \cdot \sqrt{\hat{V}(\hat{N})}
+\]</span></p>
+<ul>
+<li>Conservative <span class="math inline">\((1-\alpha)\%\)</span> Confidence Interval:</li>
+</ul>
+<p><span class="math display">\[
+\hat{N} \pm B
+\]</span></p>
 </div>
 </section>
-<section id="density-estimation-method" class="slide level2 font80">
-<h2>Density Estimation Method</h2>
-<div class="cle12">
-<p>Involves estimating animal density per unit area and multiplying by the total area to estimate population size: <span class="math display">\[
-\hat{N} = \hat{\lambda} \times A
-\]</span> where <span class="math inline">\(\hat{\lambda}\)</span> is the estimated density and <span class="math inline">\(A\)</span> is the area.</p>
-</div>
-</section>
-<section id="adaptive-sampling" class="slide level2 font80">
-<h2>Adaptive Sampling</h2>
-<div class="cle7">
-<p>Enhances density estimates by incorporating high-density clusters found during initial sampling, adapting the approach dynamically.</p>
-</div>
-</section>
-<section id="example-1-wildlife-conservation" class="slide level2 font60">
-<h2>Example 1: Wildlife Conservation</h2>
+<section id="section" class="slide level2 font60">
+<h2></h2>
 <blockquote>
-<p>A wildlife reserve estimates the population of a bird species using direct sampling. The first sample tags 300 birds, and a second sample of 200 birds recaptures 62 tagged individuals.</p>
+<p>Example 1: Before posting a schedule for the upcoming hunting season, the game commission for a particular county wishes to estimate the size of the deer population. A random sample of 300 deer is captured <span class="math inline">\((t=300)\)</span>. The deer are tagged and released. A second sample of 200 is taken two weeks later (<span class="math inline">\(\mathrm{n}=200\)</span>). If 62 tagged deer are recaptured in the second sample <span class="math inline">\((s=62)\)</span>, estimate <span class="math inline">\(N\)</span> using direct sampling without Chapman, with <span class="math inline">\(95 \%\)</span> conservative bound and confidence interval.</p>
+</blockquote>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+</section>
+<section id="issue-of-bias-in-hatn" class="slide level2 font70">
+<h2>Issue of Bias in <span class="math inline">\(\hat{N}\)</span></h2>
+<div class="cle7">
+<ul>
+<li>Although <span class="math inline">\(\hat{N}\)</span> is a very natural estimator, it is biased. The expected value of <span class="math inline">\(\hat{N}\)</span> is given by:</li>
+</ul>
+<p><span class="math display">\[\begin{align*}
+E(\hat{N}) = N + \frac{N(N-t)}{nt} \neq N
+\end{align*}\]</span></p>
+<ul>
+<li><p>When both <span class="math inline">\(n\)</span> and <span class="math inline">\(t\)</span> are large, the term <span class="math inline">\(\frac{N(N-t)}{nt}\)</span> becomes small enough to be negligible. This reduces the bias of <span class="math inline">\(\hat{N}\)</span>.</p></li>
+<li><p>However, in many practical situations, it is challenging to obtain large enough samples to ignore this bias effectively. Therefore, caution is needed when interpreting the estimates from smaller samples.</p></li>
+</ul>
+</div>
+</section>
+<section id="chapmans-estimator-for-population-size" class="slide level2 font60">
+<h2>Chapman’s Estimator for Population Size</h2>
+<div class="bql">
+<div class="row">
+<div class="left">
+<p>Chapman’s Estimator (<span class="math inline">\(\hat{N}_C\)</span>)</p>
+<ul>
+<li><p>Less biased estimator using direct sampling: <span class="math display">\[
+\hat{N}_C = \frac{(t+1)(n+1)}{s+1} - 1
+\]</span></p></li>
+<li><p>Variables:</p>
+<ul>
+<li><span class="math inline">\(t\)</span>: size of the initial sample,</li>
+<li><span class="math inline">\(n\)</span>: size of the second sample,</li>
+<li><span class="math inline">\(s\)</span>: tagged animals found in second sample.</li>
+</ul></li>
+</ul>
+</div>
+<div class="right">
+<p>Variance and Confidence Intervals</p>
+<ul>
+<li><p>Estimated Variance: <span class="math display">\[
+\hat{V}(\hat{N}_C) = \frac{(t+1)(n+1)(t-s)(n-s)}{(s+1)^2(s+2)}
+\]</span></p></li>
+<li><p>Confidence Interval: <span class="math display">\[
+\hat{N}_C \pm B_c
+\]</span> Where <span class="math inline">\(B_c = \lambda \cdot \sqrt{\hat{V}(\hat{N}_C)}\)</span>, <span class="math display">\[
+\lambda = \sqrt{\frac{4}{9 \alpha}}
+\]</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="section-2" class="slide level2 font60">
+<h2></h2>
+<blockquote>
+<p>Example 2: Redo Example 1 using the Chapman’s estimator.</p>
 </blockquote>
 
-<img src="images/Day32-1.png" style="display: block; margin: auto;" width="80%" loading="lazy" decoding="async" class="r-stretch"></section>
-<section id="example-2-event-attendance-estimation" class="slide level2 font60">
-<h2>Example 2: Event Attendance Estimation</h2>
-<blockquote>
-<p>An event organizer uses adaptive sampling to estimate the number of attendees in various sections of a venue, initially counting in a smaller focused area and adjusting based on crowd density.</p>
-</blockquote>
-
-
-<img src="images/Day32-2.png" style="display: block; margin: auto;" width="80%" loading="lazy" decoding="async" class="r-stretch"><div class="quarto-auto-generated-content">
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>

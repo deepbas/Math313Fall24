@@ -7,599 +7,473 @@
     "text": "Welcome to the world of survey statistics!\n Image by rawpixel.com on Freepik"
   },
   {
-    "objectID": "Day34P.html#introduction-to-population-estimation",
-    "href": "Day34P.html#introduction-to-population-estimation",
-    "title": "Day 34",
-    "section": "Introduction to Population Estimation",
-    "text": "Introduction to Population Estimation\n\nExploring different methods to estimate population sizes in various contexts such as wildlife, events, and quality assurance."
+    "objectID": "Day13.html#recap-stratified-sampling",
+    "href": "Day13.html#recap-stratified-sampling",
+    "title": "Day 13",
+    "section": "Recap: Stratified Sampling",
+    "text": "Recap: Stratified Sampling\n\n\nObjective: Leverage stratified random sampling to estimate population characteristics more accurately.\nApproach: Divide population into homogeneous groups (strata) to reduce sampling error.\nApplication: Widely used in surveys and research where population subgroups are to be measured with greater precision."
   },
   {
-    "objectID": "Day34P.html#direct-sampling-method",
-    "href": "Day34P.html#direct-sampling-method",
-    "title": "Day 34",
-    "section": "Direct Sampling Method",
-    "text": "Direct Sampling Method\n\nInvolves tagging and later recapturing animals to estimate total population. The formula used is: \\[\n\\hat{N} = \\frac{n \\times t}{s}\n\\] where \\(n\\) is the size of the second sample, \\(t\\) is the number of tagged animals, and \\(s\\) is the number of tagged animals recaptured."
+    "objectID": "Day13.html#stratification-explained",
+    "href": "Day13.html#stratification-explained",
+    "title": "Day 13",
+    "section": "Stratification Explained",
+    "text": "Stratification Explained\n\n\nStrata: \\(L\\) distinct groups within the population, each representing key sub-populations.\nSizes:\n\nTotal population: \\(N = \\sum_{i=1}^L N_i\\)\nEach stratum: \\(N_i\\) (sub-population size), \\(n_i\\) (sample size)\n\nMetrics:\n\nSample mean for stratum \\(i\\): \\(\\bar{Y}_i\\)\nTotal for stratum \\(i\\): \\(\\tau_i\\)\nPopulation total: \\(\\tau = \\sum_{i=1}^L \\tau_i\\)"
   },
   {
-    "objectID": "Day34P.html#inverse-sampling",
-    "href": "Day34P.html#inverse-sampling",
-    "title": "Day 34",
-    "section": "Inverse Sampling",
-    "text": "Inverse Sampling\n\nA variant of direct sampling that continues until a preset number of tagged animals are recaptured, with the population estimate given by the same formula as direct sampling."
+    "objectID": "Day13.html#estimation-methodology",
+    "href": "Day13.html#estimation-methodology",
+    "title": "Day 13",
+    "section": "Estimation Methodology",
+    "text": "Estimation Methodology\n\n\n\nPopulation Mean: \\(\\bar{y}_{st} = \\frac{1}{N} \\sum_{i=1}^L N_i \\bar{Y}_i\\), a weighted average where weights are proportional to stratum size.\nPopulation Total: \\(\\hat{\\tau}_{st} = N \\cdot \\bar{y}_{st}\\), scaled up mean to reflect total population size."
   },
   {
-    "objectID": "Day34P.html#density-estimation-method",
-    "href": "Day34P.html#density-estimation-method",
-    "title": "Day 34",
-    "section": "Density Estimation Method",
-    "text": "Density Estimation Method\n\nInvolves estimating animal density per unit area and multiplying by the total area to estimate population size: \\[\n\\hat{N} = \\hat{\\lambda} \\times A\n\\] where \\(\\hat{\\lambda}\\) is the estimated density and \\(A\\) is the area."
+    "objectID": "Day13.html#variance-and-precision",
+    "href": "Day13.html#variance-and-precision",
+    "title": "Day 13",
+    "section": "Variance and Precision",
+    "text": "Variance and Precision\n\n\nKey Concept: Estimating variance helps assess the precision and reliability of our estimates.\nVariance of Mean Estimation: \\[\\hat{V}(\\bar{y}_{st}) = \\frac{1}{N^2} \\sum_{i=1}^L N_i^2 \\left(1 - \\frac{n_i}{N_i}\\right) \\frac{s_i^2}{n_i}\\]\nVariance of Total Estimation: \\[\\hat{V}(\\hat{\\tau}_{st}) = N^2 \\cdot \\hat{V}(\\bar{y}_{st})\\]"
   },
   {
-    "objectID": "Day34P.html#adaptive-sampling",
-    "href": "Day34P.html#adaptive-sampling",
-    "title": "Day 34",
-    "section": "Adaptive Sampling",
-    "text": "Adaptive Sampling\n\nEnhances density estimates by incorporating high-density clusters found during initial sampling, adapting the approach dynamically."
+    "objectID": "Day13.html#degree-of-freedom-and-critical-values",
+    "href": "Day13.html#degree-of-freedom-and-critical-values",
+    "title": "Day 13",
+    "section": "Degree of Freedom and Critical Values",
+    "text": "Degree of Freedom and Critical Values\n\n\nDegrees of Freedom: Crucial for determining the appropriate \\(t\\) critical value when constructing confidence intervals. \\[df = \\frac{\\left(\\sum_{i=1}^L a_i s_i^2\\right)^2}{\\sum_{i=1}^L \\frac{(a_i s_i^2)^2}{n_i-1}}\\]\nFactor: \\(a_i = \\frac{N_i(N_i-n_i)}{n_i}\\) represents the adjusted sample size contributing to variance calculation."
   },
   {
-    "objectID": "Day34P.html#example-1-wildlife-conservation",
-    "href": "Day34P.html#example-1-wildlife-conservation",
-    "title": "Day 34",
-    "section": "Example 1: Wildlife Conservation",
-    "text": "Example 1: Wildlife Conservation\n\nA wildlife reserve estimates the population of a bird species using direct sampling. The first sample tags 300 birds, and a second sample of 200 birds recaptures 62 tagged individuals."
+    "objectID": "Day13.html#error-bounds-and-confidence-intervals",
+    "href": "Day13.html#error-bounds-and-confidence-intervals",
+    "title": "Day 13",
+    "section": "Error Bounds and Confidence Intervals",
+    "text": "Error Bounds and Confidence Intervals\n\n\nError Bound: \\[B = t_{1-\\frac{\\alpha}{2}, df} \\cdot \\sqrt{\\hat{V}(\\bar{y}_{st})}\\]\nConfidence Interval: \\[\\text{Estimator} \\pm B\\] Provides a range within which we can be \\((1-\\alpha) \\times 100\\%\\) confident that the population parameter lies."
   },
   {
-    "objectID": "Day34P.html#example-2-event-attendance-estimation",
-    "href": "Day34P.html#example-2-event-attendance-estimation",
-    "title": "Day 34",
-    "section": "Example 2: Event Attendance Estimation",
-    "text": "Example 2: Event Attendance Estimation\n\nAn event organizer uses adaptive sampling to estimate the number of attendees in various sections of a venue, initially counting in a smaller focused area and adjusting based on crowd density."
+    "objectID": "Day13.html#practical-implications",
+    "href": "Day13.html#practical-implications",
+    "title": "Day 13",
+    "section": "Practical Implications",
+    "text": "Practical Implications\n\n\nUse Case: Stratified sampling is ideal when certain strata are expected to differ significantly, and each requires individual analysis.\nAdvantage: Increases efficiency and reduces costs by focusing resources on strategically sampled subgroups.\nLimitation: Requires detailed advance knowledge of the population structure, which may not always be available."
   },
   {
-    "objectID": "Day16.html#issues-in-stratified-sampling-budget-constraints",
-    "href": "Day16.html#issues-in-stratified-sampling-budget-constraints",
-    "title": "Day 16",
-    "section": "Issues in Stratified Sampling: Budget Constraints",
-    "text": "Issues in Stratified Sampling: Budget Constraints\n\nUnderstanding the complexities and challenges of stratified random sampling is crucial for enhancing survey accuracy and efficiency. By addressing common issues such as budget constraints and optimal strata selection:\n\nWe recognize that not all sampling can afford ideal sample sizes due to budget limits.\nOptimal allocation under fixed budgets aims to minimize variance, enhancing survey design to maximize resource use.\nThis approach not only improves decision-making based on the data collected but also contributes to developing sophisticated statistical analysis techniques that are robust against real-world challenges."
-  },
-  {
-    "objectID": "Day16.html#allocation-formula",
-    "href": "Day16.html#allocation-formula",
-    "title": "Day 16",
-    "section": "Allocation Formula",
-    "text": "Allocation Formula\n\nUse the proportional allocation formula to determine sample sizes: \\[n_i =  \\frac{C}{\\sum_{i=1}^k c_i w_i}  w_i\\] Where:\n\n\\(n_i\\) = sample size for stratum \\(i\\)\n\\(C\\) = total budget\n\\(c_i\\) = cost per unit sampled in stratum \\(i\\)\n\\(w_i\\) = weight (proportion) of stratum \\(i\\) in the population"
-  },
-  {
-    "objectID": "Day16.html#optimal-rule-for-choosing-strata",
-    "href": "Day16.html#optimal-rule-for-choosing-strata",
-    "title": "Day 16",
-    "section": "Optimal Rule for Choosing Strata",
-    "text": "Optimal Rule for Choosing Strata\n\nGoal: Minimize variance of the estimator. Strata should be homogeneous internally and heterogeneous externally.\n\nCumulative Square Root of Frequency Method\n\nUseful for delineating strata based on available frequency data. Summarize and stratify based on the cumulative square root of category frequencies. Generally, limit to five or six strata to avoid over-complication."
-  },
-  {
-    "objectID": "Day16.html#practical-example",
-    "href": "Day16.html#practical-example",
-    "title": "Day 16",
-    "section": "Practical Example",
-    "text": "Practical Example\n\nStratify a population by income to estimate average household income:\n\nGroup low-income households in one stratum.\nGroup high-income households in another stratum.\n\nThis method is theoretical as it requires prior knowledge of incomes."
-  },
-  {
-    "objectID": "Day16.html#section",
-    "href": "Day16.html#section",
-    "title": "Day 16",
+    "objectID": "Day13.html#section",
+    "href": "Day13.html#section",
+    "title": "Day 13",
     "section": "",
-    "text": "Example 1: In the television viewing example \\(\\left(N_1=155, N_2=62\\right.\\), and \\(\\left.N_3=93\\right)\\), the cost of obtaining an observation is \\(c_1=c_2=\\$ 9, c_3=\\$ 16\\). Let the stratum standard deviations be approximated by \\(\\sigma_1 \\approx 5, \\sigma_2 \\approx 15, \\sigma_3 \\approx 10\\). Given that the advertising firm has only \\(\\$ 500\\) to spend on sampling, choose the sample size and the allocation that minimize \\(V\\left(\\bar{y}_{s t}\\right)\\)."
+    "text": "Example 1: In a continuation of Example 1 from Day 12, imagine an advertising firm conducting a survey to measure weekly television-viewing habits across different locales. The firm, equipped with sufficient resources, opts to collect random samples of households from town A, town B, and a rural area. Details regarding the sample sizes will be addressed subsequently. Each selected household is surveyed to record their television-viewing hours per week, and the collected data is summarized in a table. Using this data, the task is to calculate both the average and total weekly television-viewing hours for households throughout the entire county and to establish an error bound for these estimates.\n\n\n\n\n\n\n\nTown A\nTown B\nRural\n\n\n\n\n35\n27\n8\n\n\n43\n15\n14\n\n\n36\n4\n12\n\n\n39\n41\n15\n\n\n28\n49\n30\n\n\n28\n25\n32\n\n\n29\n10\n21\n\n\n25\n30\n20\n\n\n38\n\n34\n\n\n27\n\n7\n\n\n26\n\n11\n\n\n32\n\n24\n\n\n29\n\n\n\n\n40\n\n\n\n\n35\n\n\n\n\n41\n\n\n\n\n37\n\n\n\n\n31\n\n\n\n\n45\n\n\n\n\n34"
   },
   {
-    "objectID": "Day16.html#section-1",
-    "href": "Day16.html#section-1",
-    "title": "Day 16",
+    "objectID": "Day13.html#section-1",
+    "href": "Day13.html#section-1",
+    "title": "Day 13",
     "section": "",
-    "text": "Example 2: In the television viewing example \\(\\left(N_1=155, N_2=62\\right.\\), and \\(\\left.N_3=93\\right)\\), the cost of obtaining an observation is \\(c_1=c_2=\\$ 9, c_3=\\$ 16\\). Let the stratum standard deviations-be approximated by \\(p_1 \\approx 0.80, p_2 \\approx 0.25, p_3 \\approx 0.50\\) using some similar survey performed two years ago. Given that the advertising firm has only \\(\\$ 500\\) to spend on sampling, choose the sample size and the allocation that \\(minimize V\\left(\\hat{p}_{s t}\\right)\\)."
+    "text": "Calculations\n\n\nA &lt;- c(35, 43, 36, 39, 28, 28, 29, 25, 38, 27, 26, 32, 29, 40, 35, 41, 37, 31, 45, 34)\nB &lt;- c(27, 15, 4, 41, 49, 25, 10, 30)\nR &lt;- c(8, 14, 12, 15, 30, 32, 21, 20, 34, 7, 11, 24)\nmean(A); sd(A); length(A)\n\n[1] 33.9\n\n\n[1] 5.94625\n\n\n[1] 20\n\nmean(B); sd(B); length(B)\n\n[1] 25.125\n\n\n[1] 15.24502\n\n\n[1] 8\n\nmean(R); sd(R); length(R)\n\n[1] 19\n\n\n[1] 9.36143\n\n\n[1] 12\n\n# Given\nN_A &lt;- 155\nN_B &lt;- 62\nN_R &lt;- 93"
   },
   {
-    "objectID": "Day16.html#section-2",
-    "href": "Day16.html#section-2",
-    "title": "Day 16",
+    "objectID": "Day22.html#regression-estimator-of-mu_y",
+    "href": "Day22.html#regression-estimator-of-mu_y",
+    "title": "Day 22",
+    "section": "Regression Estimator of \\(\\mu_y\\)",
+    "text": "Regression Estimator of \\(\\mu_y\\)\n\n\nUse regression estimator when there is evidence of a linear relationship between \\(y\\) and \\(x\\), without the restriction of passing through the origin.\nEssential for situations where the auxiliary variable \\(x\\) provides valuable information for estimating the mean \\(\\mu_y\\)."
+  },
+  {
+    "objectID": "Day22.html#assumptions",
+    "href": "Day22.html#assumptions",
+    "title": "Day 22",
+    "section": "Assumptions",
+    "text": "Assumptions\n\n\nLinear relationship modeled as: \\[\ny_i = a + b x_i + \\varepsilon_i\n\\]\nWhere \\(\\varepsilon_i\\) represents random errors which we assume have a mean of zero and are independent of \\(x_i\\)."
+  },
+  {
+    "objectID": "Day22.html#estimation-without-the-error-term",
+    "href": "Day22.html#estimation-without-the-error-term",
+    "title": "Day 22",
+    "section": "Estimation without the Error Term",
+    "text": "Estimation without the Error Term\n\n\nIgnoring the error, the predicted value of \\(y_i\\): \\[\n\\hat{y}_i = \\bar{y} + b (x_i - \\bar{x})\n\\]\nCoefficient \\(b\\), known as the slope of the regression line, is given by: \\[\nb = \\frac{\\sum_{i=1}^n [(y_i - \\bar{y})(x_i - \\bar{x})]}{\\sum_{i=1}^n (x_i - \\bar{x})^2}\n\\]"
+  },
+  {
+    "objectID": "Day22.html#regression-estimator-for-population-mean-mu_y",
+    "href": "Day22.html#regression-estimator-for-population-mean-mu_y",
+    "title": "Day 22",
+    "section": "Regression Estimator for Population Mean \\(\\mu_y\\)",
+    "text": "Regression Estimator for Population Mean \\(\\mu_y\\)\n\n\nThe regression estimator for the population mean is: \\[\n\\hat{\\mu}_{y L} = \\bar{y} + b(\\mu_x - \\bar{x})\n\\]\nThis estimator adjusts the sample mean \\(\\bar{y}\\) for the deviation of the expected value of \\(x\\) from its sample mean, scaled by the regression coefficient \\(b\\)."
+  },
+  {
+    "objectID": "Day22.html#variance-of-the-regression-estimator",
+    "href": "Day22.html#variance-of-the-regression-estimator",
+    "title": "Day 22",
+    "section": "Variance of the Regression Estimator",
+    "text": "Variance of the Regression Estimator\n\n\nThe variance of \\(\\hat{\\mu}_{y L}\\) is estimated as: \\[\n\\hat{V}(\\hat{\\mu}_{y L}) = \\left(1 - \\frac{n}{N}\\right) \\left(\\frac{1}{n}\\right) \\left(\\frac{\\sum_{i=1}^n (y_i - (\\bar{y} + b (x_i - \\bar{x})))^2}{n-2}\\right)\n\\]"
+  },
+  {
+    "objectID": "Day22.html#error-bounds-and-confidence-interval",
+    "href": "Day22.html#error-bounds-and-confidence-interval",
+    "title": "Day 22",
+    "section": "Error Bounds and Confidence Interval",
+    "text": "Error Bounds and Confidence Interval\n\n\nThe \\((1-\\alpha) \\times 100\\%\\) bound on the error of estimation is calculated using: \\[\nB = t_{1-\\frac{\\alpha}{2}, n-2} \\cdot \\sqrt{\\hat{V}(\\hat{\\mu}_{y L})}\n\\]\nConsequently, the confidence interval for \\(\\hat{\\mu}_{y L}\\) is: \\[\n\\hat{\\mu}_{y L} \\pm B\n\\]\nThis interval offers a range within which the true population mean is expected to lie with \\((1-\\alpha) \\times 100\\%\\) confidence."
+  },
+  {
+    "objectID": "Day22.html#section",
+    "href": "Day22.html#section",
+    "title": "Day 22",
     "section": "",
-    "text": "Example 3: An investigator wishes to estimate the average yearly sales for 56 firms, using a sample of \\(n=15\\) firms. Frequency data on these firms is available in the form of classification by \\(\\$ 50,000\\) increments and appears in the accompanying table. How can we best allocate the firms to \\(L=3\\) strata?"
+    "text": "Example 1: A mathematics achievement test was given to 486 students prior to their entering a certain college. From these students a simple random sample of tudents was selected and their progress in calculus observed. Final calculus grades were then reported, as given in the following table. It is known that \\(\\mu_x=52\\) for all 486 students taking the achievement test. Estimate \\(\\mu_y\\) for this population (estimator value, estimated variance, \\(95 \\%\\) bound on error, and \\(95 \\%\\) confidence interval)."
   },
   {
-    "objectID": "Day30.html#confidence-interval-for-ratio-estimator",
-    "href": "Day30.html#confidence-interval-for-ratio-estimator",
-    "title": "Day 30",
-    "section": "Confidence Interval for Ratio Estimator",
-    "text": "Confidence Interval for Ratio Estimator\n\nEven when dealing with large samples, the ratio estimator does not adhere to a normal distribution, making it inappropriate to use the \\(t\\) distribution for confidence interval calculations. Instead, we use the Vysochanskij-Petunin Inequality for a more conservative estimation:\nInequality Application\n\\[\nP\\left[\\left|x-\\mu_x\\right| \\leqslant \\lambda \\sigma_x\\right] \\geqslant 1-\\left(\\frac{4}{9 \\lambda^2}\\right)\n\\] This approach provides at least \\(1-\\frac{4}{9 \\lambda^2}\\) confidence that the true \\(\\mu_x\\) lies within \\((x-\\lambda \\sigma_x, x+\\lambda \\sigma_x)\\).\nSetting \\(\\alpha = \\frac{4}{9 \\lambda^2}\\), we derive: \\[\n\\lambda = \\sqrt{\\frac{4}{9 \\alpha}}\n\\]"
+    "objectID": "Day12.html#stratified-random-sampling",
+    "href": "Day12.html#stratified-random-sampling",
+    "title": "Day 12",
+    "section": "Stratified Random Sampling",
+    "text": "Stratified Random Sampling\n\n\n\n\n\n\n\n\nDefinition\n\n\nStratified random sampling involves dividing the population into non-overlapping groups (strata) and then conducting a simple random sample within each stratum.\n\nPurpose: To maximize the information obtained for a given cost in sample surveys."
   },
   {
-    "objectID": "Day30.html#estimation-of-variance-for-ratio-estimators",
-    "href": "Day30.html#estimation-of-variance-for-ratio-estimators",
-    "title": "Day 30",
-    "section": "Estimation of Variance for Ratio Estimators",
-    "text": "Estimation of Variance for Ratio Estimators\n\nWhen calculating the variance of a ratio estimator, especially under conditions where the population size \\(N\\) is known, we adapt our variance estimation formula as follows:\nVariance of \\(\\hat{\\tau}\\)\n\\[\n\\hat{V}(\\hat{\\tau}) = N^2 \\cdot \\hat{V}(\\bar{y})\n\\] Here, \\(\\bar{y}\\) is the estimated mean from the sampled data, and \\(\\hat{V}(\\bar{y})\\) is the variance of this mean estimated from the cluster sample. This form of variance calculation assumes that \\(N\\) is a fixed quantity and known ahead of time."
+    "objectID": "Day12.html#comparison-with-simple-random-sampling",
+    "href": "Day12.html#comparison-with-simple-random-sampling",
+    "title": "Day 12",
+    "section": "Comparison with Simple Random Sampling",
+    "text": "Comparison with Simple Random Sampling\n\n\n\nBasic Approach: Simple random sampling involves selecting individuals randomly from the entire population without prior grouping.\nStratified Approach: Enhances precision by grouping similar items together and then sampling."
   },
   {
-    "objectID": "Day30.html#selecting-the-sample-size-for-estimating-population-means-and-totals",
-    "href": "Day30.html#selecting-the-sample-size-for-estimating-population-means-and-totals",
-    "title": "Day 30",
-    "section": "Selecting the Sample Size for Estimating Population Means and Totals",
-    "text": "Selecting the Sample Size for Estimating Population Means and Totals\n\nThe effectiveness of a cluster sample in gathering information is influenced by the number of sampled clusters \\(m\\) and the relative sizes of these clusters. This methodology is particularly valuable for estimating properties like the number of homes with inadequate fire insurance, using groupings such as counties or communities.\nFormula for Estimated Variance of \\(\\bar{y}\\)\n\\[\n\\hat{V}(\\bar{y}) = \\left(1 - \\frac{m}{M}\\right) \\frac{s_{\\mathrm{r}}^2}{m \\bar{n}^2}\n\\] Here, \\(s_{\\mathrm{r}}^2\\) is used to estimate the population variance \\(\\sigma_{\\mathrm{r}}^2\\) from the sample.\nApproximation of Actual Variance\n\\[\nV(\\bar{y}) = \\left(1 - \\frac{m}{M}\\right) \\frac{\\sigma_{\\mathrm{r}}^2}{m \\bar{n}^2}\n\\]"
+    "objectID": "Day12.html#implementation-example",
+    "href": "Day12.html#implementation-example",
+    "title": "Day 12",
+    "section": "Implementation Example",
+    "text": "Implementation Example\n\n\n\nContext: Estimating voter preferences on tax revenue allocation for ambulance services in a county.\nStrata: Two cities and one rural area in the county.\nSampling Method: Conduct a simple random sample from each stratum (each city and rural area)."
   },
   {
-    "objectID": "Day30.html#sample-size-determination",
-    "href": "Day30.html#sample-size-determination",
-    "title": "Day 30",
+    "objectID": "Day12.html#advantages-of-stratified-random-sampling",
+    "href": "Day12.html#advantages-of-stratified-random-sampling",
+    "title": "Day 12",
+    "section": "Advantages of Stratified Random Sampling",
+    "text": "Advantages of Stratified Random Sampling\n\n\n\nReduced Error: Stratification can yield a smaller bound on the error of estimation compared to simple random sampling.\nCost Efficiency: By grouping population elements, the cost per observation may be reduced.\nSubgroup Analysis: Allows for estimates of population parameters for specific, identifiable subgroups within the population."
+  },
+  {
+    "objectID": "Day12.html#step-1-defining-and-classifying-strata",
+    "href": "Day12.html#step-1-defining-and-classifying-strata",
+    "title": "Day 12",
+    "section": "Step 1: Defining and Classifying Strata",
+    "text": "Step 1: Defining and Classifying Strata\n\n\nInitial Setup: Specify strata clearly. Each sampling unit must uniquely classify into one stratum.\nClassification Challenges: For example, whether a town of 1000 inhabitants is ‘urban’ or ‘rural’ can depend on proximity to larger cities or isolation.\nCriteria Definition: Essential to define terms like ‘urban’ and ‘rural’ to prevent classification ambiguity."
+  },
+  {
+    "objectID": "Day12.html#step-2-sampling-process-and-notations",
+    "href": "Day12.html#step-2-sampling-process-and-notations",
+    "title": "Day 12",
+    "section": "Step 2: Sampling Process and Notations",
+    "text": "Step 2: Sampling Process and Notations\n\n\nAssigning Units: Place each unit, e.g., household, into the appropriate stratum based on clear, predefined criteria.\nSampling Notations:\n\nL: Number of strata.\n\\(N_i\\): Number of sampling units in stratum \\(i\\).\n\\(N\\): Total population size, \\(N = N_1 + N_2 + \\cdots + N_L\\)."
+  },
+  {
+    "objectID": "Day12.html#step-3-sample-selection-and-independence",
+    "href": "Day12.html#step-3-sample-selection-and-independence",
+    "title": "Day 12",
+    "section": "Step 3: Sample Selection and Independence",
+    "text": "Step 3: Sample Selection and Independence\n\n\n\nIndependent Sampling: Ensure that the sample from each stratum is chosen independently using different random sampling methods.\nChoosing Sample Sizes: Appropriate number of samples from each stratum and ensuring selections from different strata do not influence each other will be covered later."
+  },
+  {
+    "objectID": "Day12.html#section",
+    "href": "Day12.html#section",
+    "title": "Day 12",
+    "section": "",
+    "text": "Example 1: An advertising agency wants to understand how much focus to give to TV advertising in a specific county. To do this, they plan to survey how many hours households watch TV each week. The county includes two towns-Town A, centered around a factory with many families having schoolage children, and Town B, a wealthier suburb with older residents and fewer children-and a rural area. The numbers of households are 155 in Town A, 62 in Town B, and 93 in the rural area. Analyze the advantages of using stratified random sampling in this scenario."
+  },
+  {
+    "objectID": "Day12.html#section-2",
+    "href": "Day12.html#section-2",
+    "title": "Day 12",
+    "section": "",
+    "text": "Exampe 2: A corporation is evaluating the effectiveness of a new business machine by gathering ratings from its division heads across three regions: North America, Europe, and Asia. To ensure that the ratings are representative and to manage costs effectively, stratified sampling is chosen as the method. The costs of conducting interviews vary by region, and so do the variances in the ratings obtained. The company aims to estimate the average effectiveness rating of the machine with a desired variance in the estimate of \\(V\\left(\\bar{y}_{\\text {st }}\\right)=0.1\\). Determine the optimal sample size \\(n\\) that achieves the variance bound of \\(V\\left(\\bar{y}_{\\text {st }}\\right)=0.1\\) and calculate the appropriate allocation of the sample size across the strata based on the Neyman allocation principle, which considers both the stratum variances and the costs associated with sampling each stratum. The following table provides the costs per interview, the variances of the ratings, and the total number of division heads in each region.\n\n\n\n\nStratum\nNorth America\nEurope\nAsia\n\n\n\n\n\\(c\\)\n\\(\\$ 9\\)\n\\(\\$ 25\\)\n\\(\\$ 36\\)\n\n\n\\(\\sigma^2\\)\n2.25\n3.24\n3.24\n\n\n\\(N\\)\n112\n68\n39"
+  },
+  {
+    "objectID": "Day15.html#introduction-to-estimating-proportions",
+    "href": "Day15.html#introduction-to-estimating-proportions",
+    "title": "Day 15",
+    "section": "Introduction to Estimating Proportions",
+    "text": "Introduction to Estimating Proportions\n\n\nContext: Estimating proportions in a population is key for decisions in marketing, public health, and policy making.\nExample: Determining the proportion of voters favoring a particular policy, the proportion of households with internet access, or the percentage of people immunized in different regions."
+  },
+  {
+    "objectID": "Day15.html#real-world-application",
+    "href": "Day15.html#real-world-application",
+    "title": "Day 15",
+    "section": "Real-World Application",
+    "text": "Real-World Application\n\n\nMarketing: A company may want to estimate the proportion of consumers who prefer a new product over existing ones. Stratified sampling can be used to ensure various demographics are represented.\nPublic Health: Health officials estimate the proportion of the population that has been vaccinated by stratifying the population by age, location, and other relevant factors."
+  },
+  {
+    "objectID": "Day15.html#objective-of-sample-allocation",
+    "href": "Day15.html#objective-of-sample-allocation",
+    "title": "Day 15",
+    "section": "Objective of Sample Allocation",
+    "text": "Objective of Sample Allocation\n\n\nObjective: Minimize the variance of the estimator while controlling costs.\nFactors Influencing Allocation:\n\nPopulation proportion in each stratum, \\(p_i\\).\nVariability of the proportion, expressed as \\(p_i(1-p_i)\\).\nSampling cost per stratum, \\(c_i\\)."
+  },
+  {
+    "objectID": "Day15.html#step-1-determine-weights-for-sample-sizes",
+    "href": "Day15.html#step-1-determine-weights-for-sample-sizes",
+    "title": "Day 15",
+    "section": "Step 1: Determine Weights for Sample Sizes",
+    "text": "Step 1: Determine Weights for Sample Sizes\n\n\nWeight Formula: \\[\nW_i=\\frac{N_i \\frac{\\sqrt{p_i (1-p_i)}}{\\sqrt{c_i}}}{\\sum_{j=1}^L N_j \\frac{\\sqrt{p_j (1-p_j)}}{\\sqrt{c_j}}}\n\\]\nPurpose: Adjust sample sizes to optimize precision and cost."
+  },
+  {
+    "objectID": "Day15.html#step-2-calculate-total-sample-size",
+    "href": "Day15.html#step-2-calculate-total-sample-size",
+    "title": "Day 15",
+    "section": "Step 2: Calculate Total Sample Size",
+    "text": "Step 2: Calculate Total Sample Size\n\n\nSample Size Formula: \\[\nn=\\frac{\\sum_{i=1}^L N_i^2 \\frac{p_i (1-p_i)}{w_i}}{N^2 D^2 + \\sum_{i=1}^L N_i p_i (1-p_i)}\n\\]\nWhere:\n\n\\(D=\\frac{B}{Z_{1-\\frac{\\alpha}{2}}}\\), defining the precision level for confidence intervals."
+  },
+  {
+    "objectID": "Day15.html#step-3-data-collection",
+    "href": "Day15.html#step-3-data-collection",
+    "title": "Day 15",
+    "section": "Step 3: Data Collection",
+    "text": "Step 3: Data Collection\n \n\n\nImplementation: Collect data according to the sample sizes and weights determined in Steps 1 and 2."
+  },
+  {
+    "objectID": "Day15.html#step-4-estimation-of-population-proportion",
+    "href": "Day15.html#step-4-estimation-of-population-proportion",
+    "title": "Day 15",
+    "section": "Step 4: Estimation of Population Proportion",
+    "text": "Step 4: Estimation of Population Proportion\n\n\nEstimator Formula: \\[\n\\hat{p}_{st}=\\frac{1}{N}(N_1\\hat{p}_1 + N_2\\hat{p}_2 + \\cdots + N_L\\hat{p}_L)\n\\]\nVariance of Estimator: \\[\n\\hat{V}(\\hat{p}_{st})=\\frac{1}{N^2} \\cdot \\sum_{i=1}^L N_i^2\\left(1-\\frac{n_i}{N_i}\\right)\\cdot\\left(\\frac{\\hat{p}_i(1-\\hat{p}_i)}{n_i-1}\\right)\n\\]"
+  },
+  {
+    "objectID": "Day15.html#degrees-of-freedom-for-variance-estimation",
+    "href": "Day15.html#degrees-of-freedom-for-variance-estimation",
+    "title": "Day 15",
+    "section": "Degrees of Freedom for Variance Estimation",
+    "text": "Degrees of Freedom for Variance Estimation\n\n\nDegrees of Freedom Formula: \\[\ndf=\\frac{\\left(\\sum_{i=1}^L a_i p_i(1-p_i)\\right)^2}{\\sum_{i=1}^L \\frac{(a_i p_i(1-p_i))^2}{n_i-1}}\n\\]\nImportance: Correct degrees of freedom are crucial for accurate inference and confidence interval construction."
+  },
+  {
+    "objectID": "Day15.html#example-1",
+    "href": "Day15.html#example-1",
+    "title": "Day 15",
+    "section": "Example 1",
+    "text": "Example 1\n\nAn advertising firm wants to estimate the proportion of households viewing TV show X in a county. The county is divided into three strata: town A, town B, and the rural area, containing \\(N_1=155\\), \\(N_2=62\\), and \\(N_3=93\\) households, respectively. From a study conducted three years ago, the previous estimates of proportions were \\(\\hat{p}_1^*=0.80\\), \\(\\hat{p}_2^*=0.25\\), and \\(\\hat{p}_3^*=0.50\\) (these values are used for selecting sample sizes, not as the current proportions).\nCosts: The costs of obtaining an observation are \\(c_1=c_2=9\\), \\(c_3=16\\).\n\nThe firm aims to estimate the population proportion \\(p\\) with a 95% bound on the error of estimation equal to 0.1. The task is to find the total sample size \\(n\\) and the strata sample sizes \\(n_1\\), \\(n_2\\), \\(n_3\\) that will achieve the desired bound at minimum cost.\nBased on the new survey performed with the determined sample sizes, the new sample proportions are \\(\\hat{p}_1=0.78\\), \\(\\hat{p}_2=0.35\\), \\(\\hat{p}_3=0.52\\). Estimate the proportion of households viewing TV show X with a 95% bound on the error of estimation."
+  },
+  {
+    "objectID": "Day24.html#introduction-to-estimators",
+    "href": "Day24.html#introduction-to-estimators",
+    "title": "Day 24",
+    "section": "Introduction to Estimators",
+    "text": "Introduction to Estimators\n\nIn survey sampling, different estimators provide various ways to estimate population parameters. Today, we will explore:\n\nSimple Random Sampling Estimator (\\(\\bar{y}\\))\nRatio Estimator (\\(\\hat{\\mu}_{y}\\))\nRegression Estimator (\\(\\hat{\\mu}_{y L}\\))\nDifference Estimator (\\(\\hat{\\mu}_{y D}\\))\n\nEach estimator has unique properties and use cases."
+  },
+  {
+    "objectID": "Day24.html#understanding-bias-in-estimators",
+    "href": "Day24.html#understanding-bias-in-estimators",
+    "title": "Day 24",
+    "section": "Understanding Bias in Estimators",
+    "text": "Understanding Bias in Estimators\n\nBias refers to the difference between an estimator’s expected value and the true value of the population parameter:\n\nSimple Sampling (\\(\\bar{y}\\)): Always unbiased.\nRatio Estimator (\\(\\hat{\\mu}_{y}\\)): Biased except under specific conditions.\nRegression Estimator (\\(\\hat{\\mu}_{y L}\\)): Biased for finite populations unless the data points are linear.\nDifference Estimator (\\(\\hat{\\mu}_{y D}\\)): Always unbiased.\n\nKey Note: Bias affects how we interpret and trust our estimations."
+  },
+  {
+    "objectID": "Day24.html#relative-efficiency",
+    "href": "Day24.html#relative-efficiency",
+    "title": "Day 24",
+    "section": "Relative Efficiency",
+    "text": "Relative Efficiency\n\nRelative Efficiency (RE) helps compare two estimators based on their variances under similar conditions:\n\nHigher RE (&gt;1) means the first estimator is generally better (lower variance).\nLower RE (&lt;1) favors the second estimator.\n\n\\[\n\\text{RE}(T_1, T_2) = \\frac{\\hat{V}(T_2)}{\\hat{V}(T_1)}\n\\]\nRE is crucial when deciding which estimator provides the most reliable results."
+  },
+  {
+    "objectID": "Day24.html#estimator-performance-comparison",
+    "href": "Day24.html#estimator-performance-comparison",
+    "title": "Day 24",
+    "section": "Estimator Performance Comparison",
+    "text": "Estimator Performance Comparison\n\n\n\n\n\n\n\n\n\nEstimator\nEstimated Mean\nEstimated Variance\n95% CI\n\n\n\n\nSimple Random Sampling\n\\(\\mu_{y}\\)\n\\(\\hat{V}(\\bar{y})\\)\n\\(\\mu_{y} \\pm t_{1-\\alpha/2, \\text{df}} \\sqrt{\\hat{V}(\\bar{y})}\\)\n\n\nRatio Estimator\n\\(\\hat{\\mu}_{y}\\)\n\\(\\hat{V}(\\hat{\\mu}_{y})\\)\n\\(\\hat{\\mu}_{y} \\pm t_{1-\\alpha/2, \\text{df}} \\sqrt{\\hat{V}(\\hat{\\mu}_{y})}\\)\n\n\nRegression Estimator\n\\(\\hat{\\mu}_{y L}\\)\n\\(\\hat{V}(\\hat{\\mu}_{y L})\\)\n\\(\\hat{\\mu}_{y L} \\pm t_{1-\\alpha/2, \\text{df}} \\sqrt{\\hat{V}(\\hat{\\mu}_{y L})}\\)\n\n\nDifference Estimator\n\\(\\hat{\\mu}_{y D}\\)\n\\(\\hat{V}(\\hat{\\mu}_{y D})\\)\n\\(\\hat{\\mu}_{y D} \\pm t_{1-\\alpha/2, \\text{df}} \\sqrt{\\hat{V}(\\hat{\\mu}_{y D})}\\)\n\n\n\nEach estimator uses the sample to provide different insights into the population’s characteristics."
+  },
+  {
+    "objectID": "Day24.html#visualizing-data-relationships",
+    "href": "Day24.html#visualizing-data-relationships",
+    "title": "Day 24",
+    "section": "Visualizing Data Relationships",
+    "text": "Visualizing Data Relationships\n\nPlot Analysis:\n\nA strong linear relationship suggests the use of a regression or ratio estimator.\nNon-linear relationships may require more complex models or the difference estimator for better accuracy."
+  },
+  {
+    "objectID": "Day24.html#choosing-the-right-estimator",
+    "href": "Day24.html#choosing-the-right-estimator",
+    "title": "Day 24",
+    "section": "Choosing the Right Estimator",
+    "text": "Choosing the Right Estimator\n\nDeciding factors:\n\nLinearity and Bias: If data points are linear, regression and ratio estimators are effective.\nRelative Efficiency: Higher RE indicates a more efficient estimator under given conditions.\nUnbiased Nature: Preference for unbiased estimators in settings where bias can’t be controlled.\n\nPractical examples and simulations help in understanding estimator performance."
+  },
+  {
+    "objectID": "Day24.html#section",
+    "href": "Day24.html#section",
+    "title": "Day 24",
+    "section": "",
+    "text": "Example 1 A mathematics achievement test was given to 486 students prior to their entering a certain college. From these students a simple random sample of \\(n=10\\) students was selected and their progress in calculus observed. Final calculus grades were then reported, as given in the following table. It is known that \\(\\mu_x=52\\) for all 486 students taking the achievement test. Estimate \\(\\mu_y\\) for this population (estimator value, estimated variance, \\(95 \\%\\) bound on error, and \\(95 \\%\\) confidence interval). Use the simple random sampling estimator, ratio estimator, regression estimator, and difference estimator, and perform comparisons."
+  },
+  {
+    "objectID": "Day14.html#introduction-to-stratified-sampling",
+    "href": "Day14.html#introduction-to-stratified-sampling",
+    "title": "Day 14",
+    "section": "Introduction to Stratified Sampling",
+    "text": "Introduction to Stratified Sampling\n\n\n\nOverview: In stratified sampling, the population is divided into homogeneous subgroups, and samples are taken from each.\nKey Concept: Unlike simple random sampling with one total sample size \\(n\\), stratified sampling requires determining \\(L+1\\) sample sizes: \\(n\\), the total sample size, and \\(n_1, n_2, \\ldots, n_L\\), the sample size for each stratum."
+  },
+  {
+    "objectID": "Day14.html#objective-of-sample-allocation",
+    "href": "Day14.html#objective-of-sample-allocation",
+    "title": "Day 14",
+    "section": "Objective of Sample Allocation",
+    "text": "Objective of Sample Allocation\n\n\nObjective: Minimize the variance of the estimator at the lowest possible cost.\nFactors Influencing Allocation:\n\nNumber of elements in each stratum, \\(N_i\\).\nVariability within each stratum, \\(\\sigma_i\\).\nCost of sampling from each stratum, \\(c_i\\)."
+  },
+  {
+    "objectID": "Day14.html#allocation-formulas",
+    "href": "Day14.html#allocation-formulas",
+    "title": "Day 14",
+    "section": "Allocation Formulas",
+    "text": "Allocation Formulas\n\n\nNeyman Allocation (Equal Costs): \\[\nw_i=\\frac{N_i \\sigma_i}{\\sum_{j=1}^L N_j \\sigma_j}\n\\]\nProportional Allocation (Equal Costs and Variability): \\[\nw_i=\\frac{N_i}{N}\n\\]\nGeneral Allocation (Varying Costs and Variability): \\[\nw_i=\\frac{\\frac{N_i \\sigma_i}{\\sqrt{c_i}}}{\\sum_{k=1}^L \\frac{N_k \\sigma_k}{\\sqrt{c_k}}}\n\\]"
+  },
+  {
+    "objectID": "Day14.html#sample-size-determination",
+    "href": "Day14.html#sample-size-determination",
+    "title": "Day 14",
     "section": "Sample Size Determination",
-    "text": "Sample Size Determination\n\nChoosing the number of clusters \\(m\\) is crucial to minimize the error of estimation. The goal is to select clusters that have as little variation among them as possible. To determine the number of clusters necessary for a specified error bound \\(B\\), we use:\nError Bound Formula\n\\[\n2 \\sqrt{V(\\bar{y})} = B\n\\] This equality helps in setting the correct number of clusters to achieve the desired accuracy.\nSample Size for Estimating \\(\\mu\\) with a Bound \\(B\\)\n\\[\nm = \\frac{M \\sigma_{\\mathrm{r}}^2}{M D + \\sigma_{\\mathrm{r}}^2}\n\\] where \\(D = \\left(\\frac{B^2 \\bar{n}^2}{4}\\right)\\), and \\(\\sigma_{\\mathrm{r}}^2\\) is estimated from a preliminary sample."
+    "text": "Sample Size Determination\n\n\nEstimation of Mean/Average or Total: \\[\nn=\\frac{\\sum_{i=1}^L N_i^2 \\frac{\\sigma_i^2}{w_i}}{N^2 D^2 + \\sum_{i=1}^L N_i \\sigma_i^2}\n\\]\nWhere:\n\n\\(D=\\frac{B}{Z_{1-\\frac{\\alpha}{2}}}\\) for estimating means.\n\\(D=\\frac{B}{N \\cdot Z_{1-\\frac{\\alpha}{2}}}\\) for estimating totals."
   },
   {
-    "objectID": "Day30.html#alternate-estimator-of-population-total-tau-with-unknown-n",
-    "href": "Day30.html#alternate-estimator-of-population-total-tau-with-unknown-n",
-    "title": "Day 30",
-    "section": "Alternate Estimator of Population Total \\(\\tau\\) with Unknown \\(N\\)",
-    "text": "Alternate Estimator of Population Total \\(\\tau\\) with Unknown \\(N\\)\n\nWhen the total number of clusters in the population \\(M\\) is unknown, we must modify our estimation approaches:\nAlternative Estimator \\(\\bar{y}_{\\mathrm{t}}\\)\n\\[\n\\bar{\\tau} = \\frac{1}{m} \\sum_{i=1}^{m} \\tau_i\n\\] This estimator represents the average of the cluster totals from the sampled clusters and is used when only a portion of the total clusters are surveyed.\nVariance for Unknown \\(M\\)\n\\[\n\\hat{V}(M \\bar{\\tau}) = M^2 \\hat{V}(\\bar{\\tau})\n\\] where \\(\\hat{V}(\\bar{\\tau})\\) is computed as: \\[\n\\hat{V}(\\bar{\\tau}) = \\left(1 - \\frac{m}{M}\\right) \\frac{s_{\\mathrm{t}}^2}{m}\n\\]"
+    "objectID": "Day14.html#practical-considerations",
+    "href": "Day14.html#practical-considerations",
+    "title": "Day 14",
+    "section": "Practical Considerations",
+    "text": "Practical Considerations\n\n\nDecision Points:\n\nDetermining total sample size \\(n\\) based on budget and desired precision.\nChoosing an allocation strategy based on known stratum characteristics and costs.\n\nCommon Errors: Misestimating \\(N_i\\), \\(\\sigma_i\\), or \\(c_i\\) can lead to inefficient allocations.\nSummary: Effective sample size selection in stratified sampling crucially depends on accurate stratum characterization and cost considerations.\nFurther Steps: Implementation of chosen sampling strategy and subsequent data collection."
   },
   {
-    "objectID": "Day30.html#sample-size-determination-for-estimating-tau-with-unknown-n",
-    "href": "Day30.html#sample-size-determination-for-estimating-tau-with-unknown-n",
-    "title": "Day 30",
-    "section": "Sample Size Determination for Estimating \\(\\tau\\) with Unknown \\(N\\)",
-    "text": "Sample Size Determination for Estimating \\(\\tau\\) with Unknown \\(N\\)\n\nWhen the total number of clusters \\(M\\) is unknown, an alternative estimation approach is necessary. We adjust the formula to incorporate estimations of \\(M\\) and use proxy measures:\nAlternative Formula Derivation\n\\[\nM^2 \\cdot \\left(1-\\frac{m}{M}\\right) \\cdot \\frac{S_t^2}{m} = \\left(\\frac{B}{\\lambda}\\right)^2\n\\] From this, the sample size \\(m\\) is calculated as: \\[\nm = \\frac{M S_t^2}{\\left(\\frac{B}{\\lambda M}\\right)^2 \\cdot M + S_t^2}\n\\] This formula calculates the number of clusters to sample to ensure the variance of the estimate does not exceed the specified error bound represented by \\(B\\)."
-  },
-  {
-    "objectID": "Day30.html#sample-size-determination-for-estimating-tau-with-known-n",
-    "href": "Day30.html#sample-size-determination-for-estimating-tau-with-known-n",
-    "title": "Day 30",
-    "section": "Sample Size Determination for Estimating \\(\\tau\\) with Known \\(N\\)",
-    "text": "Sample Size Determination for Estimating \\(\\tau\\) with Known \\(N\\)\n\nWhen the population size \\(N\\) is known, the formula for determining the number of clusters \\(m\\) needed to estimate the population total \\(\\tau\\) with a desired precision is derived from the variance of the estimator:\nFormula Derivation\n\\[\nN^2 \\cdot \\left(1-\\frac{m}{M}\\right) \\cdot \\frac{S_r^2}{m \\bar{n}^{2}} = \\left(\\frac{B}{\\lambda}\\right)^2\n\\] Simplifying, we have:\n\\[\n\\left(1-\\frac{m}{M}\\right) \\frac{S_r^2}{m \\bar{n}^2} = \\left(\\frac{B}{\\lambda N}\\right)^2\n\\]\nWhich gives us:\n\\[\nm = \\frac{M S_r^2}{\\left(\\frac{B}{\\lambda N}\\right)^2 M \\bar{n}^2 + S_r^2}\n\\] These equations ensure that the error in estimating \\(\\tau\\) does not exceed the bound \\(B\\)."
-  },
-  {
-    "objectID": "Day30.html#section",
-    "href": "Day30.html#section",
-    "title": "Day 30",
+    "objectID": "Day14.html#section",
+    "href": "Day14.html#section",
+    "title": "Day 14",
     "section": "",
-    "text": "Example 1: Use the data in Example 1 of Note 28 as a preliminary sample. Answer the following questions:\n\n\nHow large a sample should be taken in a future survey in order to estimate the average per-capita income \\(\\mu\\) with a bound of \\(\\$ 500\\) on the \\(95 \\%\\) error of estimation?"
+    "text": "Example 1: The advertising firm in Example 1 of Day 13 finds that obtaining an observation from a rural household costs more than obtaining a response in town A or B . The increase is due to the costs of traveling from one rural household to another. The cost per observation in each town is estimated to be \\(\\$ 9\\) (i.e., \\(c_1=c_2=9\\) ), and the costs per observation in the rural area to be \\(\\$ 16\\) (i.e., \\(c_3=16\\) ). The stratum standard deviations (approximated by the strata sample variances from a prior survey) are \\(\\sigma_1 \\approx 5, \\sigma_2 \\approx 15\\), and \\(\\sigma_3 \\approx 10\\). Find the overall sample size \\(n\\) and the stratum sample sizes, \\(n_1, n_2\\), and \\(n_3\\), that allow the firm to estimate, at minimum cost, the average television-viewing time with a bound on the error of estimation equal to 2 hours. (Recall that \\(N=310, N_1=155, N_2=62, N_3=93\\))"
   },
   {
-    "objectID": "Day30.html#section-1",
-    "href": "Day30.html#section-1",
-    "title": "Day 30",
+    "objectID": "Day19.html#recall-introduction-to-ratio-estimators",
+    "href": "Day19.html#recall-introduction-to-ratio-estimators",
+    "title": "Day 19",
+    "section": "Recall: Introduction to Ratio Estimators",
+    "text": "Recall: Introduction to Ratio Estimators\n\nRatio estimators are utilized for their efficiency in estimating population parameters where relationships are proportional. For instance, they can effectively estimate the total sugar content in oranges based on their weight, providing a quick method compared to direct measurements.\nThe estimator for the population ratio \\(R\\) is given by: \\[\nr = \\frac{\\bar{y}}{\\bar{x}} = \\frac{\\sum_{i=1}^n y_i}{\\sum_{i=1}^n x_i}\n\\] where \\(\\bar{y}\\) and \\(\\bar{x}\\) are the sample means of sugar content (\\(y_i\\)) and weight (\\(x_i\\)) of oranges respectively."
+  },
+  {
+    "objectID": "Day19.html#variance-of-ratio-estimator",
+    "href": "Day19.html#variance-of-ratio-estimator",
+    "title": "Day 19",
+    "section": "Variance of Ratio Estimator",
+    "text": "Variance of Ratio Estimator\n\nUnderstanding the variability of our ratio estimator is crucial for assessing the reliability of our sugar content estimations based on orange weights. The estimated variance of \\(r\\), when \\(\\mu_x\\) (mean weight per unit in the population) is known: \\[\n\\hat{V}(r) = \\left(1-\\frac{n}{N}\\right) \\cdot \\left(\\frac{1}{\\mu_x^2}\\right) \\cdot \\frac{s_r^2}{n}\n\\] where \\(s_r^2 = \\frac{\\sum_{i=1}^n (y_i - r x_i)^2}{n-1}\\)."
+  },
+  {
+    "objectID": "Day19.html#ratio-estimator-of-population-total-tau_y",
+    "href": "Day19.html#ratio-estimator-of-population-total-tau_y",
+    "title": "Day 19",
+    "section": "Ratio Estimator of Population Total \\(\\tau_y\\)",
+    "text": "Ratio Estimator of Population Total \\(\\tau_y\\)\n\nEstimating the total sugar content efficiently allows businesses to manage their inventory more effectively. \\[\n\\hat{\\tau}_y = r \\cdot \\tau_x\n\\] \\(\\tau_x = N \\mu_x\\) represents the total weight of the orange shipment."
+  },
+  {
+    "objectID": "Day19.html#variance-of-hattau_y",
+    "href": "Day19.html#variance-of-hattau_y",
+    "title": "Day 19",
+    "section": "Variance of \\(\\hat{\\tau}_y\\)",
+    "text": "Variance of \\(\\hat{\\tau}_y\\)\n\nQuantifying the uncertainty in our total sugar content estimate helps in making informed decisions: \\[\n\\hat{V}(\\hat{\\tau}_y) = \\left(N \\mu_x\\right)^2 \\cdot \\hat{V}(r) = N^2 \\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s_r^2}{n}\n\\]"
+  },
+  {
+    "objectID": "Day19.html#ratio-estimator-of-population-mean-mu_y",
+    "href": "Day19.html#ratio-estimator-of-population-mean-mu_y",
+    "title": "Day 19",
+    "section": "Ratio Estimator of Population Mean \\(\\mu_y\\)",
+    "text": "Ratio Estimator of Population Mean \\(\\mu_y\\)\n\nRatio estimators also aid in predicting the average sugar content per orange, which is vital for quality control. \\[\n\\hat{\\mu}_y = r \\cdot \\mu_x\n\\]"
+  },
+  {
+    "objectID": "Day19.html#variance-and-confidence-interval",
+    "href": "Day19.html#variance-and-confidence-interval",
+    "title": "Day 19",
+    "section": "Variance and Confidence Interval",
+    "text": "Variance and Confidence Interval\n\nProviding confidence intervals around our estimates assures stakeholders of the precision of our sugar content assessments: \\[\n\\hat{V}(\\hat{\\mu}_y) = \\mu_x^2 \\cdot \\hat{V}(r) = \\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s_r^2}{n}\n\\] \\[\n\\hat{\\mu}_y \\pm t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{\\hat{V}(\\hat{\\mu}_y)}\n\\]"
+  },
+  {
+    "objectID": "Day19.html#section",
+    "href": "Day19.html#section",
+    "title": "Day 19",
     "section": "",
-    "text": "Given that there are 2500 residents of the city, how large a sample should be taken in a future survey in order to estimate the total income of all residents, \\(\\tau\\), with a bound of \\(\\$ 1,000,000\\) on the \\(95 \\%\\) error of estimation?"
+    "text": "Example 1: (Textbook Ex 6.1) A forester is interested in estimating the total volume of trees in a timber sale. He records the volume for each tree in a simple random sample. In addition, he measures the basal area for each tree marked for sale. He then uses a ratio estimator of total volume. The forester decides to take a simple random sample of \\(n=12\\) from the \\(N=250\\) trees marked for sale. Let \\(x\\) denote basal area and \\(y\\) the cubic-foot volume for a tree. The total basal area for all 250 trees, \\(\\tau_x\\), is 75 square feet. Use the data in the accompanying table to estimate \\(\\tau_y\\), the total cubic-foot volume for those trees marked for sale, and place a bound on the error of estimation."
   },
   {
-    "objectID": "Day30.html#section-2",
-    "href": "Day30.html#section-2",
-    "title": "Day 30",
+    "objectID": "Day19.html#section-1",
+    "href": "Day19.html#section-1",
+    "title": "Day 19",
     "section": "",
-    "text": "If the number of residents of the city is unknown, how large a sample should be taken in a future survey in order to estimate the total income of all residents, \\(\\tau\\), with a bound of \\(\\$ 1,000,000\\) on the \\(95 \\%\\) error of estimation?"
+    "text": "Scatter-plotR-code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(ggplot2)\n\ndata &lt;- data.frame(\n  id = 1:12,\n  x = c(0.3, 0.5, 0.4, 0.9, 0.7, 0.2, 0.6, 0.5, 0.8, 0.4, 0.8, 0.6),\n  y = c(6, 9, 7, 19, 15, 5, 12, 9, 20, 9, 18, 13)\n)\n\nggplot(data, aes(x = x, y = y)) +\n  geom_point() + \n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Scatterplot of Volume vs. Basal Area\",\n       x = \"Basal Area\", y = \"Volume\")"
   },
   {
-    "objectID": "LabReportGuidelines.html",
-    "href": "LabReportGuidelines.html",
-    "title": "Guidelines for Projects",
+    "objectID": "Day19.html#section-3",
+    "href": "Day19.html#section-3",
+    "title": "Day 19",
     "section": "",
-    "text": "Begin your project report by articulating the project’s purpose as you perceive it, followed by a concise introduction. This introductory section sets the stage for the subsequent analysis, ensuring the reader grasps the aim of the lab without prior exposure to the questions.\n\n\n\n\n\nCompose the project report in a narrative style, integrating textual explanations with R outputs such as graphs or tables seamlessly within the text. Avoid beginning the report with a table or graph. Instead, weave these elements naturally into your discussion.\n\n\n\nIf the lab contains multiple components, employ transitional sentences to fluidly connect these sections. This approach helps maintain a logical and coherent flow throughout the document.\n\n\n\nDo not replicate the project questions directly within the report. Instead, address these through descriptive writing, ensuring you cover all aspects posed by the questions through your narrative.\n\n\n\n\nYour report should adhere to the highest standards of academic writing, which include:\n\nClarity and Precision: Ensure that the language is clear and precise.\nAccuracy: Verify that all information and descriptions are correct.\nCompleteness: Address all components of the assignment comprehensively.\nConciseness: Be brief yet thorough in your descriptions and explanations.\nTechnical Language: Appropriately use technical terms relevant to the subject matter.\nSimplicity in Structure: Aim for straightforward sentence construction, avoiding overly complex or lengthy sentences.\nPersonal Pronouns: Minimize the use of personal pronouns such as ‘I’ and ‘you’.\n\n\n\n\nConsider the style employed in academic textbooks and attempt to emulate this formal style in your report. This practice will enhance both your written communication and your preparation for exams.\n\n\nReflect on the importance of communication skills in professional settings, where both written and oral communication often play critical roles in career development and workplace efficiency.\n\n\n\n\n\nReport Components:\n\nInclude your name and project title.\nStart with an introduction that outlines the data sample, data size, and the objectives of the data analysis. Mention each data set used if applicable.\nClearly display and label R graphs and printouts within the report.\nProvide clear and correct calculations.\nFocus on comprehensive explanations. Assume the reader is unfamiliar with the lab and R.\nInclude all relevant handwritten calculations, R code, and other computational scripts in the Appendix. Ensure that everything provided is properly commented and reproducible.\n\n\n\n\nPlease ensure you upload your completed project report as a PDF file to MyClasses, as specified by your instructor.\n\n\n\n\nReports will be evaluated based on the following criteria:\n\nIntroduction and Data Description (20 points)\nResults Presentation (20 points)\nCalculation Accuracy (10 point)\nDepth of Analysis (40 points): This is crucial, as it demonstrates your ability to interpret and communicate the significance of your findings.\n\nRemember, while mathematical accuracy is essential, the effectiveness of your communication holds substantial weight."
+    "text": "Example 2: (Textbook Ex 6.4) A corporation is interested in estimating the total earnings from sales of color television sets at the end of a three-month period. The total earnings figures are available for all districts within the corporation for the corresponding three-month period of the previous year. A simple random sample of 13 district offices is selected from the 123 offices within the corporation. Using a ratio estimator, estimate \\(\\tau_y\\) and place a bound on the error of estimation. Use the data in the accompanying table and take \\(\\tau_x=128,200\\)"
   },
   {
-    "objectID": "LabReportGuidelines.html#objective",
-    "href": "LabReportGuidelines.html#objective",
-    "title": "Guidelines for Projects",
+    "objectID": "Day19.html#section-5",
+    "href": "Day19.html#section-5",
+    "title": "Day 19",
     "section": "",
-    "text": "Begin your project report by articulating the project’s purpose as you perceive it, followed by a concise introduction. This introductory section sets the stage for the subsequent analysis, ensuring the reader grasps the aim of the lab without prior exposure to the questions."
+    "text": "Example 3: (Textbook Ex 6.6) An investigator has a colony of \\(N=763\\) rats that have been subjected to a standard drug. The average length of time to thread a maze correctly under the influence of the standard drug was found to be \\(\\mu_x=17.2\\) seconds. The investigator now would like to subject a random sample of 11 rats to a new drug. Estimate the average time required to thread the maze while under the influence of the new drug. (The data are shown in the accompanying table.) Place a bound on the error of estimation."
   },
   {
-    "objectID": "LabReportGuidelines.html#structure-and-style",
-    "href": "LabReportGuidelines.html#structure-and-style",
-    "title": "Guidelines for Projects",
+    "objectID": "Day37P.html#estimation-of-population-density-and-size-using-inverse-sampling",
+    "href": "Day37P.html#estimation-of-population-density-and-size-using-inverse-sampling",
+    "title": "Day 37",
+    "section": "Estimation of Population Density and Size Using Inverse Sampling",
+    "text": "Estimation of Population Density and Size Using Inverse Sampling\n\nInverse sampling differs from direct sampling as it continues until a fixed number of tagged animals is recaptured. This method provides an unbiased estimator for population size \\(N\\), using the fixed count of recaptured tagged animals to estimate the proportion of tagged animals in the population."
+  },
+  {
+    "objectID": "Day37P.html#mathematical-formulation-of-inverse-sampling",
+    "href": "Day37P.html#mathematical-formulation-of-inverse-sampling",
+    "title": "Day 37",
+    "section": "Mathematical Formulation of Inverse Sampling",
+    "text": "Mathematical Formulation of Inverse Sampling\n\n\nProportion of tagged individuals: \\[\n\\hat{p} = \\frac{s}{n}\n\\] where \\(s\\) is fixed and \\(n\\) is the number of total individuals captured during sampling.\nEstimator of \\(N\\): \\[\n\\hat{N} = \\frac{n \\cdot t}{s}\n\\] where \\(t\\) is the number of animals tagged in the initial sample."
+  },
+  {
+    "objectID": "Day37P.html#variance-and-error-estimation",
+    "href": "Day37P.html#variance-and-error-estimation",
+    "title": "Day 37",
+    "section": "Variance and Error Estimation",
+    "text": "Variance and Error Estimation\n\n\nVariance of \\(\\hat{N}\\): \\[\n\\hat{V}(\\hat{N}) = \\frac{t^2 \\cdot n \\cdot (n-s)}{s^2 \\cdot (s+1)}\n\\] reflects the sample’s randomness and the fixed nature of \\(s\\).\nError Bound: Using \\(V-P\\) inequality for conservative error bounds in estimation."
+  },
+  {
+    "objectID": "Day37P.html#example-wildlife-preserve-bird-population",
+    "href": "Day37P.html#example-wildlife-preserve-bird-population",
+    "title": "Day 37",
+    "section": "Example: Wildlife Preserve Bird Population",
+    "text": "Example: Wildlife Preserve Bird Population\n\nAuthorities want to estimate the number of birds in a preserve. Initially, \\(t=150\\) birds are tagged and released. Later, sampling continues until \\(35\\) tagged birds are recaptured among \\(100\\) total birds. Estimating \\(N\\) involves using the derived formulas to handle randomness and provide reliable population estimates."
+  },
+  {
+    "objectID": "Day37P.html#estimating-population-density-from-stocked-quadrats",
+    "href": "Day37P.html#estimating-population-density-from-stocked-quadrats",
+    "title": "Day 37",
+    "section": "Estimating Population Density from Stocked Quadrats",
+    "text": "Estimating Population Density from Stocked Quadrats\n\nStocked quadrat sampling involves checking the presence or absence of a species, simplifying the data collection process but requiring careful handling of statistical estimates due to the binary nature of data (presence vs. absence)."
+  },
+  {
+    "objectID": "Day37P.html#formulating-the-stocked-quadrat-density-estimation",
+    "href": "Day37P.html#formulating-the-stocked-quadrat-density-estimation",
+    "title": "Day 37",
+    "section": "Formulating the Stocked Quadrat Density Estimation",
+    "text": "Formulating the Stocked Quadrat Density Estimation\n\n\nProbability of presence in a quadrat: \\[\nP(\\text{unstocked}) = e^{-\\lambda a}\n\\] where \\(\\lambda\\) is the density per unit area and \\(a\\) is the area of each quadrat.\nEstimator for \\(\\lambda\\): \\[\n\\hat{\\lambda} = -\\frac{1}{a} \\ln\\left(\\frac{y}{m}\\right)\n\\] derived from the proportion of unstocked quadrats in the sample."
+  },
+  {
+    "objectID": "Day37P.html#variance-and-confidence-interval",
+    "href": "Day37P.html#variance-and-confidence-interval",
+    "title": "Day 37",
+    "section": "Variance and Confidence Interval",
+    "text": "Variance and Confidence Interval\n\n\nVariance of \\(\\hat{\\lambda}\\): \\[\n\\hat{V}(\\hat{\\lambda}) = \\frac{1}{m a^2} (e^{\\hat{\\lambda} a} - 1)\n\\]\nConfidence Interval: Ensuring accuracy with \\(1-\\alpha\\)% bounds based on the variance."
+  },
+  {
+    "objectID": "Day37P.html#practical-example-plantation-infected-trees-estimation",
+    "href": "Day37P.html#practical-example-plantation-infected-trees-estimation",
+    "title": "Day 37",
+    "section": "Practical Example: Plantation Infected Trees Estimation",
+    "text": "Practical Example: Plantation Infected Trees Estimation\n\nIn a 200-acre plantation, the presence of fusiform rust in trees is sampled over 20 quadrats of 0.5 acre each. The density and total number of infected trees are estimated, incorporating bounds on the estimation error."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Compose the project report in a narrative style, integrating textual explanations with R outputs such as graphs or tables seamlessly within the text. Avoid beginning the report with a table or graph. Instead, weave these elements naturally into your discussion.\n\n\n\nIf the lab contains multiple components, employ transitional sentences to fluidly connect these sections. This approach helps maintain a logical and coherent flow throughout the document.\n\n\n\nDo not replicate the project questions directly within the report. Instead, address these through descriptive writing, ensuring you cover all aspects posed by the questions through your narrative."
+    "text": "Welcome to Survey Design and Sampling, where we apply statistical principles to real-world survey challenges in fields like business, social sciences, health sciences, and environmental studies. This course emphasizes practical applications over theoretical foundations, preparing students to design, implement, and analyze surveys effectively. Through case studies and hands-on projects, students will tackle the peculiarities and inferential challenges of survey design across various domains.\nWe will explore data collection methods, address potential biases, and discuss ethical considerations in survey execution. The course aims to cultivate both technical skills and critical thinking about how survey methodologies influence research outcomes and professional decisions. By understanding these dynamics, students will be equipped to conduct impactful research with consideration for cultural and ethical contexts.\n\n\n\n\nAcquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
   },
   {
-    "objectID": "LabReportGuidelines.html#writing-standards",
-    "href": "LabReportGuidelines.html#writing-standards",
-    "title": "Guidelines for Projects",
+    "objectID": "about.html#learning-objectives",
+    "href": "about.html#learning-objectives",
+    "title": "About",
     "section": "",
-    "text": "Your report should adhere to the highest standards of academic writing, which include:\n\nClarity and Precision: Ensure that the language is clear and precise.\nAccuracy: Verify that all information and descriptions are correct.\nCompleteness: Address all components of the assignment comprehensively.\nConciseness: Be brief yet thorough in your descriptions and explanations.\nTechnical Language: Appropriately use technical terms relevant to the subject matter.\nSimplicity in Structure: Aim for straightforward sentence construction, avoiding overly complex or lengthy sentences.\nPersonal Pronouns: Minimize the use of personal pronouns such as ‘I’ and ‘you’."
-  },
-  {
-    "objectID": "LabReportGuidelines.html#practical-application",
-    "href": "LabReportGuidelines.html#practical-application",
-    "title": "Guidelines for Projects",
-    "section": "",
-    "text": "Consider the style employed in academic textbooks and attempt to emulate this formal style in your report. This practice will enhance both your written communication and your preparation for exams.\n\n\nReflect on the importance of communication skills in professional settings, where both written and oral communication often play critical roles in career development and workplace efficiency."
-  },
-  {
-    "objectID": "LabReportGuidelines.html#submission-guidelines",
-    "href": "LabReportGuidelines.html#submission-guidelines",
-    "title": "Guidelines for Projects",
-    "section": "",
-    "text": "Report Components:\n\nInclude your name and project title.\nStart with an introduction that outlines the data sample, data size, and the objectives of the data analysis. Mention each data set used if applicable.\nClearly display and label R graphs and printouts within the report.\nProvide clear and correct calculations.\nFocus on comprehensive explanations. Assume the reader is unfamiliar with the lab and R.\nInclude all relevant handwritten calculations, R code, and other computational scripts in the Appendix. Ensure that everything provided is properly commented and reproducible.\n\n\n\n\nPlease ensure you upload your completed project report as a PDF file to MyClasses, as specified by your instructor."
-  },
-  {
-    "objectID": "LabReportGuidelines.html#evaluation-criteria",
-    "href": "LabReportGuidelines.html#evaluation-criteria",
-    "title": "Guidelines for Projects",
-    "section": "",
-    "text": "Reports will be evaluated based on the following criteria:\n\nIntroduction and Data Description (20 points)\nResults Presentation (20 points)\nCalculation Accuracy (10 point)\nDepth of Analysis (40 points): This is crucial, as it demonstrates your ability to interpret and communicate the significance of your findings.\n\nRemember, while mathematical accuracy is essential, the effectiveness of your communication holds substantial weight."
-  },
-  {
-    "objectID": "Day10.html#introduction-to-comparing-estimators",
-    "href": "Day10.html#introduction-to-comparing-estimators",
-    "title": "Day 10",
-    "section": "Introduction to Comparing Estimators",
-    "text": "Introduction to Comparing Estimators\n\n\n\nOverview: Comparing estimates like means or proportions helps us understand differences between groups or changes over time.\nApplications: From socio-economic studies to political analyses, comparing estimators is pivotal in interpreting data."
-  },
-  {
-    "objectID": "Day10.html#comparing-means-of-two-populations",
-    "href": "Day10.html#comparing-means-of-two-populations",
-    "title": "Day 10",
-    "section": "Comparing Means of Two Populations",
-    "text": "Comparing Means of Two Populations\n\n\n\nContext: Compare the mean incomes of two ethnic groups using samples from each group.\nCalculation: \\(\\bar{X}\\) and \\(\\bar{Y}\\) represent the sample means, where comparisons are made by analyzing the difference \\(\\mu_y - \\mu_x\\)."
-  },
-  {
-    "objectID": "Day10.html#statistical-methodology",
-    "href": "Day10.html#statistical-methodology",
-    "title": "Day 10",
-    "section": "Statistical Methodology",
-    "text": "Statistical Methodology\n\n\n\nFormula: The difference in sample means is used as an estimator for the difference in population means.\nVariance Consideration: Compute sample variances \\(s_X^2\\) and \\(s_Y^2\\) to assess variability within each sample."
-  },
-  {
-    "objectID": "Day10.html#example-political-preference-analysis",
-    "href": "Day10.html#example-political-preference-analysis",
-    "title": "Day 10",
-    "section": "Example: Political Preference Analysis",
-    "text": "Example: Political Preference Analysis\n\n\n\nScenario: Evaluate whether Republicans are gaining on Democrats by comparing the proportions of voters in two different polls.\nComparison Metric: Look at the difference between the proportions voting for each party."
-  },
-  {
-    "objectID": "Day10.html#understanding-differences",
-    "href": "Day10.html#understanding-differences",
-    "title": "Day 10",
-    "section": "Understanding Differences",
-    "text": "Understanding Differences\n\n\n\nInsights: These comparisons help identify significant trends or disparities, guiding strategic decisions and policy formulations.\nPractical Application: Enables researchers and analysts to make informed conclusions based on empirical data."
-  },
-  {
-    "objectID": "Day10.html#estimation-of-difference-between-means",
-    "href": "Day10.html#estimation-of-difference-between-means",
-    "title": "Day 10",
-    "section": "Estimation of Difference Between Means",
-    "text": "Estimation of Difference Between Means\n\n\n\nEstimator of Difference:\n\n\\(\\hat{\\Delta} = \\bar{y} - \\bar{x}\\), where \\(\\hat{\\Delta}\\) estimates \\(\\mu_y - \\mu_x\\).\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{\\Delta}) = \\frac{s_y^2}{n_1} + \\frac{s_x^2}{n_2}\\), assuming samples are independent.\n\nError Bound on Estimation (\\(1-\\alpha\\) confidence level):\n\n\\(B = t_{1-\\frac{\\alpha}{2}, df} \\cdot \\sqrt{\\hat{V}(\\hat{\\Delta})}\\)\nDegrees of freedom (df): \\(df = \\frac{\\left(\\frac{s_y^2}{n_1} + \\frac{s_x^2}{n_2}\\right)^2}{\\frac{(s_y^2/n_1)^2}{n_1-1} + \\frac{(s_x^2/n_2)^2}{n_2-1}}\\)"
-  },
-  {
-    "objectID": "Day10.html#section",
-    "href": "Day10.html#section",
-    "title": "Day 10",
-    "section": "",
-    "text": "Example 1: A drug company has developed a new drug that is designed to reduce high blood pressure. To test the drug, a sample of 15 patients is recruited to take drug. Their systolic blood pressures are reduced by an average of 28.3 millimeters, with a standard deviation of 12.0 millimeters. In addition, another sample of 20 patients takes a standard drug. The blood pressures in this group are reduced by an average of 17.1 millimeters with a standard deviation of 9.0 millimeters. Assume that blood pressure reductions are approximately normally distributed, answer the following questions.\n\n\nEstimate the difference between the population mean reduction for the new drug and that of the standard drug.\n\n \n\nCompute the \\(95 \\%\\) bounds on the error of estimation."
-  },
-  {
-    "objectID": "Day10.html#section-1",
-    "href": "Day10.html#section-1",
-    "title": "Day 10",
-    "section": "",
-    "text": "Compute the \\(95 \\%\\) confidence interval for the estimation.\n\n\n\n\n\nBased on the result of c , can you draw a conclusion that there is a significant difference in mean"
-  },
-  {
-    "objectID": "Day10.html#estimation-of-p_1-p_2-for-independent-samples",
-    "href": "Day10.html#estimation-of-p_1-p_2-for-independent-samples",
-    "title": "Day 10",
-    "section": "Estimation of \\(p_1-p_2\\) for Independent Samples",
-    "text": "Estimation of \\(p_1-p_2\\) for Independent Samples\n\n\n\nEstimator for Difference Between Two Proportions:\n\n\\(\\hat{p}_1-\\hat{p}_2\\), estimates the difference between proportions from two independent samples.\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{p}_1-\\hat{p}_2) = \\frac{\\hat{p}_1(1-\\hat{p}_1)}{n_1} + \\frac{\\hat{p}_2(1-\\hat{p}_2)}{n_2}\\)\nEnsures the variance captures the sampling variability of each proportion.\n\nBound on the Error of Estimation:\n\n\\(B = Z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\hat{V}(\\hat{p}_1-\\hat{p}_2)}\\)\nThis bound helps gauge the confidence interval for the difference between the two proportions, facilitating decision making."
-  },
-  {
-    "objectID": "Day10.html#estimation-of-p_1-p_2-for-dependent-samples",
-    "href": "Day10.html#estimation-of-p_1-p_2-for-dependent-samples",
-    "title": "Day 10",
-    "section": "Estimation of \\(p_1-p_2\\) for Dependent Samples",
-    "text": "Estimation of \\(p_1-p_2\\) for Dependent Samples\n\n\n\nEstimator for Difference Between Two Proportions:\n\n\\(\\hat{p}_1-\\hat{p}_2\\), which estimates the difference between two correlated proportions.\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{p}_1-\\hat{p}_2) = \\frac{\\hat{p}_1(1-\\hat{p}_1)}{n} + \\frac{\\hat{p}_2(1-\\hat{p}_2)}{n} + 2 \\frac{\\hat{p}_1 \\hat{p}_2}{n}\\)\nThis variance calculation includes a term for the covariance between \\(\\hat{p}_1\\) and \\(\\hat{p}_2\\), reflecting their dependence.\n\nBound on the Error of Estimation:\n\n\\(B = Z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\hat{V}(\\hat{p}_1-\\hat{p}_2)}\\)\nThis bound provides a measure of uncertainty around the estimated difference, aiding in robust decision making under uncertainty."
-  },
-  {
-    "objectID": "Day10.html#section-2",
-    "href": "Day10.html#section-2",
-    "title": "Day 10",
-    "section": "",
-    "text": "Example 2: The notion of banning smoking from the workplace has been around for a long time.A Time/Yankelovich poll of 800 adult Americans carried out on April 6, 1994 (see Time, April 18, 1994) asked:\n\n Should smoking be banned from workplaces, should there be special smoking areas, or should there be no restrictions?\n\n The results are given in the following table:\n\n\n\n\n\nNonsmokers\nSmokers\n\n\n\n\nBanned\n\\(44 \\%\\)\n\\(8 \\%\\)\n\n\nSpecial areas\n\\(52 \\%\\)\n\\(80 \\%\\)\n\n\nNo restrictions\n\\(3 \\%\\)\n\\(11 \\%\\)"
-  },
-  {
-    "objectID": "Day10.html#section-3",
-    "href": "Day10.html#section-3",
-    "title": "Day 10",
-    "section": "",
-    "text": "Based on a sample of approximately 600 non-smokers and 200 smokers, estimate\n\nthe true difference between the proportions choosing “banned”\n\n\n\n\n\nthe true difference between the proportions of nonsmokers choosing “banned” and “special areas”."
-  },
-  {
-    "objectID": "Day1.html#something-about-me",
-    "href": "Day1.html#something-about-me",
-    "title": "Day 1",
-    "section": "Something about me",
-    "text": "Something about me\n\n\n\n\n\nFirst year at Salisbury\nOriginally from Nepal\nResearch in Statistical Computation and Applied Statistics\nAvid learner and traveler\n\n\n\n\n\n\n\n\n\nMy website"
-  },
-  {
-    "objectID": "Day1.html#active-participation",
-    "href": "Day1.html#active-participation",
-    "title": "Day 1",
-    "section": "Active Participation",
-    "text": "Active Participation\n\n\n\nEngage Actively\n\nTake lecture notes\nFollow class handouts\n\nAsk Questions\n\nEvery question is valuable; we’re learning together\n\nGain Conceptual Understanding\n\nTo be able to apply the knowledge; understanding the concepts is key"
-  },
-  {
-    "objectID": "Day1.html#tell-me-something-about-yourself",
-    "href": "Day1.html#tell-me-something-about-yourself",
-    "title": "Day 1",
-    "section": "Tell me something about yourself!",
-    "text": "Tell me something about yourself!\n\n\n\n\n\nYour name?\nGender Pronouns?\nFavorite Summer Memory?\n\n\n\n\n\n\n\nvia GIPHY"
-  },
-  {
-    "objectID": "Day1.html#class-pipelines",
-    "href": "Day1.html#class-pipelines",
-    "title": "Day 1",
-    "section": "Class Pipelines",
-    "text": "Class Pipelines\n\n\n\nMost of the course information and schedule will be posted in MyClasses\nHomework will be posted but not collected\nLabs most Tuesdays; lab reports due in a week from the lab date\nQuizzes every Friday; includes HW, lectures, labs"
-  },
-  {
-    "objectID": "Day1.html#what-will-a-typical-dayweek-look-like",
-    "href": "Day1.html#what-will-a-typical-dayweek-look-like",
-    "title": "Day 1",
-    "section": "What will a typical day/week look like?",
-    "text": "What will a typical day/week look like?\n\n\n\nBefore class:\n\nRead assigned topics from textbook\nWork on homework/lab reports, come with questions\n\nDuring class:\n\nMini lectures\nClass activities"
-  },
-  {
-    "objectID": "Day1.html#welcome-to-survey-sampling",
-    "href": "Day1.html#welcome-to-survey-sampling",
-    "title": "Day 1",
-    "section": "Welcome to Survey Sampling",
-    "text": "Welcome to Survey Sampling\n\n\n\n\nWhat is Survey Sampling?\n\nEssential statistical method for collecting representative data.\nKey tool in business, health sciences, environmental studies, and more."
-  },
-  {
-    "objectID": "Day1.html#why-study-survey-sampling",
-    "href": "Day1.html#why-study-survey-sampling",
-    "title": "Day 1",
-    "section": "Why Study Survey Sampling?",
-    "text": "Why Study Survey Sampling?\n\n\n\n\nData-Driven Decision Making\n\nInformed decisions require accurate data.\nSampling helps gather this data efficiently and effectively."
-  },
-  {
-    "objectID": "Day1.html#basic-principles-of-survey-sampling",
-    "href": "Day1.html#basic-principles-of-survey-sampling",
-    "title": "Day 1",
-    "section": "Basic Principles of Survey Sampling",
-    "text": "Basic Principles of Survey Sampling\n\n\n\n\nRandom Sampling\n\nEach member of a population has an equal chance of selection.\nEnsures unbiased data representation.\n\nSystematic Approach\n\nMethodical selection process to avoid sampling bias."
-  },
-  {
-    "objectID": "Day1.html#introduction-to-survey-biases",
-    "href": "Day1.html#introduction-to-survey-biases",
-    "title": "Day 1",
-    "section": "Introduction to Survey Biases",
-    "text": "Introduction to Survey Biases\n\n\n\nDiscover how the phrasing of survey questions can influence the responses, potentially leading to biased outcomes.\n\nObjective: Understand the impact of wording in survey questions.\nFocus: Compare biased vs. neutral phrasing."
-  },
-  {
-    "objectID": "Day1.html#case-study-on-welfare-spending",
-    "href": "Day1.html#case-study-on-welfare-spending",
-    "title": "Day 1",
-    "section": "Case Study on Welfare Spending",
-    "text": "Case Study on Welfare Spending\n\n\n\nBiased Question: “Do you think the government spends too much money on welfare without adequate proof of its necessity?”\n\nThis question suggests unnecessary spending, leading to potentially biased negative responses.\n\nNeutral Question: “How should the government allocate funds for welfare?”\n\nRephrased to remove bias, showing a significant drop in negative responses (only 29% suggest reducing spending)."
-  },
-  {
-    "objectID": "Day1.html#health-care-for-the-elderly",
-    "href": "Day1.html#health-care-for-the-elderly",
-    "title": "Day 1",
-    "section": "Health Care for the Elderly",
-    "text": "Health Care for the Elderly\n\n\n\nOriginal Biased Question: “Do you agree that it is disgraceful for the government to ignore the health care needs of the elderly?”\n\nEmotive language (“disgraceful”) can manipulate responses.\n\nNeutral Reformulation: “How do you rate the government’s handling of health care needs for the elderly?”\n\nMore objective, allowing respondents to express true opinions without emotional influence."
-  },
-  {
-    "objectID": "Day1.html#the-importance-of-neutral-question-phrasing",
-    "href": "Day1.html#the-importance-of-neutral-question-phrasing",
-    "title": "Day 1",
-    "section": "The Importance of Neutral Question Phrasing",
-    "text": "The Importance of Neutral Question Phrasing\n\n\nHighlighting the critical need for neutrality in survey questions to obtain accurate and reliable data.\n\nKey Takeaway: Survey questions should be carefully crafted to avoid leading respondents.\nGoal: Achieve unbiased data that truly reflects public opinion."
-  },
-  {
-    "objectID": "Day1.html#group-activity-1",
-    "href": "Day1.html#group-activity-1",
-    "title": "Day 1",
-    "section": " Group Activity 1",
-    "text": "Group Activity 1\n\n\n\n\n\n\n\n\nLet’s do a small activity today about simple random sampling\nAnd answer a few survey questions about the class in general\n\n\n\n\n −+ 10:00"
-  },
-  {
-    "objectID": "Day35P.html#introduction-to-inverse-sampling",
-    "href": "Day35P.html#introduction-to-inverse-sampling",
-    "title": "Day 35",
-    "section": "Introduction to Inverse Sampling",
-    "text": "Introduction to Inverse Sampling\n\nInverse sampling is a statistical method used to estimate the total population size, \\(N\\), when the number of tagged and recaptured individuals is a key variable."
-  },
-  {
-    "objectID": "Day35P.html#inverse-sampling-method",
-    "href": "Day35P.html#inverse-sampling-method",
-    "title": "Day 35",
-    "section": "Inverse Sampling Method",
-    "text": "Inverse Sampling Method\n\n\nProcedure: Start with an initial tagged sample of size \\(t\\). Continue sampling until \\(s\\) tagged individuals are recaptured.\nEstimation Formula: \\[\n\\hat{N} = \\frac{n \\times t}{s}\n\\] Here, \\(n\\) is the number of individuals in the second sample, and \\(s\\) is fixed while \\(n\\) is random."
-  },
-  {
-    "objectID": "Day35P.html#estimator-and-variance",
-    "href": "Day35P.html#estimator-and-variance",
-    "title": "Day 35",
-    "section": "Estimator and Variance",
-    "text": "Estimator and Variance\n\n\nPopulation Size Estimator: \\[\n\\hat{N} = \\frac{n \\times t}{s}\n\\]\nVariance of Estimator: \\[\n\\hat{V}(\\hat{N}) = \\frac{t^2 \\times n \\times (n-s)}{s^2 \\times (s+1)}\n\\] This formula assumes \\(s &gt; 0\\) and provides an unbiased estimation of \\(N\\)."
-  },
-  {
-    "objectID": "Day35P.html#confidence-interval-calculation",
-    "href": "Day35P.html#confidence-interval-calculation",
-    "title": "Day 35",
-    "section": "Confidence Interval Calculation",
-    "text": "Confidence Interval Calculation\n\n\nCritical Value and Error Bound: \\[\n\\lambda = \\sqrt{\\frac{4}{9 \\alpha}}\n\\] \\[\nB = \\lambda \\cdot \\sqrt{\\hat{V}(\\hat{N})}\n\\]\nConfidence Interval: \\[\n\\hat{N} \\pm B\n\\] Provides a conservative estimate of the population size within a specific confidence level."
-  },
-  {
-    "objectID": "Day35P.html#example-1-wildlife-preserve-population-estimation",
-    "href": "Day35P.html#example-1-wildlife-preserve-population-estimation",
-    "title": "Day 35",
-    "section": "Example 1: Wildlife Preserve Population Estimation",
-    "text": "Example 1: Wildlife Preserve Population Estimation\n\nTo estimate the number of a specific bird species, a wildlife preserve captures and tags 150 birds. Later, exactly 35 tagged birds are recaptured after sampling a total of 100 birds."
-  },
-  {
-    "objectID": "Day35P.html#summary-and-comparison",
-    "href": "Day35P.html#summary-and-comparison",
-    "title": "Day 35",
-    "section": "Summary and Comparison",
-    "text": "Summary and Comparison\n\nInverse sampling, while similar to direct sampling, offers a more structured approach by fixing the number of tagged recaptures, potentially reducing bias in the estimate of \\(N\\)."
-  },
-  {
-    "objectID": "Day21.html#recap-introduction-to-ratio-estimation",
-    "href": "Day21.html#recap-introduction-to-ratio-estimation",
-    "title": "Day 21",
-    "section": "Recap: Introduction to Ratio Estimation",
-    "text": "Recap: Introduction to Ratio Estimation\n\n\nPopulation Ratio (\\(R\\)), Mean (\\(\\mu_y\\)), and Total (\\(\\tau_y\\)) are estimated using ratio estimation.\nImportant Note: While \\(\\mu_y\\) and \\(\\tau_y\\) estimates can assume a normal distribution for large samples due to the Central Limit Theorem, this is not true for \\(R\\)."
-  },
-  {
-    "objectID": "Day21.html#sample-size-for-estimating-mu_y-and-tau_y",
-    "href": "Day21.html#sample-size-for-estimating-mu_y-and-tau_y",
-    "title": "Day 21",
-    "section": "Sample Size for Estimating \\(\\mu_y\\) and \\(\\tau_y\\)",
-    "text": "Sample Size for Estimating \\(\\mu_y\\) and \\(\\tau_y\\)\n\n\nThe normal assumption facilitates determining the bound on error, \\(\\boldsymbol{B}\\), leading to the formula for required sample size.\n\nFormula to Determine Sample Size: \\[\nB = Z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\hat{V}}\n\\]\n\nWhere:\n\n\\(\\hat{V}\\) for \\(\\mu_y\\): \\(\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{\\sigma_r^2}{n}\\)\n\\(\\hat{V}\\) for \\(\\tau_y\\): \\(N^2 \\left(1-\\frac{n}{N}\\right) \\cdot \\frac{\\sigma_r^2}{n}\\)"
-  },
-  {
-    "objectID": "Day21.html#calculating-sample-size",
-    "href": "Day21.html#calculating-sample-size",
-    "title": "Day 21",
-    "section": "Calculating Sample Size",
-    "text": "Calculating Sample Size\n\n\nSolving for \\(n\\), we derive: \\[\nn = \\frac{N \\cdot \\sigma_r^2}{N \\cdot D^2 + \\sigma_r^2}\n\\]\nWhere \\(D\\) varies based on whether estimating \\(\\mu_y\\) or \\(\\tau_y\\):\n\nFor \\(\\mu_y\\): \\(D = \\frac{B}{Z}\\)\nFor \\(\\tau_y\\): \\(D = \\frac{B}{N\\cdot Z}\\)"
-  },
-  {
-    "objectID": "Day21.html#preliminary-studies",
-    "href": "Day21.html#preliminary-studies",
-    "title": "Day 21",
-    "section": "Preliminary Studies",
-    "text": "Preliminary Studies\n\n\nWhen \\(\\sigma_r\\) is unknown, conduct a preliminary study to estimate \\(\\sigma_r^2\\):\n\n\\[\ns_r^2 = \\frac{\\sum_{i=1}^{n^{\\prime}} \\left(y_i - r x_i\\right)^2}{n^{\\prime} - 1}\n\\]"
-  },
-  {
-    "objectID": "Day21.html#section",
-    "href": "Day21.html#section",
-    "title": "Day 21",
-    "section": "",
-    "text": "Example 1: An investigator wishes to estimate the average number of trees \\(\\mu_y\\) per acre on an \\(N=1000\\) acre plantation. She plans to sample \\(n\\) 1-acre plots and count the number of trees \\(y\\) on each plot. She also has aerial photographs of the plantation from which she can estimate the number of trees \\(x\\) on each plot for the entire plantation. Hence, she knows \\(\\mu_x\\) approximately. Therefore, to use a ratio estimator of \\(\\mu_y\\) seems appropriate. The investigator need to determine the sample size needed to estimate \\(\\mu_y\\) with a \\(95 \\%\\) bound on the error of estimation of \\(B=1.0\\). Since no prior information is available, she must conduct a preliminary study to estimate \\(\\sigma_r^2\\). A preliminary study of \\(n^{\\prime}=10\\) plots is conducted and the result is given as follows. Use the data to determine the size."
-  },
-  {
-    "objectID": "Day21.html#section-2",
-    "href": "Day21.html#section-2",
-    "title": "Day 21",
-    "section": "",
-    "text": "Example 2: An auditor wishes to compare the actual dollar value of an inventory of a hospital, \\(\\tau_y\\), with the recorded inventory, \\(\\tau_x\\). The recorded inventory \\(\\tau_x\\) can be summarized from computer-stored hospital records. The actual inventory \\(\\tau_y\\) could be determined by examining and counting all the hospital supplies, but this process would be very time-consuming and costly. Hence, the auditor plans to estimate \\(\\tau_y\\) from a sample of \\(n\\) different items randomly selected from the hospital’s supplies. Records in the computer list \\(N=2100\\) different item types and the number of each particular item in the hospital inventory. With these data, a total value for each item, \\(x\\), can be obtained by multiplying the total number of each recorded item by the unit value per item. The total dollar value of the inventory obtained from the computer, \\(\\tau_x\\), is found to be \\(\\$ 45,000\\). Determine the sample size (number of items) needed to estimate \\(\\tau_y\\) with a \\(95 \\%\\) bound on the error of estimation of magnitude \\(B=\\$ 500\\). A preliminary study with 15 different items were conducted to estimate \\(\\sigma_r^2\\), and the results are given in the following table."
-  },
-  {
-    "objectID": "Day2.html#statistical-practice",
-    "href": "Day2.html#statistical-practice",
-    "title": "Day 2",
-    "section": "Statistical Practice",
-    "text": "Statistical Practice\n\n\nAccessing Population Data: Often, it’s impractical or impossible to examine every individual in a population.\nWhy Sample?: We select a sample of size \\(n\\) because it allows us to estimate population characteristics like mean \\(\\mu\\) and standard deviation \\(\\sigma\\).\nPurpose of Sampling: Sampling helps infer the broader population’s characteristics from a representative set of data."
-  },
-  {
-    "objectID": "Day2.html#population-and-sample",
-    "href": "Day2.html#population-and-sample",
-    "title": "Day 2",
-    "section": "Population and Sample",
-    "text": "Population and Sample\n\n\n\n\nAn element is an object on which a measurement is taken.\nA population is a collection of elements about which we wish to make an inference.\nA sample unit are non overlapping collections of elements from the population that cover the entire population.\nA frame is a list of sampling units.\nA sample is a collection of sampling units drawn from a single frame or from multiple frames."
-  },
-  {
-    "objectID": "Day2.html#key-concept-statistic",
-    "href": "Day2.html#key-concept-statistic",
-    "title": "Day 2",
-    "section": "Key Concept: Statistic",
-    "text": "Key Concept: Statistic\n\n\n\nStatistic help us summarize information about groups.\nExample: In a poll of 500 likely voters:\n\n68% indicated that the economy is their top concern.\n\nThis 68% is a statistic—it describes the sample of voters."
-  },
-  {
-    "objectID": "Day2.html#definition-parameter",
-    "href": "Day2.html#definition-parameter",
-    "title": "Day 2",
-    "section": "Definition: Parameter",
-    "text": "Definition: Parameter\n\n\n\nA parameter is a number that describes a population.\nConsider this scenario: After an election, 53% of voters supported a new park funding proposition.\n\nThis 53% is a parameter—it describes the entire voting population’s preference."
-  },
-  {
-    "objectID": "Day2.html#key-sample-statistics",
-    "href": "Day2.html#key-sample-statistics",
-    "title": "Day 2",
-    "section": "Key Sample Statistics",
-    "text": "Key Sample Statistics\n\n\nSample Mean (\\(\\bar{y}\\)):\n\nCalculation: \\(\\bar{y} = \\frac{1}{n} \\sum_{i=1}^n y_i\\)\n\nSample Variance (\\(S^2\\)):\n\nCalculation: \\(S^2 = \\frac{1}{n-1} \\sum_{i=1}^n (y_i - \\bar{y})^2\\)\n\nSample Standard Deviation (\\(S\\)):\n\nCalculation: \\(S = \\sqrt{S^2}\\)"
-  },
-  {
-    "objectID": "Day2.html#understanding-random-variables-r.v.",
-    "href": "Day2.html#understanding-random-variables-r.v.",
-    "title": "Day 2",
-    "section": "Understanding Random Variables (R.V.)",
-    "text": "Understanding Random Variables (R.V.)\n\n\nRandom Sampling: The process of randomly selecting an element from a population to survey its characteristics.\nDefinition (Random Variables): A random variable is a numerical outcome of a probability experiment.\n\n\n\n\nRandom variables help us quantify the results of random sampling in numeric terms."
-  },
-  {
-    "objectID": "Day2.html#probability-distribution-of-a-r.v.",
-    "href": "Day2.html#probability-distribution-of-a-r.v.",
-    "title": "Day 2",
-    "section": "Probability Distribution of a R.V.",
-    "text": "Probability Distribution of a R.V.\n\n\nAccess to Population Data: If every element of the population is accessible, we can describe the chances of obtaining specific values of a random variable.\nDefinition (Probability Distribution): For a discrete random variable, the probability distribution specifies the probability for each possible value of the random variable.\n\n\n\n\nThe probability distribution is fundamental in understanding how values of a random variable are distributed across possible outcomes."
-  },
-  {
-    "objectID": "Day2.html#probability-distribution-number-of-children",
-    "href": "Day2.html#probability-distribution-number-of-children",
-    "title": "Day 2",
-    "section": "Probability Distribution: Number of Children",
-    "text": "Probability Distribution: Number of Children\n\\(Y=\\{\\text{Number of children per woman}\\}\\)"
-  },
-  {
-    "objectID": "Day2.html#probability-distribution-table",
-    "href": "Day2.html#probability-distribution-table",
-    "title": "Day 2",
-    "section": "Probability Distribution Table",
-    "text": "Probability Distribution Table\n\n\n\n\n\n\nNumber_of_Children\nProbability\n\n\n\n\n0\n0.273\n\n\n1\n0.160\n\n\n2\n0.244\n\n\n3\n0.154\n\n\n4\n0.082\n\n\n5\n0.039\n\n\n6\n0.020\n\n\n7\n0.011\n\n\n8\n0.017"
-  },
-  {
-    "objectID": "Day2.html#probability-rules-for-py",
-    "href": "Day2.html#probability-rules-for-py",
-    "title": "Day 2",
-    "section": "Probability Rules for \\(P(y)\\)",
-    "text": "Probability Rules for \\(P(y)\\)\n\n\n\nRule 1: Probability values are restricted between 0 and 1.\n\nNotation: \\(0 \\leqslant P(y) \\leqslant 1\\)\n\nRule 2: The sum of the probabilities for all possible outcomes equals 1.\n\nNotation: \\(\\sum_y P(y) = 1\\)"
-  },
-  {
-    "objectID": "Day2.html#quiz",
-    "href": "Day2.html#quiz",
-    "title": "Day 2",
-    "section": "Quiz",
-    "text": "Quiz\n\nWhat is the probability that a randomly selected woman has exactly two children?\n\n \n\nWhat is the probability that a randomly selected woman has fewer two children?"
-  },
-  {
-    "objectID": "Day2.html#population-expected-value",
-    "href": "Day2.html#population-expected-value",
-    "title": "Day 2",
-    "section": "Population Expected Value",
-    "text": "Population Expected Value\n\nThe expected value summarizes the center of a distribution.\n\nExpected Value:\n\nNotation: \\(E(y)=\\sum_y y \\cdot p(y)\\)\n\\(E(y)\\) represents the average or mean value of all measurements in the population.\n\nPopulation Mean (\\(\\mu\\)): Denoted by \\(\\mu\\), it is equivalent to \\(E(y)\\) and is a parameter describing the population."
-  },
-  {
-    "objectID": "Day2.html#variability-measures-variance-and-standard-deviation",
-    "href": "Day2.html#variability-measures-variance-and-standard-deviation",
-    "title": "Day 2",
-    "section": "Variability Measures: Variance and Standard Deviation",
-    "text": "Variability Measures: Variance and Standard Deviation\n\n\n\nVariance: Measures the spread of measurements around the mean (\\(\\mu\\)).\n\nFormula: \\(\\sigma^2=V(y)=E\\left[(y-\\mu)^2\\right]=\\sum_y(y-\\mu)^2 \\cdot p(y)\\)\n\nStandard Deviation (SD): The square root of the variance, reflecting the average deviation from the mean.\n\nFormula: \\(\\sigma =SD=\\sqrt{\\sigma^2}\\)"
-  },
-  {
-    "objectID": "Day2.html#calculate-sample-statistics",
-    "href": "Day2.html#calculate-sample-statistics",
-    "title": "Day 2",
-    "section": "Calculate Sample Statistics",
-    "text": "Calculate Sample Statistics\n\nQuestion: A simple random sample of size 10 from a population includes the following measurements:\n\n\\(2, 0, 1, 0, 3, 2, 2, 6, 0, 1\\)\n\nTask: Calculate the sample mean, variance, and standard deviation."
-  },
-  {
-    "objectID": "Day2.html#chebyshevs-inequality-explained",
-    "href": "Day2.html#chebyshevs-inequality-explained",
-    "title": "Day 2",
-    "section": "Chebyshev’s Inequality Explained",
-    "text": "Chebyshev’s Inequality Explained\n\n\nKey Concept: Chebyshev’s Inequality states that for any dataset, the proportion of data within \\(k\\) standard deviations from the mean is at least \\(1 - \\frac{1}{k^2}\\) for any \\(k &gt; 1\\).\nImplication: As \\(k\\) increases, a larger proportion of the data is expected to fall closer to the mean, providing insight into data spread and central tendency."
-  },
-  {
-    "objectID": "Day2.html#exercise",
-    "href": "Day2.html#exercise",
-    "title": "Day 2",
-    "section": "Exercise",
-    "text": "Exercise\n\n\n\nTask: Calculate the minimum proportion of data within \\(k\\) standard deviations of the mean for \\(k=2\\) and \\(k=3\\).\n\nFor \\(k=2\\): \\[\n\\text{Proportion} = 1 - \\frac{1}{k^2} = \\ldots\n\\]\nFor \\(k=3\\): \\[\n\\text{Proportion} = 1 - \\frac{1}{k^2} = \\ldots\n\\]"
-  },
-  {
-    "objectID": "Day2.html#understanding-chebyshevs-inequality",
-    "href": "Day2.html#understanding-chebyshevs-inequality",
-    "title": "Day 2",
-    "section": "Understanding Chebyshev’s Inequality",
-    "text": "Understanding Chebyshev’s Inequality\n\n\nChebyshev’s Inequality Formula: \\[\nP(|y-\\mu| \\leq k \\cdot \\sigma) \\geqslant 1-\\frac{1}{k^2}\n\\]\n\nInterpretation: This formula states that the probability of the random variable \\(y\\) falling within \\(k\\) standard deviations (\\(\\sigma\\)) of the mean (\\(\\mu\\)) is at least \\(1 - \\frac{1}{k^2}\\)."
+    "text": "Acquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
   },
   {
     "objectID": "Day28.html#comprehensive-guide-to-cluster-sampling",
@@ -2002,473 +1876,606 @@
     "text": "Solutions\n\n\nClick for answer\n\n\n\n\\(E(y)=\\sum y \\cdot P(y)=\\mu =2.32\\)\n\\(V(y)=\\sum(y-\\mu)^2 \\cdot P(y)=\\sigma^2=1.098\\)\n\n\\(\\operatorname{\\operatorname {SD}}(y)=\\sigma=\\sqrt{1.098} \\approx 1.048\\)\n\nA sample of \\(n=100\\) students is selected\n\n\\[\\begin{align*}\n\\begin{aligned}\nP(\\bar{y}&gt;2.425) & =P\\left(z&gt;\\frac{2.425-\\mu}{\\sigma / \\sqrt{n}}\\right) \\\\\n& =P\\left(z&gt;\\frac{2.425-2.32}{1.048 / \\sqrt{100}}\\right) \\\\\n& \\approx P(z&gt;1)=1-P(z&lt;1) \\\\\n& =1-0.8413=0.1587\n\\end{aligned}\n\\end{align*}\\]"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "Day34.html#direct-sampling",
+    "href": "Day34.html#direct-sampling",
+    "title": "Day 34",
+    "section": "Direct Sampling",
+    "text": "Direct Sampling\n\n\n\n\nInitial Capture\n\nCapture a random sample of the population.\nSample size = \\(t\\).\nTag each animal in the sample.\nRelease all tagged animals back into the population.\n\n\n\n\n\nSecond Capture\n\nAfter a time period, capture a second random sample.\nSample size = \\(n\\).\nCount the number of tagged animals in the second sample.\nNumber of tagged animals = \\(S\\)."
+  },
+  {
+    "objectID": "Day34.html#estimator-of-the-population-size-n",
+    "href": "Day34.html#estimator-of-the-population-size-n",
+    "title": "Day 34",
+    "section": "Estimator of the Population Size \\(N\\)",
+    "text": "Estimator of the Population Size \\(N\\)\n\nInvolves tagging and later recapturing animals to estimate total population. The formula used is:\n\\[\n\\hat{N} = \\frac{n t}{s}\n\\] - Where:\n\n\\(n\\) is the size of the second sample,\n\\(t\\) is the size of the first sample,\n\\(s\\) is the number of tagged animals found in the second sample."
+  },
+  {
+    "objectID": "Day34.html#estimated-variance-of-hatn",
+    "href": "Day34.html#estimated-variance-of-hatn",
+    "title": "Day 34",
+    "section": "Estimated Variance of \\(\\hat{N}\\)",
+    "text": "Estimated Variance of \\(\\hat{N}\\)\n\n\nThe estimated variance of \\(\\hat{N}\\) is given by:\n\n\\[\n\\hat{V}(\\hat{N})=\\frac{t^2 n(n-s)}{s^3}\n\\]\n\n\\((1-\\alpha)\\%\\) Conservative Critical Value using the \\(VP\\) Inequality:\n\n\\[\n\\lambda=\\sqrt{\\frac{4}{9 \\alpha}}\n\\]"
+  },
+  {
+    "objectID": "Day34.html#conservative-1-alpha-confidence-interval",
+    "href": "Day34.html#conservative-1-alpha-confidence-interval",
+    "title": "Day 34",
+    "section": "Conservative \\((1-\\alpha)\\%\\) Confidence Interval",
+    "text": "Conservative \\((1-\\alpha)\\%\\) Confidence Interval\n\n\nConservative \\((1-\\alpha)\\%\\) Bound on Error of Estimation:\n\n\\[\nB=\\lambda \\cdot \\sqrt{\\hat{V}(\\hat{N})}\n\\]\n\nConservative \\((1-\\alpha)\\%\\) Confidence Interval:\n\n\\[\n\\hat{N} \\pm B\n\\]"
+  },
+  {
+    "objectID": "Day34.html#section",
+    "href": "Day34.html#section",
+    "title": "Day 34",
     "section": "",
-    "text": "Welcome to Survey Design and Sampling, where we apply statistical principles to real-world survey challenges in fields like business, social sciences, health sciences, and environmental studies. This course emphasizes practical applications over theoretical foundations, preparing students to design, implement, and analyze surveys effectively. Through case studies and hands-on projects, students will tackle the peculiarities and inferential challenges of survey design across various domains.\nWe will explore data collection methods, address potential biases, and discuss ethical considerations in survey execution. The course aims to cultivate both technical skills and critical thinking about how survey methodologies influence research outcomes and professional decisions. By understanding these dynamics, students will be equipped to conduct impactful research with consideration for cultural and ethical contexts.\n\n\n\n\nAcquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
+    "text": "Example 1: Before posting a schedule for the upcoming hunting season, the game commission for a particular county wishes to estimate the size of the deer population. A random sample of 300 deer is captured \\((t=300)\\). The deer are tagged and released. A second sample of 200 is taken two weeks later (\\(\\mathrm{n}=200\\)). If 62 tagged deer are recaptured in the second sample \\((s=62)\\), estimate \\(N\\) using direct sampling without Chapman, with \\(95 \\%\\) conservative bound and confidence interval."
   },
   {
-    "objectID": "about.html#learning-objectives",
-    "href": "about.html#learning-objectives",
-    "title": "About",
+    "objectID": "Day34.html#issue-of-bias-in-hatn",
+    "href": "Day34.html#issue-of-bias-in-hatn",
+    "title": "Day 34",
+    "section": "Issue of Bias in \\(\\hat{N}\\)",
+    "text": "Issue of Bias in \\(\\hat{N}\\)\n\n\nAlthough \\(\\hat{N}\\) is a very natural estimator, it is biased. The expected value of \\(\\hat{N}\\) is given by:\n\n\\[\\begin{align*}\nE(\\hat{N}) = N + \\frac{N(N-t)}{nt} \\neq N\n\\end{align*}\\]\n\nWhen both \\(n\\) and \\(t\\) are large, the term \\(\\frac{N(N-t)}{nt}\\) becomes small enough to be negligible. This reduces the bias of \\(\\hat{N}\\).\nHowever, in many practical situations, it is challenging to obtain large enough samples to ignore this bias effectively. Therefore, caution is needed when interpreting the estimates from smaller samples."
+  },
+  {
+    "objectID": "Day34.html#chapmans-estimator-for-population-size",
+    "href": "Day34.html#chapmans-estimator-for-population-size",
+    "title": "Day 34",
+    "section": "Chapman’s Estimator for Population Size",
+    "text": "Chapman’s Estimator for Population Size\n\n\n\nChapman’s Estimator (\\(\\hat{N}_C\\))\n\nLess biased estimator using direct sampling: \\[\n\\hat{N}_C = \\frac{(t+1)(n+1)}{s+1} - 1\n\\]\nVariables:\n\n\\(t\\): size of the initial sample,\n\\(n\\): size of the second sample,\n\\(s\\): tagged animals found in second sample.\n\n\n\n\nVariance and Confidence Intervals\n\nEstimated Variance: \\[\n\\hat{V}(\\hat{N}_C) = \\frac{(t+1)(n+1)(t-s)(n-s)}{(s+1)^2(s+2)}\n\\]\nConfidence Interval: \\[\n\\hat{N}_C \\pm B_c\n\\] Where \\(B_c = \\lambda \\cdot \\sqrt{\\hat{V}(\\hat{N}_C)}\\), \\[\n\\lambda = \\sqrt{\\frac{4}{9 \\alpha}}\n\\]"
+  },
+  {
+    "objectID": "Day34.html#section-2",
+    "href": "Day34.html#section-2",
+    "title": "Day 34",
     "section": "",
-    "text": "Acquire and apply fundamental survey design principles to create effective and cost-efficient surveys.\nImplement various sampling techniques using R, and analyze their effectiveness in real-world scenarios.\nPlan, execute, and report on survey projects, demonstrating proficiency in each step of the survey process.\nCritically assess survey methodologies and results, identifying potential biases and errors in survey research.\nCommunicate statistical findings clearly and effectively, both in written reports and presentations, using appropriate statistical terminology.\nDevelop ethical research practices, ensuring data integrity and participant confidentiality in survey projects."
+    "text": "Example 2: Redo Example 1 using the Chapman’s estimator."
   },
   {
-    "objectID": "Day37P.html#estimation-of-population-density-and-size-using-inverse-sampling",
-    "href": "Day37P.html#estimation-of-population-density-and-size-using-inverse-sampling",
-    "title": "Day 37",
-    "section": "Estimation of Population Density and Size Using Inverse Sampling",
-    "text": "Estimation of Population Density and Size Using Inverse Sampling\n\nInverse sampling differs from direct sampling as it continues until a fixed number of tagged animals is recaptured. This method provides an unbiased estimator for population size \\(N\\), using the fixed count of recaptured tagged animals to estimate the proportion of tagged animals in the population."
+    "objectID": "Day2.html#statistical-practice",
+    "href": "Day2.html#statistical-practice",
+    "title": "Day 2",
+    "section": "Statistical Practice",
+    "text": "Statistical Practice\n\n\nAccessing Population Data: Often, it’s impractical or impossible to examine every individual in a population.\nWhy Sample?: We select a sample of size \\(n\\) because it allows us to estimate population characteristics like mean \\(\\mu\\) and standard deviation \\(\\sigma\\).\nPurpose of Sampling: Sampling helps infer the broader population’s characteristics from a representative set of data."
   },
   {
-    "objectID": "Day37P.html#mathematical-formulation-of-inverse-sampling",
-    "href": "Day37P.html#mathematical-formulation-of-inverse-sampling",
-    "title": "Day 37",
-    "section": "Mathematical Formulation of Inverse Sampling",
-    "text": "Mathematical Formulation of Inverse Sampling\n\n\nProportion of tagged individuals: \\[\n\\hat{p} = \\frac{s}{n}\n\\] where \\(s\\) is fixed and \\(n\\) is the number of total individuals captured during sampling.\nEstimator of \\(N\\): \\[\n\\hat{N} = \\frac{n \\cdot t}{s}\n\\] where \\(t\\) is the number of animals tagged in the initial sample."
+    "objectID": "Day2.html#population-and-sample",
+    "href": "Day2.html#population-and-sample",
+    "title": "Day 2",
+    "section": "Population and Sample",
+    "text": "Population and Sample\n\n\n\n\nAn element is an object on which a measurement is taken.\nA population is a collection of elements about which we wish to make an inference.\nA sample unit are non overlapping collections of elements from the population that cover the entire population.\nA frame is a list of sampling units.\nA sample is a collection of sampling units drawn from a single frame or from multiple frames."
   },
   {
-    "objectID": "Day37P.html#variance-and-error-estimation",
-    "href": "Day37P.html#variance-and-error-estimation",
-    "title": "Day 37",
-    "section": "Variance and Error Estimation",
-    "text": "Variance and Error Estimation\n\n\nVariance of \\(\\hat{N}\\): \\[\n\\hat{V}(\\hat{N}) = \\frac{t^2 \\cdot n \\cdot (n-s)}{s^2 \\cdot (s+1)}\n\\] reflects the sample’s randomness and the fixed nature of \\(s\\).\nError Bound: Using \\(V-P\\) inequality for conservative error bounds in estimation."
+    "objectID": "Day2.html#key-concept-statistic",
+    "href": "Day2.html#key-concept-statistic",
+    "title": "Day 2",
+    "section": "Key Concept: Statistic",
+    "text": "Key Concept: Statistic\n\n\n\nStatistic help us summarize information about groups.\nExample: In a poll of 500 likely voters:\n\n68% indicated that the economy is their top concern.\n\nThis 68% is a statistic—it describes the sample of voters."
   },
   {
-    "objectID": "Day37P.html#example-wildlife-preserve-bird-population",
-    "href": "Day37P.html#example-wildlife-preserve-bird-population",
-    "title": "Day 37",
-    "section": "Example: Wildlife Preserve Bird Population",
-    "text": "Example: Wildlife Preserve Bird Population\n\nAuthorities want to estimate the number of birds in a preserve. Initially, \\(t=150\\) birds are tagged and released. Later, sampling continues until \\(35\\) tagged birds are recaptured among \\(100\\) total birds. Estimating \\(N\\) involves using the derived formulas to handle randomness and provide reliable population estimates."
+    "objectID": "Day2.html#definition-parameter",
+    "href": "Day2.html#definition-parameter",
+    "title": "Day 2",
+    "section": "Definition: Parameter",
+    "text": "Definition: Parameter\n\n\n\nA parameter is a number that describes a population.\nConsider this scenario: After an election, 53% of voters supported a new park funding proposition.\n\nThis 53% is a parameter—it describes the entire voting population’s preference."
   },
   {
-    "objectID": "Day37P.html#estimating-population-density-from-stocked-quadrats",
-    "href": "Day37P.html#estimating-population-density-from-stocked-quadrats",
-    "title": "Day 37",
-    "section": "Estimating Population Density from Stocked Quadrats",
-    "text": "Estimating Population Density from Stocked Quadrats\n\nStocked quadrat sampling involves checking the presence or absence of a species, simplifying the data collection process but requiring careful handling of statistical estimates due to the binary nature of data (presence vs. absence)."
+    "objectID": "Day2.html#key-sample-statistics",
+    "href": "Day2.html#key-sample-statistics",
+    "title": "Day 2",
+    "section": "Key Sample Statistics",
+    "text": "Key Sample Statistics\n\n\nSample Mean (\\(\\bar{y}\\)):\n\nCalculation: \\(\\bar{y} = \\frac{1}{n} \\sum_{i=1}^n y_i\\)\n\nSample Variance (\\(S^2\\)):\n\nCalculation: \\(S^2 = \\frac{1}{n-1} \\sum_{i=1}^n (y_i - \\bar{y})^2\\)\n\nSample Standard Deviation (\\(S\\)):\n\nCalculation: \\(S = \\sqrt{S^2}\\)"
   },
   {
-    "objectID": "Day37P.html#formulating-the-stocked-quadrat-density-estimation",
-    "href": "Day37P.html#formulating-the-stocked-quadrat-density-estimation",
-    "title": "Day 37",
-    "section": "Formulating the Stocked Quadrat Density Estimation",
-    "text": "Formulating the Stocked Quadrat Density Estimation\n\n\nProbability of presence in a quadrat: \\[\nP(\\text{unstocked}) = e^{-\\lambda a}\n\\] where \\(\\lambda\\) is the density per unit area and \\(a\\) is the area of each quadrat.\nEstimator for \\(\\lambda\\): \\[\n\\hat{\\lambda} = -\\frac{1}{a} \\ln\\left(\\frac{y}{m}\\right)\n\\] derived from the proportion of unstocked quadrats in the sample."
+    "objectID": "Day2.html#understanding-random-variables-r.v.",
+    "href": "Day2.html#understanding-random-variables-r.v.",
+    "title": "Day 2",
+    "section": "Understanding Random Variables (R.V.)",
+    "text": "Understanding Random Variables (R.V.)\n\n\nRandom Sampling: The process of randomly selecting an element from a population to survey its characteristics.\nDefinition (Random Variables): A random variable is a numerical outcome of a probability experiment.\n\n\n\n\nRandom variables help us quantify the results of random sampling in numeric terms."
   },
   {
-    "objectID": "Day37P.html#variance-and-confidence-interval",
-    "href": "Day37P.html#variance-and-confidence-interval",
-    "title": "Day 37",
-    "section": "Variance and Confidence Interval",
-    "text": "Variance and Confidence Interval\n\n\nVariance of \\(\\hat{\\lambda}\\): \\[\n\\hat{V}(\\hat{\\lambda}) = \\frac{1}{m a^2} (e^{\\hat{\\lambda} a} - 1)\n\\]\nConfidence Interval: Ensuring accuracy with \\(1-\\alpha\\)% bounds based on the variance."
+    "objectID": "Day2.html#probability-distribution-of-a-r.v.",
+    "href": "Day2.html#probability-distribution-of-a-r.v.",
+    "title": "Day 2",
+    "section": "Probability Distribution of a R.V.",
+    "text": "Probability Distribution of a R.V.\n\n\nAccess to Population Data: If every element of the population is accessible, we can describe the chances of obtaining specific values of a random variable.\nDefinition (Probability Distribution): For a discrete random variable, the probability distribution specifies the probability for each possible value of the random variable.\n\n\n\n\nThe probability distribution is fundamental in understanding how values of a random variable are distributed across possible outcomes."
   },
   {
-    "objectID": "Day37P.html#practical-example-plantation-infected-trees-estimation",
-    "href": "Day37P.html#practical-example-plantation-infected-trees-estimation",
-    "title": "Day 37",
-    "section": "Practical Example: Plantation Infected Trees Estimation",
-    "text": "Practical Example: Plantation Infected Trees Estimation\n\nIn a 200-acre plantation, the presence of fusiform rust in trees is sampled over 20 quadrats of 0.5 acre each. The density and total number of infected trees are estimated, incorporating bounds on the estimation error."
+    "objectID": "Day2.html#probability-distribution-number-of-children",
+    "href": "Day2.html#probability-distribution-number-of-children",
+    "title": "Day 2",
+    "section": "Probability Distribution: Number of Children",
+    "text": "Probability Distribution: Number of Children\n\\(Y=\\{\\text{Number of children per woman}\\}\\)"
   },
   {
-    "objectID": "Day19.html#recall-introduction-to-ratio-estimators",
-    "href": "Day19.html#recall-introduction-to-ratio-estimators",
-    "title": "Day 19",
-    "section": "Recall: Introduction to Ratio Estimators",
-    "text": "Recall: Introduction to Ratio Estimators\n\nRatio estimators are utilized for their efficiency in estimating population parameters where relationships are proportional. For instance, they can effectively estimate the total sugar content in oranges based on their weight, providing a quick method compared to direct measurements.\nThe estimator for the population ratio \\(R\\) is given by: \\[\nr = \\frac{\\bar{y}}{\\bar{x}} = \\frac{\\sum_{i=1}^n y_i}{\\sum_{i=1}^n x_i}\n\\] where \\(\\bar{y}\\) and \\(\\bar{x}\\) are the sample means of sugar content (\\(y_i\\)) and weight (\\(x_i\\)) of oranges respectively."
+    "objectID": "Day2.html#probability-distribution-table",
+    "href": "Day2.html#probability-distribution-table",
+    "title": "Day 2",
+    "section": "Probability Distribution Table",
+    "text": "Probability Distribution Table\n\n\n\n\n\n\nNumber_of_Children\nProbability\n\n\n\n\n0\n0.273\n\n\n1\n0.160\n\n\n2\n0.244\n\n\n3\n0.154\n\n\n4\n0.082\n\n\n5\n0.039\n\n\n6\n0.020\n\n\n7\n0.011\n\n\n8\n0.017"
   },
   {
-    "objectID": "Day19.html#variance-of-ratio-estimator",
-    "href": "Day19.html#variance-of-ratio-estimator",
-    "title": "Day 19",
-    "section": "Variance of Ratio Estimator",
-    "text": "Variance of Ratio Estimator\n\nUnderstanding the variability of our ratio estimator is crucial for assessing the reliability of our sugar content estimations based on orange weights. The estimated variance of \\(r\\), when \\(\\mu_x\\) (mean weight per unit in the population) is known: \\[\n\\hat{V}(r) = \\left(1-\\frac{n}{N}\\right) \\cdot \\left(\\frac{1}{\\mu_x^2}\\right) \\cdot \\frac{s_r^2}{n}\n\\] where \\(s_r^2 = \\frac{\\sum_{i=1}^n (y_i - r x_i)^2}{n-1}\\)."
+    "objectID": "Day2.html#probability-rules-for-py",
+    "href": "Day2.html#probability-rules-for-py",
+    "title": "Day 2",
+    "section": "Probability Rules for \\(P(y)\\)",
+    "text": "Probability Rules for \\(P(y)\\)\n\n\n\nRule 1: Probability values are restricted between 0 and 1.\n\nNotation: \\(0 \\leqslant P(y) \\leqslant 1\\)\n\nRule 2: The sum of the probabilities for all possible outcomes equals 1.\n\nNotation: \\(\\sum_y P(y) = 1\\)"
   },
   {
-    "objectID": "Day19.html#ratio-estimator-of-population-total-tau_y",
-    "href": "Day19.html#ratio-estimator-of-population-total-tau_y",
-    "title": "Day 19",
-    "section": "Ratio Estimator of Population Total \\(\\tau_y\\)",
-    "text": "Ratio Estimator of Population Total \\(\\tau_y\\)\n\nEstimating the total sugar content efficiently allows businesses to manage their inventory more effectively. \\[\n\\hat{\\tau}_y = r \\cdot \\tau_x\n\\] \\(\\tau_x = N \\mu_x\\) represents the total weight of the orange shipment."
+    "objectID": "Day2.html#quiz",
+    "href": "Day2.html#quiz",
+    "title": "Day 2",
+    "section": "Quiz",
+    "text": "Quiz\n\nWhat is the probability that a randomly selected woman has exactly two children?\n\n \n\nWhat is the probability that a randomly selected woman has fewer two children?"
   },
   {
-    "objectID": "Day19.html#variance-of-hattau_y",
-    "href": "Day19.html#variance-of-hattau_y",
-    "title": "Day 19",
-    "section": "Variance of \\(\\hat{\\tau}_y\\)",
-    "text": "Variance of \\(\\hat{\\tau}_y\\)\n\nQuantifying the uncertainty in our total sugar content estimate helps in making informed decisions: \\[\n\\hat{V}(\\hat{\\tau}_y) = \\left(N \\mu_x\\right)^2 \\cdot \\hat{V}(r) = N^2 \\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s_r^2}{n}\n\\]"
+    "objectID": "Day2.html#population-expected-value",
+    "href": "Day2.html#population-expected-value",
+    "title": "Day 2",
+    "section": "Population Expected Value",
+    "text": "Population Expected Value\n\nThe expected value summarizes the center of a distribution.\n\nExpected Value:\n\nNotation: \\(E(y)=\\sum_y y \\cdot p(y)\\)\n\\(E(y)\\) represents the average or mean value of all measurements in the population.\n\nPopulation Mean (\\(\\mu\\)): Denoted by \\(\\mu\\), it is equivalent to \\(E(y)\\) and is a parameter describing the population."
   },
   {
-    "objectID": "Day19.html#ratio-estimator-of-population-mean-mu_y",
-    "href": "Day19.html#ratio-estimator-of-population-mean-mu_y",
-    "title": "Day 19",
-    "section": "Ratio Estimator of Population Mean \\(\\mu_y\\)",
-    "text": "Ratio Estimator of Population Mean \\(\\mu_y\\)\n\nRatio estimators also aid in predicting the average sugar content per orange, which is vital for quality control. \\[\n\\hat{\\mu}_y = r \\cdot \\mu_x\n\\]"
+    "objectID": "Day2.html#variability-measures-variance-and-standard-deviation",
+    "href": "Day2.html#variability-measures-variance-and-standard-deviation",
+    "title": "Day 2",
+    "section": "Variability Measures: Variance and Standard Deviation",
+    "text": "Variability Measures: Variance and Standard Deviation\n\n\n\nVariance: Measures the spread of measurements around the mean (\\(\\mu\\)).\n\nFormula: \\(\\sigma^2=V(y)=E\\left[(y-\\mu)^2\\right]=\\sum_y(y-\\mu)^2 \\cdot p(y)\\)\n\nStandard Deviation (SD): The square root of the variance, reflecting the average deviation from the mean.\n\nFormula: \\(\\sigma =SD=\\sqrt{\\sigma^2}\\)"
   },
   {
-    "objectID": "Day19.html#variance-and-confidence-interval",
-    "href": "Day19.html#variance-and-confidence-interval",
-    "title": "Day 19",
-    "section": "Variance and Confidence Interval",
-    "text": "Variance and Confidence Interval\n\nProviding confidence intervals around our estimates assures stakeholders of the precision of our sugar content assessments: \\[\n\\hat{V}(\\hat{\\mu}_y) = \\mu_x^2 \\cdot \\hat{V}(r) = \\left(1-\\frac{n}{N}\\right) \\cdot \\frac{s_r^2}{n}\n\\] \\[\n\\hat{\\mu}_y \\pm t_{1-\\frac{\\alpha}{2}, n-1} \\cdot \\sqrt{\\hat{V}(\\hat{\\mu}_y)}\n\\]"
+    "objectID": "Day2.html#calculate-sample-statistics",
+    "href": "Day2.html#calculate-sample-statistics",
+    "title": "Day 2",
+    "section": "Calculate Sample Statistics",
+    "text": "Calculate Sample Statistics\n\nQuestion: A simple random sample of size 10 from a population includes the following measurements:\n\n\\(2, 0, 1, 0, 3, 2, 2, 6, 0, 1\\)\n\nTask: Calculate the sample mean, variance, and standard deviation."
   },
   {
-    "objectID": "Day19.html#section",
-    "href": "Day19.html#section",
-    "title": "Day 19",
+    "objectID": "Day2.html#chebyshevs-inequality-explained",
+    "href": "Day2.html#chebyshevs-inequality-explained",
+    "title": "Day 2",
+    "section": "Chebyshev’s Inequality Explained",
+    "text": "Chebyshev’s Inequality Explained\n\n\nKey Concept: Chebyshev’s Inequality states that for any dataset, the proportion of data within \\(k\\) standard deviations from the mean is at least \\(1 - \\frac{1}{k^2}\\) for any \\(k &gt; 1\\).\nImplication: As \\(k\\) increases, a larger proportion of the data is expected to fall closer to the mean, providing insight into data spread and central tendency."
+  },
+  {
+    "objectID": "Day2.html#exercise",
+    "href": "Day2.html#exercise",
+    "title": "Day 2",
+    "section": "Exercise",
+    "text": "Exercise\n\n\n\nTask: Calculate the minimum proportion of data within \\(k\\) standard deviations of the mean for \\(k=2\\) and \\(k=3\\).\n\nFor \\(k=2\\): \\[\n\\text{Proportion} = 1 - \\frac{1}{k^2} = \\ldots\n\\]\nFor \\(k=3\\): \\[\n\\text{Proportion} = 1 - \\frac{1}{k^2} = \\ldots\n\\]"
+  },
+  {
+    "objectID": "Day2.html#understanding-chebyshevs-inequality",
+    "href": "Day2.html#understanding-chebyshevs-inequality",
+    "title": "Day 2",
+    "section": "Understanding Chebyshev’s Inequality",
+    "text": "Understanding Chebyshev’s Inequality\n\n\nChebyshev’s Inequality Formula: \\[\nP(|y-\\mu| \\leq k \\cdot \\sigma) \\geqslant 1-\\frac{1}{k^2}\n\\]\n\nInterpretation: This formula states that the probability of the random variable \\(y\\) falling within \\(k\\) standard deviations (\\(\\sigma\\)) of the mean (\\(\\mu\\)) is at least \\(1 - \\frac{1}{k^2}\\)."
+  },
+  {
+    "objectID": "Day21.html#recap-introduction-to-ratio-estimation",
+    "href": "Day21.html#recap-introduction-to-ratio-estimation",
+    "title": "Day 21",
+    "section": "Recap: Introduction to Ratio Estimation",
+    "text": "Recap: Introduction to Ratio Estimation\n\n\nPopulation Ratio (\\(R\\)), Mean (\\(\\mu_y\\)), and Total (\\(\\tau_y\\)) are estimated using ratio estimation.\nImportant Note: While \\(\\mu_y\\) and \\(\\tau_y\\) estimates can assume a normal distribution for large samples due to the Central Limit Theorem, this is not true for \\(R\\)."
+  },
+  {
+    "objectID": "Day21.html#sample-size-for-estimating-mu_y-and-tau_y",
+    "href": "Day21.html#sample-size-for-estimating-mu_y-and-tau_y",
+    "title": "Day 21",
+    "section": "Sample Size for Estimating \\(\\mu_y\\) and \\(\\tau_y\\)",
+    "text": "Sample Size for Estimating \\(\\mu_y\\) and \\(\\tau_y\\)\n\n\nThe normal assumption facilitates determining the bound on error, \\(\\boldsymbol{B}\\), leading to the formula for required sample size.\n\nFormula to Determine Sample Size: \\[\nB = Z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\hat{V}}\n\\]\n\nWhere:\n\n\\(\\hat{V}\\) for \\(\\mu_y\\): \\(\\left(1-\\frac{n}{N}\\right) \\cdot \\frac{\\sigma_r^2}{n}\\)\n\\(\\hat{V}\\) for \\(\\tau_y\\): \\(N^2 \\left(1-\\frac{n}{N}\\right) \\cdot \\frac{\\sigma_r^2}{n}\\)"
+  },
+  {
+    "objectID": "Day21.html#calculating-sample-size",
+    "href": "Day21.html#calculating-sample-size",
+    "title": "Day 21",
+    "section": "Calculating Sample Size",
+    "text": "Calculating Sample Size\n\n\nSolving for \\(n\\), we derive: \\[\nn = \\frac{N \\cdot \\sigma_r^2}{N \\cdot D^2 + \\sigma_r^2}\n\\]\nWhere \\(D\\) varies based on whether estimating \\(\\mu_y\\) or \\(\\tau_y\\):\n\nFor \\(\\mu_y\\): \\(D = \\frac{B}{Z}\\)\nFor \\(\\tau_y\\): \\(D = \\frac{B}{N\\cdot Z}\\)"
+  },
+  {
+    "objectID": "Day21.html#preliminary-studies",
+    "href": "Day21.html#preliminary-studies",
+    "title": "Day 21",
+    "section": "Preliminary Studies",
+    "text": "Preliminary Studies\n\n\nWhen \\(\\sigma_r\\) is unknown, conduct a preliminary study to estimate \\(\\sigma_r^2\\):\n\n\\[\ns_r^2 = \\frac{\\sum_{i=1}^{n^{\\prime}} \\left(y_i - r x_i\\right)^2}{n^{\\prime} - 1}\n\\]"
+  },
+  {
+    "objectID": "Day21.html#section",
+    "href": "Day21.html#section",
+    "title": "Day 21",
     "section": "",
-    "text": "Example 1: (Textbook Ex 6.1) A forester is interested in estimating the total volume of trees in a timber sale. He records the volume for each tree in a simple random sample. In addition, he measures the basal area for each tree marked for sale. He then uses a ratio estimator of total volume. The forester decides to take a simple random sample of \\(n=12\\) from the \\(N=250\\) trees marked for sale. Let \\(x\\) denote basal area and \\(y\\) the cubic-foot volume for a tree. The total basal area for all 250 trees, \\(\\tau_x\\), is 75 square feet. Use the data in the accompanying table to estimate \\(\\tau_y\\), the total cubic-foot volume for those trees marked for sale, and place a bound on the error of estimation."
+    "text": "Example 1: An investigator wishes to estimate the average number of trees \\(\\mu_y\\) per acre on an \\(N=1000\\) acre plantation. She plans to sample \\(n\\) 1-acre plots and count the number of trees \\(y\\) on each plot. She also has aerial photographs of the plantation from which she can estimate the number of trees \\(x\\) on each plot for the entire plantation. Hence, she knows \\(\\mu_x\\) approximately. Therefore, to use a ratio estimator of \\(\\mu_y\\) seems appropriate. The investigator need to determine the sample size needed to estimate \\(\\mu_y\\) with a \\(95 \\%\\) bound on the error of estimation of \\(B=1.0\\). Since no prior information is available, she must conduct a preliminary study to estimate \\(\\sigma_r^2\\). A preliminary study of \\(n^{\\prime}=10\\) plots is conducted and the result is given as follows. Use the data to determine the size."
   },
   {
-    "objectID": "Day19.html#section-1",
-    "href": "Day19.html#section-1",
-    "title": "Day 19",
+    "objectID": "Day21.html#section-2",
+    "href": "Day21.html#section-2",
+    "title": "Day 21",
     "section": "",
-    "text": "Scatter-plotR-code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(ggplot2)\n\ndata &lt;- data.frame(\n  id = 1:12,\n  x = c(0.3, 0.5, 0.4, 0.9, 0.7, 0.2, 0.6, 0.5, 0.8, 0.4, 0.8, 0.6),\n  y = c(6, 9, 7, 19, 15, 5, 12, 9, 20, 9, 18, 13)\n)\n\nggplot(data, aes(x = x, y = y)) +\n  geom_point() + \n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Scatterplot of Volume vs. Basal Area\",\n       x = \"Basal Area\", y = \"Volume\")"
+    "text": "Example 2: An auditor wishes to compare the actual dollar value of an inventory of a hospital, \\(\\tau_y\\), with the recorded inventory, \\(\\tau_x\\). The recorded inventory \\(\\tau_x\\) can be summarized from computer-stored hospital records. The actual inventory \\(\\tau_y\\) could be determined by examining and counting all the hospital supplies, but this process would be very time-consuming and costly. Hence, the auditor plans to estimate \\(\\tau_y\\) from a sample of \\(n\\) different items randomly selected from the hospital’s supplies. Records in the computer list \\(N=2100\\) different item types and the number of each particular item in the hospital inventory. With these data, a total value for each item, \\(x\\), can be obtained by multiplying the total number of each recorded item by the unit value per item. The total dollar value of the inventory obtained from the computer, \\(\\tau_x\\), is found to be \\(\\$ 45,000\\). Determine the sample size (number of items) needed to estimate \\(\\tau_y\\) with a \\(95 \\%\\) bound on the error of estimation of magnitude \\(B=\\$ 500\\). A preliminary study with 15 different items were conducted to estimate \\(\\sigma_r^2\\), and the results are given in the following table."
   },
   {
-    "objectID": "Day19.html#section-3",
-    "href": "Day19.html#section-3",
-    "title": "Day 19",
+    "objectID": "Day35P.html#introduction-to-inverse-sampling",
+    "href": "Day35P.html#introduction-to-inverse-sampling",
+    "title": "Day 35",
+    "section": "Introduction to Inverse Sampling",
+    "text": "Introduction to Inverse Sampling\n\nInverse sampling is a statistical method used to estimate the total population size, \\(N\\), when the number of tagged and recaptured individuals is a key variable."
+  },
+  {
+    "objectID": "Day35P.html#inverse-sampling-method",
+    "href": "Day35P.html#inverse-sampling-method",
+    "title": "Day 35",
+    "section": "Inverse Sampling Method",
+    "text": "Inverse Sampling Method\n\n\nProcedure: Start with an initial tagged sample of size \\(t\\). Continue sampling until \\(s\\) tagged individuals are recaptured.\nEstimation Formula: \\[\n\\hat{N} = \\frac{n \\times t}{s}\n\\] Here, \\(n\\) is the number of individuals in the second sample, and \\(s\\) is fixed while \\(n\\) is random."
+  },
+  {
+    "objectID": "Day35P.html#estimator-and-variance",
+    "href": "Day35P.html#estimator-and-variance",
+    "title": "Day 35",
+    "section": "Estimator and Variance",
+    "text": "Estimator and Variance\n\n\nPopulation Size Estimator: \\[\n\\hat{N} = \\frac{n \\times t}{s}\n\\]\nVariance of Estimator: \\[\n\\hat{V}(\\hat{N}) = \\frac{t^2 \\times n \\times (n-s)}{s^2 \\times (s+1)}\n\\] This formula assumes \\(s &gt; 0\\) and provides an unbiased estimation of \\(N\\)."
+  },
+  {
+    "objectID": "Day35P.html#confidence-interval-calculation",
+    "href": "Day35P.html#confidence-interval-calculation",
+    "title": "Day 35",
+    "section": "Confidence Interval Calculation",
+    "text": "Confidence Interval Calculation\n\n\nCritical Value and Error Bound: \\[\n\\lambda = \\sqrt{\\frac{4}{9 \\alpha}}\n\\] \\[\nB = \\lambda \\cdot \\sqrt{\\hat{V}(\\hat{N})}\n\\]\nConfidence Interval: \\[\n\\hat{N} \\pm B\n\\] Provides a conservative estimate of the population size within a specific confidence level."
+  },
+  {
+    "objectID": "Day35P.html#example-1-wildlife-preserve-population-estimation",
+    "href": "Day35P.html#example-1-wildlife-preserve-population-estimation",
+    "title": "Day 35",
+    "section": "Example 1: Wildlife Preserve Population Estimation",
+    "text": "Example 1: Wildlife Preserve Population Estimation\n\nTo estimate the number of a specific bird species, a wildlife preserve captures and tags 150 birds. Later, exactly 35 tagged birds are recaptured after sampling a total of 100 birds."
+  },
+  {
+    "objectID": "Day35P.html#summary-and-comparison",
+    "href": "Day35P.html#summary-and-comparison",
+    "title": "Day 35",
+    "section": "Summary and Comparison",
+    "text": "Summary and Comparison\n\nInverse sampling, while similar to direct sampling, offers a more structured approach by fixing the number of tagged recaptures, potentially reducing bias in the estimate of \\(N\\)."
+  },
+  {
+    "objectID": "Day1.html#something-about-me",
+    "href": "Day1.html#something-about-me",
+    "title": "Day 1",
+    "section": "Something about me",
+    "text": "Something about me\n\n\n\n\n\nFirst year at Salisbury\nOriginally from Nepal\nResearch in Statistical Computation and Applied Statistics\nAvid learner and traveler\n\n\n\n\n\n\n\n\n\nMy website"
+  },
+  {
+    "objectID": "Day1.html#active-participation",
+    "href": "Day1.html#active-participation",
+    "title": "Day 1",
+    "section": "Active Participation",
+    "text": "Active Participation\n\n\n\nEngage Actively\n\nTake lecture notes\nFollow class handouts\n\nAsk Questions\n\nEvery question is valuable; we’re learning together\n\nGain Conceptual Understanding\n\nTo be able to apply the knowledge; understanding the concepts is key"
+  },
+  {
+    "objectID": "Day1.html#tell-me-something-about-yourself",
+    "href": "Day1.html#tell-me-something-about-yourself",
+    "title": "Day 1",
+    "section": "Tell me something about yourself!",
+    "text": "Tell me something about yourself!\n\n\n\n\n\nYour name?\nGender Pronouns?\nFavorite Summer Memory?\n\n\n\n\n\n\n\nvia GIPHY"
+  },
+  {
+    "objectID": "Day1.html#class-pipelines",
+    "href": "Day1.html#class-pipelines",
+    "title": "Day 1",
+    "section": "Class Pipelines",
+    "text": "Class Pipelines\n\n\n\nMost of the course information and schedule will be posted in MyClasses\nHomework will be posted but not collected\nLabs most Tuesdays; lab reports due in a week from the lab date\nQuizzes every Friday; includes HW, lectures, labs"
+  },
+  {
+    "objectID": "Day1.html#what-will-a-typical-dayweek-look-like",
+    "href": "Day1.html#what-will-a-typical-dayweek-look-like",
+    "title": "Day 1",
+    "section": "What will a typical day/week look like?",
+    "text": "What will a typical day/week look like?\n\n\n\nBefore class:\n\nRead assigned topics from textbook\nWork on homework/lab reports, come with questions\n\nDuring class:\n\nMini lectures\nClass activities"
+  },
+  {
+    "objectID": "Day1.html#welcome-to-survey-sampling",
+    "href": "Day1.html#welcome-to-survey-sampling",
+    "title": "Day 1",
+    "section": "Welcome to Survey Sampling",
+    "text": "Welcome to Survey Sampling\n\n\n\n\nWhat is Survey Sampling?\n\nEssential statistical method for collecting representative data.\nKey tool in business, health sciences, environmental studies, and more."
+  },
+  {
+    "objectID": "Day1.html#why-study-survey-sampling",
+    "href": "Day1.html#why-study-survey-sampling",
+    "title": "Day 1",
+    "section": "Why Study Survey Sampling?",
+    "text": "Why Study Survey Sampling?\n\n\n\n\nData-Driven Decision Making\n\nInformed decisions require accurate data.\nSampling helps gather this data efficiently and effectively."
+  },
+  {
+    "objectID": "Day1.html#basic-principles-of-survey-sampling",
+    "href": "Day1.html#basic-principles-of-survey-sampling",
+    "title": "Day 1",
+    "section": "Basic Principles of Survey Sampling",
+    "text": "Basic Principles of Survey Sampling\n\n\n\n\nRandom Sampling\n\nEach member of a population has an equal chance of selection.\nEnsures unbiased data representation.\n\nSystematic Approach\n\nMethodical selection process to avoid sampling bias."
+  },
+  {
+    "objectID": "Day1.html#introduction-to-survey-biases",
+    "href": "Day1.html#introduction-to-survey-biases",
+    "title": "Day 1",
+    "section": "Introduction to Survey Biases",
+    "text": "Introduction to Survey Biases\n\n\n\nDiscover how the phrasing of survey questions can influence the responses, potentially leading to biased outcomes.\n\nObjective: Understand the impact of wording in survey questions.\nFocus: Compare biased vs. neutral phrasing."
+  },
+  {
+    "objectID": "Day1.html#case-study-on-welfare-spending",
+    "href": "Day1.html#case-study-on-welfare-spending",
+    "title": "Day 1",
+    "section": "Case Study on Welfare Spending",
+    "text": "Case Study on Welfare Spending\n\n\n\nBiased Question: “Do you think the government spends too much money on welfare without adequate proof of its necessity?”\n\nThis question suggests unnecessary spending, leading to potentially biased negative responses.\n\nNeutral Question: “How should the government allocate funds for welfare?”\n\nRephrased to remove bias, showing a significant drop in negative responses (only 29% suggest reducing spending)."
+  },
+  {
+    "objectID": "Day1.html#health-care-for-the-elderly",
+    "href": "Day1.html#health-care-for-the-elderly",
+    "title": "Day 1",
+    "section": "Health Care for the Elderly",
+    "text": "Health Care for the Elderly\n\n\n\nOriginal Biased Question: “Do you agree that it is disgraceful for the government to ignore the health care needs of the elderly?”\n\nEmotive language (“disgraceful”) can manipulate responses.\n\nNeutral Reformulation: “How do you rate the government’s handling of health care needs for the elderly?”\n\nMore objective, allowing respondents to express true opinions without emotional influence."
+  },
+  {
+    "objectID": "Day1.html#the-importance-of-neutral-question-phrasing",
+    "href": "Day1.html#the-importance-of-neutral-question-phrasing",
+    "title": "Day 1",
+    "section": "The Importance of Neutral Question Phrasing",
+    "text": "The Importance of Neutral Question Phrasing\n\n\nHighlighting the critical need for neutrality in survey questions to obtain accurate and reliable data.\n\nKey Takeaway: Survey questions should be carefully crafted to avoid leading respondents.\nGoal: Achieve unbiased data that truly reflects public opinion."
+  },
+  {
+    "objectID": "Day1.html#group-activity-1",
+    "href": "Day1.html#group-activity-1",
+    "title": "Day 1",
+    "section": " Group Activity 1",
+    "text": "Group Activity 1\n\n\n\n\n\n\n\n\nLet’s do a small activity today about simple random sampling\nAnd answer a few survey questions about the class in general\n\n\n\n\n −+ 10:00"
+  },
+  {
+    "objectID": "Day10.html#introduction-to-comparing-estimators",
+    "href": "Day10.html#introduction-to-comparing-estimators",
+    "title": "Day 10",
+    "section": "Introduction to Comparing Estimators",
+    "text": "Introduction to Comparing Estimators\n\n\n\nOverview: Comparing estimates like means or proportions helps us understand differences between groups or changes over time.\nApplications: From socio-economic studies to political analyses, comparing estimators is pivotal in interpreting data."
+  },
+  {
+    "objectID": "Day10.html#comparing-means-of-two-populations",
+    "href": "Day10.html#comparing-means-of-two-populations",
+    "title": "Day 10",
+    "section": "Comparing Means of Two Populations",
+    "text": "Comparing Means of Two Populations\n\n\n\nContext: Compare the mean incomes of two ethnic groups using samples from each group.\nCalculation: \\(\\bar{X}\\) and \\(\\bar{Y}\\) represent the sample means, where comparisons are made by analyzing the difference \\(\\mu_y - \\mu_x\\)."
+  },
+  {
+    "objectID": "Day10.html#statistical-methodology",
+    "href": "Day10.html#statistical-methodology",
+    "title": "Day 10",
+    "section": "Statistical Methodology",
+    "text": "Statistical Methodology\n\n\n\nFormula: The difference in sample means is used as an estimator for the difference in population means.\nVariance Consideration: Compute sample variances \\(s_X^2\\) and \\(s_Y^2\\) to assess variability within each sample."
+  },
+  {
+    "objectID": "Day10.html#example-political-preference-analysis",
+    "href": "Day10.html#example-political-preference-analysis",
+    "title": "Day 10",
+    "section": "Example: Political Preference Analysis",
+    "text": "Example: Political Preference Analysis\n\n\n\nScenario: Evaluate whether Republicans are gaining on Democrats by comparing the proportions of voters in two different polls.\nComparison Metric: Look at the difference between the proportions voting for each party."
+  },
+  {
+    "objectID": "Day10.html#understanding-differences",
+    "href": "Day10.html#understanding-differences",
+    "title": "Day 10",
+    "section": "Understanding Differences",
+    "text": "Understanding Differences\n\n\n\nInsights: These comparisons help identify significant trends or disparities, guiding strategic decisions and policy formulations.\nPractical Application: Enables researchers and analysts to make informed conclusions based on empirical data."
+  },
+  {
+    "objectID": "Day10.html#estimation-of-difference-between-means",
+    "href": "Day10.html#estimation-of-difference-between-means",
+    "title": "Day 10",
+    "section": "Estimation of Difference Between Means",
+    "text": "Estimation of Difference Between Means\n\n\n\nEstimator of Difference:\n\n\\(\\hat{\\Delta} = \\bar{y} - \\bar{x}\\), where \\(\\hat{\\Delta}\\) estimates \\(\\mu_y - \\mu_x\\).\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{\\Delta}) = \\frac{s_y^2}{n_1} + \\frac{s_x^2}{n_2}\\), assuming samples are independent.\n\nError Bound on Estimation (\\(1-\\alpha\\) confidence level):\n\n\\(B = t_{1-\\frac{\\alpha}{2}, df} \\cdot \\sqrt{\\hat{V}(\\hat{\\Delta})}\\)\nDegrees of freedom (df): \\(df = \\frac{\\left(\\frac{s_y^2}{n_1} + \\frac{s_x^2}{n_2}\\right)^2}{\\frac{(s_y^2/n_1)^2}{n_1-1} + \\frac{(s_x^2/n_2)^2}{n_2-1}}\\)"
+  },
+  {
+    "objectID": "Day10.html#section",
+    "href": "Day10.html#section",
+    "title": "Day 10",
     "section": "",
-    "text": "Example 2: (Textbook Ex 6.4) A corporation is interested in estimating the total earnings from sales of color television sets at the end of a three-month period. The total earnings figures are available for all districts within the corporation for the corresponding three-month period of the previous year. A simple random sample of 13 district offices is selected from the 123 offices within the corporation. Using a ratio estimator, estimate \\(\\tau_y\\) and place a bound on the error of estimation. Use the data in the accompanying table and take \\(\\tau_x=128,200\\)"
+    "text": "Example 1: A drug company has developed a new drug that is designed to reduce high blood pressure. To test the drug, a sample of 15 patients is recruited to take drug. Their systolic blood pressures are reduced by an average of 28.3 millimeters, with a standard deviation of 12.0 millimeters. In addition, another sample of 20 patients takes a standard drug. The blood pressures in this group are reduced by an average of 17.1 millimeters with a standard deviation of 9.0 millimeters. Assume that blood pressure reductions are approximately normally distributed, answer the following questions.\n\n\nEstimate the difference between the population mean reduction for the new drug and that of the standard drug.\n\n \n\nCompute the \\(95 \\%\\) bounds on the error of estimation."
   },
   {
-    "objectID": "Day19.html#section-5",
-    "href": "Day19.html#section-5",
-    "title": "Day 19",
+    "objectID": "Day10.html#section-1",
+    "href": "Day10.html#section-1",
+    "title": "Day 10",
     "section": "",
-    "text": "Example 3: (Textbook Ex 6.6) An investigator has a colony of \\(N=763\\) rats that have been subjected to a standard drug. The average length of time to thread a maze correctly under the influence of the standard drug was found to be \\(\\mu_x=17.2\\) seconds. The investigator now would like to subject a random sample of 11 rats to a new drug. Estimate the average time required to thread the maze while under the influence of the new drug. (The data are shown in the accompanying table.) Place a bound on the error of estimation."
+    "text": "Compute the \\(95 \\%\\) confidence interval for the estimation.\n\n\n\n\n\nBased on the result of c , can you draw a conclusion that there is a significant difference in mean"
   },
   {
-    "objectID": "Day14.html#introduction-to-stratified-sampling",
-    "href": "Day14.html#introduction-to-stratified-sampling",
-    "title": "Day 14",
-    "section": "Introduction to Stratified Sampling",
-    "text": "Introduction to Stratified Sampling\n\n\n\nOverview: In stratified sampling, the population is divided into homogeneous subgroups, and samples are taken from each.\nKey Concept: Unlike simple random sampling with one total sample size \\(n\\), stratified sampling requires determining \\(L+1\\) sample sizes: \\(n\\), the total sample size, and \\(n_1, n_2, \\ldots, n_L\\), the sample size for each stratum."
+    "objectID": "Day10.html#estimation-of-p_1-p_2-for-independent-samples",
+    "href": "Day10.html#estimation-of-p_1-p_2-for-independent-samples",
+    "title": "Day 10",
+    "section": "Estimation of \\(p_1-p_2\\) for Independent Samples",
+    "text": "Estimation of \\(p_1-p_2\\) for Independent Samples\n\n\n\nEstimator for Difference Between Two Proportions:\n\n\\(\\hat{p}_1-\\hat{p}_2\\), estimates the difference between proportions from two independent samples.\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{p}_1-\\hat{p}_2) = \\frac{\\hat{p}_1(1-\\hat{p}_1)}{n_1} + \\frac{\\hat{p}_2(1-\\hat{p}_2)}{n_2}\\)\nEnsures the variance captures the sampling variability of each proportion.\n\nBound on the Error of Estimation:\n\n\\(B = Z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\hat{V}(\\hat{p}_1-\\hat{p}_2)}\\)\nThis bound helps gauge the confidence interval for the difference between the two proportions, facilitating decision making."
   },
   {
-    "objectID": "Day14.html#objective-of-sample-allocation",
-    "href": "Day14.html#objective-of-sample-allocation",
-    "title": "Day 14",
-    "section": "Objective of Sample Allocation",
-    "text": "Objective of Sample Allocation\n\n\nObjective: Minimize the variance of the estimator at the lowest possible cost.\nFactors Influencing Allocation:\n\nNumber of elements in each stratum, \\(N_i\\).\nVariability within each stratum, \\(\\sigma_i\\).\nCost of sampling from each stratum, \\(c_i\\)."
+    "objectID": "Day10.html#estimation-of-p_1-p_2-for-dependent-samples",
+    "href": "Day10.html#estimation-of-p_1-p_2-for-dependent-samples",
+    "title": "Day 10",
+    "section": "Estimation of \\(p_1-p_2\\) for Dependent Samples",
+    "text": "Estimation of \\(p_1-p_2\\) for Dependent Samples\n\n\n\nEstimator for Difference Between Two Proportions:\n\n\\(\\hat{p}_1-\\hat{p}_2\\), which estimates the difference between two correlated proportions.\n\nEstimated Variance of the Difference:\n\n\\(\\hat{V}(\\hat{p}_1-\\hat{p}_2) = \\frac{\\hat{p}_1(1-\\hat{p}_1)}{n} + \\frac{\\hat{p}_2(1-\\hat{p}_2)}{n} + 2 \\frac{\\hat{p}_1 \\hat{p}_2}{n}\\)\nThis variance calculation includes a term for the covariance between \\(\\hat{p}_1\\) and \\(\\hat{p}_2\\), reflecting their dependence.\n\nBound on the Error of Estimation:\n\n\\(B = Z_{1-\\frac{\\alpha}{2}} \\cdot \\sqrt{\\hat{V}(\\hat{p}_1-\\hat{p}_2)}\\)\nThis bound provides a measure of uncertainty around the estimated difference, aiding in robust decision making under uncertainty."
   },
   {
-    "objectID": "Day14.html#allocation-formulas",
-    "href": "Day14.html#allocation-formulas",
-    "title": "Day 14",
-    "section": "Allocation Formulas",
-    "text": "Allocation Formulas\n\n\nNeyman Allocation (Equal Costs): \\[\nw_i=\\frac{N_i \\sigma_i}{\\sum_{j=1}^L N_j \\sigma_j}\n\\]\nProportional Allocation (Equal Costs and Variability): \\[\nw_i=\\frac{N_i}{N}\n\\]\nGeneral Allocation (Varying Costs and Variability): \\[\nw_i=\\frac{\\frac{N_i \\sigma_i}{\\sqrt{c_i}}}{\\sum_{k=1}^L \\frac{N_k \\sigma_k}{\\sqrt{c_k}}}\n\\]"
+    "objectID": "Day10.html#section-2",
+    "href": "Day10.html#section-2",
+    "title": "Day 10",
+    "section": "",
+    "text": "Example 2: The notion of banning smoking from the workplace has been around for a long time.A Time/Yankelovich poll of 800 adult Americans carried out on April 6, 1994 (see Time, April 18, 1994) asked:\n\n Should smoking be banned from workplaces, should there be special smoking areas, or should there be no restrictions?\n\n The results are given in the following table:\n\n\n\n\n\nNonsmokers\nSmokers\n\n\n\n\nBanned\n\\(44 \\%\\)\n\\(8 \\%\\)\n\n\nSpecial areas\n\\(52 \\%\\)\n\\(80 \\%\\)\n\n\nNo restrictions\n\\(3 \\%\\)\n\\(11 \\%\\)"
   },
   {
-    "objectID": "Day14.html#sample-size-determination",
-    "href": "Day14.html#sample-size-determination",
-    "title": "Day 14",
+    "objectID": "Day10.html#section-3",
+    "href": "Day10.html#section-3",
+    "title": "Day 10",
+    "section": "",
+    "text": "Based on a sample of approximately 600 non-smokers and 200 smokers, estimate\n\nthe true difference between the proportions choosing “banned”\n\n\n\n\n\nthe true difference between the proportions of nonsmokers choosing “banned” and “special areas”."
+  },
+  {
+    "objectID": "LabReportGuidelines.html",
+    "href": "LabReportGuidelines.html",
+    "title": "Guidelines for Projects",
+    "section": "",
+    "text": "Begin your project report by articulating the project’s purpose as you perceive it, followed by a concise introduction. This introductory section sets the stage for the subsequent analysis, ensuring the reader grasps the aim of the lab without prior exposure to the questions.\n\n\n\n\n\nCompose the project report in a narrative style, integrating textual explanations with R outputs such as graphs or tables seamlessly within the text. Avoid beginning the report with a table or graph. Instead, weave these elements naturally into your discussion.\n\n\n\nIf the lab contains multiple components, employ transitional sentences to fluidly connect these sections. This approach helps maintain a logical and coherent flow throughout the document.\n\n\n\nDo not replicate the project questions directly within the report. Instead, address these through descriptive writing, ensuring you cover all aspects posed by the questions through your narrative.\n\n\n\n\nYour report should adhere to the highest standards of academic writing, which include:\n\nClarity and Precision: Ensure that the language is clear and precise.\nAccuracy: Verify that all information and descriptions are correct.\nCompleteness: Address all components of the assignment comprehensively.\nConciseness: Be brief yet thorough in your descriptions and explanations.\nTechnical Language: Appropriately use technical terms relevant to the subject matter.\nSimplicity in Structure: Aim for straightforward sentence construction, avoiding overly complex or lengthy sentences.\nPersonal Pronouns: Minimize the use of personal pronouns such as ‘I’ and ‘you’.\n\n\n\n\nConsider the style employed in academic textbooks and attempt to emulate this formal style in your report. This practice will enhance both your written communication and your preparation for exams.\n\n\nReflect on the importance of communication skills in professional settings, where both written and oral communication often play critical roles in career development and workplace efficiency.\n\n\n\n\n\nReport Components:\n\nInclude your name and project title.\nStart with an introduction that outlines the data sample, data size, and the objectives of the data analysis. Mention each data set used if applicable.\nClearly display and label R graphs and printouts within the report.\nProvide clear and correct calculations.\nFocus on comprehensive explanations. Assume the reader is unfamiliar with the lab and R.\nInclude all relevant handwritten calculations, R code, and other computational scripts in the Appendix. Ensure that everything provided is properly commented and reproducible.\n\n\n\n\nPlease ensure you upload your completed project report as a PDF file to MyClasses, as specified by your instructor.\n\n\n\n\nReports will be evaluated based on the following criteria:\n\nIntroduction and Data Description (20 points)\nResults Presentation (20 points)\nCalculation Accuracy (10 point)\nDepth of Analysis (40 points): This is crucial, as it demonstrates your ability to interpret and communicate the significance of your findings.\n\nRemember, while mathematical accuracy is essential, the effectiveness of your communication holds substantial weight."
+  },
+  {
+    "objectID": "LabReportGuidelines.html#objective",
+    "href": "LabReportGuidelines.html#objective",
+    "title": "Guidelines for Projects",
+    "section": "",
+    "text": "Begin your project report by articulating the project’s purpose as you perceive it, followed by a concise introduction. This introductory section sets the stage for the subsequent analysis, ensuring the reader grasps the aim of the lab without prior exposure to the questions."
+  },
+  {
+    "objectID": "LabReportGuidelines.html#structure-and-style",
+    "href": "LabReportGuidelines.html#structure-and-style",
+    "title": "Guidelines for Projects",
+    "section": "",
+    "text": "Compose the project report in a narrative style, integrating textual explanations with R outputs such as graphs or tables seamlessly within the text. Avoid beginning the report with a table or graph. Instead, weave these elements naturally into your discussion.\n\n\n\nIf the lab contains multiple components, employ transitional sentences to fluidly connect these sections. This approach helps maintain a logical and coherent flow throughout the document.\n\n\n\nDo not replicate the project questions directly within the report. Instead, address these through descriptive writing, ensuring you cover all aspects posed by the questions through your narrative."
+  },
+  {
+    "objectID": "LabReportGuidelines.html#writing-standards",
+    "href": "LabReportGuidelines.html#writing-standards",
+    "title": "Guidelines for Projects",
+    "section": "",
+    "text": "Your report should adhere to the highest standards of academic writing, which include:\n\nClarity and Precision: Ensure that the language is clear and precise.\nAccuracy: Verify that all information and descriptions are correct.\nCompleteness: Address all components of the assignment comprehensively.\nConciseness: Be brief yet thorough in your descriptions and explanations.\nTechnical Language: Appropriately use technical terms relevant to the subject matter.\nSimplicity in Structure: Aim for straightforward sentence construction, avoiding overly complex or lengthy sentences.\nPersonal Pronouns: Minimize the use of personal pronouns such as ‘I’ and ‘you’."
+  },
+  {
+    "objectID": "LabReportGuidelines.html#practical-application",
+    "href": "LabReportGuidelines.html#practical-application",
+    "title": "Guidelines for Projects",
+    "section": "",
+    "text": "Consider the style employed in academic textbooks and attempt to emulate this formal style in your report. This practice will enhance both your written communication and your preparation for exams.\n\n\nReflect on the importance of communication skills in professional settings, where both written and oral communication often play critical roles in career development and workplace efficiency."
+  },
+  {
+    "objectID": "LabReportGuidelines.html#submission-guidelines",
+    "href": "LabReportGuidelines.html#submission-guidelines",
+    "title": "Guidelines for Projects",
+    "section": "",
+    "text": "Report Components:\n\nInclude your name and project title.\nStart with an introduction that outlines the data sample, data size, and the objectives of the data analysis. Mention each data set used if applicable.\nClearly display and label R graphs and printouts within the report.\nProvide clear and correct calculations.\nFocus on comprehensive explanations. Assume the reader is unfamiliar with the lab and R.\nInclude all relevant handwritten calculations, R code, and other computational scripts in the Appendix. Ensure that everything provided is properly commented and reproducible.\n\n\n\n\nPlease ensure you upload your completed project report as a PDF file to MyClasses, as specified by your instructor."
+  },
+  {
+    "objectID": "LabReportGuidelines.html#evaluation-criteria",
+    "href": "LabReportGuidelines.html#evaluation-criteria",
+    "title": "Guidelines for Projects",
+    "section": "",
+    "text": "Reports will be evaluated based on the following criteria:\n\nIntroduction and Data Description (20 points)\nResults Presentation (20 points)\nCalculation Accuracy (10 point)\nDepth of Analysis (40 points): This is crucial, as it demonstrates your ability to interpret and communicate the significance of your findings.\n\nRemember, while mathematical accuracy is essential, the effectiveness of your communication holds substantial weight."
+  },
+  {
+    "objectID": "Day30.html#confidence-interval-for-ratio-estimator",
+    "href": "Day30.html#confidence-interval-for-ratio-estimator",
+    "title": "Day 30",
+    "section": "Confidence Interval for Ratio Estimator",
+    "text": "Confidence Interval for Ratio Estimator\n\nEven when dealing with large samples, the ratio estimator does not adhere to a normal distribution, making it inappropriate to use the \\(t\\) distribution for confidence interval calculations. Instead, we use the Vysochanskij-Petunin Inequality for a more conservative estimation:\nInequality Application\n\\[\nP\\left[\\left|x-\\mu_x\\right| \\leqslant \\lambda \\sigma_x\\right] \\geqslant 1-\\left(\\frac{4}{9 \\lambda^2}\\right)\n\\] This approach provides at least \\(1-\\frac{4}{9 \\lambda^2}\\) confidence that the true \\(\\mu_x\\) lies within \\((x-\\lambda \\sigma_x, x+\\lambda \\sigma_x)\\).\nSetting \\(\\alpha = \\frac{4}{9 \\lambda^2}\\), we derive: \\[\n\\lambda = \\sqrt{\\frac{4}{9 \\alpha}}\n\\]"
+  },
+  {
+    "objectID": "Day30.html#estimation-of-variance-for-ratio-estimators",
+    "href": "Day30.html#estimation-of-variance-for-ratio-estimators",
+    "title": "Day 30",
+    "section": "Estimation of Variance for Ratio Estimators",
+    "text": "Estimation of Variance for Ratio Estimators\n\nWhen calculating the variance of a ratio estimator, especially under conditions where the population size \\(N\\) is known, we adapt our variance estimation formula as follows:\nVariance of \\(\\hat{\\tau}\\)\n\\[\n\\hat{V}(\\hat{\\tau}) = N^2 \\cdot \\hat{V}(\\bar{y})\n\\] Here, \\(\\bar{y}\\) is the estimated mean from the sampled data, and \\(\\hat{V}(\\bar{y})\\) is the variance of this mean estimated from the cluster sample. This form of variance calculation assumes that \\(N\\) is a fixed quantity and known ahead of time."
+  },
+  {
+    "objectID": "Day30.html#selecting-the-sample-size-for-estimating-population-means-and-totals",
+    "href": "Day30.html#selecting-the-sample-size-for-estimating-population-means-and-totals",
+    "title": "Day 30",
+    "section": "Selecting the Sample Size for Estimating Population Means and Totals",
+    "text": "Selecting the Sample Size for Estimating Population Means and Totals\n\nThe effectiveness of a cluster sample in gathering information is influenced by the number of sampled clusters \\(m\\) and the relative sizes of these clusters. This methodology is particularly valuable for estimating properties like the number of homes with inadequate fire insurance, using groupings such as counties or communities.\nFormula for Estimated Variance of \\(\\bar{y}\\)\n\\[\n\\hat{V}(\\bar{y}) = \\left(1 - \\frac{m}{M}\\right) \\frac{s_{\\mathrm{r}}^2}{m \\bar{n}^2}\n\\] Here, \\(s_{\\mathrm{r}}^2\\) is used to estimate the population variance \\(\\sigma_{\\mathrm{r}}^2\\) from the sample.\nApproximation of Actual Variance\n\\[\nV(\\bar{y}) = \\left(1 - \\frac{m}{M}\\right) \\frac{\\sigma_{\\mathrm{r}}^2}{m \\bar{n}^2}\n\\]"
+  },
+  {
+    "objectID": "Day30.html#sample-size-determination",
+    "href": "Day30.html#sample-size-determination",
+    "title": "Day 30",
     "section": "Sample Size Determination",
-    "text": "Sample Size Determination\n\n\nEstimation of Mean/Average or Total: \\[\nn=\\frac{\\sum_{i=1}^L N_i^2 \\frac{\\sigma_i^2}{w_i}}{N^2 D^2 + \\sum_{i=1}^L N_i \\sigma_i^2}\n\\]\nWhere:\n\n\\(D=\\frac{B}{Z_{1-\\frac{\\alpha}{2}}}\\) for estimating means.\n\\(D=\\frac{B}{N \\cdot Z_{1-\\frac{\\alpha}{2}}}\\) for estimating totals."
+    "text": "Sample Size Determination\n\nChoosing the number of clusters \\(m\\) is crucial to minimize the error of estimation. The goal is to select clusters that have as little variation among them as possible. To determine the number of clusters necessary for a specified error bound \\(B\\), we use:\nError Bound Formula\n\\[\n2 \\sqrt{V(\\bar{y})} = B\n\\] This equality helps in setting the correct number of clusters to achieve the desired accuracy.\nSample Size for Estimating \\(\\mu\\) with a Bound \\(B\\)\n\\[\nm = \\frac{M \\sigma_{\\mathrm{r}}^2}{M D + \\sigma_{\\mathrm{r}}^2}\n\\] where \\(D = \\left(\\frac{B^2 \\bar{n}^2}{4}\\right)\\), and \\(\\sigma_{\\mathrm{r}}^2\\) is estimated from a preliminary sample."
   },
   {
-    "objectID": "Day14.html#practical-considerations",
-    "href": "Day14.html#practical-considerations",
-    "title": "Day 14",
-    "section": "Practical Considerations",
-    "text": "Practical Considerations\n\n\nDecision Points:\n\nDetermining total sample size \\(n\\) based on budget and desired precision.\nChoosing an allocation strategy based on known stratum characteristics and costs.\n\nCommon Errors: Misestimating \\(N_i\\), \\(\\sigma_i\\), or \\(c_i\\) can lead to inefficient allocations.\nSummary: Effective sample size selection in stratified sampling crucially depends on accurate stratum characterization and cost considerations.\nFurther Steps: Implementation of chosen sampling strategy and subsequent data collection."
+    "objectID": "Day30.html#alternate-estimator-of-population-total-tau-with-unknown-n",
+    "href": "Day30.html#alternate-estimator-of-population-total-tau-with-unknown-n",
+    "title": "Day 30",
+    "section": "Alternate Estimator of Population Total \\(\\tau\\) with Unknown \\(N\\)",
+    "text": "Alternate Estimator of Population Total \\(\\tau\\) with Unknown \\(N\\)\n\nWhen the total number of clusters in the population \\(M\\) is unknown, we must modify our estimation approaches:\nAlternative Estimator \\(\\bar{y}_{\\mathrm{t}}\\)\n\\[\n\\bar{\\tau} = \\frac{1}{m} \\sum_{i=1}^{m} \\tau_i\n\\] This estimator represents the average of the cluster totals from the sampled clusters and is used when only a portion of the total clusters are surveyed.\nVariance for Unknown \\(M\\)\n\\[\n\\hat{V}(M \\bar{\\tau}) = M^2 \\hat{V}(\\bar{\\tau})\n\\] where \\(\\hat{V}(\\bar{\\tau})\\) is computed as: \\[\n\\hat{V}(\\bar{\\tau}) = \\left(1 - \\frac{m}{M}\\right) \\frac{s_{\\mathrm{t}}^2}{m}\n\\]"
   },
   {
-    "objectID": "Day14.html#section",
-    "href": "Day14.html#section",
-    "title": "Day 14",
+    "objectID": "Day30.html#sample-size-determination-for-estimating-tau-with-unknown-n",
+    "href": "Day30.html#sample-size-determination-for-estimating-tau-with-unknown-n",
+    "title": "Day 30",
+    "section": "Sample Size Determination for Estimating \\(\\tau\\) with Unknown \\(N\\)",
+    "text": "Sample Size Determination for Estimating \\(\\tau\\) with Unknown \\(N\\)\n\nWhen the total number of clusters \\(M\\) is unknown, an alternative estimation approach is necessary. We adjust the formula to incorporate estimations of \\(M\\) and use proxy measures:\nAlternative Formula Derivation\n\\[\nM^2 \\cdot \\left(1-\\frac{m}{M}\\right) \\cdot \\frac{S_t^2}{m} = \\left(\\frac{B}{\\lambda}\\right)^2\n\\] From this, the sample size \\(m\\) is calculated as: \\[\nm = \\frac{M S_t^2}{\\left(\\frac{B}{\\lambda M}\\right)^2 \\cdot M + S_t^2}\n\\] This formula calculates the number of clusters to sample to ensure the variance of the estimate does not exceed the specified error bound represented by \\(B\\)."
+  },
+  {
+    "objectID": "Day30.html#sample-size-determination-for-estimating-tau-with-known-n",
+    "href": "Day30.html#sample-size-determination-for-estimating-tau-with-known-n",
+    "title": "Day 30",
+    "section": "Sample Size Determination for Estimating \\(\\tau\\) with Known \\(N\\)",
+    "text": "Sample Size Determination for Estimating \\(\\tau\\) with Known \\(N\\)\n\nWhen the population size \\(N\\) is known, the formula for determining the number of clusters \\(m\\) needed to estimate the population total \\(\\tau\\) with a desired precision is derived from the variance of the estimator:\nFormula Derivation\n\\[\nN^2 \\cdot \\left(1-\\frac{m}{M}\\right) \\cdot \\frac{S_r^2}{m \\bar{n}^{2}} = \\left(\\frac{B}{\\lambda}\\right)^2\n\\] Simplifying, we have:\n\\[\n\\left(1-\\frac{m}{M}\\right) \\frac{S_r^2}{m \\bar{n}^2} = \\left(\\frac{B}{\\lambda N}\\right)^2\n\\]\nWhich gives us:\n\\[\nm = \\frac{M S_r^2}{\\left(\\frac{B}{\\lambda N}\\right)^2 M \\bar{n}^2 + S_r^2}\n\\] These equations ensure that the error in estimating \\(\\tau\\) does not exceed the bound \\(B\\)."
+  },
+  {
+    "objectID": "Day30.html#section",
+    "href": "Day30.html#section",
+    "title": "Day 30",
     "section": "",
-    "text": "Example 1: The advertising firm in Example 1 of Day 13 finds that obtaining an observation from a rural household costs more than obtaining a response in town A or B . The increase is due to the costs of traveling from one rural household to another. The cost per observation in each town is estimated to be \\(\\$ 9\\) (i.e., \\(c_1=c_2=9\\) ), and the costs per observation in the rural area to be \\(\\$ 16\\) (i.e., \\(c_3=16\\) ). The stratum standard deviations (approximated by the strata sample variances from a prior survey) are \\(\\sigma_1 \\approx 5, \\sigma_2 \\approx 15\\), and \\(\\sigma_3 \\approx 10\\). Find the overall sample size \\(n\\) and the stratum sample sizes, \\(n_1, n_2\\), and \\(n_3\\), that allow the firm to estimate, at minimum cost, the average television-viewing time with a bound on the error of estimation equal to 2 hours. (Recall that \\(N=310, N_1=155, N_2=62, N_3=93\\))"
+    "text": "Example 1: Use the data in Example 1 of Note 28 as a preliminary sample. Answer the following questions:\n\n\nHow large a sample should be taken in a future survey in order to estimate the average per-capita income \\(\\mu\\) with a bound of \\(\\$ 500\\) on the \\(95 \\%\\) error of estimation?"
   },
   {
-    "objectID": "Day24.html#introduction-to-estimators",
-    "href": "Day24.html#introduction-to-estimators",
-    "title": "Day 24",
-    "section": "Introduction to Estimators",
-    "text": "Introduction to Estimators\n\nIn survey sampling, different estimators provide various ways to estimate population parameters. Today, we will explore:\n\nSimple Random Sampling Estimator (\\(\\bar{y}\\))\nRatio Estimator (\\(\\hat{\\mu}_{y}\\))\nRegression Estimator (\\(\\hat{\\mu}_{y L}\\))\nDifference Estimator (\\(\\hat{\\mu}_{y D}\\))\n\nEach estimator has unique properties and use cases."
-  },
-  {
-    "objectID": "Day24.html#understanding-bias-in-estimators",
-    "href": "Day24.html#understanding-bias-in-estimators",
-    "title": "Day 24",
-    "section": "Understanding Bias in Estimators",
-    "text": "Understanding Bias in Estimators\n\nBias refers to the difference between an estimator’s expected value and the true value of the population parameter:\n\nSimple Sampling (\\(\\bar{y}\\)): Always unbiased.\nRatio Estimator (\\(\\hat{\\mu}_{y}\\)): Biased except under specific conditions.\nRegression Estimator (\\(\\hat{\\mu}_{y L}\\)): Biased for finite populations unless the data points are linear.\nDifference Estimator (\\(\\hat{\\mu}_{y D}\\)): Always unbiased.\n\nKey Note: Bias affects how we interpret and trust our estimations."
-  },
-  {
-    "objectID": "Day24.html#relative-efficiency",
-    "href": "Day24.html#relative-efficiency",
-    "title": "Day 24",
-    "section": "Relative Efficiency",
-    "text": "Relative Efficiency\n\nRelative Efficiency (RE) helps compare two estimators based on their variances under similar conditions:\n\nHigher RE (&gt;1) means the first estimator is generally better (lower variance).\nLower RE (&lt;1) favors the second estimator.\n\n\\[\n\\text{RE}(T_1, T_2) = \\frac{\\hat{V}(T_2)}{\\hat{V}(T_1)}\n\\]\nRE is crucial when deciding which estimator provides the most reliable results."
-  },
-  {
-    "objectID": "Day24.html#estimator-performance-comparison",
-    "href": "Day24.html#estimator-performance-comparison",
-    "title": "Day 24",
-    "section": "Estimator Performance Comparison",
-    "text": "Estimator Performance Comparison\n\n\n\n\n\n\n\n\n\nEstimator\nEstimated Mean\nEstimated Variance\n95% CI\n\n\n\n\nSimple Random Sampling\n\\(\\mu_{y}\\)\n\\(\\hat{V}(\\bar{y})\\)\n\\(\\mu_{y} \\pm t_{1-\\alpha/2, \\text{df}} \\sqrt{\\hat{V}(\\bar{y})}\\)\n\n\nRatio Estimator\n\\(\\hat{\\mu}_{y}\\)\n\\(\\hat{V}(\\hat{\\mu}_{y})\\)\n\\(\\hat{\\mu}_{y} \\pm t_{1-\\alpha/2, \\text{df}} \\sqrt{\\hat{V}(\\hat{\\mu}_{y})}\\)\n\n\nRegression Estimator\n\\(\\hat{\\mu}_{y L}\\)\n\\(\\hat{V}(\\hat{\\mu}_{y L})\\)\n\\(\\hat{\\mu}_{y L} \\pm t_{1-\\alpha/2, \\text{df}} \\sqrt{\\hat{V}(\\hat{\\mu}_{y L})}\\)\n\n\nDifference Estimator\n\\(\\hat{\\mu}_{y D}\\)\n\\(\\hat{V}(\\hat{\\mu}_{y D})\\)\n\\(\\hat{\\mu}_{y D} \\pm t_{1-\\alpha/2, \\text{df}} \\sqrt{\\hat{V}(\\hat{\\mu}_{y D})}\\)\n\n\n\nEach estimator uses the sample to provide different insights into the population’s characteristics."
-  },
-  {
-    "objectID": "Day24.html#visualizing-data-relationships",
-    "href": "Day24.html#visualizing-data-relationships",
-    "title": "Day 24",
-    "section": "Visualizing Data Relationships",
-    "text": "Visualizing Data Relationships\n\nPlot Analysis:\n\nA strong linear relationship suggests the use of a regression or ratio estimator.\nNon-linear relationships may require more complex models or the difference estimator for better accuracy."
-  },
-  {
-    "objectID": "Day24.html#choosing-the-right-estimator",
-    "href": "Day24.html#choosing-the-right-estimator",
-    "title": "Day 24",
-    "section": "Choosing the Right Estimator",
-    "text": "Choosing the Right Estimator\n\nDeciding factors:\n\nLinearity and Bias: If data points are linear, regression and ratio estimators are effective.\nRelative Efficiency: Higher RE indicates a more efficient estimator under given conditions.\nUnbiased Nature: Preference for unbiased estimators in settings where bias can’t be controlled.\n\nPractical examples and simulations help in understanding estimator performance."
-  },
-  {
-    "objectID": "Day24.html#section",
-    "href": "Day24.html#section",
-    "title": "Day 24",
+    "objectID": "Day30.html#section-1",
+    "href": "Day30.html#section-1",
+    "title": "Day 30",
     "section": "",
-    "text": "Example 1 A mathematics achievement test was given to 486 students prior to their entering a certain college. From these students a simple random sample of \\(n=10\\) students was selected and their progress in calculus observed. Final calculus grades were then reported, as given in the following table. It is known that \\(\\mu_x=52\\) for all 486 students taking the achievement test. Estimate \\(\\mu_y\\) for this population (estimator value, estimated variance, \\(95 \\%\\) bound on error, and \\(95 \\%\\) confidence interval). Use the simple random sampling estimator, ratio estimator, regression estimator, and difference estimator, and perform comparisons."
+    "text": "Given that there are 2500 residents of the city, how large a sample should be taken in a future survey in order to estimate the total income of all residents, \\(\\tau\\), with a bound of \\(\\$ 1,000,000\\) on the \\(95 \\%\\) error of estimation?"
   },
   {
-    "objectID": "Day15.html#introduction-to-estimating-proportions",
-    "href": "Day15.html#introduction-to-estimating-proportions",
-    "title": "Day 15",
-    "section": "Introduction to Estimating Proportions",
-    "text": "Introduction to Estimating Proportions\n\n\nContext: Estimating proportions in a population is key for decisions in marketing, public health, and policy making.\nExample: Determining the proportion of voters favoring a particular policy, the proportion of households with internet access, or the percentage of people immunized in different regions."
-  },
-  {
-    "objectID": "Day15.html#real-world-application",
-    "href": "Day15.html#real-world-application",
-    "title": "Day 15",
-    "section": "Real-World Application",
-    "text": "Real-World Application\n\n\nMarketing: A company may want to estimate the proportion of consumers who prefer a new product over existing ones. Stratified sampling can be used to ensure various demographics are represented.\nPublic Health: Health officials estimate the proportion of the population that has been vaccinated by stratifying the population by age, location, and other relevant factors."
-  },
-  {
-    "objectID": "Day15.html#objective-of-sample-allocation",
-    "href": "Day15.html#objective-of-sample-allocation",
-    "title": "Day 15",
-    "section": "Objective of Sample Allocation",
-    "text": "Objective of Sample Allocation\n\n\nObjective: Minimize the variance of the estimator while controlling costs.\nFactors Influencing Allocation:\n\nPopulation proportion in each stratum, \\(p_i\\).\nVariability of the proportion, expressed as \\(p_i(1-p_i)\\).\nSampling cost per stratum, \\(c_i\\)."
-  },
-  {
-    "objectID": "Day15.html#step-1-determine-weights-for-sample-sizes",
-    "href": "Day15.html#step-1-determine-weights-for-sample-sizes",
-    "title": "Day 15",
-    "section": "Step 1: Determine Weights for Sample Sizes",
-    "text": "Step 1: Determine Weights for Sample Sizes\n\n\nWeight Formula: \\[\nW_i=\\frac{N_i \\frac{\\sqrt{p_i (1-p_i)}}{\\sqrt{c_i}}}{\\sum_{j=1}^L N_j \\frac{\\sqrt{p_j (1-p_j)}}{\\sqrt{c_j}}}\n\\]\nPurpose: Adjust sample sizes to optimize precision and cost."
-  },
-  {
-    "objectID": "Day15.html#step-2-calculate-total-sample-size",
-    "href": "Day15.html#step-2-calculate-total-sample-size",
-    "title": "Day 15",
-    "section": "Step 2: Calculate Total Sample Size",
-    "text": "Step 2: Calculate Total Sample Size\n\n\nSample Size Formula: \\[\nn=\\frac{\\sum_{i=1}^L N_i^2 \\frac{p_i (1-p_i)}{w_i}}{N^2 D^2 + \\sum_{i=1}^L N_i p_i (1-p_i)}\n\\]\nWhere:\n\n\\(D=\\frac{B}{Z_{1-\\frac{\\alpha}{2}}}\\), defining the precision level for confidence intervals."
-  },
-  {
-    "objectID": "Day15.html#step-3-data-collection",
-    "href": "Day15.html#step-3-data-collection",
-    "title": "Day 15",
-    "section": "Step 3: Data Collection",
-    "text": "Step 3: Data Collection\n \n\n\nImplementation: Collect data according to the sample sizes and weights determined in Steps 1 and 2."
-  },
-  {
-    "objectID": "Day15.html#step-4-estimation-of-population-proportion",
-    "href": "Day15.html#step-4-estimation-of-population-proportion",
-    "title": "Day 15",
-    "section": "Step 4: Estimation of Population Proportion",
-    "text": "Step 4: Estimation of Population Proportion\n\n\nEstimator Formula: \\[\n\\hat{p}_{st}=\\frac{1}{N}(N_1\\hat{p}_1 + N_2\\hat{p}_2 + \\cdots + N_L\\hat{p}_L)\n\\]\nVariance of Estimator: \\[\n\\hat{V}(\\hat{p}_{st})=\\frac{1}{N^2} \\cdot \\sum_{i=1}^L N_i^2\\left(1-\\frac{n_i}{N_i}\\right)\\cdot\\left(\\frac{\\hat{p}_i(1-\\hat{p}_i)}{n_i-1}\\right)\n\\]"
-  },
-  {
-    "objectID": "Day15.html#degrees-of-freedom-for-variance-estimation",
-    "href": "Day15.html#degrees-of-freedom-for-variance-estimation",
-    "title": "Day 15",
-    "section": "Degrees of Freedom for Variance Estimation",
-    "text": "Degrees of Freedom for Variance Estimation\n\n\nDegrees of Freedom Formula: \\[\ndf=\\frac{\\left(\\sum_{i=1}^L a_i p_i(1-p_i)\\right)^2}{\\sum_{i=1}^L \\frac{(a_i p_i(1-p_i))^2}{n_i-1}}\n\\]\nImportance: Correct degrees of freedom are crucial for accurate inference and confidence interval construction."
-  },
-  {
-    "objectID": "Day15.html#example-1",
-    "href": "Day15.html#example-1",
-    "title": "Day 15",
-    "section": "Example 1",
-    "text": "Example 1\n\nAn advertising firm wants to estimate the proportion of households viewing TV show X in a county. The county is divided into three strata: town A, town B, and the rural area, containing \\(N_1=155\\), \\(N_2=62\\), and \\(N_3=93\\) households, respectively. From a study conducted three years ago, the previous estimates of proportions were \\(\\hat{p}_1^*=0.80\\), \\(\\hat{p}_2^*=0.25\\), and \\(\\hat{p}_3^*=0.50\\) (these values are used for selecting sample sizes, not as the current proportions).\nCosts: The costs of obtaining an observation are \\(c_1=c_2=9\\), \\(c_3=16\\).\n\nThe firm aims to estimate the population proportion \\(p\\) with a 95% bound on the error of estimation equal to 0.1. The task is to find the total sample size \\(n\\) and the strata sample sizes \\(n_1\\), \\(n_2\\), \\(n_3\\) that will achieve the desired bound at minimum cost.\nBased on the new survey performed with the determined sample sizes, the new sample proportions are \\(\\hat{p}_1=0.78\\), \\(\\hat{p}_2=0.35\\), \\(\\hat{p}_3=0.52\\). Estimate the proportion of households viewing TV show X with a 95% bound on the error of estimation."
-  },
-  {
-    "objectID": "Day12.html#stratified-random-sampling",
-    "href": "Day12.html#stratified-random-sampling",
-    "title": "Day 12",
-    "section": "Stratified Random Sampling",
-    "text": "Stratified Random Sampling\n\n\n\n\n\n\n\n\nDefinition\n\n\nStratified random sampling involves dividing the population into non-overlapping groups (strata) and then conducting a simple random sample within each stratum.\n\nPurpose: To maximize the information obtained for a given cost in sample surveys."
-  },
-  {
-    "objectID": "Day12.html#comparison-with-simple-random-sampling",
-    "href": "Day12.html#comparison-with-simple-random-sampling",
-    "title": "Day 12",
-    "section": "Comparison with Simple Random Sampling",
-    "text": "Comparison with Simple Random Sampling\n\n\n\nBasic Approach: Simple random sampling involves selecting individuals randomly from the entire population without prior grouping.\nStratified Approach: Enhances precision by grouping similar items together and then sampling."
-  },
-  {
-    "objectID": "Day12.html#implementation-example",
-    "href": "Day12.html#implementation-example",
-    "title": "Day 12",
-    "section": "Implementation Example",
-    "text": "Implementation Example\n\n\n\nContext: Estimating voter preferences on tax revenue allocation for ambulance services in a county.\nStrata: Two cities and one rural area in the county.\nSampling Method: Conduct a simple random sample from each stratum (each city and rural area)."
-  },
-  {
-    "objectID": "Day12.html#advantages-of-stratified-random-sampling",
-    "href": "Day12.html#advantages-of-stratified-random-sampling",
-    "title": "Day 12",
-    "section": "Advantages of Stratified Random Sampling",
-    "text": "Advantages of Stratified Random Sampling\n\n\n\nReduced Error: Stratification can yield a smaller bound on the error of estimation compared to simple random sampling.\nCost Efficiency: By grouping population elements, the cost per observation may be reduced.\nSubgroup Analysis: Allows for estimates of population parameters for specific, identifiable subgroups within the population."
-  },
-  {
-    "objectID": "Day12.html#step-1-defining-and-classifying-strata",
-    "href": "Day12.html#step-1-defining-and-classifying-strata",
-    "title": "Day 12",
-    "section": "Step 1: Defining and Classifying Strata",
-    "text": "Step 1: Defining and Classifying Strata\n\n\nInitial Setup: Specify strata clearly. Each sampling unit must uniquely classify into one stratum.\nClassification Challenges: For example, whether a town of 1000 inhabitants is ‘urban’ or ‘rural’ can depend on proximity to larger cities or isolation.\nCriteria Definition: Essential to define terms like ‘urban’ and ‘rural’ to prevent classification ambiguity."
-  },
-  {
-    "objectID": "Day12.html#step-2-sampling-process-and-notations",
-    "href": "Day12.html#step-2-sampling-process-and-notations",
-    "title": "Day 12",
-    "section": "Step 2: Sampling Process and Notations",
-    "text": "Step 2: Sampling Process and Notations\n\n\nAssigning Units: Place each unit, e.g., household, into the appropriate stratum based on clear, predefined criteria.\nSampling Notations:\n\nL: Number of strata.\n\\(N_i\\): Number of sampling units in stratum \\(i\\).\n\\(N\\): Total population size, \\(N = N_1 + N_2 + \\cdots + N_L\\)."
-  },
-  {
-    "objectID": "Day12.html#step-3-sample-selection-and-independence",
-    "href": "Day12.html#step-3-sample-selection-and-independence",
-    "title": "Day 12",
-    "section": "Step 3: Sample Selection and Independence",
-    "text": "Step 3: Sample Selection and Independence\n\n\n\nIndependent Sampling: Ensure that the sample from each stratum is chosen independently using different random sampling methods.\nChoosing Sample Sizes: Appropriate number of samples from each stratum and ensuring selections from different strata do not influence each other will be covered later."
-  },
-  {
-    "objectID": "Day12.html#section",
-    "href": "Day12.html#section",
-    "title": "Day 12",
+    "objectID": "Day30.html#section-2",
+    "href": "Day30.html#section-2",
+    "title": "Day 30",
     "section": "",
-    "text": "Example 1: An advertising agency wants to understand how much focus to give to TV advertising in a specific county. To do this, they plan to survey how many hours households watch TV each week. The county includes two towns-Town A, centered around a factory with many families having schoolage children, and Town B, a wealthier suburb with older residents and fewer children-and a rural area. The numbers of households are 155 in Town A, 62 in Town B, and 93 in the rural area. Analyze the advantages of using stratified random sampling in this scenario."
+    "text": "If the number of residents of the city is unknown, how large a sample should be taken in a future survey in order to estimate the total income of all residents, \\(\\tau\\), with a bound of \\(\\$ 1,000,000\\) on the \\(95 \\%\\) error of estimation?"
   },
   {
-    "objectID": "Day12.html#section-2",
-    "href": "Day12.html#section-2",
-    "title": "Day 12",
+    "objectID": "Day16.html#issues-in-stratified-sampling-budget-constraints",
+    "href": "Day16.html#issues-in-stratified-sampling-budget-constraints",
+    "title": "Day 16",
+    "section": "Issues in Stratified Sampling: Budget Constraints",
+    "text": "Issues in Stratified Sampling: Budget Constraints\n\nUnderstanding the complexities and challenges of stratified random sampling is crucial for enhancing survey accuracy and efficiency. By addressing common issues such as budget constraints and optimal strata selection:\n\nWe recognize that not all sampling can afford ideal sample sizes due to budget limits.\nOptimal allocation under fixed budgets aims to minimize variance, enhancing survey design to maximize resource use.\nThis approach not only improves decision-making based on the data collected but also contributes to developing sophisticated statistical analysis techniques that are robust against real-world challenges."
+  },
+  {
+    "objectID": "Day16.html#allocation-formula",
+    "href": "Day16.html#allocation-formula",
+    "title": "Day 16",
+    "section": "Allocation Formula",
+    "text": "Allocation Formula\n\nUse the proportional allocation formula to determine sample sizes: \\[n_i =  \\frac{C}{\\sum_{i=1}^k c_i w_i}  w_i\\] Where:\n\n\\(n_i\\) = sample size for stratum \\(i\\)\n\\(C\\) = total budget\n\\(c_i\\) = cost per unit sampled in stratum \\(i\\)\n\\(w_i\\) = weight (proportion) of stratum \\(i\\) in the population"
+  },
+  {
+    "objectID": "Day16.html#optimal-rule-for-choosing-strata",
+    "href": "Day16.html#optimal-rule-for-choosing-strata",
+    "title": "Day 16",
+    "section": "Optimal Rule for Choosing Strata",
+    "text": "Optimal Rule for Choosing Strata\n\nGoal: Minimize variance of the estimator. Strata should be homogeneous internally and heterogeneous externally.\n\nCumulative Square Root of Frequency Method\n\nUseful for delineating strata based on available frequency data. Summarize and stratify based on the cumulative square root of category frequencies. Generally, limit to five or six strata to avoid over-complication."
+  },
+  {
+    "objectID": "Day16.html#practical-example",
+    "href": "Day16.html#practical-example",
+    "title": "Day 16",
+    "section": "Practical Example",
+    "text": "Practical Example\n\nStratify a population by income to estimate average household income:\n\nGroup low-income households in one stratum.\nGroup high-income households in another stratum.\n\nThis method is theoretical as it requires prior knowledge of incomes."
+  },
+  {
+    "objectID": "Day16.html#section",
+    "href": "Day16.html#section",
+    "title": "Day 16",
     "section": "",
-    "text": "Exampe 2: A corporation is evaluating the effectiveness of a new business machine by gathering ratings from its division heads across three regions: North America, Europe, and Asia. To ensure that the ratings are representative and to manage costs effectively, stratified sampling is chosen as the method. The costs of conducting interviews vary by region, and so do the variances in the ratings obtained. The company aims to estimate the average effectiveness rating of the machine with a desired variance in the estimate of \\(V\\left(\\bar{y}_{\\text {st }}\\right)=0.1\\). Determine the optimal sample size \\(n\\) that achieves the variance bound of \\(V\\left(\\bar{y}_{\\text {st }}\\right)=0.1\\) and calculate the appropriate allocation of the sample size across the strata based on the Neyman allocation principle, which considers both the stratum variances and the costs associated with sampling each stratum. The following table provides the costs per interview, the variances of the ratings, and the total number of division heads in each region.\n\n\n\n\nStratum\nNorth America\nEurope\nAsia\n\n\n\n\n\\(c\\)\n\\(\\$ 9\\)\n\\(\\$ 25\\)\n\\(\\$ 36\\)\n\n\n\\(\\sigma^2\\)\n2.25\n3.24\n3.24\n\n\n\\(N\\)\n112\n68\n39"
+    "text": "Example 1: In the television viewing example \\(\\left(N_1=155, N_2=62\\right.\\), and \\(\\left.N_3=93\\right)\\), the cost of obtaining an observation is \\(c_1=c_2=\\$ 9, c_3=\\$ 16\\). Let the stratum standard deviations be approximated by \\(\\sigma_1 \\approx 5, \\sigma_2 \\approx 15, \\sigma_3 \\approx 10\\). Given that the advertising firm has only \\(\\$ 500\\) to spend on sampling, choose the sample size and the allocation that minimize \\(V\\left(\\bar{y}_{s t}\\right)\\)."
   },
   {
-    "objectID": "Day22.html#regression-estimator-of-mu_y",
-    "href": "Day22.html#regression-estimator-of-mu_y",
-    "title": "Day 22",
-    "section": "Regression Estimator of \\(\\mu_y\\)",
-    "text": "Regression Estimator of \\(\\mu_y\\)\n\n\nUse regression estimator when there is evidence of a linear relationship between \\(y\\) and \\(x\\), without the restriction of passing through the origin.\nEssential for situations where the auxiliary variable \\(x\\) provides valuable information for estimating the mean \\(\\mu_y\\)."
-  },
-  {
-    "objectID": "Day22.html#assumptions",
-    "href": "Day22.html#assumptions",
-    "title": "Day 22",
-    "section": "Assumptions",
-    "text": "Assumptions\n\n\nLinear relationship modeled as: \\[\ny_i = a + b x_i + \\varepsilon_i\n\\]\nWhere \\(\\varepsilon_i\\) represents random errors which we assume have a mean of zero and are independent of \\(x_i\\)."
-  },
-  {
-    "objectID": "Day22.html#estimation-without-the-error-term",
-    "href": "Day22.html#estimation-without-the-error-term",
-    "title": "Day 22",
-    "section": "Estimation without the Error Term",
-    "text": "Estimation without the Error Term\n\n\nIgnoring the error, the predicted value of \\(y_i\\): \\[\n\\hat{y}_i = \\bar{y} + b (x_i - \\bar{x})\n\\]\nCoefficient \\(b\\), known as the slope of the regression line, is given by: \\[\nb = \\frac{\\sum_{i=1}^n [(y_i - \\bar{y})(x_i - \\bar{x})]}{\\sum_{i=1}^n (x_i - \\bar{x})^2}\n\\]"
-  },
-  {
-    "objectID": "Day22.html#regression-estimator-for-population-mean-mu_y",
-    "href": "Day22.html#regression-estimator-for-population-mean-mu_y",
-    "title": "Day 22",
-    "section": "Regression Estimator for Population Mean \\(\\mu_y\\)",
-    "text": "Regression Estimator for Population Mean \\(\\mu_y\\)\n\n\nThe regression estimator for the population mean is: \\[\n\\hat{\\mu}_{y L} = \\bar{y} + b(\\mu_x - \\bar{x})\n\\]\nThis estimator adjusts the sample mean \\(\\bar{y}\\) for the deviation of the expected value of \\(x\\) from its sample mean, scaled by the regression coefficient \\(b\\)."
-  },
-  {
-    "objectID": "Day22.html#variance-of-the-regression-estimator",
-    "href": "Day22.html#variance-of-the-regression-estimator",
-    "title": "Day 22",
-    "section": "Variance of the Regression Estimator",
-    "text": "Variance of the Regression Estimator\n\n\nThe variance of \\(\\hat{\\mu}_{y L}\\) is estimated as: \\[\n\\hat{V}(\\hat{\\mu}_{y L}) = \\left(1 - \\frac{n}{N}\\right) \\left(\\frac{1}{n}\\right) \\left(\\frac{\\sum_{i=1}^n (y_i - (\\bar{y} + b (x_i - \\bar{x})))^2}{n-2}\\right)\n\\]"
-  },
-  {
-    "objectID": "Day22.html#error-bounds-and-confidence-interval",
-    "href": "Day22.html#error-bounds-and-confidence-interval",
-    "title": "Day 22",
-    "section": "Error Bounds and Confidence Interval",
-    "text": "Error Bounds and Confidence Interval\n\n\nThe \\((1-\\alpha) \\times 100\\%\\) bound on the error of estimation is calculated using: \\[\nB = t_{1-\\frac{\\alpha}{2}, n-2} \\cdot \\sqrt{\\hat{V}(\\hat{\\mu}_{y L})}\n\\]\nConsequently, the confidence interval for \\(\\hat{\\mu}_{y L}\\) is: \\[\n\\hat{\\mu}_{y L} \\pm B\n\\]\nThis interval offers a range within which the true population mean is expected to lie with \\((1-\\alpha) \\times 100\\%\\) confidence."
-  },
-  {
-    "objectID": "Day22.html#section",
-    "href": "Day22.html#section",
-    "title": "Day 22",
+    "objectID": "Day16.html#section-1",
+    "href": "Day16.html#section-1",
+    "title": "Day 16",
     "section": "",
-    "text": "Example 1: A mathematics achievement test was given to 486 students prior to their entering a certain college. From these students a simple random sample of tudents was selected and their progress in calculus observed. Final calculus grades were then reported, as given in the following table. It is known that \\(\\mu_x=52\\) for all 486 students taking the achievement test. Estimate \\(\\mu_y\\) for this population (estimator value, estimated variance, \\(95 \\%\\) bound on error, and \\(95 \\%\\) confidence interval)."
+    "text": "Example 2: In the television viewing example \\(\\left(N_1=155, N_2=62\\right.\\), and \\(\\left.N_3=93\\right)\\), the cost of obtaining an observation is \\(c_1=c_2=\\$ 9, c_3=\\$ 16\\). Let the stratum standard deviations-be approximated by \\(p_1 \\approx 0.80, p_2 \\approx 0.25, p_3 \\approx 0.50\\) using some similar survey performed two years ago. Given that the advertising firm has only \\(\\$ 500\\) to spend on sampling, choose the sample size and the allocation that \\(minimize V\\left(\\hat{p}_{s t}\\right)\\)."
   },
   {
-    "objectID": "Day13.html#recap-stratified-sampling",
-    "href": "Day13.html#recap-stratified-sampling",
-    "title": "Day 13",
-    "section": "Recap: Stratified Sampling",
-    "text": "Recap: Stratified Sampling\n\n\nObjective: Leverage stratified random sampling to estimate population characteristics more accurately.\nApproach: Divide population into homogeneous groups (strata) to reduce sampling error.\nApplication: Widely used in surveys and research where population subgroups are to be measured with greater precision."
-  },
-  {
-    "objectID": "Day13.html#stratification-explained",
-    "href": "Day13.html#stratification-explained",
-    "title": "Day 13",
-    "section": "Stratification Explained",
-    "text": "Stratification Explained\n\n\nStrata: \\(L\\) distinct groups within the population, each representing key sub-populations.\nSizes:\n\nTotal population: \\(N = \\sum_{i=1}^L N_i\\)\nEach stratum: \\(N_i\\) (sub-population size), \\(n_i\\) (sample size)\n\nMetrics:\n\nSample mean for stratum \\(i\\): \\(\\bar{Y}_i\\)\nTotal for stratum \\(i\\): \\(\\tau_i\\)\nPopulation total: \\(\\tau = \\sum_{i=1}^L \\tau_i\\)"
-  },
-  {
-    "objectID": "Day13.html#estimation-methodology",
-    "href": "Day13.html#estimation-methodology",
-    "title": "Day 13",
-    "section": "Estimation Methodology",
-    "text": "Estimation Methodology\n\n\n\nPopulation Mean: \\(\\bar{y}_{st} = \\frac{1}{N} \\sum_{i=1}^L N_i \\bar{Y}_i\\), a weighted average where weights are proportional to stratum size.\nPopulation Total: \\(\\hat{\\tau}_{st} = N \\cdot \\bar{y}_{st}\\), scaled up mean to reflect total population size."
-  },
-  {
-    "objectID": "Day13.html#variance-and-precision",
-    "href": "Day13.html#variance-and-precision",
-    "title": "Day 13",
-    "section": "Variance and Precision",
-    "text": "Variance and Precision\n\n\nKey Concept: Estimating variance helps assess the precision and reliability of our estimates.\nVariance of Mean Estimation: \\[\\hat{V}(\\bar{y}_{st}) = \\frac{1}{N^2} \\sum_{i=1}^L N_i^2 \\left(1 - \\frac{n_i}{N_i}\\right) \\frac{s_i^2}{n_i}\\]\nVariance of Total Estimation: \\[\\hat{V}(\\hat{\\tau}_{st}) = N^2 \\cdot \\hat{V}(\\bar{y}_{st})\\]"
-  },
-  {
-    "objectID": "Day13.html#degree-of-freedom-and-critical-values",
-    "href": "Day13.html#degree-of-freedom-and-critical-values",
-    "title": "Day 13",
-    "section": "Degree of Freedom and Critical Values",
-    "text": "Degree of Freedom and Critical Values\n\n\nDegrees of Freedom: Crucial for determining the appropriate \\(t\\) critical value when constructing confidence intervals. \\[df = \\frac{\\left(\\sum_{i=1}^L a_i s_i^2\\right)^2}{\\sum_{i=1}^L \\frac{(a_i s_i^2)^2}{n_i-1}}\\]\nFactor: \\(a_i = \\frac{N_i(N_i-n_i)}{n_i}\\) represents the adjusted sample size contributing to variance calculation."
-  },
-  {
-    "objectID": "Day13.html#error-bounds-and-confidence-intervals",
-    "href": "Day13.html#error-bounds-and-confidence-intervals",
-    "title": "Day 13",
-    "section": "Error Bounds and Confidence Intervals",
-    "text": "Error Bounds and Confidence Intervals\n\n\nError Bound: \\[B = t_{1-\\frac{\\alpha}{2}, df} \\cdot \\sqrt{\\hat{V}(\\bar{y}_{st})}\\]\nConfidence Interval: \\[\\text{Estimator} \\pm B\\] Provides a range within which we can be \\((1-\\alpha) \\times 100\\%\\) confident that the population parameter lies."
-  },
-  {
-    "objectID": "Day13.html#practical-implications",
-    "href": "Day13.html#practical-implications",
-    "title": "Day 13",
-    "section": "Practical Implications",
-    "text": "Practical Implications\n\n\nUse Case: Stratified sampling is ideal when certain strata are expected to differ significantly, and each requires individual analysis.\nAdvantage: Increases efficiency and reduces costs by focusing resources on strategically sampled subgroups.\nLimitation: Requires detailed advance knowledge of the population structure, which may not always be available."
-  },
-  {
-    "objectID": "Day13.html#section",
-    "href": "Day13.html#section",
-    "title": "Day 13",
+    "objectID": "Day16.html#section-2",
+    "href": "Day16.html#section-2",
+    "title": "Day 16",
     "section": "",
-    "text": "Example 1: In a continuation of Example 1 from Day 12, imagine an advertising firm conducting a survey to measure weekly television-viewing habits across different locales. The firm, equipped with sufficient resources, opts to collect random samples of households from town A, town B, and a rural area. Details regarding the sample sizes will be addressed subsequently. Each selected household is surveyed to record their television-viewing hours per week, and the collected data is summarized in a table. Using this data, the task is to calculate both the average and total weekly television-viewing hours for households throughout the entire county and to establish an error bound for these estimates.\n\n\n\n\n\n\n\nTown A\nTown B\nRural\n\n\n\n\n35\n27\n8\n\n\n43\n15\n14\n\n\n36\n4\n12\n\n\n39\n41\n15\n\n\n28\n49\n30\n\n\n28\n25\n32\n\n\n29\n10\n21\n\n\n25\n30\n20\n\n\n38\n\n34\n\n\n27\n\n7\n\n\n26\n\n11\n\n\n32\n\n24\n\n\n29\n\n\n\n\n40\n\n\n\n\n35\n\n\n\n\n41\n\n\n\n\n37\n\n\n\n\n31\n\n\n\n\n45\n\n\n\n\n34"
-  },
-  {
-    "objectID": "Day13.html#section-1",
-    "href": "Day13.html#section-1",
-    "title": "Day 13",
-    "section": "",
-    "text": "Calculations\n\n\nA &lt;- c(35, 43, 36, 39, 28, 28, 29, 25, 38, 27, 26, 32, 29, 40, 35, 41, 37, 31, 45, 34)\nB &lt;- c(27, 15, 4, 41, 49, 25, 10, 30)\nR &lt;- c(8, 14, 12, 15, 30, 32, 21, 20, 34, 7, 11, 24)\nmean(A); sd(A); length(A)\n\n[1] 33.9\n\n\n[1] 5.94625\n\n\n[1] 20\n\nmean(B); sd(B); length(B)\n\n[1] 25.125\n\n\n[1] 15.24502\n\n\n[1] 8\n\nmean(R); sd(R); length(R)\n\n[1] 19\n\n\n[1] 9.36143\n\n\n[1] 12\n\n# Given\nN_A &lt;- 155\nN_B &lt;- 62\nN_R &lt;- 93"
+    "text": "Example 3: An investigator wishes to estimate the average yearly sales for 56 firms, using a sample of \\(n=15\\) firms. Frequency data on these firms is available in the form of classification by \\(\\$ 50,000\\) increments and appears in the accompanying table. How can we best allocate the firms to \\(L=3\\) strata?"
   },
   {
     "objectID": "Day11.html#practices-for-simple-random-sampling",
