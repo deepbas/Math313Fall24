@@ -2104,21 +2104,21 @@
     "href": "Day35P.html#inverse-sampling-method",
     "title": "Day 35",
     "section": "Inverse Sampling Method",
-    "text": "Inverse Sampling Method\n\n\nProcedure: Start with an initial tagged sample of size \\(t\\). Continue sampling until \\(s\\) tagged individuals are recaptured.\nEstimation Formula: \\[\n\\hat{N} = \\frac{n \\times t}{s}\n\\] Here, \\(n\\) is the number of individuals in the second sample, and \\(s\\) is fixed while \\(n\\) is random."
+    "text": "Inverse Sampling Method\n\n\nProcedure: Start with an initial tagged sample of size \\(t\\). Continue sampling until \\(s\\) tagged individuals are recaptured.\nEstimation Formula: \\[\n\\hat{N}_I = \\frac{n t}{s}\n\\] Here, \\(n\\) is the number of individuals in the second sample, and \\(s\\) is fixed while \\(n\\) is random."
   },
   {
     "objectID": "Day35P.html#estimator-and-variance",
     "href": "Day35P.html#estimator-and-variance",
     "title": "Day 35",
     "section": "Estimator and Variance",
-    "text": "Estimator and Variance\n\n\nPopulation Size Estimator: \\[\n\\hat{N} = \\frac{n \\times t}{s}\n\\]\nVariance of Estimator: \\[\n\\hat{V}(\\hat{N}) = \\frac{t^2 \\times n \\times (n-s)}{s^2 \\times (s+1)}\n\\] This formula assumes \\(s &gt; 0\\) and provides an unbiased estimation of \\(N\\)."
+    "text": "Estimator and Variance\n\n\nPopulation Size Estimator: \\[\n\\hat{N}_I = \\frac{n t}{s}\n\\]\nVariance of Estimator: \\[\n\\hat{V}(\\hat{N}_I) = \\frac{t^2 n  (n-s)}{s^2  (s+1)}\n\\] This formula assumes \\(s &gt; 0\\) and provides an unbiased estimation of \\(N\\)."
   },
   {
     "objectID": "Day35P.html#confidence-interval-calculation",
     "href": "Day35P.html#confidence-interval-calculation",
     "title": "Day 35",
     "section": "Confidence Interval Calculation",
-    "text": "Confidence Interval Calculation\n\n\nCritical Value and Error Bound: \\[\n\\lambda = \\sqrt{\\frac{4}{9 \\alpha}}\n\\] \\[\nB = \\lambda \\cdot \\sqrt{\\hat{V}(\\hat{N})}\n\\]\nConfidence Interval: \\[\n\\hat{N} \\pm B\n\\] Provides a conservative estimate of the population size within a specific confidence level."
+    "text": "Confidence Interval Calculation\n\n\nCritical Value and Error Bound: \\[\n\\lambda = \\sqrt{\\frac{4}{9 \\alpha}}\n\\] \\[\nB_I = \\lambda \\cdot \\sqrt{\\hat{V}(\\hat{N})}\n\\]\nConfidence Interval: \\[\n\\hat{N}_I \\pm B_I\n\\] Provides a conservative estimate of the population size within a specific confidence level."
   },
   {
     "objectID": "Day35P.html#example-1-wildlife-preserve-population-estimation",
@@ -2539,5 +2539,47 @@
     "title": "Day 11",
     "section": "",
     "text": "F. Compare the average populations per state between Western and Eastern U.S.A.\n\n\nSolution\n\n\ndelta &lt;- y.bar - x.bar; delta # western - eastern\n\n[1] -6253.45\n\nV.delta &lt;- sy^2/ny + sx^2/nx\ndf &lt;- (sy^2/ny + sx^2/nx)^2/((sy^2/ny)^2/(ny -1) + (sx^2/nx)^2/(nx -1)); df\n\n[1] 13.72751\n\nCI &lt;- delta + c(-1,1)*qt(0.975, df = df-1)*sqrt(V.delta); CI\n\n[1] -9999.12 -2507.78"
+  },
+  {
+    "objectID": "Day35P.html#section",
+    "href": "Day35P.html#section",
+    "title": "Day 35",
+    "section": "",
+    "text": "Example 1: Authorities of a large wildlife preserve are interested in the total number of birds of a particular species that inhabit the preserve. A random sample of \\(t=150\\) birds is trapped, tagged, and then released. In the same month, a second sample is drawn until 35 tagged birds are recaptured ( \\(s=35\\) ). In total, 100 birds are recaptured in order to find 35 tagged ones. Estimate \\(N\\) and place a \\(95 \\%\\) bound on the error of estimation."
+  },
+  {
+    "objectID": "Day35.html#introduction-to-inverse-sampling",
+    "href": "Day35.html#introduction-to-inverse-sampling",
+    "title": "Day 35",
+    "section": "Introduction to Inverse Sampling",
+    "text": "Introduction to Inverse Sampling\n\nInverse sampling is a statistical method used to estimate the total population size, \\(N\\), when the number of tagged and recaptured individuals is a key variable."
+  },
+  {
+    "objectID": "Day35.html#inverse-sampling-method",
+    "href": "Day35.html#inverse-sampling-method",
+    "title": "Day 35",
+    "section": "Inverse Sampling Method",
+    "text": "Inverse Sampling Method\n\n\nProcedure: Start with an initial tagged sample of size \\(t\\). Continue sampling until \\(s\\) tagged individuals are recaptured.\nEstimation Formula: \\[\n\\hat{N}_I = \\frac{n t}{s}\n\\] Here, \\(n\\) is the number of individuals in the second sample, and \\(s\\) is fixed while \\(n\\) is random."
+  },
+  {
+    "objectID": "Day35.html#estimator-and-variance",
+    "href": "Day35.html#estimator-and-variance",
+    "title": "Day 35",
+    "section": "Estimator and Variance",
+    "text": "Estimator and Variance\n\n\nPopulation Size Estimator: \\[\n\\hat{N}_I = \\frac{n t}{s}\n\\]\nVariance of Estimator: \\[\n\\hat{V}(\\hat{N}_I) = \\frac{t^2 n  (n-s)}{s^2  (s+1)}\n\\] This formula assumes \\(s &gt; 0\\) and provides an unbiased estimation of \\(N\\)."
+  },
+  {
+    "objectID": "Day35.html#confidence-interval-calculation",
+    "href": "Day35.html#confidence-interval-calculation",
+    "title": "Day 35",
+    "section": "Confidence Interval Calculation",
+    "text": "Confidence Interval Calculation\n\n\nCritical Value and Error Bound: \\[\n\\lambda = \\sqrt{\\frac{4}{9 \\alpha}}\n\\] \\[\nB_I = \\lambda \\cdot \\sqrt{\\hat{V}(\\hat{N})}\n\\]\nConfidence Interval: \\[\n\\hat{N}_I \\pm B_I\n\\] Provides a conservative estimate of the population size within a specific confidence level."
+  },
+  {
+    "objectID": "Day35.html#section",
+    "href": "Day35.html#section",
+    "title": "Day 35",
+    "section": "",
+    "text": "Example 1: Authorities of a large wildlife preserve are interested in the total number of birds of a particular species that inhabit the preserve. A random sample of \\(t=150\\) birds is trapped, tagged, and then released. In the same month, a second sample is drawn until 35 tagged birds are recaptured ( \\(s=35\\) ). In total, 100 birds are recaptured in order to find 35 tagged ones. Estimate \\(N\\) and place a \\(95 \\%\\) bound on the error of estimation."
   }
 ]

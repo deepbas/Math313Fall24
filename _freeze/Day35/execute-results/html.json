@@ -1,0 +1,19 @@
+{
+  "hash": "81a31ddb2d84985458f1250bca73821e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Day 35\"\ntitle-slide-attributes:\n  data-background-image: images/lake.jpg\n  data-background-size: contain\n  data-background-opacity: \"0.5\"\nsubtitle: \"MATH 313: Survey Design and Sampling\"\nauthor: \"\"\nformat:\n  revealjs:\n    html-math-method: mathjax\n    mathjax-url: \"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js\"\n    theme: [default, scss/main.scss]\n    slide_level: 2\n    slide-number: true\n    preview-links: auto\n    history: true\n    chalkboard: \n      src: chalkboard.json\n      eraser:\n        src: 'img/sponge.png'\n        radius: 20\n    transition: slide\n    background-transition: fade    \n    touch: false\n    controls: true\n---\n\n\n\n\n\n\n## Introduction to Inverse Sampling {.font80}\n\n::: cle7\nInverse sampling is a statistical method used to estimate the total population size, $N$, when the number of tagged and recaptured individuals is a key variable.\n:::\n\n## Inverse Sampling Method {.font80}\n\n::: cle12\n- **Procedure**: Start with an initial tagged sample of size $t$. Continue sampling until $s$ tagged individuals are recaptured.\n- **Estimation Formula**:\n  $$\n  \\hat{N}_I = \\frac{n t}{s}\n  $$\n  Here, $n$ is the number of individuals in the second sample, and $s$ is fixed while $n$ is random.\n:::\n\n## Estimator and Variance {.font80}\n\n::: cle6\n- **Population Size Estimator**:\n  $$\n  \\hat{N}_I = \\frac{n t}{s}\n  $$\n- **Variance of Estimator**:\n  $$\n  \\hat{V}(\\hat{N}_I) = \\frac{t^2 n  (n-s)}{s^2  (s+1)}\n  $$\n  This formula assumes $s > 0$ and provides an unbiased estimation of $N$.\n:::\n\n## Confidence Interval Calculation {.font80}\n\n::: cle9\n- **Critical Value and Error Bound**:\n  $$\n  \\lambda = \\sqrt{\\frac{4}{9 \\alpha}}\n  $$\n  $$\n  B_I = \\lambda \\cdot \\sqrt{\\hat{V}(\\hat{N})}\n  $$\n- **Confidence Interval**:\n  $$\n  \\hat{N}_I \\pm B_I\n  $$\n  Provides a conservative estimate of the population size within a specific confidence level.\n:::\n\n## {.font60}\n\n> Example 1: Authorities of a large wildlife preserve are interested in the total number of birds of a particular species that inhabit the preserve. A random sample of $t=150$ birds is trapped, tagged, and then released. In the same month, a second sample is drawn until 35 tagged birds are recaptured ( $s=35$ ). In total, 100 birds are recaptured in order to find 35 tagged ones. Estimate $N$ and place a $95 \\%$ bound on the error of estimation.\n\n\n##\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
