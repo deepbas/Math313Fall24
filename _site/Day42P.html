@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.25">
 
   <meta name="author" content="">
-  <title>Math 313: Survey Design and Sampling – Day 36</title>
+  <title>Math 313: Survey Design and Sampling – Day 42</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -328,144 +328,84 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="images/lake.jpg" data-background-opacity="0.5" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">Day 36</h1>
+  <h1 class="title">Day 42</h1>
   <p class="subtitle">MATH 313: Survey Design and Sampling</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="direct-vs.-inverse-sampling-techniques" class="slide level2 font80">
-<h2>Direct vs.&nbsp;Inverse Sampling Techniques</h2>
-<div class="cle6">
-<h3 id="key-differences">Key Differences</h3>
-<ul>
-<li><strong>Direct Sampling</strong>: Tag animals, recapture randomly, and count recaptures to estimate population size. The number of recaptures isn’t fixed and depends on the sample size.</li>
-<li><strong>Inverse Sampling</strong>: Continue sampling until a fixed number of previously tagged animals are recaptured. This method can yield more precise information than direct sampling if the second sample size <span class="math inline">\(n\)</span> is appropriately small relative to the total population <span class="math inline">\(N\)</span>.</li>
-</ul>
-<h3 id="considerations">Considerations</h3>
-<ul>
-<li>Inverse sampling can require a disproportionately large <span class="math inline">\(n\)</span> if the initial sample size <span class="math inline">\(t\)</span> is poorly chosen and nothing is known about <span class="math inline">\(N\)</span>.</li>
-</ul>
+<section id="estimation-of-population-density-and-size-using-inverse-sampling" class="slide level2 font80">
+<h2>Estimation of Population Density and Size Using Inverse Sampling</h2>
+<div class="cle7">
+<p>Inverse sampling differs from direct sampling as it continues until a fixed number of tagged animals is recaptured. This method provides an unbiased estimator for population size <span class="math inline">\(N\)</span>, using the fixed count of recaptured tagged animals to estimate the proportion of tagged animals in the population.</p>
 </div>
 </section>
-<section id="mathematical-model" class="slide level2 font60">
-<h2>Mathematical Model</h2>
-<div class="cle9">
-<p><span class="math display">\[
-p_1=\frac{t}{N} \quad \text{and} \quad p_2=\frac{n}{N}
-\]</span></p>
-<ul>
-<li><strong><span class="math inline">\(p_1\)</span> (First Sampling Fraction)</strong>: Represents the proportion of the total population <span class="math inline">\(N\)</span> sampled initially.</li>
-<li><strong><span class="math inline">\(p_2\)</span> (Second Sampling Fraction)</strong>: Signifies the proportion of the total population sampled during the recapture phase. It is critical for adjusting the precision of the population estimate.</li>
-</ul>
-<p><span class="math display">\[
-\frac{V(\hat{N})}{N} \approx \frac{1-p_1}{p_1 p_2}
-\]</span></p>
-<ul>
-<li>This formula shows how the variance of the estimated population size <span class="math inline">\(\hat{N}\)</span> relative to the population size <span class="math inline">\(N\)</span> depends inversely on both <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span>.</li>
-</ul>
-</div>
-</section>
-<section id="optimizing-sampling-fractions" class="slide level2 font60">
-<h2>Optimizing Sampling Fractions</h2>
+<section id="mathematical-formulation-of-inverse-sampling" class="slide level2 font80">
+<h2>Mathematical Formulation of Inverse Sampling</h2>
 <div class="cle12">
-<h3 id="example-scenario">Example Scenario</h3>
 <ul>
-<li><strong>Context</strong>: Estimating deer population which is similar in size to the previous year (800 to 1000 deer).</li>
-<li><strong>Objective</strong>: Minimize total sample size while bounding the error within 200.</li>
-</ul>
-<h3 id="strategy">Strategy</h3>
-<ul>
-<li>Choose <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> to minimize total effort for a given precision.</li>
-<li>Graphical tools help visualize and select optimal sampling fractions.</li>
-</ul>
-<h3 id="optimal-fractions">Optimal Fractions</h3>
-<ul>
-<li><strong>Example 10.3a</strong>: <span class="math inline">\(p_1 = 31.5\%\)</span>, <span class="math inline">\(p_2 = 21.7\%\)</span> yields a standard deviation of ~100.</li>
-<li><strong>Example 10.3b</strong>: Similar approach with a targeted number of recaptures leading to nearly identical <span class="math inline">\(p_2\)</span>.</li>
+<li><p><strong>Proportion of tagged individuals</strong>: <span class="math display">\[
+\hat{p} = \frac{s}{n}
+\]</span> where <span class="math inline">\(s\)</span> is fixed and <span class="math inline">\(n\)</span> is the number of total individuals captured during sampling.</p></li>
+<li><p><strong>Estimator of <span class="math inline">\(N\)</span></strong>: <span class="math display">\[
+\hat{N} = \frac{n \cdot t}{s}
+\]</span> where <span class="math inline">\(t\)</span> is the number of animals tagged in the initial sample.</p></li>
 </ul>
 </div>
 </section>
-<section id="advanced-techniques-and-multistage-sampling" class="slide level2 font70">
-<h2>Advanced Techniques and Multistage Sampling</h2>
-<div class="cle3">
-<h3 id="extending-basic-techniques">Extending Basic Techniques</h3>
+<section id="variance-and-error-estimation" class="slide level2 font80">
+<h2>Variance and Error Estimation</h2>
+<div class="cle7">
 <ul>
-<li>Beyond two stages: Tag additional untagged animals in subsequent samples.</li>
-<li>Multistage approaches improve estimator accuracy for <span class="math inline">\(N\)</span> and are useful in continuous studies.</li>
-</ul>
-<h3 id="considerations-1">Considerations</h3>
-<ul>
-<li>Adjust for demographic changes and varying capture probabilities.</li>
-<li>See Seber (1982, 1986) for advanced methods.</li>
-</ul>
-<h3 id="visual-tool">Visual Tool</h3>
-<ul>
-<li>Our interactive Shiny app simplifies these complex calculations and allows for dynamic adjustment and visualization of <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> interaction.</li>
+<li><p><strong>Variance of <span class="math inline">\(\hat{N}\)</span></strong>: <span class="math display">\[
+\hat{V}(\hat{N}) = \frac{t^2 \cdot n \cdot (n-s)}{s^2 \cdot (s+1)}
+\]</span> reflects the sample’s randomness and the fixed nature of <span class="math inline">\(s\)</span>.</p></li>
+<li><p><strong>Error Bound</strong>: Using <span class="math inline">\(V-P\)</span> inequality for conservative error bounds in estimation.</p></li>
 </ul>
 </div>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<iframe width="1280" height="1300" src="https://shinylive.io/r/app/#h=0&amp;code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4BzSampFSAJmEQRAYgAEAETgAzPnHUBVAJIiArrXUAeALTqd1CwBMAClElx2I9etK1S1HBuEHDUXmAAyrCyfJLqAGLMBH4k6sZkcIyyUKxCYAK43uqctE5w9CwAMjlEZqReED4+JWUVjMGhDU1NnHRljOmodeGoAIx5uOp58bSMnKTqUTAxEHGJUMm0qexjwnhTjd1Hxz4wfOoAvOoADBjXo5MwUAAel+oP6gBuUI4GV7cfeZwVBvW7Xa4AVgKRW6EDM8EYtAIg2GeQAchMpmAAILoRhEZ60J7kdQuIhDahQFKNCK0ABeBnYaL2k2+vzeAE5wY9zldRtziuQQXzrtDDrD4ZkkSj6nlOE5MXkACosDwLCKkKAQJwsJxaOCfWhUrYqfZssx-d4Cs6NEWTIHC97Kbpi7pPPgdMIwpqyeQAeTqQ1lYF9pDyrqO5GepADpCDIwUtTjdXDhXFTSjMcDqLAzBSsaD4e9zvUymUan1ehCxUyn0y6jkkiRIk4tfrtnsZggmxI7D4QcmSaDAnUICKQ7qABJUInswsO4wKP0lXBo+wx+m0dY7P2pxj02Nt+pd6Rp+N0-KjyfJ-Lvd6NABhH4EMyUkmkbgGEIEOCcTgSdQZ3UMwSlWXxP3URc3xNHhaBBAA1JkRyuLcACp1HYUZ1DsXZ1AAegww90JnEsfCAjtMOwwDRhHAidiw9CuCcAA9BR8PUZlSMAtiO1oHRQlbHY2IAPneSYPj4gTPHIm5JmuSYSK471UCgIFwgiOBiG1RZojoMD1h7RohIERBMXxLsnCEyYABYBBLABfctDgnU88y2As6iPRdtUyFc1w3bot14iAg0nfdukPYLQrGb1LyiqdbwPHi7EonCaPY+j1EY+VWPYzjlOS49+OoQSgNEj4JOK0qeNk2rFLvdM3KII9Uuo2jCIY7iuJUtTlQgpr1EQtFuCpAQ8K3KlwNoThjwyOZNOpY8ZrQVB8UJYlQlYUz9nM7V2Camy7KKRyinHOdpzkec7G8-oXEu9dvSCncQr3ZSsPi08YovPUPpvBUkparC0vazLspYtiCPygHeKq6SRLEhHJJKuHrFq+SuqU9MnB0I8dU1DAdGYeBMquVsAEd2DBCrJkCVYPwwJM3n5UUuOx6dCtatncLornOqY3LIaOrGdHZq9YfYLn4epoqpIlkWZPR9HJaF7pvWkUM5cmKBf3YV4rjGSZWDeRT1AAam9HwPCIGAAH09M8EdzfTS24Gtm3UCIPh6m1zhdeNj4jf1pRJjxqA3lDgmiekrD9Y+ICg4KdRiDkRg3jyRcFX2EoGTeWyzYt9Qrdtz57d1r3Mh-VAFljmn9FIVhUEtPIdR4OBM8mZOiFTq48noX5w3z53C9d23uFL1hy8YSvq+42uQnrxu07AFvP3bpOiBTpe+4tAeneOSl6F9vwAibsB0nILJKSN+g4FIAB3OAKASWZ5nULU9Q0rSP902IEiSalOATALkcPWWIZhzHVD-fS-8TQdRZMA7ogcsSfxIN-ZYek1gwO2CRXeBcPxwHgDbG0RIfjsAcsoeyIgKxYC7OBAwK06AEGNKkFsvB+C4lQOwCwbwLD2jbN3GsjA6yMGUGAeyABdIAA"></iframe>
+<section id="example-wildlife-preserve-bird-population" class="slide level2 font60">
+<h2>Example: Wildlife Preserve Bird Population</h2>
+<blockquote>
+<p>Authorities want to estimate the number of birds in a preserve. Initially, <span class="math inline">\(t=150\)</span> birds are tagged and released. Later, sampling continues until <span class="math inline">\(35\)</span> tagged birds are recaptured among <span class="math inline">\(100\)</span> total birds. Estimating <span class="math inline">\(N\)</span> involves using the derived formulas to handle randomness and provide reliable population estimates.</p>
+</blockquote>
 </section>
-<section id="introduction-to-quadrat-sampling" class="slide level2 font80">
-<h2>Introduction to Quadrat Sampling</h2>
-<div class="cle6">
-<p>Quadrat sampling is a method used to estimate the number of elements within a fixed location. It calculates density per unit area and extrapolates this to estimate the total population size.</p>
+<section id="estimating-population-density-from-stocked-quadrats" class="slide level2 font80">
+<h2>Estimating Population Density from Stocked Quadrats</h2>
+<div class="cle12">
+<p>Stocked quadrat sampling involves checking the presence or absence of a species, simplifying the data collection process but requiring careful handling of statistical estimates due to the binary nature of data (presence vs.&nbsp;absence).</p>
+</div>
+</section>
+<section id="formulating-the-stocked-quadrat-density-estimation" class="slide level2 font80">
+<h2>Formulating the Stocked Quadrat Density Estimation</h2>
+<div class="cle7">
 <ul>
-<li><strong>Setup</strong>: A total area <span class="math inline">\(A\)</span> is divided into <span class="math inline">\(m\)</span> plots, each of area <span class="math inline">\(a\)</span>. The total number of plots in the region is <span class="math inline">\(M\)</span>, so <span class="math inline">\(A = M \cdot a\)</span>.</li>
-<li><strong>Data Collection</strong>: Count the number of individuals in each randomly selected plot or quadrat.</li>
+<li><p><strong>Probability of presence</strong> in a quadrat: <span class="math display">\[
+P(\text{unstocked}) = e^{-\lambda a}
+\]</span> where <span class="math inline">\(\lambda\)</span> is the density per unit area and <span class="math inline">\(a\)</span> is the area of each quadrat.</p></li>
+<li><p><strong>Estimator for <span class="math inline">\(\lambda\)</span></strong>: <span class="math display">\[
+\hat{\lambda} = -\frac{1}{a} \ln\left(\frac{y}{m}\right)
+\]</span> derived from the proportion of unstocked quadrats in the sample.</p></li>
 </ul>
 </div>
 </section>
-<section id="estimating-density-and-population-size" class="slide level2 font80">
-<h2>Estimating Density and Population Size</h2>
-<div class="cle13">
-<ul>
-<li><strong>Density Estimation</strong>: <span class="math display">\[
-\hat{\lambda} = \frac{\bar{n}}{a}
-\]</span> where <span class="math inline">\(\bar{n}\)</span> is the average count per plot from the sampled quadrats.</li>
-<li><strong>Population Size Estimation</strong>: <span class="math display">\[
-\hat{N} = \hat{\lambda} \cdot A
-\]</span></li>
-</ul>
-</div>
-</section>
-<section id="variance-and-confidence-interval" class="slide level2 font70">
+<section id="variance-and-confidence-interval" class="slide level2 font80">
 <h2>Variance and Confidence Interval</h2>
-<div class="cle14">
+<div class="cle12">
 <ul>
-<li><p><strong>Variance of the Density Estimator</strong>: <span class="math display">\[
-\hat{V}(\hat{\lambda})=\frac{1}{a^2} \cdot \frac{S_n^2}{m}
-\]</span> where <span class="math inline">\(S_n^2=\frac{\sum_{i=1}^m(n_i-\bar{n})^2}{m-1}\)</span></p></li>
-<li><p><strong>Population Size Variance</strong>: <span class="math display">\[
-\hat{V}(\hat{N})=A^2 \cdot \hat{V}(\hat{\lambda})
+<li><p><strong>Variance of <span class="math inline">\(\hat{\lambda}\)</span></strong>: <span class="math display">\[
+\hat{V}(\hat{\lambda}) = \frac{1}{m a^2} (e^{\hat{\lambda} a} - 1)
 \]</span></p></li>
-<li><p><strong>Confidence Interval</strong>: <span class="math display">\[
-\hat{N} \pm B
-\]</span> where <span class="math inline">\(B = t_{\frac{\alpha}{2}, m-1} \cdot \sqrt{\hat{V}(\hat{N})}\)</span> is the bound on the error of estimation.</p></li>
+<li><p><strong>Confidence Interval</strong>: Ensuring accuracy with <span class="math inline">\(1-\alpha\)</span>% bounds based on the variance.</p></li>
 </ul>
 </div>
 </section>
-<section id="example-1-estimating-fire-ant-density" class="slide level2 font60">
-<h2>Example 1: Estimating Fire Ant Density</h2>
+<section id="practical-example-plantation-infected-trees-estimation" class="slide level2 font60">
+<h2>Practical Example: Plantation Infected Trees Estimation</h2>
 <blockquote>
-<p>In Florida, a study to estimate the density of fire ant hills used 50 quadrats, each of 16 <span class="math inline">\(m^2\)</span>. The counts of ant hills per quadrat varied, allowing for an estimate of ant hill density per unit area.</p>
+<p>In a 200-acre plantation, the presence of fusiform rust in trees is sampled over 20 quadrats of 0.5 acre each. The density and total number of infected trees are estimated, incorporating bounds on the estimation error.</p>
 </blockquote>
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-</section>
-<section id="example-2-estimating-disease-prevalence-in-trees" class="slide level2 font60">
-<h2>Example 2: Estimating Disease Prevalence in Trees</h2>
-<blockquote>
-<p>In a southern-pine plantation, 10 quadrats of 0.5 acre each are used to estimate the density of trees with fusiform rust. The plots had an average of 2.8 infected trees each, leading to an estimate of total infection prevalence across 200 acres.</p>
-</blockquote>
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
