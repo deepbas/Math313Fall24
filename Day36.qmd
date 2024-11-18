@@ -186,11 +186,28 @@ Quadrat sampling is a method used to estimate the number of elements within a fi
 
 > In Florida, a study to estimate the density of fire ant hills used 50 quadrats, each of 16 $m^2$. The counts of ant hills per quadrat varied, allowing for an estimate of ant hill density per unit area.
 
+| Number of hills | Frequency |
+| :---: | :---: |
+| 0 | 13 |
+| 1 | 8 |
+| 2 | 12 |
+| 3 | 10 |
+| 4 | 5 |
+| 5 | 2 |
+|  | 50 |
+
+
 ##
 
 ## Example 2: Estimating Disease Prevalence in Trees {.font60}
 
-> In a southern-pine plantation, 10 quadrats of 0.5 acre each are used to estimate the density of trees with fusiform rust. The plots had an average of 2.8 infected trees each, leading to an estimate of total infection prevalence across 200 acres.
+> The density of trees having fusiform rust on a southern-pine plantation of 200 acres is to be estimated from a sample of $m=10$ quadrats of 0.5 acre each. The ten sampled plots had an average of 2.8 infected trees per quadrat.
 
 
-##
+a. Estimate the density of infected trees and place a $95 \%$ bound on the error of estimation.
+
+::: custom-space
+:::
+
+b. Estimate the total number of infected trees and place a $95 \%$ bound on the error of estimation.
+
