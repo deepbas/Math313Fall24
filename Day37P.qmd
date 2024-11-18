@@ -47,80 +47,154 @@ yt <- 0
 #<img src="images/Day23-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
 ```
 
-## Estimation of Population Density and Size Using Inverse Sampling {.font80}
+
+## Stocked Quadrat Sampling Method {.font90}
+
+::: bqt
+Stocked quadrat sampling efficiently determines species presence within plots, simplifying data collection. This method involves counting quadrats as either stocked or unstocked based on species presence, simplifying statistical analysis but requiring careful handling due to binary outcomes.
+
+- **Data Type**: Presence or absence of species.
+- **Statistical Modeling**: Often involves logistic regression or similar models.
+:::
+
+## Poisson Distribution in Ecological Sampling {.font80}
+
+::: cle6
+Ecological counts are modeled using the Poisson distribution under the assumption that species are randomly distributed.
+
+### Key Concepts
+- **Modeling Assumption**: Each quadrat's count follows a Poisson distribution.
+- **Expected Counts**: $\lambda a$, where $\lambda$ is the species density per unit area.
+- **Unstocked Probability**: 
+  $$
+  P(\text{No individuals}) = e^{-\lambda a}
+  $$
+This probability is crucial for estimating species density from unstocked quadrats.
+:::
+
+## Estimating Density from Unstocked Quadrats {.font60}
+
+::: cle13
+Using the proportion of unstocked quadrats, we can estimate population density efficiently, which is especially useful in large ecological studies where direct counting is impractical.
+
+- **Estimator**:
+  $$
+  \hat{\lambda} = -\frac{1}{a} \ln\left(\frac{y}{n}\right)
+  $$
+
+### Variance Estimation
+- **Density Variance**:
+  $$
+  \hat{V}(\hat{\lambda}) = \frac{1}{n a^2} \left(e^{\hat{\lambda} a} - 1\right)
+  $$
+- **Population Variance**:
+  $$
+  \hat{V}(\hat{M}) = A^2 \hat{V}(\hat{\lambda}) = \frac{A^2}{n a^2} \left(e^{\hat{\lambda} a} - 1\right)
+  $$
+:::
+
+## {.font40}
+
+<details><summary><red>Derivations of $\hat{V}(\hat{\lambda}$) (Supplementary)</red></summary>
+
+
+To derive the variance of $\hat{\lambda}$ using the delta method, we start from the estimator:
+
+$$
+\hat{\lambda} = -\frac{1}{a} \ln\left(\frac{y}{n}\right)
+$$
+
+Defining a transformation function $g(x) = -\frac{1}{a} \ln(x)$, the delta method approximates the variance of $\hat{\lambda}$ as:
+
+$$
+\hat{V}(g(X)) \approx [g'(E(X))]^2 \hat{V}(X)
+$$
+
+where $X = \frac{y}{n}$ and $E(X) = e^{-\lambda a}$. Calculating the derivative $g'(x)$:
+
+$$
+g'(x) = -\frac{1}{a} \cdot \frac{1}{x}
+$$
+
+Plugging in $E(X) = e^{-\lambda a}$:
+
+$$
+g'(E(X)) = -\frac{1}{a} e^{\lambda a}
+$$
+
+Assuming $X$ follows a binomial distribution, the variance of $X$ is:
+
+$$
+\hat{V}(X) = \frac{E(X)(1 - E(X))}{n} = \frac{e^{-\lambda a}(1 - e^{-\lambda a})}{n}
+$$
+
+Substituting back into the delta method formula:
+
+$$
+\hat{V}(\hat{\lambda}) = \left(-\frac{1}{a} e^{\lambda a}\right)^2 \cdot \frac{e^{-\lambda a}(1 - e^{-\lambda a})}{n} = \frac{1}{n a^2} \left(e^{\lambda a} - 1\right)
+$$
+
+</details>
+
+
+
+## {.font60}
+
+> Example 1: To estimate the density and total number of trees having fusiform rust on a southern-pine plantation of 200 acres, $m=20$ quadrats of 0.5 acre each will be sampled, but only the presence or absence of infected trees will be noted for each sampled quadrat. (Because this task is easier than counting trees, the sample size can be increased.) Suppose $y=4$ of the 20 quadrats show no signs of fusiform rust. Estimate the density and the total number of infected trees, placing a 95% bounds on the error of estimation in both cases.
+
+
+
+##
+
+
+
+## Introduction to Adaptive Sampling {.font80}
 
 ::: cle7
-Inverse sampling differs from direct sampling as it continues until a fixed number of tagged animals is recaptured. This method provides an unbiased estimator for population size $N$, using the fixed count of recaptured tagged animals to estimate the proportion of tagged animals in the population.
+Adaptive sampling adjusts the sampling strategy based on findings during data collection, enhancing the efficiency of estimating population densities, especially in clustered distributions like forests.
+
+### Concept
+- **Adaptive Technique**: Explores neighboring cells if a species is detected, leveraging the spatial cluster tendency of species like maple trees.
+- **Implementation**: Begins with a regular grid over a study area; expands sampling dynamically as species are detected.
+
 :::
 
-## Mathematical Formulation of Inverse Sampling {.font80}
+## Adaptive Sampling Strategy and Estimation {.font70}
 
-::: cle12
-- **Proportion of tagged individuals**:
-  $$
-  \hat{p} = \frac{s}{n}
-  $$
-  where $s$ is fixed and $n$ is the number of total individuals captured during sampling.
+::: cle13
+This sampling method allows researchers to intensify their sampling efforts in promising areas, potentially reducing overall effort while increasing accuracy.
 
-- **Estimator of $N$**:
+### Process
+- **Sampling Growth**: If species are detected in a sampled cell, adjacent cells are also sampled, continuing until no new species are found in the surrounding cells.
+- **Density Estimation**:
   $$
-  \hat{N} = \frac{n \cdot t}{s}
+  \hat{\mu}=\frac{1}{m} \sum_{i=1}^{m} \frac{y_{i}}{m_{i}}=\frac{1}{m} \sum_{i=1}^{m} \bar{y}_{i}
   $$
-  where $t$ is the number of animals tagged in the initial sample.
+  This approach estimates the mean density per cell, applying corrections for the adaptive sampling design.
+
 :::
 
-## Variance and Error Estimation {.font80}
+## Variance Calculation
 
-::: cle7
-- **Variance of $\hat{N}$**:
+::: cle3
+- **Variance Estimation**:
   $$
-  \hat{V}(\hat{N}) = \frac{t^2 \cdot n \cdot (n-s)}{s^2 \cdot (s+1)}
+  \hat{V}(\hat{\mu})=\left(1-\frac{m}{M}\right) \frac{s_{\bar{y}}^{2}}{m}
   $$
-  reflects the sample's randomness and the fixed nature of $s$.
+  where $s_\bar{y}^2=\frac{\sum_{i=1}^m\left(\overline{y_i}-\hat{\mu}\right)^2}{m-1}$
+  
+- Reflects the increased precision of adaptive sampling over simple random sampling.
 
-- **Error Bound**:
-  Using $V-P$ inequality for conservative error bounds in estimation.
 :::
 
-## Example: Wildlife Preserve Bird Population {.font60}
 
-> Authorities want to estimate the number of birds in a preserve. Initially, $t=150$ birds are tagged and released. Later, sampling continues until $35$ tagged birds are recaptured among $100$ total birds. Estimating $N$ involves using the derived formulas to handle randomness and provide reliable population estimates.
 
-## Estimating Population Density from Stocked Quadrats {.font80}
+## {.font40}
 
-::: cle12
-Stocked quadrat sampling involves checking the presence or absence of a species, simplifying the data collection process but requiring careful handling of statistical estimates due to the binary nature of data (presence vs. absence).
-:::
+> Example 2: Back to our forest, maple trees, and the grid pictured in the following Figure. Suppose a random sample of $m=5$ of the $M=100$ cells is selected and the asterisks $(*)$ mark the five that come up in a simple random sample. The adaptive sampling scheme is added onto this original sample as follows. If a sampled cell has at least one maple tree in it, then the eight neighboring cells (East, SE, South, SW, West, NW, North, and NE)are investigated as well. If any one of those cells contains a maple tree, it is added to the sample and its neighboring cells are investigated. The process continues until the cell network is surrounded by cells devoid of maple trees.
 
-## Formulating the Stocked Quadrat Density Estimation {.font80}
 
-::: cle7
-- **Probability of presence** in a quadrat:
-  $$
-  P(\text{unstocked}) = e^{-\lambda a}
-  $$
-  where $\lambda$ is the density per unit area and $a$ is the area of each quadrat.
+<img src="images/Day37-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
 
-- **Estimator for $\lambda$**:
-  $$
-  \hat{\lambda} = -\frac{1}{a} \ln\left(\frac{y}{m}\right)
-  $$
-  derived from the proportion of unstocked quadrats in the sample.
-:::
 
-## Variance and Confidence Interval {.font80}
-
-::: cle12
-- **Variance of $\hat{\lambda}$**:
-  $$
-  \hat{V}(\hat{\lambda}) = \frac{1}{m a^2} (e^{\hat{\lambda} a} - 1)
-  $$
-
-- **Confidence Interval**:
-  Ensuring accuracy with $1-\alpha$% bounds based on the variance.
-:::
-
-## Practical Example: Plantation Infected Trees Estimation {.font60}
-
-> In a 200-acre plantation, the presence of fusiform rust in trees is sampled over 20 quadrats of 0.5 acre each. The density and total number of infected trees are estimated, incorporating bounds on the estimation error.
-
+##

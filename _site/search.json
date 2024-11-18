@@ -977,7 +977,7 @@
     "href": "Day36P.html#introduction-to-quadrat-sampling",
     "title": "Day 36",
     "section": "Introduction to Quadrat Sampling",
-    "text": "Introduction to Quadrat Sampling\n\nQuadrat sampling is used to estimate the number of elements in a fixed location by calculating the density per unit area, then extrapolating to estimate total population size."
+    "text": "Introduction to Quadrat Sampling\n\nQuadrat sampling is a method used to estimate the number of elements within a fixed location. It calculates density per unit area and extrapolates this to estimate the total population size.\n\nSetup: A total area \\(A\\) is divided into \\(m\\) plots, each of area \\(a\\). The total number of plots in the region is \\(M\\), so \\(A = M \\cdot a\\).\nData Collection: Count the number of individuals in each randomly selected plot or quadrat."
   },
   {
     "objectID": "Day36P.html#quadrat-sampling-method",
@@ -998,14 +998,14 @@
     "href": "Day36P.html#variance-and-confidence-interval",
     "title": "Day 36",
     "section": "Variance and Confidence Interval",
-    "text": "Variance and Confidence Interval\n\n\nVariance of the Density Estimator: \\[\n\\hat{V}(\\hat{\\lambda}) = \\frac{\\hat{\\lambda}}{an}\n\\]\nConfidence Interval: \\[\n\\hat{N} \\pm B\n\\] where \\(B = t_{\\frac{\\alpha}{2}, m-1} \\cdot \\sqrt{\\hat{V}}\\) is the bound on the error of estimation."
+    "text": "Variance and Confidence Interval\n\n\nVariance of the Density Estimator: \\[\n\\hat{V}(\\hat{\\lambda})=\\frac{1}{a^2} \\cdot \\frac{S_n^2}{m}\n\\] where \\(S_n^2=\\frac{\\sum_{i=1}^m(n_i-\\bar{n})^2}{m-1}\\)\nPopulation Size Variance: \\[\n\\hat{V}(\\hat{N})=A^2 \\cdot \\hat{V}(\\hat{\\lambda})\n\\]\nConfidence Interval: \\[\n\\hat{N} \\pm B\n\\] where \\(B = t_{\\frac{\\alpha}{2}, m-1} \\cdot \\sqrt{\\hat{V}(\\hat{N})}\\) is the bound on the error of estimation."
   },
   {
     "objectID": "Day36P.html#example-1-estimating-fire-ant-density",
     "href": "Day36P.html#example-1-estimating-fire-ant-density",
     "title": "Day 36",
     "section": "Example 1: Estimating Fire Ant Density",
-    "text": "Example 1: Estimating Fire Ant Density\n\nIn Florida, a study to estimate the density of fire ant hills used 50 quadrats, each of 16 m^2. The counts of ant hills per quadrat varied, allowing for an estimate of ant hill density per unit area."
+    "text": "Example 1: Estimating Fire Ant Density\n\nIn Florida, a study to estimate the density of fire ant hills used 50 quadrats, each of 16 \\(m^2\\). The counts of ant hills per quadrat varied, allowing for an estimate of ant hill density per unit area."
   },
   {
     "objectID": "Day36P.html#example-2-estimating-disease-prevalence-in-trees",
@@ -2034,7 +2034,7 @@
     "href": "Day37P.html#estimating-population-density-from-stocked-quadrats",
     "title": "Day 37",
     "section": "Estimating Population Density from Stocked Quadrats",
-    "text": "Estimating Population Density from Stocked Quadrats\n\nStocked quadrat sampling involves checking the presence or absence of a species, simplifying the data collection process but requiring careful handling of statistical estimates due to the binary nature of data (presence vs. absence)."
+    "text": "Estimating Population Density from Stocked Quadrats\n\nIn quadrat sampling, instead of counting individuals, detecting the presence or absence of species leads to estimates of density and population size. A quadrat containing the species is termed “stocked.”\n\nModel for Estimation: \\[\n\\hat{\\lambda} = -\\frac{1}{a} \\ln\\left(\\frac{y}{n}\\right)\n\\] Where \\(y\\) is the number of unstocked quadrats, \\(n\\) is the total sampled quadrats, and \\(a\\) is the area per quadrat."
   },
   {
     "objectID": "Day37P.html#formulating-the-stocked-quadrat-density-estimation",
@@ -2532,5 +2532,250 @@
     "title": "Day 11",
     "section": "",
     "text": "F. Compare the average populations per state between Western and Eastern U.S.A.\n\n\nSolution\n\n\ndelta &lt;- y.bar - x.bar; delta # western - eastern\n\n[1] -6253.45\n\nV.delta &lt;- sy^2/ny + sx^2/nx\ndf &lt;- (sy^2/ny + sx^2/nx)^2/((sy^2/ny)^2/(ny -1) + (sx^2/nx)^2/(nx -1)); df\n\n[1] 13.72751\n\nCI &lt;- delta + c(-1,1)*qt(0.975, df = df-1)*sqrt(V.delta); CI\n\n[1] -9999.12 -2507.78"
+  },
+  {
+    "objectID": "Day36P.html#direct-vs.-inverse-sampling-techniques",
+    "href": "Day36P.html#direct-vs.-inverse-sampling-techniques",
+    "title": "Day 36",
+    "section": "Direct vs. Inverse Sampling Techniques",
+    "text": "Direct vs. Inverse Sampling Techniques\n\nKey Differences\n\nDirect Sampling: Tag animals, recapture randomly, and count recaptures to estimate population size. The number of recaptures isn’t fixed and depends on the sample size.\nInverse Sampling: Continue sampling until a fixed number of previously tagged animals are recaptured. This method can yield more precise information than direct sampling if the second sample size \\(n\\) is appropriately small relative to the total population \\(N\\).\n\nConsiderations\n\nInverse sampling can require a disproportionately large \\(n\\) if the initial sample size \\(t\\) is poorly chosen and nothing is known about \\(N\\)."
+  },
+  {
+    "objectID": "Day36P.html#optimizing-sampling-fractions",
+    "href": "Day36P.html#optimizing-sampling-fractions",
+    "title": "Day 36",
+    "section": "Optimizing Sampling Fractions",
+    "text": "Optimizing Sampling Fractions\n\nExample Scenario\n\nContext: Estimating deer population which is similar in size to the previous year (800 to 1000 deer).\nObjective: Minimize total sample size while bounding the error within 200.\n\nStrategy\n\nChoose \\(p_1\\) and \\(p_2\\) to minimize total effort for a given precision.\nGraphical tools help visualize and select optimal sampling fractions.\n\nOptimal Fractions\n\nExample 10.3a: \\(p_1 = 31.5\\%\\), \\(p_2 = 21.7\\%\\) yields a standard deviation of ~100.\nExample 10.3b: Similar approach with a targeted number of recaptures leading to nearly identical \\(p_2\\)."
+  },
+  {
+    "objectID": "Day36P.html#advanced-techniques-and-multistage-sampling",
+    "href": "Day36P.html#advanced-techniques-and-multistage-sampling",
+    "title": "Day 36",
+    "section": "Advanced Techniques and Multistage Sampling",
+    "text": "Advanced Techniques and Multistage Sampling\n\nExtending Basic Techniques\n\nBeyond two stages: Tag additional untagged animals in subsequent samples.\nMultistage approaches improve estimator accuracy for \\(N\\) and are useful in continuous studies.\n\nConsiderations\n\nAdjust for demographic changes and varying capture probabilities.\nSee Seber (1982, 1986) for advanced methods.\n\nVisual Tool\n\nOur interactive Shiny app simplifies these complex calculations and allows for dynamic adjustment and visualization of \\(p_1\\) and \\(p_2\\) interaction."
+  },
+  {
+    "objectID": "Day36P.html#mathematical-model",
+    "href": "Day36P.html#mathematical-model",
+    "title": "Day 36",
+    "section": "Mathematical Model",
+    "text": "Mathematical Model\n\n\\[\np_1=\\frac{t}{N} \\quad \\text{and} \\quad p_2=\\frac{n}{N}\n\\]\n\n\\(p_1\\) (First Sampling Fraction): Represents the proportion of the total population \\(N\\) sampled initially.\n\\(p_2\\) (Second Sampling Fraction): Signifies the proportion of the total population sampled during the recapture phase. It is critical for adjusting the precision of the population estimate.\n\n\\[\n\\frac{V(\\hat{N})}{N} \\approx \\frac{1-p_1}{p_1 p_2}\n\\]\n\nThis formula shows how the variance of the estimated population size \\(\\hat{N}\\) relative to the population size \\(N\\) depends inversely on both \\(p_1\\) and \\(p_2\\)."
+  },
+  {
+    "objectID": "Day36P.html#section-1",
+    "href": "Day36P.html#section-1",
+    "title": "Day 36",
+    "section": "",
+    "text": "Example 1:"
+  },
+  {
+    "objectID": "Day36P.html#estimation-of-population-density-and-size-using-inverse-sampling",
+    "href": "Day36P.html#estimation-of-population-density-and-size-using-inverse-sampling",
+    "title": "Day 36",
+    "section": "Estimation of Population Density and Size Using Inverse Sampling",
+    "text": "Estimation of Population Density and Size Using Inverse Sampling\n\nInverse sampling differs from direct sampling as it continues until a fixed number of tagged animals is recaptured. This method provides an unbiased estimator for population size \\(N\\), using the fixed count of recaptured tagged animals to estimate the proportion of tagged animals in the population."
+  },
+  {
+    "objectID": "Day36P.html#mathematical-formulation-of-inverse-sampling",
+    "href": "Day36P.html#mathematical-formulation-of-inverse-sampling",
+    "title": "Day 36",
+    "section": "Mathematical Formulation of Inverse Sampling",
+    "text": "Mathematical Formulation of Inverse Sampling\n\n\nProportion of tagged individuals: \\[\n\\hat{p} = \\frac{s}{n}\n\\] where \\(s\\) is fixed and \\(n\\) is the number of total individuals captured during sampling.\nEstimator of \\(N\\): \\[\n\\hat{N} = \\frac{n \\cdot t}{s}\n\\] where \\(t\\) is the number of animals tagged in the initial sample."
+  },
+  {
+    "objectID": "Day36P.html#variance-and-error-estimation",
+    "href": "Day36P.html#variance-and-error-estimation",
+    "title": "Day 36",
+    "section": "Variance and Error Estimation",
+    "text": "Variance and Error Estimation\n\n\nVariance of \\(\\hat{N}\\): \\[\n\\hat{V}(\\hat{N}) = \\frac{t^2 \\cdot n \\cdot (n-s)}{s^2 \\cdot (s+1)}\n\\] reflects the sample’s randomness and the fixed nature of \\(s\\).\nError Bound: Using \\(V-P\\) inequality for conservative error bounds in estimation."
+  },
+  {
+    "objectID": "Day36P.html#example-wildlife-preserve-bird-population",
+    "href": "Day36P.html#example-wildlife-preserve-bird-population",
+    "title": "Day 36",
+    "section": "Example: Wildlife Preserve Bird Population",
+    "text": "Example: Wildlife Preserve Bird Population\n\nAuthorities want to estimate the number of birds in a preserve. Initially, \\(t=150\\) birds are tagged and released. Later, sampling continues until \\(35\\) tagged birds are recaptured among \\(100\\) total birds. Estimating \\(N\\) involves using the derived formulas to handle randomness and provide reliable population estimates."
+  },
+  {
+    "objectID": "Day37P.html#poisson-distribution-and-unstocked-quadrats",
+    "href": "Day37P.html#poisson-distribution-and-unstocked-quadrats",
+    "title": "Day 37",
+    "section": "Poisson Distribution and Unstocked Quadrats",
+    "text": "Poisson Distribution and Unstocked Quadrats\n\nUnderstanding the statistical assumptions and derivation of Poisson distribution applied in ecological studies.\nAssumptions\n\nRandom Distribution: Species are assumed to be randomly and independently distributed across the study area.\nPoisson Process: The number of individuals in any small area (quadrat) follows a Poisson distribution.\n\nKey Concept\n\nThe expected number of individuals in a quadrat of area \\(a\\) is \\(\\lambda a\\), where \\(\\lambda\\) is the density of the species per unit area.\n\nProbability of an Unstocked Quadrat\n\\[\nP(\\text{No individuals}) = e^{-\\lambda a}\n\\] This represents the probability of finding no individuals in a quadrat, derived from the Poisson probability formula for zero count."
+  },
+  {
+    "objectID": "Day37P.html#estimating-density-using-unstocked-quadrats",
+    "href": "Day37P.html#estimating-density-using-unstocked-quadrats",
+    "title": "Day 37",
+    "section": "Estimating Density Using Unstocked Quadrats",
+    "text": "Estimating Density Using Unstocked Quadrats\n\nFrom the proportion of unstocked quadrats in a sample, we can estimate the population density.\n\nSample Data: Count how many of \\(n\\) quadrats are unstocked (say \\(y\\) quadrats).\nEstimator: \\[\n\\hat{\\lambda} = -\\frac{1}{a} \\ln\\left(\\frac{y}{n}\\right)\n\\] This formula derives from setting the sample proportion \\(y/n\\) as an estimator for \\(e^{-\\lambda a}\\) and solving for \\(\\lambda\\).\n\nApplication\nThis approach allows for efficient population density estimation in large ecological studies where direct counting is impractical."
+  },
+  {
+    "objectID": "Day37P.html#estimating-population-density-from-stocked-quadrats-1",
+    "href": "Day37P.html#estimating-population-density-from-stocked-quadrats-1",
+    "title": "Day 37",
+    "section": "Estimating Population Density from Stocked Quadrats",
+    "text": "Estimating Population Density from Stocked Quadrats\n\nIn quadrat sampling, instead of counting individuals, detecting the presence or absence of species leads to estimates of density and population size. A quadrat containing the species is termed “stocked.”\n\nModel for Estimation: \\[\n\\hat{\\lambda} = -\\frac{1}{a} \\ln\\left(\\frac{y}{n}\\right)\n\\] Where \\(y\\) is the number of unstocked quadrats, \\(n\\) is the total sampled quadrats, and \\(a\\) is the area per quadrat."
+  },
+  {
+    "objectID": "Day37P.html#variance-estimation-for-density-and-population",
+    "href": "Day37P.html#variance-estimation-for-density-and-population",
+    "title": "Day 37",
+    "section": "Variance Estimation for Density and Population",
+    "text": "Variance Estimation for Density and Population\n\nEstimations involve variance to understand confidence in the calculated values.\n\nDensity Variance: \\[\n\\hat{V}(\\hat{\\lambda}) = \\frac{1}{n a^2} \\left(e^{\\hat{\\lambda} a} - 1\\right)\n\\]\nPopulation Size and Variance: \\[\n\\hat{M} = \\hat{\\lambda} A, \\quad \\hat{V}(\\hat{M}) = A^2 \\hat{V}(\\hat{\\lambda})\n\\]"
+  },
+  {
+    "objectID": "Day37P.html#stocked-quadrat-sampling-method",
+    "href": "Day37P.html#stocked-quadrat-sampling-method",
+    "title": "Day 37",
+    "section": "Stocked Quadrat Sampling Method",
+    "text": "Stocked Quadrat Sampling Method\n\nStocked quadrat sampling efficiently determines species presence within plots, simplifying data collection. This method involves counting quadrats as either stocked or unstocked based on species presence, simplifying statistical analysis but requiring careful handling due to binary outcomes.\n\nData Type: Presence or absence of species.\nStatistical Modeling: Often involves logistic regression or similar models."
+  },
+  {
+    "objectID": "Day37P.html#statistical-modeling-for-stocked-quadrats",
+    "href": "Day37P.html#statistical-modeling-for-stocked-quadrats",
+    "title": "Day 37",
+    "section": "Statistical Modeling for Stocked Quadrats",
+    "text": "Statistical Modeling for Stocked Quadrats\n\nThe modeling for stocked quadrats adapts statistical methods to analyze binary (presence/absence) data efficiently.\nStatistical Handling\n\nAnalysis of such data often involves logistic regression or other models that can handle binary outcomes.\nEstimations focus on presence probability and its implications for overall density."
+  },
+  {
+    "objectID": "Day37P.html#poisson-distribution-in-ecology",
+    "href": "Day37P.html#poisson-distribution-in-ecology",
+    "title": "Day 37",
+    "section": "Poisson Distribution in Ecology",
+    "text": "Poisson Distribution in Ecology\n\nA foundational statistical assumption in ecology involves modeling species counts within quadrats using Poisson distribution.\nPoisson Distribution Assumptions\n\nRandomness: Species are assumed to be randomly and independently distributed.\nApplicability: Each quadrat’s species count follows a Poisson distribution."
+  },
+  {
+    "objectID": "Day37P.html#derivation-and-application-of-poisson-model",
+    "href": "Day37P.html#derivation-and-application-of-poisson-model",
+    "title": "Day 37",
+    "section": "Derivation and Application of Poisson Model",
+    "text": "Derivation and Application of Poisson Model\n\nDetailed exploration of the derivation and practical application of the Poisson model to understand unstocked quadrats.\n\nExpected Counts: \\(\\lambda a\\), where \\(\\lambda\\) is the density, and \\(a\\) is quadrat area.\nProbability of Zero Count: \\[\nP(\\text{No individuals}) = e^{-\\lambda a}\n\\]\nThis formula calculates the likelihood of a quadrat being unstocked, essential for estimating species density."
+  },
+  {
+    "objectID": "Day37P.html#poisson-distribution-in-ecological-sampling",
+    "href": "Day37P.html#poisson-distribution-in-ecological-sampling",
+    "title": "Day 37",
+    "section": "Poisson Distribution in Ecological Sampling",
+    "text": "Poisson Distribution in Ecological Sampling\n\nEcological counts are modeled using the Poisson distribution under the assumption that species are randomly distributed.\nKey Concepts\n\nModeling Assumption: Each quadrat’s count follows a Poisson distribution.\nExpected Counts: \\(\\lambda a\\), where \\(\\lambda\\) is the species density per unit area.\nUnstocked Probability: \\[\nP(\\text{No individuals}) = e^{-\\lambda a}\n\\] This probability is crucial for estimating species density from unstocked quadrats."
+  },
+  {
+    "objectID": "Day37P.html#estimating-density-from-unstocked-quadrats",
+    "href": "Day37P.html#estimating-density-from-unstocked-quadrats",
+    "title": "Day 37",
+    "section": "Estimating Density from Unstocked Quadrats",
+    "text": "Estimating Density from Unstocked Quadrats\n\nUsing the proportion of unstocked quadrats, we can estimate population density efficiently, which is especially useful in large ecological studies where direct counting is impractical.\n\nEstimator: \\[\n\\hat{\\lambda} = -\\frac{1}{a} \\ln\\left(\\frac{y}{n}\\right)\n\\]\n\nVariance Estimation\n\nDensity Variance: \\[\n\\hat{V}(\\hat{\\lambda}) = \\frac{1}{n a^2} \\left(e^{\\hat{\\lambda} a} - 1\\right)\n\\]\nPopulation Variance: \\[\n\\hat{V}(\\hat{M}) = A^2 \\hat{V}(\\hat{\\lambda}) = \\frac{A^2}{n a^2} \\left(e^{\\hat{\\lambda} a} - 1\\right)\n\\]"
+  },
+  {
+    "objectID": "Day37P.html#section",
+    "href": "Day37P.html#section",
+    "title": "Day 37",
+    "section": "",
+    "text": "Derivations of \\(\\hat{V}(\\hat{\\lambda}\\)) (Supplementary)\n\nTo derive the variance of \\(\\hat{\\lambda}\\) using the delta method, we start from the estimator:\n\\[\n\\hat{\\lambda} = -\\frac{1}{a} \\ln\\left(\\frac{y}{n}\\right)\n\\]\nDefining a transformation function \\(g(x) = -\\frac{1}{a} \\ln(x)\\), the delta method approximates the variance of \\(\\hat{\\lambda}\\) as:\n\\[\n\\hat{V}(g(X)) \\approx [g'(E(X))]^2 \\hat{V}(X)\n\\]\nwhere \\(X = \\frac{y}{n}\\) and \\(E(X) = e^{-\\lambda a}\\). Calculating the derivative \\(g'(x)\\):\n\\[\ng'(x) = -\\frac{1}{a} \\cdot \\frac{1}{x}\n\\]\nPlugging in \\(E(X) = e^{-\\lambda a}\\):\n\\[\ng'(E(X)) = -\\frac{1}{a} e^{\\lambda a}\n\\]\nAssuming \\(X\\) follows a binomial distribution, the variance of \\(X\\) is:\n\\[\n\\hat{V}(X) = \\frac{E(X)(1 - E(X))}{n} = \\frac{e^{-\\lambda a}(1 - e^{-\\lambda a})}{n}\n\\]\nSubstituting back into the delta method formula:\n\\[\n\\hat{V}(\\hat{\\lambda}) = \\left(-\\frac{1}{a} e^{\\lambda a}\\right)^2 \\cdot \\frac{e^{-\\lambda a}(1 - e^{-\\lambda a})}{n} = \\frac{1}{n a^2} \\left(e^{\\lambda a} - 1\\right)\n\\]"
+  },
+  {
+    "objectID": "Day37P.html#section-1",
+    "href": "Day37P.html#section-1",
+    "title": "Day 37",
+    "section": "",
+    "text": "Example 1: To estimate the density and total number of trees having fusiform rust on a southern-pine plantation of 200 acres, \\(m=20\\) quadrats of 0.5 acre each will be sampled, but only the presence or absence of infected trees will be noted for each sampled quadrat. (Because this task is easier than counting trees, the sample size can be increased.) Suppose \\(y=4\\) of the 20 quadrats show no signs of fusiform rust. Estimate the density and the total number of infected trees, placing a 95% bounds on the error of estimation in both cases."
+  },
+  {
+    "objectID": "Day37P.html#section-4",
+    "href": "Day37P.html#section-4",
+    "title": "Day 37",
+    "section": "",
+    "text": "Example 2: Back to our forest, maple trees, and the grid pictured in the following Figure. Suppose a random sample of \\(m=5\\) of the \\(M=100\\) cells is selected and the asterisks \\((*)\\) mark the five that come up in a simple random sample. The adaptive sampling scheme is added onto this original sample as follows. If a sampled cell has at least one maple tree in it, then the eight neighboring cells (East, SE, South, SW, West, NW, North, and NE)are investigated as well. If any one of those cells contains a maple tree, it is added to the sample and its neighboring cells are investigated. The process continues until the cell network is surrounded by cells devoid of maple trees."
+  },
+  {
+    "objectID": "Day37P.html#introduction-to-adaptive-sampling",
+    "href": "Day37P.html#introduction-to-adaptive-sampling",
+    "title": "Day 37",
+    "section": "Introduction to Adaptive Sampling",
+    "text": "Introduction to Adaptive Sampling\n\nAdaptive sampling adjusts the sampling strategy based on findings during data collection, enhancing the efficiency of estimating population densities, especially in clustered distributions like forests.\nConcept\n\nAdaptive Technique: Explores neighboring cells if a species is detected, leveraging the spatial cluster tendency of species like maple trees.\nImplementation: Begins with a regular grid over a study area; expands sampling dynamically as species are detected."
+  },
+  {
+    "objectID": "Day37P.html#adaptive-sampling-strategy-and-estimation",
+    "href": "Day37P.html#adaptive-sampling-strategy-and-estimation",
+    "title": "Day 37",
+    "section": "Adaptive Sampling Strategy and Estimation",
+    "text": "Adaptive Sampling Strategy and Estimation\n\nThis sampling method allows researchers to intensify their sampling efforts in promising areas, potentially reducing overall effort while increasing accuracy.\nProcess\n\nSampling Growth: If species are detected in a sampled cell, adjacent cells are also sampled, continuing until no new species are found in the surrounding cells.\nDensity Estimation: \\[\n\\hat{\\mu}=\\frac{1}{m} \\sum_{i=1}^{m} \\frac{y_{i}}{m_{i}}=\\frac{1}{m} \\sum_{i=1}^{m} \\bar{y}_{i}\n\\] This approach estimates the mean density per cell, applying corrections for the adaptive sampling design."
+  },
+  {
+    "objectID": "Day37P.html#section-3",
+    "href": "Day37P.html#section-3",
+    "title": "Day 37",
+    "section": "",
+    "text": "Example 2: Back to our forest, maple trees, and the grid pictured in the following Figure. Suppose a random sample of \\(m=5\\) of the \\(M=100\\) cells is selected and the asterisks \\((*)\\) mark the five that come up in a simple random sample. The adaptive sampling scheme is added onto this original sample as follows. If a sampled cell has at least one maple tree in it, then the eight neighboring cells (East, SE, South, SW, West, NW, North, and NE)are investigated as well. If any one of those cells contains a maple tree, it is added to the sample and its neighboring cells are investigated. The process continues until the cell network is surrounded by cells devoid of maple trees."
+  },
+  {
+    "objectID": "Day37P.html#variance-calculation",
+    "href": "Day37P.html#variance-calculation",
+    "title": "Day 37",
+    "section": "Variance Calculation",
+    "text": "Variance Calculation\n\n\nVariance Estimation: \\[\n\\hat{V}(\\hat{\\mu})=\\left(1-\\frac{m}{M}\\right) \\frac{s_{\\bar{y}}^{2}}{m}\n\\] where \\(s_\\bar{y}^2=\\frac{\\sum_{i=1}^m\\left(\\overline{y_i}-\\hat{\\mu}\\right)^2}{m-1}\\)\nReflects the increased precision of adaptive sampling over simple random sampling."
+  },
+  {
+    "objectID": "Day36.html#direct-vs.-inverse-sampling-techniques",
+    "href": "Day36.html#direct-vs.-inverse-sampling-techniques",
+    "title": "Day 36",
+    "section": "Direct vs. Inverse Sampling Techniques",
+    "text": "Direct vs. Inverse Sampling Techniques\n\nKey Differences\n\nDirect Sampling: Tag animals, recapture randomly, and count recaptures to estimate population size. The number of recaptures isn’t fixed and depends on the sample size.\nInverse Sampling: Continue sampling until a fixed number of previously tagged animals are recaptured. This method can yield more precise information than direct sampling if the second sample size \\(n\\) is appropriately small relative to the total population \\(N\\).\n\nConsiderations\n\nInverse sampling can require a disproportionately large \\(n\\) if the initial sample size \\(t\\) is poorly chosen and nothing is known about \\(N\\)."
+  },
+  {
+    "objectID": "Day36.html#mathematical-model",
+    "href": "Day36.html#mathematical-model",
+    "title": "Day 36",
+    "section": "Mathematical Model",
+    "text": "Mathematical Model\n\n\\[\np_1=\\frac{t}{N} \\quad \\text{and} \\quad p_2=\\frac{n}{N}\n\\]\n\n\\(p_1\\) (First Sampling Fraction): Represents the proportion of the total population \\(N\\) sampled initially.\n\\(p_2\\) (Second Sampling Fraction): Signifies the proportion of the total population sampled during the recapture phase. It is critical for adjusting the precision of the population estimate.\n\n\\[\n\\frac{V(\\hat{N})}{N} \\approx \\frac{1-p_1}{p_1 p_2}\n\\]\n\nThis formula shows how the variance of the estimated population size \\(\\hat{N}\\) relative to the population size \\(N\\) depends inversely on both \\(p_1\\) and \\(p_2\\)."
+  },
+  {
+    "objectID": "Day36.html#optimizing-sampling-fractions",
+    "href": "Day36.html#optimizing-sampling-fractions",
+    "title": "Day 36",
+    "section": "Optimizing Sampling Fractions",
+    "text": "Optimizing Sampling Fractions\n\nExample Scenario\n\nContext: Estimating deer population which is similar in size to the previous year (800 to 1000 deer).\nObjective: Minimize total sample size while bounding the error within 200.\n\nStrategy\n\nChoose \\(p_1\\) and \\(p_2\\) to minimize total effort for a given precision.\nGraphical tools help visualize and select optimal sampling fractions.\n\nOptimal Fractions\n\nExample 10.3a: \\(p_1 = 31.5\\%\\), \\(p_2 = 21.7\\%\\) yields a standard deviation of ~100.\nExample 10.3b: Similar approach with a targeted number of recaptures leading to nearly identical \\(p_2\\)."
+  },
+  {
+    "objectID": "Day36.html#advanced-techniques-and-multistage-sampling",
+    "href": "Day36.html#advanced-techniques-and-multistage-sampling",
+    "title": "Day 36",
+    "section": "Advanced Techniques and Multistage Sampling",
+    "text": "Advanced Techniques and Multistage Sampling\n\nExtending Basic Techniques\n\nBeyond two stages: Tag additional untagged animals in subsequent samples.\nMultistage approaches improve estimator accuracy for \\(N\\) and are useful in continuous studies.\n\nConsiderations\n\nAdjust for demographic changes and varying capture probabilities.\nSee Seber (1982, 1986) for advanced methods.\n\nVisual Tool\n\nOur interactive Shiny app simplifies these complex calculations and allows for dynamic adjustment and visualization of \\(p_1\\) and \\(p_2\\) interaction."
+  },
+  {
+    "objectID": "Day36.html#introduction-to-quadrat-sampling",
+    "href": "Day36.html#introduction-to-quadrat-sampling",
+    "title": "Day 36",
+    "section": "Introduction to Quadrat Sampling",
+    "text": "Introduction to Quadrat Sampling\n\nQuadrat sampling is a method used to estimate the number of elements within a fixed location. It calculates density per unit area and extrapolates this to estimate the total population size.\n\nSetup: A total area \\(A\\) is divided into \\(m\\) plots, each of area \\(a\\). The total number of plots in the region is \\(M\\), so \\(A = M \\cdot a\\).\nData Collection: Count the number of individuals in each randomly selected plot or quadrat."
+  },
+  {
+    "objectID": "Day36.html#estimating-density-and-population-size",
+    "href": "Day36.html#estimating-density-and-population-size",
+    "title": "Day 36",
+    "section": "Estimating Density and Population Size",
+    "text": "Estimating Density and Population Size\n\n\nDensity Estimation: \\[\n\\hat{\\lambda} = \\frac{\\bar{n}}{a}\n\\] where \\(\\bar{n}\\) is the average count per plot from the sampled quadrats.\nPopulation Size Estimation: \\[\n\\hat{N} = \\hat{\\lambda} \\cdot A\n\\]"
+  },
+  {
+    "objectID": "Day36.html#variance-and-confidence-interval",
+    "href": "Day36.html#variance-and-confidence-interval",
+    "title": "Day 36",
+    "section": "Variance and Confidence Interval",
+    "text": "Variance and Confidence Interval\n\n\nVariance of the Density Estimator: \\[\n\\hat{V}(\\hat{\\lambda})=\\frac{1}{a^2} \\cdot \\frac{S_n^2}{m}\n\\] where \\(S_n^2=\\frac{\\sum_{i=1}^m(n_i-\\bar{n})^2}{m-1}\\)\nPopulation Size Variance: \\[\n\\hat{V}(\\hat{N})=A^2 \\cdot \\hat{V}(\\hat{\\lambda})\n\\]\nConfidence Interval: \\[\n\\hat{N} \\pm B\n\\] where \\(B = t_{\\frac{\\alpha}{2}, m-1} \\cdot \\sqrt{\\hat{V}(\\hat{N})}\\) is the bound on the error of estimation."
+  },
+  {
+    "objectID": "Day36.html#example-1-estimating-fire-ant-density",
+    "href": "Day36.html#example-1-estimating-fire-ant-density",
+    "title": "Day 36",
+    "section": "Example 1: Estimating Fire Ant Density",
+    "text": "Example 1: Estimating Fire Ant Density\n\nIn Florida, a study to estimate the density of fire ant hills used 50 quadrats, each of 16 \\(m^2\\). The counts of ant hills per quadrat varied, allowing for an estimate of ant hill density per unit area."
+  },
+  {
+    "objectID": "Day36.html#example-2-estimating-disease-prevalence-in-trees",
+    "href": "Day36.html#example-2-estimating-disease-prevalence-in-trees",
+    "title": "Day 36",
+    "section": "Example 2: Estimating Disease Prevalence in Trees",
+    "text": "Example 2: Estimating Disease Prevalence in Trees\n\nIn a southern-pine plantation, 10 quadrats of 0.5 acre each are used to estimate the density of trees with fusiform rust. The plots had an average of 2.8 infected trees each, leading to an estimate of total infection prevalence across 200 acres."
   }
 ]

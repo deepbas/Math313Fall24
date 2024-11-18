@@ -1,0 +1,126 @@
+---
+title: "Day 39"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: ""
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+#<img src="images/Day23-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
+```
+
+## Estimation of Population Density and Size Using Inverse Sampling {.font80}
+
+::: cle7
+Inverse sampling differs from direct sampling as it continues until a fixed number of tagged animals is recaptured. This method provides an unbiased estimator for population size $N$, using the fixed count of recaptured tagged animals to estimate the proportion of tagged animals in the population.
+:::
+
+## Mathematical Formulation of Inverse Sampling {.font80}
+
+::: cle12
+- **Proportion of tagged individuals**:
+  $$
+  \hat{p} = \frac{s}{n}
+  $$
+  where $s$ is fixed and $n$ is the number of total individuals captured during sampling.
+
+- **Estimator of $N$**:
+  $$
+  \hat{N} = \frac{n \cdot t}{s}
+  $$
+  where $t$ is the number of animals tagged in the initial sample.
+:::
+
+## Variance and Error Estimation {.font80}
+
+::: cle7
+- **Variance of $\hat{N}$**:
+  $$
+  \hat{V}(\hat{N}) = \frac{t^2 \cdot n \cdot (n-s)}{s^2 \cdot (s+1)}
+  $$
+  reflects the sample's randomness and the fixed nature of $s$.
+
+- **Error Bound**:
+  Using $V-P$ inequality for conservative error bounds in estimation.
+:::
+
+## Example: Wildlife Preserve Bird Population {.font60}
+
+> Authorities want to estimate the number of birds in a preserve. Initially, $t=150$ birds are tagged and released. Later, sampling continues until $35$ tagged birds are recaptured among $100$ total birds. Estimating $N$ involves using the derived formulas to handle randomness and provide reliable population estimates.
+
+## Estimating Population Density from Stocked Quadrats {.font80}
+
+::: cle12
+Stocked quadrat sampling involves checking the presence or absence of a species, simplifying the data collection process but requiring careful handling of statistical estimates due to the binary nature of data (presence vs. absence).
+:::
+
+## Formulating the Stocked Quadrat Density Estimation {.font80}
+
+::: cle7
+- **Probability of presence** in a quadrat:
+  $$
+  P(\text{unstocked}) = e^{-\lambda a}
+  $$
+  where $\lambda$ is the density per unit area and $a$ is the area of each quadrat.
+
+- **Estimator for $\lambda$**:
+  $$
+  \hat{\lambda} = -\frac{1}{a} \ln\left(\frac{y}{m}\right)
+  $$
+  derived from the proportion of unstocked quadrats in the sample.
+:::
+
+## Variance and Confidence Interval {.font80}
+
+::: cle12
+- **Variance of $\hat{\lambda}$**:
+  $$
+  \hat{V}(\hat{\lambda}) = \frac{1}{m a^2} (e^{\hat{\lambda} a} - 1)
+  $$
+
+- **Confidence Interval**:
+  Ensuring accuracy with $1-\alpha$% bounds based on the variance.
+:::
+
+## Practical Example: Plantation Infected Trees Estimation {.font60}
+
+> In a 200-acre plantation, the presence of fusiform rust in trees is sampled over 20 quadrats of 0.5 acre each. The density and total number of infected trees are estimated, incorporating bounds on the estimation error.
+
