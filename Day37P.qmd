@@ -48,7 +48,7 @@ yt <- 0
 ```
 
 
-## Stocked Quadrat Sampling Method {.font90}
+## Stocked Quadrat Sampling Method {.font80}
 
 ::: bqt
 Stocked quadrat sampling efficiently determines species presence within plots, simplifying data collection. This method involves counting quadrats as either stocked or unstocked based on species presence, simplifying statistical analysis but requiring careful handling due to binary outcomes.
@@ -79,17 +79,17 @@ Using the proportion of unstocked quadrats, we can estimate population density e
 
 - **Estimator**:
   $$
-  \hat{\lambda} = -\frac{1}{a} \ln\left(\frac{y}{n}\right)
+  \hat{\lambda} = -\frac{1}{a} \ln\left(\frac{y}{m}\right)
   $$
 
 ### Variance Estimation
 - **Density Variance**:
   $$
-  \hat{V}(\hat{\lambda}) = \frac{1}{n a^2} \left(e^{\hat{\lambda} a} - 1\right)
+  \hat{V}(\hat{\lambda}) = \frac{1}{m a^2} \left(e^{\hat{\lambda} a} - 1\right)
   $$
 - **Population Variance**:
   $$
-  \hat{V}(\hat{M}) = A^2 \hat{V}(\hat{\lambda}) = \frac{A^2}{n a^2} \left(e^{\hat{\lambda} a} - 1\right)
+  \hat{V}(\hat{N}) = A^2 \hat{V}(\hat{\lambda}) = \frac{A^2}{m a^2} \left(e^{\hat{\lambda} a} - 1\right)
   $$
 :::
 
@@ -110,7 +110,7 @@ $$
 \hat{V}(g(X)) \approx [g'(E(X))]^2 \hat{V}(X)
 $$
 
-where $X = \frac{y}{n}$ and $E(X) = e^{-\lambda a}$. Calculating the derivative $g'(x)$:
+where $X = \frac{y}{m}$ and $E(X) = e^{-\lambda a}$. Calculating the derivative $g'(x)$:
 
 $$
 g'(x) = -\frac{1}{a} \cdot \frac{1}{x}
@@ -125,13 +125,13 @@ $$
 Assuming $X$ follows a binomial distribution, the variance of $X$ is:
 
 $$
-\hat{V}(X) = \frac{E(X)(1 - E(X))}{n} = \frac{e^{-\lambda a}(1 - e^{-\lambda a})}{n}
+\hat{V}(X) = \frac{E(X)(1 - E(X))}{m} = \frac{e^{-\lambda a}(1 - e^{-\lambda a})}{m}
 $$
 
 Substituting back into the delta method formula:
 
 $$
-\hat{V}(\hat{\lambda}) = \left(-\frac{1}{a} e^{\lambda a}\right)^2 \cdot \frac{e^{-\lambda a}(1 - e^{-\lambda a})}{n} = \frac{1}{n a^2} \left(e^{\lambda a} - 1\right)
+\hat{V}(\hat{\lambda}) = \left(-\frac{1}{a} e^{\lambda a}\right)^2 \cdot \frac{e^{-\lambda a}(1 - e^{-\lambda a})}{m} = \frac{1}{m a^2} \left(e^{\lambda a} - 1\right)
 $$
 
 </details>
@@ -148,7 +148,7 @@ $$
 
 
 
-## Introduction to Adaptive Sampling {.font80}
+## Introduction to Adaptive Sampling {.font70}
 
 ::: cle7
 Adaptive sampling adjusts the sampling strategy based on findings during data collection, enhancing the efficiency of estimating population densities, especially in clustered distributions like forests.

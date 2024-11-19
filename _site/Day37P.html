@@ -335,7 +335,7 @@
 </div>
 
 </section>
-<section id="stocked-quadrat-sampling-method" class="slide level2 font90">
+<section id="stocked-quadrat-sampling-method" class="slide level2 font80">
 <h2>Stocked Quadrat Sampling Method</h2>
 <div class="bqt">
 <p>Stocked quadrat sampling efficiently determines species presence within plots, simplifying data collection. This method involves counting quadrats as either stocked or unstocked based on species presence, simplifying statistical analysis but requiring careful handling due to binary outcomes.</p>
@@ -365,16 +365,16 @@ P(\text{No individuals}) = e^{-\lambda a}
 <p>Using the proportion of unstocked quadrats, we can estimate population density efficiently, which is especially useful in large ecological studies where direct counting is impractical.</p>
 <ul>
 <li><strong>Estimator</strong>: <span class="math display">\[
-\hat{\lambda} = -\frac{1}{a} \ln\left(\frac{y}{n}\right)
+\hat{\lambda} = -\frac{1}{a} \ln\left(\frac{y}{m}\right)
 \]</span></li>
 </ul>
 <h3 id="variance-estimation">Variance Estimation</h3>
 <ul>
 <li><strong>Density Variance</strong>: <span class="math display">\[
-\hat{V}(\hat{\lambda}) = \frac{1}{n a^2} \left(e^{\hat{\lambda} a} - 1\right)
+\hat{V}(\hat{\lambda}) = \frac{1}{m a^2} \left(e^{\hat{\lambda} a} - 1\right)
 \]</span></li>
 <li><strong>Population Variance</strong>: <span class="math display">\[
-\hat{V}(\hat{M}) = A^2 \hat{V}(\hat{\lambda}) = \frac{A^2}{n a^2} \left(e^{\hat{\lambda} a} - 1\right)
+\hat{V}(\hat{N}) = A^2 \hat{V}(\hat{\lambda}) = \frac{A^2}{m a^2} \left(e^{\hat{\lambda} a} - 1\right)
 \]</span></li>
 </ul>
 </div>
@@ -393,7 +393,7 @@ P(\text{No individuals}) = e^{-\lambda a}
 <p><span class="math display">\[
 \hat{V}(g(X)) \approx [g'(E(X))]^2 \hat{V}(X)
 \]</span></p>
-<p>where <span class="math inline">\(X = \frac{y}{n}\)</span> and <span class="math inline">\(E(X) = e^{-\lambda a}\)</span>. Calculating the derivative <span class="math inline">\(g'(x)\)</span>:</p>
+<p>where <span class="math inline">\(X = \frac{y}{m}\)</span> and <span class="math inline">\(E(X) = e^{-\lambda a}\)</span>. Calculating the derivative <span class="math inline">\(g'(x)\)</span>:</p>
 <p><span class="math display">\[
 g'(x) = -\frac{1}{a} \cdot \frac{1}{x}
 \]</span></p>
@@ -403,11 +403,11 @@ g'(E(X)) = -\frac{1}{a} e^{\lambda a}
 \]</span></p>
 <p>Assuming <span class="math inline">\(X\)</span> follows a binomial distribution, the variance of <span class="math inline">\(X\)</span> is:</p>
 <p><span class="math display">\[
-\hat{V}(X) = \frac{E(X)(1 - E(X))}{n} = \frac{e^{-\lambda a}(1 - e^{-\lambda a})}{n}
+\hat{V}(X) = \frac{E(X)(1 - E(X))}{m} = \frac{e^{-\lambda a}(1 - e^{-\lambda a})}{m}
 \]</span></p>
 <p>Substituting back into the delta method formula:</p>
 <p><span class="math display">\[
-\hat{V}(\hat{\lambda}) = \left(-\frac{1}{a} e^{\lambda a}\right)^2 \cdot \frac{e^{-\lambda a}(1 - e^{-\lambda a})}{n} = \frac{1}{n a^2} \left(e^{\lambda a} - 1\right)
+\hat{V}(\hat{\lambda}) = \left(-\frac{1}{a} e^{\lambda a}\right)^2 \cdot \frac{e^{-\lambda a}(1 - e^{-\lambda a})}{m} = \frac{1}{m a^2} \left(e^{\lambda a} - 1\right)
 \]</span></p>
 </details>
 </section>
@@ -420,7 +420,7 @@ g'(E(X)) = -\frac{1}{a} e^{\lambda a}
 <section id="section-2" class="slide level2">
 <h2></h2>
 </section>
-<section id="introduction-to-adaptive-sampling" class="slide level2 font80">
+<section id="introduction-to-adaptive-sampling" class="slide level2 font70">
 <h2>Introduction to Adaptive Sampling</h2>
 <div class="cle7">
 <p>Adaptive sampling adjusts the sampling strategy based on findings during data collection, enhancing the efficiency of estimating population densities, especially in clustered distributions like forests.</p>
