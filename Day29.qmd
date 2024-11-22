@@ -117,6 +117,7 @@ where $M$ can be estimated by extrapolating the sample results to the entire pop
 
 ::: cle7
 The variance of $N \bar{\tau}$, when $N$ is unknown and approximated, is calculated as follows:
+
 $$
 \hat{V}(M \bar{\tau}) = M^2 \hat{V}(\bar{\tau})
 $$
