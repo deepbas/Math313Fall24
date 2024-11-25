@@ -1,0 +1,179 @@
+---
+title: "Day 39"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: ""
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+#<img src="images/Day23-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
+```
+
+
+## Introduction to Survey Sampling Challenges {.font90}
+
+::: cle12
+
+In this section, we explore various survey sampling designs and the common challenges they encounter, such as measurement inaccuracies, nonresponse, and issues with sampling frames. We also discuss strategies to enhance the reliability of statistical estimates.
+:::
+
+## Comprehensive Overview of Survey Sampling Designs {.font80}
+
+::: cle10
+::: row
+::: left
+**Principal Sampling Techniques**
+
+- Simple Random Sampling
+- Stratified Random Sampling
+- Cluster Sampling
+- Systematic Sampling
+
+:::
+
+::: right
+**Predominant Sampling Challenges**
+
+- Biases due to interviewers or measurement instruments
+- Incomplete or inadequate sampling frames
+- Data sensitivity affecting response accuracy
+- Issues arising from nonresponse
+
+:::
+:::
+:::
+
+## Detailed Exploration of Interpenetrating Subsamples {.font80}
+
+::: cle7
+The concept of interpenetrating subsamples involves dividing a sample of $n$ elements into $k$ groups, assigning each group to different interviewers. This method aims to neutralize interviewer biases and enhance the accuracy of the sample mean.
+
+**Mathematical Formulations**
+
+- Mean of subsample: $\bar{y}_i = \frac{1}{m} \sum_{j=1}^m y_{ij}$
+- Composite sample mean: $\bar{y} = \frac{1}{k} \sum_{i=1}^k \bar{y}_i$
+- Variance estimation: $\hat{V}(\bar{y}) = \left(1-\frac{n}{N}\right) \frac{s_k^2}{k}$
+
+:::
+
+## Estimating Parameters in Subpopulations {.font80}
+
+::: cle11
+
+Surveying subpopulations presents unique challenges, especially when the subpopulation cannot be explicitly defined from the sampling frame.
+
+**Techniques for Estimation**
+
+- Mean of subpopulation: $\bar{y}_1 = \frac{1}{n_1} \sum_{j=1}^{n_1} y_{1j}$
+- Variance of subpopulation mean: $\hat{V}(\bar{y}_1) = \left(1-\frac{n_1}{N_1}\right) \frac{s_1^2}{n_1}$
+- Total for subpopulation: $N_1 \bar{y}_1 = \frac{N_1}{n_1} \sum_{j=1}^{n_1} y_{1j}$
+
+:::
+
+## Advanced Techniques for Estimation {.font80}
+
+::: cle10
+
+When the exact number of subpopulation elements ($N_1$) is unknown, alternative estimation techniques must be employed.
+
+**Formulas for Advanced Estimation**
+
+- Estimation of total without $N_1$: $\hat{\tau}_1 = \frac{N}{n} \sum_{j=1}^{n_1} y_{1j}$
+- Variance of this estimate: $\hat{V}(\hat{\tau}_1) = N^2 \left(1-\frac{n}{N}\right) \frac{s_n^2}{n}$
+
+:::
+
+## {.font60}
+
+> EXERCISE 11.1: A researcher is interested in estimating the average yearly medical expenses per family in a community of 545 families. The researcher has eight assistants available to do the fieldwork. Skill is required to obtain accurate information on medical expenses because some respondents are reluctant to give detailed information on their health. Because the assistants differ in their interviewing abilities, the researcher decides to use eight interpenetrating subsamples of five families each, with one assistant assigned to each subsample. Hence, a simple random sample of 40 families is selected and divided into eight random subsamples. The interviews are conducted and yield the results shown in the accompanying table. Estimate the average medical expenses per family for the past year and place a bound on the error of estimation.
+
+```{r}
+library(readxl)
+expenses <- read_excel("data/EXERCISE11.1.XLS")
+expenses %>% knitr::kable()
+```
+
+
+##
+
+```{r}
+# Calculate the mean for each subsample
+subsample_means <- apply(expenses, 2, mean)
+subsample_means
+# Calculate the overall mean
+overall_mean <- mean(subsample_means)
+overall_mean
+# Calculate the sample variance of the subsample means
+s_k_squared <- var(subsample_means)
+```
+
+
+##
+
+```{r}
+# Constants
+N <- 545   # Total population
+n <- 40    # Sample size
+k <- 8     # Number of subsamples
+
+# Calculate the estimated variance of the sample mean
+hat_V_y <- (1 - n/N) * s_k_squared / k
+
+# Calculate the bound on the error of estimation
+B <- 2 * sqrt(hat_V_y)
+B
+# 95% CI
+overall_mean + c(-1,1)*B
+```
+
+
+## {.font60}
+
+> Exercise 11.2: An experiment is designed to gauge the emotional reaction to a city's decision on school desegregation. A simple random sample of 50 people is interviewed, and the emotional reactions are given a score from 1 to 10 . The scale on which scores are assigned runs from extreme anger to extreme joy. Ten interviewers do the questioning and scoring, with each interviewer working on a random subsample (interpenetrating subsample) of five people. Interpenetrating subsamples are used because of the flexible nature of the scoring. The results are given in the accompanying table. Estimate the average score for people in the city and place a bound on the error of estimation.
+
+```{r}
+library(readxl)
+expenses <- read_excel("data/EXERCISE11.2.XLS")
+expenses %>% knitr::kable()
+```
+
+
+
