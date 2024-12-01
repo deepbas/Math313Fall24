@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -335,77 +400,587 @@
 </div>
 
 </section>
-<section id="estimation-of-population-density-and-size-using-inverse-sampling" class="slide level2 font80">
-<h2>Estimation of Population Density and Size Using Inverse Sampling</h2>
-<div class="cle7">
-<p>Inverse sampling differs from direct sampling as it continues until a fixed number of tagged animals is recaptured. This method provides an unbiased estimator for population size <span class="math inline">\(N\)</span>, using the fixed count of recaptured tagged animals to estimate the proportion of tagged animals in the population.</p>
+<section id="introduction-to-survey-weights" class="slide level2 font80">
+<h2>Introduction to Survey Weights</h2>
+<div class="cle6">
+<ul>
+<li><strong>Complex Sampling Designs</strong> often involve:
+<ul>
+<li>Stratification, Clustering, Unequal probabilities of selection</li>
+<li>Multiple stages of selection, Systematic selection</li>
+</ul></li>
+<li>Usual estimation and testing procedures may not be appropriate due to these features.</li>
+</ul>
 </div>
 </section>
-<section id="mathematical-formulation-of-inverse-sampling" class="slide level2 font80">
-<h2>Mathematical Formulation of Inverse Sampling</h2>
+<section id="importance-of-weights" class="slide level2 font80">
+<h2>Importance of Weights</h2>
 <div class="cle12">
 <ul>
-<li><p><strong>Proportion of tagged individuals</strong>: <span class="math display">\[
-\hat{p} = \frac{s}{n}
-\]</span> where <span class="math inline">\(s\)</span> is fixed and <span class="math inline">\(n\)</span> is the number of total individuals captured during sampling.</p></li>
-<li><p><strong>Estimator of <span class="math inline">\(N\)</span></strong>: <span class="math display">\[
-\hat{N} = \frac{n \cdot t}{s}
-\]</span> where <span class="math inline">\(t\)</span> is the number of animals tagged in the initial sample.</p></li>
+<li><strong>Unbiased Estimates</strong>: Weights correct for variable probabilities of selection.</li>
+<li><strong>Precision of Estimates</strong>: Adjust variance estimators to reflect complex sample designs.</li>
+<li><strong>Adjustments for Nonresponse</strong>: Increase weights for responding units to account for non-respondents.</li>
+<li><strong>Benchmarking</strong>: Adjust survey estimates to external census estimates.</li>
 </ul>
 </div>
 </section>
-<section id="variance-and-error-estimation" class="slide level2 font80">
-<h2>Variance and Error Estimation</h2>
-<div class="cle7">
+<section id="weighting-in-practice-vs-theory" class="slide level2 font80">
+<h2>Weighting in Practice vs Theory</h2>
+<div class="cle12">
 <ul>
-<li><p><strong>Variance of <span class="math inline">\(\hat{N}\)</span></strong>: <span class="math display">\[
-\hat{V}(\hat{N}) = \frac{t^2 \cdot n \cdot (n-s)}{s^2 \cdot (s+1)}
-\]</span> reflects the sample’s randomness and the fixed nature of <span class="math inline">\(s\)</span>.</p></li>
-<li><p><strong>Error Bound</strong>: Using <span class="math inline">\(V-P\)</span> inequality for conservative error bounds in estimation.</p></li>
+<li><strong>Theoretical Background</strong>: Unbiased estimator of a population total: <span class="math display">\[\frac{N}{n} \sum_{i=1}^{n} y_{i}\]</span>
+<ul>
+<li><span class="math inline">\(N\)</span>: Population size, <span class="math inline">\(n\)</span>: Sample size, <span class="math inline">\(y_i\)</span>: Sample observations</li>
+</ul></li>
+<li><strong>Practical Application</strong>: Focus is on constructing the actual weights to use in analysis.</li>
 </ul>
 </div>
 </section>
-<section id="example-wildlife-preserve-bird-population" class="slide level2 font60">
-<h2>Example: Wildlife Preserve Bird Population</h2>
+<section id="case-study-housing-permits-in-florida" class="slide level2 font80">
+<h2>Case Study: Housing Permits in Florida</h2>
+<div class="cle12">
+<ul>
+<li><strong>Objective</strong>: Estimate total building permits in FL in 2000 from a sample.</li>
+<li><strong>Method</strong>: Sample 10 of Florida’s 67 counties, using area as a proxy for sampling probability.</li>
+</ul>
+</div>
+</section>
+<section id="data-example-florida-counties" class="slide level2 font80">
+<h2>Data Example: Florida Counties</h2>
+
+<img src="images/Day40-1.png" style="display: block; margin: auto;" width="70%" loading="lazy" decoding="async" class="r-stretch"></section>
+<section id="analysis-using-survey-weights" class="slide level2 font80">
+<h2>Analysis Using Survey Weights</h2>
+<div class="cle12">
+<ul>
+<li><strong>Weights</strong>: Inverse of the probability proportional to area, <span class="math inline">\(w_i=1 / A_i\)</span></li>
+<li><strong>Weighted Estimate</strong>: <span class="math display">\[\hat{\mu} = \frac{\sum w_{i} y_{i}}{\sum w_{i}}\]</span></li>
+<li><strong>Variance</strong>:
+<ul>
+<li>Standard errors calculated using ratio estimator techniques.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="section" class="slide level2 font60">
+<h2></h2>
 <blockquote>
-<p>Authorities want to estimate the number of birds in a preserve. Initially, <span class="math inline">\(t=150\)</span> birds are tagged and released. Later, sampling continues until <span class="math inline">\(35\)</span> tagged birds are recaptured among <span class="math inline">\(100\)</span> total birds. Estimating <span class="math inline">\(N\)</span> involves using the derived formulas to handle randomness and provide reliable population estimates.</p>
+<p>Example 11.6 Textbook: This study aims to estimate the total number of housing unit building permits issued in Florida in 2000 by analyzing a sample from ten of the state’s 67 counties. The counties were selected randomly, and data on the number of approved building permits and county area in square miles were recorded. These measures are sourced from census data. The total area for all counties is not known for this example, and the data will be used to calculate the estimate and its standard error.</p>
 </blockquote>
 </section>
-<section id="estimating-population-density-from-stocked-quadrats" class="slide level2 font80">
-<h2>Estimating Population Density from Stocked Quadrats</h2>
-<div class="cle12">
-<p>Stocked quadrat sampling involves checking the presence or absence of a species, simplifying the data collection process but requiring careful handling of statistical estimates due to the binary nature of data (presence vs.&nbsp;absence).</p>
-</div>
+<section id="section-1" class="slide level2">
+<h2></h2>
 </section>
-<section id="formulating-the-stocked-quadrat-density-estimation" class="slide level2 font80">
-<h2>Formulating the Stocked Quadrat Density Estimation</h2>
-<div class="cle7">
+<section id="discussion-api-dataset-r" class="slide level2 font80">
+<h2>Discussion: API Dataset (R)</h2>
+<div class="cle12">
 <ul>
-<li><p><strong>Probability of presence</strong> in a quadrat: <span class="math display">\[
-P(\text{unstocked}) = e^{-\lambda a}
-\]</span> where <span class="math inline">\(\lambda\)</span> is the density per unit area and <span class="math inline">\(a\)</span> is the area of each quadrat.</p></li>
-<li><p><strong>Estimator for <span class="math inline">\(\lambda\)</span></strong>: <span class="math display">\[
-\hat{\lambda} = -\frac{1}{a} \ln\left(\frac{y}{m}\right)
-\]</span> derived from the proportion of unstocked quadrats in the sample.</p></li>
+<li><strong>Dataset</strong>: From the <code>survey</code> package, includes student achievement and demographic data.</li>
+<li><strong>Application</strong>: Demonstrate how weights can adjust for school size and demographic biases in educational data analysis.</li>
 </ul>
 </div>
 </section>
-<section id="variance-and-confidence-interval" class="slide level2 font80">
-<h2>Variance and Confidence Interval</h2>
-<div class="cle12">
+<section id="section-2" class="slide level2 font25">
+<h2></h2>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">apistrat</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">200</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">39</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 10%">
+<col style="width: 14%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">snum</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">3077.27</td>
+<td style="text-align: right;">1841.20</td>
+<td style="text-align: right;">114.00</td>
+<td style="text-align: right;">1495.25</td>
+<td style="text-align: right;">3022.50</td>
+<td style="text-align: right;">4688.00</td>
+<td style="text-align: right;">6173.00</td>
+<td style="text-align: left;">▇▆▇▆▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dnum</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">444.71</td>
+<td style="text-align: right;">211.24</td>
+<td style="text-align: right;">19.00</td>
+<td style="text-align: right;">259.00</td>
+<td style="text-align: right;">453.50</td>
+<td style="text-align: right;">627.75</td>
+<td style="text-align: right;">825.00</td>
+<td style="text-align: left;">▃▆▇▇▅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">cnum</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">27.32</td>
+<td style="text-align: right;">14.55</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">18.00</td>
+<td style="text-align: right;">29.00</td>
+<td style="text-align: right;">37.00</td>
+<td style="text-align: right;">56.00</td>
+<td style="text-align: left;">▃▇▅▆▃</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">flag</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NaN</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pcttest</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">98.11</td>
+<td style="text-align: right;">3.76</td>
+<td style="text-align: right;">66.00</td>
+<td style="text-align: right;">98.00</td>
+<td style="text-align: right;">99.00</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: left;">▁▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">api00</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">652.82</td>
+<td style="text-align: right;">120.97</td>
+<td style="text-align: right;">398.00</td>
+<td style="text-align: right;">555.25</td>
+<td style="text-align: right;">658.50</td>
+<td style="text-align: right;">743.25</td>
+<td style="text-align: right;">893.00</td>
+<td style="text-align: left;">▃▆▇▆▃</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">api99</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">624.82</td>
+<td style="text-align: right;">124.56</td>
+<td style="text-align: right;">383.00</td>
+<td style="text-align: right;">525.75</td>
+<td style="text-align: right;">626.00</td>
+<td style="text-align: right;">707.50</td>
+<td style="text-align: right;">890.00</td>
+<td style="text-align: left;">▅▇▇▆▃</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">target</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0.90</td>
+<td style="text-align: right;">10.00</td>
+<td style="text-align: right;">5.32</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">6.00</td>
+<td style="text-align: right;">10.00</td>
+<td style="text-align: right;">14.00</td>
+<td style="text-align: right;">21.00</td>
+<td style="text-align: left;">▇▇▇▆▃</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">growth</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">28.00</td>
+<td style="text-align: right;">28.12</td>
+<td style="text-align: right;">-47.00</td>
+<td style="text-align: right;">6.75</td>
+<td style="text-align: right;">25.00</td>
+<td style="text-align: right;">48.00</td>
+<td style="text-align: right;">133.00</td>
+<td style="text-align: left;">▁▇▇▂▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">meals</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">44.99</td>
+<td style="text-align: right;">28.97</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">20.75</td>
+<td style="text-align: right;">39.50</td>
+<td style="text-align: right;">69.00</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: left;">▇▇▆▆▅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ell</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">20.94</td>
+<td style="text-align: right;">19.77</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">5.00</td>
+<td style="text-align: right;">16.00</td>
+<td style="text-align: right;">32.25</td>
+<td style="text-align: right;">84.00</td>
+<td style="text-align: left;">▇▅▂▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mobility</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">16.40</td>
+<td style="text-align: right;">12.12</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">10.00</td>
+<td style="text-align: right;">14.00</td>
+<td style="text-align: right;">19.00</td>
+<td style="text-align: right;">99.00</td>
+<td style="text-align: left;">▇▂▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">acs.k3</td>
+<td style="text-align: right;">103</td>
+<td style="text-align: right;">0.48</td>
+<td style="text-align: right;">19.16</td>
+<td style="text-align: right;">1.22</td>
+<td style="text-align: right;">16.00</td>
+<td style="text-align: right;">18.00</td>
+<td style="text-align: right;">19.00</td>
+<td style="text-align: right;">20.00</td>
+<td style="text-align: right;">24.00</td>
+<td style="text-align: left;">▁▇▅▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">acs.46</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">28.86</td>
+<td style="text-align: right;">3.42</td>
+<td style="text-align: right;">20.00</td>
+<td style="text-align: right;">27.00</td>
+<td style="text-align: right;">29.00</td>
+<td style="text-align: right;">31.00</td>
+<td style="text-align: right;">46.00</td>
+<td style="text-align: left;">▂▇▃▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">acs.core</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">0.53</td>
+<td style="text-align: right;">27.37</td>
+<td style="text-align: right;">3.18</td>
+<td style="text-align: right;">15.00</td>
+<td style="text-align: right;">26.00</td>
+<td style="text-align: right;">28.00</td>
+<td style="text-align: right;">29.00</td>
+<td style="text-align: right;">35.00</td>
+<td style="text-align: left;">▁▂▇▇▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pct.resp</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">72.31</td>
+<td style="text-align: right;">31.51</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">63.75</td>
+<td style="text-align: right;">86.00</td>
+<td style="text-align: right;">94.25</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: left;">▂▁▁▂▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">not.hsg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">17.66</td>
+<td style="text-align: right;">17.13</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">12.00</td>
+<td style="text-align: right;">26.25</td>
+<td style="text-align: right;">75.00</td>
+<td style="text-align: left;">▇▃▂▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hsg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">22.86</td>
+<td style="text-align: right;">15.11</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">14.75</td>
+<td style="text-align: right;">22.00</td>
+<td style="text-align: right;">30.00</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: left;">▇▇▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">some.col</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">22.96</td>
+<td style="text-align: right;">11.21</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">15.75</td>
+<td style="text-align: right;">24.00</td>
+<td style="text-align: right;">31.00</td>
+<td style="text-align: right;">50.00</td>
+<td style="text-align: left;">▃▆▇▆▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">col.grad</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">21.38</td>
+<td style="text-align: right;">14.25</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">10.00</td>
+<td style="text-align: right;">21.00</td>
+<td style="text-align: right;">31.00</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: left;">▇▇▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">grad.sch</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">9.72</td>
+<td style="text-align: right;">11.71</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">6.00</td>
+<td style="text-align: right;">12.00</td>
+<td style="text-align: right;">55.00</td>
+<td style="text-align: left;">▇▂▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">avg.ed</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.81</td>
+<td style="text-align: right;">0.69</td>
+<td style="text-align: right;">1.38</td>
+<td style="text-align: right;">2.29</td>
+<td style="text-align: right;">2.82</td>
+<td style="text-align: right;">3.31</td>
+<td style="text-align: right;">4.44</td>
+<td style="text-align: left;">▃▆▇▅▂</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">full</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">86.60</td>
+<td style="text-align: right;">13.57</td>
+<td style="text-align: right;">24.00</td>
+<td style="text-align: right;">81.00</td>
+<td style="text-align: right;">91.00</td>
+<td style="text-align: right;">97.00</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: left;">▁▁▁▃▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emer</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">12.21</td>
+<td style="text-align: right;">12.11</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">9.00</td>
+<td style="text-align: right;">17.00</td>
+<td style="text-align: right;">72.00</td>
+<td style="text-align: left;">▇▂▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">enroll</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">746.68</td>
+<td style="text-align: right;">549.93</td>
+<td style="text-align: right;">119.00</td>
+<td style="text-align: right;">363.75</td>
+<td style="text-align: right;">554.50</td>
+<td style="text-align: right;">961.25</td>
+<td style="text-align: right;">3156.00</td>
+<td style="text-align: left;">▇▂▁▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">api.stu</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">619.07</td>
+<td style="text-align: right;">462.32</td>
+<td style="text-align: right;">106.00</td>
+<td style="text-align: right;">310.50</td>
+<td style="text-align: right;">459.00</td>
+<td style="text-align: right;">780.75</td>
+<td style="text-align: right;">2900.00</td>
+<td style="text-align: left;">▇▂▁▁▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pw</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">30.97</td>
+<td style="text-align: right;">13.40</td>
+<td style="text-align: right;">15.10</td>
+<td style="text-align: right;">19.05</td>
+<td style="text-align: right;">32.28</td>
+<td style="text-align: right;">44.21</td>
+<td style="text-align: right;">44.21</td>
+<td style="text-align: left;">▇▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fpc</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2653.75</td>
+<td style="text-align: right;">1774.14</td>
+<td style="text-align: right;">755.00</td>
+<td style="text-align: right;">952.25</td>
+<td style="text-align: right;">2719.50</td>
+<td style="text-align: right;">4421.00</td>
+<td style="text-align: right;">4421.00</td>
+<td style="text-align: left;">▇▁▁▁▇</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="implementation-in-r" class="slide level2 font80">
+<h2>Implementation in R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(survey)</span>
+<span id="cb1-2"><a></a><span class="fu">data</span>(api)</span>
+<span id="cb1-3"><a></a><span class="co"># Create survey design without weights</span></span>
+<span id="cb1-4"><a></a>strat_design <span class="ot">&lt;-</span> <span class="fu">svydesign</span>(<span class="at">ids =</span> <span class="sc">~</span><span class="dv">1</span>, <span class="at">data =</span> apistrat)</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a><span class="co"># Create survey design with weights</span></span>
+<span id="cb1-7"><a></a>weighted_design <span class="ot">&lt;-</span> <span class="fu">svydesign</span>(<span class="at">ids =</span> <span class="sc">~</span><span class="dv">1</span>, <span class="at">weights =</span> <span class="sc">~</span>pw, <span class="at">data =</span> apistrat)</span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a><span class="co"># Estimate mean without weights</span></span>
+<span id="cb1-10"><a></a>mean_srs <span class="ot">&lt;-</span> <span class="fu">svymean</span>(<span class="sc">~</span>api00, strat_design)</span>
+<span id="cb1-11"><a></a>mean_srs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        mean    SE
+api00 652.82 8.554</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Estimate mean with weights</span></span>
+<span id="cb3-2"><a></a>mean_weighted <span class="ot">&lt;-</span> <span class="fu">svymean</span>(<span class="sc">~</span>api00, weighted_design)</span>
+<span id="cb3-3"><a></a>mean_weighted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        mean     SE
+api00 662.29 9.5854</code></pre>
+</div>
+</div>
+</section>
+<section id="summary-key-concepts-in-survey-weighting" class="slide level2 font60">
+<h2>Summary: Key Concepts in Survey Weighting</h2>
+<div class="cle14">
 <ul>
-<li><p><strong>Variance of <span class="math inline">\(\hat{\lambda}\)</span></strong>: <span class="math display">\[
-\hat{V}(\hat{\lambda}) = \frac{1}{m a^2} (e^{\hat{\lambda} a} - 1)
-\]</span></p></li>
-<li><p><strong>Confidence Interval</strong>: Ensuring accuracy with <span class="math inline">\(1-\alpha\)</span>% bounds based on the variance.</p></li>
+<li><strong>Discussion</strong>: Weights adjust for sampling design and population structure, often providing a more representative estimate of the population mean.</li>
+<li><strong>Data Preparation</strong>:
+<ul>
+<li><strong>Cleaning and Validation</strong>: Remove errors and standardize data formats.</li>
+<li><strong>Handling Outliers and Missing Data</strong>: Implement strategies to ensure quality data input.</li>
+</ul></li>
+<li><strong>Identifying Weighting Variables</strong>:
+<ul>
+<li><strong>Key Factors</strong>: Age, gender, income, education, location.</li>
+<li><strong>Sources</strong>: Use census data and other reliable demographic sources.</li>
+</ul></li>
+<li><strong>Calculating Weighting Factors</strong>:
+<ul>
+<li><strong>Stratification</strong>: Align sample distribution with population.</li>
+<li><strong>Raking</strong>: Iteratively adjust weights to match population characteristics.</li>
+<li><strong>Calibration</strong>: Adjust sample weights using known population totals.</li>
+</ul></li>
 </ul>
 </div>
 </section>
-<section id="practical-example-plantation-infected-trees-estimation" class="slide level2 font60">
-<h2>Practical Example: Plantation Infected Trees Estimation</h2>
+<section id="section-3" class="slide level2 font50">
+<h2></h2>
 <blockquote>
-<p>In a 200-acre plantation, the presence of fusiform rust in trees is sampled over 20 quadrats of 0.5 acre each. The density and total number of infected trees are estimated, incorporating bounds on the estimation error.</p>
+<p>Example2 : Scientists studying fish consumption in a specified body of water periodically sent field workers out to interview everyone fishing in that water in those selected periods. Among other variables, the field-workers collected data on the amount of fish from that water the person consumed over the past month and the number of times the person fished in that water over the survey period (see the accompanying table). One goal of the study is to estimate the mean amount of fish consumed over the past month per person fishing in that body of water. Find and justify a reasonable estimate of this mean and provide a margin of error for the estimate.</p>
 </blockquote>
+
+<img src="images/Day40-2.png" style="display: block; margin: auto;" width="70%" loading="lazy" decoding="async" class="r-stretch"></section>
+<section id="section-4" class="slide level2 font80">
+<h2></h2>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

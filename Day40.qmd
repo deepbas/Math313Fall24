@@ -1,0 +1,177 @@
+---
+title: "Day 40"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: ""
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+#<img src="images/Day23-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
+```
+
+## Introduction to Survey Weights {.font80}
+
+::: cle6
+
+- **Complex Sampling Designs** often involve:
+  - Stratification, Clustering, Unequal probabilities of selection
+  - Multiple stages of selection, Systematic selection
+- Usual estimation and testing procedures may not be appropriate due to these features.
+
+:::
+
+## Importance of Weights {.font80}
+
+::: cle12
+- **Unbiased Estimates**: Weights correct for variable probabilities of selection.
+- **Precision of Estimates**: Adjust variance estimators to reflect complex sample designs.
+- **Adjustments for Nonresponse**: Increase weights for responding units to account for non-respondents.
+- **Benchmarking**: Adjust survey estimates to external census estimates.
+
+:::
+
+
+## Weighting in Practice vs Theory {.font80}
+
+::: cle12
+- **Theoretical Background**: Unbiased estimator of a population total: 
+  $$\frac{N}{n} \sum_{i=1}^{n} y_{i}$$
+  - $N$: Population size, $n$: Sample size, $y_i$: Sample observations
+- **Practical Application**: Focus is on constructing the actual weights to use in analysis.
+
+:::
+
+## Case Study: Housing Permits in Florida {.font80}
+
+::: cle12
+- **Objective**: Estimate total building permits in FL in 2000 from a sample.
+- **Method**: Sample 10 of Florida's 67 counties, using area as a proxy for sampling probability.
+
+:::
+
+##  Data Example: Florida Counties {.font80}
+
+
+<img src="images/Day40-1.png" style="display: block; margin: auto;" width="70%"  loading="lazy" decoding="async">
+
+
+## Analysis Using Survey Weights {.font80}
+
+::: cle12
+- **Weights**: Inverse of the probability proportional to area, $w_i=1 / A_i$
+- **Weighted Estimate**:
+  $$\hat{\mu} = \frac{\sum w_{i} y_{i}}{\sum w_{i}}$$
+- **Variance**:
+  - Standard errors calculated using ratio estimator techniques.
+
+:::
+
+## {.font60}
+
+> Example 11.6 Textbook: This study aims to estimate the total number of housing unit building permits issued in Florida in 2000 by analyzing a sample from ten of the state's 67 counties. The counties were selected randomly, and data on the number of approved building permits and county area in square miles were recorded. These measures are sourced from census data. The total area for all counties is not known for this example, and the data will be used to calculate the estimate and its standard error.
+
+##
+
+## Discussion: API Dataset (R) {.font80}
+
+::: cle12
+- **Dataset**: From the `survey` package, includes student achievement and demographic data.
+- **Application**: Demonstrate how weights can adjust for school size and demographic biases in educational data analysis.
+
+:::
+
+
+## {.font25}
+
+
+```{r, echo=FALSE}
+library(skimr)
+library(survey)
+data(api)
+skim_output <- skim(apistrat)
+skim_output[skim_output$skim_type == "numeric", ] 
+```
+
+
+
+## Implementation in R {.font80}
+
+```{r}
+library(survey)
+data(api)
+# Create survey design without weights
+strat_design <- svydesign(ids = ~1, data = apistrat)
+
+# Create survey design with weights
+weighted_design <- svydesign(ids = ~1, weights = ~pw, data = apistrat)
+
+# Estimate mean without weights
+mean_srs <- svymean(~api00, strat_design)
+mean_srs
+# Estimate mean with weights
+mean_weighted <- svymean(~api00, weighted_design)
+mean_weighted
+```
+
+## Summary: Key Concepts in Survey Weighting {.font60}
+
+::: cle14
+- **Discussion**: Weights adjust for sampling design and population structure, often providing a more representative estimate of the population mean.
+- **Data Preparation**:
+  - **Cleaning and Validation**: Remove errors and standardize data formats.
+  - **Handling Outliers and Missing Data**: Implement strategies to ensure quality data input.
+- **Identifying Weighting Variables**:
+  - **Key Factors**: Age, gender, income, education, location.
+  - **Sources**: Use census data and other reliable demographic sources.
+- **Calculating Weighting Factors**:
+  - **Stratification**: Align sample distribution with population.
+  - **Raking**: Iteratively adjust weights to match population characteristics.
+  - **Calibration**: Adjust sample weights using known population totals.
+:::
+
+## {.font50}
+
+> Example2 : Scientists studying fish consumption in a specified body of water periodically sent field workers out to interview everyone fishing in that water in those selected periods. Among other variables, the field-workers collected data on the amount of fish from that water the person consumed over the past month and the number of times the person fished in that water over the survey period (see the accompanying table). One goal of the study is to estimate the mean amount of fish consumed over the past month per person fishing in that body of water. Find and justify a reasonable estimate of this mean and provide a margin of error for the estimate.
+
+<img src="images/Day40-2.png" style="display: block; margin: auto;" width="70%"  loading="lazy" decoding="async">
+
+##  {.font80}
+
