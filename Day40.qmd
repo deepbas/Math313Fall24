@@ -90,8 +90,20 @@ yt <- 0
 ##  Data Example: Florida Counties {.font80}
 
 
-<img src="images/Day40-1.png" style="display: block; margin: auto;" width="70%"  loading="lazy" decoding="async">
+::: row
 
+::: left
+
+<img src="images/Day40-1.png" style="display: block; margin: auto;" width="100%"  loading="lazy" decoding="async">
+
+:::
+
+::: right
+
+<img src="images/Day40-3.png" style="display: block; margin: auto;" width="100%"  loading="lazy" decoding="async">
+
+:::
+:::
 
 ## Analysis Using Survey Weights {.font80}
 
