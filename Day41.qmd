@@ -1,0 +1,235 @@
+---
+title: "Day 41"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: ""
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+#<img src="images/Day23-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
+```
+
+## Introduction to Bootstrap Methods {.font80}
+
+::: cle7
+- **Overview of Traditional Estimation**
+    - Traditionally, estimators use variance formulas for estimation.
+    - Standard errors are derived from these variances to construct confidence intervals, typically 95%.
+- **Challenges with Traditional Methods**
+    - Bias in variance estimates can occur under complex survey conditions.
+    - Difficulties arise in deriving closed-form expressions for variance in surveys involving clustering, stratification, and weighting.
+:::
+
+## Why Bootstrap? {.font80}
+
+::: cle5
+- **Advantages of Bootstrap**
+    - Bootstrap methods do not rely on variance formulas, reducing potential biases.
+    - These methods use resampling techniques to estimate the distribution of sample statistics directly.
+- **Bootstrap Approach**
+    - Involves drawing repeated samples from the survey data with replacement.
+    - Each resample is used to calculate estimates, building an empirical distribution of the estimator.
+:::
+
+## Implementing Bootstrap in R {.font80}
+
+::: cle8
+- **Setting Up in R**
+    - Utilize the `survey` package to create a survey design object.
+    - Convert the design object to a bootstrap design for resampling.
+- **Bootstrap Computation**
+    - Generate bootstrap replicates of the statistic of interest.
+    - Analyze the variability and stability of these estimates to gauge their reliability.
+:::
+
+
+## {.font70}
+
+```{r}
+# Create a vector of size 10
+obs <- c(5, 10, 15, 20, 25, 30, 35, 40, 45, 50)
+
+# Define the number of bootstrap samples
+n_bootstraps <- 50
+
+# Generate bootstrap samples and compute their means
+set.seed(123)  # For reproducibility
+bootstrap_means <- replicate(n_bootstraps, {
+  sample_data <- sample(obs, replace = TRUE)
+  mean(sample_data)
+})
+
+# Calculate the original mean
+original_mean <- mean(obs)
+original_mean
+
+bootstrap_means # collection of bootstrapped means
+ 
+mean(bootstrap_means) # mean of the bootstrapped means
+```
+
+
+
+
+
+## Visualizing Bootstrap Results {.font80}
+
+::: cle13
+- **Dot Plots**
+    - Use dot plots to visualize the distribution of bootstrap estimates.
+    - Adjust dot size and stack direction to avoid overlap and improve clarity.
+- **Density Curves**
+    - Overlay density curves on dot plots to highlight the overall distribution shape and central tendency.
+:::
+
+
+##  {.font80}
+
+::: cle2
+```{r}
+library(survey)
+data(api) 
+design <- svydesign(ids = ~dnum, weights = ~pw, data = apiclus1)
+summary(design)
+```
+:::
+
+##  {.font80}
+
+::: cle6
+```{r}
+bootstrap_design <- as.svrepdesign(design, type = "bootstrap", replicates = 1000)
+summary(bootstrap_design)
+mean_estimate <- svymean(~api00, bootstrap_design)
+mean_estimate
+```
+
+:::
+
+## {.font70}
+
+::: cle9
+```{r}
+set.seed(113)
+replicate_estimates <- replicate(1000, expr = {
+    single_sample <- sample(1:nrow(apiclus1), replace = TRUE)
+    svymean(~api00, svydesign(ids = ~dnum, weights = ~pw, data = apiclus1[single_sample, ]))
+}, simplify = FALSE)
+
+replicate_estimates[1:6] 
+```
+:::
+
+## {.font70}
+
+::: cle9
+```{r}
+# Convert the list of estimates to a vector
+estimate_values <- sapply(replicate_estimates, function(est) coef(est))
+estimate_values %>% head(100)
+```
+:::
+
+
+## {.font70}
+
+::: panel-tabset
+
+### Plot
+
+```{r, echo=FALSE}
+# Calculate mean and SE
+bootstrap_mean <- mean(estimate_values)
+bootstrap_se <- sd(estimate_values) 
+
+# Plotting the bootstrap estimates
+library(ggplot2)
+ggplot(data = data.frame(estimate_values), aes(x = estimate_values)) +
+    geom_dotplot(binwidth = 0.8, stackdir = "up", dotsize = 0.5, fill = "maroon", col = "gold") +
+    geom_density(aes(y = ..scaled..), fill = "lightblue", alpha = 0.2, adjust = 1) +  
+    geom_vline(xintercept = bootstrap_mean, color = "blue", linetype = "dashed") +
+    annotate("text", x = bootstrap_mean + 5, y = 0.8, label = sprintf("Mean = %.2f\nSE = %.2f",
+bootstrap_mean, bootstrap_se), color = "blue") +
+    xlab("Bootstrap Estimates") +
+    ggtitle("Distribution of API Score Estimates")
+```
+
+
+
+### Code
+
+```{r, eval=FALSE}
+# Calculate mean and SE
+bootstrap_mean <- mean(estimate_values)
+bootstrap_se <- sd(estimate_values) 
+
+# Plotting the bootstrap estimates
+library(ggplot2)
+ggplot(data = data.frame(estimate_values), aes(x = estimate_values)) +
+    geom_dotplot(binwidth = 0.8, stackdir = "up", dotsize = 0.5, fill = "maroon", col = "gold") +
+    geom_density(aes(y = ..scaled..), fill = "lightblue", alpha = 0.2, adjust = 1) +  
+    geom_vline(xintercept = bootstrap_mean, color = "blue", linetype = "dashed") +
+    annotate("text", x = bootstrap_mean + 5, y = 0.8, label = sprintf("Mean = %.2f\nSE = %.2f",
+bootstrap_mean, bootstrap_se), color = "blue") +
+    xlab("Bootstrap Estimates") +
+    ggtitle("Distribution of API Score Estimates")
+```
+
+:::
+
+
+
+
+##  {.font60}
+
+> The American Housing Survey tracks housing characteristics in the U.S., including ownership costs and house values across 47 metropolitan statistical areas (MSAs). The 2002 survey sampled 13 MSAs, providing data on typical monthly ownership costs and house values for 2002 and 1994.
+
+1. **Mean Value 2002**: Simulate a bootstrap confidence interval for the mean typical house value in 2002.
+2. **Median Value 2002**: Simulate a bootstrap confidence interval for the median typical house value in 2002.
+3. **Ratio of Mean Values 2002 to 1994**: Simulate a bootstrap confidence interval for the ratio of mean house values from 2002 compared to 1994.
+
+
+## {.font60}
+
+
+<img src="images/Day41-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
+
+

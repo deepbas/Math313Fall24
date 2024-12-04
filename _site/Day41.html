@@ -8,7 +8,7 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.56">
+  <meta name="generator" content="quarto-1.5.25">
 
   <meta name="author" content="">
   <title>Math 313: Survey Design and Sampling – Day 41</title>
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -335,79 +400,292 @@
 </div>
 
 </section>
-<section id="estimation-of-population-density-and-size-using-inverse-sampling" class="slide level2 font80">
-<h2>Estimation of Population Density and Size Using Inverse Sampling</h2>
-<div class="cle7">
-<p>Inverse sampling differs from direct sampling as it continues until a fixed number of tagged animals is recaptured. This method provides an unbiased estimator for population size <span class="math inline">\(N\)</span>, using the fixed count of recaptured tagged animals to estimate the proportion of tagged animals in the population.</p>
-</div>
-</section>
-<section id="mathematical-formulation-of-inverse-sampling" class="slide level2 font80">
-<h2>Mathematical Formulation of Inverse Sampling</h2>
-<div class="cle12">
-<ul>
-<li><p><strong>Proportion of tagged individuals</strong>: <span class="math display">\[
-\hat{p} = \frac{s}{n}
-\]</span> where <span class="math inline">\(s\)</span> is fixed and <span class="math inline">\(n\)</span> is the number of total individuals captured during sampling.</p></li>
-<li><p><strong>Estimator of <span class="math inline">\(N\)</span></strong>: <span class="math display">\[
-\hat{N} = \frac{n \cdot t}{s}
-\]</span> where <span class="math inline">\(t\)</span> is the number of animals tagged in the initial sample.</p></li>
-</ul>
-</div>
-</section>
-<section id="variance-and-error-estimation" class="slide level2 font80">
-<h2>Variance and Error Estimation</h2>
+<section id="introduction-to-bootstrap-methods" class="slide level2 font80">
+<h2>Introduction to Bootstrap Methods</h2>
 <div class="cle7">
 <ul>
-<li><p><strong>Variance of <span class="math inline">\(\hat{N}\)</span></strong>: <span class="math display">\[
-\hat{V}(\hat{N}) = \frac{t^2 \cdot n \cdot (n-s)}{s^2 \cdot (s+1)}
-\]</span> reflects the sample’s randomness and the fixed nature of <span class="math inline">\(s\)</span>.</p></li>
-<li><p><strong>Error Bound</strong>: Using <span class="math inline">\(V-P\)</span> inequality for conservative error bounds in estimation.</p></li>
-</ul>
-</div>
-</section>
-<section id="example-wildlife-preserve-bird-population" class="slide level2 font60">
-<h2>Example: Wildlife Preserve Bird Population</h2>
-<blockquote>
-<p>Authorities want to estimate the number of birds in a preserve. Initially, <span class="math inline">\(t=150\)</span> birds are tagged and released. Later, sampling continues until <span class="math inline">\(35\)</span> tagged birds are recaptured among <span class="math inline">\(100\)</span> total birds. Estimating <span class="math inline">\(N\)</span> involves using the derived formulas to handle randomness and provide reliable population estimates.</p>
-</blockquote>
-</section>
-<section id="estimating-population-density-from-stocked-quadrats" class="slide level2 font80">
-<h2>Estimating Population Density from Stocked Quadrats</h2>
-<div class="cle12">
-<p>Stocked quadrat sampling involves checking the presence or absence of a species, simplifying the data collection process but requiring careful handling of statistical estimates due to the binary nature of data (presence vs.&nbsp;absence).</p>
-</div>
-</section>
-<section id="formulating-the-stocked-quadrat-density-estimation" class="slide level2 font80">
-<h2>Formulating the Stocked Quadrat Density Estimation</h2>
-<div class="cle7">
+<li><strong>Overview of Traditional Estimation</strong>
 <ul>
-<li><p><strong>Probability of presence</strong> in a quadrat: <span class="math display">\[
-P(\text{unstocked}) = e^{-\lambda a}
-\]</span> where <span class="math inline">\(\lambda\)</span> is the density per unit area and <span class="math inline">\(a\)</span> is the area of each quadrat.</p></li>
-<li><p><strong>Estimator for <span class="math inline">\(\lambda\)</span></strong>: <span class="math display">\[
-\hat{\lambda} = -\frac{1}{a} \ln\left(\frac{y}{m}\right)
-\]</span> derived from the proportion of unstocked quadrats in the sample.</p></li>
-</ul>
-</div>
-</section>
-<section id="variance-and-confidence-interval" class="slide level2 font80">
-<h2>Variance and Confidence Interval</h2>
-<div class="cle12">
+<li>Traditionally, estimators use variance formulas for estimation.</li>
+<li>Standard errors are derived from these variances to construct confidence intervals, typically 95%.</li>
+</ul></li>
+<li><strong>Challenges with Traditional Methods</strong>
 <ul>
-<li><p><strong>Variance of <span class="math inline">\(\hat{\lambda}\)</span></strong>: <span class="math display">\[
-\hat{V}(\hat{\lambda}) = \frac{1}{m a^2} (e^{\hat{\lambda} a} - 1)
-\]</span></p></li>
-<li><p><strong>Confidence Interval</strong>: Ensuring accuracy with <span class="math inline">\(1-\alpha\)</span>% bounds based on the variance.</p></li>
+<li>Bias in variance estimates can occur under complex survey conditions.</li>
+<li>Difficulties arise in deriving closed-form expressions for variance in surveys involving clustering, stratification, and weighting.</li>
+</ul></li>
 </ul>
 </div>
 </section>
-<section id="practical-example-plantation-infected-trees-estimation" class="slide level2 font60">
-<h2>Practical Example: Plantation Infected Trees Estimation</h2>
-<blockquote>
-<p>In a 200-acre plantation, the presence of fusiform rust in trees is sampled over 20 quadrats of 0.5 acre each. The density and total number of infected trees are estimated, incorporating bounds on the estimation error.</p>
-</blockquote>
+<section id="why-bootstrap" class="slide level2 font80">
+<h2>Why Bootstrap?</h2>
+<div class="cle5">
+<ul>
+<li><strong>Advantages of Bootstrap</strong>
+<ul>
+<li>Bootstrap methods do not rely on variance formulas, reducing potential biases.</li>
+<li>These methods use resampling techniques to estimate the distribution of sample statistics directly.</li>
+</ul></li>
+<li><strong>Bootstrap Approach</strong>
+<ul>
+<li>Involves drawing repeated samples from the survey data with replacement.</li>
+<li>Each resample is used to calculate estimates, building an empirical distribution of the estimator.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="implementing-bootstrap-in-r" class="slide level2 font80">
+<h2>Implementing Bootstrap in R</h2>
+<div class="cle8">
+<ul>
+<li><strong>Setting Up in R</strong>
+<ul>
+<li>Utilize the <code>survey</code> package to create a survey design object.</li>
+<li>Convert the design object to a bootstrap design for resampling.</li>
+</ul></li>
+<li><strong>Bootstrap Computation</strong>
+<ul>
+<li>Generate bootstrap replicates of the statistic of interest.</li>
+<li>Analyze the variability and stability of these estimates to gauge their reliability.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="section" class="slide level2 font70">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Create a vector of size 10</span></span>
+<span id="cb1-2"><a></a>obs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>, <span class="dv">50</span>)</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="co"># Define the number of bootstrap samples</span></span>
+<span id="cb1-5"><a></a>n_bootstraps <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="co"># Generate bootstrap samples and compute their means</span></span>
+<span id="cb1-8"><a></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb1-9"><a></a>bootstrap_means <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_bootstraps, {</span>
+<span id="cb1-10"><a></a>  sample_data <span class="ot">&lt;-</span> <span class="fu">sample</span>(obs, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-11"><a></a>  <span class="fu">mean</span>(sample_data)</span>
+<span id="cb1-12"><a></a>})</span>
+<span id="cb1-13"><a></a></span>
+<span id="cb1-14"><a></a><span class="co"># Calculate the original mean</span></span>
+<span id="cb1-15"><a></a>original_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(obs)</span>
+<span id="cb1-16"><a></a>original_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 27.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>bootstrap_means <span class="co"># collection of bootstrapped means</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 29.0 36.5 32.0 32.0 30.5 21.5 30.5 31.5 28.0 30.0 30.5 32.5 29.5 28.0 28.5
+[16] 36.5 37.0 35.5 37.0 31.0 21.0 31.5 29.0 14.5 31.5 24.0 28.0 21.5 30.5 31.0
+[31] 21.5 19.0 30.0 22.0 36.0 34.5 25.5 31.5 29.0 33.5 22.5 21.5 27.5 19.5 31.5
+[46] 27.5 31.0 35.0 34.5 25.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">mean</span>(bootstrap_means) <span class="co"># mean of the bootstrapped means</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 28.97</code></pre>
+</div>
+</div>
+</section>
+<section id="visualizing-bootstrap-results" class="slide level2 font80">
+<h2>Visualizing Bootstrap Results</h2>
+<div class="cle13">
+<ul>
+<li><strong>Dot Plots</strong>
+<ul>
+<li>Use dot plots to visualize the distribution of bootstrap estimates.</li>
+<li>Adjust dot size and stack direction to avoid overlap and improve clarity.</li>
+</ul></li>
+<li><strong>Density Curves</strong>
+<ul>
+<li>Overlay density curves on dot plots to highlight the overall distribution shape and central tendency.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="section-1" class="slide level2 font80">
+<h2></h2>
+<div class="cle2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(survey)</span>
+<span id="cb7-2"><a></a><span class="fu">data</span>(api) </span>
+<span id="cb7-3"><a></a>design <span class="ot">&lt;-</span> <span class="fu">svydesign</span>(<span class="at">ids =</span> <span class="sc">~</span>dnum, <span class="at">weights =</span> <span class="sc">~</span>pw, <span class="at">data =</span> apiclus1)</span>
+<span id="cb7-4"><a></a><span class="fu">summary</span>(design)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 - level Cluster Sampling design (with replacement)
+With (15) clusters.
+svydesign(ids = ~dnum, weights = ~pw, data = apiclus1)
+Probabilities:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+0.02954 0.02954 0.02954 0.02954 0.02954 0.02954 
+Data variables:
+ [1] "cds"      "stype"    "name"     "sname"    "snum"     "dname"   
+ [7] "dnum"     "cname"    "cnum"     "flag"     "pcttest"  "api00"   
+[13] "api99"    "target"   "growth"   "sch.wide" "comp.imp" "both"    
+[19] "awards"   "meals"    "ell"      "yr.rnd"   "mobility" "acs.k3"  
+[25] "acs.46"   "acs.core" "pct.resp" "not.hsg"  "hsg"      "some.col"
+[31] "col.grad" "grad.sch" "avg.ed"   "full"     "emer"     "enroll"  
+[37] "api.stu"  "fpc"      "pw"      </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="section-2" class="slide level2 font80">
+<h2></h2>
+<div class="cle6">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>bootstrap_design <span class="ot">&lt;-</span> <span class="fu">as.svrepdesign</span>(design, <span class="at">type =</span> <span class="st">"bootstrap"</span>, <span class="at">replicates =</span> <span class="dv">1000</span>)</span>
+<span id="cb9-2"><a></a><span class="fu">summary</span>(bootstrap_design)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Call: as.svrepdesign.default(design, type = "bootstrap", replicates = 1000)
+Survey bootstrap with 1000 replicates.
+Variables: 
+ [1] "cds"      "stype"    "name"     "sname"    "snum"     "dname"   
+ [7] "dnum"     "cname"    "cnum"     "flag"     "pcttest"  "api00"   
+[13] "api99"    "target"   "growth"   "sch.wide" "comp.imp" "both"    
+[19] "awards"   "meals"    "ell"      "yr.rnd"   "mobility" "acs.k3"  
+[25] "acs.46"   "acs.core" "pct.resp" "not.hsg"  "hsg"      "some.col"
+[31] "col.grad" "grad.sch" "avg.ed"   "full"     "emer"     "enroll"  
+[37] "api.stu"  "fpc"      "pw"      </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>mean_estimate <span class="ot">&lt;-</span> <span class="fu">svymean</span>(<span class="sc">~</span>api00, bootstrap_design)</span>
+<span id="cb11-2"><a></a>mean_estimate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        mean     SE
+api00 644.17 24.071</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="section-3" class="slide level2 font70">
+<h2></h2>
+<div class="cle9">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">set.seed</span>(<span class="dv">113</span>)</span>
+<span id="cb13-2"><a></a>replicate_estimates <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="at">expr =</span> {</span>
+<span id="cb13-3"><a></a>    single_sample <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(apiclus1), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb13-4"><a></a>    <span class="fu">svymean</span>(<span class="sc">~</span>api00, <span class="fu">svydesign</span>(<span class="at">ids =</span> <span class="sc">~</span>dnum, <span class="at">weights =</span> <span class="sc">~</span>pw, <span class="at">data =</span> apiclus1[single_sample, ]))</span>
+<span id="cb13-5"><a></a>}, <span class="at">simplify =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb13-6"><a></a></span>
+<span id="cb13-7"><a></a>replicate_estimates[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+        mean     SE
+api00 634.38 24.291
 
-<div class="quarto-auto-generated-content">
+[[2]]
+        mean     SE
+api00 642.17 31.605
+
+[[3]]
+       mean     SE
+api00 637.4 24.491
+
+[[4]]
+        mean     SE
+api00 638.52 20.391
+
+[[5]]
+        mean     SE
+api00 638.14 24.211
+
+[[6]]
+        mean     SE
+api00 647.31 23.668</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="section-4" class="slide level2 font70">
+<h2></h2>
+<div class="cle9">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># Convert the list of estimates to a vector</span></span>
+<span id="cb15-2"><a></a>estimate_values <span class="ot">&lt;-</span> <span class="fu">sapply</span>(replicate_estimates, <span class="cf">function</span>(est) <span class="fu">coef</span>(est))</span>
+<span id="cb15-3"><a></a>estimate_values <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   api00    api00    api00    api00    api00    api00    api00    api00 
+634.3825 642.1694 637.4044 638.5246 638.1366 647.3115 647.3661 639.8470 
+   api00    api00    api00    api00    api00    api00    api00    api00 
+648.5410 632.2568 642.6393 638.1530 644.0874 638.0820 643.3005 636.0000 
+   api00    api00    api00    api00    api00    api00    api00    api00 
+647.8142 636.3005 643.9344 646.3224 639.5847 645.2842 657.2678 640.7158 
+   api00    api00    api00    api00    api00    api00    api00    api00 
+656.1694 643.5847 642.3607 642.7760 649.5137 653.8361 656.1967 643.5301 
+   api00    api00    api00    api00    api00    api00    api00    api00 
+645.5956 641.1585 652.3661 647.2131 636.3989 650.8087 648.2350 647.2404 
+   api00    api00    api00    api00    api00    api00    api00    api00 
+643.6120 645.6721 639.9016 637.1694 647.3333 643.8689 640.3060 642.0601 
+   api00    api00    api00    api00    api00    api00    api00    api00 
+645.7486 642.7814 651.0765 638.4645 647.2514 653.8470 638.2404 645.8689 
+   api00    api00    api00    api00    api00    api00    api00    api00 
+645.3224 634.3169 645.5246 649.1913 648.2077 649.2842 644.6230 644.6503 
+   api00    api00    api00    api00    api00    api00    api00    api00 
+644.8579 634.7268 645.9727 644.9836 663.5902 642.2568 640.4372 631.4372 
+   api00    api00    api00    api00    api00    api00    api00    api00 
+641.8197 624.6503 647.1585 636.7705 652.3825 636.6995 638.4317 649.0710 
+   api00    api00    api00    api00    api00    api00    api00    api00 
+641.4426 634.6557 637.2240 638.2678 643.2623 636.7322 645.6885 647.5137 
+   api00    api00    api00    api00    api00    api00    api00    api00 
+631.7650 640.7213 643.8962 647.0492 634.2896 648.8579 641.0000 635.7049 
+   api00    api00    api00    api00 
+653.0164 643.6940 645.6612 640.1421 </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level2 font70">
+<h2></h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot</a></li><li><a href="#tabset-1-2">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Day41_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># Calculate mean and SE</span></span>
+<span id="cb17-2"><a></a>bootstrap_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(estimate_values)</span>
+<span id="cb17-3"><a></a>bootstrap_se <span class="ot">&lt;-</span> <span class="fu">sd</span>(estimate_values) </span>
+<span id="cb17-4"><a></a></span>
+<span id="cb17-5"><a></a><span class="co"># Plotting the bootstrap estimates</span></span>
+<span id="cb17-6"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb17-7"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(estimate_values), <span class="fu">aes</span>(<span class="at">x =</span> estimate_values)) <span class="sc">+</span></span>
+<span id="cb17-8"><a></a>    <span class="fu">geom_dotplot</span>(<span class="at">binwidth =</span> <span class="fl">0.8</span>, <span class="at">stackdir =</span> <span class="st">"up"</span>, <span class="at">dotsize =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"maroon"</span>, <span class="at">col =</span> <span class="st">"gold"</span>) <span class="sc">+</span></span>
+<span id="cb17-9"><a></a>    <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..scaled..), <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">adjust =</span> <span class="dv">1</span>) <span class="sc">+</span>  </span>
+<span id="cb17-10"><a></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> bootstrap_mean, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb17-11"><a></a>    <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> bootstrap_mean <span class="sc">+</span> <span class="dv">5</span>, <span class="at">y =</span> <span class="fl">0.8</span>, <span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">"Mean = %.2f</span><span class="sc">\n</span><span class="st">SE = %.2f"</span>,</span>
+<span id="cb17-12"><a></a>bootstrap_mean, bootstrap_se), <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb17-13"><a></a>    <span class="fu">xlab</span>(<span class="st">"Bootstrap Estimates"</span>) <span class="sc">+</span></span>
+<span id="cb17-14"><a></a>    <span class="fu">ggtitle</span>(<span class="st">"Distribution of API Score Estimates"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-6" class="slide level2 font60">
+<h2></h2>
+<blockquote>
+<p>The American Housing Survey tracks housing characteristics in the U.S., including ownership costs and house values across 47 metropolitan statistical areas (MSAs). The 2002 survey sampled 13 MSAs, providing data on typical monthly ownership costs and house values for 2002 and 1994.</p>
+</blockquote>
+<ol type="1">
+<li><strong>Mean Value 2002</strong>: Simulate a bootstrap confidence interval for the mean typical house value in 2002.</li>
+<li><strong>Median Value 2002</strong>: Simulate a bootstrap confidence interval for the median typical house value in 2002.</li>
+<li><strong>Ratio of Mean Values 2002 to 1994</strong>: Simulate a bootstrap confidence interval for the ratio of mean house values from 2002 compared to 1994.</li>
+</ol>
+</section>
+<section id="section-7" class="slide level2 font60">
+<h2></h2>
+
+
+<img src="images/Day41-1.png" style="display: block; margin: auto;" width="80%" loading="lazy" decoding="async" class="r-stretch"><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
