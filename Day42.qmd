@@ -1,0 +1,161 @@
+---
+title: "Day 42"
+title-slide-attributes:
+  data-background-image: images/lake.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+subtitle: "MATH 313: Survey Design and Sampling"
+author: ""
+format:
+  revealjs:
+    html-math-method: mathjax
+    mathjax-url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js"
+    theme: [default, scss/main.scss]
+    slide_level: 2
+    slide-number: true
+    preview-links: auto
+    history: true
+    chalkboard: 
+      src: chalkboard.json
+      eraser:
+        src: 'img/sponge.png'
+        radius: 20
+    transition: slide
+    background-transition: fade    
+    touch: false
+    controls: true
+---
+
+```{r setup, include=FALSE}
+# load necessary packages
+library(tidyverse)
+library(countdown)
+library(mosaic)
+library(ggthemes)
+library(forcats)
+library(patchwork)
+library(knitr)
+library(gridExtra)
+
+
+select <- dplyr::select
+
+# Set ggplot theme
+theme_set(theme_tufte(base_size = 10))
+
+yt <- 0
+#<img src="images/Day23-1.png" style="display: block; margin: auto;" width="80%"  loading="lazy" decoding="async">
+```
+
+## Imputation Techniques in Data Analysis {.font80}
+
+Missing data is common in surveys and experiments. Imputation assigns values to missing cells, improving data usability.
+
+::: cle7
+- Random selection (from the sample or subgroup).
+- Replacement by group mean.
+- Sequential or nearest-neighbor imputation.
+- Regression-based predictions.
+:::
+
+## Hot Deck Imputation Techniques {.font80}
+
+::: cle7
+
+#### Random Selection
+- **Entire sample**: Select random value from the whole sample.
+- **Subgroup**: Select random value within a homogeneous group (e.g., gender).
+
+#### Mean Replacement
+- Replace missing value with the group mean.
+- **Drawback**: Reduces sample variability, underestimates standard errors.
+
+:::
+
+## Example: Student Study Hours Data {.font80}
+
+::: cle7
+
+| Method                       | Sample Size | Sample Mean | Std Dev | Std Error |
+|------------------------------|-------------|-------------|---------|-----------|
+| I. None                      | 130         | 11.400      | 6.790   | 0.569     |
+| II. Random from entire sample| 135         | 11.526      | 6.762   | 0.555     |
+| III. Random from females     | 135         | 11.689      | 6.930   | 0.548     |
+| IV. Mean of females          | 135         | 11.436      | 6.665   | 0.537     |
+
+:::
+
+
+## Adjusting Variances After Imputation {.font80}
+
+::: cle7
+
+- Imputation reduces standard errors artificially.
+- Adjust variance to account for imputation error:
+  $$ \text{Adjusted Variance} = \text{Variance} \times \left(1 + 2 \frac{k}{n}\right) $$
+
+#### Example (Method III): 
+  $$ \text{Adjusted Variance} = (0.548^2) \times 1.07 = 0.3213 $$
+
+:::
+
+## Advanced Imputation: Regression and Nearest-Neighbor {.font70}
+
+::: cle7
+- **Sequential Imputation**:
+  - Replace missing value with the last observed value.
+  - Works well with ordered data but can lead to bias if missing values cluster.
+
+- **Nearest-Neighbor**:
+  - Use similar cases (based on variables like GPA, gender, etc.) to impute values.
+
+- **Regression Imputation**:
+  - Build predictive models using other variables.
+:::
+
+## Demonstrating Imputation with `mice` in R {.font60}
+
+```{r}
+#install.packages("mice")
+library(mice)
+
+# Example data with missing values
+data <- data.frame(
+  StudyHours = c(12, 10, 8, NA, 14, NA, 9),
+  Gender = c("Male", "Female", "Male", "Female", "Female", "Male", "Female")
+)
+```
+
+
+::: row
+::: left
+
+```{r}
+knitr::kable(data)
+```
+
+
+:::
+
+::: right
+```{r}
+# Inspect missing data pattern
+md.pattern(data)
+```
+
+:::
+:::
+
+
+## {.font80}
+
+```{r}
+# Apply multiple imputation
+imputed_data <- mice(data, method = "pmm", m = 5, print = FALSE)
+
+# View imputed data
+completed_data <- complete(imputed_data)
+completed_data %>% knitr::kable()
+```
+
+
