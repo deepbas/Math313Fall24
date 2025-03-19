@@ -1,5 +1,6 @@
 ---
 title: "Math 313: Fall 2024"
+subtitle: "Survey Design and Sampling"
 ---
 
 Welcome to the world of survey statistics!
