@@ -1,97 +1,100 @@
 /*-- scss:defaults --*/
+// Font import for dark theme
+$web-font-path: "https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" !default;
+@import url($web-font-path);
 
-// Color system for darkly theme
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #ebebeb !default;
-$gray-300: #d1d3d4 !default; 
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #888 !default;
-$gray-700: #444 !default;
-$gray-800: #303030 !default;
-$gray-900: #222 !default;
-$black:    #000 !default;
+// Fonts
+$font-family-sans-serif: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$base-font-size: 1rem !default;
 
-// Main accent colors
+// Dark theme colors
+$body-bg: #181818 !default;
+$body-color: #ffffff !default;
+$headings-color: #00bc8c !default; // green accent
+
+// Color system
 $blue:    #375a7f !default;
 $green:   #00bc8c !default;
 $orange:  #fd7e14 !default;
 $red:     #e74c3c !default;
+$gray-500: #adb5bd !default;
+$gray-700: #444 !default;
+$pink:    #ff79c6 !default; 
 
-// Base document colors for dark mode
-$body-bg: #375a7f !default;
-$body-color: #adb5bd !default; 
-
-// Primary colors for interactive elements
-$primary: $blue !default;
-$secondary: $gray-600 !default;
-$success: $green !default;
-$info: $blue !default;
-$warning: $orange !default;
-$danger: $red !default;
-$light: $gray-500 !default;
-$dark: $gray-700 !default;
 
 // Link colors
-$link-color: $info !default;
-$link-hover-color: lighten($info, 20%) !default;
+$link-color: $blue !default;
+$link-hover-color: lighten($blue, 15%) !default;
 
-// Font settings
-$font-family-sans-serif: "Lato", sans-serif !default;
-$base-font-size: 16px !default;
-$headings-color: $white !default;
-
-// Custom colors for text and backgrounds
-$text-color: $body-color !default;
-$background-color: $body-bg !default;
-
-/*-- scss:rules --*/
-
-// Base document colors for dark mode
-$body-bg: #4169e1; // Royal Blue background
-$body-color: #808000; // Olive text
-
-
-// Font settings
-$font-family-sans-serif: "Lato", sans-serif !default;
-
-/*-- scss:rules --*/
-
-// Apply global styles
+// Global Styles
 body {
+  font-family: $font-family-sans-serif;
   background-color: $body-bg;
   color: $body-color;
-  font-family: $font-family-sans-serif;
+  font-size: $base-font-size;
 }
 
-// Headings for better readability
 h1, h2, h3, h4, h5, h6 {
-  color: green;
+  color: $headings-color;
 }
 
 a {
   color: $link-color;
+  transition: color 0.3s ease;
   &:hover {
     color: $link-hover-color;
   }
 }
 
-pre {
-  border: 1px solid #1c5253;
-  box-shadow: 0px 0px 8px #F2B155;
-  padding: 0.1em;
-  background-color: #FFFFFF;
-  overflow-x: auto;
-  border-radius: 15px; 
-  font-family: sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  color: #1c5253;
+.navbar {
+  padding: 0.5rem 0;
+  &.navbar-dark {
+    background-color: #333;
+    .navbar-nav .nav-link {
+      &:hover, &.active {
+        color: lighten($body-color, 15%);
+      }
+    }
+  }
 }
 
-pre code { 
-  background: #f2f2f2; 
-  font-size: 1rem;
-  color: #000000;
+.pagination {
+  .page-link {
+    color: $body-color;
+    background-color: $blue;
+    &:hover {
+      background-color: lighten($blue, 10%);
+    }
+    &.active {
+      background-color: lighten($blue, 10%);
+    }
+  }
+}
+
+
+// Optimized Code Block Styles for Dark Theme
+pre {
+  border: 1px solid darken($body-bg, 10%);
+  box-shadow: 0 0 8px rgba($orange, 0.4);
+  background: lighten($blue, 15%); // provides a subtle contrast against $body-bg
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  
+  code {
+    background: transparent;
+    color: $orange;
+    font-size: 0.95em;
+    font-weight: 400;
+  }
+}
+
+$inline-code-bg: #2d2d2d;  // dark gray background
+$inline-code-color: #ffb86c; // a warm orange text color
+
+code:not(pre code) {
+  background: $inline-code-bg;
+  color: $pink;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25em;
 }

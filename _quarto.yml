@@ -4,175 +4,146 @@ output-dir: docs
 
 website:
   title: "Math 313: Survey Design and Sampling"
-  navbar:
-    title: "Math 313"
-    pinned: true
-    left:
+  sidebar:
+    style: "docked"
+    collapse-level: 1
+    contents:
       - text: "Home"
         href: index.html
       - text: "About"
         href: about.html
-      - text: "Lecture Slides"
-        menu:
+
+      - section: "Week 1"
+        contents:
           - text: "Lecture 1"
-            href: Day1.html 
-            target: "_blank"
+            href: Day1.html
           - text: "Lecture 2"
             href: Day2.html
-            target: "_blank"
           - text: "Lecture 3"
             href: Day3.html
-            target: "_blank"
+
+      - section: "Week 2"
+        contents:
           - text: "Lecture 4"
             href: Day4.html
-            target: "_blank"
           - text: "Lecture 5"
             href: Day5.html
-            target: "_blank"
           - text: "Lecture 6"
             href: Day6.html
-            target: "_blank"
+
+      - section: "Week 3"
+        contents:
           - text: "Lecture 7"
             href: Day7.html
-            target: "_blank"
           - text: "Lecture 8"
             href: Day8.html
-            target: "_blank"
           - text: "Lecture 9"
             href: Day9.html
-            target: "_blank"
+
+      - section: "Week 4"
+        contents:
           - text: "Lecture 10"
             href: Day10.html
-            target: "_blank"
           - text: "Lecture 11"
             href: Day11.html
-            target: "_blank"
           - text: "Lecture 12"
             href: Day12.html
-            target: "_blank"
+
+      - section: "Week 5"
+        contents:
           - text: "Lecture 13"
             href: Day13.html
-            target: "_blank"
           - text: "Lecture 14"
             href: Day14.html
-            target: "_blank"
           - text: "Lecture 15"
             href: Day15.html
-            target: "_blank"
+
+      - section: "Week 6"
+        contents:
           - text: "Lecture 16"
             href: Day16.html
-            target: "_blank"
           - text: "Lecture 17"
             href: Day17.html
-            target: "_blank"
           - text: "Lecture 19"
             href: Day19.html
-            target: "_blank"
+
+      - section: "Week 7"
+        contents:
           - text: "Lecture 20"
             href: Day20.html
-            target: "_blank"
           - text: "Lecture 21"
             href: Day21.html
-            target: "_blank"
           - text: "Lecture 22"
             href: Day22.html
-            target: "_blank"
+
+      - section: "Week 8"
+        contents:
           - text: "Lecture 23"
             href: Day23.html
-            target: "_blank"
           - text: "Lecture 24"
             href: Day24.html
-            target: "_blank"
           - text: "Lecture 25"
             href: Day25.html
-            target: "_blank"
+
+      - section: "Week 9"
+        contents:
           - text: "Lecture 26"
             href: Day26.html
-            target: "_blank"
           - text: "Lecture 27"
             href: Day27.html
-            target: "_blank"
           - text: "Lecture 28"
             href: Day28.html
-            target: "_blank"
+
+      - section: "Week 10"
+        contents:
           - text: "Lecture 29"
             href: Day29.html
-            target: "_blank"
           - text: "Lecture 30"
             href: Day30.html
-            target: "_blank"
           - text: "Lecture 31"
             href: Day31.html
-            target: "_blank"
+
+      - section: "Week 11"
+        contents:
           - text: "Lecture 32"
             href: Day32.html
-            target: "_blank"
           - text: "Lecture 33"
             href: Day33.html
-            target: "_blank"
           - text: "Lecture 34"
             href: Day34.html
-            target: "_blank"
+
+      - section: "Week 12"
+        contents:
           - text: "Lecture 35"
             href: Day35.html
-            target: "_blank"
           - text: "Lecture 36"
             href: Day36.html
-            target: "_blank"
           - text: "Lecture 37"
             href: Day37.html
-            target: "_blank"
+
+      - section: "Week 13"
+        contents:
           - text: "Lecture 39"
             href: Day39.html
-            target: "_blank"
           - text: "Lecture 40"
             href: Day40.html
-            target: "_blank"
           - text: "Lecture 41"
             href: Day41.html
-            target: "_blank"
+
+      - section: "Week 14"
+        contents:
           - text: "Lecture 42"
             href: Day42.html
-            target: "_blank"
-                                 
-          
-          
-          
-          
-          # Add additional lectures here
-      # - text: "Class Activities"
-      #   menu:
-      #     - text: "Activity 1"
-      #       href: class_activity_1.html
-          # - text: "Activity 2"
-          #   href: class_activity_2.html
-          # - text: "Activity 3"
-          #   href: class_activity_3.html
-          # - text: "Activity 4"
-          #   href: class_activity_4.html
-          #        
-            
-                  
-          # Add additional problems here
-      # - text: "Reports"
-      #   href: reports.html
-      # - text: "Midterms"
-      #   href: midterms.html
-      # Add additional navbar items as needed
-      - text: "Tutorials"
-        menu:
+
+      - section: "Tutorials"
+        contents:
           - text: "R and RStudio"
             href: RandRStudio.html
-      - text: "Guidelines"
-        menu:
+
+      - section: "Guidelines"
+        contents:
           - text: "Lab Report Guidelines"
             href: LabReportGuidelines.html
-          # - text: "Posit Tutorial"
-          #   href: posit.html
-          # - text: "Softwares"
-          #   href: software.html
-          # - text: "Github Tutorial"
-          #   href: github_tutorial.html
 
 
 format:
@@ -181,8 +152,8 @@ format:
     fontsize: 1.1em
     code-overflow: wrap
     theme:
-      light: [theme-light.scss]
-      dark: [darkly]
+      light: [lux, theme-light.scss]
+      dark: [superhero, theme-dark.scss]
     css: styles.css
     toc: true
     page-layout: full
@@ -191,6 +162,7 @@ format:
     fig-cap-location: margin
     reference-location: margin
     footnotes-hover: true 
+    
 filters:
   - shinylive
   - webr

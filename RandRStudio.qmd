@@ -2,13 +2,11 @@
 title: "Setting Up R and RStudio"
 author: "Bastola"
 date: "`r Sys.Date()`"
-output:
-  pdf_document:
-    toc: true
-  html_document:
-    toc: true
-    toc_float: true
-    fig_caption: true
+format: 
+  html:
+    theme:
+      light: [lux, theme-light.scss]
+      dark: [superhero, theme-dark.scss]
 ---
 
 ```{r setup, include=FALSE}
